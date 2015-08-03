@@ -77,7 +77,7 @@
 		display: block;
 		float: left;
 		width: 33.333%;
-		margin: 0;
+		margin: 0 0 25px 0;
 
 		label {
 			display: none;
@@ -94,8 +94,7 @@
 	}
 
 	.comment-form-comment {
-		margin-top: 25px;
-		margin-bottom: 10px;
+		margin: 10px 0;
 
 		label {
 			display: none;
@@ -112,7 +111,7 @@
 		}
 	}
 
-	.form-allowed-tags, .comment-notes {
+	.form-allowed-tags, .comment-notes, .logged-in-as {
 		margin: 10px 0;
 		&, code {
 			font-size: 0.75em;
