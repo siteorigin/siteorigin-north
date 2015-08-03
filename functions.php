@@ -5,6 +5,9 @@
  * @package burst
  */
 
+// The settings manager
+include get_template_directory() . '/settings/settings.php';
+
 if ( ! function_exists( 'burst_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -39,6 +42,8 @@ function burst_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+
+	set_post_thumbnail_size( 720, 380 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -97,8 +102,18 @@ add_action( 'after_setup_theme', 'burst_content_width', 0 );
  */
 function burst_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'burst' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Main Sidebar', 'burst' ),
+		'id'            => 'main-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widgets', 'burst' ),
+		'id'            => 'footer-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -113,9 +128,10 @@ add_action( 'widgets_init', 'burst_widgets_init' );
  */
 function burst_scripts() {
 	wp_enqueue_style( 'burst-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'burst-icons', get_template_directory_uri() . '/css/burst-icons.css' );
 
+	wp_enqueue_script( 'burst-script', get_template_directory_uri() . '/js/burst.js' );
 	wp_enqueue_script( 'burst-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'burst-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -123,11 +139,6 @@ function burst_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'burst_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -148,3 +159,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load the theme settings file
+ */
+require get_template_directory() . '/inc/settings.php';

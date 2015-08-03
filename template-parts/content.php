@@ -7,24 +7,32 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+
+	<?php if( has_post_thumbnail() ) : ?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink() ?>">
+				<div class="thumbnail-hover">
+					<span class="burst-icon-add"></span>
+				</div>
+				<?php the_post_thumbnail() ?>
+			</a>
+		</div>
+	<?php endif; ?>
+
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php burst_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<ul class="entry-meta">
+				<?php burst_posted_on(); ?>
+			</ul><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'burst' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			the_content( __('Read More', 'burst') );
 		?>
 
 		<?php
@@ -35,7 +43,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php burst_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -1,0 +1,40 @@
+#masthead {
+	background: #fafafa;
+	border-bottom: 1px solid #d4d4d4;
+	padding: 40px 0;
+	position: relative;
+	margin-bottom: 25px;
+
+	width: 100%;
+
+	.site-branding {
+		margin-right: 50px;
+		float: left;
+
+		.site-title {
+			margin: 0;
+			color: #292929;
+			font-size: 1.5em;
+			line-height: 1.2em;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+		.site-description {
+			margin: 0;
+			font-size: 0.9em;
+		}
+	}
+
+	.main-navigation {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		margin-top: -0.5em;
+	}
+
+
+}

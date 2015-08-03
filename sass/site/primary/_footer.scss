@@ -1,0 +1,45 @@
+#colophon {
+
+	margin-top: 25px;
+
+	.widgets {
+		@include clearfix();
+
+		border-top: 1px solid #d4d4d4;
+		width: 100%;
+		
+		aside {
+			background: #fafafa;
+			box-sizing: border-box;
+			float: left;
+			border-right: 1px solid #d4d4d4;
+			padding: 40px 4.25%;
+			margin: 0;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+
+		@for $i from 1 through 10 {
+			&.widgets-#{$i} aside{
+				width: 100% / $i;
+			}
+		}
+
+		.widget-title {
+			margin: 0;
+			font-size: 15px;
+			text-transform: capitalize;
+		}
+
+
+	}
+
+	.site-info {
+		border-top: 1px solid #d4d4d4;
+		text-align: center;
+		padding: 15px;
+		font-size: 0.9em;
+	}
+}
