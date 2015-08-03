@@ -7,6 +7,27 @@
  * @package burst
  */
 
+if( !function_exists('burst_display_logo') ):
+/**
+ * Display the logo or site title
+ */
+function burst_display_logo(){
+	$logo = siteorigin_setting( 'branding_logo' );
+	if( !empty($logo) ) {
+		$logo_id = attachment_url_to_postid( $logo );
+		$attrs = apply_filters( 'burst_logo_attributes', array() );
+
+		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+		echo wp_get_attachment_image( $logo_id, 'full', false, $attrs );
+		?></a><?php
+
+	}
+	else {
+		?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><?php
+	}
+}
+endif;
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.

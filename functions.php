@@ -79,6 +79,9 @@ function burst_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Support for SiteOrigin Premium components
+	add_theme_support( 'siteorigin-premium-retina-images' );
 }
 endif; // burst_setup
 add_action( 'after_setup_theme', 'burst_setup' );
