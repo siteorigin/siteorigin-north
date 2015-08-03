@@ -143,6 +143,60 @@ function burst_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'burst_scripts' );
 
+function burst_siteorigin_premium($themes){
+	$themes[] = 'burst';
+	return $themes;
+}
+add_filter('siteorigin_premium_themes', 'burst_siteorigin_premium');
+
+function burst_filter_comment_form_default_fields( $fields ){
+	$placeholders = apply_filters('burst_comment_form_placeholders', array(
+		'author' => __('Enter Your Name', 'burst'),
+		'email' => __('Enter Your Name', 'burst'),
+		'url' => __('Your Site URL', 'burst'),
+	) );
+
+	if( isset($fields['author']) ) {
+		$fields['author'] = str_replace(
+			'<input id="author" ',
+			'<input id="author" placeholder="' . esc_attr($placeholders['author']) . '" ',
+			$fields['author']
+		);
+	}
+	if( isset($fields['email']) ) {
+		$fields['email'] = str_replace(
+			'<input id="email" ',
+			'<input id="email" placeholder="' . esc_attr($placeholders['email']) . '" ',
+			$fields['email']
+		);
+	}
+	if( isset($fields['url']) ) {
+		$fields['url'] = str_replace(
+			'<input id="url" ',
+			'<input id="url" placeholder="' . esc_attr($placeholders['url']) . '" ',
+			$fields['url']
+		);
+	}
+
+	return $fields;
+}
+add_filter('comment_form_default_fields', 'burst_filter_comment_form_default_fields');
+
+function burst_filter_comment_form_defaults( $defaults ){
+	$comment_placeholder = __('Enter your message', 'burst');
+	if( !empty( $defaults['comment_field'] ) ) {
+		$defaults['comment_field'] = str_replace(
+			'<textarea id="comment" ',
+			'<textarea id="comment" placeholder="' . esc_attr($comment_placeholder) . '" ',
+			$defaults['comment_field']
+		);
+		$defaults['comment_field'] = '<div class="clear"></div>' . $defaults['comment_field'];
+	}
+
+	return $defaults;
+}
+add_filter('comment_form_defaults', 'burst_filter_comment_form_defaults');
+
 /**
  * Custom template tags for this theme.
  */
