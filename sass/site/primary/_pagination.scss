@@ -1,0 +1,29 @@
+.post-pagination {
+	text-align: center;
+	font-family: $font__blockquote;
+	margin: 0 auto;
+	width: auto;
+
+	a {
+		text-decoration: none;
+		color: #292929;
+
+		&:hover {
+			color: $color__link-hover;
+		}
+	}
+
+	.current {
+		font-weight: bold;
+	}
+
+	.page-numbers {
+		padding: 5px;
+		display: inline-block;
+		margin: 0 5px;
+	}
+
+	.prev, .next {
+		padding: 5px 5px 2px 5px;
+	}
+}

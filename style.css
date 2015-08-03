@@ -656,7 +656,7 @@ a {
     margin-top: -0.5em; }
 
 /*--------------------------------------------------------------
-## Site Masthead
+## Site Footer
 --------------------------------------------------------------*/
 #colophon {
   margin-top: 25px; }
@@ -851,6 +851,28 @@ a {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+## Post Pagination
+--------------------------------------------------------------*/
+.post-pagination {
+  text-align: center;
+  font-family: "Droid Serif", sans-serif;
+  margin: 0 auto;
+  width: auto; }
+  .post-pagination a {
+    text-decoration: none;
+    color: #292929; }
+    .post-pagination a:hover {
+      color: #c75d5d; }
+  .post-pagination .current {
+    font-weight: bold; }
+  .post-pagination .page-numbers {
+    padding: 5px;
+    display: inline-block;
+    margin: 0 5px; }
+  .post-pagination .prev, .post-pagination .next {
+    padding: 5px 5px 2px 5px; }
 
 /*--------------------------------------------------------------
 ## Asides

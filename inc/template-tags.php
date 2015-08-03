@@ -139,6 +139,24 @@ function burst_entry_footer() {
 }
 endif;
 
+if( !function_exists('burst_posts_pagination') ) :
+
+	/**
+	 * Display pagination
+	 */
+	function burst_posts_pagination(){
+		$args = array(
+			'next_text' => '<span class="burst-icon-double-next"></span>',
+			'prev_text' => '<span class="burst-icon-double-previous"></span>',
+		);
+
+		?><div class="post-pagination"><?php
+		echo paginate_links( $args );
+		?></div><?php
+	}
+
+endif;
+
 if ( ! function_exists( 'the_archive_title' ) ) :
 /**
  * Shim for `the_archive_title()`.
