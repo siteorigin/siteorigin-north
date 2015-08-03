@@ -430,14 +430,14 @@ a {
     margin: 0;
     padding-left: 0; }
     .main-navigation ul > li {
-      margin: 0 35px;
+      margin: 0 30px;
       text-transform: uppercase; }
     .main-navigation ul > li:first-child {
       margin-left: 0; }
     .main-navigation ul > li:last-child {
       margin-right: 0; }
     .main-navigation ul a {
-      color: #bebebe; }
+      color: #b8b8b8; }
       .main-navigation ul a:hover {
         color: #292929; }
     .main-navigation ul ul {
@@ -594,6 +594,11 @@ a {
 .widget_search .search-submit {
   display: none; }
 
+.textwidget > *:first-child {
+  margin-top: 0px; }
+.textwidget > *:last-child {
+  margin-bottom: 0px; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -602,16 +607,17 @@ a {
 --------------------------------------------------------------*/
 .content-area {
   float: left;
-  margin: 0 -25% 0 0;
+  margin: 0 -35% 0 0;
   width: 100%; }
 
 .site-main {
-  margin: 0 25% 0 0; }
+  margin: 0 35% 0 0; }
 
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  width: 25%; }
+  width: 35%;
+  padding-left: 40px; }
 
 .site-footer {
   clear: both;
@@ -656,10 +662,26 @@ a {
     margin-top: -0.5em; }
 
 /*--------------------------------------------------------------
+## Site Sidebar
+--------------------------------------------------------------*/
+#secondary {
+  color: #5c5c5c; }
+  #secondary aside {
+    margin-bottom: 60px; }
+    #secondary aside:last-child {
+      margin-bottom: 0; }
+  #secondary .widget-title {
+    color: #292929;
+    margin: 0 0 1em 0;
+    font-size: 1.1em;
+    text-transform: uppercase; }
+
+/*--------------------------------------------------------------
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  margin-top: 25px; }
+  margin-top: 25px;
+  color: #5c5c5c; }
   #colophon .widgets {
     content: "";
     display: table;
@@ -695,9 +717,10 @@ a {
     #colophon .widgets.widgets-10 aside {
       width: 10%; }
     #colophon .widgets .widget-title {
-      margin: 0;
-      font-size: 15px;
-      text-transform: capitalize; }
+      color: #292929;
+      margin: 0 0 1em 0;
+      font-size: 1.1em;
+      text-transform: uppercase; }
   #colophon .site-info {
     border-top: 1px solid #d4d4d4;
     text-align: center;
@@ -756,7 +779,7 @@ a {
     opacity: 0.35; }
 
 .entry-title {
-  margin: 20px 0 15px 0;
+  margin: 0 0 15px 0;
   color: #292929;
   font-size: 18px; }
   .entry-title a {

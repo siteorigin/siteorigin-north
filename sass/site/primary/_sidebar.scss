@@ -1,0 +1,19 @@
+#secondary {
+
+	color: lighten( $color__text-main, 20% );
+
+	aside {
+		margin-bottom: 60px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.widget-title {
+		color: $color__text-main;
+		margin: 0 0 1em 0;
+		font-size: 1.1em;
+		text-transform: uppercase;
+	}
+}

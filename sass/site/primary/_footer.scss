@@ -1,6 +1,7 @@
 #colophon {
 
 	margin-top: 25px;
+	color: lighten( $color__text-main, 20% );
 
 	.widgets {
 		@include clearfix();
@@ -28,9 +29,10 @@
 		}
 
 		.widget-title {
-			margin: 0;
-			font-size: 15px;
-			text-transform: capitalize;
+			color: $color__text-main;
+			margin: 0 0 1em 0;
+			font-size: 1.1em;
+			text-transform: uppercase;
 		}
 
 
