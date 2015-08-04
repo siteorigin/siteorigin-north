@@ -114,17 +114,17 @@ function northern_posted_on() {
 
 	?>
 	<li class="posted-on">
-		<span class="meta-icon northern-icon-calendar"></span>
+		<span class="meta-icon north-icon-calendar"></span>
 		<a href="<?php the_permalink() ?>">
 			<?php echo $time_string ?>
 		</a>
 	</li>
 	<li class="posted-by">
-		<span class="meta-icon northern-icon-user"></span>
+		<span class="meta-icon north-icon-user"></span>
 		<?php echo $byline ?>
 	</li>
 	<li class="post-comments">
-		<span class="meta-icon northern-icon-comments"></span>
+		<span class="meta-icon north-icon-comments"></span>
 		<a href="<?php the_permalink() ?>#comments">
 			<?php echo $comments ?>
 		</a>
@@ -167,8 +167,8 @@ if( !function_exists('northern_posts_pagination') ) :
 	 */
 	function northern_posts_pagination(){
 		$args = array(
-			'next_text' => '<span class="northern-icon-double-next"></span>',
-			'prev_text' => '<span class="northern-icon-double-previous"></span>',
+			'next_text' => '<span class="north-icon-double-next"></span>',
+			'prev_text' => '<span class="north-icon-double-previous"></span>',
 		);
 
 		if( is_search() ) {

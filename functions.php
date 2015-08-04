@@ -131,7 +131,7 @@ add_action( 'widgets_init', 'northern_widgets_init' );
  */
 function northern_scripts() {
 	wp_enqueue_style( 'northern-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'northern-icons', get_template_directory_uri() . '/css/northern-icons.css' );
+	wp_enqueue_style( 'northern-icons', get_template_directory_uri() . '/css/north-icons.css' );
 
 	wp_enqueue_script( 'northern-transit', get_template_directory_uri() . '/js/jquery.transit.js', array('jquery') );
 	wp_enqueue_script( 'northern-script', get_template_directory_uri() . '/js/northern.js', array('jquery') );

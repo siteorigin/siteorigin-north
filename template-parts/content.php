@@ -13,7 +13,7 @@
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
 				<div class="thumbnail-hover">
-					<span class="northern-icon-add"></span>
+					<span class="north-icon-add"></span>
 				</div>
 				<?php the_post_thumbnail() ?>
 			</a>
