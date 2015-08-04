@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package burst
+ * @package northern
  */
 
 ?>
@@ -26,13 +26,13 @@
 		?>
 
 		<div class="site-info">
-			<?php burst_footer_text() ?>
+			<?php northern_footer_text() ?>
 			<span class="sep"> | </span>
 			<?php
 			echo wp_kses_post(
 				apply_filters(
-					'burst_footer_credits',
-					sprintf( esc_html__( 'Theme by %s.', 'burst' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+					'northern_footer_credits',
+					sprintf( esc_html__( 'Theme by %s.', 'northern' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				)
 			);
 			?>

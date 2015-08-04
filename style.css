@@ -1,18 +1,18 @@
 /*!
-Theme Name: Burst
+Theme Name: Northern
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Description: A clean and simple blogging theme.
 Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: burst
+Text Domain: northern
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Burst is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Northern is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -617,6 +617,8 @@ a {
     .search-form .search-field:focus {
       background: #fbfbfb;
       outline: none; }
+    .search-form .search-field input:-webkit-autofill {
+      color: #2a2a2a !important; }
   .search-form .search-overlay {
     position: absolute;
     top: 0;
@@ -811,7 +813,7 @@ a {
     padding: 15px;
     opacity: 0;
     pointer-events: none; }
-    .entry-thumbnail .thumbnail-hover .burst-icon-add {
+    .entry-thumbnail .thumbnail-hover .northern-icon-add {
       font-size: 30px;
       color: #fff; }
   .entry-thumbnail:hover .thumbnail-hover {

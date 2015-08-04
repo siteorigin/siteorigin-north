@@ -1,14 +1,14 @@
 <?php
 /**
- * burst functions and definitions
+ * northern functions and definitions
  *
- * @package burst
+ * @package northern
  */
 
 // The settings manager
 include get_template_directory() . '/settings/settings.php';
 
-if ( ! function_exists( 'burst_setup' ) ) :
+if ( ! function_exists( 'northern_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -16,14 +16,14 @@ if ( ! function_exists( 'burst_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function burst_setup() {
+function northern_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on burst, use a find and replace
-	 * to change 'burst' to the name of your theme in all the template files
+	 * If you're building a theme based on northern, use a find and replace
+	 * to change 'northern' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'burst', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'northern', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -47,7 +47,7 @@ function burst_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'burst' ),
+		'primary' => esc_html__( 'Primary Menu', 'northern' ),
 	) );
 
 	/*
@@ -75,7 +75,7 @@ function burst_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'burst_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'northern_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -83,8 +83,8 @@ function burst_setup() {
 	// Support for SiteOrigin Premium components
 	add_theme_support( 'siteorigin-premium-retina-images' );
 }
-endif; // burst_setup
-add_action( 'after_setup_theme', 'burst_setup' );
+endif; // northern_setup
+add_action( 'after_setup_theme', 'northern_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -93,19 +93,19 @@ add_action( 'after_setup_theme', 'burst_setup' );
  *
  * @global int $content_width
  */
-function burst_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'burst_content_width', 650 );
+function northern_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'northern_content_width', 650 );
 }
-add_action( 'after_setup_theme', 'burst_content_width', 0 );
+add_action( 'after_setup_theme', 'northern_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function burst_widgets_init() {
+function northern_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Main Sidebar', 'burst' ),
+		'name'          => esc_html__( 'Main Sidebar', 'northern' ),
 		'id'            => 'main-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -115,7 +115,7 @@ function burst_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widgets', 'burst' ),
+		'name'          => esc_html__( 'Footer Widgets', 'northern' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -124,20 +124,20 @@ function burst_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'burst_widgets_init' );
+add_action( 'widgets_init', 'northern_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function burst_scripts() {
-	wp_enqueue_style( 'burst-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'burst-icons', get_template_directory_uri() . '/css/burst-icons.css' );
+function northern_scripts() {
+	wp_enqueue_style( 'northern-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'northern-icons', get_template_directory_uri() . '/css/northern-icons.css' );
 
-	wp_enqueue_script( 'burst-transit', get_template_directory_uri() . '/js/jquery.transit.js', array('jquery') );
-	wp_enqueue_script( 'burst-script', get_template_directory_uri() . '/js/burst.js', array('jquery') );
+	wp_enqueue_script( 'northern-transit', get_template_directory_uri() . '/js/jquery.transit.js', array('jquery') );
+	wp_enqueue_script( 'northern-script', get_template_directory_uri() . '/js/northern.js', array('jquery') );
 
-	wp_enqueue_script( 'burst-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'burst-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'northern-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'northern-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if( siteorigin_setting('responsive_fitvids') ) {
 		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery') );
@@ -147,19 +147,19 @@ function burst_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'burst_scripts' );
+add_action( 'wp_enqueue_scripts', 'northern_scripts' );
 
-function burst_siteorigin_premium($themes){
-	$themes[] = 'burst';
+function northern_siteorigin_premium($themes){
+	$themes[] = 'northern';
 	return $themes;
 }
-add_filter('siteorigin_premium_themes', 'burst_siteorigin_premium');
+add_filter('siteorigin_premium_themes', 'northern_siteorigin_premium');
 
-function burst_filter_comment_form_default_fields( $fields ){
-	$placeholders = apply_filters('burst_comment_form_placeholders', array(
-		'author' => __('Enter Your Name', 'burst'),
-		'email' => __('Enter Your Name', 'burst'),
-		'url' => __('Your Site URL', 'burst'),
+function northern_filter_comment_form_default_fields( $fields ){
+	$placeholders = apply_filters('northern_comment_form_placeholders', array(
+		'author' => __('Enter Your Name', 'northern'),
+		'email' => __('Enter Your Name', 'northern'),
+		'url' => __('Your Site URL', 'northern'),
 	) );
 
 	if( isset($fields['author']) ) {
@@ -186,10 +186,10 @@ function burst_filter_comment_form_default_fields( $fields ){
 
 	return $fields;
 }
-add_filter('comment_form_default_fields', 'burst_filter_comment_form_default_fields');
+add_filter('comment_form_default_fields', 'northern_filter_comment_form_default_fields');
 
-function burst_filter_comment_form_defaults( $defaults ){
-	$comment_placeholder = __('Enter your message', 'burst');
+function northern_filter_comment_form_defaults( $defaults ){
+	$comment_placeholder = __('Enter your message', 'northern');
 	if( !empty( $defaults['comment_field'] ) ) {
 		$defaults['comment_field'] = str_replace(
 			'<textarea id="comment" ',
@@ -201,7 +201,7 @@ function burst_filter_comment_form_defaults( $defaults ){
 
 	return $defaults;
 }
-add_filter('comment_form_defaults', 'burst_filter_comment_form_defaults');
+add_filter('comment_form_defaults', 'northern_filter_comment_form_defaults');
 
 /**
  * Custom template tags for this theme.

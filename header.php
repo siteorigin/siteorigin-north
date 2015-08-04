@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package burst
+ * @package northern
  */
 
 ?><!DOCTYPE html>
@@ -20,19 +20,19 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'burst' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'northern' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="site-branding">
-				<?php burst_display_logo() ?>
+				<?php northern_display_logo() ?>
 				<?php if( siteorigin_setting('branding_site_description') ) : ?>
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 				<?php endif ?>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'burst' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'northern' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 

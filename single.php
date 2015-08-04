@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package burst
+ * @package northern
  */
 
 get_header(); ?>

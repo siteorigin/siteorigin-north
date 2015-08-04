@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package burst
+ * @package northern
  */
 
 get_header(); ?>
@@ -36,7 +36,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php burst_posts_pagination(); ?>
+			<?php northern_posts_pagination(); ?>
 
 		<?php else : ?>
 

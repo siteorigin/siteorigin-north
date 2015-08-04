@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package burst
+ * @package northern
  */
 
 if ( ! is_active_sidebar( 'main-sidebar' ) ) {
