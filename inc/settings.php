@@ -15,18 +15,16 @@ function burst_settings_init(){
 		'description' => __('High resolution version of the logo.', 'burst')
 	) );
 
-//	siteorigin_settings_add_section( 'fonts', __('Fonts', 'burst') );
-//
-//	siteorigin_settings_add_field('fonts', 'heading', 'font', __('Masthead Font', 'burst'), array(
-//		'live' => true,
-//		'description' => __('The primary font of your site.', 'burst')
-//	) );
-//
-//	siteorigin_settings_add_field('fonts', 'body', 'font', __('Body Font', 'burst'), array(
-//		'live' => true,
-//		'description' => __('The primary font of your site.', 'burst')
-//	) );
+	siteorigin_settings_add_field( 'branding', 'site_description', 'checkbox', __('Site Description', 'burst'), array(
+		'description' => __('Show your site description below your site title or logo.', 'burst')
+	) );
 
+	siteorigin_settings_add_section( 'footer', __('Footer', 'burst') );
+
+	siteorigin_settings_add_field( 'footer', 'text', 'text', __('Footer Text', 'burst'), [
+		'description' => __("{sitename} and {year} are your site's name and current year", 'burst'),
+		'sanitize_callback' => 'wp_kses_post',
+	] );
 }
 add_action('siteorigin_settings_init', 'burst_settings_init');
 
@@ -39,12 +37,10 @@ add_action('siteorigin_settings_init', 'burst_settings_init');
  */
 function burst_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
-	$defaults['branding_description'] = true;
+	$defaults['branding_logo_retina'] = false;
+	$defaults['branding_site_description'] = true;
 
-	$defaults['branding_primary_color'] = '#99ffff';
-	$defaults['branding_secondary_color'] = '#99ffff';
-
-	$defaults['navigation_sticky_menu'] = true;
+	$defaults['footer_text'] = __('Copyright © {year} {sitename}');
 
 	return $defaults;
 }

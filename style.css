@@ -2,8 +2,8 @@
 Theme Name: Burst
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
-Description: Description
-Version: 1.0.0
+Description: A clean and simple blogging theme.
+Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: burst
@@ -420,7 +420,8 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  position: relative; }
+  position: relative;
+  font-size: 0.95em; }
   .main-navigation > div {
     content: "";
     display: table; }
@@ -441,7 +442,7 @@ a {
       .main-navigation ul a:hover {
         color: #292929; }
     .main-navigation ul ul {
-      float: left;
+      float: right;
       position: absolute;
       top: 1.5em;
       left: -999em;
@@ -599,6 +600,40 @@ a {
 .textwidget > *:last-child {
   margin-bottom: 0px; }
 
+.search-form {
+  position: relative; }
+  .search-form .search-field {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    padding: 8px 15px;
+    font-family: "Droid Serif", sans-serif;
+    font-size: 0.9em;
+    border-width: 0 0 1px 0;
+    border-color: #f0f0f0; }
+    .search-form .search-field:focus {
+      background: #fbfbfb;
+      outline: none; }
+  .search-form .search-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none; }
+    .search-form .search-overlay .circle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #000;
+      opacity: 0.1;
+      border-radius: 10px; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -628,8 +663,12 @@ a {
 --------------------------------------------------------------*/
 .container {
   margin: 0 auto;
-  max-width: 960px;
-  position: relative; }
+  max-width: 1040px;
+  position: relative;
+  padding: 0 20px; }
+
+.page-title {
+  margin-top: 0; }
 
 /*--------------------------------------------------------------
 ## Site Masthead
@@ -637,9 +676,9 @@ a {
 #masthead {
   background: #fafafa;
   border-bottom: 1px solid #d4d4d4;
-  padding: 40px 0;
+  padding: 30px 0;
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   width: 100%; }
   #masthead .site-branding {
     margin-right: 50px;
@@ -673,7 +712,7 @@ a {
   #secondary .widget-title {
     color: #292929;
     margin: 0 0 1em 0;
-    font-size: 1.1em;
+    font-size: 1em;
     text-transform: uppercase; }
 
 /*--------------------------------------------------------------
@@ -719,7 +758,7 @@ a {
     #colophon .widgets .widget-title {
       color: #292929;
       margin: 0 0 1em 0;
-      font-size: 1.1em;
+      font-size: 15px;
       text-transform: uppercase; }
   #colophon .site-info {
     border-top: 1px solid #d4d4d4;

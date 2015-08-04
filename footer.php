@@ -26,9 +26,16 @@
 		?>
 
 		<div class="site-info">
-			This is some temp text
+			<?php burst_footer_text() ?>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'burst' ), 'Burst', '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' ); ?>
+			<?php
+			echo wp_kses_post(
+				apply_filters(
+					'burst_footer_credits',
+					sprintf( esc_html__( 'Theme by %s.', 'burst' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+				)
+			);
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

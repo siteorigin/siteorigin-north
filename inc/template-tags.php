@@ -171,6 +171,18 @@ if( !function_exists('burst_posts_pagination') ) :
 			'prev_text' => '<span class="burst-icon-double-previous"></span>',
 		);
 
+		if( is_search() ) {
+			// Add the arguments neccessary for search
+			global $wp_query;
+			$big = 999999999; // need an unlikely integer
+			$args = wp_parse_args( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages
+			), $args);
+		}
+
 		?><div class="post-pagination"><?php
 		echo paginate_links( $args );
 		?></div><?php
@@ -332,6 +344,18 @@ function burst_comment( $comment, $args, $depth ){
 
 		<div class="clear"></div>
 	<?php
+}
+endif;
+
+if( !function_exists('burst_footer_text') ) :
+function burst_footer_text(){
+	$text = siteorigin_setting('footer_text');
+	$text = str_replace(
+		array( '{sitename}', '{year}'),
+		array( get_bloginfo('sitename'), date('Y') ),
+		$text
+	);
+	echo wp_kses_post( $text );
 }
 endif;
 

@@ -1,19 +1,11 @@
 .main-navigation {
 	position: relative;
 
-	//top: 50%;
-	//left: 0px;
-	//
-	//-webkit-transform: translateY(-50%);
-	//-ms-transform: translateY(-50%);
-	//transform: translateY(-50%);
-	//-webkit-transform-style: preserve-3d;
-	//-moz-transform-style: preserve-3d;
-	//transform-style: preserve-3d;
-
 	> div {
 		@include clearfix();
 	}
+
+	font-size: 0.95em;
 
 	ul {
 		display: none;
@@ -43,7 +35,7 @@
 		}
 
 		ul {
-			float: left;
+			float: right;
 			position: absolute;
 			top: 1.5em;
 			left: -999em;

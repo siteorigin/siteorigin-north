@@ -26,7 +26,9 @@
 		<div class="container">
 			<div class="site-branding">
 				<?php burst_display_logo() ?>
-				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+				<?php if( siteorigin_setting('branding_site_description') ) : ?>
+					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+				<?php endif ?>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

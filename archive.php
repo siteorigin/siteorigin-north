@@ -36,7 +36,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php burst_posts_pagination(); ?>
 
 		<?php else : ?>
 
