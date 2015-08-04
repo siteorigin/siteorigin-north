@@ -1,5 +1,19 @@
 <?php
 
+function siteorigin_settings_localize( $loc ){
+	return array(
+		'section_title' => __('Theme Settings', 'burst'),
+		'section_description' => __('Change settings for your theme.', 'burst'),
+		'premium_only' => __('Premium Only', 'burst'),
+		'premium_url' => '#',
+
+		// For the controls
+		'variant' => __('Variant', 'burst'),
+		'subset' => __('Subset', 'burst'),
+	);
+}
+add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
+
 /**
  * Initialize the settings
  */
