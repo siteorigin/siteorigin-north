@@ -4,6 +4,10 @@ jQuery( function($){
         function(){ $(this).closest('li').removeClass('hovering'); }
     );
 
+    if( typeof $.fn.fitVids !== 'undefined' ) {
+        $('.entry-content').fitVids();
+    }
+
     // Setup the search form animation
     $('.search-field')
         .focus( function(e){

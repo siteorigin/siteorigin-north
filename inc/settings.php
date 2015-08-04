@@ -21,10 +21,15 @@ function burst_settings_init(){
 
 	siteorigin_settings_add_section( 'footer', __('Footer', 'burst') );
 
-	siteorigin_settings_add_field( 'footer', 'text', 'text', __('Footer Text', 'burst'), [
+	siteorigin_settings_add_field( 'footer', 'text', 'text', __('Footer Text', 'burst'), array(
 		'description' => __("{sitename} and {year} are your site's name and current year", 'burst'),
 		'sanitize_callback' => 'wp_kses_post',
-	] );
+	) );
+
+	siteorigin_settings_add_section( 'responsive', __('Responsive', 'burst') );
+
+	siteorigin_settings_add_field( 'responsive', 'fitvids', 'checkbox', __('Use Fitvids', 'burst') );
+
 }
 add_action('siteorigin_settings_init', 'burst_settings_init');
 
@@ -41,6 +46,8 @@ function burst_settings_defaults( $defaults ){
 	$defaults['branding_site_description'] = true;
 
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}');
+
+	$defaults['responsive_fitvids'] = true;
 
 	return $defaults;
 }
