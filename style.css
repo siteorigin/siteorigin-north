@@ -421,6 +421,7 @@ a {
 --------------------------------------------------------------*/
 .main-navigation {
   position: relative;
+  z-index: 1;
   font-size: 0.95em; }
   .main-navigation > div {
     content: "";
@@ -432,26 +433,28 @@ a {
     padding-left: 0; }
     .main-navigation ul > li {
       margin: 0 30px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      padding-bottom: 0.5em; }
     .main-navigation ul > li:first-child {
       margin-left: 0; }
     .main-navigation ul > li:last-child {
       margin-right: 0; }
     .main-navigation ul a {
-      color: #b8b8b8; }
+      color: #999; }
       .main-navigation ul a:hover {
         color: #292929; }
     .main-navigation ul ul {
-      float: right;
       position: absolute;
-      top: 1.5em;
-      left: -999em;
+      top: 2em;
+      left: 0;
       z-index: 99999;
+      display: none;
       background-color: #fff;
       border: 1px solid #d4d4d4; }
       .main-navigation ul ul ul {
-        left: -999em;
-        top: -1px; }
+        left: 100%;
+        top: -1px;
+        margin-left: 0 !important; }
       .main-navigation ul ul li {
         margin: 0;
         padding: 5px 25px;
@@ -472,7 +475,7 @@ a {
         color: #292929; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto; }
+      display: block; }
   .main-navigation li {
     float: left;
     position: relative; }
@@ -619,22 +622,6 @@ a {
       outline: none; }
     .search-form .search-field input:-webkit-autofill {
       color: #2a2a2a !important; }
-  .search-form .search-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    z-index: 2;
-    pointer-events: none; }
-    .search-form .search-overlay .circle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: #000;
-      opacity: 0.1;
-      border-radius: 10px; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1130,3 +1117,23 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+.burst-animation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none; }
+  .burst-animation-overlay .burst-circle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #000;
+    opacity: 0.1;
+    border-radius: 10px; }

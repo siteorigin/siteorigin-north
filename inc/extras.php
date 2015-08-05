@@ -19,6 +19,9 @@ function northern_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	$classes[] = 'no-js';
+	$classes[] = 'css3-animations';
+
 	return $classes;
 }
 add_filter( 'body_class', 'northern_body_classes' );

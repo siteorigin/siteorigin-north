@@ -1,0 +1,19 @@
+.burst-animation-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	z-index: 2;
+	pointer-events: none;
+
+	.burst-circle {
+		position: absolute;
+		width: 2px;
+		height: 2px;
+		background: #000;
+		opacity: 0.1;
+		border-radius: 10px;
+	}
+}
