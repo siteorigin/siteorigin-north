@@ -79,54 +79,59 @@ jQuery( function($){
         };
         resetMenu();
 
-        // Handle the first level hovering
-        $('.main-navigation ul li')
-            .hover(
-                function(){
-                    var $$ = $(this),
-                        $u = $$.find('ul').eq(0),
-                        left = 0,
-                        isSub = $$.parents('ul').is('.sub-menu, .children');
+        // Handle menu hovers
+        $('.main-navigation ul li').hover(
+            function(){
+                var $$ = $(this),
+                    $u = $$.find('ul').eq(0),
+                    left = 0,
+                    isSub = $$.parents('ul').is('.sub-menu, .children');
 
-                    if( $$.parents('ul').is('.sub-menu, .children') ) {
-                        left = $u.width();
-                    }
-                    else {
-                        left = -($u.width() - $$.width())/2;
-                    }
-
-                    $u
-                        .css('display', 'block')
-                        .clearQueue()
-                        .css({
-                            left: left,
-                            opacity: 0,
-                            x: isSub ? -5 : 0,
-                            y: isSub ? 0 : -5,
-                            scale: 0.96
-                        })
-                        .transition({
-                            opacity: 1,
-                            x: 0,
-                            y: 0,
-                            scale: 1
-                        }, 190 );
-                },
-                function(){
-                    var $$ = $(this),
-                        $u = $$.find('ul').eq(0),
-                        isSub = $$.parents('ul').is('.sub-menu, .children');
-
-                    $u
-                        .css('display', 'block')
-                        .clearQueue()
-                        .transition({
-                            opacity: 0,
-                            x: isSub ? -5 : 0,
-                            y: isSub ? 0 : -5,
-                            scale: 0.94
-                        }, 130, function(){ $(this).hide(); });
+                if( $$.parents('ul').is('.sub-menu, .children') ) {
+                    left = $u.width();
                 }
-            );
+                else {
+                    left = -($u.width() - $$.width())/2;
+                }
+
+                $u
+                    .css('display', 'block')
+                    .clearQueue()
+                    .css({
+                        left: left,
+                        opacity: 0,
+                        x: isSub ? -3 : 0,
+                        y: isSub ? 0 : -3,
+                        scale: 0.975
+                    })
+                    .transition({
+                        opacity: 1,
+                        x: 0,
+                        y: 0,
+                        scale: 1
+                    }, 220 );
+            },
+            function(){
+                var $$ = $(this),
+                    $u = $$.find('ul').eq(0),
+                    isSub = $$.parents('ul').is('.sub-menu, .children');
+
+                $u
+                    .css('display', 'block')
+                    .clearQueue()
+                    .transition({
+                        opacity: 0,
+                        x: isSub ? -4 : 0,
+                        y: isSub ? 0 : -4,
+                        scale: 0.95
+                    }, 160, function(){ $(this).hide(); });
+            }
+        );
+
+        // Burst animatin when the user clicks on a sub link
+        $('.main-navigation ul ul li a').burstAnimation({
+            event: "click",
+            container: "parent"
+        });
     }
 } );
