@@ -21,11 +21,10 @@
         return $(this).each( function(){
             var $$ = $(this),
                 $p = settings.container === 'parent' ? $$.parent() : $$.closest( settings.container),
-                $o = $('<div class="burst-animation-overlay"></div>').appendTo($p),
+                $o = $('<div class="burst-animation-overlay"></div>'),
                 $c = $('<div class="burst-circle"></div>').appendTo($o);
 
             $$.on( settings.event, function(){
-
                 $o.appendTo($p);
                 $c
                     .css( {
@@ -133,5 +132,7 @@ jQuery( function($){
             event: "click",
             container: "parent"
         });
+
+
     }
 } );

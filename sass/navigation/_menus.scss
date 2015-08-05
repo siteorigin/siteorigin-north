@@ -1,6 +1,6 @@
 .main-navigation {
 	position: relative;
-	z-index: 1;
+	z-index: 99999;
 
 	> div {
 		@include clearfix();
@@ -16,17 +16,13 @@
 
 		// First level menu, always visible
 		> li {
-			margin: 0 30px;
 			text-transform: uppercase;
 			padding-bottom: 0.5em;
-		}
-
-		> li:first-child {
-			margin-left: 0;
-		}
-
-		> li:last-child {
-			margin-right: 0;
+			
+			a {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
 		}
 
 		a {
@@ -46,6 +42,7 @@
 
 			background-color: #fff;
 			border: 1px solid #d4d4d4;
+			box-shadow: 0 1px 1px rgba(0,0,0,0.075);
 
 			ul {
 				left: 100%;
@@ -55,7 +52,6 @@
 
 			li {
 				margin: 0;
-				padding: 5px 25px;
 				text-transform: none;
 
 				&:hover > ul,
@@ -73,7 +69,9 @@
 			}
 
 			a {
+				box-sizing: border-box;
 				white-space: nowrap;
+				padding: 5px 25px;
 			}
 
 			:hover > a,

@@ -35,7 +35,9 @@
 	}
 	
 	.thumbnail-hover {
-		@include transition(all 0.3s);
+		&, .north-icon-add {
+			@include transition(all 0.15s);
+		}
 
 		z-index: 5;
 		width: 60px;
@@ -48,18 +50,35 @@
 		border-radius: 30px;
 		background: #000000;
 		padding: 15px;
-
-		opacity: 0;
+		
 		pointer-events: none;
+
+		opacity: 0.4;
+
+		-ms-transform: scale(0, 0);
+		-webkit-transform: scale(0, 0);
+		transform: scale(0, 0);
 
 		.north-icon-add {
 			font-size: 30px;
 			color: #fff;
+
+			-ms-transform: scale(2,2);
+			-webkit-transform: scale(2,2);
+			transform: scale(2,2);
 		}
 	}
 
 	&:hover .thumbnail-hover {
-		opacity: 0.35;
+		-ms-transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+
+		.north-icon-add {
+			-ms-transform: scale(1,1);
+			-webkit-transform: scale(1,1);
+			transform: scale(1,1);
+		}
 	}
 }
 

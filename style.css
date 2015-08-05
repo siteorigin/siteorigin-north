@@ -421,7 +421,7 @@ a {
 --------------------------------------------------------------*/
 .main-navigation {
   position: relative;
-  z-index: 1;
+  z-index: 99999;
   font-size: 0.95em; }
   .main-navigation > div {
     content: "";
@@ -432,13 +432,11 @@ a {
     margin: 0;
     padding-left: 0; }
     .main-navigation ul > li {
-      margin: 0 30px;
       text-transform: uppercase;
       padding-bottom: 0.5em; }
-    .main-navigation ul > li:first-child {
-      margin-left: 0; }
-    .main-navigation ul > li:last-child {
-      margin-right: 0; }
+      .main-navigation ul > li a {
+        padding-left: 30px;
+        padding-right: 30px; }
     .main-navigation ul a {
       color: #999; }
       .main-navigation ul a:hover {
@@ -450,14 +448,14 @@ a {
       z-index: 99999;
       display: none;
       background-color: #fff;
-      border: 1px solid #d4d4d4; }
+      border: 1px solid #d4d4d4;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
       .main-navigation ul ul ul {
         left: 100%;
         top: -1px;
         margin-left: 0 !important; }
       .main-navigation ul ul li {
         margin: 0;
-        padding: 5px 25px;
         text-transform: none; }
         .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
           left: 100%; }
@@ -466,7 +464,9 @@ a {
       .main-navigation ul ul li:last-child {
         padding-bottom: 10px; }
       .main-navigation ul ul a {
-        white-space: nowrap; }
+        box-sizing: border-box;
+        white-space: nowrap;
+        padding: 5px 25px; }
       .main-navigation ul ul :hover > a,
       .main-navigation ul ul .focus > a {
         color: #292929; }
@@ -784,9 +784,6 @@ a {
     width: 100%;
     height: auto; }
   .entry-thumbnail .thumbnail-hover {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
     z-index: 5;
     width: 60px;
     height: 60px;
@@ -798,13 +795,29 @@ a {
     border-radius: 30px;
     background: #000000;
     padding: 15px;
-    opacity: 0;
-    pointer-events: none; }
+    pointer-events: none;
+    opacity: 0.4;
+    -ms-transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0); }
+    .entry-thumbnail .thumbnail-hover, .entry-thumbnail .thumbnail-hover .north-icon-add {
+      -webkit-transition: all 0.15s;
+      -moz-transition: all 0.15s;
+      transition: all 0.15s; }
     .entry-thumbnail .thumbnail-hover .north-icon-add {
       font-size: 30px;
-      color: #fff; }
+      color: #fff;
+      -ms-transform: scale(2, 2);
+      -webkit-transform: scale(2, 2);
+      transform: scale(2, 2); }
   .entry-thumbnail:hover .thumbnail-hover {
-    opacity: 0.35; }
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+    .entry-thumbnail:hover .thumbnail-hover .north-icon-add {
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1); }
 
 .entry-title {
   margin: 0 0 15px 0;
@@ -990,7 +1003,7 @@ a {
     display: block;
     float: left;
     width: 33.333%;
-    margin: 0 0 25px 0; }
+    margin: 0 0 20px 0; }
     #commentform .comment-form-author label, #commentform .comment-form-email label, #commentform .comment-form-url label {
       display: none; }
     #commentform .comment-form-author input, #commentform .comment-form-email input, #commentform .comment-form-url input {
@@ -1013,6 +1026,7 @@ a {
       border-radius: 0px;
       display: block; }
   #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .logged-in-as {
+    color: #999;
     margin: 10px 0; }
     #commentform .form-allowed-tags, #commentform .form-allowed-tags code, #commentform .comment-notes, #commentform .comment-notes code, #commentform .logged-in-as, #commentform .logged-in-as code {
       font-size: 0.75em; }
@@ -1032,14 +1046,19 @@ a {
       color: #292929;
       font-family: "Montserrat", sans-serif;
       text-transform: uppercase;
-      text-shadow: none; }
-      #commentform .form-submit input:visited {
-        color: #292929; }
+      text-shadow: none;
+      -webkit-transition: 0.085s;
+      -moz-transition: 0.085s;
+      transition: 0.085s; }
       #commentform .form-submit input:hover {
         background: #c75d5d;
         border-color: #c75d5d;
         color: #ffffff;
-        box-shadow: none; }
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.075);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
+  #commentform input:focus, #commentform textarea:focus {
+    background-color: #fafafa;
+    outline: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
