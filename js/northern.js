@@ -1,6 +1,17 @@
 
+/* globals jQuery */
+
 // The burst animation plugin
 (function($){
+
+    var mousePos = { x: 0, y: 0};
+    $(document).mousemove( function( e ){
+        mousePos = {
+            x: e.pageX,
+            y: e.pageY
+        };
+    } );
+
     $.fn.burstAnimation = function(options){
         var settings = $.extend({
             event: "click",
@@ -14,11 +25,12 @@
                 $c = $('<div class="burst-circle"></div>').appendTo($o);
 
             $$.on( settings.event, function(){
+
                 $o.appendTo($p);
                 $c
                     .css( {
-                        top: 17,
-                        left: 15,
+                        top: mousePos.y - $p.offset().top,
+                        left: mousePos.x - $p.offset().left,
                         opacity: 0.1,
                         scale: 1
                     } )
