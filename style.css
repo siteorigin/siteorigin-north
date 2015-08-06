@@ -411,8 +411,6 @@ a {
     color: #c75d5d; }
   a:hover, a:focus, a:active {
     color: #c75d5d; }
-  a:focus {
-    outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
 

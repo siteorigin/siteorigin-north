@@ -1,0 +1,125 @@
+/*--------------------------------------------------------------
+# WooCommerce Element Styles
+--------------------------------------------------------------*/
+.woocommerce button.button.alt,
+.woocommerce #review_form #respond .form-submit input,
+.woocommerce .woocommerce-message .button,
+.woocommerce .products .button {
+  font-weight: normal;
+  background: transparent;
+  border-radius: 0px;
+  font-size: 0.85em;
+  border: 1px solid #303030;
+  padding: 10px 30px;
+  line-height: 1em;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: #292929;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-shadow: none;
+  -webkit-transition: 0.085s;
+  -moz-transition: 0.085s;
+  transition: 0.085s; }
+  .woocommerce button.button.alt:hover,
+  .woocommerce #review_form #respond .form-submit input:hover,
+  .woocommerce .woocommerce-message .button:hover,
+  .woocommerce .products .button:hover {
+    background: #c75d5d;
+    border-color: #c75d5d;
+    color: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.075);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
+  .woocommerce button.button.alt .north-icon-cart,
+  .woocommerce #review_form #respond .form-submit input .north-icon-cart,
+  .woocommerce .woocommerce-message .button .north-icon-cart,
+  .woocommerce .products .button .north-icon-cart {
+    float: left;
+    margin: -0.1em 0.5em 0 0;
+    font-size: 1.2em; }
+.woocommerce .woocommerce-message {
+  border-top-color: #c75d5d;
+  background: #fbfbfb;
+  padding: 0; }
+  .woocommerce .woocommerce-message .button {
+    float: right;
+    font-size: 0.7em;
+    padding: 10px 20px;
+    margin: -5px 0; }
+
+/*--------------------------------------------------------------
+# WooCommerce Product
+--------------------------------------------------------------*/
+.woocommerce.single #content div.product .entry-thumbnail {
+  float: left;
+  width: 35%; }
+.woocommerce.single #content div.product .entry-content-wrapper {
+  margin-left: 35%;
+  padding-left: 25px; }
+.woocommerce.single #content div.product .cart .quantity {
+  display: inline-block;
+  float: left;
+  margin: -1px 6px 0 0; }
+  .woocommerce.single #content div.product .cart .quantity input {
+    padding: 5px 6px; }
+.woocommerce.single #content div.product p.price {
+  margin: 0;
+  float: right;
+  color: #c75d5d;
+  font-family: "Droid Serif", sans-serif;
+  font-size: 1.2em; }
+.woocommerce.single #content div.product div.entry-summary {
+  margin-top: 0;
+  width: 54%; }
+.woocommerce.single #content div.product div.images {
+  width: 42%; }
+.woocommerce.single #content div.product .woocommerce-product-rating .woocommerce-review-link {
+  color: #565656;
+  text-decoration: none;
+  font-size: 0.9em; }
+  .woocommerce.single #content div.product .woocommerce-product-rating .woocommerce-review-link:hover {
+    text-decoration: underline; }
+.woocommerce.single #content div.product .woocommerce-tabs .tabs {
+  padding-left: 0;
+  margin-left: 0;
+  border-bottom: none !important; }
+  .woocommerce.single #content div.product .woocommerce-tabs .tabs li {
+    border: 1px solid #d3d3d3;
+    background: transparent;
+    border-radius: 0;
+    font-size: 0.9em;
+    margin: 0 10px 0 0; }
+    .woocommerce.single #content div.product .woocommerce-tabs .tabs li a {
+      color: #292929;
+      font-weight: normal; }
+    .woocommerce.single #content div.product .woocommerce-tabs .tabs li.active {
+      background: #c75d5d;
+      border-color: #c75d5d; }
+      .woocommerce.single #content div.product .woocommerce-tabs .tabs li.active a {
+        color: #fff;
+        font-weight: normal; }
+    .woocommerce.single #content div.product .woocommerce-tabs .tabs li:before, .woocommerce.single #content div.product .woocommerce-tabs .tabs li:after {
+      display: none !important; }
+  .woocommerce.single #content div.product .woocommerce-tabs .tabs:before, .woocommerce.single #content div.product .woocommerce-tabs .tabs:after {
+    display: none !important; }
+.woocommerce.single #content div.product .woocommerce-tabs .panel > *:first-child {
+  margin-top: 0; }
+.woocommerce.single #content div.product #comments h2 {
+  margin-top: 0;
+  color: #292929;
+  font-size: 1.3em; }
+
+/*--------------------------------------------------------------
+# WooCommerce Reviews
+--------------------------------------------------------------*/
+.woocommerce #reviews #comments ol.commentlist {
+  padding-left: 0; }
+  .woocommerce #reviews #comments ol.commentlist li img.avatar {
+    border: 0;
+    padding: 0;
+    width: 60px;
+    height: 60px; }
+  .woocommerce #reviews #comments ol.commentlist li .comment-text {
+    margin-left: 85px;
+    border: none;
+    padding: 0; }

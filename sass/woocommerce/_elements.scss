@@ -1,0 +1,55 @@
+
+// These elements should only apply to WooCommerce pages
+
+.woocommerce {
+
+	button.button.alt,
+	#review_form #respond .form-submit input,
+	.woocommerce-message .button,
+	.products .button{
+		font-weight: normal;
+		background: transparent;
+		border-radius: 0px;
+		font-size: 0.85em;
+		border: 1px solid #303030;
+		padding: 10px 30px;
+		line-height: 1em;
+		box-shadow: inset 0 0 1px rgba(0,0,0,0.25);
+		text-decoration: none;
+		color: #292929;
+		font-family: $font__headings;
+		text-transform: uppercase;
+		text-shadow: none;
+
+		@include transition(0.085s);
+
+		&:hover{
+			background: $color__link-hover;
+			border-color: $color__link-hover;
+			color: #ffffff;
+
+			box-shadow: 0 0 2px rgba(0,0,0,0.075);
+			box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+		}
+
+		.north-icon-cart {
+			float: left;
+			margin: -0.1em 0.5em 0 0;
+			font-size: 1.2em;
+		}
+	}
+
+	.woocommerce-message {
+		border-top-color: $color__link;
+		background: #fbfbfb;
+		padding: 0;
+
+		.button {
+			float: right;
+			font-size: 0.7em;
+			padding: 10px 20px;
+			margin: -5px 0;
+		}
+	}
+
+}

@@ -1,0 +1,25 @@
+.woocommerce #reviews #comments {
+
+	ol.commentlist {
+		padding-left: 0;
+
+		li {
+
+			img.avatar {
+				border: 0;
+				padding: 0;
+				width: 60px;
+				height: 60px;
+			}
+
+			.comment-text {
+				margin-left: 85px;
+				border: none;
+				padding: 0;
+
+			}
+
+		}
+	}
+
+}

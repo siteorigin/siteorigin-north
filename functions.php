@@ -5,6 +5,8 @@
  * @package northern
  */
 
+define('SITEORIGIN_THEME_VERSION', 'dev');
+
 // The settings manager
 include get_template_directory() . '/settings/settings.php';
 
@@ -80,6 +82,9 @@ function northern_setup() {
 		'default-image' => '',
 	) ) );
 
+	// This theme supports WooCommerce
+	add_theme_support( 'woocommerce' );
+
 	// Support for SiteOrigin Premium components
 	add_theme_support( 'siteorigin-premium-retina-images' );
 }
@@ -145,6 +150,10 @@ function northern_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if( function_exists('is_woocommerce') ) {
+		wp_enqueue_style( 'northern-woocommerce', get_template_directory_uri() . '/woocommerce.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'northern_scripts' );
@@ -227,3 +236,9 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme settings file
  */
 require get_template_directory() . '/inc/settings.php';
+
+/**
+ * Load support for WooCommerce
+ */
+
+include get_template_directory() . '/woocommerce/functions.php';
