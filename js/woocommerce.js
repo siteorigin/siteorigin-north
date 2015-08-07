@@ -4,7 +4,7 @@ jQuery( function($){
         var $$ = $(this);
 
         var c = $('<div></div>')
-            .html( $$.find(':selected').html() + '<span class="north-icon-next"></span>' )
+            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-next"></span>' )
             .addClass('ordering-selector-wrapper')
             .insertAfter( $$ );
 
@@ -12,6 +12,7 @@ jQuery( function($){
             .addClass('ordering-dropdown')
             .appendTo(c);
 
+        var widest = 0;
         $$.find( 'option' ).each( function(){
             var $o = $(this);
             dropdown.append(
@@ -23,9 +24,16 @@ jQuery( function($){
                         $$.closest('form').submit();
                     } )
             );
+
+            widest = Math.max( c.find('.current').html( $o.html() ).width(), widest);
+
         } );
 
-        // c.css('width', dropdown.width() + 20);
+        c.find('.current').html( $$.find(':selected').html()).width( widest );
+
+        c.burstMenuHover({
+            left: -1
+        });
 
         $$.hide();
     } );

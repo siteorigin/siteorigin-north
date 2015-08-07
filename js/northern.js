@@ -43,6 +43,69 @@
 
         } );
     };
+
+    $.fn.burstMenuHover = function( options ) {
+        var settings = $.extend({
+            left: null,
+        }, options );
+
+        return $(this).each( function(){
+            var $$ = $(this);
+            return $$.hover(
+                function(){
+                    var $$ = $(this),
+                        $u = $$.find('ul').eq(0),
+                        left = 0,
+                        isSub = $$.parents('ul').is('.sub-menu, .children');
+
+                    if( settings.left === null ){
+                        if( $$.parents('ul').is('.sub-menu, .children') ) {
+                            left = $u.width();
+                        }
+                        else {
+                            left = -($u.width() - $$.width())/2;
+                        }
+                    }
+                    else {
+                        left = settings.left;
+                    }
+
+
+                    $u
+                        .css('display', 'block')
+                        .clearQueue()
+                        .css({
+                            left: left,
+                            opacity: 0,
+                            x: isSub ? -3 : 0,
+                            y: isSub ? 0 : -3,
+                            scale: 0.975
+                        })
+                        .transition({
+                            opacity: 1,
+                            x: 0,
+                            y: 0,
+                            scale: 1
+                        }, 220 );
+                },
+                function(){
+                    var $$ = $(this),
+                        $u = $$.find('ul').eq(0),
+                        isSub = $$.parents('ul').is('.sub-menu, .children');
+
+                    $u
+                        .css('display', 'block')
+                        .clearQueue()
+                        .transition({
+                            opacity: 0,
+                            x: isSub ? -4 : 0,
+                            y: isSub ? 0 : -4,
+                            scale: 0.95
+                        }, 160, function(){ $(this).hide(); });
+                }
+            );
+        } );
+    };
 })(jQuery);
 
 
@@ -79,53 +142,7 @@ jQuery( function($){
         resetMenu();
 
         // Handle menu hovers
-        $('.main-navigation ul li').hover(
-            function(){
-                var $$ = $(this),
-                    $u = $$.find('ul').eq(0),
-                    left = 0,
-                    isSub = $$.parents('ul').is('.sub-menu, .children');
-
-                if( $$.parents('ul').is('.sub-menu, .children') ) {
-                    left = $u.width();
-                }
-                else {
-                    left = -($u.width() - $$.width())/2;
-                }
-
-                $u
-                    .css('display', 'block')
-                    .clearQueue()
-                    .css({
-                        left: left,
-                        opacity: 0,
-                        x: isSub ? -3 : 0,
-                        y: isSub ? 0 : -3,
-                        scale: 0.975
-                    })
-                    .transition({
-                        opacity: 1,
-                        x: 0,
-                        y: 0,
-                        scale: 1
-                    }, 220 );
-            },
-            function(){
-                var $$ = $(this),
-                    $u = $$.find('ul').eq(0),
-                    isSub = $$.parents('ul').is('.sub-menu, .children');
-
-                $u
-                    .css('display', 'block')
-                    .clearQueue()
-                    .transition({
-                        opacity: 0,
-                        x: isSub ? -4 : 0,
-                        y: isSub ? 0 : -4,
-                        scale: 0.95
-                    }, 160, function(){ $(this).hide(); });
-            }
-        );
+        $('.main-navigation ul li').burstMenuHover();
 
         // Burst animatin when the user clicks on a sub link
         $('.main-navigation ul ul li a').burstAnimation({

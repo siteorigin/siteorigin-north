@@ -4,6 +4,7 @@
 		float: left;
 		margin-right: 20px;
 		margin-bottom: 40px;
+		cursor: pointer;
 
 		.ordering-selector-wrapper {
 			-webkit-box-sizing: border-box;
@@ -12,34 +13,49 @@
 
 			font-size: 0.85em;
 			display: block;
-			border: 1px solid #d0d0d0;
+			border: 1px solid #d3d3d3;
 			padding: 10px 25px;
 			line-height: 1em;
 			position: relative;
 
+			.current {
+				display: inline-block;
+			}
+
 			.north-icon-next {
 				float: right;
-				margin: 1px 0 0 8px;
+				margin: 0 -3px 0 10px;
+
+				-ms-transform: rotate(90deg);
+				-webkit-transform: rotate(90deg);
+				transform: rotate(90deg);
 			}
 
 			.ordering-dropdown {
 				list-style: none;
 				margin: 0;
-				padding: 0;
 				position: absolute;
 				z-index: 999;
 				top: 100%;
-				width: auto;
 				left: -1px;
-				border: 1px solid #d0d0d0;
+				right: -1px;
+				border: 1px solid #d3d3d3;
 				background: white;
 				padding: 5px 0;
 				display: none;
-				
+
+				box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+
 				li {
 					cursor: pointer;
 					white-space: nowrap;
 					padding: 15px 25px;
+					color: #888;
+					position: relative;
+
+					&:hover {
+						color: #292929;
+					}
 				}
 			}
 
