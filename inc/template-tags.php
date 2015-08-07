@@ -166,9 +166,16 @@ if( !function_exists('northern_posts_pagination') ) :
 	 * Display pagination
 	 */
 	function northern_posts_pagination(){
+		global $wp_query;
+		if ( $wp_query->max_num_pages <= 1 ) {
+			return;
+		}
+
 		$args = array(
 			'next_text' => '<span class="north-icon-double-next"></span>',
 			'prev_text' => '<span class="north-icon-double-previous"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
 		);
 
 		if( is_search() ) {
