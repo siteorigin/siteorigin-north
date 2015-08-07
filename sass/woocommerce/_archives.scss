@@ -74,31 +74,35 @@
 		font-size: 0.85em;
 		padding-top: 8px;
 	}
-	
-	ul.products {
-		li.product {
-			margin: 0 3.8% 2.992em 0;
-			width: 30.8%;
-			text-align: center;
 
-			&.last {
-				margin-right: 0;
-			}
-			
-			h3 {
-				color: #292929;
-				margin-top: 0;
-			}
+	#main {
+		ul.products {
+			li.product {
+				margin: 0 3.8% 2.992em 0;
+				width: 30.8%;
+				text-align: center;
 
-			.star-rating {
-				margin: 0 auto 0.5em auto;
-			}
+				&.last {
+					margin-right: 0;
+				}
 
-			.price {
-				font-family: $font__blockquote;
-				color: $color__link;
+				h3 {
+					color: #292929;
+					margin-top: 0;
+				}
+
+				.star-rating {
+					margin: 0 auto 0.5em auto;
+				}
+
+				.price {
+					font-family: $font__blockquote;
+					color: $color__link;
+				}
 			}
 		}
 	}
+
+
 	
 }
