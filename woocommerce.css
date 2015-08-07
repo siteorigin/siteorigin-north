@@ -1,4 +1,64 @@
 /*--------------------------------------------------------------
+# WooCommerce Archive
+--------------------------------------------------------------*/
+.woocommerce .woocommerce-ordering {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 40px; }
+  .woocommerce .woocommerce-ordering .ordering-selector-wrapper {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.85em;
+    display: block;
+    border: 1px solid #d0d0d0;
+    padding: 10px 25px;
+    line-height: 1em;
+    position: relative; }
+    .woocommerce .woocommerce-ordering .ordering-selector-wrapper .north-icon-next {
+      float: right;
+      margin: 1px 0 0 8px; }
+    .woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      z-index: 999;
+      top: 100%;
+      width: auto;
+      left: -1px;
+      border: 1px solid #d0d0d0;
+      background: white;
+      padding: 5px 0;
+      display: none; }
+      .woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li {
+        cursor: pointer;
+        white-space: nowrap;
+        padding: 15px 25px; }
+    .woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover .ordering-dropdown {
+      display: block; }
+.woocommerce .woocommerce-result-count {
+  float: left;
+  color: #b1b1b1;
+  font-family: "Droid Serif", sans-serif;
+  font-size: 0.85em;
+  padding-top: 8px; }
+.woocommerce ul.products li.product {
+  margin: 0 3.8% 2.992em 0;
+  width: 30.8%;
+  text-align: center; }
+  .woocommerce ul.products li.product.last {
+    margin-right: 0; }
+  .woocommerce ul.products li.product h3 {
+    color: #292929;
+    margin-top: 0; }
+  .woocommerce ul.products li.product .star-rating {
+    margin: 0 auto 0.5em auto; }
+  .woocommerce ul.products li.product .price {
+    font-family: "Droid Serif", sans-serif;
+    color: #c75d5d; }
+
+/*--------------------------------------------------------------
 # WooCommerce Element Styles
 --------------------------------------------------------------*/
 .woocommerce button.button.alt,
