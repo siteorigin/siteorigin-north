@@ -53,6 +53,7 @@
 			li {
 				margin: 0;
 				text-transform: none;
+				padding-bottom: 0;
 
 				&:hover > ul,
 				&.focus > ul {
@@ -60,18 +61,19 @@
 				}
 			}
 			
-			li:first-child {
-				padding-top: 10px;
-			}
-
-			li:last-child {
-				padding-bottom: 10px;
-			}
-
 			a {
 				box-sizing: border-box;
 				white-space: nowrap;
-				padding: 5px 25px;
+				padding: 0.85em 25px;
+				line-height: 1em;
+			}
+
+			li:first-child a {
+				padding-top: 1.25em;
+			}
+
+			li:last-child a {
+				padding-bottom: 1.25em;
 			}
 
 			:hover > a,

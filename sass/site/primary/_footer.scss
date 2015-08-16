@@ -1,20 +1,20 @@
 #colophon {
 
-	margin-top: 25px;
-	color: lighten( $color__text-main, 20% );
+	margin-top: $footer__top_margin;
+	color: $color__text_medium;
 
 	.widgets {
 		@include clearfix();
 
-		border-top: 1px solid #d4d4d4;
+		border-top: $footer__border_width solid $footer__border_color;
 		width: 100%;
 		
 		aside {
 			background: #fafafa;
 			box-sizing: border-box;
 			float: left;
-			border-right: 1px solid #d4d4d4;
-			padding: 40px 4.25%;
+			border-right: $footer__border_width solid $footer__border_color;
+			padding: $footer__top_padding $footer__side_padding;
 			margin: 0;
 
 			&:last-child {
@@ -39,7 +39,7 @@
 	}
 
 	.site-info {
-		border-top: 1px solid #d4d4d4;
+		border-top: $footer__border_width solid $footer__border_color;
 		text-align: center;
 		padding: 15px;
 		font-size: 0.9em;

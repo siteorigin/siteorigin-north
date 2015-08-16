@@ -1,15 +1,9 @@
 a {
-	color: $color__link;
+	color: $color__primary_accent;
 
-	&:visited {
-		color: $color__link-visited;
-	}
 	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
 	&:focus {
+		color: $color__primary_accent_dark;
 	}
 	&:hover,
 	&:active {

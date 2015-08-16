@@ -70,7 +70,7 @@
 	.woocommerce-result-count {
 		float: left;
 		color: #b1b1b1;
-		font-family: $font__blockquote;
+		font-family: $font__detail;
 		font-size: 0.85em;
 		padding-top: 8px;
 	}
@@ -96,7 +96,7 @@
 				}
 
 				.price {
-					font-family: $font__blockquote;
+					font-family: $font__detail;
 					color: $color__link;
 				}
 			}

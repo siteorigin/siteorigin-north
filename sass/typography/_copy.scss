@@ -8,9 +8,9 @@ dfn, cite, em, i {
 
 blockquote {
 	margin: 0 1.5em;
-	font-family: $font__blockquote;
+	font-family: $font__detail;
 	font-style: italic;
-	color: #c75d5d;
+	color: $color__primary_accent;
 }
 
 address {

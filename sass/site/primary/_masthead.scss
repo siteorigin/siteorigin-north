@@ -1,9 +1,9 @@
 #masthead {
-	background: #fafafa;
-	border-bottom: 1px solid #d4d4d4;
-	padding: 30px 0;
+	background: $masthead__background_color;
+	border-bottom: $masthead__border_width solid $masthead__border_color;
+	padding: $masthead__padding 0;
 	position: relative;
-	margin-bottom: 30px;
+	margin-bottom: $masthead__bottom_margin;
 
 	width: 100%;
 

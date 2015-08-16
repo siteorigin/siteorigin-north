@@ -1,12 +1,12 @@
 .post-pagination {
 	text-align: center;
-	font-family: $font__blockquote;
+	font-family: $font__detail;
 	margin: 0 auto;
 	width: auto;
 
 	a {
 		text-decoration: none;
-		color: #292929;
+		color: $color__text_medium;
 
 		&:hover {
 			color: $color__link-hover;
@@ -15,15 +15,18 @@
 
 	.current {
 		font-weight: bold;
+		color: $color__text_dark;
 	}
 
 	.page-numbers {
+		color: $color__text_medium;
 		padding: 5px;
 		display: inline-block;
 		margin: 0 5px;
 	}
 
 	.prev, .next {
+		color: $color__text_medium;
 		padding: 5px 5px 2px 5px;
 	}
 }

@@ -1,3 +1,42 @@
 @import "colors";
-@import "typography";
 @import "structure";
+
+// Main font families
+$font__main: 'Droid Sans', sans-serif;
+$font__headings: 'Montserrat', sans-serif;
+$font__detail: 'Droid Serif', sans-serif;
+
+// Support font families
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+// Font line heights
+$font__line-height-body: 1.6;
+$font__line-height-entry: 1.8;
+$font__line-height-pre: 1.6;
+
+// Colors
+$color__primary_accent: #c75d5d;
+$color__primary_accent_dark: #a94346;
+$color__background-body: #ffffff;
+
+// Text Colors
+$color__text_dark: #292929;
+$color__text_medium: #595959;
+$color__text_light: #898989;
+$color__text_meta: #b0b0b0;
+
+// Masthead
+$masthead__background_color: #fafafa;
+$masthead__border_color: #d4d4d4;
+$masthead__border_width: 1px;
+$masthead__padding: 30px;
+$masthead__bottom_margin: 30px;
+
+// Footer
+$footer__background_color: #fafafa;
+$footer__border_color: #d4d4d4;
+$footer__border_width: 1px;
+$footer__top_padding: 40px;
+$footer__side_padding: 40px;
+$footer__top_margin: 30px;

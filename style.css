@@ -236,7 +236,8 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Montserrat", sans-serif;
+  color: #292929; }
 
 p {
   margin-bottom: 1.5em; }
@@ -407,10 +408,8 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: #c75d5d; }
-  a:visited {
-    color: #c75d5d; }
-  a:hover, a:focus, a:active {
-    color: #c75d5d; }
+  a:hover, a:focus {
+    color: #a94346; }
   a:hover, a:active {
     outline: 0; }
 
@@ -454,17 +453,19 @@ a {
         margin-left: 0 !important; }
       .main-navigation ul ul li {
         margin: 0;
-        text-transform: none; }
+        text-transform: none;
+        padding-bottom: 0; }
         .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
           left: 100%; }
-      .main-navigation ul ul li:first-child {
-        padding-top: 10px; }
-      .main-navigation ul ul li:last-child {
-        padding-bottom: 10px; }
       .main-navigation ul ul a {
         box-sizing: border-box;
         white-space: nowrap;
-        padding: 5px 25px; }
+        padding: 0.85em 25px;
+        line-height: 1em; }
+      .main-navigation ul ul li:first-child a {
+        padding-top: 1.25em; }
+      .main-navigation ul ul li:last-child a {
+        padding-bottom: 1.25em; }
       .main-navigation ul ul :hover > a,
       .main-navigation ul ul .focus > a {
         color: #292929; }
@@ -706,8 +707,8 @@ a {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  margin-top: 25px;
-  color: #5c5c5c; }
+  margin-top: 30px;
+  color: #595959; }
   #colophon .widgets {
     content: "";
     display: table;
@@ -718,7 +719,7 @@ a {
       box-sizing: border-box;
       float: left;
       border-right: 1px solid #d4d4d4;
-      padding: 40px 4.25%;
+      padding: 40px 40px;
       margin: 0; }
       #colophon .widgets aside:last-child {
         border-right: 0; }
@@ -896,7 +897,7 @@ a {
 .more-link {
   font-size: 0.85em;
   float: right;
-  border: 1px solid #303030;
+  border: 1px solid #292929;
   padding: 10px 30px;
   line-height: 1em;
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
@@ -926,16 +927,19 @@ a {
   width: auto; }
   .post-pagination a {
     text-decoration: none;
-    color: #292929; }
+    color: #595959; }
     .post-pagination a:hover {
       color: #c75d5d; }
   .post-pagination .current {
-    font-weight: bold; }
+    font-weight: bold;
+    color: #292929; }
   .post-pagination .page-numbers {
+    color: #595959;
     padding: 5px;
     display: inline-block;
     margin: 0 5px; }
   .post-pagination .prev, .post-pagination .next {
+    color: #595959;
     padding: 5px 5px 2px 5px; }
 
 /*--------------------------------------------------------------
@@ -962,7 +966,7 @@ a {
     padding: 0;
     width: auto;
     display: block;
-    color: #565656; }
+    color: #898989; }
     .comment-list li .comment-container {
       margin-left: 120px; }
     .comment-list li .avatar-container {
@@ -972,7 +976,6 @@ a {
     .comment-list li .comment-reply-link {
       float: right;
       color: #f2f2f2;
-      float: right;
       text-decoration: none;
       font-size: 0.8em;
       line-height: 1em;
@@ -980,6 +983,8 @@ a {
       background: #292929; }
       .comment-list li .comment-reply-link:hover {
         background: #c75d5d; }
+    .comment-list li .info {
+      color: #b0b0b0; }
     .comment-list li .author {
       font-weight: bold;
       color: #292929; }
@@ -1024,7 +1029,7 @@ a {
       border-radius: 0px;
       display: block; }
   #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .logged-in-as {
-    color: #999;
+    color: #b0b0b0;
     margin: 10px 0; }
     #commentform .form-allowed-tags, #commentform .form-allowed-tags code, #commentform .comment-notes, #commentform .comment-notes code, #commentform .logged-in-as, #commentform .logged-in-as code {
       font-size: 0.75em; }
@@ -1052,11 +1057,12 @@ a {
         background: #c75d5d;
         border-color: #c75d5d;
         color: #ffffff;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.075);
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
-  #commentform input:focus, #commentform textarea:focus {
-    background-color: #fafafa;
-    outline: none; }
+  #commentform input, #commentform textarea {
+    background-color: #ffffff; }
+    #commentform input:focus, #commentform textarea:focus {
+      background-color: #fcfcfc;
+      outline: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
