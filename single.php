@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package northern
+ * @package siteorigin-north
  */
 
 get_header(); ?>

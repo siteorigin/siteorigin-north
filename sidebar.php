@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package northern
+ * @package siteorigin-north
  */
 
 if ( ! is_active_sidebar( 'main-sidebar' ) ) {

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts.
  *
- * @package northern
+ * @package siteorigin-north
  */
 
 ?>
@@ -25,19 +25,19 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<ul class="entry-meta">
-				<?php northern_posted_on(); ?>
+				<?php siteorigin_north_posted_on(); ?>
 			</ul><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			the_content( __('Read More', 'northern') );
+			the_content( __('Read More', 'siteorigin-north') );
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'northern' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-north' ),
 				'after'  => '</div>',
 			) );
 		?>

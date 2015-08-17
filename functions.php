@@ -1,8 +1,8 @@
 <?php
 /**
- * northern functions and definitions
+ * SiteOrigin North functions and definitions
  *
- * @package northern
+ * @package siteorigin-north
  */
 
 define('SITEORIGIN_THEME_VERSION', 'dev');
@@ -10,7 +10,7 @@ define('SITEORIGIN_THEME_VERSION', 'dev');
 // The settings manager
 include get_template_directory() . '/settings/settings.php';
 
-if ( ! function_exists( 'northern_setup' ) ) :
+if ( ! function_exists( 'siteorigin_north_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -18,14 +18,8 @@ if ( ! function_exists( 'northern_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function northern_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on northern, use a find and replace
-	 * to change 'northern' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'northern', get_template_directory() . '/languages' );
+function siteorigin_north_setup() {
+	load_theme_textdomain( 'siteorigin-north', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,7 +43,7 @@ function northern_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'northern' ),
+		'primary' => esc_html__( 'Primary Menu', 'siteorigin-north' ),
 	) );
 
 	/*
@@ -77,7 +71,7 @@ function northern_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'northern_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'siteorigin_north_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -88,8 +82,8 @@ function northern_setup() {
 	// Support for SiteOrigin Premium components
 	add_theme_support( 'siteorigin-premium-retina-images' );
 }
-endif; // northern_setup
-add_action( 'after_setup_theme', 'northern_setup' );
+endif; // siteorigin_north_setup
+add_action( 'after_setup_theme', 'siteorigin_north_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -98,19 +92,19 @@ add_action( 'after_setup_theme', 'northern_setup' );
  *
  * @global int $content_width
  */
-function northern_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'northern_content_width', 650 );
+function siteorigin_north_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'siteorigin_north_content_width', 650 );
 }
-add_action( 'after_setup_theme', 'northern_content_width', 0 );
+add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function northern_widgets_init() {
+function siteorigin_north_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Main Sidebar', 'northern' ),
+		'name'          => esc_html__( 'Main Sidebar', 'siteorigin-north' ),
 		'id'            => 'main-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -120,7 +114,7 @@ function northern_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widgets', 'northern' ),
+		'name'          => esc_html__( 'Footer Widgets', 'siteorigin-north' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -129,12 +123,12 @@ function northern_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'northern_widgets_init' );
+add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function northern_scripts() {
+function siteorigin_north_scripts() {
 	wp_enqueue_style( 'northern-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'northern-icons', get_template_directory_uri() . '/css/north-icons.css' );
 
@@ -156,19 +150,19 @@ function northern_scripts() {
 		wp_enqueue_style( 'northern-woocommerce', get_template_directory_uri() . '/woocommerce.css' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'northern_scripts' );
+add_action( 'wp_enqueue_scripts', 'siteorigin_north_scripts' );
 
-function northern_siteorigin_premium($themes){
-	$themes[] = 'northern';
+function siteorigin_north_siteorigin_premium($themes){
+	$themes[] = 'siteorigin-north';
 	return $themes;
 }
-add_filter('siteorigin_premium_themes', 'northern_siteorigin_premium');
+add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 
-function northern_filter_comment_form_default_fields( $fields ){
-	$placeholders = apply_filters('northern_comment_form_placeholders', array(
-		'author' => __('Enter Your Name', 'northern'),
-		'email' => __('Enter Your Name', 'northern'),
-		'url' => __('Your Site URL', 'northern'),
+function siteorigin_north_filter_comment_form_default_fields( $fields ){
+	$placeholders = apply_filters('siteorigin_north_comment_form_placeholders', array(
+		'author' => __('Enter Your Name', 'siteorigin-north'),
+		'email' => __('Enter Your Name', 'siteorigin-north'),
+		'url' => __('Your Site URL', 'siteorigin-north'),
 	) );
 
 	if( isset($fields['author']) ) {
@@ -195,10 +189,10 @@ function northern_filter_comment_form_default_fields( $fields ){
 
 	return $fields;
 }
-add_filter('comment_form_default_fields', 'northern_filter_comment_form_default_fields');
+add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields');
 
-function northern_filter_comment_form_defaults( $defaults ){
-	$comment_placeholder = __('Enter your message', 'northern');
+function siteorigin_north_filter_comment_form_defaults( $defaults ){
+	$comment_placeholder = __('Enter your message', 'siteorigin-north');
 	if( !empty( $defaults['comment_field'] ) ) {
 		$defaults['comment_field'] = str_replace(
 			'<textarea id="comment" ',
@@ -210,7 +204,7 @@ function northern_filter_comment_form_defaults( $defaults ){
 
 	return $defaults;
 }
-add_filter('comment_form_defaults', 'northern_filter_comment_form_defaults');
+add_filter('comment_form_defaults', 'siteorigin_north_filter_comment_form_defaults');
 
 /**
  * Custom template tags for this theme.

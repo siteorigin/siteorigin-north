@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package northern
+ * @package siteorigin-north
  */
 
 ?>
@@ -26,13 +26,13 @@
 		?>
 
 		<div class="site-info">
-			<?php northern_footer_text() ?>
+			<?php siteorigin_north_footer_text() ?>
 			<span class="sep"> | </span>
 			<?php
 			echo wp_kses_post(
 				apply_filters(
-					'northern_footer_credits',
-					sprintf( esc_html__( 'Theme by %s.', 'northern' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+					'siteorigin_north_footer_credits',
+					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				)
 			);
 			?>
