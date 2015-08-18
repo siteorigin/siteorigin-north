@@ -54,7 +54,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
 
-	$defaults['footer_text'] = __('Copyright © {year} {sitename}');
+	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 
 	$defaults['responsive_fitvids'] = true;
 
