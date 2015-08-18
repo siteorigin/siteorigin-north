@@ -25,10 +25,6 @@ function siteorigin_north_settings_init(){
 		'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
 	) );
 
-	siteorigin_settings_add_teaser( 'branding', 'logo_retina', 'media', __('Retina Logo', 'siteorigin-north'), array(
-		'description' => __('High resolution version of the logo.', 'siteorigin-north')
-	) );
-
 	siteorigin_settings_add_field( 'branding', 'site_description', 'checkbox', __('Site Description', 'siteorigin-north'), array(
 		'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
 	) );
@@ -56,7 +52,6 @@ add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
  */
 function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
-	$defaults['branding_logo_retina'] = false;
 	$defaults['branding_site_description'] = true;
 
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}');
