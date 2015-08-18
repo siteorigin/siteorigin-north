@@ -94,7 +94,8 @@ add_action( 'after_setup_theme', 'siteorigin_north_setup' );
  * @global int $content_width
  */
 function siteorigin_north_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'siteorigin_north_content_width', 650 );
+	global $content_width;
+	$content_width = apply_filters( 'siteorigin_north_content_width', 650 );
 }
 add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
 
