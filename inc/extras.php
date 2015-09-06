@@ -22,6 +22,17 @@ function siteorigin_north_body_classes( $classes ) {
 	$classes[] = 'no-js';
 	$classes[] = 'css3-animations';
 
+	if( is_page() ) {
+		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
+		$classes[] = 'page-layout-menu-' . SiteOrigin_Settings_Page_Settings::get('menu');
+		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
+			$classes[] = 'page-layout-no-masthead-margin';
+		}
+		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
+			$classes[] = 'page-layout-no-footer-margin';
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'siteorigin_north_body_classes' );

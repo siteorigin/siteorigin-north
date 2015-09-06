@@ -14,6 +14,10 @@
 	margin-bottom: 80px;
 }
 
+.page .hentry {
+	margin-bottom: 0;
+}
+
 .byline,
 .updated:not(.published){
 	display: none;
@@ -83,9 +87,9 @@
 }
 
 .entry-title {
-	margin: 0 0 15px 0;
+	margin: 0 0 1em 0;
 	color: #292929;
-	font-size: 18px;
+	font-size: 1.6em;
 
 	a {
 		color: inherit;

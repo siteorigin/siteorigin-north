@@ -658,6 +658,29 @@ a {
 .page-title {
   margin-top: 0; }
 
+/* The Page Setting related layout changes */
+.page-layout-no-sidebar .site-main {
+  margin: 0; }
+
+.page-layout-no-masthead-margin #masthead {
+  margin-bottom: 0; }
+
+.page-layout-no-footer-margin #colophon {
+  margin-top: 0; }
+
+.page-layout-menu-overlap #masthead {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0.95; }
+.page-layout-menu-overlap.admin-bar #masthead {
+  top: 32px; }
+  @media screen and (max-width: 782px) {
+    .page-layout-menu-overlap.admin-bar #masthead {
+      top: 46px; } }
+
 /*--------------------------------------------------------------
 ## Site Masthead
 --------------------------------------------------------------*/
@@ -767,6 +790,9 @@ a {
   .hentry > *:last-child {
     margin-bottom: 0; }
 
+.page .hentry {
+  margin-bottom: 0; }
+
 .byline,
 .updated:not(.published) {
   display: none; }
@@ -819,9 +845,9 @@ a {
       transform: scale(1, 1); }
 
 .entry-title {
-  margin: 0 0 15px 0;
+  margin: 0 0 1em 0;
   color: #292929;
-  font-size: 18px; }
+  font-size: 1.6em; }
   .entry-title a {
     color: inherit;
     text-decoration: none; }

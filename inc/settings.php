@@ -84,6 +84,7 @@ function siteorigin_north_setup_page_settings(){
 			),
 			'default' => 'no-sidebar'
 		),
+
 		'menu' => array(
 			'type' => 'select',
 			'label' => __( 'Menu Position', 'siteorigin-north' ),
@@ -93,12 +94,29 @@ function siteorigin_north_setup_page_settings(){
 			),
 			'default' => 'no-sidebar'
 		),
+
 		'page_title' => array(
 			'type' => 'checkbox',
 			'label' => __( 'Page Title', 'siteorigin-north' ),
 			'checkbox_label' => __( 'display', 'siteorigin-north' ),
 			'default' => true,
 			'description' => __('Display the page title on this page.', 'siteorigin-north')
+		),
+
+		'masthead_margin' => array(
+			'type' => 'checkbox',
+			'label' => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
+			'checkbox_label' => __( 'enable', 'siteorigin-north' ),
+			'default' => true,
+			'description' => __('Include the margin below the masthead (top area) of your site.', 'siteorigin-north')
+		),
+
+		'footer_margin' => array(
+			'type' => 'checkbox',
+			'label' => __( 'Footer Top Margin', 'siteorigin-north' ),
+			'checkbox_label' => __( 'enable', 'siteorigin-north' ),
+			'default' => true,
+			'description' => __('Include the margin above your footer.', 'siteorigin-north')
 		),
 	) );
 
