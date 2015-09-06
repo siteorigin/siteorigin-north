@@ -10,6 +10,7 @@ define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 // The settings manager
 include get_template_directory() . '/settings/settings.php';
+include get_template_directory() . '/settings/page-settings.php';
 
 if ( ! function_exists( 'siteorigin_north_setup' ) ) :
 /**

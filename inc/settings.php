@@ -10,6 +10,9 @@ function siteorigin_settings_localize( $loc ){
 		// For the controls
 		'variant' => __('Variant', 'siteorigin-north'),
 		'subset' => __('Subset', 'siteorigin-north'),
+
+		// For the settings metabox
+		'meta_box' => __('Page settings', 'siteorigin-north'),
 	);
 }
 add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
@@ -53,11 +56,8 @@ add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
-
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
-
 	$defaults['responsive_fitvids'] = true;
-
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
@@ -67,3 +67,40 @@ function siteorigin_north_custom_css( $css ) {
 	return $css;
 }
 add_filter('siteorigin_settings_custom_css', 'siteorigin_north_custom_css');
+
+/**
+ * Setup Page Settings for SiteOrigin Northd
+ */
+function siteorigin_north_setup_page_settings(){
+
+	SiteOrigin_Settings_Page_Settings::single()->configure( array(
+		'layout' => array(
+			'type' => 'select',
+			'label' => __( 'Page Layout', 'siteorigin-north' ),
+			'options' => array(
+				'default' => __( 'Default', 'siteorigin-north' ),
+				'no-sidebar' => __( 'No Sidebar', 'siteorigin-north' ),
+				'full-width' => __( 'Full Width', 'siteorigin-north' ),
+			),
+			'default' => 'no-sidebar'
+		),
+		'menu' => array(
+			'type' => 'select',
+			'label' => __( 'Menu Position', 'siteorigin-north' ),
+			'options' => array(
+				'default' => __( 'Default', 'siteorigin-north' ),
+				'overlap' => __( 'Overlaps Content', 'siteorigin-north' ),
+			),
+			'default' => 'no-sidebar'
+		),
+		'page_title' => array(
+			'type' => 'checkbox',
+			'label' => __( 'Page Title', 'siteorigin-north' ),
+			'checkbox_label' => __( 'display', 'siteorigin-north' ),
+			'default' => true,
+			'description' => __('Display the page title on this page.', 'siteorigin-north')
+		),
+	) );
+
+}
+add_action('admin_init', 'siteorigin_north_setup_page_settings');
