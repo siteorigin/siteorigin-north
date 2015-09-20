@@ -417,20 +417,22 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  position: relative;
   z-index: 99999;
-  font-size: 0.95em; }
-  .main-navigation > div {
-    content: "";
-    display: table; }
+  font-size: 0.95em;
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -1em;
+  height: 2em; }
   .main-navigation ul {
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0; }
     .main-navigation ul > li {
-      text-transform: uppercase;
-      padding-bottom: 0.5em; }
+      display: inline-block;
+      padding: 0.5em 0; }
       .main-navigation ul > li a {
         padding-left: 30px;
         padding-right: 30px; }
@@ -440,20 +442,21 @@ a {
         color: #292929; }
     .main-navigation ul ul {
       position: absolute;
-      top: 2em;
+      top: 100%;
       left: 0;
       z-index: 99999;
       display: none;
+      text-align: center;
       background-color: #fff;
       border: 1px solid #d4d4d4;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
       .main-navigation ul ul ul {
+        text-align: left;
         left: 100%;
         top: -1px;
         margin-left: 0 !important; }
       .main-navigation ul ul li {
         margin: 0;
-        text-transform: none;
         padding-bottom: 0; }
         .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
           left: 100%; }
@@ -476,7 +479,7 @@ a {
     .main-navigation ul li.focus > ul {
       display: block; }
   .main-navigation li {
-    float: left;
+    float: right;
     position: relative; }
   .main-navigation a {
     display: block;
@@ -592,6 +595,9 @@ a {
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
+  .widget ul {
+    margin-left: 0;
+    padding-left: 1.275em; }
 
 /* Search widget. */
 .widget_search .search-submit {
@@ -673,7 +679,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 100;
   opacity: 0.95; }
 .page-layout-menu-overlap.admin-bar #masthead {
   top: 32px; }
@@ -690,7 +696,11 @@ a {
   padding: 30px 0;
   position: relative;
   margin-bottom: 30px;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
+  #masthead .container-inner {
+    content: "";
+    display: table; }
   #masthead .site-branding {
     margin-right: 50px;
     float: left; }
@@ -705,11 +715,6 @@ a {
     #masthead .site-branding .site-description {
       margin: 0;
       font-size: 0.9em; }
-  #masthead .main-navigation {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -0.5em; }
 
 /*--------------------------------------------------------------
 ## Site Sidebar

@@ -60,9 +60,11 @@
 
                     if( settings.left === null ){
                         if( $$.parents('ul').is('.sub-menu, .children') ) {
-                            left = $u.width();
+                            // Place to the right of the box
+                            left = $u.parent().width();
                         }
                         else {
+                            // Center the sub menu
                             left = -($u.width() - $$.width())/2;
                         }
                     }
@@ -118,7 +120,12 @@ jQuery( function($){
     );
 
     if( typeof $.fn.fitVids !== 'undefined' ) {
-        $('.entry-content').fitVids();
+        $( '.entry-content' ).fitVids();
+    }
+
+    // properly position the navigation
+    if( $( '#masthead' ).hasClass( 'layout-standard' ) ) {
+        $( '#site-navigation' ).css('left', $('#masthead .site-branding').outerWidth() + 20 );
     }
 
     // Remove the no-js body class

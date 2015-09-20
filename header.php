@@ -22,21 +22,23 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-north' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header layout-standard" role="banner">
 		<div class="container">
-			<div class="site-branding">
-				<?php siteorigin_north_display_logo() ?>
-				<?php if( siteorigin_setting('branding_site_description') ) : ?>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-				<?php endif ?>
-			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-north' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+			<div class="container-inner">
+				<div class="site-branding">
+					<?php siteorigin_north_display_logo() ?>
+					<?php if( siteorigin_setting('branding_site_description') ) : ?>
+						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					<?php endif ?>
+				</div><!-- .site-branding -->
 
-			<div class="clear"></div>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'siteorigin-north' ); ?></button>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav><!-- #site-navigation -->
+			</div>
+
 		</div>
 	</header><!-- #masthead -->
 
