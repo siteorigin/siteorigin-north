@@ -44,6 +44,21 @@ function siteorigin_north_settings_init(){
 			)
 		),
 
+		'responsive' => array(
+			'title' => __('Responsive', 'siteorigin-north'),
+			'fields' => array(
+				'menu_text' => array(
+					'type' => 'text',
+					'label' => __('Responsive Menu Text', 'siteorigin-north'),
+				),
+
+				'fitvids' => array(
+					'type' => 'checkbox',
+					'label' => __('Use Fitvids', 'siteorigin-north'),
+				),
+			)
+		),
+
 		'footer' => array(
 			'title' => __('Footer', 'siteorigin-north'),
 			'fields' => array(
@@ -57,15 +72,6 @@ function siteorigin_north_settings_init(){
 				)
 			)
 		),
-		'responsive' => array(
-			'title' => __('Responsive', 'siteorigin-north'),
-			'fields' => array(
-				'fitvids' => array(
-					'type' => 'checkbox',
-					'label' => __('Use Fitvids', 'siteorigin-north'),
-				)
-			)
-		)
 	) );
 
 }
@@ -81,8 +87,9 @@ add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
-	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	$defaults['responsive_fitvids'] = true;
+	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-widgets');
+	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');

@@ -156,7 +156,19 @@ jQuery( function($){
             event: "click",
             container: "parent"
         });
-
-
     }
+
+    var $mobileMenu = false;
+    $('#mobile-menu-button').click( function(e){
+        e.preventDefault();
+        var $$ = $(this);
+        $$.toggleClass('to-close');
+
+        if( $mobileMenu === false ) {
+            $mobileMenu = $('.main-navigation ul').first().clone().appendTo('#masthead').attr('id', 'mobile-navigation').hide();
+            $mobileMenu.find('ul').show();
+        }
+
+        $mobileMenu.slideToggle('fast');
+    } );
 } );
