@@ -135,7 +135,7 @@ function siteorigin_north_custom_css( $css ) {
 add_filter('siteorigin_settings_custom_css', 'siteorigin_north_custom_css');
 
 /**
- * Setup Page Settings for SiteOrigin Northd
+ * Setup Page Settings for SiteOrigin North
  */
 function siteorigin_north_setup_page_settings(){
 

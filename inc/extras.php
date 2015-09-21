@@ -33,6 +33,10 @@ function siteorigin_north_body_classes( $classes ) {
 		}
 	}
 
+	if( !is_active_sidebar('main-sidebar') ) {
+		$classes[] = 'no-active-sidebar';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'siteorigin_north_body_classes' );
