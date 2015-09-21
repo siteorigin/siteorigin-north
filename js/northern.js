@@ -166,7 +166,7 @@ jQuery( function($){
 
         if( $mobileMenu === false ) {
             $mobileMenu = $('.main-navigation ul').first().clone().appendTo('#masthead').attr('id', 'mobile-navigation').hide();
-            $mobileMenu.find('ul').show();
+            $mobileMenu.find('ul').show().css('opacity', 1);
         }
 
         $mobileMenu.slideToggle('fast');
