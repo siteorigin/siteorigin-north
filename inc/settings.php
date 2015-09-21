@@ -44,6 +44,32 @@ function siteorigin_north_settings_init(){
 			)
 		),
 
+		'blog' => array(
+			'title' => __( 'Blog', 'siteorigin-widgets' ),
+			'fields' => array(
+				'featured_archive' => array(
+					'type' => 'checkbox',
+					'label' => __('Featured image on archive', 'siteorigin-north'),
+				),
+				'featured_single' => array(
+					'type' => 'checkbox',
+					'label' => __('Featured image on single', 'siteorigin-north'),
+				),
+				'display_date' => array(
+					'type' => 'checkbox',
+					'label' => __('Display date', 'siteorigin-north'),
+				),
+				'display_author' => array(
+					'type' => 'checkbox',
+					'label' => __('Display author', 'siteorigin-north'),
+				),
+				'display_comment_count' => array(
+					'type' => 'checkbox',
+					'label' => __('Display comment count', 'siteorigin-north'),
+				),
+			),
+		),
+
 		'responsive' => array(
 			'title' => __('Responsive', 'siteorigin-north'),
 			'fields' => array(
@@ -87,8 +113,16 @@ add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
+
 	$defaults['responsive_fitvids'] = true;
 	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-widgets');
+
+	$defaults['blog_featured_archive'] = true;
+	$defaults['blog_featured_single'] = true;
+	$defaults['blog_display_date'] = true;
+	$defaults['blog_display_author'] = true;
+	$defaults['blog_display_comment_count'] = true;
+
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	return $defaults;
 }

@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-	<?php if( has_post_thumbnail() ) : ?>
+	<?php if( has_post_thumbnail() && siteorigin_setting('blog_featured_single') ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail() ?>
 		</div>
@@ -19,7 +19,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php siteorigin_north_posted_on(); ?>
+			<?php siteorigin_north_post_meta(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

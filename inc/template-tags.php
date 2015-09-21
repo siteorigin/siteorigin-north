@@ -86,11 +86,11 @@ function the_post_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_north_posted_on' ) ) :
+if ( ! function_exists( 'siteorigin_north_post_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function siteorigin_north_posted_on() {
+function siteorigin_north_post_meta() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -112,24 +112,35 @@ function siteorigin_north_posted_on() {
 		number_format_i18n( get_comments_number() )
 	);
 
-	?>
-	<li class="posted-on">
-		<span class="meta-icon north-icon-calendar"></span>
-		<a href="<?php the_permalink() ?>">
-			<?php echo $time_string ?>
-		</a>
-	</li>
-	<li class="posted-by">
-		<span class="meta-icon north-icon-user"></span>
-		<?php echo $byline ?>
-	</li>
-	<li class="post-comments">
-		<span class="meta-icon north-icon-comments"></span>
-		<a href="<?php the_permalink() ?>#comments">
-			<?php echo $comments ?>
-		</a>
-	</li>
-	<?php
+
+	if( siteorigin_setting('blog_display_date') ) {
+		?>
+		<li class="posted-on">
+			<span class="meta-icon north-icon-calendar"></span>
+			<a href="<?php the_permalink() ?>">
+				<?php echo $time_string ?>
+			</a>
+		</li>
+		<?php
+	}
+	if( siteorigin_setting('blog_display_author') ) {
+		?>
+		<li class="posted-by">
+			<span class="meta-icon north-icon-user"></span>
+			<?php echo $byline ?>
+		</li>
+		<?php
+	}
+	if( get_comments_number() > 0 && siteorigin_setting('blog_display_comment_count') ) {
+		?>
+		<li class="post-comments">
+			<span class="meta-icon north-icon-comments"></span>
+			<a href="<?php the_permalink() ?>#comments">
+				<?php echo $comments ?>
+			</a>
+		</li>
+		<?php
+	}
 }
 endif;
 
