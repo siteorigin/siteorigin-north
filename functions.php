@@ -81,7 +81,13 @@ function siteorigin_north_setup() {
 	// This theme supports WooCommerce
 	add_theme_support( 'woocommerce' );
 
-	// Support for SiteOrigin Premium components
+	// This theme has a premium version
+	add_theme_support( 'siteorigin-premium-theme', array(
+		'slug' => 'siteorigin-north',
+		'min_version' => '1.0'
+	) );
+
+	// Support for SiteOrigin Premium extras
 	add_theme_support( 'siteorigin-premium-retina-images' );
 }
 endif; // siteorigin_north_setup
@@ -125,6 +131,7 @@ function siteorigin_north_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
 }
 add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
 
