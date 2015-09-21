@@ -21,27 +21,52 @@ add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
  * Initialize the settings
  */
 function siteorigin_north_settings_init(){
-	// The branding section
-	siteorigin_settings_add_section( 'branding', __('Branding', 'siteorigin-north') );
 
-	siteorigin_settings_add_field('branding', 'logo', 'media', __('Logo', 'siteorigin-north'), array(
-		'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
+	SiteOrigin_Settings::single()->configure( array(
+
+		'branding' => array(
+			'title' => __('Branding', 'siteorigin-north'),
+			'fields' => array(
+				'logo' => array(
+					'type' => 'media',
+					'label' => __('Logo', 'siteorigin-north'),
+					'args' => array(
+						'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
+					)
+				),
+				'site_description' => array(
+					'type' => 'checkbox',
+					'label' => __('Site Description', 'siteorigin-north'),
+					array(
+						'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
+					)
+				)
+			)
+		),
+
+		'footer' => array(
+			'title' => __('Footer', 'siteorigin-north'),
+			'fields' => array(
+				'text' => array(
+					'type' => 'text',
+					'label' => __('Footer Text', 'siteorigin-north'),
+					'args' => array(
+						'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-north'),
+						'sanitize_callback' => 'wp_kses_post',
+					)
+				)
+			)
+		),
+		'responsive' => array(
+			'title' => __('Responsive', 'siteorigin-north'),
+			'fields' => array(
+				'fitvids' => array(
+					'type' => 'checkbox',
+					'label' => __('Use Fitvids', 'siteorigin-north'),
+				)
+			)
+		)
 	) );
-
-	siteorigin_settings_add_field( 'branding', 'site_description', 'checkbox', __('Site Description', 'siteorigin-north'), array(
-		'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
-	) );
-
-	siteorigin_settings_add_section( 'footer', __('Footer', 'siteorigin-north') );
-
-	siteorigin_settings_add_field( 'footer', 'text', 'text', __('Footer Text', 'siteorigin-north'), array(
-		'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-north'),
-		'sanitize_callback' => 'wp_kses_post',
-	) );
-
-	siteorigin_settings_add_section( 'responsive', __('Responsive', 'siteorigin-north') );
-
-	siteorigin_settings_add_field( 'responsive', 'fitvids', 'checkbox', __('Use Fitvids', 'siteorigin-north') );
 
 }
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
@@ -82,7 +107,6 @@ function siteorigin_north_setup_page_settings(){
 				'no-sidebar' => __( 'No Sidebar', 'siteorigin-north' ),
 				'full-width' => __( 'Full Width', 'siteorigin-north' ),
 			),
-			'default' => 'no-sidebar'
 		),
 
 		'menu' => array(
@@ -92,14 +116,12 @@ function siteorigin_north_setup_page_settings(){
 				'default' => __( 'Default', 'siteorigin-north' ),
 				'overlap' => __( 'Overlaps Content', 'siteorigin-north' ),
 			),
-			'default' => 'no-sidebar'
 		),
 
 		'page_title' => array(
 			'type' => 'checkbox',
 			'label' => __( 'Page Title', 'siteorigin-north' ),
 			'checkbox_label' => __( 'display', 'siteorigin-north' ),
-			'default' => true,
 			'description' => __('Display the page title on this page.', 'siteorigin-north')
 		),
 
@@ -121,4 +143,17 @@ function siteorigin_north_setup_page_settings(){
 	) );
 
 }
-add_action('admin_init', 'siteorigin_north_setup_page_settings');
+add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_settings');
+
+/**
+ * Add the default Page Settings
+ */
+function siteorigin_north_setup_page_setting_defaults( $defaults ){
+	$defaults['layout'] = 'no-sidebar';
+	$defaults['menu'] = 'default';
+	$defaults['page_title'] = true;
+	$defaults['masthead_margin'] = true;
+	$defaults['footer_margin'] = true;
+	return $defaults;
+}
+add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
