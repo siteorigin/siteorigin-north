@@ -30,7 +30,8 @@
 		</div>
 	<?php endif; ?>
 
-	<header id="masthead" class="site-header layout-standard <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner">
+	<header id="masthead" class="site-header layout-standard <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
+		<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 		<div class="container">
 
 			<div class="container-inner">

@@ -917,6 +917,7 @@ a {
       margin: 0;
       font-size: 0.9em; }
     #masthead .site-branding img {
+      display: block;
       max-width: none; }
   #masthead .site-branding, #masthead .main-navigation {
     display: table-cell;

@@ -213,29 +213,57 @@ jQuery( function($){
 
     if( $('#masthead').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
         var $mhs = false;
+        var $mh = $('#masthead');
+
         var smSetup = function () {
-            var $m = $('#masthead');
             if ($mhs === false) {
-                $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($m);
+                $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($mh);
             }
 
             $mhs.hide();
-            $m.css({
+            $mh.css({
                 'position': 'static',
                 'top': null,
                 'left': null,
                 'width': null,
             });
-            $mhs.show().css('height', $m.outerHeight());
-            $m.css({
+            $mhs.show().css('height', $mh.outerHeight());
+            $mh.css({
                 'position': 'fixed',
-                'top': $m.offset().top,
+                'top': $mh.offset().top,
                 'left': 0,
                 'width': '100%',
             });
         };
         smSetup();
         $(window).resize(smSetup);
+
+        if( $mh.data('scale-logo') ) {
+            var smResizeLogo = function(){
+                var top  = window.pageYOffset || document.documentElement.scrollTop;
+                var $img = $mh.find('.site-branding img');
+                if( $img.length === 0 ) {
+                    return;
+                }
+
+                if( top > 0 ) {
+                    var scale = 0.8 + ( Math.max( 0, 24 - top ) / 24 * 0.2 );
+                    $img.css( {
+                        width: $img.attr('width') * scale,
+                        height: $img.attr('height') * scale,
+                    } );
+                }
+                else {
+                    $img.css( {
+                        width: $img.attr('width'),
+                        height: $img.attr('height'),
+                    } );
+                }
+            };
+            smResizeLogo();
+            $( window ).scroll( smResizeLogo );
+        }
+
     }
 
 } );
