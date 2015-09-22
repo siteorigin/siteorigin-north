@@ -860,8 +860,8 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
-  opacity: 0.95; }
+  z-index: 101;
+  opacity: 0.975; }
 .page-layout-menu-overlap.admin-bar #masthead {
   top: 32px; }
   @media screen and (max-width: 782px) {
