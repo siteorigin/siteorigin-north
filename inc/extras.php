@@ -37,6 +37,14 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
+	if( siteorigin_setting('navigation_sticky') ) {
+		$classes[] = 'sticky-menu';
+	}
+
+	if( wp_is_mobile() ) {
+		$classes[] = 'is_mobile';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'siteorigin_north_body_classes' );

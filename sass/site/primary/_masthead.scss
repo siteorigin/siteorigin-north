@@ -5,6 +5,7 @@
 	position: relative;
 	margin-bottom: $masthead__bottom_margin;
 	width: 100%;
+	z-index: 999;
 
 	.container-inner {
 		display: table;
@@ -41,7 +42,11 @@
 		display: table-cell;
 		vertical-align: middle;
 	}
-	
+}
+
+.masthead-sentinel {
+	box-sizing: border-box;
+	margin-bottom: $masthead__bottom_margin;
 }
 
 #topbar {

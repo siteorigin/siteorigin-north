@@ -30,7 +30,7 @@
 		</div>
 	<?php endif; ?>
 
-	<header id="masthead" class="site-header layout-standard" role="banner">
+	<header id="masthead" class="site-header layout-standard <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner">
 		<div class="container">
 
 			<div class="container-inner">

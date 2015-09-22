@@ -208,4 +208,34 @@ jQuery( function($){
     $( '#scroll-to-top' ).click( function(){
         $( 'html,body' ).animate( { scrollTop: 0 } );
     } );
+
+    // Now lets do the sticky menu
+
+    if( $('#masthead').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
+        var $mhs = false;
+        var smSetup = function () {
+            var $m = $('#masthead');
+            if ($mhs === false) {
+                $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($m);
+            }
+
+            $mhs.hide();
+            $m.css({
+                'position': 'static',
+                'top': null,
+                'left': null,
+                'width': null,
+            });
+            $mhs.show().css('height', $m.outerHeight());
+            $m.css({
+                'position': 'fixed',
+                'top': $m.offset().top,
+                'left': 0,
+                'width': '100%',
+            });
+        };
+        smSetup();
+        $(window).resize(smSetup);
+    }
+
 } );

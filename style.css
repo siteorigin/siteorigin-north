@@ -867,7 +867,7 @@ a {
 .page-layout-no-sidebar .site-main {
   margin: 0; }
 
-.page-layout-no-masthead-margin #masthead {
+.page-layout-no-masthead-margin #masthead, .page-layout-no-masthead-margin .masthead-sentinel {
   margin-bottom: 0; }
 
 .page-layout-no-footer-margin #colophon {
@@ -880,6 +880,8 @@ a {
   width: 100%;
   z-index: 101;
   opacity: 0.975; }
+.page-layout-menu-overlap .masthead-sentinel {
+  display: none !important; }
 .page-layout-menu-overlap.admin-bar #masthead {
   top: 32px; }
   @media screen and (max-width: 782px) {
@@ -895,7 +897,8 @@ a {
   padding: 30px 0;
   position: relative;
   margin-bottom: 30px;
-  width: 100%; }
+  width: 100%;
+  z-index: 999; }
   #masthead .container-inner {
     display: table;
     width: 100%; }
@@ -918,6 +921,10 @@ a {
   #masthead .site-branding, #masthead .main-navigation {
     display: table-cell;
     vertical-align: middle; }
+
+.masthead-sentinel {
+  box-sizing: border-box;
+  margin-bottom: 30px; }
 
 #topbar {
   background: #f4f4f4;
