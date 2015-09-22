@@ -249,6 +249,9 @@
 			@include transform-origin(center center);
 		}
 
+		@include transition(0.25s);
+		@include transform( scale(0.575) translateX(3px) translateY(-3px) );
+
 		&:hover {
 			path {
 				fill: #333;
@@ -260,8 +263,9 @@
 		}
 
 		&.animate-in {
+			@include transform( scale(1) );
 			.cross {
-				@include transform(rotate(90deg));
+				@include transform( rotate(90deg) translateX(0) translateY(0)  );
 			}
 		}
 

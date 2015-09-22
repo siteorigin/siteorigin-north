@@ -176,7 +176,7 @@ jQuery( function($){
         $hs.find('.svg-icon-close').attr("class", "svg-icon-close animate-in");
     } );
     $hs.find('.svg-icon-close').click( function(){
-        $hs.fadeOut('fast');
+        $hs.fadeOut(350);
         $(this).attr("class", "svg-icon-close");
     } );
 
