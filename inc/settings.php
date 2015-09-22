@@ -44,6 +44,27 @@ function siteorigin_north_settings_init(){
 			)
 		),
 
+		'navigation' => array(
+			'title' => __( 'Navigation', 'siteorigin-widgets' ),
+			'fields' => array(
+				'search' => array(
+					'type' => 'checkbox',
+					'label' => __('Menu search', 'siteorigin-north'),
+					'description' => __('Display search in main menu', 'siteorigin-north'),
+				),
+				'sticky' => array(
+					'type' => 'checkbox',
+					'label' => __('Sticky menu', 'siteorigin-north'),
+					'description' => __('Stick menu to top of screen', 'siteorigin-north'),
+				),
+				'resize_logo' => array(
+					'type' => 'checkbox',
+					'label' => __('Resize logo', 'siteorigin-north'),
+					'description' => __('Resize logo in sticky', 'siteorigin-north'),
+				),
+			),
+		),
+
 		'blog' => array(
 			'title' => __( 'Blog', 'siteorigin-widgets' ),
 			'fields' => array(
@@ -113,6 +134,12 @@ add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
+
+	$defaults['topbar_text'] = __( '', '' );
+
+	$defaults['navigation_search'] = true;
+	$defaults['navigation_sticky'] = true;
+	$defaults['navigation_resize_logo'] = true;
 
 	$defaults['responsive_fitvids'] = true;
 	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-widgets');

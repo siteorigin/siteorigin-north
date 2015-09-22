@@ -158,6 +158,7 @@ jQuery( function($){
         });
     }
 
+    // Handle displaying the mobile menu
     var $mobileMenu = false;
     $('#mobile-menu-button').click( function(e){
         e.preventDefault();
@@ -171,4 +172,15 @@ jQuery( function($){
 
         $mobileMenu.slideToggle('fast');
     } );
+
+    // Handle the header search
+    var $hs = $('#header-search');
+    $('#masthead .north-icon-search').click( function(){
+        $hs.fadeIn('fast');
+        $hs.find('input[type="search"]').focus().select();
+    } );
+    $hs.find('.svg-icon-close').click( function(){
+        $hs.fadeOut('fast');
+    } );
+
 } );

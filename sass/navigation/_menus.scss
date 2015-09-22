@@ -118,7 +118,7 @@
 
 	// The responsive menu
 
-	#menu-icon {
+	.svg-icon-menu {
 		margin: 0 8px;
 		float: left;
 		width: 24px;
@@ -145,7 +145,7 @@
 		&:hover {
 			color: #292929;
 
-			#menu-icon .line{
+			.svg-icon-menu .line{
 				fill: #292929;
 			}
 		}
@@ -169,6 +169,14 @@
 		}
 	}
 
+	// The search icon
+	.north-icon-search {
+		float: right;
+		font-size: 16px;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+
 	@media screen and (max-width: 600px) {
 		#mobile-menu-button {
 			display: inline-block;
@@ -176,11 +184,88 @@
 
 		ul {
 			display: none;
+		}
 
-
-
+		.north-icon-search {
+			display: none;
 		}
 	}
+}
+
+#header-search {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+
+	background: $masthead__background_color;
+
+	.container, .search-form {
+		height: 100%;
+	}
+
+	form {
+		display: block;
+		box-sizing: border-box;
+		height: 48px;
+		position: absolute;
+		top: 50%;
+		margin-top: -24px;
+		left: 20px;
+		right: 20px + 20px + 24px;
+	}
+
+	input[type="search"] {
+
+		width: 100%;
+		box-sizing: border-box;
+		height: 48px;
+
+		border-radius: 0;
+		background: rgba(0,0,0,0.035);
+		border: none;
+
+		font-family: $font__detail;
+		right: 20px;
+		padding: 0 10px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	input[type="submit"] {
+		display: none;
+	}
+
+	.svg-icon-close {
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		margin-top: -12px;
+
+		path {
+			fill: #666666;
+			@include transition(0.25s);
+			@include transform-origin(center center);
+		}
+
+		&:hover {
+			path {
+				fill: #333;
+			}
+			.cross {
+				@include transform( rotate(90deg) );
+			}
+		}
+	}
+
+	display: none;
 }
 
 #mobile-navigation {
