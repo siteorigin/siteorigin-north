@@ -573,9 +573,9 @@ a {
     top: 50%;
     right: 20px;
     margin-top: -12px;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    transition: 0.25s;
+    -webkit-transition: 0.35s;
+    -moz-transition: 0.35s;
+    transition: 0.35s;
     -webkit-transform: scale(0.575) translateX(3px) translateY(-3px);
     -moz-transform: scale(0.575) translateX(3px) translateY(-3px);
     -ms-transform: scale(0.575) translateX(3px) translateY(-3px);
@@ -583,9 +583,9 @@ a {
     transform: scale(0.575) translateX(3px) translateY(-3px); }
     #header-search .svg-icon-close path {
       fill: #666666;
-      -webkit-transition: 0.25s;
-      -moz-transition: 0.25s;
-      transition: 0.25s;
+      -webkit-transition: 0.35s;
+      -moz-transition: 0.35s;
+      transition: 0.35s;
       -webkit-transform-origin: center center;
       -moz-transform-origin: center center;
       -ms-transform-origin: center center;

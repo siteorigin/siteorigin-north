@@ -245,11 +245,11 @@
 
 		path {
 			fill: #666666;
-			@include transition(0.25s);
+			@include transition(0.35s);
 			@include transform-origin(center center);
 		}
 
-		@include transition(0.25s);
+		@include transition(0.35s);
 		@include transform( scale(0.575) translateX(3px) translateY(-3px) );
 
 		&:hover {
