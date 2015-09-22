@@ -247,7 +247,7 @@ jQuery( function($){
                 }
 
                 if( top > 0 ) {
-                    var scale = 0.8 + ( Math.max( 0, 24 - top ) / 24 * 0.2 );
+                    var scale = 0.8 + ( Math.max( 0, 48 - top ) / 48 * 0.2 );
                     $img.css( {
                         width: $img.attr('width') * scale,
                         height: $img.attr('height') * scale,
