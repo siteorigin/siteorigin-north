@@ -887,6 +887,16 @@ a {
     display: table-cell;
     vertical-align: middle; }
 
+#topbar {
+  background: #f4f4f4;
+  border-bottom: 1px solid #d4d4d4; }
+  #topbar p {
+    text-align: right;
+    line-height: 3em;
+    margin: 0;
+    font-size: 0.8em;
+    color: #898989; }
+
 /*--------------------------------------------------------------
 ## Site Sidebar
 --------------------------------------------------------------*/

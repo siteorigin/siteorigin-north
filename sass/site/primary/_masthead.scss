@@ -44,5 +44,18 @@
 	
 }
 
+#topbar {
+	background: darken($masthead__background_color, 2.5%);
+	border-bottom: $masthead__border_width solid $masthead__border_color;
+
+	p {
+		text-align: right;
+		line-height: 3em;
+		margin: 0;
+		font-size: 0.8em;
+		color: $color__text_light;
+	}
+}
+
 #site-navigation {
 }

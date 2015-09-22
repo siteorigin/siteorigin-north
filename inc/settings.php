@@ -30,16 +30,23 @@ function siteorigin_north_settings_init(){
 				'logo' => array(
 					'type' => 'media',
 					'label' => __('Logo', 'siteorigin-north'),
-					'args' => array(
-						'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
-					)
+					'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
 					'label' => __('Site Description', 'siteorigin-north'),
-					array(
-						'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
-					)
+					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
+				)
+			)
+		),
+
+		'masthead' => array(
+			'title' => __('Header', 'siteorigin-north'),
+			'fields' => array(
+				'text_above' => array(
+					'type' => 'text',
+					'label' => __('Text Above', 'siteorigin-north'),
+					'description' => __('Text that goes above the main header.', 'siteorigin-north'),
 				)
 			)
 		),
@@ -117,10 +124,8 @@ function siteorigin_north_settings_init(){
 				'text' => array(
 					'type' => 'text',
 					'label' => __('Footer Text', 'siteorigin-north'),
-					'args' => array(
-						'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-north'),
-						'sanitize_callback' => 'wp_kses_post',
-					)
+					'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-north'),
+					'sanitize_callback' => 'wp_kses_post',
 				)
 			)
 		),
@@ -140,7 +145,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
 
-	$defaults['topbar_text'] = __( '', '' );
+	$defaults['masthead_text_above'] = '';
 
 	$defaults['navigation_search'] = true;
 	$defaults['navigation_sticky'] = true;

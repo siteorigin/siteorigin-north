@@ -22,6 +22,14 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-north' ); ?></a>
 
+	<?php if( siteorigin_setting('masthead_text_above') ) : ?>
+		<div id="topbar">
+			<div class="container">
+				<p><?php echo wp_kses_post( siteorigin_setting('masthead_text_above') ) ?></p>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<header id="masthead" class="site-header layout-standard" role="banner">
 		<div class="container">
 
