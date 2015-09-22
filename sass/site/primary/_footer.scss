@@ -8,12 +8,23 @@
 
 		border-top: $footer__border_width solid $footer__border_color;
 		width: 100%;
-		
-		aside {
+		overflow: hidden;
+
+		.widget-wrapper {
 			background: #fafafa;
 			box-sizing: border-box;
 			float: left;
 			border-right: $footer__border_width solid $footer__border_color;
+
+			padding-bottom: 9999px;
+			margin-bottom: -9999px;
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		aside {
 			padding: $footer__top_padding $footer__side_padding;
 			margin: 0;
 
@@ -23,7 +34,7 @@
 		}
 
 		@for $i from 1 through 10 {
-			&.widgets-#{$i} aside{
+			&.widgets-#{$i} .widget-wrapper{
 				width: 100% / $i;
 			}
 		}

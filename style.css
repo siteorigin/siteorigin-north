@@ -891,35 +891,41 @@ a {
     content: "";
     display: table;
     border-top: 1px solid #d4d4d4;
-    width: 100%; }
-    #colophon .widgets aside {
+    width: 100%;
+    overflow: hidden; }
+    #colophon .widgets .widget-wrapper {
       background: #fafafa;
       box-sizing: border-box;
       float: left;
       border-right: 1px solid #d4d4d4;
+      padding-bottom: 9999px;
+      margin-bottom: -9999px; }
+      #colophon .widgets .widget-wrapper:last-child {
+        border-right: none; }
+    #colophon .widgets aside {
       padding: 40px 40px;
       margin: 0; }
       #colophon .widgets aside:last-child {
         border-right: 0; }
-    #colophon .widgets.widgets-1 aside {
+    #colophon .widgets.widgets-1 .widget-wrapper {
       width: 100%; }
-    #colophon .widgets.widgets-2 aside {
+    #colophon .widgets.widgets-2 .widget-wrapper {
       width: 50%; }
-    #colophon .widgets.widgets-3 aside {
+    #colophon .widgets.widgets-3 .widget-wrapper {
       width: 33.33333%; }
-    #colophon .widgets.widgets-4 aside {
+    #colophon .widgets.widgets-4 .widget-wrapper {
       width: 25%; }
-    #colophon .widgets.widgets-5 aside {
+    #colophon .widgets.widgets-5 .widget-wrapper {
       width: 20%; }
-    #colophon .widgets.widgets-6 aside {
+    #colophon .widgets.widgets-6 .widget-wrapper {
       width: 16.66667%; }
-    #colophon .widgets.widgets-7 aside {
+    #colophon .widgets.widgets-7 .widget-wrapper {
       width: 14.28571%; }
-    #colophon .widgets.widgets-8 aside {
+    #colophon .widgets.widgets-8 .widget-wrapper {
       width: 12.5%; }
-    #colophon .widgets.widgets-9 aside {
+    #colophon .widgets.widgets-9 .widget-wrapper {
       width: 11.11111%; }
-    #colophon .widgets.widgets-10 aside {
+    #colophon .widgets.widgets-10 .widget-wrapper {
       width: 10%; }
     #colophon .widgets .widget-title {
       color: #292929;

@@ -126,8 +126,8 @@ function siteorigin_north_widgets_init() {
 		'name'          => esc_html__( 'Footer Widgets', 'siteorigin-north' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
