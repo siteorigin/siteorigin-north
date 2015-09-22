@@ -186,6 +186,7 @@
 }
 
 #header-search {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -207,7 +208,7 @@
 		top: 50%;
 		margin-top: -24px;
 		left: 20px;
-		right: 20px + 20px + 24px;
+		right: 15px + 20px + 24px;
 	}
 
 	input[type="search"] {
@@ -252,13 +253,19 @@
 			path {
 				fill: #333;
 			}
+
 			.cross {
-				@include transform( rotate(90deg) );
+				@include transform( scale(1.25) );
 			}
 		}
-	}
 
-	display: none;
+		&.animate-in {
+			.cross {
+				@include transform(rotate(90deg));
+			}
+		}
+
+	}
 
 	@media screen and (max-width: 600px) {
 		display: none !important;

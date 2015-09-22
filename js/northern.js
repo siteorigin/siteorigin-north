@@ -173,9 +173,11 @@ jQuery( function($){
     $('#masthead .north-icon-search').click( function(){
         $hs.fadeIn('fast');
         $hs.find('input[type="search"]').focus().select();
+        $hs.find('.svg-icon-close').attr("class", "svg-icon-close animate-in");
     } );
     $hs.find('.svg-icon-close').click( function(){
         $hs.fadeOut('fast');
+        $(this).attr("class", "svg-icon-close");
     } );
 
 } );
