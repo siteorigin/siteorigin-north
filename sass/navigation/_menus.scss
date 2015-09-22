@@ -281,32 +281,61 @@
 	left: 0;
 	top: 100%;
 	width: 100%;
-	margin: 0;
 	padding: 15px 20px;
-	list-style: none;
+
 	background: rgba(0,0,0,0.9);
 	z-index: 10;
 
-	li {
-		line-height: 3.5em;
+	form {
+		display: block;
+		width: auto;
+		margin-top: 10px;
 
-		a {
-			text-decoration: none;
+		input[type="search"] {
+			box-sizing: border-box;
+			border: none;
+			background: transparent;
+			border-radius: 0;
 			color: #fff;
+			border-bottom: 1px solid #fff;
+			width: 100%;
+			padding: 10px;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		input[type="submit"] {
+			display: none;
 		}
 	}
 
 	ul {
-		list-style: none;
 		margin: 0;
+		list-style: none;
 		padding: 0;
 
 		li {
-			padding-left: 2em;
+			line-height: 3.5em;
 
-			ul {
-				display: none;
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+		}
 
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				padding-left: 2em;
+
+				ul {
+					display: none;
+
+				}
 			}
 		}
 	}

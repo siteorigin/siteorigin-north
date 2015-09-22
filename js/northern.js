@@ -161,7 +161,15 @@ jQuery( function($){
         $$.toggleClass('to-close');
 
         if( $mobileMenu === false ) {
-            $mobileMenu = $('.main-navigation ul').first().clone().appendTo('#masthead').attr('id', 'mobile-navigation').hide();
+            $mobileMenu = $('<div></div>')
+                .append($('.main-navigation ul').first().clone())
+                .attr('id', 'mobile-navigation')
+                .appendTo('#masthead').hide();
+
+            if( $('#header-search form').length ) {
+                $mobileMenu.append( $('#header-search form').clone() );
+            }
+
             $mobileMenu.find('ul').show().css('opacity', 1);
         }
 
