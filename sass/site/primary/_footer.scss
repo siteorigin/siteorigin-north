@@ -46,6 +46,21 @@
 			text-transform: uppercase;
 		}
 
+		@media (max-width: 640px) {
+			.widget-wrapper {
+				float: none;
+				width: 100% !important;
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-right: none;
+				border-bottom: $footer__border_width solid $footer__border_color;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
 
 	}
 

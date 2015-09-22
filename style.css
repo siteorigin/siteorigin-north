@@ -932,6 +932,16 @@ a {
       margin: 0 0 1em 0;
       font-size: 15px;
       text-transform: uppercase; }
+    @media (max-width: 640px) {
+      #colophon .widgets .widget-wrapper {
+        float: none;
+        width: 100% !important;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-right: none;
+        border-bottom: 1px solid #d4d4d4; }
+        #colophon .widgets .widget-wrapper:last-child {
+          border-bottom: none; } }
   #colophon .site-info {
     border-top: 1px solid #d4d4d4;
     text-align: center;
