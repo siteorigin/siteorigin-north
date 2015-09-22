@@ -635,12 +635,26 @@ a {
 .post-navigation .nav-previous {
   float: left;
   width: 50%; }
+  .comment-navigation .nav-previous .north-icon-previous,
+  .posts-navigation .nav-previous .north-icon-previous,
+  .post-navigation .nav-previous .north-icon-previous {
+    float: left;
+    margin: 0.25em 5px; }
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
+  .comment-navigation .nav-next .north-icon-next,
+  .posts-navigation .nav-next .north-icon-next,
+  .post-navigation .nav-next .north-icon-next {
+    float: right;
+    margin: 0.25em 0 0 5px; }
+.comment-navigation a,
+.posts-navigation a,
+.post-navigation a {
+  text-decoration: none; }
 
 /*--------------------------------------------------------------
 # Accessibility

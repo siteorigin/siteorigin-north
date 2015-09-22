@@ -62,6 +62,11 @@ function siteorigin_north_settings_init(){
 					'label' => __('Resize logo', 'siteorigin-north'),
 					'description' => __('Resize logo in sticky', 'siteorigin-north'),
 				),
+				'post' => array(
+					'type' => 'checkbox',
+					'label' => __('Post navigation', 'siteorigin-north'),
+					'description' => __('Display next and previous post navigation', 'siteorigin-north'),
+				),
 			),
 		),
 
@@ -140,6 +145,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_search'] = true;
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_resize_logo'] = true;
+	$defaults['navigation_post'] = true;
 
 	$defaults['responsive_fitvids'] = true;
 	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-widgets');
