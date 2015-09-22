@@ -74,6 +74,11 @@ function siteorigin_north_settings_init(){
 					'label' => __('Post navigation', 'siteorigin-north'),
 					'description' => __('Display next and previous post navigation', 'siteorigin-north'),
 				),
+				'scroll_to_top' => array(
+					'type' => 'checkbox',
+					'label' => __('Scroll to top', 'siteorigin-north'),
+					'description' => __('Display a scroll to top button', 'siteorigin-north'),
+				),
 			),
 		),
 
@@ -151,6 +156,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_sticky'] = true;
 	$defaults['navigation_resize_logo'] = true;
 	$defaults['navigation_post'] = true;
+	$defaults['navigation_scroll_to_top'] = true;
 
 	$defaults['responsive_fitvids'] = true;
 	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-widgets');

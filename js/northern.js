@@ -180,4 +180,24 @@ jQuery( function($){
         $(this).attr("class", "svg-icon-close");
     } );
 
+    // The scroll to top button
+    var sttWindowScroll = function(){
+        var top  = window.pageYOffset || document.documentElement.scrollTop;
+
+        if( top > $('#masthead').outerHeight() ) {
+            if( !$('#scroll-to-top').hasClass('show') ) {
+                $('#scroll-to-top').css('pointer-events', 'auto').addClass('show');
+            }
+        }
+        else {
+            if( $('#scroll-to-top').hasClass('show') ) {
+                $('#scroll-to-top').css('pointer-events', 'none').removeClass('show');
+            }
+        }
+    };
+    sttWindowScroll();
+    $( window ).scroll( sttWindowScroll );
+    $( '#scroll-to-top' ).click( function(){
+        $( 'html,body' ).animate( { scrollTop: 0 } );
+    } );
 } );

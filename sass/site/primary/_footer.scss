@@ -71,3 +71,44 @@
 		font-size: 0.9em;
 	}
 }
+
+#scroll-to-top {
+	line-height: 0;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	margin-left: -22px;
+	background: rgba(0,0,0,0.65);
+	padding: 18px;
+	border-radius: 36px;
+	cursor: pointer;
+
+	opacity: 0;
+	pointer-events: none;
+	@include transform( scale(0.85) );
+
+	@include transition(0.35s);
+
+	img {
+		@include transition(0.35s);
+	}
+
+	img {
+		display: block;
+		@include transform-origin(center center);
+		@include transform( rotate(-90deg) );
+	}
+
+	&.show {
+		opacity: 1;
+		@include transform( scale(1) );
+
+		img {
+			@include transform( rotate(0deg) );
+		}
+	}
+
+	@media (max-width: 600px) {
+		display: none !important;
+	}
+}
