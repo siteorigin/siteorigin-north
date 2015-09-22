@@ -4,9 +4,7 @@
 	padding: $masthead__padding 0;
 	position: relative;
 	margin-bottom: $masthead__bottom_margin;
-
 	width: 100%;
-	position: relative;
 
 	.container-inner {
 		@include clearfix();
