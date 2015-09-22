@@ -449,12 +449,11 @@ a {
       left: 0;
       z-index: 99999;
       display: none;
-      text-align: center;
+      text-align: left;
       background-color: #fff;
       border: 1px solid #d4d4d4;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
       .main-navigation ul ul ul {
-        text-align: left;
         left: 100%;
         top: -1px;
         margin-left: 0 !important; }
@@ -601,6 +600,9 @@ a {
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
       transform: rotate(90deg); }
+  @media screen and (max-width: 600px) {
+    #header-search {
+      display: none !important; } }
 
 #mobile-navigation {
   position: absolute;

@@ -45,14 +45,13 @@
 			left: 0;
 			z-index: 99999;
 			display: none;
-			text-align: center;
+			text-align: left;
 
 			background-color: #fff;
 			border: 1px solid #d4d4d4;
 			box-shadow: 0 1px 1px rgba(0,0,0,0.075);
 
 			ul {
-				text-align: left;
 				left: 100%;
 				top: -1px;
 				margin-left: 0 !important;
@@ -271,6 +270,10 @@
 	}
 
 	display: none;
+
+	@media screen and (max-width: 600px) {
+		display: none !important;
+	}
 }
 
 #mobile-navigation {
