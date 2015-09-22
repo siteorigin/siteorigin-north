@@ -44,7 +44,12 @@
 						<span class="north-icon-search"></span>
 					<?php endif; ?>
 
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id' => 'primary-menu'
+					) );
+					?>
 
 				</nav><!-- #site-navigation -->
 			</div>

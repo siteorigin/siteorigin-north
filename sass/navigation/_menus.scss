@@ -4,17 +4,6 @@
 	font-size: 0.95em;
 	text-align: right;
 
-	position: absolute;
-	top: 50%;
-	right: 20px;
-	margin-top: -1em;
-	height: 2em;
-
-	> div {
-		float: right;
-		@include clearfix();
-	}
-
 	ul {
 		list-style: none;
 		margin: 0;

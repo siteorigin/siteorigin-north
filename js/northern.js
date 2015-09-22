@@ -123,11 +123,6 @@ jQuery( function($){
         $( '.entry-content' ).fitVids();
     }
 
-    // properly position the navigation
-    if( $( '#masthead' ).hasClass( 'layout-standard' ) ) {
-        $( '#site-navigation' ).css('left', $('#masthead .site-branding').outerWidth() + 20 );
-    }
-
     // Remove the no-js body class
     $('body.no-js').removeClass('no-js');
     if( $('body').hasClass('css3-animations') ) {

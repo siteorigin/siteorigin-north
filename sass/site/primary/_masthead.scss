@@ -7,18 +7,19 @@
 	width: 100%;
 
 	.container-inner {
-		@include clearfix();
+		display: table;
+		width: 100%;
 	}
 
 	.site-branding {
-		margin-right: 50px;
-		float: left;
+		padding-right: 20px;
 
 		.site-title {
 			margin: 0;
 			color: #292929;
 			font-size: 1.5em;
 			line-height: 1.2em;
+			white-space: nowrap;
 
 			a {
 				text-decoration: none;
@@ -30,10 +31,15 @@
 			margin: 0;
 			font-size: 0.9em;
 		}
+
+		img {
+			max-width: none;
+		}
 	}
 
-	.main-navigation {
-
+	.site-branding, .main-navigation {
+		display: table-cell;
+		vertical-align: middle;
 	}
 	
 }
