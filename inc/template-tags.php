@@ -150,10 +150,10 @@ function siteorigin_north_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-//		$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-north' ) );
-//		if ( $categories_list && siteorigin_north_categorized_blog() ) {
-//			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'siteorigin-north' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-//		}
+		$categories_list = get_the_category_list( esc_html__( ', ', 'siteorigin-north' ) );
+		if ( $categories_list && siteorigin_north_categorized_blog() ) {
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'siteorigin-north' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
 
 		/* translators: used between list items, there is a space after the comma */
 		the_tags( '<div class="tags-list">', '', '</div>' );
@@ -164,8 +164,6 @@ function siteorigin_north_entry_footer() {
 		comments_popup_link( esc_html__( 'Leave a comment', 'siteorigin-north' ), esc_html__( '1 Comment', 'siteorigin-north' ), esc_html__( '% Comments', 'siteorigin-north' ) );
 		echo '</span>';
 	}
-
-	// edit_post_link( esc_html__( 'Edit', 'siteorigin-north' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
