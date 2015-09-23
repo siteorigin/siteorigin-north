@@ -142,6 +142,7 @@ jQuery( function($){
             $('.main-navigation ul ul').hide();
         };
         resetMenu();
+        $(window).resize( resetMenu );
 
         // Handle menu hovers
         $('.main-navigation ul li').burstMenuHover();
