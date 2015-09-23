@@ -922,6 +922,8 @@ a {
   #masthead .site-branding, #masthead .main-navigation {
     display: table-cell;
     vertical-align: middle; }
+  #masthead.floating {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
 
 .masthead-sentinel {
   box-sizing: border-box;

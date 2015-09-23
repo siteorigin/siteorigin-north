@@ -238,6 +238,11 @@ jQuery( function($){
         smSetup();
         $(window).resize(smSetup);
 
+        var mhPadding = {
+            top: parseInt($mh.css('padding-top')),
+            bottom: parseInt($mh.css('padding-bottom'))
+        };
+
         if( $mh.data('scale-logo') ) {
             var smResizeLogo = function(){
                 var top  = window.pageYOffset || document.documentElement.scrollTop;
@@ -247,17 +252,25 @@ jQuery( function($){
                 }
 
                 if( top > 0 ) {
-                    var scale = 0.8 + ( Math.max( 0, 48 - top ) / 48 * 0.2 );
+                    var scale = 0.75 + ( Math.max( 0, 48 - top ) / 48 * 0.25 );
                     $img.css( {
                         width: $img.attr('width') * scale,
-                        height: $img.attr('height') * scale,
+                        height: $img.attr('height') * scale
                     } );
+                    $mh.css({
+                        'padding-top' : mhPadding.top * scale,
+                        'padding-bottom' : mhPadding.bottom * scale
+                    }).addClass('floating');
                 }
                 else {
                     $img.css( {
                         width: $img.attr('width'),
-                        height: $img.attr('height'),
+                        height: $img.attr('height')
                     } );
+                    $mh.css({
+                        'padding-top' : mhPadding.top,
+                        'padding-bottom' : mhPadding.bottom
+                    }).removeClass('floating');
                 }
             };
             smResizeLogo();
