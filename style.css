@@ -904,6 +904,12 @@ a {
     width: 100%; }
   #masthead .site-branding {
     padding-right: 20px; }
+    #masthead .site-branding > * {
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -ms-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center; }
     #masthead .site-branding .site-title {
       margin: 0;
       color: #292929;

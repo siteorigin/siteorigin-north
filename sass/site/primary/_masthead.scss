@@ -15,6 +15,10 @@
 	.site-branding {
 		padding-right: 20px;
 
+		> * {
+			@include transform-origin( left center );
+		}
+
 		.site-title {
 			margin: 0;
 			color: #292929;

@@ -246,27 +246,39 @@ jQuery( function($){
         if( $mh.data('scale-logo') ) {
             var smResizeLogo = function(){
                 var top  = window.pageYOffset || document.documentElement.scrollTop;
-                var $img = $mh.find('.site-branding img');
-                if( $img.length === 0 ) {
-                    return;
-                }
+
+                var $img = $mh.find('.site-branding img'),
+                    $branding = $mh.find('.site-branding > *');
 
                 if( top > 0 ) {
-                    var scale = 0.75 + ( Math.max( 0, 48 - top ) / 48 * 0.25 );
-                    $img.css( {
-                        width: $img.attr('width') * scale,
-                        height: $img.attr('height') * scale
-                    } );
+                    var scale = 0.775 + ( Math.max( 0, 48 - top ) / 48 * (1-0.775) );
+
+                    if( $img.length ) {
+                        $img.css( {
+                            width: $img.attr('width') * scale,
+                            height: $img.attr('height') * scale
+                        } );
+                    }
+                    else {
+                        $branding.css('transform', 'scale(' + scale + ')');
+                    }
+
                     $mh.css({
                         'padding-top' : mhPadding.top * scale,
                         'padding-bottom' : mhPadding.bottom * scale
                     }).addClass('floating');
                 }
                 else {
-                    $img.css( {
-                        width: $img.attr('width'),
-                        height: $img.attr('height')
-                    } );
+                    if( $img.length ) {
+                        $img.css({
+                            width: $img.attr('width'),
+                            height: $img.attr('height')
+                        });
+                    }
+                    else {
+                        $branding.css('transform', 'scale(1)');
+                    }
+
                     $mh.css({
                         'padding-top' : mhPadding.top,
                         'padding-bottom' : mhPadding.bottom
