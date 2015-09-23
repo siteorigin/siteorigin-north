@@ -121,9 +121,9 @@
 			color: inherit;
 		}
 
-		.line {
+		path {
 			fill: #666;
-			@include transform-origin(center center);
+			@include transform-origin(left top);
 			@include transition(0.4s);
 		}
 	}
@@ -144,19 +144,21 @@
 		}
 
 		&.to-close {
-			$translate_dist: 4.2px;
+			$translate_dist: 8.75px;
+			$translate_height_correction: 0px;
 
 			.line-1 {
-				@include transform( rotate(45deg) translateY($translate_dist) translateX($translate_dist) );
+				@include transform( rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist) );
 
 			}
 
 			.line-2 {
 				opacity: 0;
+				@include transform( translateX($translate_dist * 1.25) );
 			}
 
 			.line-3{
-				@include transform( rotate(-45deg) translateY(-$translate_dist) translateX($translate_dist) );
+				@include transform( rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist) );
 			}
 
 		}
@@ -245,28 +247,20 @@
 
 		path {
 			fill: #666666;
-			@include transition(0.35s);
-			@include transform-origin(center center);
 		}
 
 		@include transition(0.35s);
+		@include transform-origin(center center);
 		@include transform( scale(0.575) translateX(3px) translateY(-3px) );
 
 		&:hover {
 			path {
 				fill: #333;
 			}
-
-			.cross {
-				@include transform( scale(1.25) );
-			}
 		}
 
 		&.animate-in {
-			@include transform( scale(1) );
-			.cross {
-				@include transform( rotate(90deg) translateX(0) translateY(0)  );
-			}
+			@include transform( scale(1) rotate(90deg)  );
 		}
 
 	}
