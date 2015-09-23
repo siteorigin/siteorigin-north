@@ -472,7 +472,6 @@ a {
     .main-navigation ul li.focus > ul {
       display: block; }
   .main-navigation li {
-    float: right;
     position: relative; }
   .main-navigation a {
     display: block;
