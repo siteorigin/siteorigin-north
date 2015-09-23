@@ -497,7 +497,6 @@ a {
       transition: 0.4s; }
   .main-navigation #mobile-menu-button {
     display: none;
-    float: right;
     margin-top: 0.2em;
     font-size: 1.2em;
     color: #777; }
