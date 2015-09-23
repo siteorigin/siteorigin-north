@@ -30,7 +30,7 @@
 		</div>
 	<?php endif; ?>
 
-	<header id="masthead" class="site-header layout-standard <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
+	<header id="masthead" class="site-header layout-<?php echo str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
 		<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 		<div class="container">
 
@@ -49,16 +49,16 @@
 						<?php echo esc_html( siteorigin_setting('responsive_menu_text') ) ?>
 					</a>
 
-					<?php if( siteorigin_setting('navigation_search') ) : ?>
-						<span class="north-icon-search"></span>
-					<?php endif; ?>
-
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'menu_id' => 'primary-menu'
 					) );
 					?>
+
+					<?php if( siteorigin_setting('navigation_search') ) : ?>
+						<span class="north-icon-search"></span>
+					<?php endif; ?>
 
 				</nav><!-- #site-navigation -->
 			</div>

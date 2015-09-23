@@ -51,6 +51,38 @@
 	&.floating {
 		box-shadow: 0 1px 1px rgba(0,0,0,0.075);
 	}
+
+	// All the different layouts
+
+	&.layout-centered {
+
+		.container-inner {
+			display: block;
+		}
+
+		.site-branding {
+			margin: 0 auto $masthead__padding auto;
+			padding: 0;
+			text-align: center;
+
+			img {
+				max-width: 100%;
+				display: inline-block;
+			}
+		}
+
+		.main-navigation {
+			text-align: center;
+			
+			> div {
+
+			}
+		}
+
+		.site-branding, .main-navigation {
+			display: block;
+		}
+	}
 }
 
 .masthead-sentinel {

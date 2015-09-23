@@ -420,6 +420,8 @@ a {
   z-index: 99999;
   font-size: 0.95em;
   text-align: right; }
+  .main-navigation > div {
+    display: inline-block; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -523,10 +525,12 @@ a {
       -o-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
       transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px); }
   .main-navigation .north-icon-search {
-    float: right;
+    display: inline-block;
     font-size: 16px;
-    margin-top: 7px;
-    cursor: pointer; }
+    cursor: pointer;
+    line-height: 16px;
+    position: relative;
+    top: 2px; }
   @media screen and (max-width: 600px) {
     .main-navigation #mobile-menu-button {
       display: inline-block; }
@@ -919,6 +923,19 @@ a {
     vertical-align: middle; }
   #masthead.floating {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
+  #masthead.layout-centered .container-inner {
+    display: block; }
+  #masthead.layout-centered .site-branding {
+    margin: 0 auto 30px auto;
+    padding: 0;
+    text-align: center; }
+    #masthead.layout-centered .site-branding img {
+      max-width: 100%;
+      display: inline-block; }
+  #masthead.layout-centered .main-navigation {
+    text-align: center; }
+  #masthead.layout-centered .site-branding, #masthead.layout-centered .main-navigation {
+    display: block; }
 
 .masthead-sentinel {
   box-sizing: border-box;

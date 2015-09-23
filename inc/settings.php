@@ -22,7 +22,7 @@ add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
  */
 function siteorigin_north_settings_init(){
 
-	SiteOrigin_Settings::single()->configure( array(
+	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_north_settings_array', array(
 
 		'branding' => array(
 			'title' => __('Branding', 'siteorigin-north'),
@@ -43,6 +43,14 @@ function siteorigin_north_settings_init(){
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-north'),
 			'fields' => array(
+				'layout' => array(
+					'type' => 'select',
+					'label' => __('Header layout', 'siteorigin-north'),
+					'options' => array(
+						'default' => __('Default', 'siteorigin-north'),
+						'centered' => __('Centered', 'siteorigin-north'),
+					)
+				),
 				'text_above' => array(
 					'type' => 'text',
 					'label' => __('Text Above', 'siteorigin-north'),
@@ -139,7 +147,7 @@ function siteorigin_north_settings_init(){
 				)
 			)
 		),
-	) );
+	) ) );
 
 }
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
@@ -155,6 +163,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
 
+	$defaults['masthead_text_layout'] = 'default';
 	$defaults['masthead_text_above'] = '';
 
 	$defaults['navigation_search'] = true;

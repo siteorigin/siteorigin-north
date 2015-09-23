@@ -4,6 +4,10 @@
 	font-size: 0.95em;
 	text-align: right;
 
+	> div {
+		display: inline-block;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
@@ -165,10 +169,12 @@
 
 	// The search icon
 	.north-icon-search {
-		float: right;
+		display: inline-block;
 		font-size: 16px;
-		margin-top: 7px;
 		cursor: pointer;
+		line-height: 16px;
+		position: relative;
+		top: 2px
 	}
 
 	@media screen and (max-width: 600px) {
