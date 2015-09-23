@@ -920,7 +920,7 @@ a {
         text-decoration: none;
         color: inherit; }
     #masthead .site-branding .site-description {
-      margin: 0;
+      margin: 0.25em 0 0 0;
       font-size: 0.9em; }
     #masthead .site-branding img {
       display: block;
