@@ -89,6 +89,11 @@ function siteorigin_north_setup() {
 
 	// Support for SiteOrigin Premium extras
 	add_theme_support( 'siteorigin-premium-retina-images' );
+
+	if( !defined('SITEORIGIN_PANELS_VERSION') ){
+		// Only include panels lite if the panels plugin doesn't exist
+		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
+	}
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
@@ -237,6 +242,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme settings file
  */
 require get_template_directory() . '/inc/settings.php';
+
+require get_template_directory() . '/inc/siteorigin-panels.php';
 
 /**
  * Load support for WooCommerce
