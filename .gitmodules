@@ -4,3 +4,6 @@
 [submodule "inc/panels-lite"]
 	path = inc/panels-lite
 	url = https://gregpriday@github.com/siteorigin/panels-lite/
+[submodule "inc/settings"]
+	path = inc/settings
+	url = git@github.com:siteorigin/settings.git
