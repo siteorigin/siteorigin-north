@@ -2,16 +2,15 @@
 
 	margin-top: $footer__top_margin;
 	color: $color__text_medium;
+	border-top: $footer__border_width solid $footer__border_color;
+	background: $footer__background_color;
 
 	.widgets {
 		@include clearfix();
-
-		border-top: $footer__border_width solid $footer__border_color;
 		width: 100%;
 		overflow: hidden;
 
 		.widget-wrapper {
-			background: #fafafa;
 			box-sizing: border-box;
 			float: left;
 			border-right: $footer__border_width solid $footer__border_color;
@@ -69,6 +68,12 @@
 		text-align: center;
 		padding: 15px;
 		font-size: 0.9em;
+	}
+
+	&.unconstrained-footer {
+		.container {
+			max-width: none;
+		}
 	}
 }
 

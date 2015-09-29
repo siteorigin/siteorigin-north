@@ -144,6 +144,11 @@ function siteorigin_north_settings_init(){
 					'label' => __('Footer Text', 'siteorigin-north'),
 					'description' => __("{sitename} and {year} are your site's name and current year", 'siteorigin-north'),
 					'sanitize_callback' => 'wp_kses_post',
+				),
+				'constrained' => array(
+					'type' => 'checkbox',
+					'label' => __('Constrain', 'siteorigin-north'),
+					'description' => __("Constrain the footer width", 'siteorigin-north'),
 				)
 			)
 		),
@@ -183,6 +188,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['blog_display_comment_count'] = true;
 
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
+	$defaults['footer_constrained'] = false;
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');

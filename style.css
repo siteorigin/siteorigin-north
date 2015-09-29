@@ -970,15 +970,15 @@ a {
 --------------------------------------------------------------*/
 #colophon {
   margin-top: 30px;
-  color: #595959; }
+  color: #595959;
+  border-top: 1px solid #d4d4d4;
+  background: #fafafa; }
   #colophon .widgets {
     content: "";
     display: table;
-    border-top: 1px solid #d4d4d4;
     width: 100%;
     overflow: hidden; }
     #colophon .widgets .widget-wrapper {
-      background: #fafafa;
       box-sizing: border-box;
       float: left;
       border-right: 1px solid #d4d4d4;
@@ -1031,6 +1031,8 @@ a {
     text-align: center;
     padding: 15px;
     font-size: 0.9em; }
+  #colophon.unconstrained-footer .container {
+    max-width: none; }
 
 #scroll-to-top {
   line-height: 0;
