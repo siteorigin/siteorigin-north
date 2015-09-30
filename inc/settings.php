@@ -1,7 +1,7 @@
 <?php
 
 function siteorigin_settings_localize( $loc ){
-	return array(
+	return wp_parse_args( array(
 		'section_title' => __('Theme Settings', 'siteorigin-north'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-north'),
 		'premium_only' => __('Premium Only', 'siteorigin-north'),
@@ -13,7 +13,7 @@ function siteorigin_settings_localize( $loc ){
 
 		// For the settings metabox
 		'meta_box' => __('Page settings', 'siteorigin-north'),
-	);
+	), $loc);
 }
 add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
 
@@ -255,7 +255,7 @@ add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_setting
  * Add the default Page Settings
  */
 function siteorigin_north_setup_page_setting_defaults( $defaults ){
-	$defaults['layout'] = 'no-sidebar';
+	$defaults['layout'] = 'default';
 	$defaults['menu'] = 'default';
 	$defaults['page_title'] = true;
 	$defaults['masthead_margin'] = true;
@@ -263,3 +263,17 @@ function siteorigin_north_setup_page_setting_defaults( $defaults ){
 	return $defaults;
 }
 add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
+
+/**
+ * Change the default page settings for the home page.
+ *
+ * @param $settings
+ *
+ * @return mixed
+ */
+function siteorigin_north_page_settings_panels_defaults( $settings ){
+	$settings['layout'] = 'no-sidebar';
+	$settings['page_title'] = false;
+	return $settings;
+}
+add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_page_settings_panels_defaults');

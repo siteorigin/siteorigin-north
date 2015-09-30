@@ -94,6 +94,10 @@ function siteorigin_north_setup() {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
+
+	add_theme_support( 'siteorigin-panels', array(
+		'home-page' => true,
+	) );
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
