@@ -4,10 +4,11 @@
 return array(
 	'variables' => array(
 		'font__main' => 'fonts_main',
-		'font__headings' => 'fonts_heading',
+		'font__headings' => 'fonts_headings',
 		'font__blockquote' => 'fonts_details',
 	),
 	'stylesheets' => array(
-		'style', 'woocommerce'
+		'style',
+		'woocommerce'
 	),
 );
