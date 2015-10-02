@@ -8,6 +8,9 @@ return array(
 		'font__headings' => 'fonts_headings',
 		'font__blockquote' => 'fonts_details',
 
+		// The page structure
+		'size__site-sidebar' => 'structure_sidebar_width',
+
 		// The accent colors used in free
 		'color__primary_accent' => 'branding_accent',
 		'color__primary_accent_dark' => 'branding_accent_dark',
@@ -26,11 +29,20 @@ return array(
 		'masthead__padding' => 'masthead_padding',
 		'masthead__bottom_margin' => 'masthead_bottom_margin',
 
+		// The footer customizations
+		'footer__background_color' => 'footer_background_color',
+		'footer__border_color' => 'footer_border_color',
+		'footer__border_width' => 'footer_border_width',
+		'footer__top_padding' => 'footer_top_padding',
+		'footer__side_padding' => 'footer_side_padding',
+		'footer__top_margin' => 'footer_top_margin',
+
 	),
 	'free' => array(
 		// SASS variables that are available in the free version.
 		'color__primary_accent',
 		'color__primary_accent_dark',
+		'size__site-sidebar'
 	),
 	'stylesheets' => array(
 		'style',
