@@ -829,7 +829,7 @@ a {
 .no-active-sidebar .site-main {
   margin: 0; }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .content-area {
     float: none;
     width: auto;
