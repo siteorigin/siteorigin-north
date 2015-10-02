@@ -229,9 +229,9 @@ jQuery( function($){
 
             var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
-                'position': 'static',
-                'top': null,
-                'left': null,
+                'position': 'relative',
+                'top': 0,
+                'left': 0,
                 'width': null,
             });
 
@@ -240,7 +240,7 @@ jQuery( function($){
                 $mh.css({
                     'position': 'fixed',
                     'top': pageTop,
-                    'left': 0,
+                    'left': $mhs.offset().left,
                     'width': '100%',
                 });
             }
