@@ -228,7 +228,7 @@ button,
 input,
 select,
 textarea {
-  color: #292929;
+  color: #595959;
   font-family: "Droid Sans", sans-serif;
   font-size: 14.4px;
   font-size: 0.9rem;
@@ -954,7 +954,7 @@ a {
 ## Site Sidebar
 --------------------------------------------------------------*/
 #secondary {
-  color: #5c5c5c; }
+  color: #595959; }
   #secondary aside {
     margin-bottom: 60px; }
     #secondary aside:last-child {
@@ -1194,7 +1194,7 @@ a {
       font-size: 18px;
       margin-top: 1px; }
     .entry-meta li.hovering, .entry-meta li.hovering a, .entry-meta li.hovering .meta-icon {
-      color: #c75d5d; }
+      color: #a94346; }
 
 .page-content,
 .entry-content,
@@ -1229,7 +1229,7 @@ a {
   font-size: 0.8em;
   padding: 8px 12px; }
   .tags-list a:hover {
-    background: #c75d5d; }
+    background: #a94346; }
 
 .more-link {
   font-size: 0.85em;
@@ -1266,7 +1266,7 @@ a {
     text-decoration: none;
     color: #595959; }
     .post-pagination a:hover {
-      color: #c75d5d; }
+      color: #a94346; }
   .post-pagination .current {
     font-weight: bold;
     color: #292929; }
@@ -1319,7 +1319,7 @@ a {
       padding: 8px 12px;
       background: #292929; }
       .comment-list li .comment-reply-link:hover {
-        background: #c75d5d; }
+        background: #a94346; }
     .comment-list li .info {
       color: #b0b0b0; }
     .comment-list li .author {
@@ -1391,8 +1391,8 @@ a {
       -moz-transition: 0.085s;
       transition: 0.085s; }
       #commentform .form-submit input:hover {
-        background: #c75d5d;
-        border-color: #c75d5d;
+        background: #a94346;
+        border-color: #a94346;
         color: #ffffff;
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
   #commentform input, #commentform textarea {

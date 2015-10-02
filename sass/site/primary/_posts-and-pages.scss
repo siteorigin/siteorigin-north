@@ -148,7 +148,7 @@
 
 		&.hovering {
 			&, & a, & .meta-icon {
-				color: $color__link-hover;
+				color: $color__primary_accent_dark;
 			}
 		}
 	}
@@ -186,7 +186,7 @@
 		padding: 8px 12px;
 
 		&:hover {
-			background: $color__link;
+			background: $color__primary_accent_dark;
 		}
 	}
 }
