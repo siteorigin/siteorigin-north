@@ -213,31 +213,40 @@ jQuery( function($){
     // Now lets do the sticky menu
 
     if( $('#masthead').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
-        var $mhs = false;
-        var $mh = $('#masthead');
+        var $mhs = false,
+            mhTop = false,
+            pageTop = $('#page').offset().top,
+            $mh = $('#masthead');
 
         var smSetup = function () {
             if ($mhs === false) {
                 $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($mh);
             }
-
+            if( mhTop === false ) {
+                mhTop = $mh.offset().top;
+            }
             $mhs.hide();
+
+            var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
                 'position': 'static',
                 'top': null,
                 'left': null,
                 'width': null,
             });
-            $mhs.show().css('height', $mh.outerHeight());
-            $mh.css({
-                'position': 'fixed',
-                'top': $mh.offset().top,
-                'left': 0,
-                'width': '100%',
-            });
+
+            if( top > ( mhTop - pageTop ) ) {
+                $mhs.show().css('height', $mh.outerHeight());
+                $mh.css({
+                    'position': 'fixed',
+                    'top': pageTop,
+                    'left': 0,
+                    'width': '100%',
+                });
+            }
         };
         smSetup();
-        $(window).resize(smSetup);
+        $(window).resize( smSetup ).scroll( smSetup );
 
         var mhPadding = {
             top: parseInt($mh.css('padding-top')),
@@ -247,6 +256,7 @@ jQuery( function($){
         if( $mh.data('scale-logo') ) {
             var smResizeLogo = function(){
                 var top  = window.pageYOffset || document.documentElement.scrollTop;
+                top -= pageTop;
 
                 var $img = $mh.find('.site-branding img'),
                     $branding = $mh.find('.site-branding > *');
