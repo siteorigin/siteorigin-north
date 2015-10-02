@@ -28,6 +28,7 @@ $color__text_meta: #b0b0b0;
 
 // Masthead
 $masthead__background_color: #fafafa;
+$masthead__top_background_color: darken($masthead__background_color, 2.5%);
 $masthead__border_color: #d4d4d4;
 $masthead__border_width: 1px;
 $masthead__padding: 30px;

@@ -87,7 +87,7 @@
 }
 
 #topbar {
-	background: darken($masthead__background_color, 2.5%);
+	background: $masthead__top_background_color;
 	border-bottom: $masthead__border_width solid $masthead__border_color;
 
 	p {
