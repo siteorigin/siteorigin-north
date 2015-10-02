@@ -36,7 +36,19 @@ function siteorigin_north_settings_init(){
 					'type' => 'checkbox',
 					'label' => __('Site Description', 'siteorigin-north'),
 					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
-				)
+				),
+				'accent' => array(
+					'type' => 'color',
+					'label' => __('Accent Color', 'siteorigin-north'),
+					'description' => __('The color used for links and various other accents.', 'siteorigin-north'),
+					'live' => true,
+				),
+				'accent_dark' => array(
+					'type' => 'color',
+					'label' => __('Dark Accent Color', 'siteorigin-north'),
+					'description' => __('A darker version of your accent color.', 'siteorigin-north'),
+					'live' => true,
+				),
 			)
 		),
 
@@ -117,8 +129,8 @@ function siteorigin_north_settings_init(){
 				'display_comment_count' => array(
 					'type' => 'checkbox',
 					'label' => __('Display comment count', 'siteorigin-north'),
-				),
-			),
+				)
+			)
 		),
 
 		'responsive' => array(
@@ -132,7 +144,7 @@ function siteorigin_north_settings_init(){
 				'fitvids' => array(
 					'type' => 'checkbox',
 					'label' => __('Use Fitvids', 'siteorigin-north'),
-				),
+				)
 			)
 		),
 
@@ -151,11 +163,38 @@ function siteorigin_north_settings_init(){
 					'description' => __("Constrain the footer width", 'siteorigin-north'),
 				)
 			)
-		),
+		)
 	) ) );
 
 }
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
+
+/**
+ * Add custom CSS for the theme settings
+ *
+ * @param $css
+ *
+ * @return string
+ */
+function siteorigin_north_settings_custom_css($css){
+	// Custom CSS Code
+	$css .= '/* style */' . "\n" .
+		'blockquote {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'a {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'a:hover,a:focus {' . "\n" .
+		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'.more-link:hover {' . "\n" .
+		'background: ${branding_accent};' . "\n" .
+		'border-color: ${branding_accent};' . "\n" .
+		'}';
+	return $css;
+}
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
 
 /**
  * Add default settings.
@@ -167,6 +206,8 @@ add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo'] = false;
 	$defaults['branding_site_description'] = true;
+	$defaults['branding_accent'] = '#c75d5d';
+	$defaults['branding_accent_dark'] = '#a94346';
 
 	$defaults['masthead_text_layout'] = 'default';
 	$defaults['masthead_text_above'] = '';
