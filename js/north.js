@@ -207,13 +207,15 @@ jQuery( function($){
             $mh = $('#masthead');
 
         var smSetup = function () {
+            pageTop = $('#page').offset().top;
+
             if ($mhs === false) {
                 $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($mh);
             }
             if( mhTop === false ) {
                 mhTop = $mh.offset().top;
             }
-            $mhs.hide();
+
 
             var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
@@ -223,14 +225,23 @@ jQuery( function($){
                 'width': null,
             });
 
-            if( top > ( mhTop - pageTop ) ) {
-                $mhs.show().css('height', $mh.outerHeight());
+            var adminBarOffset = $('#wpadminbar').css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0;
+
+            if( top + adminBarOffset > $mh.offset().top ) {
+
+                $mhs.show().css({
+                    'height': $mh.outerHeight(),
+                    'margin-bottom' : $mh.css('margin-bottom')
+                });
                 $mh.css({
                     'position': 'fixed',
-                    'top': pageTop,
+                    'top': adminBarOffset,
                     'left': $mhs.offset().left,
                     'width': '100%',
                 });
+            }
+            else {
+                $mhs.hide();
             }
         };
         smSetup();
