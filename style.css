@@ -553,6 +553,7 @@ a {
     display: block;
     box-sizing: border-box;
     height: 48px;
+    max-height: 100%;
     position: absolute;
     top: 50%;
     margin-top: -24px;
@@ -562,6 +563,7 @@ a {
     width: 100%;
     box-sizing: border-box;
     height: 48px;
+    max-height: 100%;
     border-radius: 0;
     background: rgba(0, 0, 0, 0.035);
     border: none;

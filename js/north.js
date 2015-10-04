@@ -177,18 +177,6 @@ jQuery( function($){
         $mobileMenu.slideToggle('fast');
     } );
 
-    // Handle the header search
-    var $hs = $('#header-search');
-    $('#masthead .north-icon-search').click( function(){
-        $hs.fadeIn('fast');
-        $hs.find('input[type="search"]').focus().select();
-        $hs.find('.svg-icon-close').attr("class", "svg-icon-close animate-in");
-    } );
-    $hs.find('.svg-icon-close').click( function(){
-        $hs.fadeOut(350);
-        $(this).attr("class", "svg-icon-close");
-    } );
-
     // The scroll to top button
     var sttWindowScroll = function(){
         var top  = window.pageYOffset || document.documentElement.scrollTop;
@@ -299,7 +287,24 @@ jQuery( function($){
             smResizeLogo();
             $( window ).scroll( smResizeLogo );
         }
-
     }
+
+    // Handle the header search
+    var $hs = $('#header-search');
+    $('#masthead .north-icon-search').click( function(){
+        $hs.fadeIn('fast');
+        $hs.find('form').css('margin-top', -$hs.find('form').outerHeight() / 2);
+        $hs.find('input[type="search"]').focus().select();
+        $hs.find('.svg-icon-close').attr("class", "svg-icon-close animate-in");
+    } );
+    $hs.find('.svg-icon-close').click( function(){
+        $hs.fadeOut(350);
+        $(this).attr("class", "svg-icon-close");
+    } );
+    $(window).scroll( function(){
+        if( $hs.is(':visible') ) {
+            $hs.find('form').css('margin-top', -$hs.find('form').outerHeight() / 2);
+        }
+    } );
 
 } );
