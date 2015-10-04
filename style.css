@@ -832,15 +832,13 @@ a {
   margin: 0; }
 
 @media (max-width: 600px) {
-  .content-area {
+  body.responsive .content-area {
     float: none;
     width: auto;
     margin: 0; }
-
-  .site-main {
+  body.responsive .site-main {
     margin: 0; }
-
-  .site-content .widget-area {
+  body.responsive .site-content .widget-area {
     float: none;
     width: 100%;
     padding-left: 0;
