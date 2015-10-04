@@ -207,6 +207,8 @@ jQuery( function($){
             $mh = $('#masthead');
 
         var smSetup = function () {
+            pageTop = $('#page').offset().top;
+
             if ($mhs === false) {
                 $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($mh);
             }
@@ -224,10 +226,25 @@ jQuery( function($){
             });
 
             if( top > ( mhTop - pageTop ) ) {
-                $mhs.show().css('height', $mh.outerHeight());
+
+                var adminBarOffset;
+                if( $('#wpadminbar').css('position') === 'absolute' ) {
+                    adminBarOffset = $('#wpadminbar').outerHeight();
+                    if( $(window).scrollTop() < adminBarOffset ) {
+                        adminBarOffset = $(window).scrollTop();
+                    }
+                }
+                else {
+                    adminBarOffset = 0;
+                }
+
+                $mhs.show().css({
+                    'height': $mh.outerHeight(),
+                    'margin-bottom' : $mh.css('margin-bottom')
+                });
                 $mh.css({
                     'position': 'fixed',
-                    'top': pageTop,
+                    'top': pageTop - adminBarOffset,
                     'left': $mhs.offset().left,
                     'width': '100%',
                 });
