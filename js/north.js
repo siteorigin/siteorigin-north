@@ -225,18 +225,9 @@ jQuery( function($){
                 'width': null,
             });
 
-            if( top > ( mhTop - pageTop ) ) {
+            var adminBarOffset = $('#wpadminbar').css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0;
 
-                var adminBarOffset;
-                if( $('#wpadminbar').css('position') === 'absolute' ) {
-                    adminBarOffset = $('#wpadminbar').outerHeight();
-                    if( $(window).scrollTop() < adminBarOffset ) {
-                        adminBarOffset = $(window).scrollTop();
-                    }
-                }
-                else {
-                    adminBarOffset = 0;
-                }
+            if( top + adminBarOffset > $mh.offset().top ) {
 
                 $mhs.show().css({
                     'height': $mh.outerHeight(),
@@ -244,7 +235,7 @@ jQuery( function($){
                 });
                 $mh.css({
                     'position': 'fixed',
-                    'top': pageTop - adminBarOffset,
+                    'top': adminBarOffset,
                     'left': $mhs.offset().left,
                     'width': '100%',
                 });
