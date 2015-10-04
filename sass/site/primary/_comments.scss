@@ -39,7 +39,7 @@
 			background: #292929;
 
 			&:hover {
-				background: $color__link-hover;
+				background: $color__primary_accent_dark;
 			}
 		}
 
@@ -144,8 +144,8 @@
 			@include transition(0.085s);
 
 			&:hover{
-				background: $color__link-hover;
-				border-color: $color__link-hover;
+				background: $color__primary_accent_dark;
+				border-color: $color__primary_accent_dark;
 				color: #ffffff;
 				box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 			}

@@ -9,7 +9,8 @@ define('SITEORIGIN_THEME_VERSION', 'dev');
 define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 // The settings manager
-include get_template_directory() . '/settings/settings.php';
+include get_template_directory() . '/inc/settings/settings.php';
+include get_template_directory() . '/inc/settings/page-settings.php';
 
 if ( ! function_exists( 'siteorigin_north_setup' ) ) :
 /**
@@ -80,8 +81,23 @@ function siteorigin_north_setup() {
 	// This theme supports WooCommerce
 	add_theme_support( 'woocommerce' );
 
-	// Support for SiteOrigin Premium components
+	// This theme has a premium version
+	add_theme_support( 'siteorigin-premium-theme', array(
+		'slug' => 'siteorigin-north',
+		'min_version' => '1.0'
+	) );
+
+	// Support for SiteOrigin Premium extras
 	add_theme_support( 'siteorigin-premium-retina-images' );
+
+	if( !defined('SITEORIGIN_PANELS_VERSION') ){
+		// Only include panels lite if the panels plugin doesn't exist
+		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
+	}
+
+	add_theme_support( 'siteorigin-panels', array(
+		'home-page' => true,
+	) );
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
@@ -119,11 +135,12 @@ function siteorigin_north_widgets_init() {
 		'name'          => esc_html__( 'Footer Widgets', 'siteorigin-north' ),
 		'id'            => 'footer-sidebar',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
 }
 add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
 
@@ -131,14 +148,11 @@ add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
  * Enqueue scripts and styles.
  */
 function siteorigin_north_scripts() {
-	wp_enqueue_style( 'northern-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'northern-icons', get_template_directory_uri() . '/css/north-icons.css' );
+	wp_enqueue_style( 'siteorigin-north-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'siteorigin-north-icons', get_template_directory_uri() . '/css/north-icons.css' );
 
-	wp_enqueue_script( 'northern-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
-	wp_enqueue_script( 'northern-script', get_template_directory_uri() . '/js/northern' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
-
-	wp_enqueue_script( 'northern-navigation', get_template_directory_uri() . '/js/navigation' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '20120206', true );
-	wp_enqueue_script( 'northern-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '20130115', true );
+	wp_enqueue_script( 'siteorigin-north-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
+	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
 
 	if( siteorigin_setting('responsive_fitvids') ) {
 		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
@@ -232,6 +246,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load the theme settings file
  */
 require get_template_directory() . '/inc/settings.php';
+
+require get_template_directory() . '/inc/siteorigin-panels.php';
 
 /**
  * Load support for WooCommerce

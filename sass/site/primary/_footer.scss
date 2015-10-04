@@ -2,18 +2,28 @@
 
 	margin-top: $footer__top_margin;
 	color: $color__text_medium;
+	border-top: $footer__border_width solid $footer__border_color;
+	background: $footer__background_color;
 
 	.widgets {
 		@include clearfix();
-
-		border-top: $footer__border_width solid $footer__border_color;
 		width: 100%;
-		
-		aside {
-			background: #fafafa;
+		overflow: hidden;
+
+		.widget-wrapper {
 			box-sizing: border-box;
 			float: left;
 			border-right: $footer__border_width solid $footer__border_color;
+
+			padding-bottom: 9999px;
+			margin-bottom: -9999px;
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		aside {
 			padding: $footer__top_padding $footer__side_padding;
 			margin: 0;
 
@@ -23,16 +33,31 @@
 		}
 
 		@for $i from 1 through 10 {
-			&.widgets-#{$i} aside{
+			&.widgets-#{$i} .widget-wrapper{
 				width: 100% / $i;
 			}
 		}
 
 		.widget-title {
-			color: $color__text-main;
+			color: $color__text_dark;
 			margin: 0 0 1em 0;
 			font-size: 15px;
 			text-transform: uppercase;
+		}
+
+		@media (max-width: 640px) {
+			.widget-wrapper {
+				float: none;
+				width: 100% !important;
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-right: none;
+				border-bottom: $footer__border_width solid $footer__border_color;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
 		}
 
 
@@ -43,5 +68,53 @@
 		text-align: center;
 		padding: 15px;
 		font-size: 0.9em;
+	}
+
+	&.unconstrained-footer {
+		.container {
+			max-width: none;
+		}
+	}
+}
+
+#scroll-to-top {
+	line-height: 0;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	margin-left: -22px;
+	background: rgba(0,0,0,0.65);
+	padding: 18px;
+	border-radius: 36px;
+	cursor: pointer;
+	z-index: 101;
+
+	opacity: 0;
+	pointer-events: none;
+	@include transform( scale(0.85) );
+
+	@include transition(0.35s);
+
+	img {
+		@include transition(0.35s);
+	}
+
+	img {
+		display: block;
+		@include transform-origin(center center);
+		@include transform( rotate(-90deg) );
+	}
+
+	&.show {
+		opacity: 1;
+		@include transform( scale(1) );
+
+		img {
+			@include transform( rotate(0deg) );
+		}
+	}
+
+	@media (max-width: 600px) {
+		display: none !important;
 	}
 }

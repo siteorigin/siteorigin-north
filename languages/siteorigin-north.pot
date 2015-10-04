@@ -1,0 +1,333 @@
+# Copyright (C) 2015 siteorigin-north
+# This file is distributed under the same license as the siteorigin-north package.
+msgid ""
+msgstr ""
+"Project-Id-Version: siteorigin-north\n"
+"Report-Msgid-Bugs-To: http://www.siteorigin.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: SiteOrigin <support@siteorigin.com>\n"
+"Language-Team: SiteOrigin <support@siteorigin.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:38, comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41, comments.php:63
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42, comments.php:64
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:76
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:35
+msgid "Theme by %s."
+msgstr ""
+
+#: functions.php:47, header.php:35
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:109
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:119
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions.php:165, functions.php:166
+msgid "Enter Your Name"
+msgstr ""
+
+#: functions.php:167
+msgid "Your Site URL"
+msgstr ""
+
+#: functions.php:197
+msgid "Enter your message"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: inc\extras.php:55
+msgid "Page %s"
+msgstr ""
+
+#: inc\settings.php:5
+msgid "Theme Settings"
+msgstr ""
+
+#: inc\settings.php:6
+msgid "Change settings for your theme."
+msgstr ""
+
+#: inc\settings.php:7
+msgid "Premium Only"
+msgstr ""
+
+#: inc\settings.php:11
+msgid "Variant"
+msgstr ""
+
+#: inc\settings.php:12
+msgid "Subset"
+msgstr ""
+
+#: inc\settings.php:22
+msgid "Branding"
+msgstr ""
+
+#: inc\settings.php:24
+msgid "Logo"
+msgstr ""
+
+#: inc\settings.php:25
+msgid "Logo displayed in your masthead."
+msgstr ""
+
+#: inc\settings.php:28
+msgid "Site Description"
+msgstr ""
+
+#: inc\settings.php:29
+msgid "Show your site description below your site title or logo."
+msgstr ""
+
+#: inc\settings.php:32
+msgid "Footer"
+msgstr ""
+
+#: inc\settings.php:34
+msgid "Footer Text"
+msgstr ""
+
+#: inc\settings.php:35
+msgid "{sitename} and {year} are your site's name and current year"
+msgstr ""
+
+#: inc\settings.php:39
+msgid "Responsive"
+msgstr ""
+
+#: inc\settings.php:41
+msgid "Use Fitvids"
+msgstr ""
+
+#: inc\settings.php:57
+msgid "Copyright © {year} {sitename}"
+msgstr ""
+
+#: inc\template-tags.php:44
+msgid "Posts navigation"
+msgstr ""
+
+#: inc\template-tags.php:48
+msgid "Older posts"
+msgstr ""
+
+#: inc\template-tags.php:52
+msgid "Newer posts"
+msgstr ""
+
+#: inc\template-tags.php:77
+msgid "Post navigation"
+msgstr ""
+
+#: inc\template-tags.php:106
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc\template-tags.php:111
+msgctxt "comments title"
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc\template-tags.php:144
+msgid ", "
+msgstr ""
+
+#: inc\template-tags.php:146
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc\template-tags.php:155
+msgid "Leave a comment"
+msgstr ""
+
+#: inc\template-tags.php:155
+msgid "1 Comment"
+msgstr ""
+
+#: inc\template-tags.php:155
+msgid "% Comments"
+msgstr ""
+
+#: inc\template-tags.php:159, template-parts\content-page.php:26
+msgid "Edit"
+msgstr ""
+
+#: inc\template-tags.php:213
+msgid "Category: %s"
+msgstr ""
+
+#: inc\template-tags.php:215
+msgid "Tag: %s"
+msgstr ""
+
+#: inc\template-tags.php:217
+msgid "Author: %s"
+msgstr ""
+
+#: inc\template-tags.php:219
+msgid "Year: %s"
+msgstr ""
+
+#: inc\template-tags.php:219
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc\template-tags.php:221
+msgid "Month: %s"
+msgstr ""
+
+#: inc\template-tags.php:221
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc\template-tags.php:223
+msgid "Day: %s"
+msgstr ""
+
+#: inc\template-tags.php:223
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc\template-tags.php:226
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc\template-tags.php:228
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc\template-tags.php:230
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc\template-tags.php:232
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc\template-tags.php:234
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc\template-tags.php:236
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc\template-tags.php:238
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc\template-tags.php:240
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc\template-tags.php:242
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc\template-tags.php:245
+msgid "Archives: %s"
+msgstr ""
+
+#: inc\template-tags.php:249
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc\template-tags.php:251
+msgid "Archives"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts\content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts\content-none.php:20
+msgid "Ready to publish your first post? <a href="%1$s">Get started here</a>."
+msgstr ""
+
+#: template-parts\content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts\content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts\content-page.php:19, template-parts\content-single.php:30, template-parts\content.php:40
+msgid "Pages:"
+msgstr ""
+
+#: template-parts\content.php:35
+msgid "Read More"
+msgstr ""

@@ -16,9 +16,7 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'siteorigin-north' ); ?></p>
-
-					<?php get_search_form(); ?>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below?', 'siteorigin-north' ); ?></p>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 

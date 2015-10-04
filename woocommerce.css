@@ -95,8 +95,8 @@
   .woocommerce #review_form #respond .form-submit input:hover,
   .woocommerce .woocommerce-message .button:hover,
   .woocommerce .products .button:hover {
-    background: #c75d5d;
-    border-color: #c75d5d;
+    background: #a94346;
+    border-color: #a94346;
     color: #ffffff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.075);
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }

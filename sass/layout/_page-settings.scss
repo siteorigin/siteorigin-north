@@ -1,0 +1,39 @@
+/* The Page Setting related layout changes */
+
+.page-layout-no-sidebar .site-main {
+    margin: 0;
+}
+
+.page-layout-no-masthead-margin {
+    #masthead, .masthead-sentinel {
+        margin-bottom: 0;
+    }
+}
+
+.page-layout-no-footer-margin #colophon {
+    margin-top: 0;
+}
+
+.page-layout-menu-overlap {
+
+    #masthead {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 101;
+        opacity: 0.975;
+    }
+
+    .masthead-sentinel {
+        display: none !important;
+    }
+
+    &.admin-bar #masthead{
+        top: 32px;
+
+        @media screen and (max-width: 782px) {
+            top: 46px;
+        }
+    }
+}

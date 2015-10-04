@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-	<?php if( has_post_thumbnail() ) : ?>
+	<?php if( has_post_thumbnail() && siteorigin_setting('blog_featured_archive') ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
 				<div class="thumbnail-hover">
@@ -25,7 +25,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<ul class="entry-meta">
-				<?php siteorigin_north_posted_on(); ?>
+				<?php siteorigin_north_post_meta(); ?>
 			</ul><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
