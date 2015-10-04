@@ -264,7 +264,8 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_accent'] = '#c75d5d';
 	$defaults['branding_accent_dark'] = '#a94346';
 
-	$defaults['structure_sidebar_width'] = '35%';
+	// Douuble % because values are passed through get_theme_mod so must be escaped for sprintf
+	$defaults['structure_sidebar_width'] = '35%%';
 
 	$defaults['masthead_text_layout'] = 'default';
 	$defaults['masthead_text_above'] = '';
