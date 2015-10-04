@@ -1219,17 +1219,19 @@ a {
   .entry-summary li {
     padding: 0; }
 
-.tags-list a {
-  background: #c9c9c9;
-  color: #fff;
-  display: inline-block;
-  margin-right: 10px;
-  text-decoration: none;
-  line-height: 1em;
-  font-size: 0.8em;
-  padding: 8px 12px; }
-  .tags-list a:hover {
-    background: #a94346; }
+.tags-list {
+  margin-top: 1em; }
+  .tags-list a {
+    background: #c9c9c9;
+    color: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    line-height: 1em;
+    font-size: 0.8em;
+    padding: 8px 12px; }
+    .tags-list a:hover {
+      background: #a94346; }
 
 .more-link {
   font-size: 0.85em;
