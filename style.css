@@ -7,7 +7,7 @@ Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-north
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments, white, gray, responsive-layout, right-sidebar, custom-colors, custom-menu, full-width-template
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -832,15 +832,13 @@ a {
   margin: 0; }
 
 @media (max-width: 600px) {
-  .content-area {
+  body.responsive .content-area {
     float: none;
     width: auto;
     margin: 0; }
-
-  .site-main {
+  body.responsive .site-main {
     margin: 0; }
-
-  .site-content .widget-area {
+  body.responsive .site-content .widget-area {
     float: none;
     width: 100%;
     padding-left: 0;
@@ -1221,17 +1219,19 @@ a {
   .entry-summary li {
     padding: 0; }
 
-.tags-list a {
-  background: #c9c9c9;
-  color: #fff;
-  display: inline-block;
-  margin-right: 10px;
-  text-decoration: none;
-  line-height: 1em;
-  font-size: 0.8em;
-  padding: 8px 12px; }
-  .tags-list a:hover {
-    background: #a94346; }
+.tags-list {
+  margin-top: 1em; }
+  .tags-list a {
+    background: #c9c9c9;
+    color: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    line-height: 1em;
+    font-size: 0.8em;
+    padding: 8px 12px; }
+    .tags-list a:hover {
+      background: #a94346; }
 
 .more-link {
   font-size: 0.85em;

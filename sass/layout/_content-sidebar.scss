@@ -37,20 +37,22 @@
 // This is where the
 
 @media (max-width: 600px) {
-	.content-area {
-		float: none;
-		width: auto;
-		margin: 0;
-	}
+	body.responsive {
+		.content-area {
+			float: none;
+			width: auto;
+			margin: 0;
+		}
 
-	.site-main {
-		margin: 0;
-	}
+		.site-main {
+			margin: 0;
+		}
 
-	.site-content .widget-area {
-		float: none;
-		width: 100%;
-		padding-left: 0;
-		margin-top: 40px;
+		.site-content .widget-area {
+			float: none;
+			width: 100%;
+			padding-left: 0;
+			margin-top: 40px;
+		}
 	}
 }
