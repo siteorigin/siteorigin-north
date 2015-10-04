@@ -20,6 +20,9 @@ SiteOrigin North is a fresh multipurpose theme that's flexible enough for you to
 
 == Changelog ==
 
+= 1.0.1 - October 4 2015 =
+* Various fixes and improvements in preparation for initial review/release
+
 = 1.0 - August 18 2015 =
 * Initial release
 
