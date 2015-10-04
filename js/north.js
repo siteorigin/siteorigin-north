@@ -213,7 +213,7 @@ jQuery( function($){
             if( mhTop === false ) {
                 mhTop = $mh.offset().top;
             }
-            $mhs.hide();
+
 
             var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
@@ -231,6 +231,9 @@ jQuery( function($){
                     'left': $mhs.offset().left,
                     'width': '100%',
                 });
+            }
+            else {
+                $mhs.hide();
             }
         };
         smSetup();
