@@ -1,6 +1,6 @@
 #secondary {
 
-	color: lighten( $color__text-main, 20% );
+	color: $color__text_medium;
 
 	aside {
 		margin-bottom: 60px;
@@ -11,7 +11,7 @@
 	}
 
 	.widget-title {
-		color: $color__text-main;
+		color: $color__text_dark;
 		margin: 0 0 1em 0;
 		font-size: 1em;
 		text-transform: uppercase;

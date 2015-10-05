@@ -148,7 +148,7 @@
 
 		&.hovering {
 			&, & a, & .meta-icon {
-				color: $color__link-hover;
+				color: $color__primary_accent_dark;
 			}
 		}
 	}
@@ -175,6 +175,7 @@
 }
 
 .tags-list {
+	margin-top: 1em;
 	a {
 		background: #c9c9c9;
 		color: #fff;
@@ -186,7 +187,7 @@
 		padding: 8px 12px;
 
 		&:hover {
-			background: $color__link;
+			background: $color__primary_accent_dark;
 		}
 	}
 }

@@ -177,18 +177,6 @@ jQuery( function($){
         $mobileMenu.slideToggle('fast');
     } );
 
-    // Handle the header search
-    var $hs = $('#header-search');
-    $('#masthead .north-icon-search').click( function(){
-        $hs.fadeIn('fast');
-        $hs.find('input[type="search"]').focus().select();
-        $hs.find('.svg-icon-close').attr("class", "svg-icon-close animate-in");
-    } );
-    $hs.find('.svg-icon-close').click( function(){
-        $hs.fadeOut(350);
-        $(this).attr("class", "svg-icon-close");
-    } );
-
     // The scroll to top button
     var sttWindowScroll = function(){
         var top  = window.pageYOffset || document.documentElement.scrollTop;
@@ -213,31 +201,51 @@ jQuery( function($){
     // Now lets do the sticky menu
 
     if( $('#masthead').hasClass('sticky-menu') && !$('body').hasClass('is-mobile') ) {
-        var $mhs = false;
-        var $mh = $('#masthead');
+        var $mhs = false,
+            mhTop = false,
+            pageTop = $('#page').offset().top,
+            $mh = $('#masthead');
 
         var smSetup = function () {
+            pageTop = $('#page').offset().top;
+
             if ($mhs === false) {
                 $mhs = $('<div class="masthead-sentinel"></div>').insertAfter($mh);
             }
+            if( mhTop === false ) {
+                mhTop = $mh.offset().top;
+            }
 
-            $mhs.hide();
+
+            var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
-                'position': 'static',
-                'top': null,
-                'left': null,
+                'position': 'relative',
+                'top': 0,
+                'left': 0,
                 'width': null,
             });
-            $mhs.show().css('height', $mh.outerHeight());
-            $mh.css({
-                'position': 'fixed',
-                'top': $mh.offset().top,
-                'left': 0,
-                'width': '100%',
-            });
+
+            var adminBarOffset = $('#wpadminbar').css('position') === 'fixed' ? $('#wpadminbar').outerHeight() : 0;
+
+            if( top + adminBarOffset > $mh.offset().top ) {
+
+                $mhs.show().css({
+                    'height': $mh.outerHeight(),
+                    'margin-bottom' : $mh.css('margin-bottom')
+                });
+                $mh.css({
+                    'position': 'fixed',
+                    'top': adminBarOffset,
+                    'left': $mhs.offset().left,
+                    'width': '100%',
+                });
+            }
+            else {
+                $mhs.hide();
+            }
         };
         smSetup();
-        $(window).resize(smSetup);
+        $(window).resize( smSetup ).scroll( smSetup );
 
         var mhPadding = {
             top: parseInt($mh.css('padding-top')),
@@ -247,6 +255,7 @@ jQuery( function($){
         if( $mh.data('scale-logo') ) {
             var smResizeLogo = function(){
                 var top  = window.pageYOffset || document.documentElement.scrollTop;
+                top -= pageTop;
 
                 var $img = $mh.find('.site-branding img'),
                     $branding = $mh.find('.site-branding > *');
@@ -289,7 +298,24 @@ jQuery( function($){
             smResizeLogo();
             $( window ).scroll( smResizeLogo );
         }
-
     }
+
+    // Handle the header search
+    var $hs = $('#header-search');
+    $('#masthead .north-icon-search').click( function(){
+        $hs.fadeIn('fast');
+        $hs.find('form').css('margin-top', -$hs.find('form').outerHeight() / 2);
+        $hs.find('input[type="search"]').focus().select();
+        $hs.find('.svg-icon-close').attr("class", "svg-icon-close animate-in");
+    } );
+    $hs.find('.svg-icon-close').click( function(){
+        $hs.fadeOut(350);
+        $(this).attr("class", "svg-icon-close");
+    } );
+    $(window).scroll( function(){
+        if( $hs.is(':visible') ) {
+            $hs.find('form').css('margin-top', -$hs.find('form').outerHeight() / 2);
+        }
+    } );
 
 } );

@@ -52,6 +52,18 @@ function siteorigin_north_settings_init(){
 			)
 		),
 
+		'structure' => array(
+			'title' => __('Page Structure', 'siteorigin-north'),
+			'fields' => array(
+				'sidebar_width' => array(
+					'label' => __('Sidebar Width', 'siteorigin-north'),
+					'type' => 'text',
+					'sanitize_callback' => array('SiteOrigin_Settings_Value_Sanitize', 'measurement'),
+					'live' => true,
+				)
+			)
+		),
+
 		'masthead' => array(
 			'title' => __('Header', 'siteorigin-north'),
 			'fields' => array(
@@ -188,7 +200,50 @@ function siteorigin_north_settings_custom_css($css){
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
+		'.content-area {' . "\n" .
+		'margin: 0 -${structure_sidebar_width} 0 0;' . "\n" .
+		'}' . "\n" .
+		'.site-main {' . "\n" .
+		'margin: 0 ${structure_sidebar_width} 0 0;' . "\n" .
+		'}' . "\n" .
+		'.site-content .widget-area {' . "\n" .
+		'width: ${structure_sidebar_width};' . "\n" .
+		'}' . "\n" .
+		'.entry-meta li.hovering,.entry-meta li.hovering a,.entry-meta li.hovering .meta-icon {' . "\n" .
+		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'.tags-list a:hover {' . "\n" .
+		'background: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
 		'.more-link:hover {' . "\n" .
+		'background: ${branding_accent};' . "\n" .
+		'border-color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'.post-pagination a:hover {' . "\n" .
+		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'.comment-list li .comment-reply-link:hover {' . "\n" .
+		'background: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'#commentform .form-submit input:hover {' . "\n" .
+		'background: ${branding_accent_dark};' . "\n" .
+		'border-color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'/* woocommerce */' . "\n" .
+		'.woocommerce #main ul.products li.product .price {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'.woocommerce button.button.alt:hover,.woocommerce #review_form #respond .form-submit input:hover,.woocommerce .woocommerce-message .button:hover,.woocommerce .products .button:hover {' . "\n" .
+		'background: ${branding_accent_dark};' . "\n" .
+		'border-color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'.woocommerce .woocommerce-message {' . "\n" .
+		'border-top-color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'.woocommerce.single #content div.product p.price {' . "\n" .
+		'color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'.woocommerce.single #content div.product .woocommerce-tabs .tabs li.active {' . "\n" .
 		'background: ${branding_accent};' . "\n" .
 		'border-color: ${branding_accent};' . "\n" .
 		'}';
@@ -208,6 +263,9 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_site_description'] = true;
 	$defaults['branding_accent'] = '#c75d5d';
 	$defaults['branding_accent_dark'] = '#a94346';
+
+	// Douuble % because values are passed through get_theme_mod so must be escaped for sprintf
+	$defaults['structure_sidebar_width'] = '35%%';
 
 	$defaults['masthead_text_layout'] = 'default';
 	$defaults['masthead_text_above'] = '';

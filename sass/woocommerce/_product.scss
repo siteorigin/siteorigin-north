@@ -25,7 +25,7 @@
 	p.price {
 		margin: 0;
 		float: right;
-		color: $color__link;
+		color: $color__primary_accent;
 		font-family: $font__detail;
 		font-size: 1.2em;
 	}
@@ -70,8 +70,8 @@
 				}
 
 				&.active {
-					background: $color__link;
-					border-color: $color__link;
+					background: $color__primary_accent;
+					border-color: $color__primary_accent;
 
 					a {
 						color: #fff;

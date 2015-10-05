@@ -24,8 +24,8 @@
 		@include transition(0.085s);
 
 		&:hover{
-			background: $color__link-hover;
-			border-color: $color__link-hover;
+			background: $color__primary_accent_dark;
+			border-color: $color__primary_accent_dark;
 			color: #ffffff;
 
 			box-shadow: 0 0 2px rgba(0,0,0,0.075);
@@ -40,7 +40,7 @@
 	}
 
 	.woocommerce-message {
-		border-top-color: $color__link;
+		border-top-color: $color__primary_accent;
 		background: #fbfbfb;
 		padding: 0;
 
