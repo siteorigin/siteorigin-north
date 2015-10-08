@@ -17,9 +17,9 @@
 
 			<?php
 			if( is_active_sidebar( 'footer-sidebar' ) ) {
-				$the_sidebars = wp_get_sidebars_widgets();
+				$siteorigin_north_sidebars = wp_get_sidebars_widgets();
 				?>
-				<div class="widgets widgets-<?php echo count( $the_sidebars['footer-sidebar'] ) ?>">
+				<div class="widgets widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>">
 					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 				</div>
 				<?php
