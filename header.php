@@ -30,7 +30,7 @@
 		</div>
 	<?php endif; ?>
 
-	<header id="masthead" class="site-header layout-<?php echo str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
+	<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
 		<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 		<div class="container">
 
