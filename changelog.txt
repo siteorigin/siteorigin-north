@@ -1,3 +1,10 @@
+= 1.0.3 - October 5 2015 =
+* Properly escape output in header.php.
+* Properly prefixed globals.
+* Use get_search_form.
+* Removed unsupported customizer code.
+* Removed rtl.css until it's properly supported.
+
 = 1.0.2 - October 5 2015 =
 * Fixed page scrolling error caused by sticky menu.
 * Properly handle sticky menu with both fixed and absolute admin bar.
