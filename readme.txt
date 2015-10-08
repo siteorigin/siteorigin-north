@@ -18,18 +18,6 @@ SiteOrigin North is our latest, flexible multipurpose theme. It's fully responsi
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Changelog ==
-
-= 1.0.2 - October 5 2015 =
-* Fixed page scrolling error caused by sticky menu.
-* Properly handle sticky menu with both fixed and absolute admin bar.
-
-= 1.0.1 - October 4 2015 =
-* Various fixes and improvements in preparation for initial review/release.
-
-= 1.0 - August 18 2015 =
-* Initial release
-
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
