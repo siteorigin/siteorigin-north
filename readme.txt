@@ -12,23 +12,21 @@ SiteOrigin North is our latest, flexible multipurpose theme. It's fully responsi
 
 SiteOrigin North is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though North's WooCommerce integration. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 
+== Plugin Support ==
+
+= SiteOrigin Page Builder =
+
+This theme supports SiteOrigin Page Builder. Just like all good themes should.
+
+= WooCommerce =
+
+SiteOrigin North has support for WooCommerce. This is offered through both CSS styling of various elements in woocommerce.css and a file woocommerce.php which handles displaying WooCommerce content in the proper theme wrappers.
+
 == Installation ==
 	
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
-
-== Changelog ==
-
-= 1.0.2 - October 5 2015 =
-* Fixed page scrolling error caused by sticky menu.
-* Properly handle sticky menu with both fixed and absolute admin bar.
-
-= 1.0.1 - October 4 2015 =
-* Various fixes and improvements in preparation for initial review/release.
-
-= 1.0 - August 18 2015 =
-* Initial release
 
 == Credits ==
 

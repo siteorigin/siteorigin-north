@@ -84,7 +84,7 @@ function siteorigin_north_settings_init(){
 		),
 
 		'navigation' => array(
-			'title' => __( 'Navigation', 'siteorigin-widgets' ),
+			'title' => __( 'Navigation', 'siteorigin-north' ),
 			'fields' => array(
 				'search' => array(
 					'type' => 'checkbox',
@@ -120,7 +120,7 @@ function siteorigin_north_settings_init(){
 		),
 
 		'blog' => array(
-			'title' => __( 'Blog', 'siteorigin-widgets' ),
+			'title' => __( 'Blog', 'siteorigin-north' ),
 			'fields' => array(
 				'featured_archive' => array(
 					'type' => 'checkbox',
@@ -278,7 +278,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_scroll_to_top'] = true;
 
 	$defaults['responsive_fitvids'] = true;
-	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-widgets');
+	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-north');
 
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;

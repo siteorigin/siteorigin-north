@@ -30,7 +30,7 @@
 		</div>
 	<?php endif; ?>
 
-	<header id="masthead" class="site-header layout-<?php echo str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
+	<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
 		<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 		<div class="container">
 
@@ -68,10 +68,7 @@
 		<?php if( siteorigin_setting('navigation_search') ) : ?>
 			<div id="header-search">
 				<div class="container">
-					<form method="get" action="<?php echo esc_url( site_url() ) ?>">
-						<input type="search" name="s" placeholder="<?php esc_attr_e('Search', 'siteorigin-north') ?>" value="<?php echo get_search_query() ?>" />
-						<input type="submit" value="<?php _e('Search', 'siteorigin-north') ?>" />
-					</form>
+					<?php get_search_form() ?>
 					<?php siteorigin_north_display_icon('close'); ?>
 				</div>
 			</div>
