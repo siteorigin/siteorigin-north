@@ -16,7 +16,6 @@ function siteorigin_north_woocommerce_change_hooks(){
 add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
 
 function siteorigin_north_woocommerce_add_to_cart_text( $text ) {
-	$text = '<span class="north-icon-cart"></span>' . $text;
 	return $text;
 }
 add_filter('woocommerce_product_single_add_to_cart_text', 'siteorigin_north_woocommerce_add_to_cart_text');
