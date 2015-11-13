@@ -36,7 +36,8 @@ function siteorigin_north_woocommerce_enqueue_scripts( ){
 	if( !function_exists('is_woocommerce') ) return;
 
 	if( 'is_woocommerce' ) {
-		wp_enqueue_script( 'northern-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery', 'northern-script' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_style( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/woocommerce.css' );
+		wp_enqueue_script( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	}
 }
 add_filter('wp_enqueue_scripts', 'siteorigin_north_woocommerce_enqueue_scripts');
