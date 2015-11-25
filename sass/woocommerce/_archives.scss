@@ -82,6 +82,13 @@
 				width: 30.8%;
 				text-align: center;
 
+				@media (max-width: 768px) {
+					& {
+						width: 48%;
+						margin: 0 0 2.992em;
+					}
+				}
+
 				&.last {
 					margin-right: 0;
 				}

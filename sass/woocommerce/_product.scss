@@ -33,10 +33,22 @@
 	div.entry-summary {
 		margin-top: 0;
 		width: 54%;
+
+		@media (max-width: 768px) {
+			& {
+				width: 100%;
+			}
+		}
 	}
 
 	div.images {
 		width: 42%;
+
+		@media (max-width: 768px) {
+			& {
+				width: 100%;
+			}
+		}
 	}
 
 	.woocommerce-product-rating {

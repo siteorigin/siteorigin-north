@@ -57,6 +57,10 @@
   margin: 0 3.8% 2.992em 0;
   width: 30.8%;
   text-align: center; }
+  @media (max-width: 768px) {
+    .woocommerce #main ul.products li.product {
+      width: 48%;
+      margin: 0 0 2.992em; } }
   .woocommerce #main ul.products li.product.last {
     margin-right: 0; }
   .woocommerce #main ul.products li.product h3 {
@@ -141,8 +145,14 @@
 .woocommerce.single #content div.product div.entry-summary {
   margin-top: 0;
   width: 54%; }
+  @media (max-width: 768px) {
+    .woocommerce.single #content div.product div.entry-summary {
+      width: 100%; } }
 .woocommerce.single #content div.product div.images {
   width: 42%; }
+  @media (max-width: 768px) {
+    .woocommerce.single #content div.product div.images {
+      width: 100%; } }
 .woocommerce.single #content div.product .woocommerce-product-rating .woocommerce-review-link {
   color: #565656;
   text-decoration: none;
