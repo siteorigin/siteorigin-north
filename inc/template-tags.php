@@ -28,6 +28,21 @@ function siteorigin_north_display_logo(){
 }
 endif;
 
+if( !function_exists('siteorigin_north_display_retina_logo') ):
+/**
+ * Display a retina ready logo
+ */	
+function siteorigin_north_display_retina_logo( $attr ){
+	$logo = siteorigin_setting( 'branding_logo' );
+	$retina = siteorigin_setting( 'branding_retina_logo' );
+	if( !empty($retina) ) {
+		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
+		return $attr;
+	}	
+}
+add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
+endif;
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
