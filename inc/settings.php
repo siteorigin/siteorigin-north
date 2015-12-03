@@ -31,6 +31,11 @@ function siteorigin_north_settings_init(){
 					'type' => 'media',
 					'label' => __('Logo', 'siteorigin-north'),
 					'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
+				),				
+				'retina_logo' => array(
+					'type' => 'media',
+					'label' => __('Retina Logo', 'siteorigin-north'),
+					'description' => __('A double sized logo to use on retina devices.', 'siteorigin-north')
 				),
 				'site_description' => array(
 					'type' => 'checkbox',
