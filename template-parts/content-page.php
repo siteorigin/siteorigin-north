@@ -12,6 +12,7 @@
 	<?php if( SiteOrigin_Settings_Page_Settings::get('page_title') ) : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php siteorigin_north_breadcrumbs(); ?>
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 

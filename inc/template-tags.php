@@ -340,3 +340,18 @@ function siteorigin_north_display_icon( $type ){
 			break;
 	}
 }
+
+if ( ! function_exists( 'siteorigin_north_breadcrumbs' ) ) :
+/**
+ * Display's breadcrumbs supported by Yoast SEO & Breadcrumb NavXT.
+ */
+function siteorigin_north_breadcrumbs() {
+	if( function_exists('bcn_display') ) {
+		?><div class="breadcrumbs">
+			<?php bcn_display(); ?>
+		</div><?php
+	} elseif( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('<div class="breadcrumbs">','</div>');
+	}	
+}
+endif;
