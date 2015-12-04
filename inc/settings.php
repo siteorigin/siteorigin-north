@@ -31,7 +31,7 @@ function siteorigin_north_settings_init(){
 					'type' => 'media',
 					'label' => __('Logo', 'siteorigin-north'),
 					'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
-				),				
+				),
 				'retina_logo' => array(
 					'type' => 'media',
 					'label' => __('Retina Logo', 'siteorigin-north'),
@@ -214,6 +214,8 @@ function siteorigin_north_settings_custom_css($css){
 		'.site-content .widget-area {' . "\n" .
 		'width: ${structure_sidebar_width};' . "\n" .
 		'}' . "\n" .
+		'.breadcrumbs a:hover {' . "\n" .
+		'color: ${branding_accent_dark};' . "\n" .
 		'.entry-meta li.hovering,.entry-meta li.hovering a,.entry-meta li.hovering .meta-icon {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
