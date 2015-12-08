@@ -97,6 +97,7 @@ function siteorigin_north_setup() {
 
 	add_theme_support( 'siteorigin-panels', array(
 		'home-page' => true,
+		'responsive' => siteorigin_setting( 'responsive_disable' ),
 	) );
 }
 endif; // siteorigin_north_setup
@@ -114,6 +115,16 @@ function siteorigin_north_content_width() {
 	$content_width = apply_filters( 'siteorigin_north_content_width', 650 );
 }
 add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
+
+/**
+ * Disable responsive layout.
+ */
+function siteorigin_north_disable_responsive() {
+	if ( siteorigin_setting( 'responsive_disable' ) == false ) {
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+	}
+}
+add_action( 'wp_head', 'siteorigin_north_disable_responsive', 0 );
 
 /**
  * Register widget area.

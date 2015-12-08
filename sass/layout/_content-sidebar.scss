@@ -18,6 +18,10 @@
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+	min-width: 1060px;
+	body.responsive & {
+		min-width: 0;
+	}
 }
 
 .no-active-sidebar {

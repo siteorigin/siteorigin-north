@@ -31,7 +31,7 @@ function siteorigin_north_settings_init(){
 					'type' => 'media',
 					'label' => __('Logo', 'siteorigin-north'),
 					'description' => __('Logo displayed in your masthead.', 'siteorigin-north')
-				),				
+				),
 				'retina_logo' => array(
 					'type' => 'media',
 					'label' => __('Retina Logo', 'siteorigin-north'),
@@ -153,6 +153,10 @@ function siteorigin_north_settings_init(){
 		'responsive' => array(
 			'title' => __('Responsive', 'siteorigin-north'),
 			'fields' => array(
+				'disable' => array(
+					'type' => 'checkbox',
+					'label' => __('Disable Responsive Layout', 'siteorigin-north'),
+				),
 				'menu_text' => array(
 					'type' => 'text',
 					'label' => __('Responsive Menu Text', 'siteorigin-north'),
