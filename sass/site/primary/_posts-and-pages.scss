@@ -155,12 +155,17 @@
 }
 
 .breadcrumbs {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
+	margin-top: -1.5em;
 	font-style: italic;
 	font-size: 0.85em;
+	font-family: $font__detail;
+	color: $color__text_light;
+
 	a {
-		color: $color__text_light;
+		color: inherit;
 		text-decoration: none;
+
 		&:hover {
 			color: $color__primary_accent_dark;
 			text-decoration: underline;

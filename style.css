@@ -1196,6 +1196,20 @@ a {
     .entry-meta li.hovering, .entry-meta li.hovering a, .entry-meta li.hovering .meta-icon {
       color: #a94346; }
 
+.breadcrumbs {
+  margin-bottom: 1.5em;
+  margin-top: -1.5em;
+  font-style: italic;
+  font-size: 0.85em;
+  font-family: "Droid Serif", sans-serif;
+  color: #898989; }
+  .breadcrumbs a {
+    color: inherit;
+    text-decoration: none; }
+    .breadcrumbs a:hover {
+      color: #a94346;
+      text-decoration: underline; }
+
 .page-content,
 .entry-content,
 .entry-summary {
