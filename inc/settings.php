@@ -157,7 +157,11 @@ function siteorigin_north_settings_init(){
 					'type' => 'text',
 					'label' => __('Responsive Menu Text', 'siteorigin-north'),
 				),
-
+				'menu_breakpoint' => array(
+					'label' => __('Menu Breakpoint', 'siteorigin-north'),
+					'type' => 'text',
+					'description' => __('Screen width in px.', 'siteorigin-north')
+				),
 				'fitvids' => array(
 					'type' => 'checkbox',
 					'label' => __('Use Fitvids', 'siteorigin-north'),
@@ -259,6 +263,48 @@ function siteorigin_north_settings_custom_css($css){
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
 
 /**
+ * Add CSS for mobile menu breakpoint
+ */
+function siteorigin_north_menu_breakpoint_css() {
+
+	$breakpoint = siteorigin_setting( 'responsive_menu_breakpoint' );
+
+	$css = '<style type="text/css" id="siteorigin-mobile-menu-css">' . "\t" .
+	'/* responsive menu */' . "\t" .
+	'@media screen and (max-width: ' . $breakpoint  . 'px) {' . "\t" .
+		'body.responsive .main-navigation #mobile-menu-button {' .
+			'display: inline-block;' .
+		'}' . "\t" .
+		'body.responsive .main-navigation ul {' .
+			'display: none;' .
+		'}' . "\t" .
+		'body.responsive .main-navigation .north-icon-search {' .
+			'display: none;' .
+		'}' . "\t" .
+		'.main-navigation #mobile-menu-button {' .
+			'display: none;' .
+		'}' . "\t" .
+		'.main-navigation ul {' .
+			'display: inline-block;' .
+		'}' . "\t" .
+		'.main-navigation .north-icon-search {' .
+			'display: inline-block;' .
+		'}' . "\t" .
+	'}' . "\t" .
+	'@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {' . "\t" .
+		'body.responsive #mobile-navigation {' .
+			'display: none !important;' .
+			'}' . "\t" .
+		'}' . "\t" .
+	'</style>';
+
+	echo $css;
+
+}
+add_action( 'wp_head', 'siteorigin_north_menu_breakpoint_css' );
+
+
+/**
  * Add default settings.
  *
  * @param $defaults
@@ -285,6 +331,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_scroll_to_top'] = true;
 
 	$defaults['responsive_fitvids'] = true;
+	$defaults['responsive_menu_breakpoint'] = '600';
 	$defaults['responsive_menu_text'] = __('Menu', 'siteorigin-north');
 
 	$defaults['blog_featured_archive'] = true;
