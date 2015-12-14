@@ -530,13 +530,6 @@ a {
     line-height: 16px;
     position: relative;
     top: 2px; }
-  @media screen and (max-width: 600px) {
-    .main-navigation #mobile-menu-button {
-      display: inline-block; }
-    .main-navigation ul {
-      display: none; }
-    .main-navigation .north-icon-search {
-      display: none; } }
 
 #header-search {
   display: none;
@@ -650,9 +643,6 @@ a {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
           display: none; }
-  @media screen and (min-width: 601px) {
-    #mobile-navigation {
-      display: none !important; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
