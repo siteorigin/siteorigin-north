@@ -70,3 +70,9 @@ if( !function_exists('siteorigin_north_woocommerce_template_single_undertitle_me
 
 }
 add_action('woocommerce_single_product_summary', 'siteorigin_north_woocommerce_template_single_undertitle_meta', 7);
+
+/*
+* Enabling breadcrumbs in product pages and archives.
+*/
+add_action('woocommerce_single_product_summary','siteorigin_north_breadcrumbs', 6, 0);
+add_action('woocommerce_before_shop_loop','siteorigin_north_breadcrumbs', 6, 0);

@@ -13,6 +13,7 @@ get_header(); ?>
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'siteorigin-north' ); ?></h1>
+					<?php siteorigin_north_breadcrumbs(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">

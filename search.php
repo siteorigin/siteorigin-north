@@ -14,6 +14,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'siteorigin-north' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<?php siteorigin_north_breadcrumbs(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

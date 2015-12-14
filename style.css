@@ -530,13 +530,6 @@ a {
     line-height: 16px;
     position: relative;
     top: 2px; }
-  @media screen and (max-width: 600px) {
-    .main-navigation #mobile-menu-button {
-      display: inline-block; }
-    .main-navigation ul {
-      display: none; }
-    .main-navigation .north-icon-search {
-      display: none; } }
 
 #header-search {
   display: none;
@@ -650,9 +643,6 @@ a {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
           display: none; }
-  @media screen and (min-width: 601px) {
-    #mobile-navigation {
-      display: none !important; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -1195,6 +1185,20 @@ a {
       margin-top: 1px; }
     .entry-meta li.hovering, .entry-meta li.hovering a, .entry-meta li.hovering .meta-icon {
       color: #a94346; }
+
+.breadcrumbs {
+  margin-bottom: 1.5em;
+  margin-top: -1.5em;
+  font-style: italic;
+  font-size: 0.85em;
+  font-family: "Droid Serif", sans-serif;
+  color: #898989; }
+  .breadcrumbs a {
+    color: inherit;
+    text-decoration: none; }
+    .breadcrumbs a:hover {
+      color: #a94346;
+      text-decoration: underline; }
 
 .page-content,
 .entry-content,
