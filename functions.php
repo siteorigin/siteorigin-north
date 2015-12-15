@@ -97,7 +97,7 @@ function siteorigin_north_setup() {
 
 	add_theme_support( 'siteorigin-panels', array(
 		'home-page' => true,
-		'responsive' => siteorigin_setting( 'responsive_disable' ),
+		'responsive' => siteorigin_setting( 'responsive_disabled' ),
 	) );
 }
 endif; // siteorigin_north_setup
@@ -120,7 +120,7 @@ add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
  * Disable responsive layout.
  */
 function siteorigin_north_disable_responsive() {
-	if ( siteorigin_setting( 'responsive_disable' ) == false ) {
+	if ( siteorigin_setting( 'responsive_disabled' ) == false ) {
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	}
 }

@@ -153,7 +153,7 @@ function siteorigin_north_settings_init(){
 		'responsive' => array(
 			'title' => __('Responsive', 'siteorigin-north'),
 			'fields' => array(
-				'disable' => array(
+				'disabled' => array(
 					'type' => 'checkbox',
 					'label' => __('Disable Responsive Layout', 'siteorigin-north'),
 				),

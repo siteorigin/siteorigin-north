@@ -21,9 +21,9 @@ function siteorigin_north_body_classes( $classes ) {
 
 	$classes[] = 'no-js';
 	$classes[] = 'css3-animations';
-	if ( siteorigin_setting( 'responsive_disable' ) == false ) {
+	if ( siteorigin_setting( 'responsive_disabled' ) == false ) {
 		$classes[] = 'responsive';
-	}	
+	}
 
 	if( is_page() ) {
 		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
