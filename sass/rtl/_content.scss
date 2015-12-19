@@ -1,0 +1,156 @@
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.entry-meta li {
+	margin-right: auto;
+	margin-left: 12px;
+}
+
+.entry-meta li .meta-icon {
+	float: right;
+	margin-right: auto;
+	margin-left: 6px;
+}
+
+.tags-list a {
+	margin-right: auto;
+	margin-left: 10px;
+}
+
+.more-link {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-list li {
+  .comment-container {
+    margin-left: auto;
+  	margin-right: 120px;
+  }
+
+  .avatar-container {
+    float: right;
+  }
+
+  .comment-reply-link {
+    float: left;
+  }
+
+  .children {
+    margin-left: auto;
+    margin-right: 70px;
+  }
+}
+
+#commentform {
+  .comment-form-author, .comment-form-email, .comment-form-url {
+    float: right;
+  }
+
+  .form-submit {
+		text-align: left;
+
+		input {
+	    float: left;
+
+	    &:hover {
+	      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+	    }
+	  }
+	}
+}
+
+/*--------------------------------------------------------------
+## Navigation
+--------------------------------------------------------------*/
+.main-navigation {
+	text-align: left;
+
+	ul {
+		padding-right: 0;
+
+		ul {
+			left: auto;
+			right: 0;
+			text-align: left;
+
+			ul {
+				left: auto;
+				right: 100%;
+				margin-left: auto !important;
+				margin-right: 0 !important;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul  {
+					left: auto;
+					right: 100%;
+				}
+			}
+		}
+	}
+
+	.svg-icon-menu {
+		float: right;
+	}
+}
+
+#header-search {
+	left: auto;
+	right: 0;
+
+	form {
+		right: 20px;
+	  left: 15px + 20px + 24px;
+	}
+
+	input[type="search"] {
+		right: auto;
+		left: 20px;
+	}
+
+	.svg-icon-close {
+		right: auto;
+		left: 20px;
+
+		&.animate-in {
+			@include transform( scale(1) rotate(-90deg) );
+		}
+	}
+}
+
+#mobile-navigation {
+	left: auto;
+	right: 0;
+
+	ul ul li {
+		padding-left: 0;
+		padding-right: 2em;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	& .nav-previous {
+		float: right;
+
+		& .north-icon-next {
+			float: right;
+			margin: 0.25em 5px;
+		}
+	}
+
+	& .nav-next {
+		float: left;
+		text-align: left;
+
+		& .north-icon-previous {
+			float: left;
+			margin: 0.25em 5px 0 0;
+		}
+	}
+}
