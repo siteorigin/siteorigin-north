@@ -96,6 +96,11 @@ function siteorigin_north_settings_init(){
 					'label' => __('Menu search', 'siteorigin-north'),
 					'description' => __('Display search in main menu', 'siteorigin-north'),
 				),
+				'close_search_icon' => array(
+					'type' => 'text',
+					'label' => __('Close search bar SVG icon', 'siteorigin-north'),
+					'description' => __('e.g. url-to-your-spritesheet.svg#your-icon', 'siteorigin-north'),
+				),
 				'sticky' => array(
 					'type' => 'checkbox',
 					'label' => __('Sticky menu', 'siteorigin-north'),
@@ -120,6 +125,11 @@ function siteorigin_north_settings_init(){
 					'type' => 'checkbox',
 					'label' => __('Scroll to top', 'siteorigin-north'),
 					'description' => __('Display a scroll to top button', 'siteorigin-north'),
+				),
+				'scroll_to_top_icon' => array(
+					'type' => 'text',
+					'label' => __('Scroll to top SVG icon', 'siteorigin-north'),
+					'description' => __('e.g. url-to-your-spritesheet.svg#your-icon', 'siteorigin-north'),
 				),
 			),
 		),
@@ -156,6 +166,11 @@ function siteorigin_north_settings_init(){
 				'menu_text' => array(
 					'type' => 'text',
 					'label' => __('Responsive Menu Text', 'siteorigin-north'),
+				),
+				'menu_icon' => array(
+					'type' => 'text',
+					'label' => __('Responsive Menu SVG icon', 'siteorigin-north'),
+					'description' => __('e.g. url-to-your-spritesheet.svg#your-icon', 'siteorigin-north'),
 				),
 				'menu_breakpoint' => array(
 					'label' => __('Menu Breakpoint', 'siteorigin-north'),
