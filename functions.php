@@ -97,7 +97,7 @@ function siteorigin_north_setup() {
 
 	add_theme_support( 'siteorigin-panels', array(
 		'home-page' => true,
-		'responsive' => siteorigin_setting( 'responsive_disabled' ),
+		'responsive' => !siteorigin_setting( 'responsive_disabled' ),
 	) );
 }
 endif; // siteorigin_north_setup
