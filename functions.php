@@ -81,12 +81,6 @@ function siteorigin_north_setup() {
 	// This theme supports WooCommerce
 	add_theme_support( 'woocommerce' );
 
-	// This theme has a premium version
-	add_theme_support( 'siteorigin-premium-theme', array(
-		'slug' => 'siteorigin-north',
-		'min_version' => '1.0'
-	) );
-
 	// Support for SiteOrigin Premium extras
 	add_theme_support( 'siteorigin-premium-retina-images' );
 
@@ -102,6 +96,19 @@ function siteorigin_north_setup() {
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
+
+/**
+ * Add support for premium theme components
+ */
+function siteorigin_north_premium_setup(){
+
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter' => 'siteorigin_north_footer_credits',
+		'enabled' => siteorigin_setting( 'branding_attribution' )
+	) );
+}
+add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
