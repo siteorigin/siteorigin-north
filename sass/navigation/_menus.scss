@@ -59,7 +59,7 @@
 					left: 100%;
 				}
 			}
-
+			
 			a {
 				box-sizing: border-box;
 				white-space: nowrap;
@@ -91,13 +91,13 @@
 			display: block;
 		}
 	}
-
+	
 	li {
 		position: relative;
 
 		&:hover > a,
 		&.focus > a {
-
+			
 		}
 	}
 
@@ -361,7 +361,6 @@
 		}
 	}
 }
-
 .comment-navigation,
 .posts-navigation,
 .post-navigation {

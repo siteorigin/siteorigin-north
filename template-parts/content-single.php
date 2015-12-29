@@ -17,6 +17,7 @@
 
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php siteorigin_north_breadcrumbs(); ?>
 
 		<div class="entry-meta">
 			<?php siteorigin_north_post_meta(); ?>

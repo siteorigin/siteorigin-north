@@ -299,7 +299,9 @@ body {
 
 blockquote, q {
   quotes: "" ""; }
-  blockquote:before, blockquote:after, q:before, q:after {
+  blockquote:before,
+  blockquote:after, q:before,
+  q:after {
     content: ""; }
 
 hr {
@@ -354,7 +356,7 @@ input[type="submit"] {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em;
+  padding: 0.6em 1em 0.4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
   button:hover,
   input[type="button"]:hover,
@@ -362,7 +364,8 @@ input[type="submit"] {
   input[type="submit"]:hover {
     border-color: #ccc #bbb #aaa;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
-  button:active, button:focus,
+  button:active,
+  button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
   input[type="reset"]:active,
@@ -408,9 +411,11 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: #c75d5d; }
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     color: #a94346; }
-  a:hover, a:active {
+  a:hover,
+  a:active {
     outline: 0; }
 
 /*--------------------------------------------------------------
@@ -661,9 +666,9 @@ a {
     body.responsive #mobile-navigation {
       display: none !important; } }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
 
@@ -705,7 +710,9 @@ a {
   height: 1px;
   width: 1px;
   overflow: hidden; }
-  .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  .screen-reader-text:hover,
+  .screen-reader-text:active,
+  .screen-reader-text:focus {
     background-color: #f1f1f1;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -1225,6 +1232,20 @@ a {
     .entry-meta li.hovering, .entry-meta li.hovering a, .entry-meta li.hovering .meta-icon {
       color: #a94346; }
 
+.breadcrumbs {
+  margin-bottom: 1.5em;
+  margin-top: -1.5em;
+  font-style: italic;
+  font-size: 0.85em;
+  font-family: "Droid Serif", sans-serif;
+  color: #898989; }
+  .breadcrumbs a {
+    color: inherit;
+    text-decoration: none; }
+    .breadcrumbs a:hover {
+      color: #a94346;
+      text-decoration: underline; }
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -1239,13 +1260,13 @@ a {
   .entry-content > *:last-child,
   .entry-summary > *:last-child {
     margin-bottom: 0; }
-  .page-content ul, .page-content ol, .page-content li,
+  .page-content ul,
+  .page-content ol,
+  .page-content li,
   .entry-content ul,
   .entry-content ol,
   .entry-content li,
-  .entry-summary ul,
-  .entry-summary ol,
-  .entry-summary li {
+  .entry-summary ul, .entry-summary ol, .entry-summary li {
     padding: 0; }
 
 .tags-list {
@@ -1436,8 +1457,7 @@ a {
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
+.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
   /* Theme Footer (when set to scrolling) */
   display: none; }
 
