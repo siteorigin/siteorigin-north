@@ -340,6 +340,37 @@ function siteorigin_north_settings_init(){
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 
 /**
+ * Tell the settings framework which settings we're using as fonts
+ *
+ * @param $settings
+ *
+ * @return array
+ */
+function siteorigin_north_font_settings( $settings ) {
+
+	$settings['fonts_main'] = array(
+		'name' => 'Droid Sans',
+		'weights' => array(
+			400, 700
+		),
+	);
+	$settings['fonts_headings'] = array(
+		'name' => 'Montserrat',
+		'weights' => array(
+			400
+		),
+	);
+	$settings['fonts_details'] = array(
+		'name' => 'Droid Serif',
+		'weights' => array(
+			400
+		),
+	);
+	return $settings;
+}
+add_filter( 'siteorigin_settings_font_settings', 'siteorigin_north_font_settings' );
+
+/**
  * Add custom CSS for the theme settings
  *
  * @param $css
