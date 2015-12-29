@@ -38,12 +38,6 @@ return array(
 		'footer__top_margin' => 'footer_top_margin',
 
 	),
-	'free' => array(
-		// SASS variables that are available in the free version.
-		'color__primary_accent',
-		'color__primary_accent_dark',
-		'size__site-sidebar'
-	),
 	'stylesheets' => array(
 		'style',
 		'woocommerce'
