@@ -5,7 +5,7 @@ function siteorigin_settings_localize( $loc ){
 		'section_title' => __('Theme Settings', 'siteorigin-north'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-north'),
 		'premium_only' => __('Available in Premium', 'siteorigin-north'),
-		'premium_url' => '#',
+		'premium_url' => 'https://siteorigin.com/premium/?target=theme_north',
 
 		// For the controls
 		'variant' => __('Variant', 'siteorigin-north'),
