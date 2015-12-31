@@ -83,10 +83,12 @@
 				text-align: center;
 
 				@media (max-width: 768px) {
-					@at-root body.responsive#{&} {
+
+					@at-root body.responsive & {
 						width: 48%;
 						margin: 0 0 2.992em;
 					}
+
 				}
 
 				&.last {
