@@ -50,17 +50,9 @@
 </div><!-- #page -->
 
 <?php if( siteorigin_setting('navigation_scroll_to_top') ) : ?>
-	<?php if( siteorigin_setting('navigation_scroll_to_top_icon') ) : ?>
-		<div id="scroll-to-top">
-			<svg>
-				<use xlink:href="<?php echo esc_url( siteorigin_setting( 'navigation_scroll_to_top_icon' ) ); ?>">
-			</svg>
-		</div>
-	<?php else : ?>
-		<div id="scroll-to-top">
-			<img src="<?php echo get_template_directory_uri() ?>/images/up-arrow.svg" width="24px" height="24px" />
-		</div>
-	<?php endif; ?>
+	<div id="scroll-to-top">
+		<?php siteorigin_north_display_icon('up-arrow') ?>
+	</div>
 <?php endif; ?>
 
 <?php wp_footer(); ?>

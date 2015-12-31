@@ -366,6 +366,20 @@ function siteorigin_north_display_icon( $type ){
 				</svg>
 			<?php endif;
 			break;
+
+		case 'up-arrow' :
+			if( siteorigin_setting('navigation_scroll_to_top_icon') ) : ?>
+				<svg>
+					<use xlink:href="<?php echo esc_url( siteorigin_setting( 'navigation_scroll_to_top_icon' ) ); ?>">
+				</svg>
+			<?php else : ?>
+				<svg version="1.1" class="svg-icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+					<path class="st0" d="M12,2c0.3,0,0.5,0.1,0.7,0.3l7,7C19.9,9.5,20,9.7,20,10c0,0.3-0.1,0.5-0.3,0.7S19.3,11,19,11
+		                c-0.3,0-0.5-0.1-0.7-0.3L13,5.4V21c0,0.3-0.1,0.5-0.3,0.7S12.3,22,12,22s-0.5-0.1-0.7-0.3S11,21.3,11,21V5.4l-5.3,5.3
+		                C5.5,10.9,5.3,11,5,11c-0.3,0-0.5-0.1-0.7-0.3C4.1,10.5,4,10.3,4,10c0-0.3,0.1-0.5,0.3-0.7l7-7C11.5,2.1,11.7,2,12,2z"/>
+				</svg>
+			<?php endif;
+			break;
 	}
 }
 
