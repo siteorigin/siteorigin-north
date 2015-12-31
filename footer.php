@@ -50,7 +50,7 @@
 	<?php if( siteorigin_setting('navigation_scroll_to_top_icon') ) : ?>
 		<div id="scroll-to-top">
 			<svg>
-				<use xlink:href="<?php echo siteorigin_setting( 'navigation_scroll_to_top_icon' ); ?>">
+				<use xlink:href="<?php echo esc_url( siteorigin_setting( 'navigation_scroll_to_top_icon' ) ); ?>">
 			</svg>
 		</div>
 	<?php else : ?>

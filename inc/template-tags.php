@@ -313,7 +313,7 @@ function siteorigin_north_display_icon( $type ){
 		case 'menu':
 			if ( siteorigin_setting( 'responsive_menu_icon' ) ): ?>
 				<svg class="svg-icon-menu">
-					<use xlink:href="<?php echo siteorigin_setting( 'responsive_menu_icon' ); ?>">
+					<use xlink:href="<?php echo esc_url( siteorigin_setting( 'responsive_menu_icon' ) ); ?>">
 				</svg>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -327,7 +327,7 @@ function siteorigin_north_display_icon( $type ){
 		case 'close' :
 			if ( siteorigin_setting( 'navigation_close_search' ) ): ?>
 				<svg class="svg-icon-close">
-					<use xlink:href="<?php echo siteorigin_setting( 'navigation_close_search_icon' ); ?>">
+					<use xlink:href="<?php echo esc_url( siteorigin_setting( 'navigation_close_search_icon' ) ); ?>">
 				</svg>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
