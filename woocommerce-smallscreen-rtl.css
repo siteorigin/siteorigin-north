@@ -1,0 +1,56 @@
+.woocommerce table.my_account_orders tr td.order-actions,
+.woocommerce-page table.my_account_orders tr td.order-actions {
+  text-align: right; }
+  .woocommerce table.my_account_orders tr td.order-actions .button,
+  .woocommerce-page table.my_account_orders tr td.order-actions .button {
+    float: none;
+    margin: .125em 0 .125em .25em; }
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  float: right; }
+  .woocommerce ul.products li.product:nth-child(2n),
+  .woocommerce-page ul.products li.product:nth-child(2n) {
+    float: left; }
+
+.woocommerce table.cart td.actions,
+.woocommerce #content table.cart td.actions,
+.woocommerce-page table.cart td.actions,
+.woocommerce-page #content table.cart td.actions {
+  text-align: right; }
+  .woocommerce table.cart td.actions .input-text + .button,
+  .woocommerce table.cart td.actions .button.alt,
+  .woocommerce #content table.cart td.actions .input-text + .button,
+  .woocommerce #content table.cart td.actions .button.alt,
+  .woocommerce-page table.cart td.actions .input-text + .button,
+  .woocommerce-page table.cart td.actions .button.alt,
+  .woocommerce-page #content table.cart td.actions .input-text + .button,
+  .woocommerce-page #content table.cart td.actions .button.alt {
+    float: left; }
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce .cart-collaterals .shipping_calculator,
+.woocommerce .cart-collaterals .cross-sells,
+.woocommerce-page .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .shipping_calculator,
+.woocommerce-page .cart-collaterals .cross-sells {
+  text-align: right; }
+
+.woocommerce.woocommerce-checkout form.login .form-row,
+.woocommerce-page.woocommerce-checkout form.login .form-row {
+  float: right; }
+
+.woocommerce #payment .terms,
+.woocommerce-page #payment .terms {
+  text-align: right; }
+
+.woocommerce .lost_reset_password .form-row-first,
+.woocommerce .lost_reset_password .form-row-last,
+.woocommerce-page .lost_reset_password .form-row-first,
+.woocommerce-page .lost_reset_password .form-row-last {
+  margin-left: 0;
+  margin-right: auto; }
+
+/* Styles specific to SiteOrigin North */
+.woocommerce #main ul.products li.product {
+  margin: 0 0 2.992em; }
