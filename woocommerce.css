@@ -162,7 +162,7 @@
   width: 42%;
   float: left; }
   @media (max-width: 768px) {
-    .woocommerce.single #content div.product div.images body.responsive.woocommerce.single #content div.product div.images {
+    body.responsive .woocommerce.single #content div.product div.images {
       width: 100%;
       float: none; } }
 
