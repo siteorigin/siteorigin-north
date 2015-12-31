@@ -6,6 +6,7 @@
 	margin-bottom: $masthead__bottom_margin;
 	width: 100%;
 	z-index: 999;
+	min-width: 1060px;
 
 	.container-inner {
 		display: table;
@@ -79,6 +80,9 @@
 			display: block;
 		}
 	}
+	body.responsive & {
+		min-width: 0;
+	}
 }
 
 .masthead-sentinel {
@@ -87,6 +91,8 @@
 }
 
 #topbar {
+	width: 100%;
+  min-width: 1060px;
 	background: $masthead__top_background_color;
 	border-bottom: $masthead__border_width solid $masthead__border_color;
 
@@ -96,6 +102,10 @@
 		margin: 0;
 		font-size: 0.8em;
 		color: $color__text_light;
+	}
+
+	body.responsive & {
+		min-width: 0;
 	}
 }
 

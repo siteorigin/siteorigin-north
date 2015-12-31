@@ -4,7 +4,7 @@ function siteorigin_settings_localize( $loc ){
 	return wp_parse_args( array(
 		'section_title' => __('Theme Settings', 'siteorigin-north'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-north'),
-		'premium_only' => __('Premium Only', 'siteorigin-north'),
+		'premium_only' => __('Available in Premium', 'siteorigin-north'),
 		'premium_url' => '#',
 
 		// For the controls
@@ -41,6 +41,12 @@ function siteorigin_north_settings_init(){
 					'type' => 'checkbox',
 					'label' => __('Site Description', 'siteorigin-north'),
 					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
+				),
+				'attribution' => array(
+					'type' => 'checkbox',
+					'label' => __('SiteOrigin Attribution', 'siteorigin-north'),
+					'description' => __('Remove SiteOrigin attribution from your footer.', 'siteorigin-north'),
+					'teaser' => true,
 				),
 				'accent' => array(
 					'type' => 'color',
@@ -153,6 +159,10 @@ function siteorigin_north_settings_init(){
 		'responsive' => array(
 			'title' => __('Responsive', 'siteorigin-north'),
 			'fields' => array(
+				'disabled' => array(
+					'type' => 'checkbox',
+					'label' => __('Disable Responsive Layout', 'siteorigin-north'),
+				),
 				'menu_text' => array(
 					'type' => 'text',
 					'label' => __('Responsive Menu Text', 'siteorigin-north'),

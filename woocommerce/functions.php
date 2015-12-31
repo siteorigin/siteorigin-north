@@ -28,6 +28,10 @@ function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 		'media' => 'all'
 	);
 
+	if( function_exists('is_woocommerce') && is_woocommerce() && siteorigin_setting( 'responsive_disabled' ) ) {
+		unset( $styles['woocommerce-smallscreen'] );
+	}
+
 	return $styles;
 }
 add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_styles');
@@ -35,8 +39,7 @@ add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_s
 function siteorigin_north_woocommerce_enqueue_scripts( ){
 	if( !function_exists('is_woocommerce') ) return;
 
-	if( 'is_woocommerce' ) {
-		wp_enqueue_style( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/woocommerce.css' );
+	if( is_woocommerce() ) {
 		wp_enqueue_script( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	}
 }

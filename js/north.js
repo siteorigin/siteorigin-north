@@ -245,7 +245,7 @@ jQuery( function($){
                 $mh.css({
                     'position': 'fixed',
                     'top': adminBarOffset,
-                    'left': $mhs.offset().left,
+                    'left': 0 - self.pageXOffset+'px',
                     'width': '100%',
                 });
             }

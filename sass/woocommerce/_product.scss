@@ -1,5 +1,5 @@
 .woocommerce.single #content div.product {
-	
+
 	.entry-thumbnail {
 		float: left;
 		width: 35%;
@@ -29,24 +29,28 @@
 		font-family: $font__detail;
 		font-size: 1.2em;
 	}
-	
+
 	div.entry-summary {
 		margin-top: 0;
 		width: 54%;
+		float: right;
 
 		@media (max-width: 768px) {
-			& {
+			@at-root body.responsive#{&} {
 				width: 100%;
+				float: none;
 			}
 		}
 	}
 
 	div.images {
 		width: 42%;
+		float: left;
 
 		@media (max-width: 768px) {
-			& {
+			@at-root body.responsive#{&} {
 				width: 100%;
+				float: none;
 			}
 		}
 	}
