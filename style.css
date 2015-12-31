@@ -255,7 +255,7 @@ address {
   margin: 0 0 1.5em; }
 
 pre {
-  background: #eeeeee;
+  background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -271,7 +271,7 @@ code, kbd, tt, var {
   font-size: 0.9375rem; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666666;
+  border-bottom: 1px dotted #666;
   cursor: help; }
 
 mark, ins {
@@ -294,7 +294,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: white;
+  background: #ffffff;
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote, q {
@@ -303,7 +303,7 @@ blockquote, q {
     content: ""; }
 
 hr {
-  background-color: #cccccc;
+  background-color: #ccc;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
@@ -346,7 +346,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
-  border-color: #cccccc #cccccc #bbbbbb;
+  border-color: #ccc #ccc #bbb;
   border-radius: 3px;
   background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
@@ -360,7 +360,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    border-color: #cccccc #bbbbbb #aaaaaa;
+    border-color: #ccc #bbb #aaa;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
   button:active, button:focus,
   input[type="button"]:active,
@@ -369,7 +369,7 @@ input[type="submit"] {
   input[type="reset"]:focus,
   input[type="submit"]:active,
   input[type="submit"]:focus {
-    border-color: #aaaaaa #bbbbbb #bbbbbb;
+    border-color: #aaa #bbb #bbb;
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
 input[type="text"],
@@ -378,8 +378,8 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666666;
-  border: 1px solid #cccccc;
+  color: #666;
+  border: 1px solid #ccc;
   border-radius: 3px; }
   input[type="text"]:focus,
   input[type="email"]:focus,
@@ -387,7 +387,7 @@ textarea {
   input[type="password"]:focus,
   input[type="search"]:focus,
   textarea:focus {
-    color: #111111; }
+    color: #111; }
 
 input[type="text"],
 input[type="email"],
@@ -453,7 +453,8 @@ a {
       .main-navigation ul ul li {
         margin: 0;
         padding-bottom: 0; }
-        .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul {
           left: 100%; }
       .main-navigation ul ul a {
         box-sizing: border-box;
@@ -649,6 +650,7 @@ a {
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
+
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -659,6 +661,7 @@ a {
   .post-navigation .nav-previous .north-icon-previous {
     float: left;
     margin: 0.25em 5px; }
+
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -670,6 +673,7 @@ a {
   .post-navigation .nav-next .north-icon-next {
     float: right;
     margin: 0.25em 0 0 5px; }
+
 .comment-navigation a,
 .posts-navigation a,
 .post-navigation a {
@@ -767,6 +771,7 @@ a {
 
 .textwidget > *:first-child {
   margin-top: 0px; }
+
 .textwidget > *:last-child {
   margin-bottom: 0px; }
 
@@ -818,6 +823,7 @@ a {
   float: none;
   width: auto;
   margin: 0; }
+
 .no-active-sidebar .site-main {
   margin: 0; }
 
@@ -833,6 +839,7 @@ a {
     width: 100%;
     padding-left: 0;
     margin-top: 40px; } }
+
 /*--------------------------------------------------------------
 ## General Layout
 --------------------------------------------------------------*/
@@ -862,8 +869,10 @@ a {
   width: 100%;
   z-index: 101;
   opacity: 0.975; }
+
 .page-layout-menu-overlap .masthead-sentinel {
   display: none !important; }
+
 .page-layout-menu-overlap.admin-bar #masthead {
   top: 32px; }
   @media screen and (max-width: 782px) {
@@ -1045,11 +1054,14 @@ a {
   -webkit-transition: 0.35s;
   -moz-transition: 0.35s;
   transition: 0.35s; }
-  #scroll-to-top img {
+  #scroll-to-top svg {
+    height: 24px;
+    width: 24px; }
+  #scroll-to-top img, #scroll-to-top svg {
     -webkit-transition: 0.35s;
     -moz-transition: 0.35s;
     transition: 0.35s; }
-  #scroll-to-top img {
+  #scroll-to-top img, #scroll-to-top svg {
     display: block;
     -webkit-transform-origin: center center;
     -moz-transform-origin: center center;
@@ -1068,7 +1080,7 @@ a {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1); }
-    #scroll-to-top.show img {
+    #scroll-to-top.show img, #scroll-to-top.show svg {
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
