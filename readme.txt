@@ -35,3 +35,9 @@ SiteOrigin North has support for WooCommerce. This is offered through both CSS s
 * FitVids, Copyright 2013 Chris Coyier, Released under the WTFPL license - http://sam.zoy.org/wtfpl/, Source: http://fitvidsjs.com/
 * jQuery Transit (c) 2011-2014 Rico Sta. Cruz. Licensed under MIT.
 * Screenshot photos sourced from Pixabay, licensed under public domain.
+
+== Design ==
+
+The design files for this theme are hosted on Google Drive
+
+https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing
