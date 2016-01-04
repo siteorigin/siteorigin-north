@@ -194,7 +194,18 @@ function siteorigin_north_settings_init(){
 					'description' => __("Constrain the footer width", 'siteorigin-north'),
 				)
 			)
-		)
+		),
+
+		'woocommerce' => array(
+			'title' => __('WooCommerce', 'siteorigin-north'),
+			'fields' => array(
+				'display_cart' => array(
+					'type' => 'checkbox',
+					'label' => __('Display Cart', 'siteorigin-north'),
+					'description' => __("Display WooCommerce cart in the main menu", 'siteorigin-north'),
+				)
+			)
+		),
 	) ) );
 
 }
@@ -352,6 +363,8 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	$defaults['footer_constrained'] = false;
+
+	$defaults['woocommerce_display_cart'] = true;
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');

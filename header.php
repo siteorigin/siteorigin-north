@@ -59,7 +59,7 @@
 						<span class="north-icon-search"></span>
 					<?php endif; ?>
 
-					<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) ): ?>
+					<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_cart') ): ?>
 						<?php global $woocommerce; ?>
 						<ul class="shopping-cart">
 							<li>
