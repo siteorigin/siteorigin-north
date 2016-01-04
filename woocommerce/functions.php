@@ -74,6 +74,22 @@ if( !function_exists('siteorigin_north_woocommerce_template_single_undertitle_me
 }
 add_action('woocommerce_single_product_summary', 'siteorigin_north_woocommerce_template_single_undertitle_meta', 7);
 
+if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) {
+
+	function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
+		ob_start();
+		?>
+		<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+		<?php
+
+		$fragments['span.shopping-cart-count'] = ob_get_clean();
+
+		return $fragments;
+	}
+
+}
+add_filter('add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count');
+
 /*
 * Enabling breadcrumbs in product pages and archives.
 */
