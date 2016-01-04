@@ -403,8 +403,14 @@ function siteorigin_north_settings_custom_css($css){
 		'.content-area {' . "\n" .
 		'margin: 0 -${structure_sidebar_width} 0 0;' . "\n" .
 		'}' . "\n" .
+		'body.rtl .content-area {' . "\n" .
+		'margin: 0 0 0 -${structure_sidebar_width};' . "\n" .
+		'}' . "\n" .
 		'.site-main {' . "\n" .
 		'margin: 0 ${structure_sidebar_width} 0 0;' . "\n" .
+		'}' . "\n" .
+		'body.rtl .site-main {' . "\n" .
+		'margin: 0 0 0 ${structure_sidebar_width};' . "\n" .
 		'}' . "\n" .
 		'.site-content .widget-area {' . "\n" .
 		'width: ${structure_sidebar_width};' . "\n" .

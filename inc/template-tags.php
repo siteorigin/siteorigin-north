@@ -31,14 +31,14 @@ endif;
 if( !function_exists('siteorigin_north_display_retina_logo') ):
 /**
  * Display a retina ready logo
- */	
+ */
 function siteorigin_north_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
 	if( !empty($retina) ) {
 		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
 		return $attr;
-	}	
+	}
 }
 add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 endif;
@@ -90,8 +90,13 @@ function siteorigin_north_the_post_navigation() {
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-north' ); ?></h2>
 		<div class="nav-links">
 			<?php
+			if ( is_rtl() ) {
+				previous_post_link( '<div class="nav-previous"><span class="north-icon-next"></span>%link</div>', '%title' );
+				next_post_link( '<div class="nav-next">%link<span class="north-icon-previous"></span></div>', '%title' );
+			} else {
 				previous_post_link( '<div class="nav-previous"><span class="north-icon-previous"></span>%link</div>', '%title' );
 				next_post_link( '<div class="nav-next">%link<span class="north-icon-next"></span></div>', '%title' );
+			}
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -193,12 +198,21 @@ if( !function_exists('siteorigin_north_posts_pagination') ) :
 			return;
 		}
 
-		$args = array(
-			'next_text' => '<span class="north-icon-double-next"></span>',
-			'prev_text' => '<span class="north-icon-double-previous"></span>',
-			'end_size'     => 3,
-			'mid_size'     => 3
-		);
+		if ( is_rtl() ) {
+			$args = array(
+				'next_text' => '<span class="north-icon-double-previous"></span>',
+				'prev_text' => '<span class="north-icon-double-next"></span>',
+				'end_size'     => 3,
+				'mid_size'     => 3
+			);
+		} else {
+			$args = array(
+				'next_text' => '<span class="north-icon-double-next"></span>',
+				'prev_text' => '<span class="north-icon-double-previous"></span>',
+				'end_size'     => 3,
+				'mid_size'     => 3
+			);
+		}
 
 		if( is_search() ) {
 			// Add the arguments neccessary for search
@@ -267,9 +281,15 @@ function siteorigin_north_comment( $comment, $args, $depth ){
 			<?php endif; ?>
 
 			<div class="info">
-				<span class="author"><?php comment_author_link() ?></span>
-				-
-				<span class="date"><?php comment_date() ?></span>
+				<?php if( is_rtl() ) : ?>
+					<span class="date"><?php comment_date() ?></span>
+					-
+					<span class="author"><?php comment_author_link() ?></span>
+				<?php else : ?>
+					<span class="author"><?php comment_author_link() ?></span>
+					-
+					<span class="date"><?php comment_date() ?></span>
+				<?php endif; ?>
 			</div>
 
 			<div class="comment-content content">
@@ -352,6 +372,6 @@ function siteorigin_north_breadcrumbs() {
 		</div><?php
 	} elseif( function_exists('yoast_breadcrumb') ) {
 		yoast_breadcrumb('<div class="breadcrumbs">','</div>');
-	}	
+	}
 }
 endif;

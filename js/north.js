@@ -49,6 +49,15 @@
             left: null,
         }, options );
 
+        var direction;
+
+        if ( $('body').hasClass('rtl') ) {
+          direction = 'right';
+        }
+        else {
+          direction = 'left';
+        }
+
         return $(this).each( function(){
             var $$ = $(this);
             return $$.hover(
@@ -77,7 +86,7 @@
                         .css('display', 'block')
                         .clearQueue()
                         .css({
-                            left: left,
+                            direction: left,
                             opacity: 0,
                             x: isSub ? -3 : 0,
                             y: isSub ? 0 : -3,

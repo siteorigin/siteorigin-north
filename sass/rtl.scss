@@ -1,0 +1,54 @@
+/*
+Theme Name: SiteOrigin North
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Elements
+  ## Lists
+  ## Forms
+# Accessibility
+#Layout
+  ## General Layout
+  ## Site Masthead
+  ## Site Footer
+  ## Widgets
+# Content
+  ## Posts and pages
+  ## Comments
+  ## Navigation
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "rtl/normalize";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "rtl/elements";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "rtl/accessibility";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "rtl/layout";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "rtl/content";

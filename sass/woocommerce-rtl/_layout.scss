@@ -1,0 +1,154 @@
+// Styling begins
+.woocommerce, .woocommerce-page {
+
+	// General layout styles
+	.col2-set {
+		.col-1 {
+			float: right;
+		}
+		.col-2 {
+			float: left;
+		}
+	}
+
+	// Product page
+	div.product,
+	#content div.product {
+		div.images {
+			float: right;
+		}
+
+		div.thumbnails {
+			a {
+				float: right;
+				margin-right: auto;
+				margin-left: 3.8%;
+			}
+
+			a.last {
+				margin-right: auto;
+				margin-left: 0;
+			}
+
+			&.columns-1 {
+				a {
+					margin-right: auto;
+					margin-left: 0;
+				}
+			}
+		}
+
+		div.summary {
+			float: left;
+		}
+
+		.woocommerce-tabs {
+			ul.tabs {
+				img {
+					float: left;
+				}
+			}
+		}
+
+		#reviews {
+			.comment {
+				img {
+					float: left;
+				}
+			}
+		}
+	}
+
+	// Product loops
+	ul.products {
+		li.product {
+			float: right;
+			margin: 0 0 2.992em 3.8%;
+			margin-left: auto;
+		}
+
+		li.last {
+			margin-right: auto;
+			margin-left: 0;
+		}
+	}
+
+	&.columns-1 {
+		ul.products {
+			li.product {
+				margin-right: auto;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.woocommerce-result-count {
+		float: right;
+	}
+	.woocommerce-ordering {
+		float: left;
+	}
+
+	// Cart page
+	table.cart,
+	#content table.cart {
+		td.actions {
+			text-align: left;
+
+			.coupon {
+				float: right;
+			}
+		}
+	}
+
+	.cart-collaterals {
+		.related {
+			float: right;
+		}
+
+		.cross-sells {
+			float: right;
+		}
+
+		.shipping_calculator {
+			clear: left;
+			float: left;
+		}
+
+		.cart_totals {
+			float: left;
+		}
+	}
+
+	// Cart sidebar
+	ul.cart_list,
+	ul.product_list_widget {
+		li {
+			img {
+				float: left;
+			}
+		}
+	}
+
+	// Forms
+	form {
+		.form-row-first,
+		.form-row-last {
+			float: right;
+		}
+
+		.form-row-last {
+			float: left;
+		}
+	}
+
+	#payment {
+		.terms {
+			text-align: left;
+		}
+
+		#place_order {
+			float: left;
+		}
+	}
+}
