@@ -1,0 +1,106 @@
+.woocommerce {
+	.woocommerce-ordering {
+		float: right;
+		margin-right: auto;
+		margin-left: 20px;
+
+		.ordering-selector-wrapper {
+			.north-icon-next {
+				float: left;
+				margin: 0 10px 0 -3px;
+			}
+		}
+	}
+
+	.woocommerce-result-count {
+		float: right;
+	}
+
+	#main {
+		ul.products {
+			li.product {
+				margin: 0 0 2.992em 3.8%;
+
+				&.last {
+					margin-right: auto;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+// These elements should only apply to WooCommerce pages
+
+.woocommerce {
+
+	button.button.alt,
+	#review_form #respond .form-submit input,
+	.woocommerce-message .button,
+	.products .button{
+		&:hover{
+			box-shadow: -1px 1px 1px rgba(0,0,0,0.1);
+		}
+
+		.north-icon-cart {
+			float: right;
+			margin: -0.1em 0 0 0.5em;
+		}
+	}
+
+	.woocommerce-message {
+		.button {
+			float: left;
+		}
+	}
+}
+
+.woocommerce.single #content div.product {
+
+	.entry-thumbnail {
+		float: right;
+	}
+
+	.entry-content-wrapper {
+		margin-left: auto;
+		margin-right: 35%;
+		padding-left: 0;
+		padding-right: 25px;
+	}
+
+	.cart {
+		.quantity {
+			float: right;
+			margin: -1px 0 0 6px;
+		}
+	}
+
+	p.price {
+		float: left;
+	}
+
+	.woocommerce-tabs {
+		.tabs {
+			padding-right: 0;
+			margin-right: 0;
+			margin-left: auto;
+
+			li {
+				margin: 0 0 0 10px;
+			}
+		}
+	}
+}
+
+.woocommerce #reviews #comments {
+	ol.commentlist {
+		padding-right: 0;
+
+		li {
+			.comment-text {
+				margin-left: auto;
+				margin-right: 85px;
+			}
+		}
+	}
+}

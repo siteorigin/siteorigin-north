@@ -49,6 +49,15 @@
             left: null,
         }, options );
 
+        var direction;
+
+        if ( $('body').hasClass('rtl') ) {
+          direction = 'right';
+        }
+        else {
+          direction = 'left';
+        }
+
         return $(this).each( function(){
             var $$ = $(this);
             return $$.hover(
@@ -77,7 +86,7 @@
                         .css('display', 'block')
                         .clearQueue()
                         .css({
-                            left: left,
+                            direction: left,
                             opacity: 0,
                             x: isSub ? -3 : 0,
                             y: isSub ? 0 : -3,
@@ -219,7 +228,7 @@ jQuery( function($){
 
             var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
-                'position': 'relative',
+                'position': $('body').hasClass( 'page-layout-menu-overlap' ) ? 'fixed' : 'relative',
                 'top': 0,
                 'left': 0,
                 'width': null,
