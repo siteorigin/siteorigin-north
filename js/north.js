@@ -228,7 +228,7 @@ jQuery( function($){
 
             var top  = window.pageYOffset || document.documentElement.scrollTop;
             $mh.css({
-                'position': 'relative',
+                'position': $('body').hasClass( 'page-layout-menu-overlap' ) ? 'fixed' : 'relative',
                 'top': 0,
                 'left': 0,
                 'width': null,
