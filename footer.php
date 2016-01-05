@@ -30,15 +30,18 @@
 
 		<div class="site-info">
 			<div class="container">
-				<?php siteorigin_north_footer_text() ?>
-				<span class="sep"> | </span>
 				<?php
-				echo wp_kses_post(
-					apply_filters(
-						'siteorigin_north_footer_credits',
-						sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
-					)
+				siteorigin_north_footer_text();
+
+				$credit_text = apply_filters(
+					'siteorigin_north_footer_credits',
+					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				);
+
+				if( !empty($credit_text) ) {
+					?><span class="sep"> | </span><?php
+					echo wp_kses_post( $credit_text );
+				}
 				?>
 			</div>
 		</div><!-- .site-info -->

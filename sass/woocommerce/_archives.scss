@@ -1,5 +1,5 @@
 .woocommerce {
-	
+
 	.woocommerce-ordering {
 		float: left;
 		margin-right: 20px;
@@ -83,7 +83,7 @@
 				text-align: center;
 
 				@media (max-width: 768px) {
-					& {
+					@at-root body.responsive#{&} {
 						width: 48%;
 						margin: 0 0 2.992em;
 					}
@@ -111,5 +111,5 @@
 	}
 
 
-	
+
 }

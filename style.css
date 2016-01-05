@@ -531,6 +531,19 @@ a {
     line-height: 16px;
     position: relative;
     top: 2px; }
+  @media screen and (max-width: 600px) {
+    body.responsive .main-navigation #mobile-menu-button {
+      display: inline-block; }
+    body.responsive .main-navigation ul {
+      display: none; }
+    body.responsive .main-navigation .north-icon-search {
+      display: none; }
+    .main-navigation #mobile-menu-button {
+      display: none; }
+    .main-navigation ul {
+      display: inline-block; }
+    .main-navigation .north-icon-search {
+      display: inline-block; } }
 
 #header-search {
   display: none;
@@ -644,6 +657,9 @@ a {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
           display: none; }
+  @media screen and (min-width: 601px) {
+    body.responsive #mobile-navigation {
+      display: none !important; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -817,7 +833,10 @@ a {
 
 .site-footer {
   clear: both;
-  width: 100%; }
+  width: 100%;
+  min-width: 1060px; }
+  body.responsive .site-footer {
+    min-width: 0; }
 
 .no-active-sidebar .content-area {
   float: none;
@@ -845,9 +864,13 @@ a {
 --------------------------------------------------------------*/
 .container {
   margin: 0 auto;
-  max-width: 1040px;
+  max-width: none;
   position: relative;
-  padding: 0 20px; }
+  padding: 0 20px;
+  width: 1040px; }
+  body.responsive .container {
+    width: 100%;
+    max-width: 1040px; }
 
 .page-title {
   margin-top: 0; }
@@ -889,7 +912,8 @@ a {
   position: relative;
   margin-bottom: 30px;
   width: 100%;
-  z-index: 999; }
+  z-index: 999;
+  min-width: 1060px; }
   #masthead .container-inner {
     display: table;
     width: 100%; }
@@ -934,12 +958,16 @@ a {
     text-align: center; }
   #masthead.layout-centered .site-branding, #masthead.layout-centered .main-navigation {
     display: block; }
+  body.responsive #masthead {
+    min-width: 0; }
 
 .masthead-sentinel {
   box-sizing: border-box;
   margin-bottom: 30px; }
 
 #topbar {
+  width: 100%;
+  min-width: 1060px;
   background: #f4f4f4;
   border-bottom: 1px solid #d4d4d4; }
   #topbar p {
@@ -948,6 +976,8 @@ a {
     margin: 0;
     font-size: 0.8em;
     color: #898989; }
+  body.responsive #topbar {
+    min-width: 0; }
 
 /*--------------------------------------------------------------
 ## Site Sidebar
@@ -1016,14 +1046,14 @@ a {
       font-size: 15px;
       text-transform: uppercase; }
     @media (max-width: 640px) {
-      #colophon .widgets .widget-wrapper {
+      body.responsive #colophon .widgets .widget-wrapper {
         float: none;
         width: 100% !important;
         padding-bottom: 0;
         margin-bottom: 0;
         border-right: none;
         border-bottom: 1px solid #d4d4d4; }
-        #colophon .widgets .widget-wrapper:last-child {
+        body.responsive #colophon .widgets .widget-wrapper:last-child {
           border-bottom: none; } }
   #colophon .site-info {
     border-top: 1px solid #d4d4d4;
@@ -1087,7 +1117,7 @@ a {
       -o-transform: rotate(0deg);
       transform: rotate(0deg); }
   @media (max-width: 600px) {
-    #scroll-to-top {
+    body.responsive #scroll-to-top {
       display: none !important; } }
 
 /*--------------------------------------------------------------

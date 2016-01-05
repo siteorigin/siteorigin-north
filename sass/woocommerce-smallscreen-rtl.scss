@@ -1,0 +1,78 @@
+// Style begins
+.woocommerce,
+.woocommerce-page {
+	table.my_account_orders {
+		tr {
+			td {
+				&.order-actions {
+					text-align: right;
+
+					.button {
+						float: none;
+						margin: .125em 0 .125em .25em;
+					}
+				}
+			}
+		}
+	}
+
+	// Products
+	ul.products {
+		li.product {
+			float: right;
+
+			&:nth-child(2n) {
+				float: left;
+			}
+		}
+	}
+
+	// Cart
+	table.cart,
+	#content table.cart {
+		td.actions {
+			text-align: right;
+
+			.input-text + .button,
+			.button.alt {
+				float: left;
+			}
+		}
+	}
+
+	.cart-collaterals {
+		.cart_totals,
+		.shipping_calculator,
+		.cross-sells {
+			text-align: right;
+		}
+	}
+
+	// Checkout
+	&.woocommerce-checkout {
+		form.login {
+			.form-row {
+				float: right;
+			}
+		}
+	}
+
+	#payment {
+		.terms {
+			text-align: right;
+		}
+	}
+
+	// Account
+	.lost_reset_password {
+		.form-row-first,
+		.form-row-last {
+			margin-left: 0;
+			margin-right: auto;
+		}
+	}
+}
+
+/* Styles specific to SiteOrigin North */
+.woocommerce #main ul.products li.product {
+	margin: 0 0 2.992em; }

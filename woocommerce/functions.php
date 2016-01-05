@@ -28,6 +28,26 @@ function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 		'media' => 'all'
 	);
 
+	if( is_rtl() ) {
+		$styles['northern-woocommerce-rtl'] = array(
+			'src' => get_template_directory_uri() . '/woocommerce-rtl.css',
+			'deps' => 'northern-woocommerce',
+			'version' => SITEORIGIN_THEME_VERSION,
+			'media' => 'all'
+		);
+		$styles['northern-woocommerce-smallscreen-rtl'] = array(
+			'src' => get_template_directory_uri() . '/woocommerce-smallscreen-rtl.css',
+			'deps' => 'northern-woocommerce',
+			'version' => SITEORIGIN_THEME_VERSION,
+			'media' => 'only screen and (max-width: ' . apply_filters( 'woocommerce_style_smallscreen_breakpoint', $breakpoint = '768px' ) . ')'
+		);
+	}
+
+	if( function_exists('is_woocommerce') && is_woocommerce() && siteorigin_setting( 'responsive_disabled' ) ) {
+		unset( $styles['woocommerce-smallscreen'] );
+		unset( $styles['northern-woocommerce-smallscreen-rtl'] );
+	}
+
 	return $styles;
 }
 add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_styles');
@@ -35,8 +55,7 @@ add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_s
 function siteorigin_north_woocommerce_enqueue_scripts( ){
 	if( !function_exists('is_woocommerce') ) return;
 
-	if( 'is_woocommerce' ) {
-		wp_enqueue_style( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/woocommerce.css' );
+	if( is_woocommerce() ) {
 		wp_enqueue_script( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	}
 }
