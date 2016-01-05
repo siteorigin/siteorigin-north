@@ -704,6 +704,7 @@ function siteorigin_north_setup_page_settings(){
 				'default' => __( 'Default', 'siteorigin-north' ),
 				'no-sidebar' => __( 'No Sidebar', 'siteorigin-north' ),
 				'full-width' => __( 'Full Width', 'siteorigin-north' ),
+				'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-north' ),
 			),
 		),
 
