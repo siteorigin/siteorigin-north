@@ -191,7 +191,7 @@ add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 function siteorigin_north_filter_comment_form_default_fields( $fields ){
 	$placeholders = apply_filters('siteorigin_north_comment_form_placeholders', array(
 		'author' => __('Enter Your Name', 'siteorigin-north'),
-		'email' => __('Enter Your Name', 'siteorigin-north'),
+		'email' => __('Enter Your Email', 'siteorigin-north'),
 		'url' => __('Your Site URL', 'siteorigin-north'),
 	) );
 
