@@ -32,7 +32,10 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( __('Read More', 'siteorigin-north') );
+			the_content( sprintf(
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
+				get_the_title()
+			) );
 		?>
 
 		<?php
