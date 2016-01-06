@@ -145,8 +145,8 @@ function siteorigin_north_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 
 	register_sidebar( array(
@@ -155,8 +155,8 @@ function siteorigin_north_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 
 }

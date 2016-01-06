@@ -56,7 +56,7 @@ function the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-north' ); ?></h2>
+		<h3 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-north' ); ?></h3>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>

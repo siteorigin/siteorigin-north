@@ -19,7 +19,7 @@
 			if( is_active_sidebar( 'footer-sidebar' ) ) {
 				$siteorigin_north_sidebars = wp_get_sidebars_widgets();
 				?>
-				<div class="widgets widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>">
+				<div class="widgets widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
 					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 				</div>
 				<?php
