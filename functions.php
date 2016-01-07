@@ -195,24 +195,32 @@ function siteorigin_north_filter_comment_form_default_fields( $fields ){
 		'url' => __('Your Site URL', 'siteorigin-north'),
 	) );
 
+	$default_author = array('<label for="author"', '<input id="author" ');
+	$default_email = array('<label for="email"', '<input id="email" ');
+	$default_url = array('<label for="url"', '<input id="url" ');
+
+	$replace_author = array('<label for="author" class="screen-reader-text"', '<input id="author" placeholder="' . esc_attr($placeholders['author']) . '" ');
+	$replace_email = array('<label for="email" class="screen-reader-text"', '<input id="email" placeholder="' . esc_attr($placeholders['email']) . '" ');
+	$replace_url = array('<label for="url" class="screen-reader-text"', '<input id="url" placeholder="' . esc_attr($placeholders['url']) . '" ');
+
 	if( isset($fields['author']) ) {
 		$fields['author'] = str_replace(
-			'<input id="author" ',
-			'<input id="author" placeholder="' . esc_attr($placeholders['author']) . '" ',
+			$default_author,
+			$replace_author,
 			$fields['author']
 		);
 	}
 	if( isset($fields['email']) ) {
 		$fields['email'] = str_replace(
-			'<input id="email" ',
-			'<input id="email" placeholder="' . esc_attr($placeholders['email']) . '" ',
+			$default_email,
+			$replace_email,
 			$fields['email']
 		);
 	}
 	if( isset($fields['url']) ) {
 		$fields['url'] = str_replace(
-			'<input id="url" ',
-			'<input id="url" placeholder="' . esc_attr($placeholders['url']) . '" ',
+			$default_url,
+			$replace_url,
 			$fields['url']
 		);
 	}
@@ -223,10 +231,13 @@ add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_
 
 function siteorigin_north_filter_comment_form_defaults( $defaults ){
 	$comment_placeholder = __('Enter your message', 'siteorigin-north');
+	$default_comment = array('<label for="comment"', '<textarea id="comment" ');
+	$replace_comment = array('<label for="comment" class="screen-reader-text"', '<textarea id="comment" placeholder="' . esc_attr($comment_placeholder) . '" ');
+
 	if( !empty( $defaults['comment_field'] ) ) {
 		$defaults['comment_field'] = str_replace(
-			'<textarea id="comment" ',
-			'<textarea id="comment" placeholder="' . esc_attr($comment_placeholder) . '" ',
+			$default_comment,
+			$replace_comment,
 			$defaults['comment_field']
 		);
 		$defaults['comment_field'] = '<div class="clear"></div>' . $defaults['comment_field'];

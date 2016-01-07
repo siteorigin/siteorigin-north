@@ -56,6 +56,7 @@
 					?>
 
 					<?php if( siteorigin_setting('navigation_search') ) : ?>
+						<label class="screen-reader-text"><?php _e( 'Open search bar', 'siteorigin-north' ); ?></label>
 						<span class="north-icon-search"></span>
 					<?php endif; ?>
 
@@ -67,6 +68,7 @@
 		<?php if( siteorigin_setting('navigation_search') ) : ?>
 			<div id="header-search">
 				<div class="container">
+					<label for='s' class='screen-reader-text'><?php _e( 'Search for:', 'siteorigin-north' ); ?></label>
 					<?php get_search_form() ?>
 					<?php siteorigin_north_display_icon('close'); ?>
 				</div>
