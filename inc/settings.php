@@ -397,6 +397,13 @@ function siteorigin_north_settings_custom_css($css){
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
+		'button:hover, button:active, button:focus,' . "\n" .
+		'input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus,' . "\n" .
+		'input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus,' . "\n" .
+		'input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {' . "\n" .
+		'background: ${branding_accent_dark};' . "\n" .
+		'border-color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
 		'#header-search {' . "\n" .
 		'background: ${masthead_background_color};' . "\n" .
 		'}' . "\n" .
