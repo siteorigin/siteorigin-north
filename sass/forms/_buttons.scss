@@ -14,6 +14,7 @@ input[type="submit"] {
 	font-family: $font__headings;
 	text-transform: uppercase;
 	text-shadow: none;
+	outline: none;
 
 	@include transition(0.085s);
 

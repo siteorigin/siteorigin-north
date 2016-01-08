@@ -11,6 +11,7 @@ textarea {
 	padding: 7px 30px;
 	border: 1px solid $color__border-input;
 	border-radius: 0px;
+	width: 100%;
 
 	&:focus {
 		outline: none;
