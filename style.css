@@ -1477,6 +1477,10 @@ iframe,
 object {
   max-width: 100%; }
 
+/* Over-riding theme button styles for audio shortcode. */
+.mejs-controls .mejs-button button {
+  box-shadow: none; }
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
