@@ -1356,6 +1356,8 @@ a {
     color: #898989; }
     .comment-list li .comment-container {
       margin-left: 120px; }
+    .comment-list li.pingback .comment-container {
+      margin-left: 0; }
     .comment-list li .avatar-container {
       float: left; }
       .comment-list li .avatar-container img {
