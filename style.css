@@ -302,9 +302,7 @@ body {
   /* Fallback for when there is no custom background color defined. */ }
 
 blockquote, q {
-  quotes: "" ""; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: ""; }
+  quotes: '"' '"'; }
 
 hr {
   background-color: #ccc;
@@ -313,7 +311,7 @@ hr {
   margin-bottom: 1.5em; }
 
 ul, ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0 0 1.5em 1.5em; }
 
 ul {
   list-style: disc; }
@@ -341,6 +339,10 @@ img {
   /* Make sure images are scaled correctly. */
   max-width: 100%;
   /* Adhere to container width. */ }
+
+code {
+  background: #eee;
+  padding: 0 0.3em; }
 
 table {
   margin: 0 0 1.5em;
