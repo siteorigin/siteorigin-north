@@ -344,7 +344,12 @@ img {
 
 table {
   margin: 0 0 1.5em;
-  width: 100%; }
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
+  table th, table td {
+    padding: 0.3em;
+    border: 1px solid #c9c9c9; }
 
 /*--------------------------------------------------------------
 # Forms
