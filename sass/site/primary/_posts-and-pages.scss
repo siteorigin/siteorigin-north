@@ -214,6 +214,28 @@
 	}
 }
 
+.author-box {
+	margin: 20px 0;
+	padding: 10px;
+	border: 1px solid #c9c9c9;
+
+	.author-title {
+		margin-top: 0;
+
+		.author-info {
+			font-size: 0.6em;
+		}
+	}
+
+	.author-avatar {
+		float: left;
+	}
+
+	.author-description {
+		margin-left: 120px;
+	}
+}
+
 .more-link {
 	font-size: 0.85em;
 	float: right;

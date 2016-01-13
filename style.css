@@ -1351,6 +1351,19 @@ a {
     .tags-list a:hover {
       background: #a94346; }
 
+.author-box {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #c9c9c9; }
+  .author-box .author-title {
+    margin-top: 0; }
+    .author-box .author-title .author-info {
+      font-size: 0.6em; }
+  .author-box .author-avatar {
+    float: left; }
+  .author-box .author-description {
+    margin-left: 120px; }
+
 .more-link {
   font-size: 0.85em;
   float: right;
