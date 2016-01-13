@@ -331,11 +331,21 @@ function siteorigin_north_settings_init(){
 					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live' => true,
 				),
-
 			),
+		),
+		'woocommerce' => array(
+			'title' => __('WooCommerce', 'siteorigin-north'),
+			'fields' => array(
+
+				'display_cart' => array(
+					'type' => 'checkbox',
+					'label' => __('Display Cart', 'siteorigin-north'),
+					'description' => __("Display WooCommerce cart in the main menu", 'siteorigin-north'),
+				)
+
+			)
 		)
 	) ) );
-
 }
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 
@@ -659,13 +669,6 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Footer defaults
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	$defaults['footer_constrained'] = false;
-	$defaults['footer_background_color'] = '#fafafa';
-	$defaults['footer_border_color'] = '#d4d4d4';
-	$defaults['footer_border_width'] = '1px';
-	$defaults['footer_top_padding'] = '40px';
-	$defaults['footer_side_padding'] = '40px';
-	$defaults['footer_top_margin'] = '30px';
-
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');

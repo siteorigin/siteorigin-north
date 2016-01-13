@@ -1,0 +1,156 @@
+#mobile-navigation {
+	.shopping-cart-link {
+		line-height: 3.5em;
+		text-decoration: none;
+		color: #fff;
+
+		.north-icon-cart {
+			font-size: 16px;
+		}
+	}
+
+	.shopping-cart-count {
+		font-size: 10px;
+		padding: 2px 4px;
+		border: 2px solid #fff;
+		border-radius: 50%;
+	}
+}
+
+.main-navigation {
+	.shopping-cart {
+		display: inline-block;
+		margin-left: 0.8em;
+		position: relative;
+
+		> li > a {
+			padding: 0;
+		}
+
+		.shopping-cart-text {
+			display: none;
+		}
+
+		.north-icon-cart {
+			display: inline-block;
+			font-size: 16px;
+			cursor: pointer;
+			line-height: 16px;
+			padding: 5px;
+			position: relative;
+			top: 2px;
+			color: #999;
+			border: 2px solid transparent;
+			border-radius: 50%;
+		}
+
+		&:hover{
+			.north-icon-cart {
+				background: $color__primary_accent_dark;
+				color: #fff;
+			}
+
+			.shopping-cart-count {
+				background: $color__primary_accent_dark;
+				background-clip: padding-box;
+			}
+		}
+
+		.shopping-cart-count {
+			position: relative;
+			left: -11px;
+			top: -16px;
+			padding: 3px 5px;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			background: $color__primary_accent;
+			color: #fff;
+			font-size: 9px;
+			background-clip: padding-box;
+		}
+
+		.shopping-cart-dropdown {
+			width: 300px;
+		}
+	}
+}
+
+.widget_shopping_cart_content {
+	.cart_list{
+		.empty {
+			margin: 15px 15px;
+		}
+
+		.mini_cart_item {
+			position: relative;
+			margin: 5px 10px;
+			box-sizing: border-box;
+
+			a {
+				padding: 0 !important;
+			}
+
+			.mini_cart_img {
+				width: 90px;
+				float: left;
+			}
+
+			.mini_cart_details {
+				float: right;
+				width: 180px;
+
+				.mini_cart_product {
+					margin-bottom: 0;
+					font-size: 0.9em;
+				}
+
+				.mini_cart_cost {
+					font-size: 0.7em;
+				}
+			}
+		}
+	}
+
+	.total {
+		border-top: none !important;
+		text-align: center;
+	}
+
+	.buttons {
+		text-align: center;
+		text-transform: uppercase;
+
+		a {
+			font-weight: normal;
+			border-radius: 0px;
+			font-size: 0.85em;
+			padding: 10px;
+			line-height: 1em;
+			box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
+			font-family: $font__headings;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-shadow: none;
+			@include transition(0.085s);
+
+			&.mini_cart_view {
+				background: transparent;
+				border: 1px solid $color__text_dark;
+				color: $color__text_dark;
+			}
+
+			&.mini_cart_checkout {
+				background: $color__primary_accent;
+				border: 1px solid $color__primary_accent;
+				color: #fff;
+			}
+
+			&:hover {
+				background: $color__primary_accent_dark;
+				color: #fff;
+				border-color: $color__primary_accent_dark;
+				box-shadow: none;
+			}
+		}
+	}
+}
