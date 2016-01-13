@@ -237,6 +237,10 @@ function siteorigin_north_settings_init(){
 					'type' => 'checkbox',
 					'label' => __('Featured image on single', 'siteorigin-north'),
 				),
+				'display_author_box' => array(
+					'type' => 'checkbox',
+					'label' => __('Display author box on single', 'siteorigin-north'),
+				),
 				'display_date' => array(
 					'type' => 'checkbox',
 					'label' => __('Display date', 'siteorigin-north'),
@@ -652,6 +656,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Blog settings
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
+	$defaults['blog_display_author_box'] = false;
 	$defaults['blog_display_date'] = true;
 	$defaults['blog_display_author'] = true;
 	$defaults['blog_display_comment_count'] = true;
