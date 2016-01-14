@@ -10,7 +10,7 @@
 	margin: 25px 0;
 	padding: 0;
 
-	li {
+	li.comment {
 		margin: 0 0 50px 0;
 		padding: 0;
 		width: auto;
@@ -21,9 +21,15 @@
 			margin-left: 120px;
 		}
 
+		&.pingback {
+			.comment-container {
+				margin-left: 0;
+			}
+		}
+
 		.avatar-container {
 			float: left;
-			
+
 			img {
 				display: block;
 			}
@@ -131,7 +137,7 @@
 			border-radius: 0px;
 			font-size: 0.85em;
 			float: right;
-			border: 1px solid #303030;
+			border: 1px solid $color__border-button;
 			padding: 10px 30px;
 			line-height: 1em;
 			box-shadow: inset 0 0 1px rgba(0,0,0,0.25);
@@ -151,7 +157,7 @@
 			}
 		}
 	}
-	
+
 	input, textarea {
 		background-color: #ffffff;
 

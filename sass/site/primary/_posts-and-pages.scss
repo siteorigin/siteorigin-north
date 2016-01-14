@@ -34,7 +34,9 @@
 
 	img {
 		display: block;
-		width: 100%;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 		height: auto;
 	}
 
@@ -200,6 +202,7 @@
 		color: #fff;
 		display: inline-block;
 		margin-right: 10px;
+		margin-bottom:10px;
 		text-decoration: none;
 		line-height: 1em;
 		font-size: 0.8em;
@@ -208,6 +211,28 @@
 		&:hover {
 			background: $color__primary_accent_dark;
 		}
+	}
+}
+
+.author-box {
+	margin: 20px 0;
+	padding: 10px;
+	border: 1px solid #c9c9c9;
+
+	.author-title {
+		margin-top: 0;
+
+		.author-info {
+			font-size: 0.6em;
+		}
+	}
+
+	.author-avatar {
+		float: left;
+	}
+
+	.author-description {
+		margin-left: 120px;
 	}
 }
 

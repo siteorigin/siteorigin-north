@@ -60,6 +60,22 @@
 						<span class="north-icon-search"></span>
 					<?php endif; ?>
 
+					<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_cart') ): ?>
+						<?php global $woocommerce; ?>
+						<ul class="shopping-cart">
+							<li>
+								<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
+									<span class="north-icon-cart"></span>
+									<span class="shopping-cart-text"><?php _e( ' View Cart ', 'siteorigin-north' ); ?></span>
+									<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+								</a>
+								<ul class="shopping-cart-dropdown" id="cart-drop">
+									<?php the_widget('WC_Widget_Cart');?>
+								</ul>
+							</li>
+						</ul>
+					<?php endif; ?>
+
 				</nav><!-- #site-navigation -->
 			</div>
 

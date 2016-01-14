@@ -177,6 +177,28 @@ function siteorigin_north_entry_footer() {
 
 		/* translators: used between list items, there is a space after the comma */
 		the_tags( '<div class="tags-list">', '', '</div>' );
+
+		if ( siteorigin_setting('blog_display_author_box') ) { ?>
+			<div class="author-box">
+				<h2 class="author-title">
+					<?php echo get_the_author(); ?>
+					<small class="author-info">
+						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+							<?php _e( 'View posts by ', 'siteorigin-north' );
+							echo get_the_author(); ?>
+						</a>
+					</small>
+				</h2>
+				<div class="author-avatar">
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+				</div>
+				<div class="author-description">
+					<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
+				</div>
+				<div class="clear"></div>
+			</div>
+		<?php }
+
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -343,7 +365,7 @@ function siteorigin_north_display_icon( $type ){
 		case 'close' :
 			?>
 			<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
-			     viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+				 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 				<path class="circle" d="M22.1,7.7c-0.6-1.4-1.4-2.5-2.3-3.5c-1-1-2.2-1.8-3.5-2.3C14.9,1.3,13.5,1,12,1S9.1,1.3,7.7,1.9
 				C6.4,2.5,5.2,3.2,4.2,4.2c-1,1-1.8,2.2-2.3,3.5C1.3,9.1,1,10.5,1,12c0,1.5,0.3,2.9,0.9,4.3c0.6,1.4,1.4,2.5,2.3,3.5
 				c1,1,2.2,1.8,3.5,2.3C9.1,22.7,10.5,23,12,23s2.9-0.3,4.3-0.9c1.4-0.6,2.5-1.4,3.5-2.3c1-1,1.8-2.2,2.3-3.5

@@ -13,12 +13,7 @@ body {
 }
 
 blockquote, q {
-	quotes: "" "";
-
-	&:before,
-	&:after {
-		content: "";
-	}
+	quotes: '"' '"';
 }
 
 hr {
@@ -30,9 +25,19 @@ hr {
 
 @import "lists";
 
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+}
+
+code {
+	background: #eee;
+	padding: 0 0.3em;
 }
 
 @import "tables";
