@@ -1,0 +1,57 @@
+.wpcf7 {
+	form.wpcf7-form p {
+		margin-bottom: 1.75em;
+	}
+
+	input.wpcf7-form-control.wpcf7-text,
+	input.wpcf7-form-control.wpcf7-number,
+	input.wpcf7-form-control.wpcf7-date,
+	textarea.wpcf7-form-control.wpcf7-textarea,
+	select.wpcf7-form-control.wpcf7-select,
+	input.wpcf7-form-control.wpcf7-quiz {
+		margin: 5px 0 0;
+		padding: 7px 30px;
+		outline: none;
+		font-size: 0.85em;
+		color: $color__text_medium;
+		font-family: $font__detail;
+		width: 100%;
+	}
+
+	span.wpcf7-form-control-wrap .wpcf7-form-control {
+		&.wpcf7-checkbox,
+		&.wpcf7-radio {
+			.wpcf7-list-item.first {
+				margin-left: 0 !important;
+			}
+		}
+	}
+
+	input.wpcf7-form-control{
+		&.wpcf7-submit {
+			&[disabled] {
+				color: $color__text_light;
+				border: 2px solid $color__text_light;
+				cursor: not-allowed;
+
+				&:hover {
+					color: $color__text_light;
+					border: 2px solid $color__text_light;
+					background: transparent;
+				}
+			}
+		}
+	}
+
+	.wpcf7-response-output {
+		position: relative;
+		padding: 10px 30px;
+		color: $color__text_dark;
+		border: none;
+		text-transform: uppercase;
+		margin: 0;
+		text-align: left;
+		font-size: 1em;
+		background: $color__wpcf7-output-bg;
+	}
+}

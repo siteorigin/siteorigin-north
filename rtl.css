@@ -182,6 +182,9 @@ textarea {
   margin-left: auto;
   margin-right: 70px; }
 
+.comment-list li.pingback .comment-container {
+  margin-right: auto; }
+
 #commentform .comment-form-author, #commentform .comment-form-email, #commentform .comment-form-url {
   float: right; }
 
