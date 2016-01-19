@@ -13,6 +13,7 @@
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
 				<div class="thumbnail-hover">
+					<span class="screen-reader-text"><?php _e( 'Open post', 'siteorigin-north' ); ?></span>
 					<span class="north-icon-add"></span>
 				</div>
 				<?php the_post_thumbnail() ?>

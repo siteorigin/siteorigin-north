@@ -45,7 +45,11 @@
 
 					<a href="#menu" id="mobile-menu-button">
 						<?php siteorigin_north_display_icon('menu') ?>
-						<?php echo esc_html( siteorigin_setting('responsive_menu_text') ) ?>
+						<?php if( siteorigin_setting('responsive_menu_text') ) : ?>
+							<?php echo esc_html( siteorigin_setting('responsive_menu_text') ) ?>
+						<?php else : ?>
+							<span class="screen-reader-text"><?php _e( 'Menu', 'siteorigin-north' ); ?></span>
+						<?php endif; ?>
 					</a>
 
 					<?php
@@ -65,6 +69,7 @@
 						<ul class="shopping-cart">
 							<li>
 								<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
+									<span class="screen-reader-text"><?php _e( 'View shopping cart', 'siteorigin-north' ); ?></span>
 									<span class="north-icon-cart"></span>
 									<span class="shopping-cart-text"><?php _e( ' View Cart ', 'siteorigin-north' ); ?></span>
 									<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
@@ -86,6 +91,7 @@
 				<div class="container">
 					<label for='s' class='screen-reader-text'><?php _e( 'Search for:', 'siteorigin-north' ); ?></label>
 					<?php get_search_form() ?>
+					<span class="screen-reader-text"><?php _e( 'Close search bar', 'siteorigin-north' ); ?></span>
 					<?php siteorigin_north_display_icon('close'); ?>
 				</div>
 			</div>
