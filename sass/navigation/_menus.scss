@@ -185,7 +185,8 @@
 		cursor: pointer;
 		line-height: 16px;
 		position: relative;
-		top: 2px
+		top: 2px;
+		color: inherit;
 	}
 
 	@media screen and (max-width: 600px) {

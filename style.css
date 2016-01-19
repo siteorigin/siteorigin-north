@@ -624,7 +624,8 @@ a {
     cursor: pointer;
     line-height: 16px;
     position: relative;
-    top: 2px; }
+    top: 2px;
+    color: inherit; }
   @media screen and (max-width: 600px) {
     body.responsive .main-navigation #mobile-menu-button {
       display: inline-block; }
