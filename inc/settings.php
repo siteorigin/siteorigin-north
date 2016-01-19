@@ -237,6 +237,10 @@ function siteorigin_north_settings_init(){
 					'type' => 'checkbox',
 					'label' => __('Featured image on single', 'siteorigin-north'),
 				),
+				'display_author_box' => array(
+					'type' => 'checkbox',
+					'label' => __('Display author box on single', 'siteorigin-north'),
+				),
 				'display_date' => array(
 					'type' => 'checkbox',
 					'label' => __('Display date', 'siteorigin-north'),
@@ -331,11 +335,21 @@ function siteorigin_north_settings_init(){
 					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live' => true,
 				),
-
 			),
+		),
+		'woocommerce' => array(
+			'title' => __('WooCommerce', 'siteorigin-north'),
+			'fields' => array(
+
+				'display_cart' => array(
+					'type' => 'checkbox',
+					'label' => __('Display Cart', 'siteorigin-north'),
+					'description' => __("Display WooCommerce cart in the main menu", 'siteorigin-north'),
+				)
+
+			)
 		)
 	) ) );
-
 }
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 
@@ -396,6 +410,13 @@ function siteorigin_north_settings_custom_css($css){
 		'}' . "\n" .
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'button:hover, button:active, button:focus,' . "\n" .
+		'input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus,' . "\n" .
+		'input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus,' . "\n" .
+		'input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {' . "\n" .
+		'background: ${branding_accent_dark};' . "\n" .
+		'border-color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
 		'#header-search {' . "\n" .
 		'background: ${masthead_background_color};' . "\n" .
@@ -652,6 +673,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Blog settings
 	$defaults['blog_featured_archive'] = true;
 	$defaults['blog_featured_single'] = true;
+	$defaults['blog_display_author_box'] = false;
 	$defaults['blog_display_date'] = true;
 	$defaults['blog_display_author'] = true;
 	$defaults['blog_display_comment_count'] = true;
@@ -659,13 +681,6 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Footer defaults
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	$defaults['footer_constrained'] = false;
-	$defaults['footer_background_color'] = '#fafafa';
-	$defaults['footer_border_color'] = '#d4d4d4';
-	$defaults['footer_border_width'] = '1px';
-	$defaults['footer_top_padding'] = '40px';
-	$defaults['footer_side_padding'] = '40px';
-	$defaults['footer_top_margin'] = '30px';
-
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
@@ -689,6 +704,7 @@ function siteorigin_north_setup_page_settings(){
 				'default' => __( 'Default', 'siteorigin-north' ),
 				'no-sidebar' => __( 'No Sidebar', 'siteorigin-north' ),
 				'full-width' => __( 'Full Width', 'siteorigin-north' ),
+				'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-north' ),
 			),
 		),
 

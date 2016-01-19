@@ -180,6 +180,10 @@ jQuery( function($){
                 $mobileMenu.append( $('#header-search form').clone() );
             }
 
+            if( $('.main-navigation .shopping-cart').length ) {
+                $mobileMenu.append( $('.main-navigation .shopping-cart .shopping-cart-link').clone() );
+            }
+
             $mobileMenu.find('ul').show().css('opacity', 1);
         }
 

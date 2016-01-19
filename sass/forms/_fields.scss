@@ -3,25 +3,17 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
 textarea {
-	color: $color__text-input;
+	color: $color__text_medium;
+	font-family: $font__detail;
+	font-size: 0.85em;
+	padding: 7px 30px;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	border-radius: 0px;
+	width: 100%;
 
 	&:focus {
-		color: $color__text-input-focus;
+		outline: none;
 	}
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-}
-
-textarea {
-	padding-left: 3px;
-	width: 100%;
 }
