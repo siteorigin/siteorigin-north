@@ -681,6 +681,12 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Footer defaults
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	$defaults['footer_constrained'] = false;
+	$defaults['footer_background_color'] = '#fafafa';
+	$defaults['footer_border_color'] = '#d4d4d4';
+	$defaults['footer_border_width'] = '1px';
+	$defaults['footer_top_padding'] = '40px';
+	$defaults['footer_side_padding'] = '40px';
+	$defaults['footer_top_margin'] = '30px';
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
