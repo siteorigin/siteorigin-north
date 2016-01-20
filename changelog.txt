@@ -1,3 +1,21 @@
+= 1.1 - January 20 2016 =
+* Fixed WooCommerce enqueueing and buttons.
+* Added various customizations in theme settings.
+* Added retina logo setting.
+* Added breadcrumb support.
+* Added option for mobile menu breakpoint.
+* Added RTL support.
+* Properly enqueue default webfonts.
+* Updated to latest Page Builder lite.
+* Added WooCommerce cart in menu.
+* Added more page layouts.
+* Corrections to comment form.
+* Added contact form styling.
+* Fixed audio shortcode styling.
+* Various edge case CSS fixes and improvements.
+* Fixed thumbnail sizing.
+* Added basic author box.
+
 = 1.0.3 - October 5 2015 =
 * Properly escape output in header.php.
 * Properly prefixed globals.
