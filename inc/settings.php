@@ -42,12 +42,12 @@ function siteorigin_north_settings_init(){
 					'label' => __('Site Description', 'siteorigin-north'),
 					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
 				),
-				'attribution' => array(
-					'type' => 'checkbox',
-					'label' => __('SiteOrigin Attribution', 'siteorigin-north'),
-					'description' => __('Remove SiteOrigin attribution from your footer.', 'siteorigin-north'),
-					'teaser' => true,
-				),
+//				'attribution' => array(
+//					'type' => 'checkbox',
+//					'label' => __('SiteOrigin Attribution', 'siteorigin-north'),
+//					'description' => __('Remove SiteOrigin attribution from your footer.', 'siteorigin-north'),
+//					'teaser' => true,
+//				),
 				'accent' => array(
 					'type' => 'color',
 					'label' => __('Accent Color', 'siteorigin-north'),
