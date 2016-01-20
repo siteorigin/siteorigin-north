@@ -328,13 +328,34 @@ function siteorigin_north_category_transient_flusher() {
 add_action( 'edit_category', 'siteorigin_north_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
 
+if( !function_exists('siteorigin_north_custom_icon') ):
+/**
+ * Display a custom icons from the settings
+ */
+function siteorigin_north_custom_icon( $icon, $class ){
+	$url = siteorigin_setting( $icon );
+	$url_id = attachment_url_to_postid( $url );
+
+	$url_ext = pathinfo($url);
+	switch($url_ext['extension'])
+	{
+		case "svg":
+		$attrs['class'] = "style-svg $class";
+		break;
+
+		default:
+		$attrs['class'] = "$class";
+	}
+
+	echo wp_get_attachment_image( $url_id, 'full', false, $attrs );
+}
+endif;
+
 function siteorigin_north_display_icon( $type ){
 	switch($type) {
 		case 'menu':
-			if ( siteorigin_setting( 'responsive_menu_icon' ) ): ?>
-				<svg class="svg-icon-menu">
-					<use xlink:href="<?php echo esc_url( siteorigin_setting( 'responsive_menu_icon' ) ); ?>">
-				</svg>
+			if ( siteorigin_setting( 'icons_menu' ) ): ?>
+				<?php siteorigin_north_custom_icon( 'icons_menu', 'svg-icon-menu' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 					<path class="line-1" d="M3,5h18c0.3,0,0.5,0.1,0.7,0.3C21.9,5.5,22,5.7,22,6s-0.1,0.5-0.3,0.7C21.5,6.9,21.3,7,21,7H3 C2.7,7,2.5,6.9,2.3,6.7C2.1,6.5,2,6.3,2,6s0.1-0.5,0.3-0.7C2.5,5.1,2.7,5,3,5z"/>
@@ -345,10 +366,8 @@ function siteorigin_north_display_icon( $type ){
 			break;
 
 		case 'close' :
-			if ( siteorigin_setting( 'navigation_close_search' ) ): ?>
-				<svg class="svg-icon-close">
-					<use xlink:href="<?php echo esc_url( siteorigin_setting( 'navigation_close_search_icon' ) ); ?>">
-				</svg>
+			if ( siteorigin_setting( 'icons_close_search' ) ): ?>
+				<?php siteorigin_north_custom_icon( 'icons_close_search', 'svg-icon-close' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
 				     viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -368,12 +387,10 @@ function siteorigin_north_display_icon( $type ){
 			break;
 
 		case 'up-arrow' :
-			if( siteorigin_setting('navigation_scroll_to_top_icon') ) : ?>
-				<svg>
-					<use xlink:href="<?php echo esc_url( siteorigin_setting( 'navigation_scroll_to_top_icon' ) ); ?>">
-				</svg>
+			if( siteorigin_setting('icons_scroll_to_top') ) : ?>
+				<?php siteorigin_north_custom_icon( 'icons_scroll_to_top', 'svg-icon-to-top' ); ?>
 			<?php else : ?>
-				<svg version="1.1" class="svg-icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+				<svg version="1.1" class="svg-icon-to-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 					<path class="st0" d="M12,2c0.3,0,0.5,0.1,0.7,0.3l7,7C19.9,9.5,20,9.7,20,10c0,0.3-0.1,0.5-0.3,0.7S19.3,11,19,11
 		                c-0.3,0-0.5-0.1-0.7-0.3L13,5.4V21c0,0.3-0.1,0.5-0.3,0.7S12.3,22,12,22s-0.5-0.1-0.7-0.3S11,21.3,11,21V5.4l-5.3,5.3
 		                C5.5,10.9,5.3,11,5,11c-0.3,0-0.5-0.1-0.7-0.3C4.1,10.5,4,10.3,4,10c0-0.3,0.1-0.5,0.3-0.7l7-7C11.5,2.1,11.7,2,12,2z"/>

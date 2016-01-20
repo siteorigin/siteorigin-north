@@ -68,7 +68,7 @@
 			<div id="header-search">
 				<div class="container">
 					<?php get_search_form() ?>
-					<?php siteorigin_north_display_icon('close'); ?>
+					<a id="close-search"><?php siteorigin_north_display_icon('close'); ?></a>
 				</div>
 			</div>
 		<?php endif; ?>
