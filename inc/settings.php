@@ -124,34 +124,16 @@ function siteorigin_north_settings_init(){
 			'fields' => array(
 
 				'menu_icon' => array(
-					'type' => 'text',
-					'label' => __('Responsive Menu SVG icon', 'siteorigin-north'),
-					'description' => __('e.g. url-to-your-spritesheet.svg#your-icon', 'siteorigin-north'),
-				),
-				'menu_icon_color' => array(
-					'type' => 'color',
-					'label' => __('Responsive Menu icon color', 'siteorigin-north'),
-					'live' => true,
+					'type' => 'media',
+					'label' => __('Responsive menu icon', 'siteorigin-north'),
 				),
 				'close_search_icon' => array(
-					'type' => 'text',
-					'label' => __('Close search bar SVG icon', 'siteorigin-north'),
-					'description' => __('e.g. url-to-your-spritesheet.svg#your-icon', 'siteorigin-north'),
-				),
-				'close_search_icon_color' => array(
-					'type' => 'color',
-					'label' => __('Close search bar icon color', 'siteorigin-north'),
-					'live' => true,
+					'type' => 'media',
+					'label' => __('Close search bar icon', 'siteorigin-north'),
 				),
 				'scroll_to_top_icon' => array(
-					'type' => 'text',
-					'label' => __('Scroll to top SVG icon', 'siteorigin-north'),
-					'description' => __('e.g. url-to-your-spritesheet.svg#your-icon', 'siteorigin-north'),
-				),
-				'scroll_to_top_icon_color' => array(
-					'type' => 'color',
-					'label' => __('Scroll to top icon color', 'siteorigin-north'),
-					'live' => true,
+					'type' => 'media',
+					'label' => __('Scroll to top icon', 'siteorigin-north'),
 				),
 			),
 		),
