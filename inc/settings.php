@@ -42,12 +42,12 @@ function siteorigin_north_settings_init(){
 					'label' => __('Site Description', 'siteorigin-north'),
 					'description' => __('Show your site description below your site title or logo.', 'siteorigin-north')
 				),
-				'attribution' => array(
-					'type' => 'checkbox',
-					'label' => __('SiteOrigin Attribution', 'siteorigin-north'),
-					'description' => __('Remove SiteOrigin attribution from your footer.', 'siteorigin-north'),
-					'teaser' => true,
-				),
+//				'attribution' => array(
+//					'type' => 'checkbox',
+//					'label' => __('SiteOrigin Attribution', 'siteorigin-north'),
+//					'description' => __('Remove SiteOrigin attribution from your footer.', 'siteorigin-north'),
+//					'teaser' => true,
+//				),
 				'accent' => array(
 					'type' => 'color',
 					'label' => __('Accent Color', 'siteorigin-north'),
@@ -681,6 +681,12 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Footer defaults
 	$defaults['footer_text'] = __('Copyright © {year} {sitename}', 'siteorigin-north');
 	$defaults['footer_constrained'] = false;
+	$defaults['footer_background_color'] = '#fafafa';
+	$defaults['footer_border_color'] = '#d4d4d4';
+	$defaults['footer_border_width'] = '1px';
+	$defaults['footer_top_padding'] = '40px';
+	$defaults['footer_side_padding'] = '40px';
+	$defaults['footer_top_margin'] = '30px';
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
