@@ -1,6 +1,6 @@
 <?php
 
-function siteorigin_settings_localize( $loc ){
+function siteorigin_north_settings_localize( $loc ){
 	return wp_parse_args( array(
 		'section_title' => __('Theme Settings', 'siteorigin-north'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-north'),
@@ -15,7 +15,7 @@ function siteorigin_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-north'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
+add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
 
 /**
  * Initialize the settings
