@@ -60,8 +60,7 @@
 					?>
 
 					<?php if( siteorigin_setting('navigation_search') ) : ?>
-						<label class="screen-reader-text"><?php _e( 'Open search bar', 'siteorigin-north' ); ?></label>
-						<a class="north-icon-search"></a>
+						<a class="north-icon-search"><label class="screen-reader-text"><?php _e( 'Open search bar', 'siteorigin-north' ); ?></label></a>
 					<?php endif; ?>
 
 					<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_cart') ): ?>
@@ -91,8 +90,10 @@
 				<div class="container">
 					<label for='s' class='screen-reader-text'><?php _e( 'Search for:', 'siteorigin-north' ); ?></label>
 					<?php get_search_form() ?>
-					<span class="screen-reader-text"><?php _e( 'Close search bar', 'siteorigin-north' ); ?></span>
-					<a id="close-search"><?php siteorigin_north_display_icon('close'); ?></a>
+					<a id="close-search">
+						<span class="screen-reader-text"><?php _e( 'Close search bar', 'siteorigin-north' ); ?></span>
+						<?php siteorigin_north_display_icon('close'); ?>
+					</a>
 				</div>
 			</div>
 		<?php endif; ?>
