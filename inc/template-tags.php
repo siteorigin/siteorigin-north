@@ -249,7 +249,7 @@ if( !function_exists('siteorigin_north_posts_pagination') ) :
 		}
 
 		?><div class="post-pagination">
-		<h2 class="screen-reader-text">Posts navigation</h2><?php
+		<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
 		echo paginate_links( $args );
 		?></div><?php
 	}

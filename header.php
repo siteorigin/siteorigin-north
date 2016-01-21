@@ -48,7 +48,7 @@
 						<?php if( siteorigin_setting('responsive_menu_text') ) : ?>
 							<?php echo esc_html( siteorigin_setting('responsive_menu_text') ) ?>
 						<?php else : ?>
-							<span class="screen-reader-text"><?php _e( 'Menu', 'siteorigin-north' ); ?></span>
+							<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
 						<?php endif; ?>
 					</a>
 
@@ -60,7 +60,7 @@
 					?>
 
 					<?php if( siteorigin_setting('navigation_search') ) : ?>
-						<a class="north-icon-search"><label class="screen-reader-text"><?php _e( 'Open search bar', 'siteorigin-north' ); ?></label></a>
+						<a class="north-icon-search"><label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label></a>
 					<?php endif; ?>
 
 					<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_cart') ): ?>
@@ -68,9 +68,9 @@
 						<ul class="shopping-cart">
 							<li>
 								<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
-									<span class="screen-reader-text"><?php _e( 'View shopping cart', 'siteorigin-north' ); ?></span>
+									<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
 									<span class="north-icon-cart"></span>
-									<span class="shopping-cart-text"><?php _e( ' View Cart ', 'siteorigin-north' ); ?></span>
+									<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
 									<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
 								</a>
 								<ul class="shopping-cart-dropdown" id="cart-drop">
@@ -88,10 +88,10 @@
 		<?php if( siteorigin_setting('navigation_search') ) : ?>
 			<div id="header-search">
 				<div class="container">
-					<label for='s' class='screen-reader-text'><?php _e( 'Search for:', 'siteorigin-north' ); ?></label>
+					<label for='s' class='screen-reader-text'><?php esc_html_e( 'Search for:', 'siteorigin-north' ); ?></label>
 					<?php get_search_form() ?>
 					<a id="close-search">
-						<span class="screen-reader-text"><?php _e( 'Close search bar', 'siteorigin-north' ); ?></span>
+						<span class="screen-reader-text"><?php esc_html_e( 'Close search bar', 'siteorigin-north' ); ?></span>
 						<?php siteorigin_north_display_icon('close'); ?>
 					</a>
 				</div>
