@@ -691,11 +691,6 @@ function siteorigin_north_settings_defaults( $defaults ){
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
 
-function siteorigin_north_custom_css( $css ) {
-	$css .= '';
-	return $css;
-}
-add_filter('siteorigin_settings_custom_css', 'siteorigin_north_custom_css');
 
 /**
  * Setup Page Settings for SiteOrigin North
