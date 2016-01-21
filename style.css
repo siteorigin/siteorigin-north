@@ -1511,8 +1511,6 @@ a {
     float: left;
     width: 33.333%;
     margin: 0 0 20px 0; }
-    #commentform .comment-form-author label, #commentform .comment-form-email label, #commentform .comment-form-url label {
-      display: none; }
     #commentform .comment-form-author input, #commentform .comment-form-email input, #commentform .comment-form-url input {
       color: #595959;
       width: 100%;
@@ -1522,8 +1520,6 @@ a {
       border-radius: 0px; }
   #commentform .comment-form-comment {
     margin: 10px 0; }
-    #commentform .comment-form-comment label {
-      display: none; }
     #commentform .comment-form-comment textarea {
       color: #595959;
       width: 100%;

@@ -88,10 +88,6 @@
 		width: 33.333%;
 		margin: 0 0 20px 0;
 
-		label {
-			display: none;
-		}
-
 		input {
 			color: $color__text_medium;
 			width: 100%;
@@ -104,10 +100,6 @@
 
 	.comment-form-comment {
 		margin: 10px 0;
-
-		label {
-			display: none;
-		}
 
 		textarea {
 			color: $color__text_medium;
