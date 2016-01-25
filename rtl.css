@@ -182,6 +182,9 @@ textarea {
   margin-left: auto;
   margin-right: 70px; }
 
+.comment-list li.pingback .comment-container {
+  margin-right: auto; }
+
 #commentform .comment-form-author, #commentform .comment-form-email, #commentform .comment-form-url {
   float: right; }
 
@@ -201,7 +204,7 @@ textarea {
     padding-right: 0; }
     .main-navigation ul ul {
       left: auto;
-      right: 0;
+      right: -9999px;
       text-align: left; }
       .main-navigation ul ul ul {
         left: auto;
@@ -212,6 +215,9 @@ textarea {
       .main-navigation ul ul li.focus > ul {
         left: auto;
         right: 100%; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      right: auto; }
   .main-navigation .svg-icon-menu {
     float: right; }
 

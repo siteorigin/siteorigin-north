@@ -19,7 +19,7 @@
 			if( is_active_sidebar( 'footer-sidebar' ) ) {
 				$siteorigin_north_sidebars = wp_get_sidebars_widgets();
 				?>
-				<div class="widgets widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>">
+				<div class="widgets widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
 					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 				</div>
 				<?php
@@ -51,6 +51,7 @@
 
 <?php if( siteorigin_setting('navigation_scroll_to_top') ) : ?>
 	<div id="scroll-to-top">
+		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-north' ); ?></span>
 		<?php siteorigin_north_display_icon('up-arrow') ?>
 	</div>
 <?php endif; ?>

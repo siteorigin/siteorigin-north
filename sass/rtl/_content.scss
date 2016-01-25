@@ -24,24 +24,32 @@
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-list li {
-  .comment-container {
-    margin-left: auto;
-  	margin-right: 120px;
-  }
+.comment-list {
+	li {
+	  .comment-container {
+	    margin-left: auto;
+	  	margin-right: 120px;
+	  }
 
-  .avatar-container {
-    float: right;
-  }
+	  .avatar-container {
+	    float: right;
+	  }
 
-  .comment-reply-link {
-    float: left;
-  }
+	  .comment-reply-link {
+	    float: left;
+	  }
 
-  .children {
-    margin-left: auto;
-    margin-right: 70px;
-  }
+	  .children {
+	    margin-left: auto;
+	    margin-right: 70px;
+	  }
+
+	  &.pingback {
+		  .comment-container {
+			  margin-right: auto;
+		  }
+	  }
+	}
 }
 
 #commentform {
@@ -73,7 +81,7 @@
 
 		ul {
 			left: auto;
-			right: 0;
+			right: -9999px;
 			text-align: left;
 
 			ul {
@@ -89,6 +97,13 @@
 					left: auto;
 					right: 100%;
 				}
+			}
+		}
+
+		li:hover,
+		li.focus {
+			> ul {
+				right:auto;
 			}
 		}
 	}

@@ -44,79 +44,6 @@
         } );
     };
 
-    $.fn.burstMenuHover = function( options ) {
-        var settings = $.extend({
-            left: null,
-        }, options );
-
-        var direction;
-
-        if ( $('body').hasClass('rtl') ) {
-          direction = 'right';
-        }
-        else {
-          direction = 'left';
-        }
-
-        return $(this).each( function(){
-            var $$ = $(this);
-            return $$.hover(
-                function(){
-                    var $$ = $(this),
-                        $u = $$.find('ul').eq(0),
-                        left = 0,
-                        isSub = $$.parents('ul').is('.sub-menu, .children');
-
-                    if( settings.left === null ){
-                        if( $$.parents('ul').is('.sub-menu, .children') ) {
-                            // Place to the right of the box
-                            left = $u.parent().width();
-                        }
-                        else {
-                            // Center the sub menu
-                            left = -($u.width() - $$.width())/2;
-                        }
-                    }
-                    else {
-                        left = settings.left;
-                    }
-
-
-                    $u
-                        .css('display', 'block')
-                        .clearQueue()
-                        .css({
-                            direction: left,
-                            opacity: 0,
-                            x: isSub ? -3 : 0,
-                            y: isSub ? 0 : -3,
-                            scale: 0.975
-                        })
-                        .transition({
-                            opacity: 1,
-                            x: 0,
-                            y: 0,
-                            scale: 1
-                        }, 220 );
-                },
-                function(){
-                    var $$ = $(this),
-                        $u = $$.find('ul').eq(0),
-                        isSub = $$.parents('ul').is('.sub-menu, .children');
-
-                    $u
-                        .css('display', 'block')
-                        .clearQueue()
-                        .transition({
-                            opacity: 0,
-                            x: isSub ? -4 : 0,
-                            y: isSub ? 0 : -4,
-                            scale: 0.95
-                        }, 160, function(){ $(this).hide(); });
-                }
-            );
-        } );
-    };
 })(jQuery);
 
 
@@ -142,19 +69,22 @@ jQuery( function($){
         });
 
         var resetMenu = function(){
-            $('.main-navigation ul ul').show();
             $('.main-navigation ul ul').each( function(){
                 var $$ = $(this);
                 var width = Math.max.apply(Math, $$.find('> li > a').map( function(){ return $(this).width(); } ).get());
                 $$.find('> li > a').width( width );
             } );
-            $('.main-navigation ul ul').hide();
         };
         resetMenu();
         $(window).resize( resetMenu );
 
-        // Handle menu hovers
-        $('.main-navigation ul li').burstMenuHover();
+		// Add keyboard access to the menu
+		$('.menu-item').children('a').focus(function(){
+	    	$(this).parents('ul, li').addClass('focus');
+	    });
+	    $('.menu-item').children('a').focusout(function(){
+	    	$(this).parents('ul, li').removeClass('focus');
+	    });
 
         // Burst animatin when the user clicks on a sub link
         $('.main-navigation ul ul li a').burstAnimation({
@@ -178,6 +108,10 @@ jQuery( function($){
 
             if( $('#header-search form').length ) {
                 $mobileMenu.append( $('#header-search form').clone() );
+            }
+
+            if( $('.main-navigation .shopping-cart').length ) {
+                $mobileMenu.append( $('.main-navigation .shopping-cart .shopping-cart-link').clone() );
             }
 
             $mobileMenu.find('ul').show().css('opacity', 1);
