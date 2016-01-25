@@ -873,14 +873,22 @@ a {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
+.widget-area .widget {
   margin: 0 0 1.5em;
   /* Make sure select elements fit in widgets. */ }
-  .widget select {
+  .widget-area .widget select {
     max-width: 100%; }
-  .widget ul {
+  .widget-area .widget ul {
     margin-left: 0;
     padding-left: 1.275em; }
+  .widget-area .widget ul.menu, .widget-area .widget > ul {
+    padding-left: 0; }
+    .widget-area .widget ul.menu a, .widget-area .widget > ul a {
+      text-decoration: none; }
+      .widget-area .widget ul.menu a:hover, .widget-area .widget > ul a:hover {
+        text-decoration: underline; }
+    .widget-area .widget ul.menu, .widget-area .widget ul.menu ul, .widget-area .widget > ul, .widget-area .widget > ul ul {
+      list-style: none; }
 
 /* Search widget. */
 .widget_search .search-submit {

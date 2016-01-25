@@ -1,14 +1,34 @@
-.widget {
-	margin: 0 0 1.5em;
 
-	/* Make sure select elements fit in widgets. */
-	select {
-		max-width: 100%;
-	}
+.widget-area {
 
-	ul {
-		margin-left: 0;
-		padding-left: 1.275em;
+	.widget {
+		margin: 0 0 1.5em;
+
+		/* Make sure select elements fit in widgets. */
+		select {
+			max-width: 100%;
+		}
+
+		ul {
+			margin-left: 0;
+			padding-left: 1.275em;
+		}
+
+		ul.menu, > ul {
+			padding-left: 0;
+
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&, ul {
+				list-style: none;
+			}
+		}
 	}
 }
 
