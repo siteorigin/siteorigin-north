@@ -881,13 +881,13 @@ a {
   .widget-area .widget ul {
     margin-left: 0;
     padding-left: 1.275em; }
-  .widget-area .widget ul.menu, .widget-area .widget > ul {
+  .widget-area .widget ul.menu, .widget-area .widget.widget_pages > ul {
     padding-left: 0; }
-    .widget-area .widget ul.menu a, .widget-area .widget > ul a {
+    .widget-area .widget ul.menu a, .widget-area .widget.widget_pages > ul a {
       text-decoration: none; }
-      .widget-area .widget ul.menu a:hover, .widget-area .widget > ul a:hover {
+      .widget-area .widget ul.menu a:hover, .widget-area .widget.widget_pages > ul a:hover {
         text-decoration: underline; }
-    .widget-area .widget ul.menu, .widget-area .widget ul.menu ul, .widget-area .widget > ul, .widget-area .widget > ul ul {
+    .widget-area .widget ul.menu, .widget-area .widget ul.menu ul, .widget-area .widget.widget_pages > ul, .widget-area .widget.widget_pages > ul ul {
       list-style: none; }
 
 /* Search widget. */
