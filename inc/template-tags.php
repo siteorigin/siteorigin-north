@@ -104,7 +104,7 @@ function siteorigin_north_post_meta() {
 	if( siteorigin_setting('blog_display_date') ) {
 		?>
 		<li class="posted-on">
-			<span class="meta-icon north-icon-calendar"></span>
+			<span class="meta-icon north-icon-calendar" aria-hidden="true"></span>
 			<a href="<?php the_permalink() ?>">
 				<?php echo $time_string ?>
 			</a>
@@ -114,7 +114,7 @@ function siteorigin_north_post_meta() {
 	if( siteorigin_setting('blog_display_author') ) {
 		?>
 		<li class="posted-by">
-			<span class="meta-icon north-icon-user"></span>
+			<span class="meta-icon north-icon-user" aria-hidden="true"></span>
 			<?php echo $byline ?>
 		</li>
 		<?php
@@ -122,7 +122,7 @@ function siteorigin_north_post_meta() {
 	if( get_comments_number() > 0 && siteorigin_setting('blog_display_comment_count') ) {
 		?>
 		<li class="post-comments">
-			<span class="meta-icon north-icon-comments"></span>
+			<span class="meta-icon north-icon-comments" aria-hidden="true"></span>
 			<a href="<?php the_permalink() ?>#comments">
 				<?php echo $comments ?>
 			</a>
@@ -218,7 +218,8 @@ if( !function_exists('siteorigin_north_posts_pagination') ) :
 			), $args);
 		}
 
-		?><div class="post-pagination"><?php
+		?><div class="post-pagination">
+		<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
 		echo paginate_links( $args );
 		?></div><?php
 	}
