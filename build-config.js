@@ -5,6 +5,7 @@ module.exports = {
         src: [
             '**/*',
             '!{build,build/**}',                      // Ignore build/ submodule
+            '!{design,design/**}',                    // Ignore design/ and contents
             '!{inc/settings,inc/settings/**}',        // Ignore settings submodule
             '!{inc/panels-lite,inc/panels-lite/**}',  // Ignore panels-lite submodule
             '!{languages,languages/**}',              // Ignore languages
