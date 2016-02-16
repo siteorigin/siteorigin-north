@@ -223,6 +223,11 @@ function siteorigin_north_settings_init(){
 					'label' => __('Scroll to top', 'siteorigin-north'),
 					'description' => __('Display a scroll to top button', 'siteorigin-north'),
 				),
+				'smooth_scroll' => array(
+					'type' => 'checkbox',
+					'label' => __('Smooth scroll', 'siteorigin-north'),
+					'description' => __('Smooth scroll for internal anchor links', 'siteorigin-north'),
+				)
 			),
 		),
 
@@ -663,6 +668,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_resize_logo'] = true;
 	$defaults['navigation_post'] = true;
 	$defaults['navigation_scroll_to_top'] = true;
+	$defaults['navigation_smooth_scroll'] = true;
 
 	// Responsive settings
 	$defaults['responsive_disabled'] = false;

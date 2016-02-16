@@ -173,6 +173,10 @@ function siteorigin_north_scripts() {
 	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
 	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
 
+	wp_localize_script( 'siteorigin-north-script', 'siteoriginNorth', array(
+		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' )
+	) );
+
 	if( siteorigin_setting('responsive_fitvids') ) {
 		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
 	}

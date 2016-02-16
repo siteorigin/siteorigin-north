@@ -261,4 +261,32 @@ jQuery( function($){
         }
     } );
 
+    // Handle smooth scrolling
+    if( siteoriginNorth.smoothScroll ) {
+        $('a[href*="#"]:not([href="#"])').click( function(e) {
+            var $a = $(this);
+            var $target = $('[name=' + this.hash.slice(1) +']').length ? $('[name=' + this.hash.slice(1) +']') : $( $a.get(0).hash );
+
+            if( $target.length ) {
+
+                var height = 0;
+                if( $('#masthead').hasClass('sticky-menu') ) {
+                    height += $('#masthead').outerHeight();
+                    console.log($('#masthead').outerHeight());
+                }
+                if( $('body').hasClass('admin-bar') ) {
+                    height += $('#wpadminbar').outerHeight();
+                }
+
+                $('html, body').animate({
+                    scrollTop: $target.offset().top - height
+                }, 1000);
+                e.preventDefault();
+                document.location.hash = this.hash.slice(1);
+            }
+
+            // Scroll to the position of the item, minus the header size
+        } );
+    }
+
 } );
