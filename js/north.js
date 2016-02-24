@@ -283,6 +283,8 @@ jQuery( function($){
                 }, 1000);
                 e.preventDefault();
                 document.location.hash = this.hash.slice(1);
+
+                return false;
             }
 
             // Scroll to the position of the item, minus the header size
