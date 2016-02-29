@@ -74,8 +74,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="buttons">
-		<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward mini_cart_view"><?php _e( 'View Cart', 'siteorigin-north' ); ?></a>
-		<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward mini_cart_checkout"><?php _e( 'Checkout', 'siteorigin-north' ); ?></a>
+		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="button wc-forward mini_cart_view"><?php _e( 'View Cart', 'siteorigin-north' ); ?></a>
+		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward mini_cart_checkout"><?php _e( 'Checkout', 'siteorigin-north' ); ?></a>
 	</p>
 
 <?php endif; ?>
