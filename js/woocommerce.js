@@ -31,10 +31,6 @@ jQuery( function($){
 
         c.find('.current').html( $$.find(':selected').html()).width( widest );
 
-        c.burstMenuHover({
-            left: -1
-        });
-
         $$.hide();
     } );
 } );
