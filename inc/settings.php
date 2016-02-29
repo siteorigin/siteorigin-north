@@ -693,6 +693,10 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_padding'] = '40px';
 	$defaults['footer_side_padding'] = '40px';
 	$defaults['footer_top_margin'] = '30px';
+
+	// WooCommerce defaults
+	$defaults['woocommerce_display_cart'] = true;
+
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
