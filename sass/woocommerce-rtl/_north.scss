@@ -107,6 +107,14 @@
 
 .main-navigation{
 	.shopping-cart {
+		margin-left: auto;
+		margin-right: 0.8em;
+
+		.shopping-cart-count {
+			left: 0;
+			right: -11px;
+		}
+
 		.shopping-cart-dropdown {
 			right: auto;
 			left: 0;
