@@ -494,3 +494,7 @@
   .woocommerce #reviews #comments ol.commentlist li .comment-text {
     margin-left: auto;
     margin-right: 85px; }
+
+.main-navigation .shopping-cart .shopping-cart-dropdown {
+  right: auto;
+  left: 0; }

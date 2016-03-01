@@ -300,7 +300,8 @@
     font-size: 9px;
     background-clip: padding-box; }
   .main-navigation .shopping-cart .shopping-cart-dropdown {
-    width: 300px; }
+    width: 300px;
+    right: 0; }
 
 .widget_shopping_cart_content .cart_list .empty {
   margin: 15px 15px; }
