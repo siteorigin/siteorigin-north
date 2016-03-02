@@ -85,6 +85,8 @@
       margin: 0 0 2.992em; } }
   .woocommerce #main ul.products li.product.last {
     margin-right: 0; }
+  .woocommerce #main ul.products li.product .onsale {
+    padding: 0; }
   .woocommerce #main ul.products li.product h3 {
     color: #292929;
     margin-top: 0; }
