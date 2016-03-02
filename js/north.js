@@ -263,7 +263,7 @@ jQuery( function($){
 
     // Handle smooth scrolling
     if( siteoriginNorth.smoothScroll ) {
-        $('a[href*="#"]:not([href="#"])').click( function(e) {
+        $('#site-navigation a[href*="#"]:not([href="#"])').click( function(e) {
             var $a = $(this);
             var $target = $('[name=' + this.hash.slice(1) +']').length ? $('[name=' + this.hash.slice(1) +']') : $( $a.get(0).hash );
 
