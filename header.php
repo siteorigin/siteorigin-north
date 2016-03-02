@@ -59,10 +59,6 @@
 					) );
 					?>
 
-					<?php if( siteorigin_setting('navigation_search') ) : ?>
-						<a class="north-icon-search"><label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label></a>
-					<?php endif; ?>
-
 					<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_cart') ): ?>
 						<?php global $woocommerce; ?>
 						<ul class="shopping-cart">
@@ -78,6 +74,10 @@
 								</ul>
 							</li>
 						</ul>
+					<?php endif; ?>
+
+					<?php if( siteorigin_setting('navigation_search') ) : ?>
+						<a class="north-icon-search"><label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label></a>
 					<?php endif; ?>
 
 				</nav><!-- #site-navigation -->
