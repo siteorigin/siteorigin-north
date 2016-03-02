@@ -70,12 +70,14 @@
 		}
 
 		.shopping-cart-dropdown {
-			width: 300px;
+			width: 350px;
 		}
 	}
 }
 
 .widget_shopping_cart_content {
+	padding: 25px;
+
 	.cart_list{
 		.empty {
 			margin: 15px 15px;
