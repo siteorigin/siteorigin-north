@@ -950,6 +950,24 @@ a {
   border-radius: 0;
   background: #fff; }
 
+.widget-area .widget_categories ul {
+  padding-left: 0; }
+  .widget-area .widget_categories ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_categories ul li:before {
+      content: "-"; }
+    .widget-area .widget_categories ul li a {
+      text-decoration: none;
+      padding-left: 10px; }
+    .widget-area .widget_categories ul li ul.children {
+      padding-left: 20px; }
+
+.widget-area .widget_categories select {
+  font-size: 1.1em;
+  border-radius: 0;
+  background: #fff; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
