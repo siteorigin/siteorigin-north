@@ -980,6 +980,16 @@ a {
     .widget-area .widget_meta ul li a {
       text-decoration: none; }
 
+.widget-area .widget_pages ul {
+  padding-left: 0; }
+  .widget-area .widget_pages ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_pages ul li ul.children {
+      padding-left: 20px; }
+    .widget-area .widget_pages ul li a {
+      text-decoration: none; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
