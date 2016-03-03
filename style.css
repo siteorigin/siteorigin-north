@@ -934,6 +934,22 @@ a {
     background: #a94346;
     color: #fff; }
 
+.widget-area .widget_archive ul {
+  padding-left: 0; }
+  .widget-area .widget_archive ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_archive ul li:before {
+      content: "-"; }
+    .widget-area .widget_archive ul li a {
+      text-decoration: none;
+      padding-left: 10px; }
+
+.widget-area .widget_archive select {
+  font-size: 1.1em;
+  border-radius: 0;
+  background: #fff; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

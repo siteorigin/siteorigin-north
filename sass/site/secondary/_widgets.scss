@@ -96,3 +96,30 @@
 		}
 	}
 }
+
+// Archive widget
+.widget-area .widget_archive {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			&:before {
+				content: "-";
+			}
+
+			a {
+				text-decoration: none;
+				padding-left: 10px;
+			}
+		}
+	}
+
+	select {
+		font-size: 1.1em;
+		border-radius: 0;
+		background: #fff;
+	}
+}
