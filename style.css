@@ -972,6 +972,14 @@ a {
   padding: 10px 0;
   display: block; }
 
+.widget-area .widget_meta ul {
+  padding-left: 0; }
+  .widget-area .widget_meta ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_meta ul li a {
+      text-decoration: none; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

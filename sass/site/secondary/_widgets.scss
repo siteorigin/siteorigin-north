@@ -162,3 +162,18 @@
 		display: block;
 	}
 }
+
+.widget-area .widget_meta {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
