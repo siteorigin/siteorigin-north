@@ -920,6 +920,20 @@ a {
     .search-form .search-field input:-webkit-autofill {
       color: #2a2a2a !important; }
 
+.tagcloud a {
+  background: #c9c9c9;
+  color: #fff;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  line-height: 1em;
+  font-size: 0.8em;
+  padding: 8px 12px; }
+  .tagcloud a:hover {
+    background: #a94346;
+    color: #fff; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1392,7 +1406,8 @@ a {
     font-size: 0.8em;
     padding: 8px 12px; }
     .tags-list a:hover {
-      background: #a94346; }
+      background: #a94346;
+      color: #fff; }
 
 .author-box {
   margin: 20px 0;

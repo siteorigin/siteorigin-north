@@ -76,3 +76,23 @@
 	}
 
 }
+
+// Tag cloud widget
+.tagcloud {
+	a {
+		background: #c9c9c9;
+		color: #fff;
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom:10px;
+		text-decoration: none;
+		line-height: 1em;
+		font-size: 0.8em;
+		padding: 8px 12px;
+
+		&:hover {
+			background: $color__primary_accent_dark;
+			color: #fff;
+		}
+	}
+}
