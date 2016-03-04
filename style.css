@@ -1010,6 +1010,25 @@ a {
       font-size: 0.8em;
       color: #b0b0b0; }
 
+.widget-area .widget_rss .widget-title a {
+  text-decoration: none; }
+
+.widget-area .widget_rss ul {
+  padding-left: 0; }
+  .widget-area .widget_rss ul li {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: #eee 1px solid; }
+    .widget-area .widget_rss ul li a {
+      text-decoration: none; }
+    .widget-area .widget_rss ul li .rssSummary {
+      padding-top: 10px; }
+    .widget-area .widget_rss ul li cite, .widget-area .widget_rss ul li .rss-date {
+      display: block;
+      font-size: 0.8em;
+      color: #b0b0b0;
+      padding-top: 4px; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

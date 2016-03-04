@@ -236,3 +236,36 @@
 		}
 	}
 }
+
+// RSS widget
+.widget-area .widget_rss {
+	.widget-title {
+		a {
+			text-decoration: none;
+		}
+	}
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+			border-bottom: #eee 1px solid;
+
+			a {
+				text-decoration: none;
+			}
+
+			.rssSummary {
+				padding-top: 10px;
+			}
+
+			cite, .rss-date {
+				display: block;
+				font-size: 0.8em;
+				color: $color__text_meta;
+				padding-top: 4px;
+			}
+		}
+	}
+}
