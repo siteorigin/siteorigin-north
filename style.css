@@ -677,7 +677,7 @@ a {
     padding: 0 10px; }
     #header-search input[type="search"]:focus {
       outline: none; }
-  #header-search input[type="submit"] {
+  #header-search button[type="submit"] {
     display: none; }
   #header-search .svg-icon-close {
     width: 24px;
@@ -919,6 +919,145 @@ a {
       outline: none; }
     .search-form .search-field input:-webkit-autofill {
       color: #2a2a2a !important; }
+
+.tagcloud a {
+  background: #c9c9c9;
+  color: #fff;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  line-height: 1em;
+  font-size: 0.8em;
+  padding: 8px 12px; }
+  .tagcloud a:hover {
+    background: #a94346;
+    color: #fff; }
+
+.widget-area .widget_archive ul {
+  padding-left: 0; }
+  .widget-area .widget_archive ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_archive ul li:before {
+      content: "-"; }
+    .widget-area .widget_archive ul li a {
+      text-decoration: none;
+      padding-left: 10px; }
+
+.widget-area .widget_archive select {
+  font-size: 1.1em;
+  border-radius: 0;
+  background: #fff; }
+
+.widget-area .widget_categories ul {
+  padding-left: 0; }
+  .widget-area .widget_categories ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_categories ul li:before {
+      content: "-"; }
+    .widget-area .widget_categories ul li a {
+      text-decoration: none;
+      padding-left: 10px; }
+    .widget-area .widget_categories ul li ul.children {
+      padding-left: 20px; }
+
+.widget-area .widget_categories select {
+  font-size: 1.1em;
+  border-radius: 0;
+  background: #fff; }
+
+.widget_nav_menu a {
+  padding: 10px 0;
+  display: block; }
+
+.widget-area .widget_meta ul {
+  padding-left: 0; }
+  .widget-area .widget_meta ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_meta ul li a {
+      text-decoration: none; }
+
+.widget-area .widget_pages ul {
+  padding-left: 0; }
+  .widget-area .widget_pages ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_pages ul li ul.children {
+      padding-left: 20px; }
+    .widget-area .widget_pages ul li a {
+      text-decoration: none; }
+
+.widget-area .widget_recent_comments ul {
+  padding-left: 0; }
+  .widget-area .widget_recent_comments ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_recent_comments ul li a {
+      text-decoration: none; }
+
+.widget-area .widget_recent_entries ul {
+  padding-left: 0; }
+  .widget-area .widget_recent_entries ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_recent_entries ul li a {
+      text-decoration: none; }
+    .widget-area .widget_recent_entries ul li .post-date {
+      display: block;
+      font-size: 0.8em;
+      color: #b0b0b0; }
+
+.widget-area .widget_rss .widget-title a {
+  text-decoration: none; }
+
+.widget-area .widget_rss ul {
+  padding-left: 0; }
+  .widget-area .widget_rss ul li {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: #eee 1px solid; }
+    .widget-area .widget_rss ul li a {
+      text-decoration: none; }
+    .widget-area .widget_rss ul li .rssSummary {
+      padding-top: 10px; }
+    .widget-area .widget_rss ul li cite, .widget-area .widget_rss ul li .rss-date {
+      display: block;
+      font-size: 0.8em;
+      color: #b0b0b0;
+      padding-top: 4px; }
+
+.widget-area .widget_calendar a {
+  text-decoration: none; }
+
+.widget-area .widget_calendar table caption {
+  margin-bottom: 5px; }
+
+.widget-area .widget_calendar table tbody td {
+  text-align: center; }
+  .widget-area .widget_calendar table tbody td.has-link {
+    background: #eee; }
+
+.widget-area .widget_calendar table #prev {
+  text-align: left; }
+
+.widget-area .widget_calendar table #next {
+  text-align: right; }
+
+.widget-area form[role="search"] input[type="search"] {
+  width: 85%;
+  border: none;
+  padding-left: 0; }
+
+.widget-area form[role="search"] button[type="submit"] {
+  width: 13%;
+  padding: 10px 0; }
+  .widget-area form[role="search"] button[type="submit"] i {
+    display: inline-block;
+    width: 100%;
+    text-align: center; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1392,7 +1531,8 @@ a {
     font-size: 0.8em;
     padding: 8px 12px; }
     .tags-list a:hover {
-      background: #a94346; }
+      background: #a94346;
+      color: #fff; }
 
 .author-box {
   margin: 20px 0;

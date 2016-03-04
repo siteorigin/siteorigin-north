@@ -76,3 +76,249 @@
 	}
 
 }
+
+// Tag cloud widget
+.tagcloud {
+	a {
+		background: #c9c9c9;
+		color: #fff;
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom:10px;
+		text-decoration: none;
+		line-height: 1em;
+		font-size: 0.8em;
+		padding: 8px 12px;
+
+		&:hover {
+			background: $color__primary_accent_dark;
+			color: #fff;
+		}
+	}
+}
+
+// Archive widget
+.widget-area .widget_archive {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			&:before {
+				content: "-";
+			}
+
+			a {
+				text-decoration: none;
+				padding-left: 10px;
+			}
+		}
+	}
+
+	select {
+		font-size: 1.1em;
+		border-radius: 0;
+		background: #fff;
+	}
+}
+
+// Categories widget
+.widget-area .widget_categories {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			&:before {
+				content: "-";
+			}
+
+			a {
+				text-decoration: none;
+				padding-left: 10px;
+			}
+
+			ul.children {
+				padding-left: 20px;
+			}
+		}
+	}
+
+	select {
+		font-size: 1.1em;
+		border-radius: 0;
+		background: #fff;
+	}
+}
+
+// Menu widget
+.widget_nav_menu {
+	a {
+		padding: 10px 0;
+		display: block;
+	}
+}
+
+// Meta widget
+.widget-area .widget_meta {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// Pages widget
+.widget-area .widget_pages {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			ul.children {
+				padding-left: 20px;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// Recent comments widget
+.widget-area .widget_recent_comments {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// Recent posts widget
+.widget-area .widget_recent_entries {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			a {
+				text-decoration: none;
+			}
+
+			.post-date {
+				display: block;
+				font-size: 0.8em;
+				color: $color__text_meta;
+			}
+		}
+	}
+}
+
+// RSS widget
+.widget-area .widget_rss {
+	.widget-title {
+		a {
+			text-decoration: none;
+		}
+	}
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+			border-bottom: #eee 1px solid;
+
+			a {
+				text-decoration: none;
+			}
+
+			.rssSummary {
+				padding-top: 10px;
+			}
+
+			cite, .rss-date {
+				display: block;
+				font-size: 0.8em;
+				color: $color__text_meta;
+				padding-top: 4px;
+			}
+		}
+	}
+}
+
+// Calendar widget
+.widget-area .widget_calendar {
+	a {
+		text-decoration: none;
+	}
+
+	table {
+		caption {
+			margin-bottom: 5px;
+		}
+
+		tbody{
+			td {
+				text-align: center;
+
+				&.has-link {
+					background: #eee;
+				}
+
+			}
+		}
+
+		#prev {
+			text-align: left;
+		}
+
+		#next {
+			text-align: right;
+		}
+	}
+}
+
+// Search widget
+.widget-area form[role="search"] {
+
+	input[type="search"] {
+		width: 85%;
+		border: none;
+		padding-left: 0;
+	}
+
+	button[type="submit"] {
+		width: 13%;
+		padding: 10px 0;
+
+		i {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
