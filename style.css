@@ -677,7 +677,7 @@ a {
     padding: 0 10px; }
     #header-search input[type="search"]:focus {
       outline: none; }
-  #header-search input[type="submit"] {
+  #header-search button[type="submit"] {
     display: none; }
   #header-search .svg-icon-close {
     width: 24px;
@@ -1045,6 +1045,19 @@ a {
 
 .widget-area .widget_calendar table #next {
   text-align: right; }
+
+.widget-area form[role="search"] input[type="search"] {
+  width: 85%;
+  border: none;
+  padding-left: 0; }
+
+.widget-area form[role="search"] button[type="submit"] {
+  width: 13%;
+  padding: 10px 0; }
+  .widget-area form[role="search"] button[type="submit"] i {
+    display: inline-block;
+    width: 100%;
+    text-align: center; }
 
 /*--------------------------------------------------------------
 # Content

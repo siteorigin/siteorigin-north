@@ -301,3 +301,24 @@
 		}
 	}
 }
+
+// Search widget
+.widget-area form[role="search"] {
+
+	input[type="search"] {
+		width: 85%;
+		border: none;
+		padding-left: 0;
+	}
+
+	button[type="submit"] {
+		width: 13%;
+		padding: 10px 0;
+
+		i {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
