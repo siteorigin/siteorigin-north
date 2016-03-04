@@ -995,10 +995,20 @@ a {
   .widget-area .widget_recent_comments ul li {
     list-style: none;
     padding: 8px 0; }
-    .widget-area .widget_recent_comments ul li ul.children {
-      padding-left: 20px; }
     .widget-area .widget_recent_comments ul li a {
       text-decoration: none; }
+
+.widget-area .widget_recent_entries ul {
+  padding-left: 0; }
+  .widget-area .widget_recent_entries ul li {
+    list-style: none;
+    padding: 8px 0; }
+    .widget-area .widget_recent_entries ul li a {
+      text-decoration: none; }
+    .widget-area .widget_recent_entries ul li .post-date {
+      display: block;
+      font-size: 0.8em;
+      color: #b0b0b0; }
 
 /*--------------------------------------------------------------
 # Content
