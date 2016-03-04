@@ -163,6 +163,7 @@
 	}
 }
 
+// Meta widget
 .widget-area .widget_meta {
 	ul {
 		padding-left: 0;
@@ -178,7 +179,28 @@
 	}
 }
 
+// Pages widget
 .widget-area .widget_pages {
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding: 8px 0;
+
+			ul.children {
+				padding-left: 20px;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+//
+.widget-area .widget_recent_comments {
 	ul {
 		padding-left: 0;
 
