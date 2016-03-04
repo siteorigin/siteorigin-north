@@ -269,3 +269,35 @@
 		}
 	}
 }
+
+// Calendar widget
+.widget-area .widget_calendar {
+	a {
+		text-decoration: none;
+	}
+
+	table {
+		caption {
+			margin-bottom: 5px;
+		}
+
+		tbody{
+			td {
+				text-align: center;
+
+				&.has-link {
+					background: #eee;
+				}
+
+			}
+		}
+
+		#prev {
+			text-align: left;
+		}
+
+		#next {
+			text-align: right;
+		}
+	}
+}

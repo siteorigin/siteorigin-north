@@ -1029,6 +1029,23 @@ a {
       color: #b0b0b0;
       padding-top: 4px; }
 
+.widget-area .widget_calendar a {
+  text-decoration: none; }
+
+.widget-area .widget_calendar table caption {
+  margin-bottom: 5px; }
+
+.widget-area .widget_calendar table tbody td {
+  text-align: center; }
+  .widget-area .widget_calendar table tbody td.has-link {
+    background: #eee; }
+
+.widget-area .widget_calendar table #prev {
+  text-align: left; }
+
+.widget-area .widget_calendar table #next {
+  text-align: right; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

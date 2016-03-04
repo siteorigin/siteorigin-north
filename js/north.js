@@ -291,4 +291,7 @@ jQuery( function($){
         } );
     }
 
+	// Add class to calendar elements that have links
+	$('#wp-calendar tbody td:has(a)').addClass('has-link');
+
 } );
