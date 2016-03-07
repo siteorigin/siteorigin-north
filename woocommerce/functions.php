@@ -47,7 +47,7 @@ function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 		);
 	}
 
-	if( function_exists('is_woocommerce') && siteorigin_setting( 'responsive_disabled' ) ) {
+	if( siteorigin_setting( 'responsive_disabled' ) ) {
 		unset( $styles['woocommerce-smallscreen'] );
 		unset( $styles['northern-woocommerce-smallscreen-rtl'] );
 	}
