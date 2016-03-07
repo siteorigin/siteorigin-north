@@ -214,7 +214,7 @@
     text-decoration: underline; }
 
 .woocommerce.single #content div.product .single_add_to_cart_button {
-  float: right; }
+  float: left; }
 
 .woocommerce.single #content div.product .woocommerce-tabs .tabs {
   padding-left: 0;
