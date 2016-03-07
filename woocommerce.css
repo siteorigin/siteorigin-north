@@ -608,7 +608,7 @@
           border-color: #a94346;
           box-shadow: none; }
   @media (max-width: 768px) {
-    .woocommerce form.woocommerce-checkout .checkout-details,
-    .woocommerce form.woocommerce-checkout .order-details {
+    body.responsive.woocommerce form.woocommerce-checkout .checkout-details,
+    body.responsive.woocommerce form.woocommerce-checkout .order-details {
       width: 100%;
       float: none; } }
