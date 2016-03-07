@@ -212,6 +212,9 @@
   .woocommerce.single #content div.product .woocommerce-product-rating .woocommerce-review-link:hover {
     text-decoration: underline; }
 
+.woocommerce.single #content div.product .single_add_to_cart_button {
+  float: right; }
+
 .woocommerce.single #content div.product .woocommerce-tabs .tabs {
   padding-left: 0;
   margin-left: 0;
