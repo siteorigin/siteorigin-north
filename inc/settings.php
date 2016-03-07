@@ -1,6 +1,6 @@
 <?php
 
-function siteorigin_settings_localize( $loc ){
+function siteorigin_north_settings_localize( $loc ){
 	return wp_parse_args( array(
 		'section_title' => __('Theme Settings', 'siteorigin-north'),
 		'section_description' => __('Change settings for your theme.', 'siteorigin-north'),
@@ -15,7 +15,7 @@ function siteorigin_settings_localize( $loc ){
 		'meta_box' => __('Page settings', 'siteorigin-north'),
 	), $loc);
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_settings_localize');
+add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
 
 /**
  * Initialize the settings
@@ -223,6 +223,11 @@ function siteorigin_north_settings_init(){
 					'label' => __('Scroll to top', 'siteorigin-north'),
 					'description' => __('Display a scroll to top button', 'siteorigin-north'),
 				),
+				'smooth_scroll' => array(
+					'type' => 'checkbox',
+					'label' => __('Smooth scroll', 'siteorigin-north'),
+					'description' => __('Smooth scroll for internal anchor links', 'siteorigin-north'),
+				)
 			),
 		),
 
@@ -496,7 +501,7 @@ function siteorigin_north_settings_custom_css($css){
 		'.breadcrumbs a:hover {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
-		'.tags-list a:hover {' . "\n" .
+		'.tags-list a:hover,.tagcloud a:hover {' . "\n" .
 		'background: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
 		'.more-link {' . "\n" .
@@ -663,6 +668,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_resize_logo'] = true;
 	$defaults['navigation_post'] = true;
 	$defaults['navigation_scroll_to_top'] = true;
+	$defaults['navigation_smooth_scroll'] = true;
 
 	// Responsive settings
 	$defaults['responsive_disabled'] = false;
@@ -687,15 +693,14 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_padding'] = '40px';
 	$defaults['footer_side_padding'] = '40px';
 	$defaults['footer_top_margin'] = '30px';
+
+	// WooCommerce defaults
+	$defaults['woocommerce_display_cart'] = true;
+
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
 
-function siteorigin_north_custom_css( $css ) {
-	$css .= '';
-	return $css;
-}
-add_filter('siteorigin_settings_custom_css', 'siteorigin_north_custom_css');
 
 /**
  * Setup Page Settings for SiteOrigin North

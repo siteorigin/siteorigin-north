@@ -145,8 +145,8 @@ function siteorigin_north_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 
 	register_sidebar( array(
@@ -155,8 +155,8 @@ function siteorigin_north_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 
 }
@@ -171,6 +171,11 @@ function siteorigin_north_scripts() {
 
 	wp_enqueue_script( 'siteorigin-north-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
 	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
+	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
+
+	wp_localize_script( 'siteorigin-north-script', 'siteoriginNorth', array(
+		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' )
+	) );
 
 	if( siteorigin_setting('responsive_fitvids') ) {
 		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
@@ -195,24 +200,32 @@ function siteorigin_north_filter_comment_form_default_fields( $fields ){
 		'url' => __('Your Site URL', 'siteorigin-north'),
 	) );
 
+	$default_author = array('<label for="author"', '<input id="author" ');
+	$default_email = array('<label for="email"', '<input id="email" ');
+	$default_url = array('<label for="url"', '<input id="url" ');
+
+	$replace_author = array('<label for="author" class="screen-reader-text"', '<input id="author" placeholder="' . esc_attr($placeholders['author']) . '" ');
+	$replace_email = array('<label for="email" class="screen-reader-text"', '<input id="email" placeholder="' . esc_attr($placeholders['email']) . '" ');
+	$replace_url = array('<label for="url" class="screen-reader-text"', '<input id="url" placeholder="' . esc_attr($placeholders['url']) . '" ');
+
 	if( isset($fields['author']) ) {
 		$fields['author'] = str_replace(
-			'<input id="author" ',
-			'<input id="author" placeholder="' . esc_attr($placeholders['author']) . '" ',
+			$default_author,
+			$replace_author,
 			$fields['author']
 		);
 	}
 	if( isset($fields['email']) ) {
 		$fields['email'] = str_replace(
-			'<input id="email" ',
-			'<input id="email" placeholder="' . esc_attr($placeholders['email']) . '" ',
+			$default_email,
+			$replace_email,
 			$fields['email']
 		);
 	}
 	if( isset($fields['url']) ) {
 		$fields['url'] = str_replace(
-			'<input id="url" ',
-			'<input id="url" placeholder="' . esc_attr($placeholders['url']) . '" ',
+			$default_url,
+			$replace_url,
 			$fields['url']
 		);
 	}
@@ -223,10 +236,13 @@ add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_
 
 function siteorigin_north_filter_comment_form_defaults( $defaults ){
 	$comment_placeholder = __('Enter your message', 'siteorigin-north');
+	$default_comment = array('<label for="comment"', '<textarea id="comment" ');
+	$replace_comment = array('<label for="comment" class="screen-reader-text"', '<textarea id="comment" placeholder="' . esc_attr($comment_placeholder) . '" ');
+
 	if( !empty( $defaults['comment_field'] ) ) {
 		$defaults['comment_field'] = str_replace(
-			'<textarea id="comment" ',
-			'<textarea id="comment" placeholder="' . esc_attr($comment_placeholder) . '" ',
+			$default_comment,
+			$replace_comment,
 			$defaults['comment_field']
 		);
 		$defaults['comment_field'] = '<div class="clear"></div>' . $defaults['comment_field'];

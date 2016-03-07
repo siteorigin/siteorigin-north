@@ -8,9 +8,13 @@ jQuery( function($){
             .addClass('ordering-selector-wrapper')
             .insertAfter( $$ );
 
+        var dropdownContainer = $('<div/>')
+            .addClass('ordering-dropdown-container')
+            .appendTo(c);
+
         var dropdown = $('<ul></ul>')
             .addClass('ordering-dropdown')
-            .appendTo(c);
+            .appendTo(dropdownContainer);
 
         var widest = 0;
         $$.find( 'option' ).each( function(){
@@ -30,10 +34,6 @@ jQuery( function($){
         } );
 
         c.find('.current').html( $$.find(':selected').html()).width( widest );
-
-        c.burstMenuHover({
-            left: -1
-        });
 
         $$.hide();
     } );

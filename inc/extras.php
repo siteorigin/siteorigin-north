@@ -98,3 +98,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_action( 'wp_head', 'siteorigin_north_render_title' );
 endif;
+
+/* Have a uniform size for the tag cloud */
+function siteorigin_north_tag_cloud_widget($args) {
+	$args['largest'] = 0.8;  //largest tag
+	$args['smallest'] = 0.8; //smallest tag
+	$args['unit'] = 'em';    //tag font unit
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );
