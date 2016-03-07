@@ -1,3 +1,9 @@
+= 1.1.1 - March 2 2016 =
+* Fixed/Improved various WooCommerce element styling.
+* Added smooth scrolling navigation option for one-page sites.
+* Updated settings framework.
+* Updated all WooCommerce template files for latest version.
+
 = 1.1 - January 20 2016 =
 * Fixed WooCommerce enqueueing and buttons.
 * Added various customizations in theme settings.
