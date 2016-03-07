@@ -150,10 +150,12 @@
 		}
 
 		@media (max-width: 768px) {
-			.checkout-details,
-			.order-details {
-				width: 100%;
-				float: none;
+			@at-root body.responsive#{&} {
+				.checkout-details,
+				.order-details {
+					width: 100%;
+					float: none;
+				}
 			}
 		}
 
