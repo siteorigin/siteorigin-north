@@ -501,7 +501,7 @@ function siteorigin_north_settings_custom_css($css){
 		'.breadcrumbs a:hover {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
-		'.tags-list a:hover {' . "\n" .
+		'.tags-list a:hover,.tagcloud a:hover {' . "\n" .
 		'background: ${branding_accent_dark};' . "\n" .
 		'}' . "\n" .
 		'.more-link {' . "\n" .

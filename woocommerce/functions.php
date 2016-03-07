@@ -12,6 +12,10 @@ function siteorigin_north_woocommerce_change_hooks(){
 	// Use a custom upsell function to change number of items
 	remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 	add_action('woocommerce_after_single_product_summary', 'siteorigin_north_woocommerce_output_upsells', 15);
+
+	// Remove actions in the cart
+	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
+	remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
 }
 add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
 

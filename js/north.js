@@ -263,7 +263,7 @@ jQuery( function($){
 
     // Handle smooth scrolling
     if( siteoriginNorth.smoothScroll ) {
-        $('a[href*="#"]:not([href="#"])').click( function(e) {
+        $('#site-navigation a[href*="#"]:not([href="#"])').click( function(e) {
             var $a = $(this);
             var $target = $('[name=' + this.hash.slice(1) +']').length ? $('[name=' + this.hash.slice(1) +']') : $( $a.get(0).hash );
 
@@ -290,5 +290,8 @@ jQuery( function($){
             // Scroll to the position of the item, minus the header size
         } );
     }
+
+	// Add class to calendar elements that have links
+	$('#wp-calendar tbody td:has(a)').addClass('has-link');
 
 } );
