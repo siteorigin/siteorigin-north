@@ -483,7 +483,8 @@
       text-shadow: none;
       -webkit-transition: 0.085s;
       -moz-transition: 0.085s;
-      transition: 0.085s; }
+      transition: 0.085s;
+      min-width: inherit; }
       .widget_shopping_cart_content .buttons a.mini_cart_view {
         background: transparent;
         border: 1px solid #292929;
