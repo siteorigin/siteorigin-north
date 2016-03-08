@@ -541,7 +541,8 @@ a {
         transform-origin: left center; }
       .main-navigation ul ul li {
         margin: 0;
-        padding-bottom: 0; }
+        padding-bottom: 0;
+        min-width: 100%; }
         .main-navigation ul ul li:hover > ul,
         .main-navigation ul ul li.focus > ul {
           left: 100%; }
@@ -549,7 +550,8 @@ a {
         box-sizing: border-box;
         white-space: nowrap;
         padding: 0.85em 25px;
-        line-height: 1em; }
+        line-height: 1em;
+        min-width: 100%; }
       .main-navigation ul ul li:first-child a {
         padding-top: 1.25em; }
       .main-navigation ul ul li:last-child a {
