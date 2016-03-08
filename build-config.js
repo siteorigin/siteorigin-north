@@ -1,5 +1,5 @@
 module.exports = {
-    slug: 'so-widgets-bundle',
+    slug: 'siteorigin-north',
     jsMinSuffix: '.min',
     //contributors: {
     //    src: [
