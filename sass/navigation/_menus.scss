@@ -35,7 +35,7 @@
 		ul {
 			position: absolute;
 			top: 100%;
-			left: -9999px;
+			visibility: hidden;
 			z-index: 99999;
 			opacity: 0;
 			text-align: left;
@@ -93,8 +93,8 @@
 		li:hover,
 		li.focus {
 			> ul {
-				left: auto;
 				opacity: 1;
+				visibility: visible;
 				@include transform( scale(1) );
 			}
 

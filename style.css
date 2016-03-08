@@ -509,7 +509,7 @@ a {
     .main-navigation ul ul {
       position: absolute;
       top: 100%;
-      left: -9999px;
+      visibility: hidden;
       z-index: 99999;
       opacity: 0;
       text-align: left;
@@ -561,8 +561,8 @@ a {
         color: #292929; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto;
       opacity: 1;
+      visibility: visible;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);
