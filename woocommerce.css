@@ -287,6 +287,9 @@
 .woocommerce #reviews #review_form_wrapper .comment-form-email {
   width: 35%; }
 
+.woocommerce #reviews #review_form_wrapper input.submit {
+  padding: 12px 30px 11px; }
+
 /*--------------------------------------------------------------
 # WooCommerce Cart
 --------------------------------------------------------------*/
