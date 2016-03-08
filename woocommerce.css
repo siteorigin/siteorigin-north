@@ -270,6 +270,23 @@
     border: none;
     padding: 0; }
 
+.woocommerce #reviews #review_form_wrapper .comment-reply-title {
+  margin: 1em 0; }
+
+.woocommerce #reviews #review_form_wrapper .stars {
+  display: inline-block;
+  margin-bottom: 0;
+  position: relative;
+  top: 5px;
+  left: 10px; }
+
+.woocommerce #reviews #review_form_wrapper .comment-form-comment {
+  padding: 0 15px; }
+
+.woocommerce #reviews #review_form_wrapper .comment-form-author,
+.woocommerce #reviews #review_form_wrapper .comment-form-email {
+  width: 35%; }
+
 /*--------------------------------------------------------------
 # WooCommerce Cart
 --------------------------------------------------------------*/
