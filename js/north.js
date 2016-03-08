@@ -78,6 +78,15 @@ jQuery( function($){
         resetMenu();
         $(window).resize( resetMenu );
 
+		var alignMenu = function(){
+            $('#primary-menu > li > ul.sub-menu').each( function(){
+                var $$ = $(this);
+				var left = -($$.parents('li').width() - $$.width())/2;
+				$$.css('left', -left);
+            } );
+        };
+        alignMenu();
+
 		// Add keyboard access to the menu
 		$('.menu-item').children('a').focus(function(){
 	    	$(this).parents('ul, li').addClass('focus');
