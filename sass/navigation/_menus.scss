@@ -57,6 +57,7 @@
 			li {
 				margin: 0;
 				padding-bottom: 0;
+				min-width: 100%;
 
 				&:hover > ul,
 				&.focus > ul {
@@ -69,6 +70,7 @@
 				white-space: nowrap;
 				padding: 0.85em 25px;
 				line-height: 1em;
+				min-width: 100%;
 			}
 
 			li:first-child a {
