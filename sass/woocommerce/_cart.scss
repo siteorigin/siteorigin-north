@@ -300,6 +300,7 @@
 			text-transform: uppercase;
 			text-shadow: none;
 			@include transition(0.085s);
+			min-width: inherit;
 
 			&.mini_cart_view {
 				background: transparent;
