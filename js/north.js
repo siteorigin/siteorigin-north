@@ -281,7 +281,6 @@ jQuery( function($){
                 var height = 0;
                 if( $('#masthead').hasClass('sticky-menu') ) {
                     height += $('#masthead').outerHeight();
-                    console.log($('#masthead').outerHeight());
                 }
                 if( $('body').hasClass('admin-bar') ) {
                     height += $('#wpadminbar').outerHeight();
