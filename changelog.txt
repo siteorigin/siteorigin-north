@@ -3,7 +3,7 @@
 * Center aligned dropdown menu.
 * Fixed short labels in main submenu items.
 * Fixed bug with anchor menu items.
-* Properly styled WooCommerce form.
+* Properly styled WooCommerce review form.
 
 = 1.1.2 - March 7 2016 =
 * Fixed WooCommerce checkout button.
