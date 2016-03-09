@@ -89,11 +89,15 @@ jQuery( function($){
 
 		// Add keyboard access to the menu
 		$('.menu-item').children('a').focus(function(){
-	    	$(this).parents('ul, li').addClass('focus');
-	    });
-	    $('.menu-item').children('a').focusout(function(){
-	    	$(this).parents('ul, li').removeClass('focus');
-	    });
+			$(this).parents('ul, li').addClass('focus');
+		});
+		// Click event fires after focus event
+		$('.menu-item').children('a').click(function(){
+			$(this).parents('ul, li').removeClass('focus');
+		});
+		$('.menu-item').children('a').focusout(function(){
+			$(this).parents('ul, li').removeClass('focus');
+		});
 
         // Burst animatin when the user clicks on a sub link
         $('.main-navigation ul ul li a').burstAnimation({
