@@ -270,6 +270,26 @@
     border: none;
     padding: 0; }
 
+.woocommerce #reviews #review_form_wrapper .comment-reply-title {
+  margin: 1em 0; }
+
+.woocommerce #reviews #review_form_wrapper .stars {
+  display: inline-block;
+  margin-bottom: 0;
+  position: relative;
+  top: 5px;
+  left: 10px; }
+
+.woocommerce #reviews #review_form_wrapper .comment-form-comment {
+  padding: 0 15px; }
+
+.woocommerce #reviews #review_form_wrapper .comment-form-author,
+.woocommerce #reviews #review_form_wrapper .comment-form-email {
+  width: 35%; }
+
+.woocommerce #reviews #review_form_wrapper input.submit {
+  padding: 12px 30px 11px; }
+
 /*--------------------------------------------------------------
 # WooCommerce Cart
 --------------------------------------------------------------*/
@@ -483,7 +503,8 @@
       text-shadow: none;
       -webkit-transition: 0.085s;
       -moz-transition: 0.085s;
-      transition: 0.085s; }
+      transition: 0.085s;
+      min-width: inherit; }
       .widget_shopping_cart_content .buttons a.mini_cart_view {
         background: transparent;
         border: 1px solid #292929;

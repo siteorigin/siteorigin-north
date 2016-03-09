@@ -1,19 +1,20 @@
 module.exports = {
-    slug: 'so-widgets-bundle',
+    slug: 'siteorigin-north',
     jsMinSuffix: '.min',
-    //contributors: {
-    //    src: [
-    //        '**/*',
-    //        '!{build,build/**}',                      // Ignore build/ submodule
-    //        '!{design,design/**}',                    // Ignore design/ and contents
-    //        '!{inc/settings,inc/settings/**}',        // Ignore settings submodule
-    //        '!{inc/panels-lite,inc/panels-lite/**}',  // Ignore panels-lite submodule
-    //        '!{languages,languages/**}',              // Ignore languages
-    //        '!{tests,tests/**}',                      // Ignore tests/ and contents if any
-    //        '!{tmp,tmp/**}'                           // Ignore tmp/ and contents if any
-    //    ],
-    //    skipCommits: [],
-    //},
+//    contributors: {
+//        src: [
+//            '**/*',
+//            '!{build,build/**}',                      // Ignore build/ submodule
+//            '!{design,design/**}',                    // Ignore design/ and contents
+//            '!{inc/settings,inc/settings/**}',        // Ignore settings submodule
+//            '!{inc/panels-lite,inc/panels-lite/**}',  // Ignore panels-lite submodule
+//            '!{languages,languages/**}',              // Ignore languages
+//            '!{tests,tests/**}',                      // Ignore tests/ and contents if any
+//            '!{tmp,tmp/**}'                           // Ignore tmp/ and contents if any
+//        ],
+//        format: 'php',
+//        skipCommits: [],
+//    },
     version: {
         src: [
             'functions.php',

@@ -2,6 +2,7 @@
 Theme Name: SiteOrigin North
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
+Theme URI: https://siteorigin.com/theme/north/
 Description: SiteOrigin North is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though North's WooCommerce integration. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 Version: dev
 License: GNU General Public License v2 or later
@@ -509,7 +510,7 @@ a {
     .main-navigation ul ul {
       position: absolute;
       top: 100%;
-      left: -9999px;
+      visibility: hidden;
       z-index: 99999;
       opacity: 0;
       text-align: left;
@@ -540,7 +541,8 @@ a {
         transform-origin: left center; }
       .main-navigation ul ul li {
         margin: 0;
-        padding-bottom: 0; }
+        padding-bottom: 0;
+        min-width: 100%; }
         .main-navigation ul ul li:hover > ul,
         .main-navigation ul ul li.focus > ul {
           left: 100%; }
@@ -548,7 +550,8 @@ a {
         box-sizing: border-box;
         white-space: nowrap;
         padding: 0.85em 25px;
-        line-height: 1em; }
+        line-height: 1em;
+        min-width: 100%; }
       .main-navigation ul ul li:first-child a {
         padding-top: 1.25em; }
       .main-navigation ul ul li:last-child a {
@@ -561,8 +564,8 @@ a {
         color: #292929; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto;
       opacity: 1;
+      visibility: visible;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);

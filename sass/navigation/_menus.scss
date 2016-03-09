@@ -35,7 +35,7 @@
 		ul {
 			position: absolute;
 			top: 100%;
-			left: -9999px;
+			visibility: hidden;
 			z-index: 99999;
 			opacity: 0;
 			text-align: left;
@@ -57,6 +57,7 @@
 			li {
 				margin: 0;
 				padding-bottom: 0;
+				min-width: 100%;
 
 				&:hover > ul,
 				&.focus > ul {
@@ -69,6 +70,7 @@
 				white-space: nowrap;
 				padding: 0.85em 25px;
 				line-height: 1em;
+				min-width: 100%;
 			}
 
 			li:first-child a {
@@ -93,8 +95,8 @@
 		li:hover,
 		li.focus {
 			> ul {
-				left: auto;
 				opacity: 1;
+				visibility: visible;
 				@include transform( scale(1) );
 			}
 

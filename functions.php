@@ -84,14 +84,14 @@ function siteorigin_north_setup() {
 	// Support for SiteOrigin Premium extras
 	add_theme_support( 'siteorigin-premium-retina-images' );
 
-	if( !defined('SITEORIGIN_PANELS_VERSION') ){
+	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 
 	add_theme_support( 'siteorigin-panels', array(
-		'home-page' => true,
-		'responsive' => !siteorigin_setting( 'responsive_disabled' ),
+		'home-page'  => true,
+		'responsive' => ! siteorigin_setting( 'responsive_disabled' ),
 	) );
 }
 endif; // siteorigin_north_setup
@@ -104,7 +104,7 @@ function siteorigin_north_premium_setup(){
 
 	// This theme supports the no attribution addon
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
-		'filter' => 'siteorigin_north_footer_credits',
+		'filter'  => 'siteorigin_north_footer_credits',
 		'enabled' => siteorigin_setting( 'branding_attribution' )
 	) );
 }
@@ -169,16 +169,16 @@ function siteorigin_north_scripts() {
 	wp_enqueue_style( 'siteorigin-north-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'siteorigin-north-icons', get_template_directory_uri() . '/css/north-icons.css' );
 
-	wp_enqueue_script( 'siteorigin-north-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
-	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
-	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
+	wp_enqueue_script( 'siteorigin-north-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ) );
+	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ) );
+	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ) );
 
 	wp_localize_script( 'siteorigin-north-script', 'siteoriginNorth', array(
 		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' )
 	) );
 
-	if( siteorigin_setting('responsive_fitvids') ) {
-		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery') );
+	if ( siteorigin_setting( 'responsive_fitvids' ) ) {
+		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ) );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -194,35 +194,44 @@ function siteorigin_north_siteorigin_premium($themes){
 add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 
 function siteorigin_north_filter_comment_form_default_fields( $fields ){
-	$placeholders = apply_filters('siteorigin_north_comment_form_placeholders', array(
-		'author' => __('Enter Your Name', 'siteorigin-north'),
-		'email' => __('Enter Your Email', 'siteorigin-north'),
-		'url' => __('Your Site URL', 'siteorigin-north'),
+	$placeholders = apply_filters( 'siteorigin_north_comment_form_placeholders', array(
+		'author' => __( 'Enter Your Name', 'siteorigin-north' ),
+		'email'  => __( 'Enter Your Email', 'siteorigin-north' ),
+		'url'    => __( 'Your Site URL', 'siteorigin-north' ),
 	) );
 
-	$default_author = array('<label for="author"', '<input id="author" ');
-	$default_email = array('<label for="email"', '<input id="email" ');
-	$default_url = array('<label for="url"', '<input id="url" ');
+	$default_author = array( '<label for="author"', '<input id="author" ' );
+	$default_email  = array( '<label for="email"', '<input id="email" ' );
+	$default_url    = array( '<label for="url"', '<input id="url" ' );
 
-	$replace_author = array('<label for="author" class="screen-reader-text"', '<input id="author" placeholder="' . esc_attr($placeholders['author']) . '" ');
-	$replace_email = array('<label for="email" class="screen-reader-text"', '<input id="email" placeholder="' . esc_attr($placeholders['email']) . '" ');
-	$replace_url = array('<label for="url" class="screen-reader-text"', '<input id="url" placeholder="' . esc_attr($placeholders['url']) . '" ');
+	$replace_author = array(
+		'<label for="author" class="screen-reader-text"',
+		'<input id="author" placeholder="' . esc_attr( $placeholders['author'] ) . '" '
+	);
+	$replace_email  = array(
+		'<label for="email" class="screen-reader-text"',
+		'<input id="email" placeholder="' . esc_attr( $placeholders['email'] ) . '" '
+	);
+	$replace_url    = array(
+		'<label for="url" class="screen-reader-text"',
+		'<input id="url" placeholder="' . esc_attr( $placeholders['url'] ) . '" '
+	);
 
-	if( isset($fields['author']) ) {
+	if ( isset( $fields['author'] ) ) {
 		$fields['author'] = str_replace(
 			$default_author,
 			$replace_author,
 			$fields['author']
 		);
 	}
-	if( isset($fields['email']) ) {
+	if ( isset( $fields['email'] ) ) {
 		$fields['email'] = str_replace(
 			$default_email,
 			$replace_email,
 			$fields['email']
 		);
 	}
-	if( isset($fields['url']) ) {
+	if ( isset( $fields['url'] ) ) {
 		$fields['url'] = str_replace(
 			$default_url,
 			$replace_url,
@@ -235,11 +244,14 @@ function siteorigin_north_filter_comment_form_default_fields( $fields ){
 add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields');
 
 function siteorigin_north_filter_comment_form_defaults( $defaults ){
-	$comment_placeholder = __('Enter your message', 'siteorigin-north');
-	$default_comment = array('<label for="comment"', '<textarea id="comment" ');
-	$replace_comment = array('<label for="comment" class="screen-reader-text"', '<textarea id="comment" placeholder="' . esc_attr($comment_placeholder) . '" ');
+	$comment_placeholder = __( 'Enter your message', 'siteorigin-north' );
+	$default_comment     = array( '<label for="comment"', '<textarea id="comment" ' );
+	$replace_comment     = array(
+		'<label for="comment" class="screen-reader-text"',
+		'<textarea id="comment" placeholder="' . esc_attr( $comment_placeholder ) . '" '
+	);
 
-	if( !empty( $defaults['comment_field'] ) ) {
+	if ( ! empty( $defaults['comment_field'] ) ) {
 		$defaults['comment_field'] = str_replace(
 			$default_comment,
 			$replace_comment,
