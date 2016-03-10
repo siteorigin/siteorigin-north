@@ -80,9 +80,7 @@
 		padding-right: 0;
 
 		ul {
-			left: auto;
-			right: -9999px;
-			text-align: left;
+			text-align: right;
 
 			ul {
 				left: auto;
@@ -97,13 +95,6 @@
 					left: auto;
 					right: 100%;
 				}
-			}
-		}
-
-		li:hover,
-		li.focus {
-			> ul {
-				right:auto;
 			}
 		}
 	}
