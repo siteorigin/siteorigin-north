@@ -21,6 +21,17 @@
 	float: left;
 }
 
+.author-box {
+	.author-avatar {
+		float: right;
+	}
+
+	.author-description {
+		margin-left: 0;
+		margin-right: 120px;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/

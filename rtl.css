@@ -165,6 +165,13 @@ textarea {
 .more-link {
   float: left; }
 
+.author-box .author-avatar {
+  float: right; }
+
+.author-box .author-description {
+  margin-left: 0;
+  margin-right: 120px; }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
