@@ -469,6 +469,16 @@
     margin-right: auto;
     margin-left: 0; }
 
+.woocommerce table.shop_table .cart_totals h2 {
+  text-align: right; }
+
+.woocommerce table.shop_table .cart-item-product-name {
+  left: auto;
+  right: 20px; }
+
+.woocommerce table.shop_table .remove {
+  float: left; }
+
 .woocommerce button.button.alt:hover,
 .woocommerce #review_form #respond .form-submit input:hover,
 .woocommerce .woocommerce-message .button:hover,

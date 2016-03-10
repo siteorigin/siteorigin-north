@@ -28,6 +28,21 @@
 			}
 		}
 	}
+
+	table.shop_table{
+		.cart_totals h2 {
+			text-align: right;
+		}
+
+		.cart-item-product-name {
+			left: auto;
+			right: 20px;
+		}
+
+		.remove {
+			float: left;
+		}
+	}
 }
 
 // These elements should only apply to WooCommerce pages
