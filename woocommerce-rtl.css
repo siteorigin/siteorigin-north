@@ -345,43 +345,43 @@
 .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
   float: left; }
 
-.woocommerce div.product div.images,
-.woocommerce #content div.product div.images, .woocommerce-page div.product div.images,
-.woocommerce-page #content div.product div.images {
+.woocommerce.single div.product div.images,
+.woocommerce.single #content div.product div.images, .woocommerce-page.single div.product div.images,
+.woocommerce-page.single #content div.product div.images {
   float: right; }
 
-.woocommerce div.product div.thumbnails a,
-.woocommerce #content div.product div.thumbnails a, .woocommerce-page div.product div.thumbnails a,
-.woocommerce-page #content div.product div.thumbnails a {
+.woocommerce.single div.product div.thumbnails a,
+.woocommerce.single #content div.product div.thumbnails a, .woocommerce-page.single div.product div.thumbnails a,
+.woocommerce-page.single #content div.product div.thumbnails a {
   float: right;
   margin-right: auto;
   margin-left: 3.8%; }
 
-.woocommerce div.product div.thumbnails a.last,
-.woocommerce #content div.product div.thumbnails a.last, .woocommerce-page div.product div.thumbnails a.last,
-.woocommerce-page #content div.product div.thumbnails a.last {
+.woocommerce.single div.product div.thumbnails a.last,
+.woocommerce.single #content div.product div.thumbnails a.last, .woocommerce-page.single div.product div.thumbnails a.last,
+.woocommerce-page.single #content div.product div.thumbnails a.last {
   margin-right: auto;
   margin-left: 0; }
 
-.woocommerce div.product div.thumbnails.columns-1 a,
-.woocommerce #content div.product div.thumbnails.columns-1 a, .woocommerce-page div.product div.thumbnails.columns-1 a,
-.woocommerce-page #content div.product div.thumbnails.columns-1 a {
+.woocommerce.single div.product div.thumbnails.columns-1 a,
+.woocommerce.single #content div.product div.thumbnails.columns-1 a, .woocommerce-page.single div.product div.thumbnails.columns-1 a,
+.woocommerce-page.single #content div.product div.thumbnails.columns-1 a {
   margin-right: auto;
   margin-left: 0; }
 
-.woocommerce div.product div.summary,
-.woocommerce #content div.product div.summary, .woocommerce-page div.product div.summary,
-.woocommerce-page #content div.product div.summary {
+.woocommerce.single div.product div.summary,
+.woocommerce.single #content div.product div.summary, .woocommerce-page.single div.product div.summary,
+.woocommerce-page.single #content div.product div.summary {
   float: left; }
 
-.woocommerce div.product .woocommerce-tabs ul.tabs img,
-.woocommerce #content div.product .woocommerce-tabs ul.tabs img, .woocommerce-page div.product .woocommerce-tabs ul.tabs img,
-.woocommerce-page #content div.product .woocommerce-tabs ul.tabs img {
+.woocommerce.single div.product .woocommerce-tabs ul.tabs img,
+.woocommerce.single #content div.product .woocommerce-tabs ul.tabs img, .woocommerce-page.single div.product .woocommerce-tabs ul.tabs img,
+.woocommerce-page.single #content div.product .woocommerce-tabs ul.tabs img {
   float: left; }
 
-.woocommerce div.product #reviews .comment img,
-.woocommerce #content div.product #reviews .comment img, .woocommerce-page div.product #reviews .comment img,
-.woocommerce-page #content div.product #reviews .comment img {
+.woocommerce.single div.product #reviews .comment img,
+.woocommerce.single #content div.product #reviews .comment img, .woocommerce-page.single div.product #reviews .comment img,
+.woocommerce-page.single #content div.product #reviews .comment img {
   float: left; }
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {

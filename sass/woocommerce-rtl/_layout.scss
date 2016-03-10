@@ -12,48 +12,50 @@
 	}
 
 	// Product page
-	div.product,
-	#content div.product {
-		div.images {
-			float: right;
-		}
-
-		div.thumbnails {
-			a {
+	&.single {
+		div.product,
+		#content div.product {
+			div.images {
 				float: right;
-				margin-right: auto;
-				margin-left: 3.8%;
 			}
 
-			a.last {
-				margin-right: auto;
-				margin-left: 0;
-			}
-
-			&.columns-1 {
+			div.thumbnails {
 				a {
+					float: right;
+					margin-right: auto;
+					margin-left: 3.8%;
+				}
+
+				a.last {
 					margin-right: auto;
 					margin-left: 0;
 				}
-			}
-		}
 
-		div.summary {
-			float: left;
-		}
-
-		.woocommerce-tabs {
-			ul.tabs {
-				img {
-					float: left;
+				&.columns-1 {
+					a {
+						margin-right: auto;
+						margin-left: 0;
+					}
 				}
 			}
-		}
 
-		#reviews {
-			.comment {
-				img {
-					float: left;
+			div.summary {
+				float: left;
+			}
+
+			.woocommerce-tabs {
+				ul.tabs {
+					img {
+						float: left;
+					}
+				}
+			}
+
+			#reviews {
+				.comment {
+					img {
+						float: left;
+					}
 				}
 			}
 		}
