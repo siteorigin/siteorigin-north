@@ -43,6 +43,28 @@
 			float: left;
 		}
 	}
+
+	form.woocommerce-checkout {
+		.order-details table.shop_table {
+			.product-name .product-quantity {
+				text-align: right;
+			}
+
+			.product-total {
+				text-align: left;
+			}
+		}
+
+		.checkout-details {
+			float: left;
+			padding-left: 0;
+			padding-right: 30px;
+		}
+
+		.order-details {
+			float: right;
+		}
+	}
 }
 
 // These elements should only apply to WooCommerce pages

@@ -479,6 +479,20 @@
 .woocommerce table.shop_table .remove {
   float: left; }
 
+.woocommerce form.woocommerce-checkout .order-details table.shop_table .product-name .product-quantity {
+  text-align: right; }
+
+.woocommerce form.woocommerce-checkout .order-details table.shop_table .product-total {
+  text-align: left; }
+
+.woocommerce form.woocommerce-checkout .checkout-details {
+  float: left;
+  padding-left: 0;
+  padding-right: 30px; }
+
+.woocommerce form.woocommerce-checkout .order-details {
+  float: right; }
+
 .woocommerce button.button.alt:hover,
 .woocommerce #review_form #respond .form-submit input:hover,
 .woocommerce .woocommerce-message .button:hover,
