@@ -171,7 +171,6 @@
   border-right: inherit; }
 
 .woocommerce p.stars a.star-1, .woocommerce p.stars a.star-2, .woocommerce p.stars a.star-3, .woocommerce p.stars a.star-4, .woocommerce p.stars a.star-5 {
-  border-left: 1px solid #ccc;
   border-right: 0; }
   .woocommerce p.stars a.star-1:after, .woocommerce p.stars a.star-2:after, .woocommerce p.stars a.star-3:after, .woocommerce p.stars a.star-4:after, .woocommerce p.stars a.star-5:after {
     left: auto;
@@ -383,6 +382,12 @@
 .woocommerce.single #content div.product #reviews .comment img, .woocommerce-page.single div.product #reviews .comment img,
 .woocommerce-page.single #content div.product #reviews .comment img {
   float: left; }
+
+.woocommerce.single div.product #reviews #review_form_wrapper .stars,
+.woocommerce.single #content div.product #reviews #review_form_wrapper .stars, .woocommerce-page.single div.product #reviews #review_form_wrapper .stars,
+.woocommerce-page.single #content div.product #reviews #review_form_wrapper .stars {
+  left: auto;
+  right: 10px; }
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   float: right;

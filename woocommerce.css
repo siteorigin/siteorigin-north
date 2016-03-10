@@ -182,6 +182,9 @@
   .woocommerce.single #content div.product .cart .quantity input {
     padding: 5px 6px; }
 
+.woocommerce.single #content div.product span.onsale {
+  padding: 0; }
+
 .woocommerce.single #content div.product p.price {
   margin: 0;
   float: right;
