@@ -3,10 +3,17 @@ jQuery( function($){
     $('.woocommerce-ordering select').each( function(){
         var $$ = $(this);
 
-        var c = $('<div></div>')
-            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-next"></span>' )
-            .addClass('ordering-selector-wrapper')
-            .insertAfter( $$ );
+		if ( $( 'body' ).hasClass( 'rtl' ) ) {
+			var c = $('<div></div>')
+	            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-previous"></span>' )
+	            .addClass('ordering-selector-wrapper')
+	            .insertAfter( $$ );
+		} else {
+			var c = $('<div></div>')
+	            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-next"></span>' )
+	            .addClass('ordering-selector-wrapper')
+	            .insertAfter( $$ );
+		}
 
         var dropdownContainer = $('<div/>')
             .addClass('ordering-dropdown-container')

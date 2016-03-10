@@ -88,6 +88,20 @@
   left: 0;
   margin: -.5em 0 0 -.5em; }
 
+.woocommerce .woocommerce-ordering .ordering-selector-wrapper .north-icon-previous {
+  float: left;
+  margin: 0 10px 0 -3px;
+  -webkit-transition: all 0.15s ease-in;
+  -moz-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in; }
+
+.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover .north-icon-previous {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
 .woocommerce nav.woocommerce-pagination ul {
   border-right: 1px solid #d3ced3;
   border-left: 0; }
