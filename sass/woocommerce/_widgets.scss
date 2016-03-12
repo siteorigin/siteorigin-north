@@ -19,5 +19,34 @@
 			}
 		}
 
+		// Pricing filter
+		.widget_price_filter {
+			.ui-slider {
+				background-color: $color__primary_accent;
+
+				.ui-slider-range,
+				.ui-slider-handle {
+					background-color: $color__primary_accent_dark;
+				}
+			}
+
+			.price_slider_amount {
+				.button {
+					background: transparent;
+					border-radius: 0;
+					border: 1px solid $color__text_dark;
+					color: $color__text_dark;
+					font-weight: normal;
+
+					&:hover {
+						background: $color__primary_accent_dark;
+						color: #fff;
+						border-color: $color__primary_accent_dark;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+
 	}
 }

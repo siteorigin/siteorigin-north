@@ -644,3 +644,21 @@
   .woocommerce .widget-area .widget_shopping_cart .widget_shopping_cart_content .total,
   .woocommerce .widget-area .widget_shopping_cart .widget_shopping_cart_content .buttons {
     text-align: left; }
+
+.woocommerce .widget-area .widget_price_filter .ui-slider {
+  background-color: #c75d5d; }
+  .woocommerce .widget-area .widget_price_filter .ui-slider .ui-slider-range,
+  .woocommerce .widget-area .widget_price_filter .ui-slider .ui-slider-handle {
+    background-color: #a94346; }
+
+.woocommerce .widget-area .widget_price_filter .price_slider_amount .button {
+  background: transparent;
+  border-radius: 0;
+  border: 1px solid #292929;
+  color: #292929;
+  font-weight: normal; }
+  .woocommerce .widget-area .widget_price_filter .price_slider_amount .button:hover {
+    background: #a94346;
+    color: #fff;
+    border-color: #a94346;
+    box-shadow: none; }
