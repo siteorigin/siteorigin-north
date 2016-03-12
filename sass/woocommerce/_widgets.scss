@@ -1,0 +1,23 @@
+.woocommerce {
+	.widget-area {
+
+		// Shopping cart
+		.widget_shopping_cart {
+			.widget_shopping_cart_content {
+				padding: 0;
+
+				.mini_cart_item {
+					a {
+						text-decoration: none;
+					}
+				}
+
+				.total,
+				.buttons {
+					text-align: left;
+				}
+			}
+		}
+
+	}
+}

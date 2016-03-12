@@ -633,3 +633,14 @@
     body.responsive.woocommerce form.woocommerce-checkout .order-details {
       width: 100%;
       float: none; } }
+
+/*--------------------------------------------------------------
+# WooCommerce Widgets
+--------------------------------------------------------------*/
+.woocommerce .widget-area .widget_shopping_cart .widget_shopping_cart_content {
+  padding: 0; }
+  .woocommerce .widget-area .widget_shopping_cart .widget_shopping_cart_content .mini_cart_item a {
+    text-decoration: none; }
+  .woocommerce .widget-area .widget_shopping_cart .widget_shopping_cart_content .total,
+  .woocommerce .widget-area .widget_shopping_cart .widget_shopping_cart_content .buttons {
+    text-align: left; }
