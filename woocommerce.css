@@ -706,3 +706,17 @@
   border-radius: 0;
   background: #fff;
   outline: none; }
+
+.woocommerce .widget-area .widget_layered_nav_filters ul {
+  padding-left: 0; }
+  .woocommerce .widget-area .widget_layered_nav_filters ul li a {
+    padding: 8px 10px;
+    display: inline-block;
+    text-decoration: none; }
+  .woocommerce .widget-area .widget_layered_nav_filters ul li.chosen a {
+    color: #fff;
+    background: #c75d5d; }
+    .woocommerce .widget-area .widget_layered_nav_filters ul li.chosen a:before {
+      color: #fff; }
+    .woocommerce .widget-area .widget_layered_nav_filters ul li.chosen a:hover {
+      background: #a94346; }

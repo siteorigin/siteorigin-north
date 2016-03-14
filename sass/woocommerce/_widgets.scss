@@ -125,5 +125,34 @@
 			}
 		}
 
+		.widget_layered_nav_filters {
+			ul {
+				padding-left: 0;
+
+				li {
+					a {
+						padding: 8px 10px;
+						display: inline-block;
+						text-decoration: none;
+					}
+
+					&.chosen {
+						a {
+							color: #fff;
+							background: $color__primary_accent;
+
+							&:before {
+								color: #fff;
+							}
+
+							&:hover {
+								background: $color__primary_accent_dark;
+							}
+						}
+					}
+				}
+			}
+		}
+
 	}
 }
