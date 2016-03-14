@@ -736,3 +736,16 @@
   .woocommerce .widget-area .widget_recent_reviews ul li img,
   .woocommerce .widget-area .widget_top_rated_products ul li img {
     width: 50px; }
+
+.woocommerce .widget-area .widget_product_search form[role="search"] input[type="search"] {
+  width: 85%;
+  border: none;
+  padding-left: 0; }
+
+.woocommerce .widget-area .widget_product_search form[role="search"] button[type="submit"] {
+  width: 13%;
+  padding: 10px 0; }
+  .woocommerce .widget-area .widget_product_search form[role="search"] button[type="submit"] i {
+    display: inline-block;
+    width: 100%;
+    text-align: center; }
