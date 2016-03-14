@@ -154,5 +154,24 @@
 			}
 		}
 
+		.widget_recently_viewed_products,
+		.widget_products,
+		.widget_recent_reviews,
+		.widget_top_rated_products {
+			ul {
+				padding-left: 0;
+
+				li {
+					a {
+						text-decoration: none;
+					}
+
+					img {
+						width: 50px;
+					}
+				}
+			}
+		}
+
 	}
 }
