@@ -181,13 +181,14 @@ function siteorigin_north_entry_footer() {
 		if ( siteorigin_setting('blog_display_author_box') ) { ?>
 			<div class="author-box">
 				<h2 class="author-title">
-					<?php echo get_the_author(); ?>
+					<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
 					<small class="author-info">
 						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 							<?php _e( 'View posts by ', 'siteorigin-north' );
 							echo get_the_author(); ?>
 						</a>
 					</small>
+					<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
 				</h2>
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>

@@ -1544,7 +1544,8 @@ a {
   .author-box .author-title {
     margin-top: 0; }
     .author-box .author-title .author-info {
-      font-size: 0.6em; }
+      font-size: 0.6em;
+      padding: 0 5px; }
   .author-box .author-avatar {
     float: left; }
   .author-box .author-description {

@@ -53,7 +53,8 @@
       position: absolute;
       width: 100%;
       top: 0;
-      left: -99999px;
+      opacity: 0;
+      visibility: hidden;
       opacity: 0;
       -webkit-transition: all 0.15s ease-in;
       -moz-transition: all 0.15s ease-in;
@@ -77,8 +78,8 @@
         .woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li:hover {
           color: #292929; }
     .woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover .ordering-dropdown {
+      visibility: visible;
       opacity: 1;
-      left: auto;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);
@@ -180,6 +181,9 @@
   margin: -1px 6px 0 0; }
   .woocommerce.single #content div.product .cart .quantity input {
     padding: 5px 6px; }
+
+.woocommerce.single #content div.product span.onsale {
+  padding: 0; }
 
 .woocommerce.single #content div.product p.price {
   margin: 0;
