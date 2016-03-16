@@ -740,7 +740,7 @@ a {
       padding: 10px; }
       #mobile-navigation form input[type="search"]:focus {
         outline: none; }
-    #mobile-navigation form input[type="submit"] {
+    #mobile-navigation form button[type="submit"] {
       display: none; }
   #mobile-navigation ul {
     margin: 0;
