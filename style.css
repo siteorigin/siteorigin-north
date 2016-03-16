@@ -740,7 +740,7 @@ a {
       padding: 10px; }
       #mobile-navigation form input[type="search"]:focus {
         outline: none; }
-    #mobile-navigation form input[type="submit"] {
+    #mobile-navigation form button[type="submit"] {
       display: none; }
   #mobile-navigation ul {
     margin: 0;
@@ -758,9 +758,6 @@ a {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
           display: none; }
-  @media screen and (min-width: 601px) {
-    body.responsive #mobile-navigation {
-      display: none !important; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main

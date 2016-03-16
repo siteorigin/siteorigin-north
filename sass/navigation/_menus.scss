@@ -336,7 +336,7 @@
 			}
 		}
 
-		input[type="submit"] {
+		button[type="submit"] {
 			display: none;
 		}
 	}
@@ -367,12 +367,6 @@
 
 				}
 			}
-		}
-	}
-
-	@media screen and (min-width: 601px) {
-		body.responsive & {
-			display: none !important;
 		}
 	}
 }
