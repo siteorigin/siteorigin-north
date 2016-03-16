@@ -758,9 +758,6 @@ a {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
           display: none; }
-  @media screen and (min-width: 601px) {
-    body.responsive #mobile-navigation {
-      display: none !important; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
