@@ -346,6 +346,14 @@ code {
   background: #eee;
   padding: 0 0.3em; }
 
+::-moz-selection {
+  background-color: #c75d5d;
+  color: #fff; }
+
+::selection {
+  background-color: #c75d5d;
+  color: #fff; }
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
