@@ -90,7 +90,7 @@
 
 .entry-title {
 	margin: 0 0 1em 0;
-	color: #292929;
+	color: $color__text_dark;
 	font-size: 1.6em;
 
 	a {
@@ -178,7 +178,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	color: #565656;
+	color: $color__text_medium;
 	margin: 15px 0;
 	line-height: $font__line-height-entry;
 
@@ -198,7 +198,7 @@
 .tags-list {
 	margin-top: 1em;
 	a {
-		background: #c9c9c9;
+		background: $color__text_meta;
 		color: #fff;
 		display: inline-block;
 		margin-right: 10px;
@@ -218,7 +218,7 @@
 .author-box {
 	margin: 20px 0;
 	padding: 10px;
-	border: 1px solid #c9c9c9;
+	border: 1px solid $color__border-table;
 
 	.author-title {
 		margin-top: 0;
@@ -257,7 +257,7 @@
 	&:hover{
 		background: $color__primary_accent;
 		border-color: $color__primary_accent;
-		color: #ffffff;
+		color: #fff;
 		box-shadow: none;
 	}
 }
