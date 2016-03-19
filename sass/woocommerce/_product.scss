@@ -62,7 +62,7 @@
 
 	.woocommerce-product-rating {
 		.woocommerce-review-link {
-			color: #565656;
+			color: $color__text_medium;
 			text-decoration: none;
 			font-size: 0.9em;
 
@@ -83,14 +83,14 @@
 			border-bottom: none !important;
 
 			li {
-				border: 1px solid #d3d3d3;
+				border: 1px solid $woocommerce__border_color;
 				background: transparent;
 				border-radius: 0;
 				font-size: 0.9em;
 				margin: 0 10px 0 0;
 
 				a {
-					color: #292929;
+					color: $color__text_dark;
 					font-weight: normal;
 				}
 
@@ -123,7 +123,7 @@
 
 	.product-under-title-meta {
 		margin-top: -0.5em;
-		color: #565656;
+		color: $color__text_medium;
 		font-size: 0.8em;
 		margin-bottom: 1em;
 		line-height: 1.4em;
@@ -131,7 +131,7 @@
 
 	#comments h2 {
 		margin-top: 0;
-		color: #292929;
+		color: $color__text_dark;
 		font-size: 1.3em;
 	}
 

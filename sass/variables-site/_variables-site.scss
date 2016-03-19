@@ -49,8 +49,12 @@ $footer__side_padding: 40px;
 $footer__top_margin: 30px;
 
 // Comments
-$comments_reply_link_color: #f2f2f2;
-$comments_reply_background_color: #292929;
-$comments_submit_hover_color: #fff;
-$comments_form_background_color: #fff;
-$comments_form_focus_background_color: #fcfcfc;
+$comments__reply_link_color: #f2f2f2;
+$comments__reply_background_color: #292929;
+$comments__submit_hover_color: #fff;
+$comments__form_background_color: #fff;
+$comments__form_focus_background_color: #fcfcfc;
+
+// WooCommerce
+$woocommerce__border_color: #d3d3d3;
+$woocommerce__background_color: #f4f4f4;
