@@ -110,6 +110,32 @@ if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) {
 }
 add_filter('add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count');
 
+// Add the quick view button in the products in loop
+if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) {
+
+	function siteorigin_north_woocommerce_quick_view_button() {
+		global $product;
+		if( siteorigin_setting( 'woocommerce_display_quick_view' ) ) :
+			echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product_id="' . $product->id . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
+		endif;
+	}
+
+}
+add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
+
+// Setup quick view modal in the footer
+if( !function_exists('siteorigin_north_woocommerce_quick_view') ) {
+
+	function siteorigin_north_woocommerce_quick_view() { ?>
+		<!-- WooCommerce Quick View -->
+		<div id="quick-view-container">
+			<div id="placeholder-product-quick-view" class="quick-view"></div>
+		</div>
+	<?php }
+
+}
+add_action( 'wp_footer', 'siteorigin_north_woocommerce_quick_view', 100 );
+
 /*
 * Enabling breadcrumbs in product pages and archives.
 */

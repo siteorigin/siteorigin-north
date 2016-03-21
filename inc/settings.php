@@ -321,6 +321,11 @@ function siteorigin_north_settings_init(){
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Cart', 'siteorigin-north' ),
 					'description' => __( "Display WooCommerce cart in the main menu", 'siteorigin-north' ),
+				),
+
+				'display_quick_view' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Display Quick View button', 'siteorigin-north' ),
 				)
 
 			)
@@ -675,6 +680,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// WooCommerce defaults
 	$defaults['woocommerce_display_cart'] = true;
+	$defaults['woocommerce_display_quick_view'] = false;
 
 	return $defaults;
 }
