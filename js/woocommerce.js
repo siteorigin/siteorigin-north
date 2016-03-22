@@ -44,4 +44,29 @@ jQuery( function($){
 
         $$.hide();
     } );
+
+	$('.product-quick-view-button').click( function(e) {
+		e.preventDefault();
+
+		var id = $(this).attr('data-product-id');
+
+		$.post(
+			so_ajax.ajaxurl,
+			{ action: 'so_product_quick_view', product_id: id },
+			function( data ) {
+				$(document).find('#quick-view-container').find('#product-quick-view').html(data);
+			}
+		);
+
+		$(document).find('#quick-view-container').show();
+
+		$(window).mouseup(function (e) {
+		    var container = $("#product-quick-view");
+		    if ( ! container.is(e.target) && container.has(e.target).length === 0 ) {
+		        $('#quick-view-container').hide();
+		    }
+		});
+
+	} );
+
 } );
