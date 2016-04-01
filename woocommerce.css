@@ -140,6 +140,46 @@
     bottom: 0;
     right: 0;
     margin: auto; }
+  .woocommerce #quick-view-container .product-content-wrapper {
+    overflow: auto; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-image-wrapper {
+      width: 50%;
+      float: left;
+      padding: 20px; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper {
+      width: 50%;
+      float: right;
+      padding: 20px;
+      position: relative; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper a {
+        text-decoration: none; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
+        margin: 0;
+        color: #c75d5d;
+        font-family: "Droid Serif", sans-serif;
+        font-size: 1.2em;
+        line-height: 2.5;
+        position: absolute;
+        top: 22px;
+        right: 20px; }
+        .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del {
+          opacity: 0.5; }
+        .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
+          background: none; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .woocommerce-product-rating .woocommerce-review-link {
+        color: #565656;
+        text-decoration: none;
+        font-size: 0.9em; }
+        .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .woocommerce-product-rating .woocommerce-review-link:hover {
+          text-decoration: underline; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity {
+        display: inline-block;
+        float: left;
+        margin: -1px 6px 0 0; }
+        .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity input {
+          padding: 5px 6px; }
+      .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .single_add_to_cart_button {
+        float: left; }
 
 /*--------------------------------------------------------------
 # WooCommerce Element Styles
