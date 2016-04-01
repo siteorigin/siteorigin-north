@@ -18,7 +18,7 @@ function siteorigin_north_woocommerce_change_hooks(){
 	remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
 
 	// Quick view action hooks
-	add_action( 'siteorigin_north_woocommerce_quick_view_images', 'woocommerce_template_loop_product_thumbnail', 5 );
+	add_action( 'siteorigin_north_woocommerce_quick_view_images', 'siteorigin_north_woocommerce_quick_view_image', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_price', 10 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_rating', 15 );
@@ -26,6 +26,10 @@ function siteorigin_north_woocommerce_change_hooks(){
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
 }
 add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
+
+function siteorigin_north_woocommerce_quick_view_image() {
+	echo woocommerce_get_product_thumbnail('shop_single');
+}
 
 function siteorigin_north_woocommerce_add_to_cart_text( $text ) {
 	return $text;
