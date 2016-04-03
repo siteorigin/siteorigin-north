@@ -85,16 +85,8 @@
 					}
 				}
 
-				.woocommerce-product-rating {
-					.woocommerce-review-link {
-						color: #565656;
-						text-decoration: none;
-						font-size: 0.9em;
-
-						&:hover {
-							text-decoration: underline;
-						}
-					}
+				.star-rating {
+					float: none;
 				}
 
 				.cart {
