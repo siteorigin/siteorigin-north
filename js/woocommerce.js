@@ -58,12 +58,16 @@ jQuery( function($){
 			}
 		);
 
-		$(document).find('#quick-view-container').show();
+		if($(document).find('#quick-view-container').is(':hidden')) {
+			$(document).find('#quick-view-container').find('#product-quick-view').empty();
+		}
+
+		$(document).find('#quick-view-container').fadeIn(300);
 
 		$(window).mouseup(function (e) {
 		    var container = $("#product-quick-view");
 		    if ( ! container.is(e.target) && container.has(e.target).length === 0 ) {
-		        $('#quick-view-container').hide();
+		        $('#quick-view-container').fadeOut(300);
 		    }
 		});
 
