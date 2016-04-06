@@ -25,10 +25,10 @@
 		}
 
 		a {
-			color: #999;
+			color: $navigation__link_color;
 
 			&:hover {
-				color: #292929;
+				color: $navigation__link_hover_color;
 			}
 		}
 
@@ -43,8 +43,8 @@
 			@include transform-origin(center top);
 			@include transform( scale(0.95) );
 
-			background-color: #fff;
-			border: 1px solid #d4d4d4;
+			background-color: $navigation__dropdown_background_color;
+			border: 1px solid $navigation__dropdown_border_color;
 			box-shadow: 0 1px 1px rgba(0,0,0,0.075);
 
 			ul {
@@ -83,12 +83,12 @@
 
 			:hover > a,
 			.focus > a {
-				color: #292929;
+				color: $navigation__link_hover_color;
 			}
 
 			a:hover,
 			a.focus {
-				color: #292929;
+				color: $navigation__link_hover_color;
 			}
 		}
 
@@ -152,10 +152,10 @@
 
 		color: #777;
 		&:hover {
-			color: #292929;
+			color: $navigation__link_hover_color;
 
 			.svg-icon-menu .line{
-				fill: #292929;
+				fill: $navigation__link_hover_color;
 			}
 		}
 

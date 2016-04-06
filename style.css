@@ -921,7 +921,7 @@ a {
     font-family: "Droid Serif", sans-serif;
     font-size: 0.9em;
     border-width: 0 0 1px 0;
-    border-color: #f0f0f0; }
+    border-color: #c9c9c9; }
     .search-form .search-field:focus {
       background: #fbfbfb;
       outline: none; }
@@ -929,7 +929,7 @@ a {
       color: #2a2a2a !important; }
 
 .tagcloud a {
-  background: #c9c9c9;
+  background: #b0b0b0;
   color: #fff;
   display: inline-block;
   margin-right: 10px;
@@ -1506,7 +1506,7 @@ a {
 .page-content,
 .entry-content,
 .entry-summary {
-  color: #565656;
+  color: #595959;
   margin: 15px 0;
   line-height: 1.8; }
   .page-content > *:first-child,
@@ -1529,7 +1529,7 @@ a {
 .tags-list {
   margin-top: 1em; }
   .tags-list a {
-    background: #c9c9c9;
+    background: #b0b0b0;
     color: #fff;
     display: inline-block;
     margin-right: 10px;
@@ -1572,7 +1572,7 @@ a {
   .more-link:hover {
     background: #c75d5d;
     border-color: #c75d5d;
-    color: #ffffff;
+    color: #fff;
     box-shadow: none; }
 
 .page-links {
@@ -1716,10 +1716,10 @@ a {
       #commentform .form-submit input:hover {
         background: #a94346;
         border-color: #a94346;
-        color: #ffffff;
+        color: #fff;
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
   #commentform input, #commentform textarea {
-    background-color: #ffffff; }
+    background-color: #fff; }
     #commentform input:focus, #commentform textarea:focus {
       background-color: #fcfcfc;
       outline: none; }
