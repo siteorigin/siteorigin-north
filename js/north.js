@@ -141,6 +141,24 @@ jQuery( function ( $ ) {
 		$mobileMenu.slideToggle( 'fast' );
 	} );
 
+	// Handle the mobile menu dropdown when it extends beyond the viewport
+	var mobileMenuHeight = function () {
+
+		var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
+
+		$mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
+
+		if ( $('#mobile-navigation').outerHeight() > $mobileMenuHeight ) {
+			$('#mobile-navigation').css({'max-height': $mobileMenuHeight, 'overflow-y': 'scroll'});
+		} else {
+			$('#mobile-navigation').css('max-height', $mobileMenuHeight );
+		}
+	}
+
+	if ( $( 'body' ).hasClass( 'sticky-menu' ) ) {
+		$( window ).resize( mobileMenuHeight ).scroll( mobileMenuHeight );
+	}
+
 	// The scroll to top button
 	var sttWindowScroll = function () {
 		var top = window.pageYOffset || document.documentElement.scrollTop;

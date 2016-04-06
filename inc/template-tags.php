@@ -43,36 +43,6 @@ function siteorigin_north_display_retina_logo( $attr ){
 add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 endif;
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function the_posts_navigation() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation posts-navigation" role="navigation">
-		<h3 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-north' ); ?></h3>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-north' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'siteorigin-north' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
 if ( ! function_exists( 'siteorigin_north_the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -181,13 +151,14 @@ function siteorigin_north_entry_footer() {
 		if ( siteorigin_setting('blog_display_author_box') ) { ?>
 			<div class="author-box">
 				<h2 class="author-title">
-					<?php echo get_the_author(); ?>
+					<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
 					<small class="author-info">
 						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 							<?php _e( 'View posts by ', 'siteorigin-north' );
 							echo get_the_author(); ?>
 						</a>
 					</small>
+					<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
 				</h2>
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>

@@ -21,8 +21,8 @@
 	}
 
 	.cart-wrapper {
-		border: 1px solid $masthead__border_color;
-		background: $masthead__top_background_color;
+		border: 1px solid $woocommerce__border_color;
+		background: $woocommerce__background_color;
 		padding: 15px;
 	}
 
@@ -100,7 +100,7 @@
 			}
 
 			.cart_totals {
-				border: 1px solid $masthead__border_color;
+				border: 1px solid $woocommerce__border_color;
 				padding: 20px;
 				margin-bottom: 25px;
 

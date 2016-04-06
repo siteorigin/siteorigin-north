@@ -321,6 +321,11 @@ function siteorigin_north_settings_init(){
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Cart', 'siteorigin-north' ),
 					'description' => __( "Display WooCommerce cart in the main menu", 'siteorigin-north' ),
+				),
+
+				'display_quick_view' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Display Quick View button', 'siteorigin-north' ),
 				)
 
 			)
@@ -388,6 +393,12 @@ function siteorigin_north_settings_custom_css($css){
 		'}' . "\n" .
 		'a:hover,a:focus {' . "\n" .
 		'color: ${branding_accent_dark};' . "\n" .
+		'}' . "\n" .
+		'::-moz-selection {' . "\n" .
+		'background-color: ${branding_accent};' . "\n" .
+		'}' . "\n" .
+		'::selection {' . "\n" .
+		'background-color: ${branding_accent};' . "\n" .
 		'}' . "\n" .
 		'button:hover, button:active, button:focus,' . "\n" .
 		'input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus,' . "\n" .
@@ -669,6 +680,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// WooCommerce defaults
 	$defaults['woocommerce_display_cart'] = true;
+	$defaults['woocommerce_display_quick_view'] = false;
 
 	return $defaults;
 }
@@ -719,6 +731,20 @@ function siteorigin_north_setup_page_settings(){
 			'default'        => true,
 			'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' )
 		),
+		'hide_masthead' => array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Masthead', 'siteorigin-north' ),
+			'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+			'default'        => false,
+			'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
+		),
+		'hide_footer_widgets'   => array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Footer Widgets', 'siteorigin-north' ),
+			'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+			'default'        => false,
+			'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
+		),
 	) );
 
 }
@@ -728,11 +754,13 @@ add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_setting
  * Add the default Page Settings
  */
 function siteorigin_north_setup_page_setting_defaults( $defaults ){
-	$defaults['layout']          = 'default';
-	$defaults['menu']            = 'default';
-	$defaults['page_title']      = true;
-	$defaults['masthead_margin'] = true;
-	$defaults['footer_margin']   = true;
+	$defaults['layout']              = 'default';
+	$defaults['menu']                = 'default';
+	$defaults['page_title']          = true;
+	$defaults['masthead_margin']     = true;
+	$defaults['footer_margin']       = true;
+	$defaults['hide_masthead']       = false;
+	$defaults['hide_footer_widgets'] = false;
 
 	return $defaults;
 }

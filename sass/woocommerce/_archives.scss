@@ -13,10 +13,11 @@
 
 			font-size: 0.85em;
 			display: block;
-			border: 1px solid #d3d3d3;
+			border: 1px solid $woocommerce__border_color;
 			padding: 10px 25px;
 			line-height: 1em;
 			position: relative;
+			color: $color__text_light;
 
 			.current {
 				display: inline-block;
@@ -25,13 +26,18 @@
 			.north-icon-next {
 				float: right;
 				margin: 0 -3px 0 10px;
+				color: $color__text_light;
 
 				@include transform( rotate(0deg) );
 				@include transition (all 0.15s ease-in);
 			}
 
-			&:hover .north-icon-next {
-				@include transform( rotate(90deg) );
+			&:hover {
+				color: $color__text_dark;
+				.north-icon-next {
+					@include transform( rotate(90deg) );
+					color: $color__text_dark;
+				}
 			}
 
 			.ordering-dropdown-container {
@@ -46,7 +52,7 @@
 			.ordering-dropdown {
 				list-style: none;
 				margin: 0;
-				border: 1px solid #d3d3d3;
+				border: 1px solid $woocommerce__border_color;
 				background: white;
 				padding: 5px 0;
 				box-shadow: 0 1px 1px rgba(0,0,0,0.07);
@@ -54,17 +60,18 @@
 				position: absolute;
 				width: 100%;
 				top: 0;
-				left: -99999px;
+				opacity: 0;
+				visibility: hidden;
 
 				li {
 					cursor: pointer;
 					white-space: nowrap;
 					padding: 15px 25px;
-					color: #888;
+					color: $color__text_light;
 					position: relative;
 
 					&:hover {
-						color: #292929;
+						color: $color__text_dark;
 					}
 				}
 
@@ -79,8 +86,8 @@
 
 			&:hover {
 				.ordering-dropdown {
+					visibility: visible;
 					opacity: 1;
-					left: auto;
 					@include transform( scale(1) );
 				}
 			}
@@ -89,7 +96,7 @@
 
 	.woocommerce-result-count {
 		float: left;
-		color: #b1b1b1;
+		color: $color__text_meta;
 		font-family: $font__detail;
 		font-size: 0.85em;
 		padding-top: 8px;
@@ -118,7 +125,7 @@
 				}
 
 				h3 {
-					color: #292929;
+					color: $color__text_dark;
 					margin-top: 0;
 				}
 
@@ -133,7 +140,4 @@
 			}
 		}
 	}
-
-
-
 }

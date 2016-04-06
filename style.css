@@ -346,6 +346,14 @@ code {
   background: #eee;
   padding: 0 0.3em; }
 
+::-moz-selection {
+  background-color: #c75d5d;
+  color: #fff; }
+
+::selection {
+  background-color: #c75d5d;
+  color: #fff; }
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -740,7 +748,7 @@ a {
       padding: 10px; }
       #mobile-navigation form input[type="search"]:focus {
         outline: none; }
-    #mobile-navigation form input[type="submit"] {
+    #mobile-navigation form button[type="submit"] {
       display: none; }
   #mobile-navigation ul {
     margin: 0;
@@ -758,9 +766,6 @@ a {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
           display: none; }
-  @media screen and (min-width: 601px) {
-    body.responsive #mobile-navigation {
-      display: none !important; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -916,7 +921,7 @@ a {
     font-family: "Droid Serif", sans-serif;
     font-size: 0.9em;
     border-width: 0 0 1px 0;
-    border-color: #f0f0f0; }
+    border-color: #c9c9c9; }
     .search-form .search-field:focus {
       background: #fbfbfb;
       outline: none; }
@@ -924,7 +929,7 @@ a {
       color: #2a2a2a !important; }
 
 .tagcloud a {
-  background: #c9c9c9;
+  background: #b0b0b0;
   color: #fff;
   display: inline-block;
   margin-right: 10px;
@@ -1157,6 +1162,12 @@ a {
   @media screen and (max-width: 782px) {
     .page-layout-menu-overlap.admin-bar #masthead {
       top: 46px; } }
+
+.page-layout-hide-masthead #masthead {
+  display: none; }
+
+.page-layout-hide-footer-widgets #colophon .widget-area {
+  display: none; }
 
 /*--------------------------------------------------------------
 ## Site Masthead
@@ -1501,7 +1512,7 @@ a {
 .page-content,
 .entry-content,
 .entry-summary {
-  color: #565656;
+  color: #595959;
   margin: 15px 0;
   line-height: 1.8; }
   .page-content > *:first-child,
@@ -1524,7 +1535,7 @@ a {
 .tags-list {
   margin-top: 1em; }
   .tags-list a {
-    background: #c9c9c9;
+    background: #b0b0b0;
     color: #fff;
     display: inline-block;
     margin-right: 10px;
@@ -1544,7 +1555,8 @@ a {
   .author-box .author-title {
     margin-top: 0; }
     .author-box .author-title .author-info {
-      font-size: 0.6em; }
+      font-size: 0.6em;
+      padding: 0 5px; }
   .author-box .author-avatar {
     float: left; }
   .author-box .author-description {
@@ -1566,7 +1578,7 @@ a {
   .more-link:hover {
     background: #c75d5d;
     border-color: #c75d5d;
-    color: #ffffff;
+    color: #fff;
     box-shadow: none; }
 
 .page-links {
@@ -1710,10 +1722,10 @@ a {
       #commentform .form-submit input:hover {
         background: #a94346;
         border-color: #a94346;
-        color: #ffffff;
+        color: #fff;
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
   #commentform input, #commentform textarea {
-    background-color: #ffffff; }
+    background-color: #fff; }
     #commentform input:focus, #commentform textarea:focus {
       background-color: #fcfcfc;
       outline: none; }

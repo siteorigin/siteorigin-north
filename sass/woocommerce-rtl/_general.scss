@@ -132,6 +132,21 @@
 		}
 	}
 
+	.woocommerce-ordering {
+		.ordering-selector-wrapper {
+			.north-icon-previous {
+				float: left;
+				margin: 0 10px 0 -3px;
+
+				@include transition (all 0.15s ease-in);
+			}
+
+			&:hover .north-icon-previous {
+				@include transform( rotate(-90deg) );
+			}
+		}
+	}
+
 	nav.woocommerce-pagination {
 		ul {
 			border-right: 1px solid darken( $color__woo-secondary, 10% );
@@ -241,7 +256,6 @@
 			&.star-3,
 			&.star-4,
 			&.star-5 {
-				border-left: 1px solid #ccc;
 				border-right: 0;
 
 				&:after {

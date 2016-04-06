@@ -63,7 +63,7 @@
 		font-size: 0.9em;
 
 		border-width: 0 0 1px 0;
-		border-color: #f0f0f0;
+		border-color: $color__border-table;
 
 		&:focus {
 			background: #fbfbfb;
@@ -80,7 +80,7 @@
 // Tag cloud widget
 .tagcloud {
 	a {
-		background: #c9c9c9;
+		background: $color__text_meta;
 		color: #fff;
 		display: inline-block;
 		margin-right: 10px;

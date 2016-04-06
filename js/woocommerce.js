@@ -3,10 +3,17 @@ jQuery( function($){
     $('.woocommerce-ordering select').each( function(){
         var $$ = $(this);
 
-        var c = $('<div></div>')
-            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-next"></span>' )
-            .addClass('ordering-selector-wrapper')
-            .insertAfter( $$ );
+		if ( $( 'body' ).hasClass( 'rtl' ) ) {
+			var c = $('<div></div>')
+	            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-previous"></span>' )
+	            .addClass('ordering-selector-wrapper')
+	            .insertAfter( $$ );
+		} else {
+			var c = $('<div></div>')
+	            .html( '<span class="current">' + $$.find(':selected').html() + '</span><span class="north-icon-next"></span>' )
+	            .addClass('ordering-selector-wrapper')
+	            .insertAfter( $$ );
+		}
 
         var dropdownContainer = $('<div/>')
             .addClass('ordering-dropdown-container')
@@ -37,4 +44,36 @@ jQuery( function($){
 
         $$.hide();
     } );
+
+	$('.product-quick-view-button').click( function(e) {
+		e.preventDefault();
+
+		var $container = '#quick-view-container';
+		var $content = '#product-quick-view';
+
+		var id = $(this).attr('data-product-id');
+
+		$.post(
+			so_ajax.ajaxurl,
+			{ action: 'so_product_quick_view', product_id: id },
+			function( data ) {
+				$(document).find($container).find($content).html(data);
+			}
+		);
+
+		if($(document).find($container).is(':hidden')) {
+			$(document).find($container).find($content).empty();
+		}
+
+		$(document).find($container).fadeIn(300);
+
+		$(window).mouseup(function (e) {
+		    var container = $($content);
+		    if ( ! container.is(e.target) && container.has(e.target).length === 0 ) {
+		        $($container).fadeOut(300);
+		    }
+		});
+
+	} );
+
 } );
