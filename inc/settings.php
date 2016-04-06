@@ -725,6 +725,20 @@ function siteorigin_north_setup_page_settings(){
 			'default'        => true,
 			'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' )
 		),
+		'hide_masthead' => array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Masthead', 'siteorigin-north' ),
+			'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+			'default'        => false,
+			'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
+		),
+		'hide_footer_widgets'   => array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Footer Widgets', 'siteorigin-north' ),
+			'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+			'default'        => false,
+			'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
+		),
 	) );
 
 }
@@ -734,11 +748,13 @@ add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_setting
  * Add the default Page Settings
  */
 function siteorigin_north_setup_page_setting_defaults( $defaults ){
-	$defaults['layout']          = 'default';
-	$defaults['menu']            = 'default';
-	$defaults['page_title']      = true;
-	$defaults['masthead_margin'] = true;
-	$defaults['footer_margin']   = true;
+	$defaults['layout']              = 'default';
+	$defaults['menu']                = 'default';
+	$defaults['page_title']          = true;
+	$defaults['masthead_margin']     = true;
+	$defaults['footer_margin']       = true;
+	$defaults['hide_masthead']       = false;
+	$defaults['hide_footer_widgets'] = false;
 
 	return $defaults;
 }

@@ -34,6 +34,12 @@ function siteorigin_north_body_classes( $classes ) {
 		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
 			$classes[] = 'page-layout-no-footer-margin';
 		}
+		if( SiteOrigin_Settings_Page_Settings::get('hide_masthead') ) {
+			$classes[] = 'page-layout-hide-masthead';
+		}
+		if( SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) {
+			$classes[] = 'page-layout-hide-footer-widgets';
+		}
 	}
 
 	if( !is_active_sidebar('main-sidebar') ) {
