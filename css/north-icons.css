@@ -56,3 +56,6 @@
 .north-icon-bag:before {
 	content: "\e60a";
 }
+.north-icon-wishlist:before {
+    content: "\e610";
+}
