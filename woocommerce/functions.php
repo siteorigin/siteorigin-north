@@ -136,6 +136,15 @@ if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) {
 }
 add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
 
+if( !function_exists('siteorigin_north_woocommerce_add_to_wishlist') ) {
+	function siteorigin_north_woocommerce_add_to_wishlist() {
+		if (class_exists('YITH_WCWL')) :
+			echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+		endif;
+	}
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_north_woocommerce_add_to_wishlist', 10 );
+
 // Setup quick view modal in the footer
 if( !function_exists('siteorigin_north_woocommerce_quick_view') ) {
 

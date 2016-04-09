@@ -836,3 +836,60 @@
           padding: 5px 6px; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .single_add_to_cart_button {
       float: left; }
+
+/*--------------------------------------------------------------
+# WooCommerce Quick View
+--------------------------------------------------------------*/
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .add_to_wishlist {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  color: #b0b0b0;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 20px; }
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .add_to_wishlist:before {
+    font-family: 'north-icons';
+    content: "\e610"; }
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .add_to_wishlist:hover {
+    color: #c75d5d; }
+
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .ajax-loading {
+  position: absolute;
+  top: 40px;
+  left: 10px; }
+
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  color: #a94346;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 20px; }
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a:before,
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a:before {
+    font-family: 'north-icons';
+    content: "\e610"; }
+
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse .feedback,
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse .feedback {
+  display: none; }
+
+.woocommerce ul.products li.product:hover .add_to_wishlist {
+  visibility: visible;
+  opacity: 0.75; }
+  .woocommerce ul.products li.product:hover .add_to_wishlist:hover {
+    opacity: 1; }
+
+.woocommerce ul.products li.product:hover .yith-wcwl-wishlistaddedbrowse a,
+.woocommerce ul.products li.product:hover .yith-wcwl-wishlistexistsbrowse a {
+  visibility: visible;
+  opacity: 1; }

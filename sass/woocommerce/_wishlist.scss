@@ -1,0 +1,79 @@
+.woocommerce {
+	ul.products {
+		li.product {
+			.yith-wcwl-add-to-wishlist {
+				.add_to_wishlist {
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					width: 25px;
+					height: 25px;
+					overflow: hidden;
+					color: $color__text_meta;
+					visibility: hidden;
+					opacity: 0;
+					font-size: 20px;
+
+					&:before {
+						font-family: 'north-icons';
+						content: "\e610";
+					}
+
+					&:hover {
+						color: $color__primary_accent;
+					}
+				}
+
+				.ajax-loading {
+					position: absolute;
+					top: 40px;
+					left: 10px;
+				}
+
+				.yith-wcwl-wishlistaddedbrowse,
+				.yith-wcwl-wishlistexistsbrowse {
+					a {
+						position: absolute;
+						top: 10px;
+						left: 10px;
+						width: 25px;
+						height: 25px;
+						overflow: hidden;
+						color: $color__primary_accent_dark;
+						visibility: hidden;
+						opacity: 0;
+						font-size: 20px;
+
+						&:before {
+							font-family: 'north-icons';
+							content: "\e610";
+						}
+					}
+
+					.feedback {
+						display: none;
+					}
+				}
+			}
+
+			&:hover {
+				.add_to_wishlist {
+					visibility: visible;
+					opacity: 0.75;
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+
+				.yith-wcwl-wishlistaddedbrowse,
+				.yith-wcwl-wishlistexistsbrowse {
+					a {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
