@@ -40,12 +40,12 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Site Description', 'siteorigin-north' ),
 					'description' => __( 'Show your site description below your site title or logo.', 'siteorigin-north' )
 				),
-//				'attribution' => array(
-//					'type' => 'checkbox',
-//					'label' => __('SiteOrigin Attribution', 'siteorigin-north'),
-//					'description' => __('Remove SiteOrigin attribution from your footer.', 'siteorigin-north'),
-//					'teaser' => true,
-//				),
+				'attribution' => array(
+					'type' => 'checkbox',
+					'label' => __('Hide SiteOrigin Attribution', 'siteorigin-north'),
+					'description' => __('Hide the SiteOrigin link in your footer.', 'siteorigin-north'),
+					'teaser' => true,
+				),
 				'accent'           => array(
 					'type'        => 'color',
 					'label'       => __( 'Accent Color', 'siteorigin-north' ),
@@ -623,6 +623,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_logo']             = false;
 	$defaults['branding_logo_retina']      = false;
 	$defaults['branding_site_description'] = true;
+	$defaults['branding_attribution']      = false;
 	$defaults['branding_accent']           = '#c75d5d';
 	$defaults['branding_accent_dark']      = '#a94346';
 

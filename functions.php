@@ -81,9 +81,6 @@ function siteorigin_north_setup() {
 	// This theme supports WooCommerce
 	add_theme_support( 'woocommerce' );
 
-	// Support for SiteOrigin Premium extras
-	add_theme_support( 'siteorigin-premium-retina-images' );
-
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
@@ -101,11 +98,11 @@ add_action( 'after_setup_theme', 'siteorigin_north_setup' );
  * Add support for premium theme components
  */
 function siteorigin_north_premium_setup(){
-
 	// This theme supports the no attribution addon
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter'  => 'siteorigin_north_footer_credits',
-		'enabled' => siteorigin_setting( 'branding_attribution' )
+		'enabled' => siteorigin_setting( 'branding_attribution' ),
+		'theme_mod' => 'theme_settings_branding_attribution'
 	) );
 }
 add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
