@@ -144,6 +144,7 @@ if( !function_exists('siteorigin_north_woocommerce_add_to_wishlist') ) {
 	}
 }
 add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_north_woocommerce_add_to_wishlist', 10 );
+add_action( 'woocommerce_single_product_summary', 'siteorigin_north_woocommerce_add_to_wishlist', 35 );
 
 // Setup quick view modal in the footer
 if( !function_exists('siteorigin_north_woocommerce_quick_view') ) {

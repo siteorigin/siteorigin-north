@@ -1,37 +1,13 @@
 .woocommerce {
+
+	// Product Loop
 	ul.products {
 		li.product {
 			.yith-wcwl-add-to-wishlist {
-				.add_to_wishlist {
-					position: absolute;
-					top: 10px;
-					left: 10px;
-					width: 25px;
-					height: 25px;
-					overflow: hidden;
-					color: $color__text_meta;
-					visibility: hidden;
-					opacity: 0;
-					font-size: 20px;
-
-					&:before {
-						font-family: 'north-icons';
-						content: "\e610";
-					}
-
-					&:hover {
-						color: $color__primary_accent;
-					}
-				}
-
-				.ajax-loading {
-					position: absolute;
-					top: 40px;
-					left: 10px;
-				}
 
 				.yith-wcwl-wishlistaddedbrowse,
-				.yith-wcwl-wishlistexistsbrowse {
+				.yith-wcwl-wishlistexistsbrowse,
+				.yith-wcwl-add-button {
 					a {
 						position: absolute;
 						top: 10px;
@@ -54,24 +30,71 @@
 						display: none;
 					}
 				}
-			}
 
-			&:hover {
-				.add_to_wishlist {
-					visibility: visible;
-					opacity: 0.75;
+				.yith-wcwl-add-button .add_to_wishlist {
+					color: $color__text_meta;
 
 					&:hover {
-						opacity: 1;
+						color: $color__primary_accent;
 					}
 				}
 
+				.ajax-loading {
+					position: absolute;
+					top: 40px;
+					left: 10px;
+				}
+			}
+
+			&:hover {
+				.yith-wcwl-add-button,
 				.yith-wcwl-wishlistaddedbrowse,
 				.yith-wcwl-wishlistexistsbrowse {
 					a {
 						visibility: visible;
-						opacity: 1;
+						opacity: 0.85;
+
+						&:hover {
+							opacity: 1;
+						}
 					}
+				}
+			}
+		}
+	}
+
+	// Single product
+	&.single #content div.product {
+		.yith-wcwl-add-to-wishlist {
+			.yith-wcwl-wishlistaddedbrowse,
+			.yith-wcwl-add-button {
+				a {
+					text-decoration: none;
+					&:before {
+						font-family: 'north-icons';
+						content: "\e610";
+					}
+				}
+			}
+
+			.yith-wcwl-wishlistexistsbrowse {
+				a {
+					text-decoration: none;
+				}
+
+				.feedback {
+					&:before {
+						font-family: 'north-icons';
+						content: "\e610\00a0";
+					}
+				}
+			}
+
+			.yith-wcwl-add-button .add_to_wishlist {
+				color: $color__text_meta;
+
+				&:hover {
+					color: $color__primary_accent_dark;
 				}
 			}
 		}
