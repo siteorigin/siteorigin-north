@@ -237,6 +237,12 @@ function siteorigin_north_settings_init(){
 				'display_comment_count' => array(
 					'type'  => 'checkbox',
 					'label' => __( 'Display comment count', 'siteorigin-north' ),
+				),
+				'ajax_comments'         => array(
+					'type' => 'checkbox',
+					'label' => __('Ajax Comments', 'siteorigin-north'),
+					'description' => __('Keep the conversation flowing with ajax loading comments.', 'siteorigin-north'),
+					'teaser' => true,
 				)
 			)
 		),
@@ -668,6 +674,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['blog_display_date']          = true;
 	$defaults['blog_display_author']        = true;
 	$defaults['blog_display_comment_count'] = true;
+	$defaults['blog_ajax_comments']         = true;
 
 	// Footer defaults
 	$defaults['footer_text']             = __( 'Copyright © {year} {sitename}', 'siteorigin-north' );
