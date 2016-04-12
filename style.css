@@ -300,7 +300,10 @@ html {
 
 body {
   background: #ffffff;
-  /* Fallback for when there is no custom background color defined. */ }
+  /* Fallback for when there is no custom background color defined. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; }
 
 blockquote, q {
   quotes: '"' '"'; }
