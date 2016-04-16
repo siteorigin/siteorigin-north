@@ -47,9 +47,14 @@ code {
 	padding: 0 0.3em;
 }
 
-@include selection(true) {
-	background-color: $color__primary_accent;
-	color: #fff;
+::-moz-selection {
+  background-color: $color__primary_accent;
+  color: #fff;
+}
+
+::selection {
+  background-color: $color__primary_accent;
+  color: #fff;
 }
 
 @import "tables";
