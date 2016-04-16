@@ -586,7 +586,7 @@ a {
     .main-navigation ul li.focus:after {
       content: ''; }
   .main-navigation .menu > li.current-menu-item > a, .main-navigation .menu > li.current-menu-ancestor > a {
-    color: #c75d5d; }
+    color: #292929; }
   .main-navigation li {
     position: relative; }
   .main-navigation a {

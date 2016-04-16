@@ -111,7 +111,7 @@
 			&.current-menu-item,
 			&.current-menu-ancestor {
 				> a {
-					color: $color__primary_accent;
+					color: $navigation__link_hover_color;
 				}
 			}
 		}
