@@ -259,6 +259,7 @@ function siteorigin_north_settings_init(){
 				'fitvids'         => array(
 					'type'  => 'checkbox',
 					'label' => __( 'Use Fitvids', 'siteorigin-north' ),
+					'description' => __( 'Include FitVids.js for fluid width video embeds.', 'siteorigin-north' ),
 				)
 			)
 		),
