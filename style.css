@@ -758,13 +758,50 @@ a {
     list-style: none;
     padding: 0; }
     #mobile-navigation ul li {
-      line-height: 3.5em; }
+      line-height: 3.5em;
+      width: 100%;
+      position: relative; }
       #mobile-navigation ul li a {
+        display: block;
         text-decoration: none;
-        color: #fff; }
+        color: #fff;
+        width: 100% !important; }
+      #mobile-navigation ul li.menu-item-has-children > a {
+        padding-right: 40px; }
+      #mobile-navigation ul li .dropdown-toggle {
+        background: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 15px;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        outline: none;
+        box-shadow: none;
+        padding: 5px;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform-origin: 50% 50%;
+        -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        -o-transform-origin: 50% 50%;
+        transform-origin: 50% 50%; }
+        #mobile-navigation ul li .dropdown-toggle.toggle-open {
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
     #mobile-navigation ul ul {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      display: none; }
       #mobile-navigation ul ul li {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
