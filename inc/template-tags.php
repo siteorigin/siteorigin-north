@@ -181,52 +181,51 @@ function siteorigin_north_entry_footer() {
 endif;
 
 if( !function_exists('siteorigin_north_posts_pagination') ) :
-
-	/**
-	 * Display pagination
-	 */
-	function siteorigin_north_posts_pagination(){
-		global $wp_query;
-		if ( $wp_query->max_num_pages <= 1 ) {
-			return;
-		}
-
-		if ( is_rtl() ) {
-			$args = array(
-				'next_text' => '<span class="north-icon-double-previous"></span>',
-				'prev_text' => '<span class="north-icon-double-next"></span>',
-				'end_size'     => 3,
-				'mid_size'     => 3
-			);
-		} else {
-			$args = array(
-				'next_text' => '<span class="north-icon-double-next"></span>',
-				'prev_text' => '<span class="north-icon-double-previous"></span>',
-				'end_size'     => 3,
-				'mid_size'     => 3
-			);
-		}
-
-		if( is_search() ) {
-			// Add the arguments neccessary for search
-			global $wp_query;
-			$big = 999999999; // need an unlikely integer
-			$args = wp_parse_args( array(
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $wp_query->max_num_pages
-			), $args);
-		}
-
-		?><div class="post-pagination">
-		<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
-		echo paginate_links( $args );
-		?></div><?php
+/**
+ * Display pagination
+ */
+function siteorigin_north_posts_pagination(){
+	global $wp_query;
+	if ( $wp_query->max_num_pages <= 1 ) {
+		return;
 	}
 
+	if ( is_rtl() ) {
+		$args = array(
+			'next_text' => '<span class="north-icon-double-previous"></span>',
+			'prev_text' => '<span class="north-icon-double-next"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
+		);
+	} else {
+		$args = array(
+			'next_text' => '<span class="north-icon-double-next"></span>',
+			'prev_text' => '<span class="north-icon-double-previous"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
+		);
+	}
+
+	if( is_search() ) {
+		// Add the arguments neccessary for search
+		global $wp_query;
+		$big = 999999999; // need an unlikely integer
+		$args = wp_parse_args( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		), $args);
+	}
+
+	?><div class="post-pagination">
+	<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
+	echo paginate_links( $args );
+	?></div><?php
+}
 endif;
 
+if( !function_exists('siteorigin_north_categorized_blog') ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -257,6 +256,7 @@ function siteorigin_north_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
 if( !function_exists('siteorigin_north_comment') ) :
 function siteorigin_north_comment( $comment, $args, $depth ){
@@ -308,7 +308,7 @@ function siteorigin_north_footer_text(){
 }
 endif;
 
-
+if( !function_exists('siteorigin_north_category_transient_flusher') ) :
 /**
  * Flush out the transients used in siteorigin_north_categorized_blog.
  */
@@ -321,7 +321,9 @@ function siteorigin_north_category_transient_flusher() {
 }
 add_action( 'edit_category', 'siteorigin_north_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
+endif;
 
+if( !function_exists('siteorigin_north_display_icon') ) :
 function siteorigin_north_display_icon( $type ){
 	switch($type) {
 		case 'menu':
@@ -354,6 +356,7 @@ function siteorigin_north_display_icon( $type ){
 			break;
 	}
 }
+endif;
 
 if ( ! function_exists( 'siteorigin_north_breadcrumbs' ) ) :
 /**

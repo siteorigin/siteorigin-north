@@ -1,5 +1,6 @@
 <?php
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_change_hooks' ) ) :
 function siteorigin_north_woocommerce_change_hooks(){
 	// Move the price higher
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -26,16 +27,22 @@ function siteorigin_north_woocommerce_change_hooks(){
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
 }
 add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_quick_view_image' ) ) :
 function siteorigin_north_woocommerce_quick_view_image() {
 	echo woocommerce_get_product_thumbnail('shop_single');
 }
+endif;
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_add_to_cart_text' ) ) :
 function siteorigin_north_woocommerce_add_to_cart_text( $text ) {
 	return $text;
 }
 add_filter('woocommerce_product_single_add_to_cart_text', 'siteorigin_north_woocommerce_add_to_cart_text');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_styles' ) ) :
 function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 	$styles['northern-woocommerce'] = array(
 		'src' => get_template_directory_uri() . '/woocommerce.css',
@@ -67,7 +74,9 @@ function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 	return $styles;
 }
 add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_styles');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_scripts' ) ) :
 function siteorigin_north_woocommerce_enqueue_scripts( ){
 	if( !function_exists('is_woocommerce') ) return;
 
@@ -77,78 +86,77 @@ function siteorigin_north_woocommerce_enqueue_scripts( ){
 	}
 }
 add_filter('wp_enqueue_scripts', 'siteorigin_north_woocommerce_enqueue_scripts');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_loop_shop_columns' ) ) :
 function siteorigin_north_woocommerce_loop_shop_columns(){
 	return 3;
 }
 add_filter('loop_shop_columns', 'siteorigin_north_woocommerce_loop_shop_columns');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_woocommerce_related_product_args' ) ) :
 function siteorigin_north_woocommerce_related_product_args( $args ) {
 	$args['columns'] = 3;
 	$args['posts_per_page'] = 3;
 	return $args;
 }
 add_filter('woocommerce_output_related_products_args', 'siteorigin_north_woocommerce_related_product_args');
+endif;
 
-if( !function_exists('siteorigin_north_woocommerce_output_upsells') ) {
-
-	function siteorigin_north_woocommerce_output_upsells(){
-		woocommerce_upsell_display( -1, 3 );
-	}
-
+if( !function_exists('siteorigin_north_woocommerce_output_upsells') ) :
+function siteorigin_north_woocommerce_output_upsells(){
+	woocommerce_upsell_display( -1, 3 );
 }
+endif;
 
-if( !function_exists('siteorigin_north_woocommerce_template_single_undertitle_meta') ) {
-
-	function siteorigin_north_woocommerce_template_single_undertitle_meta(){
-		wc_get_template( 'single-product/meta-undertitle.php' );
-	}
-
+if( !function_exists('siteorigin_north_woocommerce_template_single_undertitle_meta') ) :
+function siteorigin_north_woocommerce_template_single_undertitle_meta(){
+	wc_get_template( 'single-product/meta-undertitle.php' );
 }
 add_action('woocommerce_single_product_summary', 'siteorigin_north_woocommerce_template_single_undertitle_meta', 7);
+endif;
 
-if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) {
+if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) :
 
-	function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
-		ob_start();
-		?>
-		<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
-		<?php
+function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
+	ob_start();
+	?>
+	<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+	<?php
 
-		$fragments['span.shopping-cart-count'] = ob_get_clean();
+	$fragments['span.shopping-cart-count'] = ob_get_clean();
 
-		return $fragments;
-	}
-
+	return $fragments;
 }
 add_filter('add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count');
+endif;
 
 // Add the quick view button in the products in loop
-if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) {
+if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
 
-	function siteorigin_north_woocommerce_quick_view_button() {
-		global $product;
-		if( siteorigin_setting( 'woocommerce_display_quick_view' ) ) :
-			echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
-		endif;
-	}
-
+function siteorigin_north_woocommerce_quick_view_button() {
+	global $product;
+	if( siteorigin_setting( 'woocommerce_display_quick_view' ) ) :
+		echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
+	endif;
 }
 add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
+endif;
 
 // Setup quick view modal in the footer
-if( !function_exists('siteorigin_north_woocommerce_quick_view') ) {
+if( !function_exists('siteorigin_north_woocommerce_quick_view') ) :
 
-	function siteorigin_north_woocommerce_quick_view() { ?>
-		<!-- WooCommerce Quick View -->
-		<div id="quick-view-container">
-			<div id="product-quick-view" class="quick-view"></div>
-		</div>
-	<?php }
-
-}
+function siteorigin_north_woocommerce_quick_view() { ?>
+	<!-- WooCommerce Quick View -->
+	<div id="quick-view-container">
+		<div id="product-quick-view" class="quick-view"></div>
+	</div>
+<?php }
 add_action( 'wp_footer', 'siteorigin_north_woocommerce_quick_view', 100 );
+endif;
 
+if ( ! function_exists( 'so_product_quick_view_ajax' ) ) :
 // Add quick view modal content
 function so_product_quick_view_ajax() {
 
@@ -172,6 +180,7 @@ function so_product_quick_view_ajax() {
 }
 add_action( 'wp_ajax_so_product_quick_view', 'so_product_quick_view_ajax');
 add_action( 'wp_ajax_nopriv_so_product_quick_view', 'so_product_quick_view_ajax');
+endif;
 
 /*
 * Enabling breadcrumbs in product pages and archives.
