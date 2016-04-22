@@ -1,6 +1,9 @@
 <?php
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_change_hooks' ) ) :
+/**
+ * Adjust hooks to accomodate design.
+ */
 function siteorigin_north_woocommerce_change_hooks(){
 	// Move the price higher
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -30,12 +33,18 @@ add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_quick_view_image' ) ) :
+/**
+ * Displays image in the product quick view.
+ */
 function siteorigin_north_woocommerce_quick_view_image() {
 	echo woocommerce_get_product_thumbnail('shop_single');
 }
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_add_to_cart_text' ) ) :
+/**
+ * Displays add to cart text.
+ */
 function siteorigin_north_woocommerce_add_to_cart_text( $text ) {
 	return $text;
 }
@@ -43,6 +52,9 @@ add_filter('woocommerce_product_single_add_to_cart_text', 'siteorigin_north_wooc
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_styles' ) ) :
+/**
+ * Enqueue WooCommerce styles.
+ */
 function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 	$styles['northern-woocommerce'] = array(
 		'src' => get_template_directory_uri() . '/woocommerce.css',
@@ -77,6 +89,9 @@ add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_s
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_scripts' ) ) :
+/**
+ * Enqueue WooCommerce scripts.
+ */
 function siteorigin_north_woocommerce_enqueue_scripts( ){
 	if( !function_exists('is_woocommerce') ) return;
 
@@ -89,6 +104,9 @@ add_filter('wp_enqueue_scripts', 'siteorigin_north_woocommerce_enqueue_scripts')
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_loop_shop_columns' ) ) :
+/**
+ * Define the number of columns in the loop.
+ */
 function siteorigin_north_woocommerce_loop_shop_columns(){
 	return 3;
 }
@@ -96,6 +114,9 @@ add_filter('loop_shop_columns', 'siteorigin_north_woocommerce_loop_shop_columns'
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_related_product_args' ) ) :
+/**
+ * Define the number of columns/posts_per_page for related products.
+ */
 function siteorigin_north_woocommerce_related_product_args( $args ) {
 	$args['columns'] = 3;
 	$args['posts_per_page'] = 3;
@@ -118,7 +139,9 @@ add_action('woocommerce_single_product_summary', 'siteorigin_north_woocommerce_t
 endif;
 
 if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) :
-
+/**
+ * Update cart count with the masthead cart icon.
+ */
 function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
 	ob_start();
 	?>
@@ -132,9 +155,10 @@ function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
 add_filter('add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count');
 endif;
 
-// Add the quick view button in the products in loop
 if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
-
+/**
+ * Add the quick view button in the products in loop.
+ */
 function siteorigin_north_woocommerce_quick_view_button() {
 	global $product;
 	if( siteorigin_setting( 'woocommerce_display_quick_view' ) ) :
@@ -144,9 +168,10 @@ function siteorigin_north_woocommerce_quick_view_button() {
 add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
 endif;
 
-// Setup quick view modal in the footer
 if( !function_exists('siteorigin_north_woocommerce_quick_view') ) :
-
+/**
+ * Setup quick view modal in the footer.
+ */
 function siteorigin_north_woocommerce_quick_view() { ?>
 	<!-- WooCommerce Quick View -->
 	<div id="quick-view-container">
@@ -157,7 +182,9 @@ add_action( 'wp_footer', 'siteorigin_north_woocommerce_quick_view', 100 );
 endif;
 
 if ( ! function_exists( 'so_product_quick_view_ajax' ) ) :
-// Add quick view modal content
+/**
+ * Add quick view modal content.
+ */
 function so_product_quick_view_ajax() {
 
 	if ( ! isset( $_REQUEST['product_id'] ) ) {

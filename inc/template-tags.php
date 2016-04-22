@@ -259,6 +259,9 @@ function siteorigin_north_categorized_blog() {
 endif;
 
 if( !function_exists('siteorigin_north_comment') ) :
+/**
+ * Returns the comment template.
+ */
 function siteorigin_north_comment( $comment, $args, $depth ){
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
@@ -297,6 +300,9 @@ function siteorigin_north_comment( $comment, $args, $depth ){
 endif;
 
 if( !function_exists('siteorigin_north_footer_text') ) :
+/**
+ * Displays the footer text.
+ */
 function siteorigin_north_footer_text(){
 	$text = siteorigin_setting('footer_text');
 	$text = str_replace(
@@ -324,6 +330,9 @@ add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
 endif;
 
 if( !function_exists('siteorigin_north_display_icon') ) :
+/**
+ * Displays svg icons.
+ */
 function siteorigin_north_display_icon( $type ){
 	switch($type) {
 		case 'menu':
@@ -353,7 +362,7 @@ function siteorigin_north_display_icon( $type ){
 				C8.3,9.7,8.2,9.4,8.2,9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3s0.5,0.1,0.7,0.3l2.1,2.1l2.1-2.1C14.3,8.3,14.6,8.2,14.8,8.2z"/>
 			</svg>
 			<?php
-			break;
+		break;
 	}
 }
 endif;

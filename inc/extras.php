@@ -112,7 +112,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 endif;
 
 if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
-/* Have a uniform size for the tag cloud */
+/*
+ * Have a uniform size for the tag cloud items
+ */
 function siteorigin_north_tag_cloud_widget($args) {
 	$args['largest'] = 0.8;  //largest tag
 	$args['smallest'] = 0.8; //smallest tag

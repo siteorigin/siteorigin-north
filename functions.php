@@ -210,6 +210,9 @@ add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 endif;
 
 if ( ! function_exists( 'siteorigin_north_filter_comment_form_default_fields' ) ) :
+/**
+ * Modify comments form - change placeholders
+ */
 function siteorigin_north_filter_comment_form_default_fields( $fields ){
 	$placeholders = apply_filters( 'siteorigin_north_comment_form_placeholders', array(
 		'author' => __( 'Enter Your Name', 'siteorigin-north' ),
@@ -262,6 +265,9 @@ add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_
 endif;
 
 if ( ! function_exists( 'siteorigin_north_filter_comment_form_defaults' ) ) :
+/**
+ * Modify comments form - make labels screen-reader-text
+ */
 function siteorigin_north_filter_comment_form_defaults( $defaults ){
 	$comment_placeholder = __( 'Enter your message', 'siteorigin-north' );
 	$default_comment     = array( '<label for="comment"', '<textarea id="comment" ' );
@@ -312,5 +318,4 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 /**
  * Load support for WooCommerce
  */
-
 include get_template_directory() . '/woocommerce/functions.php';
