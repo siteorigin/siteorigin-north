@@ -99,11 +99,18 @@ if ( ! function_exists( 'siteorigin_north_premium_setup' ) ) :
  * Add support for premium theme components
  */
 function siteorigin_north_premium_setup(){
+
 	// This theme supports the no attribution addon
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter'  => 'siteorigin_north_footer_credits',
 		'enabled' => siteorigin_setting( 'branding_attribution' ),
-		'theme_mod' => 'theme_settings_branding_attribution'
+		'siteorigin_setting' => 'branding_attribution'
+	) );
+
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'blog_ajax_comments' ),
+		'siteorigin_setting' => 'blog_ajax_comments'
 	) );
 }
 add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
