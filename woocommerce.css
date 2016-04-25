@@ -836,3 +836,129 @@
           padding: 5px 6px; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .single_add_to_cart_button {
       float: left; }
+
+/*--------------------------------------------------------------
+# WooCommerce Quick View
+--------------------------------------------------------------*/
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a,
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  color: #a94346;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 20px; }
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a:before,
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a:before,
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a:before {
+    font-family: 'north-icons';
+    content: "\e610"; }
+
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse .feedback,
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse .feedback,
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button .feedback {
+  display: none; }
+
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button .add_to_wishlist {
+  color: #b0b0b0; }
+  .woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button .add_to_wishlist:hover {
+    color: #c75d5d; }
+
+.woocommerce ul.products li.product .yith-wcwl-add-to-wishlist .ajax-loading {
+  position: absolute;
+  top: 40px;
+  left: 10px; }
+
+.woocommerce ul.products li.product:hover .yith-wcwl-add-button a,
+.woocommerce ul.products li.product:hover .yith-wcwl-wishlistaddedbrowse a,
+.woocommerce ul.products li.product:hover .yith-wcwl-wishlistexistsbrowse a {
+  visibility: visible;
+  opacity: 0.85; }
+  .woocommerce ul.products li.product:hover .yith-wcwl-add-button a:hover,
+  .woocommerce ul.products li.product:hover .yith-wcwl-wishlistaddedbrowse a:hover,
+  .woocommerce ul.products li.product:hover .yith-wcwl-wishlistexistsbrowse a:hover {
+    opacity: 1; }
+
+.woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
+.woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a {
+  text-decoration: none; }
+  .woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a:before,
+  .woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a:before {
+    font-family: 'north-icons';
+    content: "\e610"; }
+
+.woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a {
+  text-decoration: none; }
+
+.woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse .feedback:before {
+  font-family: 'north-icons';
+  content: "\e610\00a0"; }
+
+.woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button .add_to_wishlist {
+  color: #b0b0b0; }
+  .woocommerce.single #content div.product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button .add_to_wishlist:hover {
+    color: #a94346; }
+
+.woocommerce-wishlist .entry-content {
+  border: 1px solid #d3d3d3;
+  background: #f4f4f4;
+  padding: 15px; }
+
+.woocommerce-wishlist .wishlist_table thead th {
+  font-size: 0.9em; }
+
+.woocommerce-wishlist .wishlist_table thead .product-stock-stauts {
+  text-align: center; }
+
+.woocommerce-wishlist .wishlist_table tbody td {
+  font-size: 0.9em; }
+
+.woocommerce-wishlist .wishlist_table tbody .product-name a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold; }
+
+.woocommerce-wishlist .wishlist_table tbody .product-price ins {
+  background: transparent; }
+
+.woocommerce-wishlist .wishlist_table tbody .product-stock-status {
+  text-align: center; }
+
+.woocommerce-wishlist .wishlist_table tbody .product-add-to-cart {
+  text-align: center; }
+  .woocommerce-wishlist .wishlist_table tbody .product-add-to-cart .dateadded {
+    display: block;
+    text-align: center; }
+  .woocommerce-wishlist .wishlist_table tbody .product-add-to-cart .button {
+    background: transparent;
+    border: 1px solid #292929;
+    color: #292929;
+    font-weight: normal;
+    border-radius: 0px;
+    padding: 10px;
+    line-height: 1em;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: none;
+    -webkit-transition: 0.085s;
+    -moz-transition: 0.085s;
+    transition: 0.085s;
+    min-width: inherit; }
+    .woocommerce-wishlist .wishlist_table tbody .product-add-to-cart .button:hover {
+      background: #a94346;
+      color: #fff;
+      border-color: #a94346;
+      box-shadow: none; }
+    .woocommerce-wishlist .wishlist_table tbody .product-add-to-cart .button.add_to_cart_button:before {
+      font-family: 'north-icons';
+      content: "\e606\00a0"; }
+
+.woocommerce-wishlist .wishlist_table tfoot td {
+  border-top: none !important; }

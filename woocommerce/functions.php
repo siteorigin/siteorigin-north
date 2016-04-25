@@ -37,6 +37,7 @@ function siteorigin_north_woocommerce_add_to_cart_text( $text ) {
 add_filter('woocommerce_product_single_add_to_cart_text', 'siteorigin_north_woocommerce_add_to_cart_text');
 
 function siteorigin_north_woocommerce_enqueue_styles( $styles ){
+
 	$styles['northern-woocommerce'] = array(
 		'src' => get_template_directory_uri() . '/woocommerce.css',
 		'deps' => 'woocommerce-layout',
@@ -135,6 +136,28 @@ if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) {
 
 }
 add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
+
+// Deregister stylesheets from YITH wishlist plugin
+if( !function_exists('siteorigin_north_woocommerce_wishlist_styles') ) {
+	function siteorigin_north_woocommerce_wishlist_styles() {
+		if (class_exists('YITH_WCWL')) :
+			wp_deregister_style('yith-wcwl-font-awesome');
+			wp_deregister_style('yith-wcwl-main');
+		endif;
+	}
+}
+add_action( 'wp_enqueue_scripts', 'siteorigin_north_woocommerce_wishlist_styles' );
+
+// Insert YITH Wishlist link in the product loops and pages
+if( !function_exists('siteorigin_north_woocommerce_add_to_wishlist') ) {
+	function siteorigin_north_woocommerce_add_to_wishlist() {
+		if (class_exists('YITH_WCWL')) :
+			echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+		endif;
+	}
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'siteorigin_north_woocommerce_add_to_wishlist', 10 );
+add_action( 'woocommerce_single_product_summary', 'siteorigin_north_woocommerce_add_to_wishlist', 35 );
 
 // Setup quick view modal in the footer
 if( !function_exists('siteorigin_north_woocommerce_quick_view') ) {
