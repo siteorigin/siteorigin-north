@@ -106,6 +106,17 @@
 		}
 	}
 
+	.menu {
+		> li {
+			&.current-menu-item,
+			&.current-menu-ancestor {
+				> a {
+					color: $navigation__link_hover_color;
+				}
+			}
+		}
+	}
+
 	li {
 		position: relative;
 
