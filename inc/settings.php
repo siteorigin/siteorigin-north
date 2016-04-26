@@ -458,6 +458,9 @@ function siteorigin_north_settings_custom_css($css){
 	'.main-navigation ul ul a:hover,.main-navigation ul ul a.focus {' . "\n" .
 	'color: ${fonts_text_dark};' . "\n" .
 	'}' . "\n" .
+	'.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {' . "\n" .
+	'color: ${fonts_text_dark};' . "\n" .
+	'}' . "\n" .
 	'.main-navigation #mobile-menu-button:hover {' . "\n" .
 	'color: ${fonts_text_dark};' . "\n" .
 	'}' . "\n" .
