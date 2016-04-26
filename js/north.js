@@ -145,6 +145,14 @@ jQuery( function ( $ ) {
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
+
+		$('#mobile-navigation a').click(function(e){
+			if($mobileMenu.is(':visible') ) {
+				$mobileMenu.slideUp( 'fast' );
+			}
+			$$.removeClass( 'to-close' );
+		});
+
 	} );
 
 	// Handle the mobile menu dropdown when it extends beyond the viewport
