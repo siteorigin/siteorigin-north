@@ -92,16 +92,18 @@
 			}
 		}
 
-		li:hover,
-		li.focus {
-			> ul {
-				opacity: 1;
-				visibility: visible;
-				@include transform( scale(1) );
-			}
+		@at-root body.no-touch & {
+			li:hover,
+			li.focus {
+				> ul {
+					opacity: 1;
+					visibility: visible;
+					@include transform( scale(1) );
+				}
 
-			&:after {
-				content: '';
+				&:after {
+					content: '';
+				}
 			}
 		}
 	}

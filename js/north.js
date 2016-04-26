@@ -47,7 +47,6 @@
 	}
 )( jQuery );
 
-
 jQuery( function ( $ ) {
 
 	$( '.entry-meta a' ).hover(
@@ -61,6 +60,15 @@ jQuery( function ( $ ) {
 
 	if ( typeof $.fn.fitVids !== 'undefined' ) {
 		$( '.entry-content' ).fitVids();
+	}
+
+	// Remove the no-touch body class for touch devices
+	var isTouchDevice = 'ontouchstart' in document.documentElement;
+	if( isTouchDevice ) {
+		$('body').removeClass('no-touch');
+	}
+	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
+		
 	}
 
 	// Remove the no-js body class

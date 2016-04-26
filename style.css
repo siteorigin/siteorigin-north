@@ -575,8 +575,8 @@ a {
       .main-navigation ul ul a:hover,
       .main-navigation ul ul a.focus {
         color: #292929; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
+    body.no-touch .main-navigation ul li:hover > ul,
+    body.no-touch .main-navigation ul li.focus > ul {
       opacity: 1;
       visibility: visible;
       -webkit-transform: scale(1);
@@ -584,8 +584,8 @@ a {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    .main-navigation ul li:hover:after,
-    .main-navigation ul li.focus:after {
+    body.no-touch .main-navigation ul li:hover:after,
+    body.no-touch .main-navigation ul li.focus:after {
       content: ''; }
   .main-navigation .menu > li.current-menu-item > a, .main-navigation .menu > li.current-menu-ancestor > a {
     color: #292929; }
