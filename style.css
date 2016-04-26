@@ -775,6 +775,7 @@ a {
         font-size: 15px;
         position: absolute;
         top: 0;
+        bottom: 0;
         right: 5px;
         outline: none;
         box-shadow: none;

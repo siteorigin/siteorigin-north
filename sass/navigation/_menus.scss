@@ -369,6 +369,7 @@
 				font-size: 15px;
 				position: absolute;
 				top: 0;
+				bottom: 0;
 				right: 5px;
 				outline: none;
 				box-shadow: none;
@@ -376,7 +377,6 @@
 				@include transition (all 0.2s linear);
 				@include transform( rotate(90deg) );
 				@include transform-origin( 50% 50%);
-
 
 				&.toggle-open {
 					@include transform( rotate(-90deg) );
