@@ -587,6 +587,16 @@ a {
     body.no-touch .main-navigation ul li:hover:after,
     body.no-touch .main-navigation ul li.focus:after {
       content: ''; }
+    .main-navigation ul .touch-drop > ul {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1); }
+    .main-navigation ul .touch-drop:after {
+      content: ''; }
   .main-navigation .menu > li.current-menu-item > a, .main-navigation .menu > li.current-menu-ancestor > a {
     color: #292929; }
   .main-navigation li {

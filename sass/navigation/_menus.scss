@@ -106,6 +106,18 @@
 				}
 			}
 		}
+
+		.touch-drop {
+			> ul {
+				opacity: 1;
+				visibility: visible;
+				@include transform( scale(1) );
+			}
+
+			&:after {
+				content: '';
+			}
+		}
 	}
 
 	.menu {
