@@ -30,8 +30,8 @@ return array(
 		'masthead_bottom_margin' => 'masthead__bottom_margin',
 
 		// The mobile menu
-		//'responsive_mobile_menu_background_color' => 'mobilemenu__background_color',
-		//'responsive_mobile_menu_background_opacity' => 'mobilemenu__background_opacity',
+		'responsive_mobile_menu_background_color' => 'mobilemenu__background_color',
+		'responsive_mobile_menu_background_opacity' => 'mobilemenu__background_opacity',
 		'responsive_mobile_menu_text_color' => 'mobilemenu__text_color',
 
 		// The footer customizations

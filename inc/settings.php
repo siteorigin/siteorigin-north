@@ -274,9 +274,12 @@ function siteorigin_north_settings_init(){
 					'live'        => true,
 				),
 				'mobile_menu_background_opacity' => array(
-					'type'        => 'text',
+					'type'        => 'range',
 					'label'       => __( 'Mobile Menu Background Opacity', 'siteorigin-north' ),
 					'description' => __('0 is transparent and 1 is opaque', 'siteorigin-north'),
+					'min'         => 0,
+					'max'         => 1,
+					'step'        => 0.01,
 					'live'        => true,
 				),
 				'mobile_menu_text_color' => array(
@@ -485,6 +488,9 @@ function siteorigin_north_settings_custom_css($css){
 	'}' . "\n" .
 	'#header-search {' . "\n" .
 	'background: ${masthead_background_color};' . "\n" .
+	'}' . "\n" .
+	'#mobile-navigation {' . "\n" .
+	'background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});' . "\n" .
 	'}' . "\n" .
 	'#mobile-navigation form input[type="search"] {' . "\n" .
 	'color: ${responsive_mobile_menu_text_color};' . "\n" .
