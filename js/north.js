@@ -135,7 +135,13 @@ jQuery( function ( $ ) {
 				$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
 			}
 
-			$mobileMenu.find( 'ul' ).show().css( 'opacity', 1 );
+			$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
+
+			$mobileMenu.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="north-icon-next"></i></button>' );
+			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
+				e.preventDefault();
+				$( this ).toggleClass('toggle-open').next( '.children, .sub-menu' ).slideToggle('fast');
+			} );
 		}
 
 		$mobileMenu.slideToggle( 'fast' );

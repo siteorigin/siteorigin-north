@@ -359,23 +359,53 @@
 
 		li {
 			line-height: 3.5em;
+			width: 100%;
+			position: relative;
 
 			a {
+				display: block;
 				text-decoration: none;
 				color: #fff;
+				width: 100% !important;
+			}
+
+			&.menu-item-has-children > a {
+				padding-right: 40px;
+			}
+
+			.dropdown-toggle {
+				background: transparent;
+				border: 0;
+				color: #fff;
+				font-size: 15px;
+				position: absolute;
+				top: 0;
+				right: 5px;
+				line-height: 3em;
+				outline: none;
+				box-shadow: none;
+				padding: 5px;
+				@include transition (all 0.2s linear);
+				@include transform( rotate(90deg) );
+				@include transform-origin( 50% 50%);
+
+				&.toggle-open {
+					@include transform( rotate(-90deg) );
+					right: 3px;
+				}
 			}
 		}
 
 		ul {
 			margin: 0;
 			padding: 0;
+			display: none;
 
 			li {
 				padding-left: 2em;
 
 				ul {
 					display: none;
-
 				}
 			}
 		}
