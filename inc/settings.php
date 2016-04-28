@@ -1,5 +1,9 @@
 <?php
 
+if ( ! function_exists( 'siteorigin_north_settings_localize' ) ) :
+/**
+ * The default settings labels.
+ */
 function siteorigin_north_settings_localize( $loc ){
 	return wp_parse_args( array(
 		'section_title'       => __( 'Theme Settings', 'siteorigin-north' ),
@@ -14,7 +18,9 @@ function siteorigin_north_settings_localize( $loc ){
 	), $loc );
 }
 add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_settings_init' ) ) :
 /**
  * Initialize the settings
  */
@@ -281,6 +287,7 @@ function siteorigin_north_settings_init(){
 				'fitvids'         => array(
 					'type'  => 'checkbox',
 					'label' => __( 'Use Fitvids', 'siteorigin-north' ),
+					'description' => __( 'Include FitVids.js for fluid width video embeds.', 'siteorigin-north' ),
 				)
 			)
 		),
@@ -355,7 +362,9 @@ function siteorigin_north_settings_init(){
 	) ) );
 }
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_font_settings' ) ) :
 /**
  * Tell the settings framework which settings we're using as fonts
  *
@@ -388,7 +397,9 @@ function siteorigin_north_font_settings( $settings ) {
 	return $settings;
 }
 add_filter( 'siteorigin_settings_font_settings', 'siteorigin_north_font_settings' );
+endif;
 
+if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
 /**
  * Add custom CSS for the theme settings
  *
@@ -827,7 +838,9 @@ function siteorigin_north_settings_custom_css($css){
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
+endif;
 
+if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
 /**
  * Add CSS for mobile menu breakpoint
  */
@@ -868,8 +881,9 @@ function siteorigin_north_menu_breakpoint_css() {
 
 }
 add_action( 'wp_head', 'siteorigin_north_menu_breakpoint_css' );
+endif;
 
-
+if ( ! function_exists( 'siteorigin_north_settings_defaults' ) ) :
 /**
  * Add default settings.
  *
@@ -949,8 +963,9 @@ function siteorigin_north_settings_defaults( $defaults ){
 	return $defaults;
 }
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
+endif;
 
-
+if ( ! function_exists( 'siteorigin_north_setup_page_settings' ) ) :
 /**
  * Setup Page Settings for SiteOrigin North
  */
@@ -1013,7 +1028,9 @@ function siteorigin_north_setup_page_settings(){
 
 }
 add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_settings');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_setup_page_setting_defaults' ) ) :
 /**
  * Add the default Page Settings
  */
@@ -1029,7 +1046,9 @@ function siteorigin_north_setup_page_setting_defaults( $defaults ){
 	return $defaults;
 }
 add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
+endif;
 
+if ( ! function_exists( 'siteorigin_north_page_settings_panels_defaults' ) ) :
 /**
  * Change the default page settings for the home page.
  *
@@ -1044,3 +1063,4 @@ function siteorigin_north_page_settings_panels_defaults( $settings ){
 	return $settings;
 }
 add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_page_settings_panels_defaults');
+endif;
