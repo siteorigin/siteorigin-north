@@ -643,7 +643,9 @@
       width: 100%;
       float: none; }
     body.responsive .woocommerce form.woocommerce-checkout .checkout-details {
-      padding-left: 0; } }
+      padding-left: 0; }
+    body.responsive .woocommerce form.woocommerce-checkout .order-details {
+      margin-top: 40px; } }
 
 /*--------------------------------------------------------------
 # WooCommerce Widgets
