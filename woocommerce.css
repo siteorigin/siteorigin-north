@@ -410,6 +410,11 @@
       color: #fff;
       border-color: #a94346;
       box-shadow: none; }
+    @media (max-width: 768px) {
+      .woocommerce table.shop_table button {
+        margin-top: 0.5em; }
+        .woocommerce table.shop_table button[name="apply_coupon"] {
+          margin-top: 0; } }
 
 #mobile-navigation .shopping-cart-link {
   line-height: 3.5em;

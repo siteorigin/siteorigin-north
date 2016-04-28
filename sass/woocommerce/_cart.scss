@@ -148,6 +148,14 @@
 					border-color: $color__primary_accent_dark;
 					box-shadow: none;
 				}
+
+				@media (max-width: 768px) {
+					margin-top: 0.5em;
+
+					&[name="apply_coupon"] {
+						margin-top: 0;
+					}
+				}
 			}
 		}
 	}
