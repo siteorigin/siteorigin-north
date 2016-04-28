@@ -92,8 +92,22 @@
 			}
 		}
 
-		li:hover,
-		li.focus {
+		@at-root body.no-touch & {
+			li:hover,
+			li.focus {
+				> ul {
+					opacity: 1;
+					visibility: visible;
+					@include transform( scale(1) );
+				}
+
+				&:after {
+					content: '';
+				}
+			}
+		}
+
+		.touch-drop {
 			> ul {
 				opacity: 1;
 				visibility: visible;
