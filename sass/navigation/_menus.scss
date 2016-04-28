@@ -338,7 +338,7 @@
 	width: 100%;
 	padding: 15px 20px;
 
-	background: rgba(0,0,0,0.9);
+	background: rgba($mobilemenu__background_color, $mobilemenu__background_opacity);
 	z-index: 10;
 
 	form {
@@ -351,8 +351,8 @@
 			border: none;
 			background: transparent;
 			border-radius: 0;
-			color: #fff;
-			border-bottom: 1px solid #fff;
+			color: $mobilemenu__text_color;
+			border-bottom: 1px solid $mobilemenu__text_color;
 			width: 100%;
 			padding: 10px;
 
@@ -379,7 +379,7 @@
 			a {
 				display: block;
 				text-decoration: none;
-				color: #fff;
+				color: $mobilemenu__text_color;
 				width: 100% !important;
 			}
 
