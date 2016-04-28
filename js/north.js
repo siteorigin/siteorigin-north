@@ -47,7 +47,6 @@
 	}
 )( jQuery );
 
-
 jQuery( function ( $ ) {
 
 	$( '.entry-meta a' ).hover(
@@ -61,6 +60,37 @@ jQuery( function ( $ ) {
 
 	if ( typeof $.fn.fitVids !== 'undefined' ) {
 		$( '.entry-content' ).fitVids();
+	}
+
+	// Remove the no-touch body class for touch devices
+	var isTouchDevice = 'ontouchstart' in document.documentElement;
+	if( isTouchDevice ) {
+		$('body').removeClass('no-touch');
+	}
+	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
+		$('.main-navigation #primary-menu').find('.menu-item-has-children > a').each( function() {
+			$( this ).click( function(e){
+				var link = $(this);
+				e.stopPropagation();
+				link.parent().addClass('touch-drop');
+
+				if( link.hasClass('hover') ) {
+					unbind('click');
+				} else {
+					link.addClass('hover');
+					e.preventDefault();
+				}
+
+				$('.main-navigation #primary-menu > .menu-item-has-children:not(.touch-drop) > a').click( function() {
+					link.removeClass('hover').parent().removeClass('touch-drop');
+				} );
+
+				$(document).click( function() {
+					link.removeClass('hover').parent().removeClass('touch-drop');
+				} );
+
+			} );
+		} );
 	}
 
 	// Remove the no-js body class
@@ -135,7 +165,13 @@ jQuery( function ( $ ) {
 				$mobileMenu.append( $( '.main-navigation .shopping-cart .shopping-cart-link' ).clone() );
 			}
 
-			$mobileMenu.find( 'ul' ).show().css( 'opacity', 1 );
+			$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
+
+			$mobileMenu.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="north-icon-next"></i></button>' );
+			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
+				e.preventDefault();
+				$( this ).toggleClass('toggle-open').next( '.children, .sub-menu' ).slideToggle('fast');
+			} );
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
