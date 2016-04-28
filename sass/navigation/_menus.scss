@@ -380,8 +380,8 @@
 				font-size: 15px;
 				position: absolute;
 				top: 0;
-				bottom: 0;
 				right: 5px;
+				line-height: 3em;
 				outline: none;
 				box-shadow: none;
 				padding: 5px;
@@ -391,6 +391,7 @@
 
 				&.toggle-open {
 					@include transform( rotate(-90deg) );
+					right: 3px;
 				}
 			}
 		}

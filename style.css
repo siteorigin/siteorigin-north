@@ -779,8 +779,8 @@ a {
         font-size: 15px;
         position: absolute;
         top: 0;
-        bottom: 0;
         right: 5px;
+        line-height: 3em;
         outline: none;
         box-shadow: none;
         padding: 5px;
@@ -802,7 +802,8 @@ a {
           -moz-transform: rotate(-90deg);
           -ms-transform: rotate(-90deg);
           -o-transform: rotate(-90deg);
-          transform: rotate(-90deg); }
+          transform: rotate(-90deg);
+          right: 3px; }
     #mobile-navigation ul ul {
       margin: 0;
       padding: 0;
