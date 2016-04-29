@@ -2,3 +2,4 @@
 dist/
 tmp
 config.codekit
+npm-debug.log
