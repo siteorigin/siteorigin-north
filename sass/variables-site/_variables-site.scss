@@ -35,10 +35,14 @@ $masthead__padding: 30px;
 $masthead__bottom_margin: 30px;
 
 // Navigation colors
-$navigation__link_color: #999;
-$navigation__link_hover_color: #292929;
-$navigation__dropdown_background_color: #fff;
-$navigation__dropdown_border_color: #d4d4d4;
+$navigation__link_color: $color__text_light;
+$navigation__link_hover_color: $color__text_dark;
+$navigation__dropdown_background_color: $masthead__background_color;
+$navigation__dropdown_border_color: $masthead__border_color;
+
+$mobilemenu__background_color: #000;
+$mobilemenu__background_opacity: 0.9;
+$mobilemenu__text_color: #fff;
 
 // Footer
 $footer__background_color: #fafafa;
@@ -49,8 +53,8 @@ $footer__side_padding: 40px;
 $footer__top_margin: 30px;
 
 // Comments
-$comments__reply_link_color: #f2f2f2;
-$comments__reply_background_color: #292929;
+$comments__reply_link_color: $color__text_meta;
+$comments__reply_background_color: $color__text_dark;
 $comments__submit_hover_color: #fff;
 $comments__form_background_color: #fff;
 $comments__form_focus_background_color: #fcfcfc;

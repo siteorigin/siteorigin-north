@@ -410,6 +410,11 @@
       color: #fff;
       border-color: #a94346;
       box-shadow: none; }
+    @media (max-width: 768px) {
+      .woocommerce table.shop_table button {
+        margin-top: 0.5em; }
+        .woocommerce table.shop_table button[name="apply_coupon"] {
+          margin-top: 0; } }
 
 #mobile-navigation .shopping-cart-link {
   line-height: 3.5em;
@@ -638,10 +643,14 @@
           border-color: #a94346;
           box-shadow: none; }
   @media (max-width: 768px) {
-    body.responsive.woocommerce form.woocommerce-checkout .checkout-details,
-    body.responsive.woocommerce form.woocommerce-checkout .order-details {
+    body.responsive .woocommerce form.woocommerce-checkout .checkout-details,
+    body.responsive .woocommerce form.woocommerce-checkout .order-details {
       width: 100%;
-      float: none; } }
+      float: none; }
+    body.responsive .woocommerce form.woocommerce-checkout .checkout-details {
+      padding-left: 0; }
+    body.responsive .woocommerce form.woocommerce-checkout .order-details {
+      margin-top: 40px; } }
 
 /*--------------------------------------------------------------
 # WooCommerce Widgets
