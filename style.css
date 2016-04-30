@@ -304,6 +304,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility; }
+  body.responsive {
+    overflow-x: hidden; }
 
 blockquote, q {
   quotes: '"' '"'; }
@@ -515,7 +517,7 @@ a {
         padding-left: 30px;
         padding-right: 30px; }
     .main-navigation ul a {
-      color: #999; }
+      color: #898989; }
       .main-navigation ul a:hover {
         color: #292929; }
     .main-navigation ul ul {
@@ -538,7 +540,7 @@ a {
       -ms-transform: scale(0.95);
       -o-transform: scale(0.95);
       transform: scale(0.95);
-      background-color: #fff;
+      background-color: #fafafa;
       border: 1px solid #d4d4d4;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); }
       .main-navigation ul ul ul {
@@ -573,8 +575,8 @@ a {
       .main-navigation ul ul a:hover,
       .main-navigation ul ul a.focus {
         color: #292929; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
+    body.no-touch .main-navigation ul li:hover > ul,
+    body.no-touch .main-navigation ul li.focus > ul {
       opacity: 1;
       visibility: visible;
       -webkit-transform: scale(1);
@@ -582,9 +584,21 @@ a {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-    .main-navigation ul li:hover:after,
-    .main-navigation ul li.focus:after {
+    body.no-touch .main-navigation ul li:hover:after,
+    body.no-touch .main-navigation ul li.focus:after {
       content: ''; }
+    .main-navigation ul .touch-drop > ul {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1); }
+    .main-navigation ul .touch-drop:after {
+      content: ''; }
+  .main-navigation .menu > li.current-menu-item > a, .main-navigation .menu > li.current-menu-ancestor > a {
+    color: #292929; }
   .main-navigation li {
     position: relative; }
   .main-navigation a {
@@ -758,13 +772,52 @@ a {
     list-style: none;
     padding: 0; }
     #mobile-navigation ul li {
-      line-height: 3.5em; }
+      line-height: 3.5em;
+      width: 100%;
+      position: relative; }
       #mobile-navigation ul li a {
+        display: block;
         text-decoration: none;
-        color: #fff; }
+        color: #fff;
+        width: 100% !important; }
+      #mobile-navigation ul li.menu-item-has-children > a {
+        padding-right: 40px; }
+      #mobile-navigation ul li .dropdown-toggle {
+        background: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 15px;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        line-height: 3em;
+        outline: none;
+        box-shadow: none;
+        padding: 5px;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform-origin: 50% 50%;
+        -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        -o-transform-origin: 50% 50%;
+        transform-origin: 50% 50%; }
+        #mobile-navigation ul li .dropdown-toggle.toggle-open {
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          right: 3px; }
     #mobile-navigation ul ul {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      display: none; }
       #mobile-navigation ul ul li {
         padding-left: 2em; }
         #mobile-navigation ul ul li ul {
@@ -1648,7 +1701,7 @@ a {
         display: block; }
     .comment-list li.comment .comment-reply-link {
       float: right;
-      color: #f2f2f2;
+      color: #b0b0b0;
       text-decoration: none;
       font-size: 0.8em;
       line-height: 1em;
