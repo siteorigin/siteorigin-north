@@ -165,7 +165,7 @@
 	.shopping-cart-link {
 		line-height: 3.5em;
 		text-decoration: none;
-		color: #fff;
+		color: $mobilemenu__text_color;
 
 		.north-icon-cart {
 			font-size: 16px;
@@ -175,7 +175,7 @@
 	.shopping-cart-count {
 		font-size: 10px;
 		padding: 2px 4px;
-		border: 2px solid #fff;
+		border: 2px solid $mobilemenu__text_color;
 		border-radius: 50%;
 	}
 }

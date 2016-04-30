@@ -499,6 +499,9 @@ function siteorigin_north_settings_custom_css($css){
 	'#mobile-navigation ul li a {' . "\n" .
 	'color: ${responsive_mobile_menu_text_color};' . "\n" .
 	'}' . "\n" .
+	'#mobile-navigation ul li .dropdown-toggle {' . "\n" .
+	'color: ${responsive_mobile_menu_text_color};' . "\n" .
+	'}' . "\n" .
 	'.tagcloud a {' . "\n" .
 	'background: ${fonts_text_meta};' . "\n" .
 	'}' . "\n" .
@@ -745,6 +748,12 @@ function siteorigin_north_settings_custom_css($css){
 	'.woocommerce table.shop_table button:hover {' . "\n" .
 	'background: ${branding_accent_dark};' . "\n" .
 	'border-color: ${branding_accent_dark};' . "\n" .
+	'}' . "\n" .
+	'#mobile-navigation .shopping-cart-link {' . "\n" .
+	'color: ${responsive_mobile_menu_text_color};' . "\n" .
+	'}' . "\n" .
+	'#mobile-navigation .shopping-cart-count {' . "\n" .
+	'border: 2px solid ${responsive_mobile_menu_text_color};' . "\n" .
 	'}' . "\n" .
 	'.main-navigation .shopping-cart:hover .north-icon-cart {' . "\n" .
 	'background: ${branding_accent_dark};' . "\n" .
