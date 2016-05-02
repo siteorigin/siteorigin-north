@@ -271,7 +271,6 @@ function siteorigin_north_settings_init(){
 				'mobile_menu_background_opacity' => array(
 					'type'        => 'range',
 					'label'       => __( 'Mobile Menu Background Opacity', 'siteorigin-north' ),
-					'description' => __('0 is transparent and 1 is opaque', 'siteorigin-north'),
 					'min'         => 0,
 					'max'         => 1,
 					'step'        => 0.01,
