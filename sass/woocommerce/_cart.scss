@@ -163,20 +163,31 @@
 
 #mobile-navigation {
 	.shopping-cart-link {
-		line-height: 3.5em;
+		margin-top: 1em;
 		text-decoration: none;
 		color: $mobilemenu__text_color;
+		float: left;
+
+		> * {
+			float: left;
+		}
 
 		.north-icon-cart {
+			float: left;
+			margin: 2px 0.75em 0 0;
 			font-size: 16px;
 		}
-	}
 
-	.shopping-cart-count {
-		font-size: 10px;
-		padding: 2px 4px;
-		border: 2px solid $mobilemenu__text_color;
-		border-radius: 50%;
+		.shopping-cart-count {
+			line-height: 1em;
+			margin: 1px 0 0 1em;
+			font-size: 10px;
+			padding: 4px;
+			border: 2px solid rgba( $mobilemenu__text_color, 0.8 );
+			border-radius: 50%;
+			min-width: 21px;
+			text-align: center;
+		}
 	}
 }
 

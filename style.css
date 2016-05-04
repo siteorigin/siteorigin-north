@@ -765,6 +765,12 @@ a {
       padding: 10px; }
       #mobile-navigation form input[type="search"]:focus {
         outline: none; }
+    #mobile-navigation form ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.7); }
+    #mobile-navigation form ::-moz-placeholder {
+      color: rgba(255, 255, 255, 0.7); }
+    #mobile-navigation form :-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.7); }
     #mobile-navigation form button[type="submit"] {
       display: none; }
   #mobile-navigation ul {

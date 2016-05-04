@@ -490,6 +490,15 @@ function siteorigin_north_settings_custom_css($css){
 	'color: ${responsive_mobile_menu_text_color};' . "\n" .
 	'border-bottom: 1px solid ${responsive_mobile_menu_text_color};' . "\n" .
 	'}' . "\n" .
+	'#mobile-navigation form ::-webkit-input-placeholder {' . "\n" .
+	'color: .rgba( ${ $mobilemenu__text_color}, ${0.7 });' . "\n" .
+	'}' . "\n" .
+	'#mobile-navigation form ::-moz-placeholder {' . "\n" .
+	'color: .rgba( ${ $mobilemenu__text_color}, ${0.7 });' . "\n" .
+	'}' . "\n" .
+	'#mobile-navigation form :-ms-input-placeholder {' . "\n" .
+	'color: .rgba( ${ $mobilemenu__text_color}, ${0.7 });' . "\n" .
+	'}' . "\n" .
 	'#mobile-navigation ul li a {' . "\n" .
 	'color: ${responsive_mobile_menu_text_color};' . "\n" .
 	'}' . "\n" .
@@ -746,8 +755,8 @@ function siteorigin_north_settings_custom_css($css){
 	'#mobile-navigation .shopping-cart-link {' . "\n" .
 	'color: ${responsive_mobile_menu_text_color};' . "\n" .
 	'}' . "\n" .
-	'#mobile-navigation .shopping-cart-count {' . "\n" .
-	'border: 2px solid ${responsive_mobile_menu_text_color};' . "\n" .
+	'#mobile-navigation .shopping-cart-link .shopping-cart-count {' . "\n" .
+	'border: 2px solid .rgba( ${ $mobilemenu__text_color}, ${0.8 });' . "\n" .
 	'}' . "\n" .
 	'.main-navigation .shopping-cart:hover .north-icon-cart {' . "\n" .
 	'background: ${branding_accent_dark};' . "\n" .
