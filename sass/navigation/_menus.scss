@@ -355,20 +355,13 @@
 			border-bottom: 1px solid $mobilemenu__text_color;
 			width: 100%;
 			padding: 10px;
+			@include placeholder {
+				color: rgba( $mobilemenu__text_color, 0.7 );
+			}
 
 			&:focus {
 				outline: none;
 			}
-		}
-
-		::-webkit-input-placeholder {
-			color: rgba( $mobilemenu__text_color, 0.7 );
-		}
-		::-moz-placeholder {
-			color: rgba( $mobilemenu__text_color, 0.7 );
-		}
-		:-ms-input-placeholder {
-			color: rgba( $mobilemenu__text_color, 0.7 );
 		}
 
 		button[type="submit"] {
