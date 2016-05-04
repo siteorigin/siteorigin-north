@@ -98,11 +98,16 @@
 
 	@include transition(0.35s);
 
-	img {
+	img, svg {
+		height: 24px;
+		width: 24px;
+	}
+
+	img, svg {
 		@include transition(0.35s);
 	}
 
-	img {
+	img, svg {
 		display: block;
 		@include transform-origin(center center);
 		@include transform( rotate(-90deg) );
@@ -112,7 +117,7 @@
 		opacity: 1;
 		@include transform( scale(1) );
 
-		img {
+		img, svg {
 			@include transform( rotate(0deg) );
 		}
 	}

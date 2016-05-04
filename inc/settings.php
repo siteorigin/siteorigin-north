@@ -115,8 +115,28 @@ function siteorigin_north_settings_init(){
 
 			),
 		),
-		'structure'   => array(
-			'title'  => __( 'Page Structure', 'siteorigin-north' ),
+
+		'icons' => array(
+			'title' => __('Icons', 'siteorigin-north'),
+			'fields' => array(
+
+				'menu' => array(
+					'type' => 'media',
+					'label' => __('Responsive menu icon', 'siteorigin-north'),
+				),
+				'close_search' => array(
+					'type' => 'media',
+					'label' => __('Close search bar icon', 'siteorigin-north'),
+				),
+				'scroll_to_top' => array(
+					'type' => 'media',
+					'label' => __('Scroll to top icon', 'siteorigin-north'),
+				),
+			),
+		),
+
+		'structure' => array(
+			'title' => __('Page Structure', 'siteorigin-north'),
 			'fields' => array(
 				'sidebar_width' => array(
 					'label'             => __( 'Sidebar Width', 'siteorigin-north' ),
@@ -928,6 +948,11 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['fonts_text_medium'] = '#595959';
 	$defaults['fonts_text_light']  = '#898989';
 	$defaults['fonts_text_meta']   = '#b0b0b0';
+
+	// Icon defaults
+	$defaults['icons_menu'] = false;
+	$defaults['icons_close_search'] = false;
+	$defaults['icons_scroll_to_top'] = false;
 
 	// Double % because values are passed through get_theme_mod so must be escaped for sprintf
 	$defaults['structure_sidebar_width'] = '35%%';

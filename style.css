@@ -707,14 +707,7 @@ a {
       outline: none; }
   #header-search button[type="submit"] {
     display: none; }
-  #header-search .svg-icon-close {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    margin-top: -12px;
+  #header-search #close-search {
     -webkit-transition: 0.35s;
     -moz-transition: 0.35s;
     transition: 0.35s;
@@ -728,16 +721,24 @@ a {
     -ms-transform: scale(0.575) translateX(3px) translateY(-3px);
     -o-transform: scale(0.575) translateX(3px) translateY(-3px);
     transform: scale(0.575) translateX(3px) translateY(-3px); }
-    #header-search .svg-icon-close path {
-      fill: #666666; }
-    #header-search .svg-icon-close:hover path {
-      fill: #333; }
-    #header-search .svg-icon-close.animate-in {
+    #header-search #close-search.animate-in {
       -webkit-transform: scale(1) rotate(90deg);
       -moz-transform: scale(1) rotate(90deg);
       -ms-transform: scale(1) rotate(90deg);
       -o-transform: scale(1) rotate(90deg);
       transform: scale(1) rotate(90deg); }
+    #header-search #close-search .svg-icon-close {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin-top: -12px; }
+      #header-search #close-search .svg-icon-close path {
+        fill: #666666; }
+      #header-search #close-search .svg-icon-close:hover path {
+        fill: #333; }
   @media screen and (max-width: 600px) {
     #header-search {
       display: none !important; } }
@@ -1416,11 +1417,14 @@ a {
   -webkit-transition: 0.35s;
   -moz-transition: 0.35s;
   transition: 0.35s; }
-  #scroll-to-top img {
+  #scroll-to-top img, #scroll-to-top svg {
+    height: 24px;
+    width: 24px; }
+  #scroll-to-top img, #scroll-to-top svg {
     -webkit-transition: 0.35s;
     -moz-transition: 0.35s;
     transition: 0.35s; }
-  #scroll-to-top img {
+  #scroll-to-top img, #scroll-to-top svg {
     display: block;
     -webkit-transform-origin: center center;
     -moz-transform-origin: center center;
@@ -1439,7 +1443,7 @@ a {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1); }
-    #scroll-to-top.show img {
+    #scroll-to-top.show img, #scroll-to-top.show svg {
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);

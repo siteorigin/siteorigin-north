@@ -50,10 +50,10 @@
 </div><!-- #page -->
 
 <?php if( siteorigin_setting('navigation_scroll_to_top') ) : ?>
-	<button id="scroll-to-top">
+	<div id="scroll-to-top">
 		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-north' ); ?></span>
-		<img src="<?php echo get_template_directory_uri() ?>/images/up-arrow.svg" width="24px" height="24px" />
-	</button>
+		<?php siteorigin_north_display_icon('up-arrow') ?>
+	</div>
 <?php endif; ?>
 
 <?php wp_footer(); ?>

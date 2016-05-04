@@ -338,7 +338,7 @@ jQuery( function ( $ ) {
 		$hs.find( 'input[type="search"]' ).focus().select();
 		$hs.find( '.svg-icon-close' ).attr( "class", "svg-icon-close animate-in" );
 	} );
-	$hs.find( '.svg-icon-close' ).click( function () {
+	$hs.find( '#close-search' ).click( function () {
 		$hs.fadeOut( 350 );
 		$( this ).attr( "class", "svg-icon-close" );
 	} );
