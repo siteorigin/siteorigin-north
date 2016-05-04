@@ -406,7 +406,7 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  */
 function siteorigin_north_settings_custom_css($css){
 	// Custom CSS Code
-	$css .= '/* style */
+$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -490,16 +490,22 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${responsive_mobile_menu_text_color};
 	border-bottom: 1px solid ${responsive_mobile_menu_text_color};
 	}
-	#mobile-navigation form ::-webkit-input-placeholder {
+	#mobile-navigation form input[type="search"]::-webkit-input-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
-	#mobile-navigation form ::-moz-placeholder {
+	#mobile-navigation form input[type="search"]::-moz-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
-	#mobile-navigation form :-ms-input-placeholder {
+	#mobile-navigation form input[type="search"]:-moz-placeholder {
+	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
+	}
+	#mobile-navigation form input[type="search"]:-ms-input-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
 	#mobile-navigation ul li a {
+	color: ${responsive_mobile_menu_text_color};
+	}
+	#mobile-navigation ul li .dropdown-toggle {
 	color: ${responsive_mobile_menu_text_color};
 	}
 	.tagcloud a {
@@ -850,6 +856,8 @@ function siteorigin_north_settings_custom_css($css){
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
 	}';
+
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
