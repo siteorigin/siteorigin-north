@@ -7,6 +7,7 @@
  * @package siteorigin-north
  */
 
+if ( ! function_exists( 'siteorigin_north_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -21,6 +22,7 @@ function siteorigin_north_body_classes( $classes ) {
 
 	$classes[] = 'no-js';
 	$classes[] = 'css3-animations';
+	$classes[] = 'no-touch';
 	if ( siteorigin_setting( 'responsive_disabled' ) == false ) {
 		$classes[] = 'responsive';
 	}
@@ -33,6 +35,12 @@ function siteorigin_north_body_classes( $classes ) {
 		}
 		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
 			$classes[] = 'page-layout-no-footer-margin';
+		}
+		if( SiteOrigin_Settings_Page_Settings::get('hide_masthead') ) {
+			$classes[] = 'page-layout-hide-masthead';
+		}
+		if( SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) {
+			$classes[] = 'page-layout-hide-footer-widgets';
 		}
 	}
 
@@ -51,8 +59,10 @@ function siteorigin_north_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'siteorigin_north_body_classes' );
+endif;
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	if ( ! function_exists( 'siteorigin_north_wp_title' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
 	 *
@@ -84,7 +94,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		return $title;
 	}
 	add_filter( 'wp_title', 'siteorigin_north_wp_title', 10, 2 );
+	endif;
 
+	if ( ! function_exists( 'siteorigin_north_render_title' ) ) :
 	/**
 	 * Title shim for sites older than WordPress 4.1.
 	 *
@@ -97,4 +109,18 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		<?php
 	}
 	add_action( 'wp_head', 'siteorigin_north_render_title' );
+	endif;
+endif;
+
+if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
+/*
+ * Have a uniform size for the tag cloud items
+ */
+function siteorigin_north_tag_cloud_widget($args) {
+	$args['largest'] = 0.8;  //largest tag
+	$args['smallest'] = 0.8; //smallest tag
+	$args['unit'] = 'em';    //tag font unit
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );
 endif;

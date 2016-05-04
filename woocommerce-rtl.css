@@ -88,6 +88,20 @@
   left: 0;
   margin: -.5em 0 0 -.5em; }
 
+.woocommerce .woocommerce-ordering .ordering-selector-wrapper .north-icon-previous {
+  float: left;
+  margin: 0 10px 0 -3px;
+  -webkit-transition: all 0.15s ease-in;
+  -moz-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in; }
+
+.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover .north-icon-previous {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
 .woocommerce nav.woocommerce-pagination ul {
   border-right: 1px solid #d3ced3;
   border-left: 0; }
@@ -157,7 +171,6 @@
   border-right: inherit; }
 
 .woocommerce p.stars a.star-1, .woocommerce p.stars a.star-2, .woocommerce p.stars a.star-3, .woocommerce p.stars a.star-4, .woocommerce p.stars a.star-5 {
-  border-left: 1px solid #ccc;
   border-right: 0; }
   .woocommerce p.stars a.star-1:after, .woocommerce p.stars a.star-2:after, .woocommerce p.stars a.star-3:after, .woocommerce p.stars a.star-4:after, .woocommerce p.stars a.star-5:after {
     left: auto;
@@ -331,44 +344,50 @@
 .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
   float: left; }
 
-.woocommerce div.product div.images,
-.woocommerce #content div.product div.images, .woocommerce-page div.product div.images,
-.woocommerce-page #content div.product div.images {
+.woocommerce.single div.product div.images,
+.woocommerce.single #content div.product div.images, .woocommerce-page.single div.product div.images,
+.woocommerce-page.single #content div.product div.images {
   float: right; }
 
-.woocommerce div.product div.thumbnails a,
-.woocommerce #content div.product div.thumbnails a, .woocommerce-page div.product div.thumbnails a,
-.woocommerce-page #content div.product div.thumbnails a {
+.woocommerce.single div.product div.thumbnails a,
+.woocommerce.single #content div.product div.thumbnails a, .woocommerce-page.single div.product div.thumbnails a,
+.woocommerce-page.single #content div.product div.thumbnails a {
   float: right;
   margin-right: auto;
   margin-left: 3.8%; }
 
-.woocommerce div.product div.thumbnails a.last,
-.woocommerce #content div.product div.thumbnails a.last, .woocommerce-page div.product div.thumbnails a.last,
-.woocommerce-page #content div.product div.thumbnails a.last {
+.woocommerce.single div.product div.thumbnails a.last,
+.woocommerce.single #content div.product div.thumbnails a.last, .woocommerce-page.single div.product div.thumbnails a.last,
+.woocommerce-page.single #content div.product div.thumbnails a.last {
   margin-right: auto;
   margin-left: 0; }
 
-.woocommerce div.product div.thumbnails.columns-1 a,
-.woocommerce #content div.product div.thumbnails.columns-1 a, .woocommerce-page div.product div.thumbnails.columns-1 a,
-.woocommerce-page #content div.product div.thumbnails.columns-1 a {
+.woocommerce.single div.product div.thumbnails.columns-1 a,
+.woocommerce.single #content div.product div.thumbnails.columns-1 a, .woocommerce-page.single div.product div.thumbnails.columns-1 a,
+.woocommerce-page.single #content div.product div.thumbnails.columns-1 a {
   margin-right: auto;
   margin-left: 0; }
 
-.woocommerce div.product div.summary,
-.woocommerce #content div.product div.summary, .woocommerce-page div.product div.summary,
-.woocommerce-page #content div.product div.summary {
+.woocommerce.single div.product div.summary,
+.woocommerce.single #content div.product div.summary, .woocommerce-page.single div.product div.summary,
+.woocommerce-page.single #content div.product div.summary {
   float: left; }
 
-.woocommerce div.product .woocommerce-tabs ul.tabs img,
-.woocommerce #content div.product .woocommerce-tabs ul.tabs img, .woocommerce-page div.product .woocommerce-tabs ul.tabs img,
-.woocommerce-page #content div.product .woocommerce-tabs ul.tabs img {
+.woocommerce.single div.product .woocommerce-tabs ul.tabs img,
+.woocommerce.single #content div.product .woocommerce-tabs ul.tabs img, .woocommerce-page.single div.product .woocommerce-tabs ul.tabs img,
+.woocommerce-page.single #content div.product .woocommerce-tabs ul.tabs img {
   float: left; }
 
-.woocommerce div.product #reviews .comment img,
-.woocommerce #content div.product #reviews .comment img, .woocommerce-page div.product #reviews .comment img,
-.woocommerce-page #content div.product #reviews .comment img {
+.woocommerce.single div.product #reviews .comment img,
+.woocommerce.single #content div.product #reviews .comment img, .woocommerce-page.single div.product #reviews .comment img,
+.woocommerce-page.single #content div.product #reviews .comment img {
   float: left; }
+
+.woocommerce.single div.product #reviews #review_form_wrapper .stars,
+.woocommerce.single #content div.product #reviews #review_form_wrapper .stars, .woocommerce-page.single div.product #reviews #review_form_wrapper .stars,
+.woocommerce-page.single #content div.product #reviews #review_form_wrapper .stars {
+  left: auto;
+  right: 10px; }
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   float: right;
@@ -450,6 +469,30 @@
     margin-right: auto;
     margin-left: 0; }
 
+.woocommerce table.shop_table .cart_totals h2 {
+  text-align: right; }
+
+.woocommerce table.shop_table .cart-item-product-name {
+  left: auto;
+  right: 20px; }
+
+.woocommerce table.shop_table .remove {
+  float: left; }
+
+.woocommerce form.woocommerce-checkout .order-details table.shop_table .product-name .product-quantity {
+  text-align: right; }
+
+.woocommerce form.woocommerce-checkout .order-details table.shop_table .product-total {
+  text-align: left; }
+
+.woocommerce form.woocommerce-checkout .checkout-details {
+  float: left;
+  padding-left: 0;
+  padding-right: 30px; }
+
+.woocommerce form.woocommerce-checkout .order-details {
+  float: right; }
+
 .woocommerce button.button.alt:hover,
 .woocommerce #review_form #respond .form-submit input:hover,
 .woocommerce .woocommerce-message .button:hover,
@@ -494,3 +537,13 @@
   .woocommerce #reviews #comments ol.commentlist li .comment-text {
     margin-left: auto;
     margin-right: 85px; }
+
+.main-navigation .shopping-cart {
+  margin-left: auto;
+  margin-right: 0.8em; }
+  .main-navigation .shopping-cart .shopping-cart-count {
+    left: 0;
+    right: -11px; }
+  .main-navigation .shopping-cart .shopping-cart-dropdown {
+    right: auto;
+    left: 0; }

@@ -43,36 +43,6 @@ function siteorigin_north_display_retina_logo( $attr ){
 add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 endif;
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function the_posts_navigation() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation posts-navigation" role="navigation">
-		<h3 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-north' ); ?></h3>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'siteorigin-north' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'siteorigin-north' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
 if ( ! function_exists( 'siteorigin_north_the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -181,13 +151,14 @@ function siteorigin_north_entry_footer() {
 		if ( siteorigin_setting('blog_display_author_box') ) { ?>
 			<div class="author-box">
 				<h2 class="author-title">
-					<?php echo get_the_author(); ?>
+					<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
 					<small class="author-info">
 						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 							<?php _e( 'View posts by ', 'siteorigin-north' );
 							echo get_the_author(); ?>
 						</a>
 					</small>
+					<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
 				</h2>
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
@@ -210,52 +181,51 @@ function siteorigin_north_entry_footer() {
 endif;
 
 if( !function_exists('siteorigin_north_posts_pagination') ) :
-
-	/**
-	 * Display pagination
-	 */
-	function siteorigin_north_posts_pagination(){
-		global $wp_query;
-		if ( $wp_query->max_num_pages <= 1 ) {
-			return;
-		}
-
-		if ( is_rtl() ) {
-			$args = array(
-				'next_text' => '<span class="north-icon-double-previous"></span>',
-				'prev_text' => '<span class="north-icon-double-next"></span>',
-				'end_size'     => 3,
-				'mid_size'     => 3
-			);
-		} else {
-			$args = array(
-				'next_text' => '<span class="north-icon-double-next"></span>',
-				'prev_text' => '<span class="north-icon-double-previous"></span>',
-				'end_size'     => 3,
-				'mid_size'     => 3
-			);
-		}
-
-		if( is_search() ) {
-			// Add the arguments neccessary for search
-			global $wp_query;
-			$big = 999999999; // need an unlikely integer
-			$args = wp_parse_args( array(
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $wp_query->max_num_pages
-			), $args);
-		}
-
-		?><div class="post-pagination">
-		<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
-		echo paginate_links( $args );
-		?></div><?php
+/**
+ * Display pagination
+ */
+function siteorigin_north_posts_pagination(){
+	global $wp_query;
+	if ( $wp_query->max_num_pages <= 1 ) {
+		return;
 	}
 
+	if ( is_rtl() ) {
+		$args = array(
+			'next_text' => '<span class="north-icon-double-previous"></span>',
+			'prev_text' => '<span class="north-icon-double-next"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
+		);
+	} else {
+		$args = array(
+			'next_text' => '<span class="north-icon-double-next"></span>',
+			'prev_text' => '<span class="north-icon-double-previous"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
+		);
+	}
+
+	if( is_search() ) {
+		// Add the arguments neccessary for search
+		global $wp_query;
+		$big = 999999999; // need an unlikely integer
+		$args = wp_parse_args( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		), $args);
+	}
+
+	?><div class="post-pagination">
+	<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
+	echo paginate_links( $args );
+	?></div><?php
+}
 endif;
 
+if( !function_exists('siteorigin_north_categorized_blog') ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -286,8 +256,12 @@ function siteorigin_north_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
 if( !function_exists('siteorigin_north_comment') ) :
+/**
+ * Returns the comment template.
+ */
 function siteorigin_north_comment( $comment, $args, $depth ){
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
@@ -326,6 +300,9 @@ function siteorigin_north_comment( $comment, $args, $depth ){
 endif;
 
 if( !function_exists('siteorigin_north_footer_text') ) :
+/**
+ * Displays the footer text.
+ */
 function siteorigin_north_footer_text(){
 	$text = siteorigin_setting('footer_text');
 	$text = str_replace(
@@ -337,7 +314,7 @@ function siteorigin_north_footer_text(){
 }
 endif;
 
-
+if( !function_exists('siteorigin_north_category_transient_flusher') ) :
 /**
  * Flush out the transients used in siteorigin_north_categorized_blog.
  */
@@ -350,6 +327,7 @@ function siteorigin_north_category_transient_flusher() {
 }
 add_action( 'edit_category', 'siteorigin_north_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
+endif;
 
 if( !function_exists('siteorigin_north_custom_icon') ):
 /**
@@ -374,6 +352,10 @@ function siteorigin_north_custom_icon( $icon, $class ){
 }
 endif;
 
+if( !function_exists('siteorigin_north_display_icon') ) :
+/**
+ * Displays svg icons.
+ */
 function siteorigin_north_display_icon( $type ){
 	switch($type) {
 		case 'menu':
@@ -422,6 +404,7 @@ function siteorigin_north_display_icon( $type ){
 			break;
 	}
 }
+endif;
 
 if ( ! function_exists( 'siteorigin_north_breadcrumbs' ) ) :
 /**

@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.1.0
+ * @version     2.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -32,6 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 				?>
 				<div class="<?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item clear', $cart_item, $cart_item_key ) ); ?>">
+
 					<?php if ( ! $_product->is_visible() ) : ?>
 						<div class="mini_cart_img">
 							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
@@ -73,8 +74,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="buttons">
-		<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward mini_cart_view"><?php _e( 'View Cart', 'siteorigin-north' ); ?></a>
-		<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward mini_cart_checkout"><?php _e( 'Checkout', 'siteorigin-north' ); ?></a>
+		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="button wc-forward mini_cart_view"><?php _e( 'View Cart', 'siteorigin-north' ); ?></a>
+		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward mini_cart_checkout"><?php _e( 'Checkout', 'siteorigin-north' ); ?></a>
 	</p>
 
 <?php endif; ?>

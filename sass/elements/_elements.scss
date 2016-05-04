@@ -10,6 +10,13 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	&.responsive {
+		overflow-x: hidden;
+	}
 }
 
 blockquote, q {
@@ -38,6 +45,16 @@ img {
 code {
 	background: #eee;
 	padding: 0 0.3em;
+}
+
+::-moz-selection {
+  background-color: $color__primary_accent;
+  color: #fff;
+}
+
+::selection {
+  background-color: $color__primary_accent;
+  color: #fff;
 }
 
 @import "tables";

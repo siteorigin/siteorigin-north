@@ -28,6 +28,43 @@
 			}
 		}
 	}
+
+	table.shop_table{
+		.cart_totals h2 {
+			text-align: right;
+		}
+
+		.cart-item-product-name {
+			left: auto;
+			right: 20px;
+		}
+
+		.remove {
+			float: left;
+		}
+	}
+
+	form.woocommerce-checkout {
+		.order-details table.shop_table {
+			.product-name .product-quantity {
+				text-align: right;
+			}
+
+			.product-total {
+				text-align: left;
+			}
+		}
+
+		.checkout-details {
+			float: left;
+			padding-left: 0;
+			padding-right: 30px;
+		}
+
+		.order-details {
+			float: right;
+		}
+	}
 }
 
 // These elements should only apply to WooCommerce pages
@@ -101,6 +138,23 @@
 				margin-left: auto;
 				margin-right: 85px;
 			}
+		}
+	}
+}
+
+.main-navigation{
+	.shopping-cart {
+		margin-left: auto;
+		margin-right: 0.8em;
+
+		.shopping-cart-count {
+			left: 0;
+			right: -11px;
+		}
+
+		.shopping-cart-dropdown {
+			right: auto;
+			left: 0;
 		}
 	}
 }

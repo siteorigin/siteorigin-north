@@ -165,24 +165,31 @@ textarea {
 .more-link {
   float: left; }
 
+.author-box .author-avatar {
+  float: right; }
+
+.author-box .author-description {
+  margin-left: 0;
+  margin-right: 120px; }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-list li .comment-container {
+.comment-list li.comment .comment-container {
   margin-left: auto;
   margin-right: 120px; }
 
-.comment-list li .avatar-container {
+.comment-list li.comment .avatar-container {
   float: right; }
 
-.comment-list li .comment-reply-link {
+.comment-list li.comment .comment-reply-link {
   float: left; }
 
-.comment-list li .children {
+.comment-list li.comment .children {
   margin-left: auto;
   margin-right: 70px; }
 
-.comment-list li.pingback .comment-container {
+.comment-list li.comment.pingback .comment-container {
   margin-right: auto; }
 
 #commentform .comment-form-author, #commentform .comment-form-email, #commentform .comment-form-url {
@@ -203,9 +210,7 @@ textarea {
   .main-navigation ul {
     padding-right: 0; }
     .main-navigation ul ul {
-      left: auto;
-      right: -9999px;
-      text-align: left; }
+      text-align: right; }
       .main-navigation ul ul ul {
         left: auto;
         right: 100%;
@@ -215,9 +220,6 @@ textarea {
       .main-navigation ul ul li.focus > ul {
         left: auto;
         right: 100%; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      right: auto; }
   .main-navigation .svg-icon-menu {
     float: right; }
 

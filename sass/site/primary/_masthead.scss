@@ -22,7 +22,7 @@
 
 		.site-title {
 			margin: 0;
-			color: #292929;
+			color: $color__text_dark;
 			font-size: 1.5em;
 			line-height: 1.2em;
 			white-space: nowrap;
@@ -92,7 +92,7 @@
 
 #topbar {
 	width: 100%;
-  min-width: 1060px;
+	min-width: 1060px;
 	background: $masthead__top_background_color;
 	border-bottom: $masthead__border_width solid $masthead__border_color;
 

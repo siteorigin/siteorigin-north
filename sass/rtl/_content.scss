@@ -21,11 +21,22 @@
 	float: left;
 }
 
+.author-box {
+	.author-avatar {
+		float: right;
+	}
+
+	.author-description {
+		margin-left: 0;
+		margin-right: 120px;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
 .comment-list {
-	li {
+	li.comment {
 	  .comment-container {
 	    margin-left: auto;
 	  	margin-right: 120px;
@@ -80,9 +91,7 @@
 		padding-right: 0;
 
 		ul {
-			left: auto;
-			right: -9999px;
-			text-align: left;
+			text-align: right;
 
 			ul {
 				left: auto;
@@ -97,13 +106,6 @@
 					left: auto;
 					right: 100%;
 				}
-			}
-		}
-
-		li:hover,
-		li.focus {
-			> ul {
-				right:auto;
 			}
 		}
 	}
