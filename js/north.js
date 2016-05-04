@@ -367,8 +367,6 @@ jQuery( function ( $ ) {
 				$( 'html, body' ).animate( {
 					scrollTop: $target.offset().top - height
 				}, 1000 );
-				e.preventDefault();
-				document.location.hash = this.hash.slice( 1 );
 
 				return false;
 			}

@@ -195,11 +195,6 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Sticky menu scales logo', 'siteorigin-north' ),
 					'description' => __( 'Should the main logo be downscaled when scrolling', 'siteorigin-north' ),
 				),
-				'resize_logo'   => array(
-					'type'        => 'checkbox',
-					'label'       => __( 'Resize logo', 'siteorigin-north' ),
-					'description' => __( 'Resize logo in sticky', 'siteorigin-north' ),
-				),
 				'post'          => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Post navigation', 'siteorigin-north' ),
@@ -276,7 +271,6 @@ function siteorigin_north_settings_init(){
 				'mobile_menu_background_opacity' => array(
 					'type'        => 'range',
 					'label'       => __( 'Mobile Menu Background Opacity', 'siteorigin-north' ),
-					'description' => __('0 is transparent and 1 is opaque', 'siteorigin-north'),
 					'min'         => 0,
 					'max'         => 1,
 					'step'        => 0.01,
@@ -938,7 +932,6 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['navigation_search']        = true;
 	$defaults['navigation_sticky']        = true;
 	$defaults['navigation_sticky_scale']  = true;
-	$defaults['navigation_resize_logo']   = true;
 	$defaults['navigation_post']          = true;
 	$defaults['navigation_scroll_to_top'] = true;
 	$defaults['navigation_smooth_scroll'] = true;
