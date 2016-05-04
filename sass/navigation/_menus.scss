@@ -356,6 +356,9 @@
 			border-bottom: 1px solid $mobilemenu__text_color;
 			width: 100%;
 			padding: 10px;
+			@include placeholder {
+				color: rgba( $mobilemenu__text_color, 0.7 );
+			}
 
 			&:focus {
 				outline: none;
@@ -391,7 +394,7 @@
 			.dropdown-toggle {
 				background: transparent;
 				border: 0;
-				color: #fff;
+				color: $mobilemenu__text_color;
 				font-size: 15px;
 				position: absolute;
 				top: 0;

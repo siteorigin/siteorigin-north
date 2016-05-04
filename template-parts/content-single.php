@@ -15,14 +15,16 @@
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php siteorigin_north_breadcrumbs(); ?>
+	<?php if( SiteOrigin_Settings_Page_Settings::get('page_title') ) : ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php siteorigin_north_breadcrumbs(); ?>
 
-		<div class="entry-meta">
-			<?php siteorigin_north_post_meta(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+			<div class="entry-meta">
+				<?php siteorigin_north_post_meta(); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

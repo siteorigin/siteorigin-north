@@ -27,7 +27,7 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'responsive';
 	}
 
-	if( is_page() ) {
+	if( is_singular() ) {
 		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
 		$classes[] = 'page-layout-menu-' . SiteOrigin_Settings_Page_Settings::get('menu');
 		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
