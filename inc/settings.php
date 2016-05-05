@@ -46,12 +46,6 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Site Description', 'siteorigin-north' ),
 					'description' => __( 'Show your site description below your site title or logo.', 'siteorigin-north' )
 				),
-				'attribution' => array(
-					'type' => 'checkbox',
-					'label' => __('Hide SiteOrigin Attribution', 'siteorigin-north'),
-					'description' => __('Hide the SiteOrigin link in your footer.', 'siteorigin-north'),
-					'teaser' => true,
-				),
 				'accent'           => array(
 					'type'        => 'color',
 					'label'       => __( 'Accent Color', 'siteorigin-north' ),
@@ -262,12 +256,6 @@ function siteorigin_north_settings_init(){
 				'display_comment_count' => array(
 					'type'  => 'checkbox',
 					'label' => __( 'Display comment count', 'siteorigin-north' ),
-				),
-				'ajax_comments'         => array(
-					'type' => 'checkbox',
-					'label' => __('Ajax Comments', 'siteorigin-north'),
-					'description' => __('Keep the conversation flowing with ajax loading comments.', 'siteorigin-north'),
-					'teaser' => true,
 				)
 			)
 		),
