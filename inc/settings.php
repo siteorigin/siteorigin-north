@@ -967,7 +967,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['structure_sidebar_width'] = '35%%';
 
 	// The masthead defaults
-	$defaults['masthead_text_layout']          = 'default';
+	$defaults['masthead_layout']               = 'default';
 	$defaults['masthead_text_above']           = '';
 	$defaults['masthead_background_color']     = '#fafafa';
 	$defaults['masthead_top_background_color'] = false;
