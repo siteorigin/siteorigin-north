@@ -185,7 +185,7 @@ function siteorigin_north_settings_init(){
 					'type'              => 'text',
 					'label'             => __( 'Padding', 'siteorigin-north' ),
 					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
-					'live'              => true,
+					'live'              => false,
 				),
 				'bottom_margin'        => array(
 					'type'              => 'text',
