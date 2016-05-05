@@ -206,14 +206,27 @@
 	}
 
 	// The search icon
-	.north-icon-search {
+	.north-search-icon {
 		display: inline-block;
-		font-size: 16px;
 		cursor: pointer;
-		line-height: 16px;
 		position: relative;
 		top: 2px;
 		color: inherit;
+
+		.svg-icon-search {
+			height: 16px;
+			width: 16px;
+
+			path {
+				fill: $navigation__link_color;
+			}
+
+			&:hover {
+				path {
+					fill: $navigation__link_hover_color;
+				}
+			}
+		}
 	}
 
 	@media screen and (max-width: 600px) {
@@ -226,7 +239,7 @@
 				display: none;
 			}
 
-			.north-icon-search {
+			.north-search-icon {
 				display: none;
 			}
 		}
@@ -239,7 +252,7 @@
 			display: inline-block;
 		}
 
-		.north-icon-search {
+		.north-search-icon {
 			display: inline-block;
 		}
 	}

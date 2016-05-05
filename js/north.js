@@ -332,7 +332,7 @@ jQuery( function ( $ ) {
 
 	// Handle the header search
 	var $hs = $( '#header-search' );
-	$( '#masthead .north-icon-search' ).click( function () {
+	$( '#masthead .north-search-icon' ).click( function () {
 		$hs.fadeIn( 'fast' );
 		$hs.find( 'form' ).css( 'margin-top', - $hs.find( 'form' ).outerHeight() / 2 );
 		$hs.find( 'input[type="search"]' ).focus().select();
