@@ -124,6 +124,10 @@ function siteorigin_north_settings_init(){
 					'type' => 'media',
 					'label' => __('Responsive menu icon', 'siteorigin-north'),
 				),
+				'search' => array(
+					'type' => 'media',
+					'label' => __('Masthead search icon', 'siteorigin-north'),
+				),
 				'close_search' => array(
 					'type' => 'media',
 					'label' => __('Close search bar icon', 'siteorigin-north'),
@@ -498,6 +502,12 @@ $css .= '/* style */
 	color: ${fonts_text_dark};
 	}
 	.main-navigation #mobile-menu-button:hover .svg-icon-menu .line {
+	fill: ${fonts_text_dark};
+	}
+	.main-navigation .north-search-icon .svg-icon-search path {
+	fill: ${fonts_text_light};
+	}
+	.main-navigation .north-search-icon .svg-icon-search:hover path {
 	fill: ${fonts_text_dark};
 	}
 	#header-search {
@@ -876,8 +886,6 @@ $css .= '/* style */
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
 	}';
-
-
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
@@ -900,7 +908,7 @@ function siteorigin_north_menu_breakpoint_css() {
 		'body.responsive .main-navigation ul {' .
 			'display: none;' .
 		'}' . "\t" .
-		'body.responsive .main-navigation .north-icon-search {' .
+		'body.responsive .main-navigation .north-search-icon {' .
 			'display: none;' .
 		'}' . "\t" .
 		'.main-navigation #mobile-menu-button {' .
@@ -909,7 +917,7 @@ function siteorigin_north_menu_breakpoint_css() {
 		'.main-navigation ul {' .
 			'display: inline-block;' .
 		'}' . "\t" .
-		'.main-navigation .north-icon-search {' .
+		'.main-navigation .north-search-icon {' .
 			'display: inline-block;' .
 		'}' . "\t" .
 	'}' . "\t" .
@@ -951,6 +959,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// Icon defaults
 	$defaults['icons_menu'] = false;
+	$defaults['icons_search'] = false;
 	$defaults['icons_close_search'] = false;
 	$defaults['icons_scroll_to_top'] = false;
 

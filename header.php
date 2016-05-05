@@ -77,7 +77,10 @@
 					<?php endif; ?>
 
 					<?php if( siteorigin_setting('navigation_search') ) : ?>
-						<a class="north-icon-search"><label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label></a>
+						<a class="north-search-icon">
+							<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
+							<?php siteorigin_north_display_icon('search'); ?>
+						</a>
 					<?php endif; ?>
 
 				</nav><!-- #site-navigation -->

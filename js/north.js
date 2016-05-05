@@ -332,15 +332,15 @@ jQuery( function ( $ ) {
 
 	// Handle the header search
 	var $hs = $( '#header-search' );
-	$( '#masthead .north-icon-search' ).click( function () {
+	$( '#masthead .north-search-icon' ).click( function () {
 		$hs.fadeIn( 'fast' );
 		$hs.find( 'form' ).css( 'margin-top', - $hs.find( 'form' ).outerHeight() / 2 );
 		$hs.find( 'input[type="search"]' ).focus().select();
-		$hs.find( '.svg-icon-close' ).attr( "class", "svg-icon-close animate-in" );
+		$hs.find( '#close-search' ).addClass( 'animate-in' );
 	} );
 	$hs.find( '#close-search' ).click( function () {
 		$hs.fadeOut( 350 );
-		$( this ).attr( "class", "svg-icon-close" );
+		$( this ).removeClass( 'animate-in' );
 	} );
 	$( window ).scroll( function () {
 		if ( $hs.is( ':visible' ) ) {

@@ -206,14 +206,27 @@
 	}
 
 	// The search icon
-	.north-icon-search {
+	.north-search-icon {
 		display: inline-block;
-		font-size: 16px;
 		cursor: pointer;
-		line-height: 16px;
 		position: relative;
 		top: 2px;
 		color: inherit;
+
+		.svg-icon-search {
+			height: 16px;
+			width: 16px;
+
+			path {
+				fill: $navigation__link_color;
+			}
+
+			&:hover {
+				path {
+					fill: $navigation__link_hover_color;
+				}
+			}
+		}
 	}
 
 	@media screen and (max-width: 600px) {
@@ -226,7 +239,7 @@
 				display: none;
 			}
 
-			.north-icon-search {
+			.north-search-icon {
 				display: none;
 			}
 		}
@@ -239,7 +252,7 @@
 			display: inline-block;
 		}
 
-		.north-icon-search {
+		.north-search-icon {
 			display: inline-block;
 		}
 	}
@@ -301,6 +314,10 @@
 		@include transition(0.35s);
 		@include transform-origin(center center);
 		@include transform( scale(0.575) translateX(3px) translateY(-3px) );
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		margin-top: -12px;
 
 		&.animate-in {
 			@include transform( scale(1) rotate(90deg)  );
@@ -310,10 +327,6 @@
 			width: 24px;
 			height: 24px;
 			cursor: pointer;
-			position: absolute;
-			top: 50%;
-			right: 20px;
-			margin-top: -12px;
 
 			path {
 				fill: #666666;
