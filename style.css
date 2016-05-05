@@ -725,7 +725,11 @@ a {
     -moz-transform: scale(0.575) translateX(3px) translateY(-3px);
     -ms-transform: scale(0.575) translateX(3px) translateY(-3px);
     -o-transform: scale(0.575) translateX(3px) translateY(-3px);
-    transform: scale(0.575) translateX(3px) translateY(-3px); }
+    transform: scale(0.575) translateX(3px) translateY(-3px);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -12px; }
     #header-search #close-search.animate-in {
       -webkit-transform: scale(1) rotate(90deg);
       -moz-transform: scale(1) rotate(90deg);
@@ -735,11 +739,7 @@ a {
     #header-search #close-search .svg-icon-close {
       width: 24px;
       height: 24px;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -12px; }
+      cursor: pointer; }
       #header-search #close-search .svg-icon-close path {
         fill: #666666; }
       #header-search #close-search .svg-icon-close:hover path {
