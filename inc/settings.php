@@ -504,6 +504,12 @@ $css .= '/* style */
 	.main-navigation #mobile-menu-button:hover .svg-icon-menu .line {
 	fill: ${fonts_text_dark};
 	}
+	.main-navigation .north-search-icon .svg-icon-search path {
+	fill: ${fonts_text_light};
+	}
+	.main-navigation .north-search-icon .svg-icon-search:hover path {
+	fill: ${fonts_text_dark};
+	}
 	#header-search {
 	background: ${masthead_background_color};
 	}
@@ -880,8 +886,6 @@ $css .= '/* style */
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
 	}';
-
-
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
