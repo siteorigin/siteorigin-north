@@ -98,6 +98,10 @@
 
 	@include transition(0.35s);
 
+	.svg-icon-to-top path {
+		fill: #fff;
+	}
+
 	img, svg {
 		height: 24px;
 		width: 24px;

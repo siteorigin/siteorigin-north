@@ -1422,6 +1422,8 @@ a {
   -webkit-transition: 0.35s;
   -moz-transition: 0.35s;
   transition: 0.35s; }
+  #scroll-to-top .svg-icon-to-top path {
+    fill: #fff; }
   #scroll-to-top img, #scroll-to-top svg {
     height: 24px;
     width: 24px; }
