@@ -13,20 +13,22 @@
 
 	<footer id="colophon" class="site-footer <?php if( !siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
 
-		<div class="container">
+		<?php if( !SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) : ?>
+			<div class="container">
 
-			<?php
-			if( is_active_sidebar( 'footer-sidebar' ) ) {
-				$siteorigin_north_sidebars = wp_get_sidebars_widgets();
-				?>
-				<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
-					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
-				</div>
 				<?php
-			}
-			?>
+				if( is_active_sidebar( 'footer-sidebar' ) ) {
+					$siteorigin_north_sidebars = wp_get_sidebars_widgets();
+					?>
+					<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
+						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
+					</div>
+					<?php
+				}
+				?>
 
-		</div>
+			</div>
+		<?php endif; ?>
 
 		<div class="site-info">
 			<div class="container">
