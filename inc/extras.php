@@ -27,21 +27,16 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'responsive';
 	}
 
-	if( is_singular() ) {
-		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
-		$classes[] = 'page-layout-menu-' . SiteOrigin_Settings_Page_Settings::get('menu');
-		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
-			$classes[] = 'page-layout-no-masthead-margin';
-		}
-		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
-			$classes[] = 'page-layout-no-footer-margin';
-		}
-		if( SiteOrigin_Settings_Page_Settings::get('hide_masthead') ) {
-			$classes[] = 'page-layout-hide-masthead';
-		}
-		if( SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) {
-			$classes[] = 'page-layout-hide-footer-widgets';
-		}
+	$page_settings = siteorigin_page_setting();
+
+	if( !empty( $page_settings ) ) {
+		if( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if( !empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
+
+		if( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
+		if( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
+		if( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	if( !is_active_sidebar('main-sidebar') ) {

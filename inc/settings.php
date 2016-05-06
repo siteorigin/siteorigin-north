@@ -13,8 +13,22 @@ function siteorigin_north_settings_localize( $loc ){
 		// For the controls
 		'variant'             => __( 'Variant', 'siteorigin-north' ),
 		'subset'              => __( 'Subset', 'siteorigin-north' ),
+
 		// For the settings metabox
 		'meta_box'            => __( 'Page settings', 'siteorigin-north' ),
+
+		// For archives section
+		'page_section_title' => __( 'Page Template Settings', 'siteorigin-north' ),
+		'page_section_description' => __( 'Change layouts for various pages on your site.', 'siteorigin-north' ),
+
+		// For all the different temples and template types
+		'template_home' => __( 'Blog Page', 'siteorigin-north' ),
+		'template_search' => __( 'Search Results', 'siteorigin-north' ),
+		'template_date' => __( 'Date Archives', 'siteorigin-north' ),
+		'template_404' => __( 'Not Found', 'siteorigin-north' ),
+		'template_author' => __( 'Author Archives', 'siteorigin-north' ),
+		'templates_post_type' => __( 'Type', 'siteorigin-north' ),
+		'templates_taxonomy' => __( 'Taxonomy', 'siteorigin-north' ),
 	), $loc );
 }
 endif;
@@ -418,7 +432,7 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  */
 function siteorigin_north_settings_custom_css($css){
 	// Custom CSS Code
-$css .= '/* style */
+	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -1012,76 +1026,77 @@ function siteorigin_north_settings_defaults( $defaults ){
 endif;
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
 
-if ( ! function_exists( 'siteorigin_north_setup_page_settings' ) ) :
+if ( ! function_exists( 'siteorigin_north_page_settings' ) ) :
 /**
  * Setup Page Settings for SiteOrigin North
  */
-function siteorigin_north_setup_page_settings(){
+function siteorigin_north_page_settings( $settings, $type, $id ){
 
-	SiteOrigin_Settings_Page_Settings::single()->configure( array(
-		'layout'          => array(
-			'type'    => 'select',
-			'label'   => __( 'Page Layout', 'siteorigin-north' ),
-			'options' => array(
-				'default'            => __( 'Default', 'siteorigin-north' ),
-				'no-sidebar'         => __( 'No Sidebar', 'siteorigin-north' ),
-				'full-width'         => __( 'Full Width', 'siteorigin-north' ),
-				'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-north' ),
-			),
+	$settings['layout'] = array(
+		'type'    => 'select',
+		'label'   => __( 'Page Layout', 'siteorigin-north' ),
+		'options' => array(
+			'default'            => __( 'Default', 'siteorigin-north' ),
+			'no-sidebar'         => __( 'No Sidebar', 'siteorigin-north' ),
+			'full-width'         => __( 'Full Width', 'siteorigin-north' ),
+			'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-north' ),
 		),
-		'menu'            => array(
-			'type'    => 'select',
-			'label'   => __( 'Menu Position', 'siteorigin-north' ),
-			'options' => array(
-				'default' => __( 'Default', 'siteorigin-north' ),
-				'overlap' => __( 'Overlaps Content', 'siteorigin-north' ),
-			),
-		),
-		'page_title'      => array(
-			'type'           => 'checkbox',
-			'label'          => __( 'Page Title', 'siteorigin-north' ),
-			'checkbox_label' => __( 'display', 'siteorigin-north' ),
-			'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
-		),
-		'masthead_margin' => array(
-			'type'           => 'checkbox',
-			'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
-			'checkbox_label' => __( 'enable', 'siteorigin-north' ),
-			'default'        => true,
-			'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-north' )
-		),
-		'footer_margin'   => array(
-			'type'           => 'checkbox',
-			'label'          => __( 'Footer Top Margin', 'siteorigin-north' ),
-			'checkbox_label' => __( 'enable', 'siteorigin-north' ),
-			'default'        => true,
-			'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' )
-		),
-		'hide_masthead' => array(
-			'type'           => 'checkbox',
-			'label'          => __( 'Masthead', 'siteorigin-north' ),
-			'checkbox_label' => __( 'hide', 'siteorigin-north' ),
-			'default'        => false,
-			'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
-		),
-		'hide_footer_widgets'   => array(
-			'type'           => 'checkbox',
-			'label'          => __( 'Footer Widgets', 'siteorigin-north' ),
-			'checkbox_label' => __( 'hide', 'siteorigin-north' ),
-			'default'        => false,
-			'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
-		),
-	) );
+	);
 
+	$settings['menu'] = array(
+		'type'    => 'select',
+		'label'   => __( 'Menu Position', 'siteorigin-north' ),
+		'options' => array(
+			'default' => __( 'Default', 'siteorigin-north' ),
+			'overlap' => __( 'Overlaps Content', 'siteorigin-north' ),
+		),
+	);
+
+	$settings['page_title'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Page Title', 'siteorigin-north' ),
+		'checkbox_label' => __( 'display', 'siteorigin-north' ),
+		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
+	);
+
+	$settings['masthead_margin'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
+		'checkbox_label' => __( 'enable', 'siteorigin-north' ),
+		'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-north' )
+	);
+
+	$settings['footer_margin'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Footer Top Margin', 'siteorigin-north' ),
+		'checkbox_label' => __( 'enable', 'siteorigin-north' ),
+		'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' )
+	);
+
+	$settings['hide_masthead'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Masthead', 'siteorigin-north' ),
+		'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
+	);
+
+	$settings['hide_footer_widgets'] = array(
+		'type'           => 'checkbox',
+		'label'          => __( 'Footer Widgets', 'siteorigin-north' ),
+		'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
+	);
+
+	return $settings;
 }
-endif;
 add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_settings');
+endif;
 
 if ( ! function_exists( 'siteorigin_north_setup_page_setting_defaults' ) ) :
 /**
  * Add the default Page Settings
  */
-function siteorigin_north_setup_page_setting_defaults( $defaults ){
+function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
 	$defaults['layout']              = 'default';
 	$defaults['menu']                = 'default';
 	$defaults['page_title']          = true;
@@ -1092,8 +1107,8 @@ function siteorigin_north_setup_page_setting_defaults( $defaults ){
 
 	return $defaults;
 }
-endif;
 add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
+endif;
 
 if ( ! function_exists( 'siteorigin_north_page_settings_panels_defaults' ) ) :
 /**
