@@ -90,6 +90,9 @@ function siteorigin_north_setup() {
 		'home-page'  => true,
 		'responsive' => ! siteorigin_setting( 'responsive_disabled' ),
 	) );
+
+	// We'll use archive settings
+	add_theme_support( 'siteorigin-archive-settings' );
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
