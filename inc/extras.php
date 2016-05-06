@@ -58,8 +58,8 @@ function siteorigin_north_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'siteorigin_north_body_classes' );
 endif;
+add_filter( 'body_class', 'siteorigin_north_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	if ( ! function_exists( 'siteorigin_north_wp_title' ) ) :
@@ -93,8 +93,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		return $title;
 	}
-	add_filter( 'wp_title', 'siteorigin_north_wp_title', 10, 2 );
 	endif;
+	add_filter( 'wp_title', 'siteorigin_north_wp_title', 10, 2 );
 
 	if ( ! function_exists( 'siteorigin_north_render_title' ) ) :
 	/**
@@ -108,8 +108,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
-	add_action( 'wp_head', 'siteorigin_north_render_title' );
 	endif;
+	add_action( 'wp_head', 'siteorigin_north_render_title' );
 endif;
 
 if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
@@ -122,5 +122,5 @@ function siteorigin_north_tag_cloud_widget($args) {
 	$args['unit'] = 'em';    //tag font unit
 	return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );
 endif;
+add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );

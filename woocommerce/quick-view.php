@@ -14,8 +14,8 @@ while ( have_posts() ) : the_post();
 		$classes[] = "product-quick-view";
 		return $classes;
 	}
-	add_filter('post_class', 'siteorigin_north_woocommerce_quick_view_class');
 	endif;
+	add_filter('post_class', 'siteorigin_north_woocommerce_quick_view_class');
 
 	?>
 	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -17,8 +17,8 @@ function siteorigin_north_settings_localize( $loc ){
 		'meta_box'            => __( 'Page settings', 'siteorigin-north' ),
 	), $loc );
 }
-add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
 endif;
+add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
 
 if ( ! function_exists( 'siteorigin_north_settings_init' ) ) :
 /**
@@ -370,8 +370,8 @@ function siteorigin_north_settings_init(){
 		)
 	) ) );
 }
-add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 endif;
+add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
 
 if ( ! function_exists( 'siteorigin_north_font_settings' ) ) :
 /**
@@ -405,8 +405,8 @@ function siteorigin_north_font_settings( $settings ) {
 
 	return $settings;
 }
-add_filter( 'siteorigin_settings_font_settings', 'siteorigin_north_font_settings' );
 endif;
+add_filter( 'siteorigin_settings_font_settings', 'siteorigin_north_font_settings' );
 
 if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
 /**
@@ -876,8 +876,8 @@ $css .= '/* style */
 	}';
 	return $css;
 }
-add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
 endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
 
 if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
 /**
@@ -919,8 +919,8 @@ function siteorigin_north_menu_breakpoint_css() {
 	echo $css;
 
 }
-add_action( 'wp_head', 'siteorigin_north_menu_breakpoint_css' );
 endif;
+add_action( 'wp_head', 'siteorigin_north_menu_breakpoint_css' );
 
 if ( ! function_exists( 'siteorigin_north_settings_defaults' ) ) :
 /**
@@ -1006,8 +1006,8 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	return $defaults;
 }
-add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
 endif;
+add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
 
 if ( ! function_exists( 'siteorigin_north_setup_page_settings' ) ) :
 /**
@@ -1071,8 +1071,8 @@ function siteorigin_north_setup_page_settings(){
 	) );
 
 }
-add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_settings');
 endif;
+add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_settings');
 
 if ( ! function_exists( 'siteorigin_north_setup_page_setting_defaults' ) ) :
 /**
@@ -1089,8 +1089,8 @@ function siteorigin_north_setup_page_setting_defaults( $defaults ){
 
 	return $defaults;
 }
-add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
 endif;
+add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
 
 if ( ! function_exists( 'siteorigin_north_page_settings_panels_defaults' ) ) :
 /**
@@ -1106,5 +1106,5 @@ function siteorigin_north_page_settings_panels_defaults( $settings ){
 
 	return $settings;
 }
-add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_page_settings_panels_defaults');
 endif;
+add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_page_settings_panels_defaults');
