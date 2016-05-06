@@ -13,7 +13,9 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'siteorigin-north' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
+					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'siteorigin-north' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<?php endif; ?>
 				<?php siteorigin_north_breadcrumbs(); ?>
 			</header><!-- .page-header -->
 
