@@ -779,6 +779,9 @@ $css .= '/* style */
 	#mobile-navigation .shopping-cart-link .shopping-cart-count {
 	border: 2px solid .rgba( ${responsive_mobile_menu_text_color}, 0.8);
 	}
+	.main-navigation .shopping-cart .north-icon-cart {
+	color: ${fonts_text_light};
+	}
 	.main-navigation .shopping-cart:hover .north-icon-cart {
 	background: ${branding_accent_dark};
 	}
