@@ -1075,14 +1075,14 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 
 	$settings['hide_masthead'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Masthead', 'siteorigin-north' ),
+		'label'          => __( 'Hide Masthead', 'siteorigin-north' ),
 		'checkbox_label' => __( 'hide', 'siteorigin-north' ),
 		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
 	);
 
 	$settings['hide_footer_widgets'] = array(
 		'type'           => 'checkbox',
-		'label'          => __( 'Footer Widgets', 'siteorigin-north' ),
+		'label'          => __( 'Hide Footer Widgets', 'siteorigin-north' ),
 		'checkbox_label' => __( 'hide', 'siteorigin-north' ),
 		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
 	);
