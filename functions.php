@@ -90,6 +90,9 @@ function siteorigin_north_setup() {
 		'home-page'  => true,
 		'responsive' => ! siteorigin_setting( 'responsive_disabled' ),
 	) );
+
+	// We'll use archive settings
+	add_theme_support( 'siteorigin-archive-settings' );
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
@@ -113,8 +116,8 @@ function siteorigin_north_premium_setup(){
 		'siteorigin_setting' => 'blog_ajax_comments'
 	) );
 }
-add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
 endif;
+add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
 
 if ( ! function_exists( 'siteorigin_north_content_width' ) ) :
 /**
@@ -128,8 +131,8 @@ function siteorigin_north_content_width() {
 	global $content_width;
 	$content_width = apply_filters( 'siteorigin_north_content_width', 650 );
 }
-add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
 endif;
+add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
 
 if ( ! function_exists( 'siteorigin_north_disable_responsive' ) ) :
 /**
@@ -140,8 +143,8 @@ function siteorigin_north_disable_responsive() {
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	}
 }
-add_action( 'wp_head', 'siteorigin_north_disable_responsive', 0 );
 endif;
+add_action( 'wp_head', 'siteorigin_north_disable_responsive', 0 );
 
 if ( ! function_exists( 'siteorigin_north_widgets_init' ) ) :
 /**
@@ -171,8 +174,8 @@ function siteorigin_north_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
 endif;
+add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
 
 if ( ! function_exists( 'siteorigin_north_scripts' ) ) :
 /**
@@ -198,16 +201,16 @@ function siteorigin_north_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'siteorigin_north_scripts' );
 endif;
+add_action( 'wp_enqueue_scripts', 'siteorigin_north_scripts' );
 
 if ( ! function_exists( 'siteorigin_north_siteorigin_premium' ) ) :
 function siteorigin_north_siteorigin_premium($themes){
 	$themes[] = 'siteorigin-north';
 	return $themes;
 }
-add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 endif;
+add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 
 if ( ! function_exists( 'siteorigin_north_filter_comment_form_default_fields' ) ) :
 /**
@@ -261,8 +264,8 @@ function siteorigin_north_filter_comment_form_default_fields( $fields ){
 
 	return $fields;
 }
-add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields');
 endif;
+add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields');
 
 if ( ! function_exists( 'siteorigin_north_filter_comment_form_defaults' ) ) :
 /**
@@ -287,8 +290,8 @@ function siteorigin_north_filter_comment_form_defaults( $defaults ){
 
 	return $defaults;
 }
-add_filter('comment_form_defaults', 'siteorigin_north_filter_comment_form_defaults');
 endif;
+add_filter('comment_form_defaults', 'siteorigin_north_filter_comment_form_defaults');
 
 /**
  * Custom template tags for this theme.

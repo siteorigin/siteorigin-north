@@ -47,17 +47,3 @@
         }
     }
 }
-
-.page-layout-hide-masthead {
-	#masthead {
-		display: none;
-	}
-}
-
-.page-layout-hide-footer-widgets {
-	#colophon {
-		.widget-area {
-			display: none;
-		}
-	}
-}

@@ -40,8 +40,8 @@ function siteorigin_north_display_retina_logo( $attr ){
 		return $attr;
 	}
 }
-add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 endif;
+add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 
 if ( ! function_exists( 'siteorigin_north_the_post_navigation' ) ) :
 /**
@@ -325,9 +325,9 @@ function siteorigin_north_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'siteorigin_north_categories' );
 }
+endif;
 add_action( 'edit_category', 'siteorigin_north_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
-endif;
 
 if( !function_exists('siteorigin_north_custom_icon') ):
 /**

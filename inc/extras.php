@@ -27,21 +27,16 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'responsive';
 	}
 
-	if( is_singular() ) {
-		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
-		$classes[] = 'page-layout-menu-' . SiteOrigin_Settings_Page_Settings::get('menu');
-		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
-			$classes[] = 'page-layout-no-masthead-margin';
-		}
-		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
-			$classes[] = 'page-layout-no-footer-margin';
-		}
-		if( SiteOrigin_Settings_Page_Settings::get('hide_masthead') ) {
-			$classes[] = 'page-layout-hide-masthead';
-		}
-		if( SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) {
-			$classes[] = 'page-layout-hide-footer-widgets';
-		}
+	$page_settings = siteorigin_page_setting();
+
+	if( !empty( $page_settings ) ) {
+		if( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if( !empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
+
+		if( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
+		if( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
+		if( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	if( !is_active_sidebar('main-sidebar') ) {
@@ -58,8 +53,8 @@ function siteorigin_north_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'siteorigin_north_body_classes' );
 endif;
+add_filter( 'body_class', 'siteorigin_north_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	if ( ! function_exists( 'siteorigin_north_wp_title' ) ) :
@@ -93,8 +88,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		return $title;
 	}
-	add_filter( 'wp_title', 'siteorigin_north_wp_title', 10, 2 );
 	endif;
+	add_filter( 'wp_title', 'siteorigin_north_wp_title', 10, 2 );
 
 	if ( ! function_exists( 'siteorigin_north_render_title' ) ) :
 	/**
@@ -108,8 +103,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
-	add_action( 'wp_head', 'siteorigin_north_render_title' );
 	endif;
+	add_action( 'wp_head', 'siteorigin_north_render_title' );
 endif;
 
 if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
@@ -122,5 +117,5 @@ function siteorigin_north_tag_cloud_widget($args) {
 	$args['unit'] = 'em';    //tag font unit
 	return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );
 endif;
+add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );

@@ -18,5 +18,5 @@ function siteorigin_north_panels_lite_localization( $loc ) {
 		// Message about disabling the custom home page if the user doesn't want to use it
 	), $loc );
 }
-add_filter( 'siteorigin_panels_lite_localization', 'siteorigin_north_panels_lite_localization' );
 endif;
+add_filter( 'siteorigin_panels_lite_localization', 'siteorigin_north_panels_lite_localization' );
