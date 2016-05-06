@@ -1089,14 +1089,15 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 
 	return $settings;
 }
-add_action('siteorigin_page_settings_init', 'siteorigin_north_setup_page_settings');
 endif;
+add_action( 'siteorigin_page_settings', 'siteorigin_north_page_settings', 10, 3 );
 
 if ( ! function_exists( 'siteorigin_north_setup_page_setting_defaults' ) ) :
 /**
  * Add the default Page Settings
  */
 function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
+	// All the basic default settings
 	$defaults['layout']              = 'default';
 	$defaults['menu']                = 'default';
 	$defaults['page_title']          = true;
@@ -1105,10 +1106,15 @@ function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
 	$defaults['hide_masthead']       = false;
 	$defaults['hide_footer_widgets'] = false;
 
+	// Specific default settings for different types
+	if( $type == 'template' && $id == 'home' ) {
+		$defaults['page_title'] = false;
+	}
+
 	return $defaults;
 }
-add_filter('siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults');
 endif;
+add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_setting_defaults', 10, 3 );
 
 if ( ! function_exists( 'siteorigin_north_page_settings_panels_defaults' ) ) :
 /**
