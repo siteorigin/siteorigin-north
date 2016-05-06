@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer <?php if( !siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
 
-		<?php if( !SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) : ?>
+		<?php if( ! siteorigin_page_setting( 'hide_footer_widgets', false ) ) : ?>
 			<div class="container">
 
 				<?php
