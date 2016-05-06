@@ -18,9 +18,15 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
+			<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<?php if( single_post_title() ) : ?>
+						<h1 class="page-title"><?php single_post_title(); ?></h1>
+					<?php else : ?>
+						<h1 class="page-title">
+							<?php echo get_bloginfo( 'name' ); ?>
+						</h1>
+					<?php endif; ?>
 					<?php siteorigin_north_breadcrumbs(); ?>
 				</header>
 			<?php endif; ?>
