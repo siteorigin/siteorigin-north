@@ -24,8 +24,9 @@ function siteorigin_north_settings_localize( $loc ){
 		// For all the different temples and template types
 		'template_home' => __( 'Blog Page', 'siteorigin-north' ),
 		'template_search' => __( 'Search Results', 'siteorigin-north' ),
+		'template_date' => __( 'Date Archives', 'siteorigin-north' ),
 		'template_404' => __( 'Not Found', 'siteorigin-north' ),
-		'template_author' => __( 'Author Archive', 'siteorigin-north' ),
+		'template_author' => __( 'Author Archives', 'siteorigin-north' ),
 		'templates_post_type' => __( 'Type', 'siteorigin-north' ),
 		'templates_taxonomy' => __( 'Taxonomy', 'siteorigin-north' ),
 	), $loc );
