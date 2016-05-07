@@ -1256,6 +1256,12 @@ a {
       -ms-transform-origin: left center;
       -o-transform-origin: left center;
       transform-origin: left center; }
+      .layout-centered#masthead .site-branding > * {
+        -webkit-transform-origin: center center;
+        -moz-transform-origin: center center;
+        -ms-transform-origin: center center;
+        -o-transform-origin: center center;
+        transform-origin: center center; }
     #masthead .site-branding .site-title {
       margin: 0;
       color: #292929;
