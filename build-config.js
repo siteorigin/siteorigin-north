@@ -3,9 +3,7 @@ module.exports = {
 	jsMinSuffix: '.min',
 	contributors: {
 		src: [
-			'**/*',
-			'!{*.txt,**/*.txt}',                      // Ignore TXT and CSS files
-			'!{*.css,**/*.css}',                      // Ignore CSS files, already counting raw SCSS files
+			'{**/*.js,**/*.php,**/*.less,**/*.scss}',
 			'!{build,build/**}',                      // Ignore build/ submodule
 			'!{inc/settings,inc/settings/**}',        // Ignore settings submodule
 			'!{inc/panels-lite,inc/panels-lite/**}',  // Ignore panels-lite submodule
