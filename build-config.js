@@ -14,7 +14,10 @@ module.exports = {
 			'!{tmp,tmp/**}'                           // Ignore tmp/ and contents if any
 		],
 		format: 'php',
-		skipCommits: [ ]
+		skipCommits: [ ],
+		excludeEmails: [
+			'77e88891e4965161953320ec66623cbc',       // Remove greg@siteorigin.com
+		]
 	},
 	version: {
 		src: [
