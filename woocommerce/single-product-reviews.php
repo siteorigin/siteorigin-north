@@ -29,7 +29,7 @@ if ( ! comments_open() ) {
 	<div id="comments">
 		<h2><?php
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
-				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'woocommerce' ), $count, get_the_title() );
+				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'siteorigin-north' ), $count, get_the_title() );
 			else
 				_e( 'Reviews', 'woocommerce' );
 		?></h2>
@@ -52,7 +52,7 @@ if ( ! comments_open() ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
+			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'siteorigin-north' ); ?></p>
 
 		<?php endif; ?>
 	</div>
@@ -65,37 +65,37 @@ if ( ! comments_open() ) {
 					$commenter = wp_get_current_commenter();
 
 					$comment_form = array(
-						'title_reply'          => have_comments() ? __( 'Add a review', 'woocommerce' ) : sprintf( __( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_the_title() ),
-						'title_reply_to'       => __( 'Leave a Reply to %s', 'woocommerce' ),
+						'title_reply'          => have_comments() ? __( 'Add a review', 'siteorigin-north' ) : sprintf( __( 'Be the first to review &ldquo;%s&rdquo;', 'siteorigin-north' ), get_the_title() ),
+						'title_reply_to'       => __( 'Leave a Reply to %s', 'siteorigin-north' ),
 						'comment_notes_before' => '',
 						'comment_notes_after'  => '',
 						'fields'               => array(
-							'author' => '<p class="comment-form-author">' . '<label for="author" class="screen-reader-text">' . __( 'Name', 'woocommerce' ) . ' <span class="required">*</span></label> ' .
+							'author' => '<p class="comment-form-author">' . '<label for="author" class="screen-reader-text">' . __( 'Name', 'siteorigin-north' ) . ' <span class="required">*</span></label> ' .
 							            '<input id="author" placeholder="' . __( 'Enter Your Name', 'siteorigin-north') . '" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" /></p>',
-							'email'  => '<p class="comment-form-email"><label for="email" class="screen-reader-text">' . __( 'Email', 'woocommerce' ) . ' <span class="required">*</span></label> ' .
+							'email'  => '<p class="comment-form-email"><label for="email" class="screen-reader-text">' . __( 'Email', 'siteorigin-north' ) . ' <span class="required">*</span></label> ' .
 							            '<input id="email" placeholder="' . __( 'Enter Your Email', 'siteorigin-north') . '" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-required="true" /></p>',
 						),
-						'label_submit'  => __( 'Submit', 'woocommerce' ),
+						'label_submit'  => __( 'Submit', 'siteorigin-north' ),
 						'logged_in_as'  => '',
 						'comment_field' => ''
 					);
 
 					if ( $account_page_url = wc_get_page_permalink( 'myaccount' ) ) {
-						$comment_form['must_log_in'] = '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'woocommerce' ), esc_url( $account_page_url ) ) . '</p>';
+						$comment_form['must_log_in'] = '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'siteorigin-north' ), esc_url( $account_page_url ) ) . '</p>';
 					}
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . __( 'Your Rating', 'woocommerce' ) .'</label><select name="rating" id="rating">
-							<option value="">' . __( 'Rate&hellip;', 'woocommerce' ) . '</option>
-							<option value="5">' . __( 'Perfect', 'woocommerce' ) . '</option>
-							<option value="4">' . __( 'Good', 'woocommerce' ) . '</option>
-							<option value="3">' . __( 'Average', 'woocommerce' ) . '</option>
-							<option value="2">' . __( 'Not that bad', 'woocommerce' ) . '</option>
-							<option value="1">' . __( 'Very Poor', 'woocommerce' ) . '</option>
+						$comment_form['comment_field'] = '<p class="comment-form-rating"><label for="rating">' . __( 'Your Rating', 'siteorigin-north' ) .'</label><select name="rating" id="rating">
+							<option value="">' . __( 'Rate&hellip;', 'siteorigin-north' ) . '</option>
+							<option value="5">' . __( 'Perfect', 'siteorigin-north' ) . '</option>
+							<option value="4">' . __( 'Good', 'siteorigin-north' ) . '</option>
+							<option value="3">' . __( 'Average', 'siteorigin-north' ) . '</option>
+							<option value="2">' . __( 'Not that bad', 'siteorigin-north' ) . '</option>
+							<option value="1">' . __( 'Very Poor', 'siteorigin-north' ) . '</option>
 						</select></p>';
 					}
 
-					$comment_form['comment_field'] .= '<div class="comment-form-comment"><label for="comment" class="screen-reader-text">' . __( 'Your Review', 'woocommerce' ) . '</label><textarea id="comment" placeholder="' .  __('Your Review', 'siteorigin-north') . '" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>';
+					$comment_form['comment_field'] .= '<div class="comment-form-comment"><label for="comment" class="screen-reader-text">' . __( 'Your Review', 'siteorigin-north' ) . '</label><textarea id="comment" placeholder="' .  __('Your Review', 'siteorigin-north') . '" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>';
 
 					comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
@@ -104,7 +104,7 @@ if ( ! comments_open() ) {
 
 	<?php else : ?>
 
-		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
+		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'siteorigin-north' ); ?></p>
 
 	<?php endif; ?>
 
