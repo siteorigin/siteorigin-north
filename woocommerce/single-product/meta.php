@@ -22,7 +22,7 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
 	<?php do_action( 'woocommerce_product_meta_start' ); ?>
 
-	<?php echo $product->get_tags( ' ', '<div class="tags-list">', '.</div>' ); ?>
+	<?php echo $product->get_tags( ' ', '<div class="tags-list">', '</div>' ); ?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 

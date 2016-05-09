@@ -81,9 +81,6 @@ function siteorigin_north_setup() {
 	// This theme supports WooCommerce
 	add_theme_support( 'woocommerce' );
 
-	// Support for SiteOrigin Premium extras
-	add_theme_support( 'siteorigin-premium-retina-images' );
-
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
@@ -93,10 +90,14 @@ function siteorigin_north_setup() {
 		'home-page'  => true,
 		'responsive' => ! siteorigin_setting( 'responsive_disabled' ),
 	) );
+
+	// We'll use archive settings
+	add_theme_support( 'siteorigin-template-settings' );
 }
 endif; // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
 
+if ( ! function_exists( 'siteorigin_north_premium_setup' ) ) :
 /**
  * Add support for premium theme components
  */
@@ -105,11 +106,20 @@ function siteorigin_north_premium_setup(){
 	// This theme supports the no attribution addon
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter'  => 'siteorigin_north_footer_credits',
-		'enabled' => siteorigin_setting( 'branding_attribution' )
+		'enabled' => siteorigin_setting( 'branding_attribution' ),
+		'siteorigin_setting' => 'branding_attribution'
+	) );
+
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'blog_ajax_comments' ),
+		'siteorigin_setting' => 'blog_ajax_comments'
 	) );
 }
+endif;
 add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
 
+if ( ! function_exists( 'siteorigin_north_content_width' ) ) :
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -121,8 +131,10 @@ function siteorigin_north_content_width() {
 	global $content_width;
 	$content_width = apply_filters( 'siteorigin_north_content_width', 650 );
 }
+endif;
 add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
 
+if ( ! function_exists( 'siteorigin_north_disable_responsive' ) ) :
 /**
  * Disable responsive layout.
  */
@@ -131,8 +143,10 @@ function siteorigin_north_disable_responsive() {
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	}
 }
+endif;
 add_action( 'wp_head', 'siteorigin_north_disable_responsive', 0 );
 
+if ( ! function_exists( 'siteorigin_north_widgets_init' ) ) :
 /**
  * Register widget area.
  *
@@ -160,8 +174,10 @@ function siteorigin_north_widgets_init() {
 	) );
 
 }
+endif;
 add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
 
+if ( ! function_exists( 'siteorigin_north_scripts' ) ) :
 /**
  * Enqueue scripts and styles.
  */
@@ -185,14 +201,21 @@ function siteorigin_north_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+endif;
 add_action( 'wp_enqueue_scripts', 'siteorigin_north_scripts' );
 
+if ( ! function_exists( 'siteorigin_north_siteorigin_premium' ) ) :
 function siteorigin_north_siteorigin_premium($themes){
 	$themes[] = 'siteorigin-north';
 	return $themes;
 }
+endif;
 add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
 
+if ( ! function_exists( 'siteorigin_north_filter_comment_form_default_fields' ) ) :
+/**
+ * Modify comments form - change placeholders
+ */
 function siteorigin_north_filter_comment_form_default_fields( $fields ){
 	$placeholders = apply_filters( 'siteorigin_north_comment_form_placeholders', array(
 		'author' => __( 'Enter Your Name', 'siteorigin-north' ),
@@ -241,8 +264,13 @@ function siteorigin_north_filter_comment_form_default_fields( $fields ){
 
 	return $fields;
 }
+endif;
 add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields');
 
+if ( ! function_exists( 'siteorigin_north_filter_comment_form_defaults' ) ) :
+/**
+ * Modify comments form - make labels screen-reader-text
+ */
 function siteorigin_north_filter_comment_form_defaults( $defaults ){
 	$comment_placeholder = __( 'Enter your message', 'siteorigin-north' );
 	$default_comment     = array( '<label for="comment"', '<textarea id="comment" ' );
@@ -262,6 +290,7 @@ function siteorigin_north_filter_comment_form_defaults( $defaults ){
 
 	return $defaults;
 }
+endif;
 add_filter('comment_form_defaults', 'siteorigin_north_filter_comment_form_defaults');
 
 /**
@@ -292,5 +321,4 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 /**
  * Load support for WooCommerce
  */
-
 include get_template_directory() . '/woocommerce/functions.php';

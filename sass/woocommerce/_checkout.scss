@@ -150,14 +150,21 @@
 		}
 
 		@media (max-width: 768px) {
-			@at-root body.responsive#{&} {
+			@at-root body.responsive & {
 				.checkout-details,
 				.order-details {
 					width: 100%;
 					float: none;
 				}
+
+				.checkout-details {
+					padding-left: 0;
+				}
+
+				.order-details {
+					margin-top: 40px;
+				}
 			}
 		}
-
 	}
 }

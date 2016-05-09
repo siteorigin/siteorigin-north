@@ -1,3 +1,21 @@
+= 1.2 - May 6 2016 =
+* Fixes to RTL layout.
+* Styled various WooCommerce widgets.
+* Fixed mobile menu dropdown for custom breakpoints.
+* Made Mobile Menu scrollable.
+* Added WooCommerce quick view functionality.
+* Added font-smoothing and text-rendering.
+* Added current menu item indication.
+* Fixed overflowing menu dropdowns.
+* For one page sites, close mobile menu when a link in the dropdown is clicked.
+* Fixed flashes with smooth scroll.
+* Removed unused setting.
+* Added mobile menu customization settings.
+* Added custom icon settings.
+* Fixed masthead padding updating in Customizer.
+* Changed post meta alignment.
+* Added page settings to posts.
+
 = 1.1.3 - March 9 2016 =
 * Reformatted code to match WordPress guidelines.
 * Center aligned dropdown menu.

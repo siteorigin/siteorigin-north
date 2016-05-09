@@ -232,15 +232,15 @@ textarea {
   #header-search input[type="search"] {
     right: auto;
     left: 20px; }
-  #header-search .svg-icon-close {
+  #header-search #close-search .svg-icon-close {
     right: auto;
     left: 20px; }
-    #header-search .svg-icon-close.animate-in {
-      -webkit-transform: scale(1) rotate(-90deg);
-      -moz-transform: scale(1) rotate(-90deg);
-      -ms-transform: scale(1) rotate(-90deg);
-      -o-transform: scale(1) rotate(-90deg);
-      transform: scale(1) rotate(-90deg); }
+  #header-search #close-search.animate-in {
+    -webkit-transform: scale(1) rotate(-90deg);
+    -moz-transform: scale(1) rotate(-90deg);
+    -ms-transform: scale(1) rotate(-90deg);
+    -o-transform: scale(1) rotate(-90deg);
+    transform: scale(1) rotate(-90deg); }
 
 #mobile-navigation {
   left: auto;

@@ -7,6 +7,7 @@
  * @package siteorigin-north
  */
 
+if ( ! function_exists( 'siteorigin_north_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -21,25 +22,21 @@ function siteorigin_north_body_classes( $classes ) {
 
 	$classes[] = 'no-js';
 	$classes[] = 'css3-animations';
+	$classes[] = 'no-touch';
 	if ( siteorigin_setting( 'responsive_disabled' ) == false ) {
 		$classes[] = 'responsive';
 	}
 
-	if( is_page() ) {
-		$classes[] = 'page-layout-' . SiteOrigin_Settings_Page_Settings::get('layout');
-		$classes[] = 'page-layout-menu-' . SiteOrigin_Settings_Page_Settings::get('menu');
-		if( !SiteOrigin_Settings_Page_Settings::get('masthead_margin') ) {
-			$classes[] = 'page-layout-no-masthead-margin';
-		}
-		if( !SiteOrigin_Settings_Page_Settings::get('footer_margin') ) {
-			$classes[] = 'page-layout-no-footer-margin';
-		}
-		if( SiteOrigin_Settings_Page_Settings::get('hide_masthead') ) {
-			$classes[] = 'page-layout-hide-masthead';
-		}
-		if( SiteOrigin_Settings_Page_Settings::get('hide_footer_widgets') ) {
-			$classes[] = 'page-layout-hide-footer-widgets';
-		}
+	$page_settings = siteorigin_page_setting();
+
+	if( !empty( $page_settings ) ) {
+		if( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if( !empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
+
+		if( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
+		if( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
+		if( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	if( !is_active_sidebar('main-sidebar') ) {
@@ -56,9 +53,11 @@ function siteorigin_north_body_classes( $classes ) {
 
 	return $classes;
 }
+endif;
 add_filter( 'body_class', 'siteorigin_north_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	if ( ! function_exists( 'siteorigin_north_wp_title' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
 	 *
@@ -89,8 +88,10 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		return $title;
 	}
+	endif;
 	add_filter( 'wp_title', 'siteorigin_north_wp_title', 10, 2 );
 
+	if ( ! function_exists( 'siteorigin_north_render_title' ) ) :
 	/**
 	 * Title shim for sites older than WordPress 4.1.
 	 *
@@ -102,14 +103,19 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
+	endif;
 	add_action( 'wp_head', 'siteorigin_north_render_title' );
 endif;
 
-/* Have a uniform size for the tag cloud */
+if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
+/*
+ * Have a uniform size for the tag cloud items
+ */
 function siteorigin_north_tag_cloud_widget($args) {
 	$args['largest'] = 0.8;  //largest tag
 	$args['smallest'] = 0.8; //smallest tag
 	$args['unit'] = 'em';    //tag font unit
 	return $args;
 }
+endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );

@@ -18,6 +18,10 @@
 
 		> * {
 			@include transform-origin( left center );
+
+			@at-root .layout-centered#{&} {
+				@include transform-origin( center center );
+			}
 		}
 
 		.site-title {

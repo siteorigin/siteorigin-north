@@ -1,5 +1,9 @@
 <?php
 
+if ( ! function_exists( 'siteorigin_north_panels_lite_localization' ) ) :
+/**
+ * The default panels lite labels.
+ */
 function siteorigin_north_panels_lite_localization( $loc ) {
 	return wp_parse_args( array(
 		'page_builder'         => __( 'Page Builder', 'siteorigin-north' ),
@@ -14,5 +18,5 @@ function siteorigin_north_panels_lite_localization( $loc ) {
 		// Message about disabling the custom home page if the user doesn't want to use it
 	), $loc );
 }
-
+endif;
 add_filter( 'siteorigin_panels_lite_localization', 'siteorigin_north_panels_lite_localization' );

@@ -40,8 +40,8 @@ function siteorigin_north_display_retina_logo( $attr ){
 		return $attr;
 	}
 }
-add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 endif;
+add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );
 
 if ( ! function_exists( 'siteorigin_north_the_post_navigation' ) ) :
 /**
@@ -181,52 +181,51 @@ function siteorigin_north_entry_footer() {
 endif;
 
 if( !function_exists('siteorigin_north_posts_pagination') ) :
-
-	/**
-	 * Display pagination
-	 */
-	function siteorigin_north_posts_pagination(){
-		global $wp_query;
-		if ( $wp_query->max_num_pages <= 1 ) {
-			return;
-		}
-
-		if ( is_rtl() ) {
-			$args = array(
-				'next_text' => '<span class="north-icon-double-previous"></span>',
-				'prev_text' => '<span class="north-icon-double-next"></span>',
-				'end_size'     => 3,
-				'mid_size'     => 3
-			);
-		} else {
-			$args = array(
-				'next_text' => '<span class="north-icon-double-next"></span>',
-				'prev_text' => '<span class="north-icon-double-previous"></span>',
-				'end_size'     => 3,
-				'mid_size'     => 3
-			);
-		}
-
-		if( is_search() ) {
-			// Add the arguments neccessary for search
-			global $wp_query;
-			$big = 999999999; // need an unlikely integer
-			$args = wp_parse_args( array(
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $wp_query->max_num_pages
-			), $args);
-		}
-
-		?><div class="post-pagination">
-		<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
-		echo paginate_links( $args );
-		?></div><?php
+/**
+ * Display pagination
+ */
+function siteorigin_north_posts_pagination(){
+	global $wp_query;
+	if ( $wp_query->max_num_pages <= 1 ) {
+		return;
 	}
 
+	if ( is_rtl() ) {
+		$args = array(
+			'next_text' => '<span class="north-icon-double-previous"></span>',
+			'prev_text' => '<span class="north-icon-double-next"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
+		);
+	} else {
+		$args = array(
+			'next_text' => '<span class="north-icon-double-next"></span>',
+			'prev_text' => '<span class="north-icon-double-previous"></span>',
+			'end_size'     => 3,
+			'mid_size'     => 3
+		);
+	}
+
+	if( is_search() ) {
+		// Add the arguments neccessary for search
+		global $wp_query;
+		$big = 999999999; // need an unlikely integer
+		$args = wp_parse_args( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		), $args);
+	}
+
+	?><div class="post-pagination">
+	<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
+	echo paginate_links( $args );
+	?></div><?php
+}
 endif;
 
+if( !function_exists('siteorigin_north_categorized_blog') ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -257,8 +256,12 @@ function siteorigin_north_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
 if( !function_exists('siteorigin_north_comment') ) :
+/**
+ * Returns the comment template.
+ */
 function siteorigin_north_comment( $comment, $args, $depth ){
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
@@ -297,6 +300,9 @@ function siteorigin_north_comment( $comment, $args, $depth ){
 endif;
 
 if( !function_exists('siteorigin_north_footer_text') ) :
+/**
+ * Displays the footer text.
+ */
 function siteorigin_north_footer_text(){
 	$text = siteorigin_setting('footer_text');
 	$text = str_replace(
@@ -308,7 +314,7 @@ function siteorigin_north_footer_text(){
 }
 endif;
 
-
+if( !function_exists('siteorigin_north_category_transient_flusher') ) :
 /**
  * Flush out the transients used in siteorigin_north_categorized_blog.
  */
@@ -319,41 +325,97 @@ function siteorigin_north_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'siteorigin_north_categories' );
 }
+endif;
 add_action( 'edit_category', 'siteorigin_north_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
 
+if( !function_exists('siteorigin_north_custom_icon') ):
+/**
+ * Display a custom icons from the settings
+ */
+function siteorigin_north_custom_icon( $icon, $class ){
+	$url = siteorigin_setting( $icon );
+	$url_id = attachment_url_to_postid( $url );
+
+	$url_ext = pathinfo($url);
+	switch($url_ext['extension'])
+	{
+		case "svg":
+		$attrs['class'] = "style-svg $class";
+		break;
+
+		default:
+		$attrs['class'] = "$class";
+	}
+
+	echo wp_get_attachment_image( $url_id, 'full', false, $attrs );
+}
+endif;
+
+if( !function_exists('siteorigin_north_display_icon') ) :
+/**
+ * Displays svg icons.
+ */
 function siteorigin_north_display_icon( $type ){
 	switch($type) {
 		case 'menu':
-			?>
-			<svg version="1.1" class="svg-icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-				<path class="line-1" d="M3,5h18c0.3,0,0.5,0.1,0.7,0.3C21.9,5.5,22,5.7,22,6s-0.1,0.5-0.3,0.7C21.5,6.9,21.3,7,21,7H3 C2.7,7,2.5,6.9,2.3,6.7C2.1,6.5,2,6.3,2,6s0.1-0.5,0.3-0.7C2.5,5.1,2.7,5,3,5z"/>
-				<path class="line-2" d="M3,11h18c0.3,0,0.5,0.1,0.7,0.3S22,11.7,22,12s-0.1,0.5-0.3,0.7S21.3,13,21,13H3c-0.3,0-0.5-0.1-0.7-0.3 C2.1,12.5,2,12.3,2,12s0.1-0.5,0.3-0.7C2.5,11.1,2.7,11,3,11z"/>
-				<path class="line-3" d="M3,17h18c0.3,0,0.5,0.1,0.7,0.3S22,17.7,22,18s-0.1,0.5-0.3,0.7S21.3,19,21,19H3c-0.3,0-0.5-0.1-0.7-0.3 C2.1,18.5,2,18.3,2,18s0.1-0.5,0.3-0.7C2.5,17.1,2.7,17,3,17z"/>
-			</svg>
-			<?php
+			if ( siteorigin_setting( 'icons_menu' ) ): ?>
+				<?php siteorigin_north_custom_icon( 'icons_menu', 'svg-icon-menu' ); ?>
+			<?php else : ?>
+				<svg version="1.1" class="svg-icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+					<path class="line-1" d="M3,5h18c0.3,0,0.5,0.1,0.7,0.3C21.9,5.5,22,5.7,22,6s-0.1,0.5-0.3,0.7C21.5,6.9,21.3,7,21,7H3 C2.7,7,2.5,6.9,2.3,6.7C2.1,6.5,2,6.3,2,6s0.1-0.5,0.3-0.7C2.5,5.1,2.7,5,3,5z"/>
+					<path class="line-2" d="M3,11h18c0.3,0,0.5,0.1,0.7,0.3S22,11.7,22,12s-0.1,0.5-0.3,0.7S21.3,13,21,13H3c-0.3,0-0.5-0.1-0.7-0.3 C2.1,12.5,2,12.3,2,12s0.1-0.5,0.3-0.7C2.5,11.1,2.7,11,3,11z"/>
+					<path class="line-3" d="M3,17h18c0.3,0,0.5,0.1,0.7,0.3S22,17.7,22,18s-0.1,0.5-0.3,0.7S21.3,19,21,19H3c-0.3,0-0.5-0.1-0.7-0.3 C2.1,18.5,2,18.3,2,18s0.1-0.5,0.3-0.7C2.5,17.1,2.7,17,3,17z"/>
+				</svg>
+			<?php endif;
 			break;
 
 		case 'close' :
-			?>
-			<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
-				 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-				<path class="circle" d="M22.1,7.7c-0.6-1.4-1.4-2.5-2.3-3.5c-1-1-2.2-1.8-3.5-2.3C14.9,1.3,13.5,1,12,1S9.1,1.3,7.7,1.9
-				C6.4,2.5,5.2,3.2,4.2,4.2c-1,1-1.8,2.2-2.3,3.5C1.3,9.1,1,10.5,1,12c0,1.5,0.3,2.9,0.9,4.3c0.6,1.4,1.4,2.5,2.3,3.5
-				c1,1,2.2,1.8,3.5,2.3C9.1,22.7,10.5,23,12,23s2.9-0.3,4.3-0.9c1.4-0.6,2.5-1.4,3.5-2.3c1-1,1.8-2.2,2.3-3.5
-				c0.6-1.4,0.9-2.8,0.9-4.3C23,10.5,22.7,9.1,22.1,7.7z M20.3,15.5c-0.5,1.1-1.1,2.1-1.9,2.9s-1.8,1.4-2.9,1.9
-				C14.4,20.8,13.2,21,12,21s-2.4-0.2-3.5-0.7c-1.1-0.5-2.1-1.1-2.9-1.9s-1.4-1.8-1.9-2.9C3.2,14.4,3,13.2,3,12
-				c0-1.2,0.2-2.4,0.7-3.5c0.5-1.1,1.1-2.1,1.9-2.9s1.8-1.4,2.9-1.9C9.6,3.2,10.8,3,12,3s2.4,0.2,3.5,0.7c1.1,0.5,2.1,1.1,2.9,1.9
-				s1.4,1.8,1.9,2.9C20.8,9.6,21,10.8,21,12C21,13.2,20.8,14.4,20.3,15.5z"/>
-				<path class="cross" d="M14.8,8.2c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7L13.4,12l2.1,2.1
-				c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3L12,13.4l-2.1,2.1
-				c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7l2.1-2.1L8.5,9.9
-				C8.3,9.7,8.2,9.4,8.2,9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3s0.5,0.1,0.7,0.3l2.1,2.1l2.1-2.1C14.3,8.3,14.6,8.2,14.8,8.2z"/>
-			</svg>
-			<?php
+			if ( siteorigin_setting( 'icons_close_search' ) ): ?>
+				<?php siteorigin_north_custom_icon( 'icons_close_search', 'svg-icon-close' ); ?>
+			<?php else : ?>
+				<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
+				     viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+					<path class="circle" d="M22.1,7.7c-0.6-1.4-1.4-2.5-2.3-3.5c-1-1-2.2-1.8-3.5-2.3C14.9,1.3,13.5,1,12,1S9.1,1.3,7.7,1.9
+					C6.4,2.5,5.2,3.2,4.2,4.2c-1,1-1.8,2.2-2.3,3.5C1.3,9.1,1,10.5,1,12c0,1.5,0.3,2.9,0.9,4.3c0.6,1.4,1.4,2.5,2.3,3.5
+					c1,1,2.2,1.8,3.5,2.3C9.1,22.7,10.5,23,12,23s2.9-0.3,4.3-0.9c1.4-0.6,2.5-1.4,3.5-2.3c1-1,1.8-2.2,2.3-3.5
+					c0.6-1.4,0.9-2.8,0.9-4.3C23,10.5,22.7,9.1,22.1,7.7z M20.3,15.5c-0.5,1.1-1.1,2.1-1.9,2.9s-1.8,1.4-2.9,1.9
+					C14.4,20.8,13.2,21,12,21s-2.4-0.2-3.5-0.7c-1.1-0.5-2.1-1.1-2.9-1.9s-1.4-1.8-1.9-2.9C3.2,14.4,3,13.2,3,12
+					c0-1.2,0.2-2.4,0.7-3.5c0.5-1.1,1.1-2.1,1.9-2.9s1.8-1.4,2.9-1.9C9.6,3.2,10.8,3,12,3s2.4,0.2,3.5,0.7c1.1,0.5,2.1,1.1,2.9,1.9
+					s1.4,1.8,1.9,2.9C20.8,9.6,21,10.8,21,12C21,13.2,20.8,14.4,20.3,15.5z"/>
+					<path class="cross" d="M14.8,8.2c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7L13.4,12l2.1,2.1
+					c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3L12,13.4l-2.1,2.1
+					c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7l2.1-2.1L8.5,9.9
+					C8.3,9.7,8.2,9.4,8.2,9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3s0.5,0.1,0.7,0.3l2.1,2.1l2.1-2.1C14.3,8.3,14.6,8.2,14.8,8.2z"/>
+				</svg>
+			<?php endif;
 			break;
+
+		case 'up-arrow' :
+			if( siteorigin_setting('icons_scroll_to_top') ) : ?>
+				<?php siteorigin_north_custom_icon( 'icons_scroll_to_top', 'svg-icon-to-top' ); ?>
+			<?php else : ?>
+				<svg version="1.1" class="svg-icon-to-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+					<path class="st0" d="M12,2c0.3,0,0.5,0.1,0.7,0.3l7,7C19.9,9.5,20,9.7,20,10c0,0.3-0.1,0.5-0.3,0.7S19.3,11,19,11
+		                c-0.3,0-0.5-0.1-0.7-0.3L13,5.4V21c0,0.3-0.1,0.5-0.3,0.7S12.3,22,12,22s-0.5-0.1-0.7-0.3S11,21.3,11,21V5.4l-5.3,5.3
+		                C5.5,10.9,5.3,11,5,11c-0.3,0-0.5-0.1-0.7-0.3C4.1,10.5,4,10.3,4,10c0-0.3,0.1-0.5,0.3-0.7l7-7C11.5,2.1,11.7,2,12,2z"/>
+				</svg>
+			<?php endif;
+			break;
+
+		case 'search':
+			if ( siteorigin_setting( 'icons_search' ) ): ?>
+				<?php siteorigin_north_custom_icon( 'icons_search', 'svg-icon-search' ); ?>
+			<?php else : ?>
+				<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+					<path d="M20.943 4.619c-4.5-4.5-11.822-4.5-16.321 0-4.498 4.5-4.498 11.822 0 16.319 4.007 4.006 10.247 4.435 14.743 1.308 0.095 0.447 0.312 0.875 0.659 1.222l6.553 6.55c0.953 0.955 2.496 0.955 3.447 0 0.953-0.951 0.953-2.495 0-3.447l-6.553-6.551c-0.347-0.349-0.774-0.565-1.222-0.658 3.13-4.495 2.7-10.734-1.307-14.743zM18.874 18.871c-3.359 3.357-8.825 3.357-12.183 0-3.357-3.359-3.357-8.825 0-12.184 3.358-3.359 8.825-3.359 12.183 0s3.359 8.825 0 12.184z"></path>
+				</svg>
+			<?php endif;
+			break;
+
 	}
 }
+endif;
 
 if ( ! function_exists( 'siteorigin_north_breadcrumbs' ) ) :
 /**
