@@ -3,7 +3,7 @@ module.exports = {
 	jsMinSuffix: '.min',
 	contributors: {
 		src: [
-			'**/*',
+			'{**/*.js,**/*.php,**/*.less,**/*.scss}',
 			'!{build,build/**}',                      // Ignore build/ submodule
 			'!{inc/settings,inc/settings/**}',        // Ignore settings submodule
 			'!{inc/panels-lite,inc/panels-lite/**}',  // Ignore panels-lite submodule
@@ -12,7 +12,10 @@ module.exports = {
 			'!{tmp,tmp/**}'                           // Ignore tmp/ and contents if any
 		],
 		format: 'php',
-		skipCommits: [ ]
+		skipCommits: [ ],
+		excludeEmails: [
+			'77e88891e4965161953320ec66623cbc',       // Remove greg@siteorigin.com
+		]
 	},
 	version: {
 		src: [
