@@ -1132,3 +1132,22 @@ function siteorigin_north_page_settings_panels_defaults( $settings ){
 }
 endif;
 add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_page_settings_panels_defaults');
+
+if( !function_exists('siteorigin_north_siteorigin_setting_update_image') ) :
+/**
+ * Convert post ID based images into full URLs
+ *
+ * @param $mods
+ *
+ * @return mixed
+ */
+function siteorigin_north_siteorigin_setting_update_image( $mods ) {
+	foreach ( array( 'branding_logo', 'branding_logo_retina' ) as $key ) {
+		if( ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
+			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
+		}
+	}
+	return $mods;
+}
+endif;
+add_filter( 'option_theme_mods_vantage', 'siteorigin_north_siteorigin_setting_update_image' );
