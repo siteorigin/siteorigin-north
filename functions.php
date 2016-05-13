@@ -41,7 +41,7 @@ function siteorigin_north_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	set_post_thumbnail_size( 720, 380 );
+	set_post_thumbnail_size( 650, 650 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
