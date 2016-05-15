@@ -1143,7 +1143,7 @@ if( !function_exists('siteorigin_north_siteorigin_setting_update_image') ) :
  */
 function siteorigin_north_siteorigin_setting_update_image( $mods ) {
 	foreach ( array( 'branding_logo', 'branding_logo_retina' ) as $key ) {
-		if( ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
+		if( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
 			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
 		}
 	}
