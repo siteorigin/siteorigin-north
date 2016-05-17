@@ -152,8 +152,7 @@ function siteorigin_north_settings_init(){
 			'fields' => array(
 				'sidebar_width' => array(
 					'label'             => __( 'Sidebar Width', 'siteorigin-north' ),
-					'type'              => 'text',
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
+					'type'              => 'measurement',
 					'live'              => true,
 				)
 			)
@@ -190,21 +189,18 @@ function siteorigin_north_settings_init(){
 					'live'  => true,
 				),
 				'border_width'         => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Border Width', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => true,
 				),
 				'padding'              => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Padding', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => false,
 				),
 				'bottom_margin'        => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Bottom Margin', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => true,
 				),
 			)
@@ -340,27 +336,23 @@ function siteorigin_north_settings_init(){
 					'live'  => true,
 				),
 				'border_width'     => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Border Width', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => true,
 				),
 				'top_padding'      => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Top Padding', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => true,
 				),
 				'side_padding'     => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Side Padding', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => true,
 				),
 				'top_margin'       => array(
-					'type'              => 'text',
+					'type'              => 'measurement',
 					'label'             => __( 'Top Margin', 'siteorigin-north' ),
-					'sanitize_callback' => array( 'SiteOrigin_Settings_Value_Sanitize', 'measurement' ),
 					'live'              => true,
 				),
 			),
