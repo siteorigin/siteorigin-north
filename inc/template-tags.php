@@ -17,7 +17,8 @@ function siteorigin_north_display_logo(){
 		$logo_id = attachment_url_to_postid( $logo );
 		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array() );
 
-		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-north' ); ?></span><?php
 		echo wp_get_attachment_image( $logo_id, 'full', false, $attrs );
 		?></a><?php
 
