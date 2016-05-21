@@ -415,6 +415,15 @@
         margin-top: 0.5em; }
         .woocommerce table.shop_table button[name="apply_coupon"] {
           margin-top: 0; } }
+  @media (max-width: 768px) {
+    .woocommerce table.shop_table .cart_item .remove {
+      float: none;
+      margin-bottom: 0; }
+    .woocommerce table.shop_table .cart_item .product-name img {
+      max-width: 60px;
+      margin-right: 5px; }
+    .woocommerce table.shop_table .cart_item .product-name .cart-item-product-name {
+      left: 0; } }
 
 #mobile-navigation .shopping-cart-link {
   margin-top: 1em;
