@@ -225,8 +225,7 @@
 			}
 
 			.shopping-cart-count {
-				background: $color__primary_accent_dark;
-				background-clip: padding-box;
+				background: $color__primary_accent_dark padding-box;
 			}
 		}
 
@@ -237,10 +236,9 @@
 			padding: 3px 5px;
 			border: 2px solid #fff;
 			border-radius: 9px;
-			background: $color__primary_accent;
+			background: $color__primary_accent padding-box;
 			color: #fff;
 			font-size: 9px;
-			background-clip: padding-box;
 		}
 
 		.shopping-cart-dropdown {

@@ -460,8 +460,7 @@
     background: #a94346;
     color: #fff; }
   .main-navigation .shopping-cart:hover .shopping-cart-count {
-    background: #a94346;
-    background-clip: padding-box; }
+    background: #a94346 padding-box; }
   .main-navigation .shopping-cart .shopping-cart-count {
     position: relative;
     left: -11px;
@@ -469,10 +468,9 @@
     padding: 3px 5px;
     border: 2px solid #fff;
     border-radius: 9px;
-    background: #c75d5d;
+    background: #c75d5d padding-box;
     color: #fff;
-    font-size: 9px;
-    background-clip: padding-box; }
+    font-size: 9px; }
   .main-navigation .shopping-cart .shopping-cart-dropdown {
     width: 350px;
     right: 0; }

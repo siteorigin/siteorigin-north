@@ -792,10 +792,10 @@ function siteorigin_north_settings_custom_css($css){
 	background: ${branding_accent_dark};
 	}
 	.main-navigation .shopping-cart:hover .shopping-cart-count {
-	background: ${branding_accent_dark};
+	background: ${branding_accent_dark} padding-box;
 	}
 	.main-navigation .shopping-cart .shopping-cart-count {
-	background: ${branding_accent};
+	background: ${branding_accent} padding-box;
 	}
 	.widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
 	color: ${fonts_text_dark};
