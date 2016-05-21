@@ -387,7 +387,7 @@
       color: #c75d5d; }
     .woocommerce table.shop_table .cart_totals .wc-proceed-to-checkout {
       display: none; }
-  .woocommerce table.shop_table button {
+  .woocommerce table.shop_table .button {
     border-radius: 0px;
     font-size: 0.85em;
     padding: 10px;
@@ -396,24 +396,27 @@
     font-family: "Montserrat", sans-serif;
     -webkit-transition: 0.085s;
     -moz-transition: 0.085s;
-    transition: 0.085s; }
-    .woocommerce table.shop_table button.checkout-button {
+    transition: 0.085s;
+    background: transparent;
+    border: 1px solid #292929;
+    color: #292929; }
+    .woocommerce table.shop_table .button.button-continue-shopping {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: normal; }
+    .woocommerce table.shop_table .button.checkout-button {
       background: #c75d5d;
       border: 1px solid #c75d5d;
       color: #fff; }
-    .woocommerce table.shop_table button.button, .woocommerce table.shop_table button.button-continue-shopping {
-      background: transparent;
-      border: 1px solid #292929;
-      color: #292929; }
-    .woocommerce table.shop_table button:hover {
+    .woocommerce table.shop_table .button:hover {
       background: #a94346;
       color: #fff;
       border-color: #a94346;
       box-shadow: none; }
     @media (max-width: 768px) {
-      .woocommerce table.shop_table button {
+      .woocommerce table.shop_table .button {
         margin-top: 0.5em; }
-        .woocommerce table.shop_table button[name="apply_coupon"] {
+        .woocommerce table.shop_table .button[name="apply_coupon"] {
           margin-top: 0; } }
 
 #mobile-navigation .shopping-cart-link {
@@ -460,8 +463,7 @@
     background: #a94346;
     color: #fff; }
   .main-navigation .shopping-cart:hover .shopping-cart-count {
-    background: #a94346;
-    background-clip: padding-box; }
+    background: #a94346 padding-box; }
   .main-navigation .shopping-cart .shopping-cart-count {
     position: relative;
     left: -11px;
@@ -469,10 +471,9 @@
     padding: 3px 5px;
     border: 2px solid #fff;
     border-radius: 9px;
-    background: #c75d5d;
+    background: #c75d5d padding-box;
     color: #fff;
-    font-size: 9px;
-    background-clip: padding-box; }
+    font-size: 9px; }
   .main-navigation .shopping-cart .shopping-cart-dropdown {
     width: 350px;
     right: 0; }
