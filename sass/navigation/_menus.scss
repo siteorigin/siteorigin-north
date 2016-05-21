@@ -369,6 +369,7 @@
 			border-bottom: 1px solid $mobilemenu__text_color;
 			width: 100%;
 			padding: 10px;
+			-webkit-appearance: none;
 			@include placeholder {
 				color: rgba( $mobilemenu__text_color, 0.7 );
 			}
