@@ -120,7 +120,7 @@
 				}
 			}
 
-			button {
+			.button {
 				border-radius: 0px;
 				font-size: 0.85em;
 				padding: 10px;
@@ -128,18 +128,20 @@
 				box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
 				font-family: $font__headings;
 				@include transition(0.085s);
+				background: transparent;
+				border: 1px solid $color__text_dark;
+				color: $color__text_dark;
+
+				&.button-continue-shopping {
+					text-decoration: none;
+					text-transform: uppercase;
+					font-weight: normal;
+				}
 
 				&.checkout-button {
 					background: $color__primary_accent;
 					border: 1px solid $color__primary_accent;
 					color: #fff;
-				}
-
-				&.button,
-				&.button-continue-shopping {
-					background: transparent;
-					border: 1px solid $color__text_dark;
-					color: $color__text_dark;
 				}
 
 				&:hover {
