@@ -159,6 +159,26 @@
 					}
 				}
 			}
+
+			@media (max-width: 768px) {
+				.cart_item {
+					.remove {
+						float: none;
+						margin-bottom: 0;
+					}
+
+					.product-name {
+						img {
+							max-width: 60px;
+							margin-right: 5px;
+						}
+
+						.cart-item-product-name {
+							left: 0;
+						}
+					}
+				}
+			}
 		}
 	}
 }
