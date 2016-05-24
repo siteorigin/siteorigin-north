@@ -96,9 +96,15 @@
 				.input-text {
 					height: 33px;
 					min-width: 120px;
+				}
 
-					@media (max-width: 768px) {
+				@media (max-width: 768px) {
+					.input-text, .button {
 						width: 100% !important;
+					}
+
+					.button {
+						margin-top: 10px;
 					}
 				}
 			}
@@ -106,7 +112,6 @@
 			.cart_totals {
 				border: 1px solid $woocommerce__border_color;
 				padding: 20px;
-				margin-bottom: 25px;
 
 				h2 {
 					text-align: left;
@@ -155,11 +160,6 @@
 					border-color: $color__primary_accent_dark;
 					box-shadow: none;
 				}
-
-				@media (max-width: 768px) {
-					margin-top: 0.5em;
-					width: 100% !important;
-				}
 			}
 
 			@media (max-width: 768px) {
@@ -181,20 +181,24 @@
 					}
 				}
 			}
-		}
-	}
-}
 
-&.page-layout-default,
-&.page-layout-full-width-sidebar {
-	&:not(.no-active-sidebar) {
-		.cart-buttons {
-			@media (max-width: 1000px) {
-				padding-top: 40px;
+			.coupon {
+				margin-top: 25px;
+				padding-bottom: 0 !important;
 			}
 
-			@media (max-width: 768px) {
-				padding-top: 0;
+			.cart-buttons {
+				float: right;
+				margin-top: 25px;
+
+				@media (max-width: 768px) {
+					float: none;
+
+					.button {
+						margin-top: 0.5em;
+						width: 100% !important;
+					}
+				}
 			}
 		}
 	}
