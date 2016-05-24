@@ -75,7 +75,7 @@ jQuery( function ( $ ) {
 				link.parent().addClass('touch-drop');
 
 				if( link.hasClass('hover') ) {
-					unbind('click');
+					link.unbind('click');
 				} else {
 					link.addClass('hover');
 					e.preventDefault();
