@@ -705,6 +705,11 @@ a {
     border-radius: 0;
     background: rgba(0, 0, 0, 0.035);
     border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
     font-family: "Droid Serif", sans-serif;
     right: 20px;
     padding: 0 10px; }
