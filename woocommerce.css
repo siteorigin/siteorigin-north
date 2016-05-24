@@ -431,6 +431,16 @@
     .woocommerce table.shop_table .cart_item .product-name .cart-item-product-name {
       left: 0; } }
 
+@media (max-width: 1000px) {
+  .page-layout-default:not(.no-active-sidebar) .cart-buttons,
+  .page-layout-full-width-sidebar:not(.no-active-sidebar) .cart-buttons {
+    padding-top: 40px; } }
+
+@media (max-width: 768px) {
+  .page-layout-default:not(.no-active-sidebar) .cart-buttons,
+  .page-layout-full-width-sidebar:not(.no-active-sidebar) .cart-buttons {
+    padding-top: 0; } }
+
 #mobile-navigation .shopping-cart-link {
   margin-top: 1em;
   text-decoration: none;

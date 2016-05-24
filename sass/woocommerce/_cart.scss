@@ -185,6 +185,21 @@
 	}
 }
 
+&.page-layout-default,
+&.page-layout-full-width-sidebar {
+	&:not(.no-active-sidebar) {
+		.cart-buttons {
+			@media (max-width: 1000px) {
+				padding-top: 40px;
+			}
+
+			@media (max-width: 768px) {
+				padding-top: 0;
+			}
+		}
+	}
+}
+
 #mobile-navigation {
 	.shopping-cart-link {
 		margin-top: 1em;
