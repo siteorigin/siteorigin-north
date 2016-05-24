@@ -1141,3 +1141,32 @@ function siteorigin_north_siteorigin_setting_update_image( $mods ) {
 }
 endif;
 add_filter( 'option_theme_mods_siteorigin-north', 'siteorigin_north_siteorigin_setting_update_image' );
+
+if( !function_exists( 'siteorigin_north_about_page' ) ) :
+/**
+ * Adds everything we need for the North about page.
+ */
+function siteorigin_north_about_page( $about ){
+	$about['title_image'] = get_template_directory_uri() . '/admin/about/north-logo-small.png';
+	$about['title_image_2x'] = get_template_directory_uri() . '/admin/about/north-logo-large.png';
+
+	$about['video_thumbnail'] = array(
+		get_template_directory_uri() . '/admin/about/video-1.jpg',
+		get_template_directory_uri() . '/admin/about/video-2.jpg',
+		get_template_directory_uri() . '/admin/about/video-3.jpg',
+	);
+
+	$about['description'] = __( 'SiteOrigin North is a simple, customizable WordPress theme. Check out this video to get an idea of what it has to offer.', 'siteorigin-north' );
+
+	$about['sections'] = array(
+		'free',
+		'customize',
+		'page-builder',
+		'support',
+		'github',
+	);
+
+	return $about;
+}
+endif;
+add_filter( 'siteorigin_about_page', 'siteorigin_north_about_page' );
