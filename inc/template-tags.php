@@ -14,11 +14,10 @@ if( !function_exists('siteorigin_north_display_logo') ):
 function siteorigin_north_display_logo(){
 	$logo = siteorigin_setting( 'branding_logo' );
 	if( !empty($logo) ) {
-		$logo_id = attachment_url_to_postid( $logo );
 		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array() );
 
 		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
-		echo wp_get_attachment_image( $logo_id, 'full', false, $attrs );
+		echo wp_get_attachment_image( $logo, 'full', false, $attrs );
 		?></a><?php
 
 	}
@@ -35,10 +34,28 @@ if( !function_exists('siteorigin_north_display_retina_logo') ):
 function siteorigin_north_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
+
 	if( !empty($retina) ) {
-		$attr['srcset'] = $logo . ' 1x,' . $retina . ' 2x';
-		return $attr;
+
+		$srcset = array();
+
+		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
+		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
+
+		if( !empty( $logo_src ) ) {
+			$srcset[] = $logo_src[0] . ' 1x';
+		}
+
+		if( !empty( $logo_src ) ) {
+			$srcset[] = $retina_src[0] . ' 2x';
+		}
+
+		if( ! empty( $srcset ) ) {
+			$attr['srcset'] = implode( ',', $srcset );
+		}
 	}
+
+	return $attr;
 }
 endif;
 add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo', 10, 1 );

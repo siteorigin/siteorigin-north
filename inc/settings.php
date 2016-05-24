@@ -1,39 +1,5 @@
 <?php
 
-if ( ! function_exists( 'siteorigin_north_settings_localize' ) ) :
-/**
- * The default settings labels.
- */
-function siteorigin_north_settings_localize( $loc ){
-	return wp_parse_args( array(
-		'section_title'       => __( 'Theme Settings', 'siteorigin-north' ),
-		'section_description' => __( 'Change settings for your theme.', 'siteorigin-north' ),
-		'premium_only'        => __( 'Available in Premium', 'siteorigin-north' ),
-		'premium_url'         => 'https://siteorigin.com/premium/?target=theme_north',
-		// For the controls
-		'variant'             => __( 'Variant', 'siteorigin-north' ),
-		'subset'              => __( 'Subset', 'siteorigin-north' ),
-
-		// For the settings metabox
-		'meta_box'            => __( 'Page settings', 'siteorigin-north' ),
-
-		// For archives section
-		'page_section_title' => __( 'Page Template Settings', 'siteorigin-north' ),
-		'page_section_description' => __( 'Change layouts for various pages on your site.', 'siteorigin-north' ),
-
-		// For all the different temples and template types
-		'template_home' => __( 'Blog Page', 'siteorigin-north' ),
-		'template_search' => __( 'Search Results', 'siteorigin-north' ),
-		'template_date' => __( 'Date Archives', 'siteorigin-north' ),
-		'template_404' => __( 'Not Found', 'siteorigin-north' ),
-		'template_author' => __( 'Author Archives', 'siteorigin-north' ),
-		'templates_post_type' => __( 'Type', 'siteorigin-north' ),
-		'templates_taxonomy' => __( 'Taxonomy', 'siteorigin-north' ),
-	), $loc );
-}
-endif;
-add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
-
 if ( ! function_exists( 'siteorigin_north_settings_init' ) ) :
 /**
  * Initialize the settings
@@ -1132,11 +1098,12 @@ if( !function_exists('siteorigin_north_siteorigin_setting_update_image') ) :
  * @return mixed
  */
 function siteorigin_north_siteorigin_setting_update_image( $mods ) {
-	foreach ( array( 'branding_logo', 'branding_logo_retina' ) as $key ) {
+	foreach ( array( 'branding_logo', 'branding_retina_logo' ) as $key ) {
 		if( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
 			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
 		}
 	}
+
 	return $mods;
 }
 endif;

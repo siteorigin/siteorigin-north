@@ -1,3 +1,13 @@
+= 1.2.1 - May 24 2016 =
+* Updated settings framework.
+* Added about page.
+* Fixed post thumbnail size.
+* Added logo migration code.
+* Fixed search input on iOS.
+* Improved WooCommerce cart design on mobile.
+* Disabled sticky menu on mobile devices until all issues can be resolved.
+* Standardised jquery handles.
+
 = 1.2 - May 6 2016 =
 * Fixes to RTL layout.
 * Styled various WooCommerce widgets.
