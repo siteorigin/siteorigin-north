@@ -768,7 +768,13 @@ a {
       color: #fff;
       border-bottom: 1px solid #fff;
       width: 100%;
-      padding: 10px; }
+      padding: 10px;
+      font-size: 16px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none; }
       #mobile-navigation form input[type="search"]::-webkit-input-placeholder {
         color: rgba(255, 255, 255, 0.7); }
       #mobile-navigation form input[type="search"]::-moz-placeholder {

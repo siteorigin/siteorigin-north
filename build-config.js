@@ -12,7 +12,7 @@ module.exports = {
 			'!{tmp,tmp/**}'                           // Ignore tmp/ and contents if any
 		],
 		format: 'php',
-		skipCommits: [ ],
+		skipCommits: [],
 		excludeEmails: [
 			'77e88891e4965161953320ec66623cbc',       // Remove greg@siteorigin.com
 		]
@@ -63,7 +63,7 @@ module.exports = {
 	},
 	copy: {
 		src: [
-			'**/!(*.js|*.scss|*.md|style.css|woocommerce.css)',   // Everything except .js and .scss files
+			'**/!(*.js|*.scss|*.md|style.css|woocommerce.css|woocommerce-rtl.css|woocommerce-smallscreen-rtl.css)',   // Everything except .js and .scss files and the output of LESS/CSS tasks
 			'!{build,build/**}',                                  // Ignore build/ and contents
 			'!{sass,sass/**}',                                    // Ignore sass/ and contents
 			'inc/settings/chosen/*.js',                           // Ensure necessary .js files ignored in the first glob are copied
