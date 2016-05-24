@@ -185,24 +185,6 @@ jQuery( function ( $ ) {
 
 	} );
 
-	// Handle the mobile menu dropdown when it extends beyond the viewport
-	var mobileMenuHeight = function () {
-
-		var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-
-		var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
-
-		if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
-			$('#mobile-navigation').css({'max-height': mobileMenuHeight, 'overflow-y': 'scroll'});
-		} else {
-			$('#mobile-navigation').css('max-height', mobileMenuHeight );
-		}
-	}
-
-	if ( $( 'body' ).hasClass( 'sticky-menu' ) ) {
-		$( window ).resize( mobileMenuHeight ).scroll( mobileMenuHeight );
-	}
-
 	// The scroll to top button
 	var sttWindowScroll = function () {
 		var top = window.pageYOffset || document.documentElement.scrollTop;
@@ -269,8 +251,24 @@ jQuery( function ( $ ) {
 			else {
 				$mhs.hide();
 			}
+
+			// Don't let the height of the dropdown extend below the bottom of the screen.
+			var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
+			var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
+
+			if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
+				$( '#mobile-navigation' ).css( {
+					'max-height': mobileMenuHeight,
+					'overflow-y': 'scroll',
+					'-webkit-overflow-scrolling' : 'touch'
+				} );
+			} else {
+				$('#mobile-navigation').css('max-height', mobileMenuHeight );
+			}
 		};
 		smSetup();
+
+
 		$( window ).resize( smSetup ).scroll( smSetup );
 
 		var mhPadding = {
