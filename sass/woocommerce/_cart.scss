@@ -96,6 +96,10 @@
 				.input-text {
 					height: 33px;
 					min-width: 120px;
+
+					@media (max-width: 768px) {
+						width: 100% !important;
+					}
 				}
 			}
 
@@ -136,6 +140,7 @@
 					text-decoration: none;
 					text-transform: uppercase;
 					font-weight: normal;
+					text-align: center;
 				}
 
 				&.checkout-button {
@@ -153,10 +158,7 @@
 
 				@media (max-width: 768px) {
 					margin-top: 0.5em;
-
-					&[name="apply_coupon"] {
-						margin-top: 0;
-					}
+					width: 100% !important;
 				}
 			}
 
@@ -178,6 +180,21 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+&.page-layout-default,
+&.page-layout-full-width-sidebar {
+	&:not(.no-active-sidebar) {
+		.cart-buttons {
+			@media (max-width: 1000px) {
+				padding-top: 40px;
+			}
+
+			@media (max-width: 768px) {
+				padding-top: 0;
 			}
 		}
 	}
