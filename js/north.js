@@ -190,12 +190,12 @@ jQuery( function ( $ ) {
 
 		var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
 
-		$mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
+		var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
 
-		if ( $('#mobile-navigation').outerHeight() > $mobileMenuHeight ) {
-			$('#mobile-navigation').css({'max-height': $mobileMenuHeight, 'overflow-y': 'scroll'});
+		if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
+			$('#mobile-navigation').css({'max-height': mobileMenuHeight, 'overflow-y': 'scroll'});
 		} else {
-			$('#mobile-navigation').css('max-height', $mobileMenuHeight );
+			$('#mobile-navigation').css('max-height', mobileMenuHeight );
 		}
 	}
 
