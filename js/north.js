@@ -226,7 +226,7 @@ jQuery( function ( $ ) {
 
 	// Now lets do the sticky menu
 
-	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && ! $( 'body' ).hasClass( 'is-mobile' ) ) {
+	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 		var $mhs = false,
 			mhTop = false,
 			pageTop = $( '#page' ).offset().top,
