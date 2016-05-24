@@ -1125,7 +1125,7 @@ add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_pa
 
 if( !function_exists('siteorigin_north_siteorigin_setting_update_image') ) :
 /**
- * Convert post ID based images into full URLs
+ * Convert URL based images into IDs
  *
  * @param $mods
  *
@@ -1140,4 +1140,4 @@ function siteorigin_north_siteorigin_setting_update_image( $mods ) {
 	return $mods;
 }
 endif;
-add_filter( 'option_theme_mods_vantage', 'siteorigin_north_siteorigin_setting_update_image' );
+add_filter( 'option_theme_mods_siteorigin-north', 'siteorigin_north_siteorigin_setting_update_image' );
