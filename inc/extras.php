@@ -39,6 +39,10 @@ function siteorigin_north_body_classes( $classes ) {
 		if( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
+	if( wp_is_mobile() ) {
+		$classes[] = 'is-mobile-device';
+	}
+
 	if( !is_active_sidebar('main-sidebar') ) {
 		$classes[] = 'no-active-sidebar';
 	}
