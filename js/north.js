@@ -62,10 +62,8 @@ jQuery( function ( $ ) {
 		$( '.entry-content' ).fitVids();
 	}
 
-	// Remove the no-touch body class for touch devices
-	var isTouchDevice = 'ontouchstart' in document.documentElement;
-	var msTouchEnabled = window.navigator.msMaxTouchPoints;
-	if( isTouchDevice || msTouchEnabled ) {
+	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	if( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
 		$('body').removeClass('no-touch');
 	}
 	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
