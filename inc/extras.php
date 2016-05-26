@@ -51,10 +51,6 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'sticky-menu';
 	}
 
-	if( wp_is_mobile() ) {
-		$classes[] = 'is_mobile';
-	}
-
 	return $classes;
 }
 endif;
