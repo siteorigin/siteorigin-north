@@ -1,3 +1,8 @@
+= 1.2.2 - May 26 2016 =
+* Fixed warning message in customizer.
+* Removed duplicate is mobile body class.
+* Improved main menu touch device compatibility.
+
 = 1.2.1 - May 24 2016 =
 * Updated settings framework.
 * Added about page.
