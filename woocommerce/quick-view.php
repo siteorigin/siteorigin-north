@@ -21,7 +21,6 @@ while ( have_posts() ) : the_post();
 	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<a href="#" id="close-quickview"></a>
 		<div class="product-content-wrapper">
-
 			<div class="product-image-wrapper">
 
 				<?php do_action( 'siteorigin_north_woocommerce_quick_view_images' ); ?>
@@ -29,6 +28,8 @@ while ( have_posts() ) : the_post();
 			</div>
 
 			<div class="product-info-wrapper">
+
+				<span class="quickview-close-icon">X</span>
 
 				<a href="<?php the_permalink(); ?>">
 					<?php
