@@ -1251,20 +1251,24 @@ a {
   width: 100%;
   z-index: 999;
   min-width: 1060px; }
-  .sticky-menu.no-topbar #masthead {
+  .sticky-menu.no-topbar #masthead,
+  .sticky-menu.topbar-out #masthead {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     content: "";
     display: table; }
-  .sticky-menu.no-topbar.admin-bar #masthead {
+  .sticky-menu.no-topbar.admin-bar #masthead,
+  .sticky-menu.topbar-out.admin-bar #masthead {
     top: 32px; }
     @media screen and (max-width: 782px) {
-      .sticky-menu.no-topbar.admin-bar #masthead {
+      .sticky-menu.no-topbar.admin-bar #masthead,
+      .sticky-menu.topbar-out.admin-bar #masthead {
         top: 46px; } }
     @media screen and (max-width: 599px) {
-      .sticky-menu.no-topbar.admin-bar #masthead {
+      .sticky-menu.no-topbar.admin-bar #masthead,
+      .sticky-menu.topbar-out.admin-bar #masthead {
         top: 0; } }
   #masthead .container-inner {
     display: table;

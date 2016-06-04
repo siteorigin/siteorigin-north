@@ -8,23 +8,29 @@
 	z-index: 999;
 	min-width: 1060px;
 
-	@at-root .sticky-menu.no-topbar & {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		@include clearfix;
+	@at-root {
+		.sticky-menu.no-topbar &,
+		.sticky-menu.topbar-out & {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			@include clearfix;
+		}
 	}
 
-	@at-root .sticky-menu.no-topbar.admin-bar & {
-		top: 32px;
+	@at-root{
+		.sticky-menu.no-topbar.admin-bar &,
+		.sticky-menu.topbar-out.admin-bar & {
+			top: 32px;
 
-		@media screen and (max-width: 782px) {
-			top: 46px;
-		}
+			@media screen and (max-width: 782px) {
+				top: 46px;
+			}
 
-		@media screen and (max-width: 599px) {
-			top: 0;
+			@media screen and (max-width: 599px) {
+				top: 0;
+			}
 		}
 	}
 

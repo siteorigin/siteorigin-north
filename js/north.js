@@ -239,11 +239,25 @@ jQuery( function ( $ ) {
 			}
 
 			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.isVisible() ) {
-				$( 'body' ).addClass( 'no-topbar' );
+				$( 'body' ).addClass( 'topbar-out' );
 			}
 
-			if ( $( 'body' ).hasClass( 'no-topbar' ) && $tb.isVisible() ) {
-				$( 'body' ).removeClass( 'no-topbar' );
+			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.isVisible() ) {
+				$( 'body' ).removeClass( 'topbar-out' );
+			}
+
+			// Don't let the height of the dropdown extend below the bottom of the screen.
+			var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
+			var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
+
+			if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
+				$( '#mobile-navigation' ).css( {
+					'max-height': mobileMenuHeight,
+					'overflow-y': 'scroll',
+					'-webkit-overflow-scrolling' : 'touch'
+				} );
+			} else {
+				$('#mobile-navigation').css('max-height', mobileMenuHeight );
 			}
 		}
 		smSetup();
