@@ -44,6 +44,17 @@
 			} );
 		};
 
+		// Check if an element is visible in the viewport
+		$.fn.isVisible = function() {
+			var rect = this[0].getBoundingClientRect();
+			return (
+				rect.bottom >= 0 &&
+				rect.right >= 0 &&
+				rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		};
+
 	}
 )( jQuery );
 
@@ -210,66 +221,32 @@ jQuery( function ( $ ) {
 
 	// Now lets do the sticky menu
 
-	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && ! $( 'body' ).hasClass( 'is-mobile-device' ) ) {
+	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 		var $mhs = false,
 			mhTop = false,
 			pageTop = $( '#page' ).offset().top,
-			$mh = $( '#masthead' );
+			$mh = $( '#masthead' ),
+			$tb = $( '#topbar' );
 
-		var smSetup = function () {
-			pageTop = $( '#page' ).offset().top;
+		var smSetup = function() {
 
 			if ( $mhs === false ) {
 				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
 			}
-			if ( mhTop === false ) {
-				mhTop = $mh.offset().top;
+
+			if ( !$( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+				$mhs.css( 'height', $mh.outerHeight() );
 			}
 
-
-			var top = window.pageYOffset || document.documentElement.scrollTop;
-			$mh.css( {
-				'position': $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ? 'fixed' : 'relative',
-				'top': 0,
-				'left': 0,
-				'width': null,
-			} );
-
-			var adminBarOffset = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-
-			if ( top + adminBarOffset > $mh.offset().top ) {
-
-				$mhs.show().css( {
-					'height': $mh.outerHeight(),
-					'margin-bottom': $mh.css( 'margin-bottom' )
-				} );
-				$mh.css( {
-					'position': 'fixed',
-					'top': adminBarOffset,
-					'left': 0 - self.pageXOffset + 'px',
-					'width': '100%',
-				} );
-			}
-			else {
-				$mhs.hide();
+			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.isVisible() ) {
+				$( 'body' ).addClass( 'no-topbar' );
 			}
 
-			// Don't let the height of the dropdown extend below the bottom of the screen.
-			var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-			var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
-
-			if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
-				$( '#mobile-navigation' ).css( {
-					'max-height': mobileMenuHeight,
-					'overflow-y': 'scroll',
-					'-webkit-overflow-scrolling' : 'touch'
-				} );
-			} else {
-				$('#mobile-navigation').css('max-height', mobileMenuHeight );
+			if ( $( 'body' ).hasClass( 'no-topbar' ) && $tb.isVisible() ) {
+				$( 'body' ).removeClass( 'no-topbar' );
 			}
-		};
+		}
 		smSetup();
-
 
 		$( window ).resize( smSetup ).scroll( smSetup );
 
