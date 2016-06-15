@@ -1124,6 +1124,8 @@ function siteorigin_north_about_page( $about ){
 		get_template_directory_uri() . '/admin/about/video-3.jpg',
 	);
 
+	$about['premium_url'] = false;
+
 	$about['description'] = __( 'SiteOrigin North is a simple, customizable WordPress theme. Check out this video to get an idea of what it has to offer.', 'siteorigin-north' );
 
 	$about['sections'] = array(
