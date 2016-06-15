@@ -1,3 +1,9 @@
+= 1.2.3 - 15 June 2016 =
+* Fix to cart button for latest WooCommerce
+* Updated settings framework
+* Updated the quick view modal and added a close icon
+* FitVids fixes.
+
 = 1.2.2 - May 26 2016 =
 * Fixed warning message in customizer.
 * Removed duplicate is mobile body class.
