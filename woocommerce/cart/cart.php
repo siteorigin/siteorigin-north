@@ -139,9 +139,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</div>
 						<?php } ?>
 						<div class="cart-buttons">
-							<a class="button-continue-shopping button"  href="<?php echo wc_get_page_permalink( 'shop' ); ?>"><?php esc_attr_e( 'Continue Shopping', 'siteorigin-north' ) ?></a>
+							<a class="button-continue-shopping button"  href="<?php echo esc_url ( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_attr_e( 'Continue Shopping', 'siteorigin-north' ) ?></a>
 							<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'siteorigin-north' ); ?>">
-							<button type="submit" class="checkout-button button" name="proceed" value="1"><span class="north-icon-cart"></span> <?php esc_attr_e( 'Checkout', 'siteorigin-north' ); ?></button>
+							<a class="checkout-button button" href="<?php echo esc_url( wc_get_checkout_url() ); ?>"><span class="north-icon-cart"></span> <?php esc_attr_e( 'Checkout', 'siteorigin-north' ); ?></a>
 						</div>
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>

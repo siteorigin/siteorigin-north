@@ -58,9 +58,10 @@ jQuery( function ( $ ) {
 		}
 	);
 
-	if ( typeof $.fn.fitVids !== 'undefined' ) {
-		$( '.entry-content' ).fitVids();
-	}
+    // Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
+    if ( typeof $.fn.fitVids !== 'undefined' ) {
+        $( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+    }	
 
 	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
 	if( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
