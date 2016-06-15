@@ -412,7 +412,8 @@
     .woocommerce table.shop_table .button.checkout-button {
       background: #c75d5d;
       border: 1px solid #c75d5d;
-      color: #fff; }
+      color: #fff;
+      text-transform: uppercase; }
     .woocommerce table.shop_table .button:hover {
       background: #a94346;
       color: #fff;
@@ -835,7 +836,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    padding: 10px;
+    margin: 10px 10px 0 0;
     color: rgba(0, 0, 0, 0.8);
     font-size: 1em;
     cursor: pointer; }
