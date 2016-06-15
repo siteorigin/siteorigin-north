@@ -135,9 +135,10 @@ function siteorigin_north_settings_init(){
 					)
 				),
 				'text_above'           => array(
-					'type'        => 'text',
-					'label'       => __( 'Text Above', 'siteorigin-north' ),
-					'description' => __( 'Text that goes above the main header.', 'siteorigin-north' ),
+					'type'              => 'text',
+					'label'             => __( 'Text Above', 'siteorigin-north' ),
+					'description'       => __( 'Text that goes above the main header.', 'siteorigin-north' ),
+					'sanitize_callback' => 'wp_kses_post',
 				),
 				'background_color'     => array(
 					'type'  => 'color',
