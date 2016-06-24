@@ -59,6 +59,8 @@
 						height += $( '#wpadminbar' ).outerHeight();
 					}
 
+
+
 					$( 'html, body' ).animate( {
 						scrollTop: $target.offset().top - height
 					}, 1000 );
@@ -212,7 +214,7 @@ jQuery( function ( $ ) {
 		});
 
 		if ( siteoriginNorth.smoothScroll ) {
-			$( '#mobile-navigation a[href*="#"]:not([href="#"]' ).smoothScroll();
+			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).smoothScroll();
 		}
 
 	} );
