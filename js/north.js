@@ -185,6 +185,28 @@ jQuery( function ( $ ) {
 				e.preventDefault();
 				$( this ).toggleClass('toggle-open').next( '.children, .sub-menu' ).slideToggle('fast');
 			} );
+
+			var mmOverflow = function() {
+				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+					// Don't let the height of the dropdown extend below the bottom of the screen.
+					var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
+					var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
+
+					if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
+						$( '#mobile-navigation' ).css( {
+							'max-height': mobileMenuHeight,
+							'overflow-y': 'scroll',
+							'-webkit-overflow-scrolling' : 'touch'
+						} );
+					} else {
+						$('#mobile-navigation').css('max-height', mobileMenuHeight );
+					}
+				}
+			}
+			mmOverflow();
+
+			$( window ).resize( mmOverflow );
+
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
@@ -246,19 +268,6 @@ jQuery( function ( $ ) {
 				$( 'body' ).removeClass( 'topbar-out' );
 			}
 
-			// Don't let the height of the dropdown extend below the bottom of the screen.
-			var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-			var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
-
-			if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
-				$( '#mobile-navigation' ).css( {
-					'max-height': mobileMenuHeight,
-					'overflow-y': 'scroll',
-					'-webkit-overflow-scrolling' : 'touch'
-				} );
-			} else {
-				$('#mobile-navigation').css('max-height', mobileMenuHeight );
-			}
 		}
 		smSetup();
 
