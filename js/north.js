@@ -44,7 +44,7 @@
 			} );
 		};
 
-		$.fn.smoothScroll = function () {
+		$.fn.northSmoothScroll = function () {
 			$( this ).click( function ( e ) {
 				var $a = $( this );
 				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
@@ -58,8 +58,6 @@
 					if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 						height += $( '#wpadminbar' ).outerHeight();
 					}
-
-
 
 					$( 'html, body' ).animate( {
 						scrollTop: $target.offset().top - height
