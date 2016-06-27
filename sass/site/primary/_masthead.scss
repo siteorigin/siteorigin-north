@@ -9,6 +9,10 @@
 	min-width: 1060px;
 
 	@at-root {
+		.sticky-menu:not(.no-topbar) & {
+			position: absolute;
+		}
+
 		.sticky-menu.no-topbar &,
 		.sticky-menu.topbar-out & {
 			position: fixed;
@@ -17,9 +21,7 @@
 			width: 100%;
 			@include clearfix;
 		}
-	}
 
-	@at-root{
 		.sticky-menu.no-topbar.admin-bar &,
 		.sticky-menu.topbar-out.admin-bar & {
 			top: 32px;

@@ -1251,6 +1251,8 @@ a {
   width: 100%;
   z-index: 999;
   min-width: 1060px; }
+  .sticky-menu:not(.no-topbar) #masthead {
+    position: absolute; }
   .sticky-menu.no-topbar #masthead,
   .sticky-menu.topbar-out #masthead {
     position: fixed;
