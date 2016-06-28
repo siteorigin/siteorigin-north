@@ -212,7 +212,7 @@ jQuery( function ( $ ) {
 		});
 
 		if ( siteoriginNorth.smoothScroll ) {
-			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).smoothScroll();
+			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 		}
 
 	} );
@@ -380,7 +380,7 @@ jQuery( function ( $ ) {
 
 	// Handle smooth scrolling
 	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).smoothScroll();
+		$( '#site-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 	}
 
 	// Add class to calendar elements that have links
