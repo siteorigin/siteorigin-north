@@ -44,6 +44,31 @@
 			} );
 		};
 
+		$.fn.northSmoothScroll = function () {
+			$( this ).click( function ( e ) {
+				var $a = $( this );
+				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
+
+				if ( $target.length ) {
+
+					var height = 0;
+					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+						height += $( '#masthead' ).outerHeight();
+					}
+					if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+						height += $( '#wpadminbar' ).outerHeight();
+					}
+
+					$( 'html, body' ).animate( {
+						scrollTop: $target.offset().top - height
+					}, 1000 );
+
+					return false;
+				}
+				// Scroll to the position of the item, minus the header size
+			} );
+		}
+
 	}
 )( jQuery );
 
@@ -61,7 +86,7 @@ jQuery( function ( $ ) {
     // Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
     if ( typeof $.fn.fitVids !== 'undefined' ) {
         $( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }	
+    }
 
 	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
 	if( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
@@ -185,6 +210,10 @@ jQuery( function ( $ ) {
 			}
 			$$.removeClass( 'to-close' );
 		});
+
+		if ( siteoriginNorth.smoothScroll ) {
+			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
+		}
 
 	} );
 
@@ -351,29 +380,7 @@ jQuery( function ( $ ) {
 
 	// Handle smooth scrolling
 	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).click( function ( e ) {
-			var $a = $( this );
-			var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
-
-			if ( $target.length ) {
-
-				var height = 0;
-				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
-					height += $( '#masthead' ).outerHeight();
-				}
-				if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-					height += $( '#wpadminbar' ).outerHeight();
-				}
-
-				$( 'html, body' ).animate( {
-					scrollTop: $target.offset().top - height
-				}, 1000 );
-
-				return false;
-			}
-
-			// Scroll to the position of the item, minus the header size
-		} );
+		$( '#site-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 	}
 
 	// Add class to calendar elements that have links
