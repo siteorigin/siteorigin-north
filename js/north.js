@@ -45,7 +45,7 @@
 		};
 
 		// Check if an element is visible in the viewport
-		$.fn.isVisible = function() {
+		$.fn.northIsVisible = function() {
 			var rect = this[0].getBoundingClientRect();
 			return (
 				rect.bottom >= 0 &&
@@ -289,10 +289,10 @@ jQuery( function ( $ ) {
 				$mhs.css( 'height', $mh.outerHeight() );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.isVisible() ) {
+			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
 				$( 'body' ).addClass( 'topbar-out' );
 			}
-			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.isVisible() ) {
+			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 				$( 'body' ).removeClass( 'topbar-out' );
 			}
 
