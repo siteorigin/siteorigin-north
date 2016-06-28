@@ -43,12 +43,16 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'is-mobile-device';
 	}
 
-	if( !is_active_sidebar('main-sidebar') ) {
+	if( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
-	if( siteorigin_setting('navigation_sticky') ) {
+	if( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
+	}
+
+	if( ! siteorigin_setting( 'masthead_text_above' ) ) {
+		$classes[] = 'no-topbar';
 	}
 
 	return $classes;
