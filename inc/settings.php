@@ -1016,6 +1016,16 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
 	);
 
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$settings['featured_image'] = array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Page Featured Image', 'vantage' ),
+			'checkbox_label' => __( 'display', 'vantage' ),
+			'description'    => __( 'Display the page featured image on this page.', 'vantage' )
+		);
+	}
+
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
@@ -1062,6 +1072,12 @@ function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
 	$defaults['footer_margin']       = true;
 	$defaults['hide_masthead']       = false;
 	$defaults['hide_footer_widgets'] = false;
+
+	// Defaults for page only settings
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$defaults['featured_image'] = false;
+	}
 
 	// Specific default settings for different types
 	if( $type == 'template' && $id == 'home' ) {
