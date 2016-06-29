@@ -12,9 +12,10 @@
 	<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<?php siteorigin_north_breadcrumbs(); ?>
 		</header><!-- .entry-header -->
 	<?php endif; ?>
+
+	<?php siteorigin_north_breadcrumbs(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -27,4 +28,3 @@
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->
-
