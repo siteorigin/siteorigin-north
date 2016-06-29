@@ -11,6 +11,7 @@
 	@at-root {
 		.sticky-menu:not(.no-topbar) & {
 			position: absolute;
+			top: auto;
 		}
 
 		.sticky-menu.no-topbar &,
