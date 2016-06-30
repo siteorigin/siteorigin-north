@@ -134,16 +134,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 								<label for="coupon_code"><?php _e( 'Coupon', 'siteorigin-north' ); ?>:</label>
 								<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" />
-								<button type="submit" class="button" name="apply_coupon"><?php esc_attr_e( 'Apply Coupon', 'siteorigin-north' ); ?></button>
-
+								<input type="submit" class="button" name="apply_coupon"  value="<?php esc_attr_e( 'Apply Coupon', 'siteorigin-north' ); ?>">
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>
-
-						<button class="button-continue-shopping"  href="<?php echo wc_get_page_permalink( 'shop' ); ?>"><?php esc_attr_e( 'Continue Shopping', 'siteorigin-north' ) ?></button>
-						<button type="submit" class="button" name="update_cart"><?php esc_attr_e( 'Update Cart', 'siteorigin-north' ); ?></button>
-
-						<button type="submit" class="checkout-button" name="proceed" value="1"><span class="north-icon-cart" aria-hidden="true"></span> <?php esc_attr_e( 'Checkout', 'siteorigin-north' ); ?></button>
+						<div class="cart-buttons">
+							<a class="button-continue-shopping button"  href="<?php echo esc_url ( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_attr_e( 'Continue Shopping', 'siteorigin-north' ) ?></a>
+							<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'siteorigin-north' ); ?>">
+							<a class="checkout-button button" href="<?php echo esc_url( wc_get_checkout_url() ); ?>"><span class="north-icon-cart" aria-hidden="true"></span> <?php esc_attr_e( 'Checkout', 'siteorigin-north' ); ?></a>
+						</div>
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 

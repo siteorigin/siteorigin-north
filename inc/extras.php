@@ -39,16 +39,20 @@ function siteorigin_north_body_classes( $classes ) {
 		if( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
-	if( !is_active_sidebar('main-sidebar') ) {
+	if( wp_is_mobile() ) {
+		$classes[] = 'is-mobile-device';
+	}
+
+	if( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
-	if( siteorigin_setting('navigation_sticky') ) {
+	if( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
 	}
 
-	if( wp_is_mobile() ) {
-		$classes[] = 'is_mobile';
+	if( ! siteorigin_setting( 'masthead_text_above' ) ) {
+		$classes[] = 'no-topbar';
 	}
 
 	return $classes;

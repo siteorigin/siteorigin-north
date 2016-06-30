@@ -44,6 +44,42 @@
 			} );
 		};
 
+		// Check if an element is visible in the viewport
+		$.fn.northIsVisible = function() {
+			var rect = this[0].getBoundingClientRect();
+			return (
+				rect.bottom >= 0 &&
+				rect.right >= 0 &&
+				rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		};
+
+		$.fn.northSmoothScroll = function () {
+			$( this ).click( function ( e ) {
+				var $a = $( this );
+				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
+
+				if ( $target.length ) {
+
+					var height = 0;
+					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+						height += $( '#masthead' ).outerHeight();
+					}
+					if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+						height += $( '#wpadminbar' ).outerHeight();
+					}
+
+					$( 'html, body' ).animate( {
+						scrollTop: $target.offset().top - height
+					}, 1000 );
+
+					return false;
+				}
+				// Scroll to the position of the item, minus the header size
+			} );
+		}
+
 	}
 )( jQuery );
 
@@ -58,35 +94,38 @@ jQuery( function ( $ ) {
 		}
 	);
 
-	if ( typeof $.fn.fitVids !== 'undefined' ) {
-		$( '.entry-content' ).fitVids();
-	}
+    // Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
+    if ( typeof $.fn.fitVids !== 'undefined' ) {
+        $( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+    }
 
-	// Remove the no-touch body class for touch devices
-	var isTouchDevice = 'ontouchstart' in document.documentElement;
-	if( isTouchDevice ) {
+	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	if( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
 		$('body').removeClass('no-touch');
 	}
 	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
-		$('.main-navigation #primary-menu').find('.menu-item-has-children > a').each( function() {
+		if ( /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream ) {
+			$( 'body' ).css( 'cursor', 'pointer' );
+		}
+		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
 			$( this ).click( function(e){
 				var link = $(this);
 				e.stopPropagation();
-				link.parent().addClass('touch-drop');
+				link.parent().addClass( 'touch-drop' );
 
-				if( link.hasClass('hover') ) {
-					unbind('click');
+				if( link.hasClass( 'hover' ) ) {
+					link.unbind( 'click' );
 				} else {
-					link.addClass('hover');
+					link.addClass( 'hover' );
 					e.preventDefault();
 				}
 
-				$('.main-navigation #primary-menu > .menu-item-has-children:not(.touch-drop) > a').click( function() {
+				$( '.main-navigation #primary-menu > .menu-item-has-children:not(.touch-drop) > a' ).click( function() {
 					link.removeClass('hover').parent().removeClass('touch-drop');
 				} );
 
-				$(document).click( function() {
-					link.removeClass('hover').parent().removeClass('touch-drop');
+				$( document ).click( function() {
+					link.removeClass( 'hover' ).parent().removeClass( 'touch-drop' );
 				} );
 
 			} );
@@ -172,6 +211,28 @@ jQuery( function ( $ ) {
 				e.preventDefault();
 				$( this ).toggleClass('toggle-open').next( '.children, .sub-menu' ).slideToggle('fast');
 			} );
+
+			var mmOverflow = function() {
+				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+					// Don't let the height of the dropdown extend below the bottom of the screen.
+					var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
+					var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
+
+					if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
+						$( '#mobile-navigation' ).css( {
+							'max-height': mobileMenuHeight,
+							'overflow-y': 'scroll',
+							'-webkit-overflow-scrolling' : 'touch'
+						} );
+					} else {
+						$('#mobile-navigation').css('max-height', mobileMenuHeight );
+					}
+				}
+			}
+			mmOverflow();
+
+			$( window ).resize( mmOverflow );
+
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
@@ -183,25 +244,11 @@ jQuery( function ( $ ) {
 			$$.removeClass( 'to-close' );
 		});
 
-	} );
-
-	// Handle the mobile menu dropdown when it extends beyond the viewport
-	var mobileMenuHeight = function () {
-
-		var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-
-		$mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
-
-		if ( $('#mobile-navigation').outerHeight() > $mobileMenuHeight ) {
-			$('#mobile-navigation').css({'max-height': $mobileMenuHeight, 'overflow-y': 'scroll'});
-		} else {
-			$('#mobile-navigation').css('max-height', $mobileMenuHeight );
+		if ( siteoriginNorth.smoothScroll ) {
+			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 		}
-	}
 
-	if ( $( 'body' ).hasClass( 'sticky-menu' ) ) {
-		$( window ).resize( mobileMenuHeight ).scroll( mobileMenuHeight );
-	}
+	} );
 
 	// The scroll to top button
 	var sttWindowScroll = function () {
@@ -226,51 +273,32 @@ jQuery( function ( $ ) {
 
 	// Now lets do the sticky menu
 
-	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && ! $( 'body' ).hasClass( 'is-mobile' ) ) {
+	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 		var $mhs = false,
 			mhTop = false,
 			pageTop = $( '#page' ).offset().top,
-			$mh = $( '#masthead' );
+			$mh = $( '#masthead' ),
+			$tb = $( '#topbar' );
 
-		var smSetup = function () {
-			pageTop = $( '#page' ).offset().top;
+		var smSetup = function() {
 
 			if ( $mhs === false ) {
 				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
 			}
-			if ( mhTop === false ) {
-				mhTop = $mh.offset().top;
+			if ( !$( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+				$mhs.css( 'height', $mh.outerHeight() );
+			}
+			// Toggle .topbar-out with visibility of top-bar in the viewport
+			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
+				$( 'body' ).addClass( 'topbar-out' );
+			}
+			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
+				$( 'body' ).removeClass( 'topbar-out' );
 			}
 
-
-			var top = window.pageYOffset || document.documentElement.scrollTop;
-			$mh.css( {
-				'position': $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ? 'fixed' : 'relative',
-				'top': 0,
-				'left': 0,
-				'width': null,
-			} );
-
-			var adminBarOffset = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-
-			if ( top + adminBarOffset > $mh.offset().top ) {
-
-				$mhs.show().css( {
-					'height': $mh.outerHeight(),
-					'margin-bottom': $mh.css( 'margin-bottom' )
-				} );
-				$mh.css( {
-					'position': 'fixed',
-					'top': adminBarOffset,
-					'left': 0 - self.pageXOffset + 'px',
-					'width': '100%',
-				} );
-			}
-			else {
-				$mhs.hide();
-			}
-		};
+		}
 		smSetup();
+
 		$( window ).resize( smSetup ).scroll( smSetup );
 
 		var mhPadding = {
@@ -350,29 +378,7 @@ jQuery( function ( $ ) {
 
 	// Handle smooth scrolling
 	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).click( function ( e ) {
-			var $a = $( this );
-			var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
-
-			if ( $target.length ) {
-
-				var height = 0;
-				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
-					height += $( '#masthead' ).outerHeight();
-				}
-				if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-					height += $( '#wpadminbar' ).outerHeight();
-				}
-
-				$( 'html, body' ).animate( {
-					scrollTop: $target.offset().top - height
-				}, 1000 );
-
-				return false;
-			}
-
-			// Scroll to the position of the item, minus the header size
-		} );
+		$( '#site-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 	}
 
 	// Add class to calendar elements that have links

@@ -9,12 +9,18 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
+	<?php if ( siteorigin_page_setting( 'page_title' ) || siteorigin_page_setting( 'featured_image' ) ) : ?>
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<?php siteorigin_north_breadcrumbs(); ?>
+			<?php if ( has_post_thumbnail() && siteorigin_page_setting( 'featured_image' ) ) : ?>
+				<div class="entry-thumbnail"><?php the_post_thumbnail() ?></div>
+			<?php endif; ?>
+			<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php endif; ?>
 		</header><!-- .entry-header -->
 	<?php endif; ?>
+
+	<?php siteorigin_north_breadcrumbs(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -27,4 +33,3 @@
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->
-

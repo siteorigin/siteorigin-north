@@ -1,3 +1,24 @@
+= 1.2.3 - 15 June 2016 =
+* Fix to cart button for latest WooCommerce
+* Updated settings framework
+* Updated the quick view modal and added a close icon
+* FitVids fixes.
+
+= 1.2.2 - May 26 2016 =
+* Fixed warning message in customizer.
+* Removed duplicate is mobile body class.
+* Improved main menu touch device compatibility.
+
+= 1.2.1 - May 24 2016 =
+* Updated settings framework.
+* Added about page.
+* Fixed post thumbnail size.
+* Added logo migration code.
+* Fixed search input on iOS.
+* Improved WooCommerce cart design on mobile.
+* Disabled sticky menu on mobile devices until all issues can be resolved.
+* Standardised jquery handles.
+
 = 1.2 - May 6 2016 =
 * Fixes to RTL layout.
 * Styled various WooCommerce widgets.

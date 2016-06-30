@@ -1,39 +1,5 @@
 <?php
 
-if ( ! function_exists( 'siteorigin_north_settings_localize' ) ) :
-/**
- * The default settings labels.
- */
-function siteorigin_north_settings_localize( $loc ){
-	return wp_parse_args( array(
-		'section_title'       => __( 'Theme Settings', 'siteorigin-north' ),
-		'section_description' => __( 'Change settings for your theme.', 'siteorigin-north' ),
-		'premium_only'        => __( 'Available in Premium', 'siteorigin-north' ),
-		'premium_url'         => 'https://siteorigin.com/premium/?target=theme_north',
-		// For the controls
-		'variant'             => __( 'Variant', 'siteorigin-north' ),
-		'subset'              => __( 'Subset', 'siteorigin-north' ),
-
-		// For the settings metabox
-		'meta_box'            => __( 'Page settings', 'siteorigin-north' ),
-
-		// For archives section
-		'page_section_title' => __( 'Page Template Settings', 'siteorigin-north' ),
-		'page_section_description' => __( 'Change layouts for various pages on your site.', 'siteorigin-north' ),
-
-		// For all the different temples and template types
-		'template_home' => __( 'Blog Page', 'siteorigin-north' ),
-		'template_search' => __( 'Search Results', 'siteorigin-north' ),
-		'template_date' => __( 'Date Archives', 'siteorigin-north' ),
-		'template_404' => __( 'Not Found', 'siteorigin-north' ),
-		'template_author' => __( 'Author Archives', 'siteorigin-north' ),
-		'templates_post_type' => __( 'Type', 'siteorigin-north' ),
-		'templates_taxonomy' => __( 'Taxonomy', 'siteorigin-north' ),
-	), $loc );
-}
-endif;
-add_filter('siteorigin_settings_localization', 'siteorigin_north_settings_localize');
-
 if ( ! function_exists( 'siteorigin_north_settings_init' ) ) :
 /**
  * Initialize the settings
@@ -169,9 +135,10 @@ function siteorigin_north_settings_init(){
 					)
 				),
 				'text_above'           => array(
-					'type'        => 'text',
-					'label'       => __( 'Text Above', 'siteorigin-north' ),
-					'description' => __( 'Text that goes above the main header.', 'siteorigin-north' ),
+					'type'              => 'text',
+					'label'             => __( 'Text Above', 'siteorigin-north' ),
+					'description'       => __( 'Text that goes above the main header.', 'siteorigin-north' ),
+					'sanitize_callback' => 'wp_kses_post',
 				),
 				'background_color'     => array(
 					'type'  => 'color',
@@ -764,18 +731,16 @@ function siteorigin_north_settings_custom_css($css){
 	.woocommerce table.shop_table .cart_totals .amount {
 	color: ${branding_accent};
 	}
-	.woocommerce table.shop_table button {
+	.woocommerce table.shop_table .button {
 	.font( ${fonts_headings} );
-	}
-	.woocommerce table.shop_table button.checkout-button {
-	background: ${branding_accent};
-	border: 1px solid ${branding_accent};
-	}
-	.woocommerce table.shop_table button.button,.woocommerce table.shop_table button.button-continue-shopping {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.woocommerce table.shop_table button:hover {
+	.woocommerce table.shop_table .button.checkout-button {
+	background: ${branding_accent};
+	border: 1px solid ${branding_accent};
+	}
+	.woocommerce table.shop_table .button:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
@@ -792,10 +757,10 @@ function siteorigin_north_settings_custom_css($css){
 	background: ${branding_accent_dark};
 	}
 	.main-navigation .shopping-cart:hover .shopping-cart-count {
-	background: ${branding_accent_dark};
+	background: ${branding_accent_dark} padding-box;
 	}
 	.main-navigation .shopping-cart .shopping-cart-count {
-	background: ${branding_accent};
+	background: ${branding_accent} padding-box;
 	}
 	.widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
 	color: ${fonts_text_dark};
@@ -1051,6 +1016,16 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
 	);
 
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$settings['featured_image'] = array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Page Featured Image', 'vantage' ),
+			'checkbox_label' => __( 'display', 'vantage' ),
+			'description'    => __( 'Display the page featured image on this page.', 'vantage' )
+		);
+	}
+
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
@@ -1098,6 +1073,12 @@ function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
 	$defaults['hide_masthead']       = false;
 	$defaults['hide_footer_widgets'] = false;
 
+	// Defaults for page only settings
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$defaults['featured_image'] = false;
+	}
+
 	// Specific default settings for different types
 	if( $type == 'template' && $id == 'home' ) {
 		$defaults['page_title'] = false;
@@ -1127,19 +1108,51 @@ add_filter('siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_pa
 
 if( !function_exists('siteorigin_north_siteorigin_setting_update_image') ) :
 /**
- * Convert post ID based images into full URLs
+ * Convert URL based images into IDs
  *
  * @param $mods
  *
  * @return mixed
  */
 function siteorigin_north_siteorigin_setting_update_image( $mods ) {
-	foreach ( array( 'branding_logo', 'branding_logo_retina' ) as $key ) {
+	foreach ( array( 'branding_logo', 'branding_retina_logo' ) as $key ) {
 		if( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
 			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
 		}
 	}
+
 	return $mods;
 }
 endif;
-add_filter( 'option_theme_mods_vantage', 'siteorigin_north_siteorigin_setting_update_image' );
+add_filter( 'option_theme_mods_siteorigin-north', 'siteorigin_north_siteorigin_setting_update_image' );
+
+if( !function_exists( 'siteorigin_north_about_page' ) ) :
+/**
+ * Adds everything we need for the North about page.
+ */
+function siteorigin_north_about_page( $about ){
+	$about['title_image'] = get_template_directory_uri() . '/admin/about/north-logo-small.png';
+	$about['title_image_2x'] = get_template_directory_uri() . '/admin/about/north-logo-large.png';
+
+	$about['video_thumbnail'] = array(
+		get_template_directory_uri() . '/admin/about/video-1.jpg',
+		get_template_directory_uri() . '/admin/about/video-2.jpg',
+		get_template_directory_uri() . '/admin/about/video-3.jpg',
+	);
+
+	$about['premium_url'] = false;
+
+	$about['description'] = __( 'SiteOrigin North is a simple, customizable WordPress theme. Check out this video to get an idea of what it has to offer.', 'siteorigin-north' );
+
+	$about['sections'] = array(
+		'free',
+		'customize',
+		'page-builder',
+		'support',
+		'github',
+	);
+
+	return $about;
+}
+endif;
+add_filter( 'siteorigin_about_page', 'siteorigin_north_about_page' );
