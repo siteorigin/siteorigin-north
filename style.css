@@ -1293,6 +1293,7 @@ a {
     #masthead .site-branding .site-title {
       margin: 0;
       color: #292929;
+      font-family: "Montserrat", sans-serif;
       font-size: 1.5em;
       line-height: 1.2em;
       white-space: nowrap; }
