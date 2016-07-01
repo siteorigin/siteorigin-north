@@ -528,6 +528,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#masthead .site-branding .site-title {
 	color: ${fonts_text_dark};
+	.font( ${fonts_headings} );
 	}
 	#masthead.layout-centered .site-branding {
 	margin: 0 auto ${masthead_padding} auto;
