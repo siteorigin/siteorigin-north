@@ -933,7 +933,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['masthead_layout']               = 'default';
 	$defaults['masthead_text_above']           = '';
 	$defaults['masthead_background_color']     = '#fafafa';
-	$defaults['masthead_top_background_color'] = false;
+	$defaults['masthead_top_background_color'] = '#f4f4f4';
 	$defaults['masthead_border_color']         = '#d4d4d4';
 	$defaults['masthead_border_width']         = '1px';
 	$defaults['masthead_padding']              = '30px';
