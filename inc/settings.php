@@ -96,7 +96,7 @@ function siteorigin_north_settings_init(){
 
 				'menu' => array(
 					'type' => 'media',
-					'label' => __('Responsive menu icon', 'siteorigin-north'),
+					'label' => __('Mobile menu icon', 'siteorigin-north'),
 				),
 				'search' => array(
 					'type' => 'media',
@@ -245,7 +245,7 @@ function siteorigin_north_settings_init(){
 				),
 				'menu_text'       => array(
 					'type'  => 'text',
-					'label' => __( 'Responsive Menu Text', 'siteorigin-north' ),
+					'label' => __( 'Mobile Menu Text', 'siteorigin-north' ),
 				),
 				'menu_breakpoint' => array(
 					'label'       => __( 'Menu Breakpoint', 'siteorigin-north' ),
