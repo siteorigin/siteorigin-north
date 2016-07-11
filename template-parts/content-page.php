@@ -12,7 +12,7 @@
 	<?php if ( siteorigin_page_setting( 'page_title' ) || siteorigin_page_setting( 'featured_image' ) ) : ?>
 		<header class="entry-header">
 			<?php if ( has_post_thumbnail() && siteorigin_page_setting( 'featured_image' ) ) : ?>
-				<div class="entry-thumbnail"><?php the_post_thumbnail() ?></div>
+				<div class="entry-thumbnail"><?php siteorigin_north_entry_thumbnail() ?></div>
 			<?php endif; ?>
 			<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

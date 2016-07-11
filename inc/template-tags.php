@@ -452,3 +452,17 @@ function siteorigin_north_breadcrumbs() {
 	}
 }
 endif;
+
+if( !function_exists( 'siteorigin_north_entry_thumbnail' ) ) :
+/**
+ * Display the post/page thumbnail.
+ */
+function siteorigin_north_entry_thumbnail() {
+	if ( in_array( siteorigin_page_setting( 'layout', 'default' ), array( 'default','full-width-sidebar' ), true ) && is_active_sidebar('main-sidebar') ) {
+		$thumb_size = 'post-thumbnail';
+	} else {
+		$thumb_size = 'north-thumbnail-no-sidebar';
+	}
+	the_post_thumbnail( $thumb_size );
+}
+endif;

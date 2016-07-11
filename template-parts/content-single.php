@@ -11,7 +11,7 @@
 
 	<?php if( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
 		<div class="entry-thumbnail">
-			<?php the_post_thumbnail() ?>
+			<?php siteorigin_north_entry_thumbnail() ?>
 		</div>
 	<?php endif; ?>
 
