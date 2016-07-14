@@ -1304,7 +1304,7 @@ a {
       font-size: 0.9em; }
     #masthead .site-branding img {
       display: block;
-      max-width: none; }
+      max-width: 100%; }
   #masthead .site-branding, #masthead .main-navigation {
     display: table-cell;
     vertical-align: middle; }
