@@ -42,6 +42,7 @@ function siteorigin_north_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	set_post_thumbnail_size( 650, 650 );
+	add_image_size( 'north-thumbnail-no-sidebar', 1040, 650, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

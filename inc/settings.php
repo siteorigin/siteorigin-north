@@ -96,7 +96,7 @@ function siteorigin_north_settings_init(){
 
 				'menu' => array(
 					'type' => 'media',
-					'label' => __('Responsive menu icon', 'siteorigin-north'),
+					'label' => __('Mobile menu icon', 'siteorigin-north'),
 				),
 				'search' => array(
 					'type' => 'media',
@@ -245,7 +245,7 @@ function siteorigin_north_settings_init(){
 				),
 				'menu_text'       => array(
 					'type'  => 'text',
-					'label' => __( 'Responsive Menu Text', 'siteorigin-north' ),
+					'label' => __( 'Mobile Menu Text', 'siteorigin-north' ),
 				),
 				'menu_breakpoint' => array(
 					'label'       => __( 'Menu Breakpoint', 'siteorigin-north' ),
@@ -528,6 +528,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#masthead .site-branding .site-title {
 	color: ${fonts_text_dark};
+	.font( ${fonts_headings} );
 	}
 	#masthead.layout-centered .site-branding {
 	margin: 0 auto ${masthead_padding} auto;
@@ -932,7 +933,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['masthead_layout']               = 'default';
 	$defaults['masthead_text_above']           = '';
 	$defaults['masthead_background_color']     = '#fafafa';
-	$defaults['masthead_top_background_color'] = false;
+	$defaults['masthead_top_background_color'] = '#f4f4f4';
 	$defaults['masthead_border_color']         = '#d4d4d4';
 	$defaults['masthead_border_width']         = '1px';
 	$defaults['masthead_padding']              = '30px';
@@ -1016,6 +1017,16 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
 	);
 
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$settings['featured_image'] = array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Page Featured Image', 'vantage' ),
+			'checkbox_label' => __( 'display', 'vantage' ),
+			'description'    => __( 'Display the page featured image on this page.', 'vantage' )
+		);
+	}
+
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
@@ -1062,6 +1073,12 @@ function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
 	$defaults['footer_margin']       = true;
 	$defaults['hide_masthead']       = false;
 	$defaults['hide_footer_widgets'] = false;
+
+	// Defaults for page only settings
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$defaults['featured_image'] = false;
+	}
 
 	// Specific default settings for different types
 	if( $type == 'template' && $id == 'home' ) {
