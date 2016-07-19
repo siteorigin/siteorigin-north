@@ -378,7 +378,7 @@ jQuery( function ( $ ) {
 
 	// Handle smooth scrolling
 	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
+		$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 	}
 
 	// Add class to calendar elements that have links
