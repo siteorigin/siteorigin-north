@@ -6,7 +6,7 @@ return array(
 		// The fonts
 		'fonts_main' => 'font__main',
 		'fonts_headings' => 'font__headings',
-		'fonts_details' => 'font__blockquote',
+		'fonts_details' => 'font__detail',
 
 		// The page structure
 		'structure_sidebar_width' => 'size__site-sidebar',
