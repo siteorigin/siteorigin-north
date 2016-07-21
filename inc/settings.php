@@ -125,7 +125,7 @@ function siteorigin_north_settings_init(){
 				'sidebar_width' => array(
 					'label'             => __( 'Sidebar Width', 'siteorigin-north' ),
 					'type'              => 'measurement',
-					'live'              => true,
+					'live'              => false,
 				)
 			)
 		),
@@ -908,6 +908,29 @@ function siteorigin_north_menu_breakpoint_css() {
 }
 endif;
 add_action( 'wp_head', 'siteorigin_north_menu_breakpoint_css' );
+
+if ( ! function_exists( 'siteorigin_north_sidebar_zero_css' ) ) :
+/**
+ * Add CSS when sidebar width is 0
+ */
+function siteorigin_north_sidebar_zero_css() {
+
+	$breakpoint = siteorigin_setting( 'structure_sidebar_width' );
+
+	$css = '<style type="text/css" id="siteorigin-sidebar-css">' . "\t" .
+	'/* Sidebar fix */' . "\t" .
+	'.site-content .widget-area {' .
+		'display: none;' .
+	'}' . "\t" .
+	'</style>';
+
+	if( siteorigin_setting( 'structure_sidebar_width' ) == 0 ) {
+		echo $css;
+	}
+
+}
+endif;
+add_action( 'wp_head', 'siteorigin_north_sidebar_zero_css' );
 
 if ( ! function_exists( 'siteorigin_north_settings_defaults' ) ) :
 /**
