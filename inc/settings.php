@@ -413,6 +413,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${fonts_text_dark};
 	}
 	blockquote {
+	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
 	::-moz-selection {
@@ -431,9 +432,11 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],textarea {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	.wpcf7 input.wpcf7-form-control.wpcf7-text,.wpcf7 input.wpcf7-form-control.wpcf7-number,.wpcf7 input.wpcf7-form-control.wpcf7-date,.wpcf7 textarea.wpcf7-form-control.wpcf7-textarea,.wpcf7 select.wpcf7-form-control.wpcf7-select,.wpcf7 input.wpcf7-form-control.wpcf7-quiz {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	.wpcf7 input.wpcf7-form-control.wpcf7-submit[disabled] {
 	color: ${fonts_text_light};
@@ -486,6 +489,9 @@ function siteorigin_north_settings_custom_css($css){
 	#header-search {
 	background: ${masthead_background_color};
 	}
+	#header-search input[type="search"] {
+	.font( ${fonts_details} );
+	}
 	#mobile-navigation {
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
 	}
@@ -510,6 +516,9 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#mobile-navigation ul li .dropdown-toggle {
 	color: ${responsive_mobile_menu_text_color};
+	}
+	.search-form .search-field {
+	.font( ${fonts_details} );
 	}
 	.tagcloud a {
 	background: ${fonts_text_meta};
@@ -587,6 +596,9 @@ function siteorigin_north_settings_custom_css($css){
 	.entry-title {
 	color: ${fonts_text_dark};
 	}
+	.entry-meta {
+	.font( ${fonts_details} );
+	}
 	.entry-meta li,.entry-meta a,.entry-meta .meta-icon {
 	color: ${fonts_text_meta};
 	}
@@ -594,6 +606,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${branding_accent_dark};
 	}
 	.breadcrumbs {
+	.font( ${fonts_details} );
 	color: ${fonts_text_light};
 	}
 	.breadcrumbs a:hover {
@@ -619,6 +632,9 @@ function siteorigin_north_settings_custom_css($css){
 	.more-link:hover {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
+	}
+	.post-pagination {
+	.font( ${fonts_details} );
 	}
 	.post-pagination a {
 	color: ${fonts_text_medium};
@@ -653,9 +669,11 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#commentform .comment-form-author input,#commentform .comment-form-email input,#commentform .comment-form-url input {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	#commentform .comment-form-comment textarea {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	#commentform .form-allowed-tags,#commentform .comment-notes,#commentform .logged-in-as {
 	color: ${fonts_text_meta};
@@ -689,11 +707,13 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	.woocommerce .woocommerce-result-count {
 	color: ${fonts_text_meta};
+	.font( ${fonts_details} );
 	}
 	.woocommerce #main ul.products li.product h3 {
 	color: ${fonts_text_dark};
 	}
 	.woocommerce #main ul.products li.product .price {
+	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
 	.woocommerce button.button.alt,.woocommerce #review_form #respond .form-submit input,.woocommerce .woocommerce-message .button,.woocommerce .products .button {
@@ -709,6 +729,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	.woocommerce.single #content div.product p.price {
 	color: ${branding_accent};
+	.font( ${fonts_details} );
 	}
 	.woocommerce.single #content div.product .woocommerce-product-rating .woocommerce-review-link {
 	color: ${fonts_text_medium};
@@ -860,6 +881,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
+	.font( ${fonts_details} );
 	}';
 	return $css;
 }

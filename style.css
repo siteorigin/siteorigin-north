@@ -1572,6 +1572,7 @@ a {
   margin: -15px 0 25px 0;
   padding: 0;
   list-style: none;
+  font-family: "Droid Serif", sans-serif;
   font-size: 0.85em; }
   .entry-meta li, .entry-meta a, .entry-meta .meta-icon {
     color: #b0b0b0;
