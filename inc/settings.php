@@ -213,38 +213,62 @@ function siteorigin_north_settings_init(){
 				)
 			),
 		),
-		'blog'        => array(
-			'title'  => __( 'Blog', 'siteorigin-north' ),
-			'fields' => array(
+		'blog'                    => array(
+			'title'                  => __( 'Blog', 'siteorigin-north' ),
+			'fields'                 => array(
 				'featured_archive'      => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Featured image on archive', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Featured image on archive', 'siteorigin-north' ),
+				),
+				'post_content'          => array(
+					'type'                 => 'select',
+					'label'                => __( 'Archive Post Content', 'siteorigin-north' ),
+					'description'          => __( 'Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'siteorigin-north' ),
+					'options'              => array(
+						'content'             => __( 'Full Post Content', 'siteorigin-north' ),
+						'excerpt'             => __( 'Post Excerpt', 'siteorigin-north' ),
+					)
+				),
+				'read_more_text'        => array(
+					'type'                 => 'text',
+					'label'                => __( 'Read More Text', 'siteorigin-north' ),
+					'description'          => __( 'The button text displayed when posts are split using the "more" quicktag.', 'siteorigin-north' ),
+				),
+				'excerpt_length'        => array(
+					'type'                 => 'number',
+					'label'                => __( 'Excerpt Length', 'siteorigin-north' ),
+					'description'          => __( 'If no manual post excerpt is added one will be generated. How many words should it be? Only applicable if Post Excerpt has been selected from the Archive Post Content setting.', 'siteorigin-north' ),
+				),
+				'excerpt_post_link'     => array(
+					'type'                 => 'checkbox',
+					'label'                => __( 'Post Excerpt Read More Link', 'siteorigin-north' ),
+					'description'          => __( 'Display the Read More Text below the post excerpt. Only applicable if Post Excerpt has been selected from the Archive Post Content setting.', 'siteorigin-north' )
 				),
 				'featured_single'       => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Featured image on single', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Featured image on single', 'siteorigin-north' ),
 				),
 				'display_author_box'    => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display author box on single', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display author box on single', 'siteorigin-north' ),
 				),
 				'display_date'          => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display date', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display date', 'siteorigin-north' ),
 				),
 				'display_author'        => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display author', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display author', 'siteorigin-north' ),
 				),
 				'display_comment_count' => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display comment count', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display comment count', 'siteorigin-north' ),
 				),
 				'ajax_comments'         => array(
-					'type' => 'checkbox',
-					'label' => __('Ajax Comments', 'siteorigin-north'),
-					'description' => __('Keep the conversation flowing with ajax loading comments.', 'siteorigin-north'),
-					'teaser' => true,
+					'type'                 => 'checkbox',
+					'label'                => __('Ajax Comments', 'siteorigin-north'),
+					'description'          => __('Keep the conversation flowing with ajax loading comments.', 'siteorigin-north'),
+					'teaser'               => true,
 				)
 			)
 		),
@@ -992,6 +1016,10 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// Blog settings
 	$defaults['blog_featured_archive']      = true;
+	$defaults['blog_post_content']          = 'content';
+	$defaults['blog_read_more_text']        = __( 'Continue reading', 'siteorigin-north' );
+	$defaults['blog_excerpt_length']        = 55;
+	$defaults['blog_excerpt_post_link']     = true;
 	$defaults['blog_featured_single']       = true;
 	$defaults['blog_display_author_box']    = false;
 	$defaults['blog_display_date']          = true;
