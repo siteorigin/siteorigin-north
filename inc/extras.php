@@ -123,3 +123,13 @@ function siteorigin_north_tag_cloud_widget($args) {
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );
+
+if ( ! function_exists( 'siteorigin_north_excerpt_length' ) ) :
+/*
+ * Filter the except length
+ */
+function siteorigin_north_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+endif;
+add_filter( 'excerpt_length', 'siteorigin_north_excerpt_length', 999 );
