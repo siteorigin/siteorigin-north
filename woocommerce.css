@@ -157,7 +157,7 @@
   .woocommerce .products .button .north-icon-cart {
     float: left;
     margin: -0.1em 0.5em 0 0;
-    font-size: 1.2em; }
+    font-size: 1.1em; }
 
 .woocommerce .woocommerce-message {
   border-top-color: #c75d5d;
@@ -802,6 +802,9 @@
 /*--------------------------------------------------------------
 # WooCommerce Quick View
 --------------------------------------------------------------*/
+.woocommerce .product-quick-view-button {
+  margin-right: 1px; }
+
 .woocommerce #quick-view-container {
   position: fixed;
   top: 0;
