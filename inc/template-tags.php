@@ -186,7 +186,7 @@ function siteorigin_north_entry_footer() {
 					<?php do_action( 'siteorigin_north_after_entry_author_avatar' ); ?>
 				</div>
 				<div class="author-description">
-					<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
+					<?php echo wp_kses_post( get_the_author_meta( 'description' ), null ); ?>
 				</div>
 				<div class="clear"></div>
 			</div>
