@@ -183,6 +183,7 @@ function siteorigin_north_entry_footer() {
 				</h2>
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+					<?php do_action( 'siteorigin_north_after_entry_author_avatar' ); ?>
 				</div>
 				<div class="author-description">
 					<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
