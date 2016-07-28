@@ -884,3 +884,14 @@
           padding: 5px 6px; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .single_add_to_cart_button {
       float: left; }
+
+/*--------------------------------------------------------------
+# WooCommerce My Account page
+--------------------------------------------------------------*/
+.woocommerce .woocommerce-MyAccount-navigation ul {
+  list-style: none;
+  margin-left: 0; }
+  .woocommerce .woocommerce-MyAccount-navigation ul li {
+    padding: 8px 0; }
+    .woocommerce .woocommerce-MyAccount-navigation ul li a {
+      text-decoration: none; }
