@@ -1657,8 +1657,8 @@ a {
 
 .author-box {
   margin: 20px 0;
-  padding: 10px;
-  border: 1px solid #c9c9c9; }
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.05); }
   .author-box .author-title {
     margin-top: 0; }
     .author-box .author-title .author-info {
