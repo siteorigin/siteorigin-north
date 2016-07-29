@@ -1660,10 +1660,15 @@ a {
   padding: 20px;
   background: rgba(0, 0, 0, 0.05); }
   .author-box .author-title {
-    margin-top: 0; }
+    margin-top: 0;
+    line-height: 1;
+    font-size: 1.25em; }
     .author-box .author-title .author-info {
       font-size: 0.6em;
-      padding: 0 5px; }
+      padding: 0 5px;
+      font-weight: bold; }
+      .author-box .author-title .author-info a {
+        text-decoration: none; }
   .author-box .author-avatar {
     float: left; }
   .author-box .author-description {

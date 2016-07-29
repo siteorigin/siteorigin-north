@@ -223,10 +223,17 @@
 
 	.author-title {
 		margin-top: 0;
+		line-height: 1;
+		font-size: 1.25em;
 
 		.author-info {
 			font-size: 0.6em;
 			padding: 0 5px;
+			font-weight: bold;
+
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 
