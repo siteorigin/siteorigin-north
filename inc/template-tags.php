@@ -171,21 +171,22 @@ function siteorigin_north_entry_footer() {
 
 		if ( siteorigin_setting('blog_display_author_box') ) { ?>
 			<div class="author-box">
-				<h2 class="author-title">
-					<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
-					<small class="author-info">
-						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-							<?php _e( 'View posts by ', 'siteorigin-north' );
-							echo get_the_author(); ?>
-						</a>
-					</small>
-					<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
-				</h2>
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+					<?php do_action( 'siteorigin_north_after_entry_author_avatar' ); ?>
 				</div>
 				<div class="author-description">
-					<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
+					<h2 class="author-title">
+						<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
+						<small class="author-info">
+							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+								<?php _e( 'View posts by ', 'siteorigin-north' );
+								echo get_the_author(); ?>
+							</a>
+						</small>
+						<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
+					</h2>
+					<?php echo wp_kses_post( get_the_author_meta( 'description' ), null ); ?>
 				</div>
 				<div class="clear"></div>
 			</div>

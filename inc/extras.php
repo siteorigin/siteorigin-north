@@ -111,6 +111,11 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'siteorigin_north_render_title' );
 endif;
 
+/*
+ * Allow the use of HTML in author bio
+ */
+remove_filter( 'pre_user_description' , 'wp_filter_kses' );
+
 if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
 /*
  * Have a uniform size for the tag cloud items
