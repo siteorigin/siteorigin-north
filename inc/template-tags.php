@@ -355,13 +355,13 @@ if( !function_exists('siteorigin_north_custom_icon') ):
 /**
  * Display a custom icons from the settings
  */
-function siteorigin_north_custom_icon( $icon, $class ){
-	$url = siteorigin_setting( $icon );
-	$url_id = attachment_url_to_postid( $url );
+function siteorigin_north_custom_icon( $icon, $class ) {
+	$id = siteorigin_setting( $icon );
+	$url = wp_get_attachment_url( $id );
+	$filetype = wp_check_filetype( $url );
+	$extension = $filetype['ext'];
 
-	$url_ext = pathinfo($url);
-	switch($url_ext['extension'])
-	{
+	switch( $extension ) {
 		case "svg":
 		$attrs['class'] = "style-svg $class";
 		break;
@@ -370,7 +370,7 @@ function siteorigin_north_custom_icon( $icon, $class ){
 		$attrs['class'] = "$class";
 	}
 
-	echo wp_get_attachment_image( $url_id, 'full', false, $attrs );
+	echo wp_get_attachment_image( $id, 'full', false, $attrs );
 }
 endif;
 
