@@ -1,3 +1,19 @@
+= 1.2.4 - 2 August 2016 =
+* Added smooth scroll to mobile menu
+* Integrated with SiteOrigin Premium.
+* Prefixed all global JS function names.
+* Display breadcrumb even without page title.
+* Fixed sticky masthead  with overlap setting.
+* Added page featured image.
+* Improved site title SEO.
+* Added new featured image size for no-sidebar template.
+* Extending smooth scroll sitewide.
+* Added settings to use post excerpt in blog archives.
+* Added action hook underneath entry author avatar.
+* Allowed the use of HTML in the author bio field.
+* Changed styling of the author box.
+* Reduced padding between list items on account page.
+
 = 1.2.3 - 15 June 2016 =
 * Fix to cart button for latest WooCommerce
 * Updated settings framework
