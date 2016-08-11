@@ -625,10 +625,12 @@ a {
     display: none;
     margin-top: 0.2em;
     font-size: 1.2em;
-    color: #777; }
+    color: #666; }
+    .main-navigation #mobile-menu-button .svg-icon-menu path {
+      fill: #777; }
     .main-navigation #mobile-menu-button:hover {
       color: #292929; }
-      .main-navigation #mobile-menu-button:hover .svg-icon-menu .line {
+      .main-navigation #mobile-menu-button:hover .svg-icon-menu path {
         fill: #292929; }
     .main-navigation #mobile-menu-button.to-close .line-1 {
       -webkit-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
