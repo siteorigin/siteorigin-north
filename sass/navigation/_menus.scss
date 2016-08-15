@@ -174,12 +174,16 @@
 		display: none;
 		margin-top: 0.2em;
 		font-size: 1.2em;
+		color: $mobile__text_color;
 
-		color: #777;
+		.svg-icon-menu path {
+			fill: $mobile__icon_color;
+		}
+
 		&:hover {
 			color: $navigation__link_hover_color;
 
-			.svg-icon-menu .line{
+			.svg-icon-menu path{
 				fill: $navigation__link_hover_color;
 			}
 		}

@@ -33,6 +33,8 @@ return array(
 		'responsive_mobile_menu_background_color' => 'mobilemenu__background_color',
 		'responsive_mobile_menu_background_opacity' => 'mobilemenu__background_opacity',
 		'responsive_mobile_menu_text_color' => 'mobilemenu__text_color',
+		'responsive_mobile_text_color' => 'mobile__text_color',
+		'responsive_mobile_icon_color' => 'mobile__icon_color',
 
 		// The footer customizations
 		'footer_background_color' => 'footer__background_color',
