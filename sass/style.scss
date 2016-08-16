@@ -47,6 +47,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
+>>> IMPORTANT NOTICE:
+----------------------------------------------------------------
+Please don't edit this file; any changes made here will be lost
+during the theme update process. If you need to make CSS 
+modifications, please, use our Custom CSS plugin, SiteOrigin CSS:
+https://wordpress.org/plugins/so-css/
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 @import "normalize";
