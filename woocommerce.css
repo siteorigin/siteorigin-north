@@ -802,7 +802,7 @@
 /*--------------------------------------------------------------
 # WooCommerce Quick View
 --------------------------------------------------------------*/
-.woocommerce .product-quick-view-button {
+.woocommerce a.product-quick-view-button {
   margin-right: 1px; }
 
 .woocommerce #quick-view-container {
