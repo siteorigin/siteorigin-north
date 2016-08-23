@@ -79,6 +79,10 @@ function siteorigin_north_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Allowing use of shortcodes in taxonomy descriptions
+	add_filter( 'term_description', 'shortcode_unautop');
+	add_filter( 'term_description', 'do_shortcode' );
+
 	// This theme supports WooCommerce
 	add_theme_support( 'woocommerce' );
 
