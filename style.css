@@ -349,11 +349,11 @@ code {
   background: #eee;
   padding: 0 0.3em; }
 
-::-moz-selection {
+#page ::-moz-selection {
   background-color: #c75d5d;
   color: #fff; }
 
-::selection {
+#page ::selection {
   background-color: #c75d5d;
   color: #fff; }
 

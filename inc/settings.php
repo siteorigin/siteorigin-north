@@ -450,10 +450,10 @@ function siteorigin_north_settings_custom_css($css){
 	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
-	::-moz-selection {
+	#page ::-moz-selection {
 	background-color: ${branding_accent};
 	}
-	::selection {
+	#page ::selection {
 	background-color: ${branding_accent};
 	}
 	button,input[type="button"],input[type="reset"],input[type="submit"] {
