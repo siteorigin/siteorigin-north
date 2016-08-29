@@ -278,7 +278,8 @@ jQuery( function ( $ ) {
 			mhTop = false,
 			pageTop = $( '#page' ).offset().top,
 			$mh = $( '#masthead' ),
-			$tb = $( '#topbar' );
+			$tb = $( '#topbar' ),
+			$wpab = $( '#wpadminbar' );
 
 		var smSetup = function() {
 
@@ -294,6 +295,19 @@ jQuery( function ( $ ) {
 			}
 			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 				$( 'body' ).removeClass( 'topbar-out' );
+			}
+
+			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'no-topbar' ) ) {
+				if ( !$wpab.northIsVisible() ) {
+					$mh.addClass( 'mobile-sticky-menu' );
+				}
+				if ( $wpab.northIsVisible() ) {
+					$mh.removeClass( 'mobile-sticky-menu' );
+				}
+			}
+
+			if ( $(window).width() > 600 && $mh.hasClass( 'mobile-sticky-menu' ) ) {
+				$mh.removeClass( 'mobile-sticky-menu' );
 			}
 
 		}
