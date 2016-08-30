@@ -9,15 +9,6 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-north
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments, white, gray, responsive-layout, right-sidebar, custom-colors, custom-menu, full-width-template
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-SiteOrigin North is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -41,6 +32,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> IMPORTANT NOTICE:
+----------------------------------------------------------------
+Please don't edit below, changes will be lost during the theme 
+update process. If you need to make CSS modifications try
+https://wordpress.org/plugins/so-css/
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -351,11 +349,11 @@ code {
   background: #eee;
   padding: 0 0.3em; }
 
-::-moz-selection {
+#page ::-moz-selection {
   background-color: #c75d5d;
   color: #fff; }
 
-::selection {
+#page ::selection {
   background-color: #c75d5d;
   color: #fff; }
 
@@ -625,10 +623,12 @@ a {
     display: none;
     margin-top: 0.2em;
     font-size: 1.2em;
-    color: #777; }
+    color: #666; }
+    .main-navigation #mobile-menu-button .svg-icon-menu path {
+      fill: #777; }
     .main-navigation #mobile-menu-button:hover {
       color: #292929; }
-      .main-navigation #mobile-menu-button:hover .svg-icon-menu .line {
+      .main-navigation #mobile-menu-button:hover .svg-icon-menu path {
         fill: #292929; }
     .main-navigation #mobile-menu-button.to-close .line-1 {
       -webkit-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
@@ -1269,10 +1269,15 @@ a {
       .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         top: 46px; } }
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 600px) {
       .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
-        top: 0; } }
+        position: absolute;
+        top: auto; }
+        .sticky-menu.no-topbar.admin-bar #masthead.mobile-sticky-menu,
+        .sticky-menu.topbar-out.admin-bar #masthead.mobile-sticky-menu {
+          position: fixed;
+          top: 0; } }
   #masthead .container-inner {
     display: table;
     width: 100%; }

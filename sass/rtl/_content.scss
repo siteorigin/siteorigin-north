@@ -130,11 +130,9 @@
 	}
 
 	#close-search {
-		.svg-icon-close {
-			right: auto;
-			left: 20px;
-		}
-		
+		right: auto;
+		left: 20px;
+
 		&.animate-in {
 			@include transform( scale(1) rotate(-90deg) );
 		}

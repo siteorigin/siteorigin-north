@@ -283,6 +283,16 @@ function siteorigin_north_settings_init(){
 					'type'  => 'text',
 					'label' => __( 'Mobile Menu Text', 'siteorigin-north' ),
 				),
+				'mobile_text_color' => array(
+					'type'        => 'color',
+					'label'       => __( 'Mobile Menu Text Color', 'siteorigin-north' ),
+					'live'        => true,
+				),
+				'mobile_icon_color' => array(
+					'type'        => 'color',
+					'label'       => __( 'Mobile Menu Icon Color', 'siteorigin-north' ),
+					'live'        => true,
+				),
 				'menu_breakpoint' => array(
 					'label'       => __( 'Menu Breakpoint', 'siteorigin-north' ),
 					'type'        => 'text',
@@ -303,7 +313,7 @@ function siteorigin_north_settings_init(){
 				),
 				'mobile_menu_text_color' => array(
 					'type'        => 'color',
-					'label'       => __( 'Mobile Menu Text Color', 'siteorigin-north' ),
+					'label'       => __( 'Mobile Menu Dropdown Text Color', 'siteorigin-north' ),
 					'live'        => true,
 				),
 				'fitvids'         => array(
@@ -440,10 +450,10 @@ function siteorigin_north_settings_custom_css($css){
 	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
-	::-moz-selection {
+	#page ::-moz-selection {
 	background-color: ${branding_accent};
 	}
-	::selection {
+	#page ::selection {
 	background-color: ${branding_accent};
 	}
 	button,input[type="button"],input[type="reset"],input[type="submit"] {
@@ -498,10 +508,16 @@ function siteorigin_north_settings_custom_css($css){
 	.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {
 	color: ${fonts_text_dark};
 	}
+	.main-navigation #mobile-menu-button {
+	color: ${responsive_mobile_text_color};
+	}
+	.main-navigation #mobile-menu-button .svg-icon-menu path {
+	fill: ${responsive_mobile_icon_color};
+	}
 	.main-navigation #mobile-menu-button:hover {
 	color: ${fonts_text_dark};
 	}
-	.main-navigation #mobile-menu-button:hover .svg-icon-menu .line {
+	.main-navigation #mobile-menu-button:hover .svg-icon-menu path {
 	fill: ${fonts_text_dark};
 	}
 	.main-navigation .north-search-icon .svg-icon-search path {
@@ -1013,6 +1029,8 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['responsive_mobile_menu_background_color']   = '#000';
 	$defaults['responsive_mobile_menu_background_opacity'] = '0.9';
 	$defaults['responsive_mobile_menu_text_color']         = '#fff';
+	$defaults['responsive_mobile_text_color']              = '#666';
+	$defaults['responsive_mobile_icon_color']              = '#777';
 
 	// Blog settings
 	$defaults['blog_featured_archive']      = true;
