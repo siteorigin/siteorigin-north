@@ -328,17 +328,19 @@ jQuery( function ( $ ) {
 				var $img = $mh.find( '.site-branding img' ),
 					$branding = $mh.find( '.site-branding > *' );
 
+				$img.removeAttr( 'style' );
+				var imgWidth = $img.width(),
+					imgHeight = $img.height();
+
 				if ( top > 0 ) {
-					var scale = 0.775 + (
-						Math.max( 0, 48 - top ) / 48 * (
-						1 - 0.775
-						)
-						);
+					var scale = 0.775 + ( Math.max( 0, 48 - top ) / 48 * ( 1 - 0.775 ) );
 
 					if ( $img.length ) {
+
 						$img.css( {
-							width: $img.attr( 'width' ) * scale,
-							height: $img.attr( 'height' ) * scale
+							width: imgWidth * scale,
+							height: imgHeight * scale,
+							'max-width' : 'none'
 						} );
 					}
 					else {
@@ -351,13 +353,7 @@ jQuery( function ( $ ) {
 					} ).addClass( 'floating' );
 				}
 				else {
-					if ( $img.length ) {
-						$img.css( {
-							width: $img.attr( 'width' ),
-							height: $img.attr( 'height' )
-						} );
-					}
-					else {
+					if ( ! $img.length ) {
 						$branding.css( 'transform', 'scale(1)' );
 					}
 
@@ -368,7 +364,7 @@ jQuery( function ( $ ) {
 				}
 			};
 			smResizeLogo();
-			$( window ).scroll( smResizeLogo );
+			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		}
 	}
 
