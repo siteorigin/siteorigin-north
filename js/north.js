@@ -314,11 +314,7 @@ jQuery( function ( $ ) {
 				var $img = $mh.find( '.site-branding img' ),
 					$branding = $mh.find( '.site-branding > *' );
 
-				$img.css( {
-					width: 'auto',
-					height: 'auto'
-				} );
-
+				$img.removeAttr( 'style' );
 				var imgWidth = $img.width(),
 					imgHeight = $img.height();
 
@@ -329,7 +325,8 @@ jQuery( function ( $ ) {
 
 						$img.css( {
 							width: imgWidth * scale,
-							height: imgHeight * scale
+							height: imgHeight * scale,
+							'max-width' : 'none'
 						} );
 					}
 					else {
@@ -353,7 +350,7 @@ jQuery( function ( $ ) {
 				}
 			};
 			smResizeLogo();
-			$( window ).scroll( smResizeLogo );
+			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		}
 	}
 
