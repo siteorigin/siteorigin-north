@@ -7,6 +7,7 @@
 
 define('SITEORIGIN_THEME_VERSION', 'dev');
 define('SITEORIGIN_THEME_JS_PREFIX', '');
+define('SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/');
 
 // The settings manager
 include get_template_directory() . '/inc/settings/settings.php';
@@ -41,6 +42,7 @@ function siteorigin_north_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	set_post_thumbnail_size( 650, 650 );
+	add_image_size( 'north-thumbnail-no-sidebar', 1040, 650, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

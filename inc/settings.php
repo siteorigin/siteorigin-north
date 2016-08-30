@@ -26,6 +26,12 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Site Description', 'siteorigin-north' ),
 					'description' => __( 'Show your site description below your site title or logo.', 'siteorigin-north' )
 				),
+				'attribution' => array(
+					'type' => 'checkbox',
+					'label' => __('Hide SiteOrigin Attribution', 'siteorigin-north'),
+					'description' => __('Hide the SiteOrigin link in your footer.', 'siteorigin-north'),
+					'teaser' => true,
+				),
 				'accent'           => array(
 					'type'        => 'color',
 					'label'       => __( 'Accent Color', 'siteorigin-north' ),
@@ -96,7 +102,7 @@ function siteorigin_north_settings_init(){
 
 				'menu' => array(
 					'type' => 'media',
-					'label' => __('Responsive menu icon', 'siteorigin-north'),
+					'label' => __('Mobile menu icon', 'siteorigin-north'),
 				),
 				'search' => array(
 					'type' => 'media',
@@ -207,32 +213,62 @@ function siteorigin_north_settings_init(){
 				)
 			),
 		),
-		'blog'        => array(
-			'title'  => __( 'Blog', 'siteorigin-north' ),
-			'fields' => array(
+		'blog'                    => array(
+			'title'                  => __( 'Blog', 'siteorigin-north' ),
+			'fields'                 => array(
 				'featured_archive'      => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Featured image on archive', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Featured image on archive', 'siteorigin-north' ),
+				),
+				'post_content'          => array(
+					'type'                 => 'select',
+					'label'                => __( 'Archive Post Content', 'siteorigin-north' ),
+					'description'          => __( 'Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'siteorigin-north' ),
+					'options'              => array(
+						'content'             => __( 'Full Post Content', 'siteorigin-north' ),
+						'excerpt'             => __( 'Post Excerpt', 'siteorigin-north' ),
+					)
+				),
+				'read_more_text'        => array(
+					'type'                 => 'text',
+					'label'                => __( 'Read More Text', 'siteorigin-north' ),
+					'description'          => __( 'The button text displayed when posts are split using the "more" quicktag.', 'siteorigin-north' ),
+				),
+				'excerpt_length'        => array(
+					'type'                 => 'number',
+					'label'                => __( 'Excerpt Length', 'siteorigin-north' ),
+					'description'          => __( 'If no manual post excerpt is added one will be generated. How many words should it be? Only applicable if Post Excerpt has been selected from the Archive Post Content setting.', 'siteorigin-north' ),
+				),
+				'excerpt_post_link'     => array(
+					'type'                 => 'checkbox',
+					'label'                => __( 'Post Excerpt Read More Link', 'siteorigin-north' ),
+					'description'          => __( 'Display the Read More Text below the post excerpt. Only applicable if Post Excerpt has been selected from the Archive Post Content setting.', 'siteorigin-north' )
 				),
 				'featured_single'       => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Featured image on single', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Featured image on single', 'siteorigin-north' ),
 				),
 				'display_author_box'    => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display author box on single', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display author box on single', 'siteorigin-north' ),
 				),
 				'display_date'          => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display date', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display date', 'siteorigin-north' ),
 				),
 				'display_author'        => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display author', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display author', 'siteorigin-north' ),
 				),
 				'display_comment_count' => array(
-					'type'  => 'checkbox',
-					'label' => __( 'Display comment count', 'siteorigin-north' ),
+					'type'                 => 'checkbox',
+					'label'                => __( 'Display comment count', 'siteorigin-north' ),
+				),
+				'ajax_comments'         => array(
+					'type'                 => 'checkbox',
+					'label'                => __('Ajax Comments', 'siteorigin-north'),
+					'description'          => __('Keep the conversation flowing with ajax loading comments.', 'siteorigin-north'),
+					'teaser'               => true,
 				)
 			)
 		),
@@ -245,7 +281,7 @@ function siteorigin_north_settings_init(){
 				),
 				'menu_text'       => array(
 					'type'  => 'text',
-					'label' => __( 'Responsive Menu Text', 'siteorigin-north' ),
+					'label' => __( 'Mobile Menu Text', 'siteorigin-north' ),
 				),
 				'menu_breakpoint' => array(
 					'label'       => __( 'Menu Breakpoint', 'siteorigin-north' ),
@@ -401,6 +437,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${fonts_text_dark};
 	}
 	blockquote {
+	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
 	::-moz-selection {
@@ -419,9 +456,11 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],textarea {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	.wpcf7 input.wpcf7-form-control.wpcf7-text,.wpcf7 input.wpcf7-form-control.wpcf7-number,.wpcf7 input.wpcf7-form-control.wpcf7-date,.wpcf7 textarea.wpcf7-form-control.wpcf7-textarea,.wpcf7 select.wpcf7-form-control.wpcf7-select,.wpcf7 input.wpcf7-form-control.wpcf7-quiz {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	.wpcf7 input.wpcf7-form-control.wpcf7-submit[disabled] {
 	color: ${fonts_text_light};
@@ -474,6 +513,9 @@ function siteorigin_north_settings_custom_css($css){
 	#header-search {
 	background: ${masthead_background_color};
 	}
+	#header-search input[type="search"] {
+	.font( ${fonts_details} );
+	}
 	#mobile-navigation {
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
 	}
@@ -498,6 +540,9 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#mobile-navigation ul li .dropdown-toggle {
 	color: ${responsive_mobile_menu_text_color};
+	}
+	.search-form .search-field {
+	.font( ${fonts_details} );
 	}
 	.tagcloud a {
 	background: ${fonts_text_meta};
@@ -528,6 +573,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#masthead .site-branding .site-title {
 	color: ${fonts_text_dark};
+	.font( ${fonts_headings} );
 	}
 	#masthead.layout-centered .site-branding {
 	margin: 0 auto ${masthead_padding} auto;
@@ -574,6 +620,9 @@ function siteorigin_north_settings_custom_css($css){
 	.entry-title {
 	color: ${fonts_text_dark};
 	}
+	.entry-meta {
+	.font( ${fonts_details} );
+	}
 	.entry-meta li,.entry-meta a,.entry-meta .meta-icon {
 	color: ${fonts_text_meta};
 	}
@@ -581,6 +630,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${branding_accent_dark};
 	}
 	.breadcrumbs {
+	.font( ${fonts_details} );
 	color: ${fonts_text_light};
 	}
 	.breadcrumbs a:hover {
@@ -606,6 +656,9 @@ function siteorigin_north_settings_custom_css($css){
 	.more-link:hover {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
+	}
+	.post-pagination {
+	.font( ${fonts_details} );
 	}
 	.post-pagination a {
 	color: ${fonts_text_medium};
@@ -640,9 +693,11 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#commentform .comment-form-author input,#commentform .comment-form-email input,#commentform .comment-form-url input {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	#commentform .comment-form-comment textarea {
 	color: ${fonts_text_medium};
+	.font( ${fonts_details} );
 	}
 	#commentform .form-allowed-tags,#commentform .comment-notes,#commentform .logged-in-as {
 	color: ${fonts_text_meta};
@@ -676,11 +731,13 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	.woocommerce .woocommerce-result-count {
 	color: ${fonts_text_meta};
+	.font( ${fonts_details} );
 	}
 	.woocommerce #main ul.products li.product h3 {
 	color: ${fonts_text_dark};
 	}
 	.woocommerce #main ul.products li.product .price {
+	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
 	.woocommerce button.button.alt,.woocommerce #review_form #respond .form-submit input,.woocommerce .woocommerce-message .button,.woocommerce .products .button {
@@ -696,6 +753,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	.woocommerce.single #content div.product p.price {
 	color: ${branding_accent};
+	.font( ${fonts_details} );
 	}
 	.woocommerce.single #content div.product .woocommerce-product-rating .woocommerce-review-link {
 	color: ${fonts_text_medium};
@@ -847,6 +905,7 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
+	.font( ${fonts_details} );
 	}';
 	return $css;
 }
@@ -932,7 +991,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['masthead_layout']               = 'default';
 	$defaults['masthead_text_above']           = '';
 	$defaults['masthead_background_color']     = '#fafafa';
-	$defaults['masthead_top_background_color'] = false;
+	$defaults['masthead_top_background_color'] = '#f4f4f4';
 	$defaults['masthead_border_color']         = '#d4d4d4';
 	$defaults['masthead_border_width']         = '1px';
 	$defaults['masthead_padding']              = '30px';
@@ -957,6 +1016,10 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// Blog settings
 	$defaults['blog_featured_archive']      = true;
+	$defaults['blog_post_content']          = 'content';
+	$defaults['blog_read_more_text']        = __( 'Continue reading', 'siteorigin-north' );
+	$defaults['blog_excerpt_length']        = 55;
+	$defaults['blog_excerpt_post_link']     = true;
 	$defaults['blog_featured_single']       = true;
 	$defaults['blog_display_author_box']    = false;
 	$defaults['blog_display_date']          = true;
@@ -1016,6 +1079,16 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
 	);
 
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$settings['featured_image'] = array(
+			'type'           => 'checkbox',
+			'label'          => __( 'Page Featured Image', 'vantage' ),
+			'checkbox_label' => __( 'display', 'vantage' ),
+			'description'    => __( 'Display the page featured image on this page.', 'vantage' )
+		);
+	}
+
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
@@ -1062,6 +1135,12 @@ function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ){
 	$defaults['footer_margin']       = true;
 	$defaults['hide_masthead']       = false;
 	$defaults['hide_footer_widgets'] = false;
+
+	// Defaults for page only settings
+	if( $type == 'post' ) $post = get_post( $id );
+	if( ! empty( $post ) && $post->post_type == 'page' ) {
+		$defaults['featured_image'] = false;
+	}
 
 	// Specific default settings for different types
 	if( $type == 'template' && $id == 'home' ) {
@@ -1124,7 +1203,8 @@ function siteorigin_north_about_page( $about ){
 		get_template_directory_uri() . '/admin/about/video-3.jpg',
 	);
 
-	$about['premium_url'] = false;
+	$about['documentation_url'] = 'https://siteorigin.com/north-documentation/';
+	$about['review'] = true;
 
 	$about['description'] = __( 'SiteOrigin North is a simple, customizable WordPress theme. Check out this video to get an idea of what it has to offer.', 'siteorigin-north' );
 

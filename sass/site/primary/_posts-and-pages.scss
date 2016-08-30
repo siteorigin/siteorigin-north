@@ -103,6 +103,7 @@
 	margin: -15px 0 25px 0;
 	padding: 0;
 	list-style:none;
+	font-family: $font__detail;
 	font-size: 0.85em;
 
 	li, & a, & .meta-icon {
@@ -217,15 +218,22 @@
 
 .author-box {
 	margin: 20px 0;
-	padding: 10px;
-	border: 1px solid $color__border-table;
+	padding: 20px;
+	background: rgba(0,0,0,0.05);
 
 	.author-title {
 		margin-top: 0;
+		line-height: 1;
+		font-size: 1.25em;
 
 		.author-info {
 			font-size: 0.6em;
 			padding: 0 5px;
+			font-weight: bold;
+
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 

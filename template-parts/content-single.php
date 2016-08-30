@@ -11,15 +11,18 @@
 
 	<?php if( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
 		<div class="entry-thumbnail">
-			<?php the_post_thumbnail() ?>
+			<?php siteorigin_north_entry_thumbnail() ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<?php siteorigin_north_breadcrumbs(); ?>
+	<?php endif; ?>
 
+	<?php siteorigin_north_breadcrumbs(); ?>
+
+	<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
 			<div class="entry-meta">
 				<?php siteorigin_north_post_meta(); ?>
 			</div><!-- .entry-meta -->
@@ -40,4 +43,3 @@
 		<?php siteorigin_north_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-

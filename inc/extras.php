@@ -43,12 +43,16 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'is-mobile-device';
 	}
 
-	if( !is_active_sidebar('main-sidebar') ) {
+	if( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
-	if( siteorigin_setting('navigation_sticky') ) {
+	if( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
+	}
+
+	if( ! siteorigin_setting( 'masthead_text_above' ) ) {
+		$classes[] = 'no-topbar';
 	}
 
 	return $classes;
@@ -107,6 +111,11 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'siteorigin_north_render_title' );
 endif;
 
+/*
+ * Allow the use of HTML in author bio
+ */
+remove_filter( 'pre_user_description' , 'wp_filter_kses' );
+
 if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
 /*
  * Have a uniform size for the tag cloud items
@@ -119,3 +128,13 @@ function siteorigin_north_tag_cloud_widget($args) {
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'siteorigin_north_tag_cloud_widget' );
+
+if ( ! function_exists( 'siteorigin_north_excerpt_length' ) ) :
+/*
+ * Filter the except length
+ */
+function siteorigin_north_excerpt_length( $length ) {
+	return siteorigin_setting( 'blog_excerpt_length' );
+}
+endif;
+add_filter( 'excerpt_length', 'siteorigin_north_excerpt_length', 999 );
