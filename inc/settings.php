@@ -125,7 +125,7 @@ function siteorigin_north_settings_init(){
 				'sidebar_width' => array(
 					'label'             => __( 'Sidebar Width', 'siteorigin-north' ),
 					'type'              => 'measurement',
-					'live'              => false,
+					'live'              => true,
 				)
 			)
 		),
@@ -870,67 +870,65 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
 /**
  * Add CSS for mobile menu breakpoint
  */
-function siteorigin_north_menu_breakpoint_css() {
+function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 
-	$breakpoint = siteorigin_setting( 'responsive_menu_breakpoint' );
+	$breakpoint = $settings['theme_settings_responsive_menu_breakpoint'];
 
-	$css = '<style type="text/css" id="siteorigin-mobile-menu-css">' . "\t" .
-	'/* responsive menu */' . "\t" .
-	'@media screen and (max-width: ' . $breakpoint  . 'px) {' . "\t" .
-		'body.responsive .main-navigation #mobile-menu-button {' .
-			'display: inline-block;' .
-		'}' . "\t" .
-		'body.responsive .main-navigation ul {' .
-			'display: none;' .
-		'}' . "\t" .
-		'body.responsive .main-navigation .north-search-icon {' .
-			'display: none;' .
-		'}' . "\t" .
-		'.main-navigation #mobile-menu-button {' .
-			'display: none;' .
-		'}' . "\t" .
-		'.main-navigation ul {' .
-			'display: inline-block;' .
-		'}' . "\t" .
-		'.main-navigation .north-search-icon {' .
-			'display: inline-block;' .
-		'}' . "\t" .
-	'}' . "\t" .
-	'@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {' . "\t" .
-		'body.responsive #mobile-navigation {' .
-			'display: none !important;' .
-			'}' . "\t" .
-		'}' . "\t" .
-	'</style>';
+	$css .= '/* responsive menu */
+	@media screen and (max-width: ' . $breakpoint  . 'px) {
+		body.responsive .main-navigation #mobile-menu-button {
+			display: inline-block;
+		}
+		body.responsive .main-navigation ul {
+			display: none;
+		}
+		body.responsive .main-navigation .north-search-icon {
+			display: none;
+		}
+		.main-navigation #mobile-menu-button {
+			display: none;
+		}
+		.main-navigation ul {
+			display: inline-block;
+		}
+		.main-navigation .north-search-icon {
+			display: inline-block;
+		}
+	}
+	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+		body.responsive #mobile-navigation {
+			display: none !important;
+		}
+	}';
 
-	echo $css;
+	return $css;
 
 }
 endif;
-add_action( 'wp_head', 'siteorigin_north_menu_breakpoint_css' );
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_menu_breakpoint_css', 10, 2 );
 
 if ( ! function_exists( 'siteorigin_north_sidebar_zero_css' ) ) :
 /**
  * Add CSS when sidebar width is 0
  */
-function siteorigin_north_sidebar_zero_css() {
+function siteorigin_north_sidebar_zero_css( $css, $settings ) {
 
-	$breakpoint = siteorigin_setting( 'structure_sidebar_width' );
+	$sidebar_width = $settings['theme_settings_structure_sidebar_width'];
 
-	$css = '<style type="text/css" id="siteorigin-sidebar-css">' . "\t" .
-	'/* Sidebar fix */' . "\t" .
-	'.site-content .widget-area {' .
-		'display: none;' .
-	'}' . "\t" .
-	'</style>';
+	if ( $sidebar_width == 0 ) {
 
-	if( siteorigin_setting( 'structure_sidebar_width' ) == 0 ) {
-		echo $css;
+		$css .= '/* Sidebar fix */
+		.site-content .widget-area {
+			display: none;
+		}';
+
 	}
+
+	return $css;
 
 }
 endif;
-add_action( 'wp_head', 'siteorigin_north_sidebar_zero_css' );
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_sidebar_zero_css', 10, 2 );
 
 if ( ! function_exists( 'siteorigin_north_settings_defaults' ) ) :
 /**
