@@ -171,21 +171,22 @@ function siteorigin_north_entry_footer() {
 
 		if ( siteorigin_setting('blog_display_author_box') ) { ?>
 			<div class="author-box">
-				<h2 class="author-title">
-					<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
-					<small class="author-info">
-						<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-							<?php _e( 'View posts by ', 'siteorigin-north' );
-							echo get_the_author(); ?>
-						</a>
-					</small>
-					<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
-				</h2>
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+					<?php do_action( 'siteorigin_north_after_entry_author_avatar' ); ?>
 				</div>
 				<div class="author-description">
-					<?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?>
+					<h2 class="author-title">
+						<?php echo ( (!is_rtl()) ? get_the_author() : ''); ?>
+						<small class="author-info">
+							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+								<?php _e( 'View posts by ', 'siteorigin-north' );
+								echo get_the_author(); ?>
+							</a>
+						</small>
+						<?php echo ( (is_rtl()) ? get_the_author() : ''); ?>
+					</h2>
+					<?php echo wp_kses_post( get_the_author_meta( 'description' ), null ); ?>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -354,13 +355,13 @@ if( !function_exists('siteorigin_north_custom_icon') ):
 /**
  * Display a custom icons from the settings
  */
-function siteorigin_north_custom_icon( $icon, $class ){
-	$url = siteorigin_setting( $icon );
-	$url_id = attachment_url_to_postid( $url );
+function siteorigin_north_custom_icon( $icon, $class ) {
+	$id = siteorigin_setting( $icon );
+	$url = wp_get_attachment_url( $id );
+	$filetype = wp_check_filetype( $url );
+	$extension = $filetype['ext'];
 
-	$url_ext = pathinfo($url);
-	switch($url_ext['extension'])
-	{
+	switch( $extension ) {
 		case "svg":
 		$attrs['class'] = "style-svg $class";
 		break;
@@ -369,7 +370,7 @@ function siteorigin_north_custom_icon( $icon, $class ){
 		$attrs['class'] = "$class";
 	}
 
-	echo wp_get_attachment_image( $url_id, 'full', false, $attrs );
+	echo wp_get_attachment_image( $id, 'full', false, $attrs );
 }
 endif;
 
