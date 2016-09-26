@@ -278,7 +278,8 @@ jQuery( function ( $ ) {
 			mhTop = false,
 			pageTop = $( '#page' ).offset().top,
 			$mh = $( '#masthead' ),
-			$tb = $( '#topbar' );
+			$tb = $( '#topbar' ),
+			$wpab = $( '#wpadminbar' );
 
 		var smSetup = function() {
 
@@ -294,6 +295,19 @@ jQuery( function ( $ ) {
 			}
 			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 				$( 'body' ).removeClass( 'topbar-out' );
+			}
+
+			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'no-topbar' ) ) {
+				if ( !$wpab.northIsVisible() ) {
+					$mh.addClass( 'mobile-sticky-menu' );
+				}
+				if ( $wpab.northIsVisible() ) {
+					$mh.removeClass( 'mobile-sticky-menu' );
+				}
+			}
+
+			if ( $(window).width() > 600 && $mh.hasClass( 'mobile-sticky-menu' ) ) {
+				$mh.removeClass( 'mobile-sticky-menu' );
 			}
 
 		}
@@ -314,17 +328,19 @@ jQuery( function ( $ ) {
 				var $img = $mh.find( '.site-branding img' ),
 					$branding = $mh.find( '.site-branding > *' );
 
+				$img.removeAttr( 'style' );
+				var imgWidth = $img.width(),
+					imgHeight = $img.height();
+
 				if ( top > 0 ) {
-					var scale = 0.775 + (
-						Math.max( 0, 48 - top ) / 48 * (
-						1 - 0.775
-						)
-						);
+					var scale = 0.775 + ( Math.max( 0, 48 - top ) / 48 * ( 1 - 0.775 ) );
 
 					if ( $img.length ) {
+
 						$img.css( {
-							width: $img.attr( 'width' ) * scale,
-							height: $img.attr( 'height' ) * scale
+							width: imgWidth * scale,
+							height: imgHeight * scale,
+							'max-width' : 'none'
 						} );
 					}
 					else {
@@ -337,13 +353,7 @@ jQuery( function ( $ ) {
 					} ).addClass( 'floating' );
 				}
 				else {
-					if ( $img.length ) {
-						$img.css( {
-							width: $img.attr( 'width' ),
-							height: $img.attr( 'height' )
-						} );
-					}
-					else {
+					if ( ! $img.length ) {
 						$branding.css( 'transform', 'scale(1)' );
 					}
 
@@ -354,7 +364,7 @@ jQuery( function ( $ ) {
 				}
 			};
 			smResizeLogo();
-			$( window ).scroll( smResizeLogo );
+			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		}
 	}
 
@@ -378,7 +388,7 @@ jQuery( function ( $ ) {
 
 	// Handle smooth scrolling
 	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
+		$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"])' ).northSmoothScroll();
 	}
 
 	// Add class to calendar elements that have links

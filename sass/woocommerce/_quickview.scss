@@ -1,4 +1,10 @@
 .woocommerce {
+	// Styling the quickview button
+	a.product-quick-view-button {
+		margin-right: 1px;
+	}
+
+	// Styling the quickview modal
 	#quick-view-container {
 		position: fixed;
 		top: 0;

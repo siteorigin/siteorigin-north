@@ -9,14 +9,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-	<?php if( has_post_thumbnail() && siteorigin_setting('blog_featured_archive') ) : ?>
+	<?php if( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
 				<div class="thumbnail-hover">
 					<span class="screen-reader-text"><?php esc_html_e( 'Open post', 'siteorigin-north' ); ?></span>
 					<span class="north-icon-add"></span>
 				</div>
-				<?php the_post_thumbnail() ?>
+				<?php siteorigin_north_entry_thumbnail() ?>
 			</a>
 		</div>
 	<?php endif; ?>
@@ -33,10 +33,17 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
-				get_the_title()
-			) );
+			if( siteorigin_setting( 'blog_post_content' ) == 'content' ) {
+				the_content( sprintf(
+					siteorigin_setting( 'blog_read_more_text' ) . __( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
+					get_the_title()
+				) );
+			} else {
+				the_excerpt();
+				if( siteorigin_setting( 'blog_excerpt_post_link' ) ) : ?>
+					<a href="<?php the_permalink() ?>" class="more-link"><?php echo siteorigin_setting( 'blog_read_more_text' ) ?><span class="screen-reader-text">More Tag</span></a>
+				<?php endif;
+			}
 		?>
 
 		<?php

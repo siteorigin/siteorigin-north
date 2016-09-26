@@ -47,12 +47,12 @@ code {
 	padding: 0 0.3em;
 }
 
-::-moz-selection {
+#page ::-moz-selection {
   background-color: $color__primary_accent;
   color: #fff;
 }
 
-::selection {
+#page ::selection {
   background-color: $color__primary_accent;
   color: #fff;
 }

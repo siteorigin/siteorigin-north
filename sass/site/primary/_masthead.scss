@@ -31,8 +31,14 @@
 				top: 46px;
 			}
 
-			@media screen and (max-width: 599px) {
-				top: 0;
+			@media screen and (max-width: 600px) {
+				position: absolute;
+				top: auto;
+
+				&.mobile-sticky-menu {
+					position: fixed;
+					top: 0;
+				}
 			}
 		}
 	}
@@ -56,6 +62,7 @@
 		.site-title {
 			margin: 0;
 			color: $color__text_dark;
+			font-family: $font__headings;
 			font-size: 1.5em;
 			line-height: 1.2em;
 			white-space: nowrap;
@@ -73,7 +80,7 @@
 
 		img {
 			display: block;
-			max-width: none;
+			max-width: 100%;
 		}
 	}
 
