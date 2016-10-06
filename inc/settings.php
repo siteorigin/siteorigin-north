@@ -1128,9 +1128,9 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 	if( ! empty( $post ) && $post->post_type == 'page' ) {
 		$settings['featured_image'] = array(
 			'type'           => 'checkbox',
-			'label'          => __( 'Page Featured Image', 'vantage' ),
-			'checkbox_label' => __( 'display', 'vantage' ),
-			'description'    => __( 'Display the page featured image on this page.', 'vantage' )
+			'label'          => __( 'Page Featured Image', 'siteorigin-north' ),
+			'checkbox_label' => __( 'display', 'siteorigin-north' ),
+			'description'    => __( 'Display the page featured image on this page.', 'siteorigin-north' )
 		);
 	}
 

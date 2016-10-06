@@ -19,7 +19,6 @@ while ( have_posts() ) : the_post();
 
 	?>
 	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<a href="#" id="close-quickview"></a>
 		<div class="product-content-wrapper">
 			<div class="product-image-wrapper">
 
