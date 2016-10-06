@@ -933,11 +933,11 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  * Add CSS for mobile menu breakpoint
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
-	if( !isset( $settings['responsive_menu_breakpoint'] ) ) {
+	if( !isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ) {
 		return $css;
 	}
 
-	$breakpoint = $settings[ 'responsive_menu_breakpoint' ];
+	$breakpoint = $settings[ 'theme_settings_responsive_menu_breakpoint' ];
 
 	$css .= '/* responsive menu */
 	@media screen and (max-width: ' . $breakpoint  . 'px) {
@@ -977,11 +977,11 @@ if ( ! function_exists( 'siteorigin_north_sidebar_zero_css' ) ) :
  * Add CSS when sidebar width is 0
  */
 function siteorigin_north_sidebar_zero_css( $css, $settings ) {
-	if( !isset( $settings['structure_sidebar_width'] ) ) {
+	if( !isset( $settings[ 'theme_settings_structure_sidebar_width' ] ) ) {
 		return $css;
 	}
 
-	$sidebar_width = $settings[ 'structure_sidebar_width' ];
+	$sidebar_width = $settings[ 'theme_settings_structure_sidebar_width' ];
 
 	if ( $sidebar_width == 0 ) {
 
