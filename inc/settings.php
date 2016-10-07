@@ -939,8 +939,7 @@ function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 
 	$breakpoint = $settings[ 'theme_settings_responsive_menu_breakpoint' ];
 
-	$css .= '/* responsive menu */
-	@media screen and (max-width: ' . $breakpoint  . 'px) {
+	$css .= '@media screen and (max-width: ' . $breakpoint  . 'px) {
 		body.responsive .main-navigation #mobile-menu-button {
 			display: inline-block;
 		}
@@ -985,8 +984,7 @@ function siteorigin_north_sidebar_zero_css( $css, $settings ) {
 
 	if ( $sidebar_width == 0 ) {
 
-		$css .= '/* Sidebar fix */
-		.site-content .widget-area {
+		$css .= '.site-content .widget-area {
 			display: none;
 		}';
 
