@@ -21,6 +21,8 @@ function siteorigin_north_display_logo(){
 			echo wp_get_attachment_image( $logo, 'full', false, $attrs );
 		?></a><?php
 
+	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		?><?php the_custom_logo(); ?><?php
 	}
 	else {
 		if ( is_front_page() ) : ?>
