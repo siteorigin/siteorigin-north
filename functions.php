@@ -35,6 +35,11 @@ function siteorigin_north_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
+	 * Enable support for the custom logo.
+	 */
+	add_theme_support( 'custom-logo' );
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
