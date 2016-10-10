@@ -1,3 +1,10 @@
+= 1.2.5 - 10 October 2016 =
+* Fixed logo scroll scaling bug.
+* Ignore LiveMesh and WooCommerce tabs when smooth scrolling.
+* Improved accessibility.
+* Added theme support for the custom logo.
+* Updated to the latest SiteOrigin Settings framework.
+
 = 1.2.4 - 2 August 2016 =
 * Added smooth scroll to mobile menu
 * Integrated with SiteOrigin Premium.
