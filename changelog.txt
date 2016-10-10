@@ -1,11 +1,24 @@
-= 1.2.5 - 10 October 2016 =
-* Fixed logo scroll scaling bug.
-* Ignore LiveMesh and WooCommerce tabs when smooth scrolling.
+= 1.2.6 - 10 October 2016 =
 * Improved accessibility.
 * Added theme support for the custom logo.
-* Updated to the latest SiteOrigin Settings framework.
+* Fixed conflict with smooth scrolling and WooCommerce tabs.
+* Use siteorigin_settings_custom_css to display custom css.
+* Fixed settings text domain translation bug.
+* Updated settings framework.
 
-= 1.2.4 - 2 August 2016 =
+= 1.2.5 - 30 August 2016 =
+* Added styling to the archive products buttons.
+* Added settings for mobile menu toggle text and icon colors.
+* Allow use of shortcodes in taxonomy descriptions.
+* Updated styling for Woo quickview button.
+* Don’t apply selection color to adminbar.
+* Fixed RTL issue with header search close icon.
+* Add blog loop template to be used by Post loop widget.
+* Improved logo scaling.
+* Fixed conflict with smooth scrolling and Livemesh widgets.
+* Updated settings framework.
+
+= 1.2.4 - 15 August 2016 =
 * Added smooth scroll to mobile menu
 * Integrated with SiteOrigin Premium.
 * Prefixed all global JS function names.
