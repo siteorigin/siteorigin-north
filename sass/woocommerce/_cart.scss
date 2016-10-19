@@ -288,6 +288,10 @@
 		.shopping-cart-dropdown {
 			width: 350px;
 			right: 0;
+
+			.mini_cart_item a {
+				white-space: normal;
+			}
 		}
 	}
 }

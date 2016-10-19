@@ -499,6 +499,8 @@
   .main-navigation .shopping-cart .shopping-cart-dropdown {
     width: 350px;
     right: 0; }
+    .main-navigation .shopping-cart .shopping-cart-dropdown .mini_cart_item a {
+      white-space: normal; }
 
 .widget_shopping_cart_content {
   padding: 15px; }
