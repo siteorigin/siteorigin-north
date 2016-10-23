@@ -1,4 +1,4 @@
-= 1.2.7 - 23 October 2016 =
+= 1.2.7 - 24 October 2016 =
 * Ensure long product title wrap correctly in the mini-cart.
 * Added Widgets for SiteOrigin to the smooth scroll ignore list.
 
