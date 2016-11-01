@@ -411,16 +411,14 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 textarea {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-sizing: border-box;
   color: #595959;
   font-family: "Droid Serif", sans-serif;
   font-size: 0.85em;
   padding: 7px 30px;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  width: 100%; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -1788,36 +1786,37 @@ a {
   #commentform > p {
     padding: 0 15px;
     margin: 25px 0; }
-  #commentform .comment-form-author, #commentform .comment-form-email, #commentform .comment-form-url {
+  #commentform .comment-form-author,
+  #commentform .comment-form-email,
+  #commentform .comment-form-url {
     display: block;
     float: left;
-    width: 33.333%;
-    margin: 0 0 20px 0; }
-    #commentform .comment-form-author input, #commentform .comment-form-email input, #commentform .comment-form-url input {
-      color: #595959;
-      width: 100%;
-      font-family: "Droid Serif", sans-serif;
-      font-size: 0.85em;
-      padding: 8px 30px;
-      border-radius: 0px; }
+    margin: 0 0 20px 0;
+    width: 33.333%; }
+    @media (max-width: 480px) {
+      #commentform .comment-form-author,
+      #commentform .comment-form-email,
+      #commentform .comment-form-url {
+        float: none;
+        margin: 0 0 10px;
+        width: 100%; }
+        #commentform .comment-form-url {
+          margin-bottom: 20px; } }
   #commentform .comment-form-comment {
     margin: 10px 0; }
     #commentform .comment-form-comment textarea {
-      color: #595959;
-      width: 100%;
-      font-family: "Droid Serif", sans-serif;
-      font-size: 0.85em;
-      padding: 15px 30px;
-      border-radius: 0px;
       display: block; }
+      @media (max-width: 480px) {
+        #commentform .comment-form-comment textarea {
+          padding: 8px; } }
   #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .logged-in-as {
     color: #b0b0b0;
     margin: 10px 0; }
     #commentform .form-allowed-tags, #commentform .form-allowed-tags code, #commentform .comment-notes, #commentform .comment-notes code, #commentform .logged-in-as, #commentform .logged-in-as code {
       font-size: 0.75em; }
   #commentform .form-submit {
-    text-align: right;
-    margin-top: 10px; }
+    margin-top: 10px;
+    text-align: right; }
     #commentform .form-submit input {
       background: transparent;
       border-radius: 0px;

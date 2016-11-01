@@ -5,17 +5,14 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 textarea {
+	border: 1px solid $color__border-input;
+	border-radius: 0;
+	box-sizing: border-box;
 	color: $color__text_medium;
 	font-family: $font__detail;
 	font-size: 0.85em;
 	padding: 7px 30px;
-	border: 1px solid $color__border-input;
-	border-radius: 0px;
 	width: 100%;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 
 	&:focus {
 		outline: none;
