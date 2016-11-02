@@ -90,7 +90,7 @@
 		margin: 0 0 20px 0;
 		width: 33.333%;
 		
-		@media (max-width: 480px) {
+		@media (max-width: 768px) {
 			float: none;
 			margin: 0 0 10px;
 			width: 100%;
@@ -107,7 +107,7 @@
 		textarea {
 			display: block;
 			
-			@media (max-width: 480px) {
+			@media (max-width: 768px) {
 				padding: 8px;
 			}			
 		}

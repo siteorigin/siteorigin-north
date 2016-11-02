@@ -1793,7 +1793,7 @@ a {
     float: left;
     margin: 0 0 20px 0;
     width: 33.333%; }
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       #commentform .comment-form-author,
       #commentform .comment-form-email,
       #commentform .comment-form-url {
@@ -1806,7 +1806,7 @@ a {
     margin: 10px 0; }
     #commentform .comment-form-comment textarea {
       display: block; }
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
         #commentform .comment-form-comment textarea {
           padding: 8px; } }
   #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .logged-in-as {
