@@ -933,37 +933,65 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  * Add CSS for mobile menu breakpoint
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
-	if( !isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ) {
-		return $css;
-	}
+	if( $settings[ 'theme_settings_responsive_menu_breakpoint' ] != null ) {
 
-	$breakpoint = $settings[ 'theme_settings_responsive_menu_breakpoint' ];
+		$breakpoint = $settings[ 'theme_settings_responsive_menu_breakpoint' ];
 
-	$css .= '@media screen and (max-width: ' . $breakpoint  . 'px) {
-		body.responsive .main-navigation #mobile-menu-button {
-			display: inline-block;
+		$css .= '@media screen and (max-width: ' . $breakpoint  . 'px) {
+			body.responsive .main-navigation #mobile-menu-button {
+				display: inline-block;
+			}
+			body.responsive .main-navigation ul {
+				display: none;
+			}
+			body.responsive .main-navigation .north-search-icon {
+				display: none;
+			}
+			.main-navigation #mobile-menu-button {
+				display: none;
+			}
+			.main-navigation ul {
+				display: inline-block;
+			}
+			.main-navigation .north-search-icon {
+				display: inline-block;
+			}
 		}
-		body.responsive .main-navigation ul {
-			display: none;
+		@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+			body.responsive #mobile-navigation {
+				display: none !important;
+			}
+		}';
+
+	} else {
+
+		$css .= '@media screen and (max-width: 600px) {
+			body.responsive .main-navigation #mobile-menu-button {
+				display: inline-block;
+			}
+			body.responsive .main-navigation ul {
+				display: none;
+			}
+			body.responsive .main-navigation .north-search-icon {
+				display: none;
+			}
+			.main-navigation #mobile-menu-button {
+				display: none;
+			}
+			.main-navigation ul {
+				display: inline-block;
+			}
+			.main-navigation .north-search-icon {
+				display: inline-block;
+			}
 		}
-		body.responsive .main-navigation .north-search-icon {
-			display: none;
-		}
-		.main-navigation #mobile-menu-button {
-			display: none;
-		}
-		.main-navigation ul {
-			display: inline-block;
-		}
-		.main-navigation .north-search-icon {
-			display: inline-block;
-		}
+		@media screen and (min-width: 601px) {
+			body.responsive #mobile-navigation {
+				display: none !important;
+			}
+		}';
+
 	}
-	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
-		body.responsive #mobile-navigation {
-			display: none !important;
-		}
-	}';
 
 	return $css;
 
