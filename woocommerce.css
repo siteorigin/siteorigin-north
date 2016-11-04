@@ -390,7 +390,7 @@
     .woocommerce table.shop_table .cart_totals .amount {
       color: #c75d5d; }
     .woocommerce table.shop_table .cart_totals .wc-proceed-to-checkout {
-      display: none; }
+      padding: 10px 0; }
   .woocommerce table.shop_table .button {
     border-radius: 0px;
     font-size: 0.85em;
