@@ -660,19 +660,6 @@ a {
         fill: #898989; }
       .main-navigation .north-search-icon .svg-icon-search:hover path {
         fill: #292929; }
-  @media screen and (max-width: 600px) {
-    body.responsive .main-navigation #mobile-menu-button {
-      display: inline-block; }
-    body.responsive .main-navigation ul {
-      display: none; }
-    body.responsive .main-navigation .north-search-icon {
-      display: none; }
-    .main-navigation #mobile-menu-button {
-      display: none; }
-    .main-navigation ul {
-      display: inline-block; }
-    .main-navigation .north-search-icon {
-      display: inline-block; } }
 
 #header-search {
   display: none;

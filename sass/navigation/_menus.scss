@@ -232,34 +232,6 @@
 			}
 		}
 	}
-
-	@media screen and (max-width: 600px) {
-		body.responsive & {
-			#mobile-menu-button {
-				display: inline-block;
-			}
-
-			ul {
-				display: none;
-			}
-
-			.north-search-icon {
-				display: none;
-			}
-		}
-
-		#mobile-menu-button {
-			display: none;
-		}
-
-		ul {
-			display: inline-block;
-		}
-
-		.north-search-icon {
-			display: inline-block;
-		}
-	}
 }
 
 #header-search {
