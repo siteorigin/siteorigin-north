@@ -933,7 +933,7 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  * Add CSS for mobile menu breakpoint
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
-	if( $settings[ 'theme_settings_responsive_menu_breakpoint' ] != null ) {
+	if( isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) && !empty( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ) {
 
 		$breakpoint = $settings[ 'theme_settings_responsive_menu_breakpoint' ];
 
