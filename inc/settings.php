@@ -933,7 +933,7 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  * Add CSS for mobile menu breakpoint
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = is_null( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? 600 : $settings[ 'theme_settings_responsive_menu_breakpoint' ];
+	$breakpoint = isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? $settings[ 'theme_settings_responsive_menu_breakpoint' ] : 600;
 	
 	$css .= '@media screen and (max-width: ' . $breakpoint  . 'px) {
 		body.responsive .main-navigation #mobile-menu-button {
