@@ -69,7 +69,7 @@ jQuery( function($){
 
 		$(window).mouseup(function (e) {
 		    var container = $($content);
-		    if ( (! container.is(e.target) && container.has(e.target).length === 0) || $('.quickview-close-icon') ) {
+		    if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || $( '.quickview-close-icon' ).is(e.target) ) {
 		        $($container).fadeOut(300);
 		    }
 		});
