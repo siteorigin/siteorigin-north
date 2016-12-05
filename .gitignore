@@ -3,3 +3,4 @@ dist/
 tmp
 config.codekit
 npm-debug.log
+/sass/maps
