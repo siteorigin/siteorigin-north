@@ -1,3 +1,13 @@
+== Changelog ==
+
+View full release information on [Github](https://github.com/siteorigin/siteorigin-north/releases).
+
+= 1.2.9 - 05 December 2016 =
+* Fixed mobile menu breakpoint warning notice bug.
+* Improved mobile menu breakpoint setting allowing lower values.
+* Improve WooCommerce product quickview modal closing.
+* Fix WooCommerce product quickview modal title overlap bug.
+
 = 1.2.8 - 07 November 2016 =
 * Updated settings framework.
 * Fixed sidebar margin responsive bug.

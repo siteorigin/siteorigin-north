@@ -89,9 +89,7 @@
 					font-family: $font__detail;
 					font-size: 1.2em;
 					line-height: 2.5;
-					position: absolute;
-					top: 22px;
-					right: 20px;
+					float: right;
 
 					del {
 						opacity: 0.5;
@@ -100,6 +98,10 @@
 					ins {
 						background: none;
 					}
+				}
+
+				.product_title {
+					float: none;
 				}
 
 				.star-rating {

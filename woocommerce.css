@@ -870,13 +870,13 @@
       font-family: "Droid Serif", sans-serif;
       font-size: 1.2em;
       line-height: 2.5;
-      position: absolute;
-      top: 22px;
-      right: 20px; }
+      float: right; }
       .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price del {
         opacity: 0.5; }
       .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price ins {
         background: none; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .product_title {
+      float: none; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .star-rating {
       float: none; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart {
