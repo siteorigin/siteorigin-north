@@ -23,8 +23,8 @@ function siteorigin_north_woocommerce_change_hooks(){
 
 	// Quick view action hooks
 	add_action( 'siteorigin_north_woocommerce_quick_view_images', 'siteorigin_north_woocommerce_quick_view_image', 5 );
+	add_action( 'siteorigin_north_woocommerce_quick_view_title', 'woocommerce_template_single_price', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );
-	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_price', 10 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_loop_rating', 15 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
