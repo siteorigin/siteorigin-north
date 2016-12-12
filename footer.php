@@ -11,13 +11,12 @@
 		</div>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer <?php if( !siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
-
-		<?php if( ! siteorigin_page_setting( 'hide_footer_widgets', false ) ) : ?>
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
+		<?php if ( ! siteorigin_page_setting( 'hide_footer_widgets', false ) ) : ?>
 			<div class="container">
 
 				<?php
-				if( is_active_sidebar( 'footer-sidebar' ) ) {
+				if ( is_active_sidebar( 'footer-sidebar' ) ) {
 					$siteorigin_north_sidebars = wp_get_sidebars_widgets();
 					?>
 					<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
@@ -27,7 +26,7 @@
 				}
 				?>
 
-			</div>
+			</div><!-- .container -->
 		<?php endif; ?>
 
 		<div class="site-info">
@@ -40,7 +39,7 @@
 					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				);
 
-				if( !empty($credit_text) ) {
+				if ( !empty( $credit_text ) ) {
 					?><span class="sep"> | </span><?php
 					echo wp_kses_post( $credit_text );
 				}
@@ -51,10 +50,10 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php if( siteorigin_setting('navigation_scroll_to_top') ) : ?>
+<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
 	<div id="scroll-to-top">
 		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-north' ); ?></span>
-		<?php siteorigin_north_display_icon('up-arrow') ?>
+		<?php siteorigin_north_display_icon( 'up-arrow' ); ?>
 	</div>
 <?php endif; ?>
 
