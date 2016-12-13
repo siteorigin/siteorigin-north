@@ -286,16 +286,30 @@ jQuery( function ( $ ) {
 			if ( $mhs === false ) {
 				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
 			}
-			if ( !$( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+			if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 				$mhs.css( 'height', $mh.outerHeight() );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
+			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
 				$( 'body' ).addClass( 'topbar-out' );
 			}
 			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 				$( 'body' ).removeClass( 'topbar-out' );
 			}
+
+			if ( $( 'body' ).hasClass( 'no-topbar' ) ) {
+				$mh.css( 'position', 'fixed' );
+			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) {
+				$mh.css( 'position', 'fixed' );
+			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
+				$mh.css( 'position', 'absolute' );
+			}
+
+			// if ( ! $( 'body' ).hasClass( 'no-topbar' ) ) {
+			// 	$mh.css( 'position', 'absolute' );
+			// } else if ( $( 'body' ).hasClass( 'no-topbar' ) || $( 'body' ).hasClass( 'topbar-out' ) ) {
+			// 	$mh.css( 'position', 'fixed' );
+			// }
 
 			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'no-topbar' ) ) {
 				if ( !$wpab.northIsVisible() ) {
@@ -312,6 +326,11 @@ jQuery( function ( $ ) {
 
 		}
 		smSetup();
+
+		// if ( $(window).scrollTop() !== 0 && ( $( 'body' ).hasClass( 'no-topbar' ) || $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+		// 	$mh.css( 'position', 'fixed' );
+		// 	smSetup();
+		// }
 
 		$( window ).resize( smSetup ).scroll( smSetup );
 
