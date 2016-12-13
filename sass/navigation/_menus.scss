@@ -327,6 +327,7 @@
 	top: 100%;
 	width: 100%;
 	padding: 15px 20px;
+	overflow-y: scroll;
 
 	background: rgba($mobilemenu__background_color, $mobilemenu__background_opacity);
 	z-index: 10;

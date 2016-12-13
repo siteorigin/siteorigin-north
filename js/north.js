@@ -216,23 +216,21 @@ jQuery( function ( $ ) {
 				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 					// Don't let the height of the dropdown extend below the bottom of the screen.
 					var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-					var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
-
-					if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
-						$( '#mobile-navigation' ).css( {
-							'max-height': mobileMenuHeight,
-							'overflow-y': 'scroll',
-							'-webkit-overflow-scrolling' : 'touch'
-						} );
-					} else {
-						$('#mobile-navigation').css('max-height', mobileMenuHeight );
+					var topBarHeight = $( '#topbar' ).outerHeight();
+					var mhHeight = $( '#masthead' ).innerHeight();
+					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+						var mobileMenuHeight = $( window ).height() - mhHeight - adminBarHeight;
+					} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
+						var mobileMenuHeight = $( window ).height() - mhHeight - adminBarHeight - topBarHeight;
 					}
+
+					$( '#mobile-navigation' ).css( 'max-height', mobileMenuHeight );
 				}
 			}
 			mmOverflow();
 
 			$( window ).resize( mmOverflow );
-
+			$( '#mobile-navigation' ).scroll( mmOverflow );
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
@@ -305,12 +303,6 @@ jQuery( function ( $ ) {
 				$mh.css( 'position', 'absolute' );
 			}
 
-			// if ( ! $( 'body' ).hasClass( 'no-topbar' ) ) {
-			// 	$mh.css( 'position', 'absolute' );
-			// } else if ( $( 'body' ).hasClass( 'no-topbar' ) || $( 'body' ).hasClass( 'topbar-out' ) ) {
-			// 	$mh.css( 'position', 'fixed' );
-			// }
-
 			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'no-topbar' ) ) {
 				if ( !$wpab.northIsVisible() ) {
 					$mh.addClass( 'mobile-sticky-menu' );
@@ -326,11 +318,6 @@ jQuery( function ( $ ) {
 
 		}
 		smSetup();
-
-		// if ( $(window).scrollTop() !== 0 && ( $( 'body' ).hasClass( 'no-topbar' ) || $( 'body' ).hasClass( 'topbar-out' ) ) ) {
-		// 	$mh.css( 'position', 'fixed' );
-		// 	smSetup();
-		// }
 
 		$( window ).resize( smSetup ).scroll( smSetup );
 
