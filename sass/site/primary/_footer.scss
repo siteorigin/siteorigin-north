@@ -127,7 +127,7 @@
 	}
 
 	@media (max-width: 600px) {
-		body.responsive & {
+		body.responsive:not(.mobile-scroll-to-top) & {
 			display: none !important;
 		}
 	}

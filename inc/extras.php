@@ -55,6 +55,10 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'no-topbar';
 	}
 
+	if ( siteorigin_setting( 'navigation_scroll_to_top_mobile' ) ) {
+		$classes[] = 'mobile-scroll-to-top';
+	}
+
 	return $classes;
 }
 endif;
