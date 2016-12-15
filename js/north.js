@@ -295,17 +295,17 @@ jQuery( function ( $ ) {
 				$( 'body' ).removeClass( 'topbar-out' );
 			}
 
-			if ( $( 'body' ).hasClass( 'no-topbar' ) ) {
-				$mh.css( 'position', 'fixed' );
-			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) {
+			if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
 				$mh.css( 'position', 'fixed' );
 			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
 				$mh.css( 'position', 'absolute' );
 			}
 
-			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'no-topbar' ) ) {
-				if ( !$wpab.northIsVisible() ) {
-					$mh.addClass( 'mobile-sticky-menu' );
+			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+				if ( ! $wpab.northIsVisible() ) {
+					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+						$mh.addClass( 'mobile-sticky-menu' );
+					}
 				}
 				if ( $wpab.northIsVisible() ) {
 					$mh.removeClass( 'mobile-sticky-menu' );
