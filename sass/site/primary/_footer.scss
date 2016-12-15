@@ -102,16 +102,19 @@
 		fill: #fff;
 	}
 
-	img, svg {
+	img,
+	svg {
 		height: 24px;
 		width: 24px;
 	}
 
-	img, svg {
+	img,
+	svg {
 		@include transition(0.35s);
 	}
 
-	img, svg {
+	img,
+	svg {
 		display: block;
 		@include transform-origin(center center);
 		@include transform( rotate(-90deg) );
@@ -121,12 +124,21 @@
 		opacity: 1;
 		@include transform( scale(1) );
 
-		img, svg {
+		img,
+		svg {
 			@include transform( rotate(0deg) );
 		}
 	}
 
 	@media (max-width: 600px) {
+		padding: 10px;
+
+		img,
+		svg {
+			height: 16px;
+			width: 16px;
+		}
+
 		body.responsive:not(.mobile-scroll-to-top) & {
 			display: none !important;
 		}
