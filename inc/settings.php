@@ -206,6 +206,11 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Scroll to top', 'siteorigin-north' ),
 					'description' => __( 'Display a scroll to top button', 'siteorigin-north' ),
 				),
+				'scroll_to_top_mobile' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Scroll to top on mobile', 'siteorigin-north' ),
+					'description' => __( 'Display the scroll to top button on smaller screens', 'siteorigin-north' ),
+				),
 				'smooth_scroll' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Smooth scroll', 'siteorigin-north' ),
@@ -934,7 +939,7 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 	$breakpoint = isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? $settings[ 'theme_settings_responsive_menu_breakpoint' ] : 600;
-	
+
 	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
 		body.responsive .main-navigation #mobile-menu-button {
 			display: inline-block;
@@ -1033,12 +1038,13 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['masthead_bottom_margin']        = '30px';
 
 	// Navigation settings
-	$defaults['navigation_search']        = true;
-	$defaults['navigation_sticky']        = true;
-	$defaults['navigation_sticky_scale']  = true;
-	$defaults['navigation_post']          = true;
-	$defaults['navigation_scroll_to_top'] = true;
-	$defaults['navigation_smooth_scroll'] = true;
+	$defaults['navigation_search']               = true;
+	$defaults['navigation_sticky']               = true;
+	$defaults['navigation_sticky_scale']         = true;
+	$defaults['navigation_post']                 = true;
+	$defaults['navigation_scroll_to_top']        = true;
+	$defaults['navigation_scroll_to_top_mobile'] = false;
+	$defaults['navigation_smooth_scroll']        = true;
 
 	// Responsive settings
 	$defaults['responsive_disabled']                       = false;
