@@ -43,7 +43,7 @@
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation stripped" role="navigation">
-					<a href="" onclick="window.history.go( -1 ); return false;">Go back</a>
+					<a href="" onclick="window.history.go( -1 ); return false;"><?php esc_html_e( 'Go back', 'siteorigin-north' ); ?></a>
 				</nav><!-- #site-navigation -->
 
 			</div><!-- .container-inner -->
