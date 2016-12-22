@@ -321,6 +321,17 @@
 	}
 }
 
+.main-navigation.stripped {
+	
+	a {
+		color: $navigation__link_color;
+		
+		&:hover {
+			color: $navigation__link_hover_color;
+		}
+	}
+}
+
 #mobile-navigation {
 	position: absolute;
 	left: 0;

@@ -733,6 +733,11 @@ a {
     #header-search {
       display: none !important; } }
 
+.main-navigation.stripped a {
+  color: #898989; }
+  .main-navigation.stripped a:hover {
+    color: #292929; }
+
 #mobile-navigation {
   position: absolute;
   left: 0;
