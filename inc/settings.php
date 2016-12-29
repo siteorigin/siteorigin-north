@@ -512,8 +512,11 @@ function siteorigin_north_settings_custom_css($css){
 	a:hover,a:focus {
 	color: ${branding_accent_dark};
 	}
+	.main-navigation {
+	.font( ${fonts_menu} );
+	}
 	.main-navigation ul a {
-	color: ${fonts_text_light};
+	color: ${fonts_text_menu};
 	}
 	.main-navigation ul a:hover {
 	color: ${fonts_text_dark};
@@ -544,7 +547,7 @@ function siteorigin_north_settings_custom_css($css){
 	fill: ${fonts_text_dark};
 	}
 	.main-navigation .north-search-icon .svg-icon-search path {
-	fill: ${fonts_text_light};
+	fill: ${fonts_text_menu};
 	}
 	.main-navigation .north-search-icon .svg-icon-search:hover path {
 	fill: ${fonts_text_dark};
@@ -554,6 +557,12 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#header-search input[type="search"] {
 	.font( ${fonts_details} );
+	}
+	.main-navigation.stripped a {
+	color: ${fonts_text_menu};
+	}
+	.main-navigation.stripped a:hover {
+	color: ${fonts_text_dark};
 	}
 	#mobile-navigation {
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
@@ -730,14 +739,6 @@ function siteorigin_north_settings_custom_css($css){
 	.comment-list li.comment .author {
 	color: ${fonts_text_dark};
 	}
-	#commentform .comment-form-author input,#commentform .comment-form-email input,#commentform .comment-form-url input {
-	color: ${fonts_text_medium};
-	.font( ${fonts_details} );
-	}
-	#commentform .comment-form-comment textarea {
-	color: ${fonts_text_medium};
-	.font( ${fonts_details} );
-	}
 	#commentform .form-allowed-tags,#commentform .comment-notes,#commentform .logged-in-as {
 	color: ${fonts_text_meta};
 	}
@@ -848,7 +849,7 @@ function siteorigin_north_settings_custom_css($css){
 	border: 2px solid .rgba( ${responsive_mobile_menu_text_color}, 0.8);
 	}
 	.main-navigation .shopping-cart .north-icon-cart {
-	color: ${fonts_text_light};
+	color: ${fonts_text_menu};
 	}
 	.main-navigation .shopping-cart:hover .north-icon-cart {
 	background: ${branding_accent_dark};

@@ -7,6 +7,7 @@ return array(
 		'fonts_main' => 'font__main',
 		'fonts_headings' => 'font__headings',
 		'fonts_details' => 'font__detail',
+		'fonts_menu' => 'font__menu',
 
 		// The page structure
 		'structure_sidebar_width' => 'size__site-sidebar',
@@ -20,6 +21,7 @@ return array(
 		'fonts_text_medium' => 'color__text_medium',
 		'fonts_text_light' => 'color__text_light',
 		'fonts_text_meta' => 'color__text_meta',
+		'fonts_text_menu' => 'color__text_menu',
 
 		// The header customizations
 		'masthead_background_color' => 'masthead__background_color',
