@@ -70,6 +70,12 @@ function siteorigin_north_settings_init(){
 					'description' => __( 'Font used for smaller details.', 'siteorigin-north' ),
 					'live'        => true,
 				),
+				'menu'     => array(
+					'type'        => 'font',
+					'label'       => __( 'Menu font', 'siteorigin-north' ),
+					'description' => __( 'Font used for menu items.', 'siteorigin-north' ),
+					'live'        => true,
+				),
 				// The colors
 
 				'text_dark'   => array(
@@ -90,6 +96,11 @@ function siteorigin_north_settings_init(){
 				'text_meta'   => array(
 					'type'  => 'color',
 					'label' => __( 'Meta Text Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'text_menu'   => array(
+					'type'  => 'color',
+					'label' => __( 'Menu Text Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
 
@@ -424,6 +435,13 @@ function siteorigin_north_font_settings( $settings ) {
 		'name'    => 'Droid Serif',
 		'weights' => array(
 			400
+		),
+	);
+	$settings['fonts_menu']  = array(
+		'name'    => 'Droid Sans',
+		'weights' => array(
+			400,
+			700
 		),
 	);
 
@@ -1017,6 +1035,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['fonts_text_medium'] = '#595959';
 	$defaults['fonts_text_light']  = '#898989';
 	$defaults['fonts_text_meta']   = '#b0b0b0';
+	$defaults['fonts_text_menu']   = '#292929';
 
 	// Icon defaults
 	$defaults['icons_menu'] = false;
