@@ -1035,7 +1035,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['fonts_text_medium'] = '#595959';
 	$defaults['fonts_text_light']  = '#898989';
 	$defaults['fonts_text_meta']   = '#b0b0b0';
-	$defaults['fonts_text_menu']   = '#292929';
+	$defaults['fonts_text_menu']   = '#898989';
 
 	// Icon defaults
 	$defaults['icons_menu'] = false;
