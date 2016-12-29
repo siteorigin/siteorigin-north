@@ -565,6 +565,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${fonts_text_dark};
 	}
 	#mobile-navigation {
+	.font( ${fonts_menu} );
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
 	}
 	#mobile-navigation form input[type="search"] {
