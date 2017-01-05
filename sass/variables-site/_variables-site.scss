@@ -27,6 +27,7 @@ $color__text_medium: #595959;
 $color__text_light: #898989;
 $color__text_meta: #b0b0b0;
 $color__text_menu: #898989;
+$color__text_menu_hover: #292929;
 
 // Masthead
 $masthead__background_color: #fafafa;
@@ -38,7 +39,7 @@ $masthead__bottom_margin: 30px;
 
 // Navigation colors
 $navigation__link_color: $color__text_menu;
-$navigation__link_hover_color: $color__text_dark;
+$navigation__link_hover_color: $color__text_menu_hover;
 $navigation__dropdown_background_color: $masthead__background_color;
 $navigation__dropdown_border_color: $masthead__border_color;
 

@@ -22,6 +22,7 @@ return array(
 		'fonts_text_light' => 'color__text_light',
 		'fonts_text_meta' => 'color__text_meta',
 		'fonts_text_menu' => 'color__text_menu',
+		'fonts_text_menu_hover' => 'color__text_menu_hover',
 
 		// The header customizations
 		'masthead_background_color' => 'masthead__background_color',
