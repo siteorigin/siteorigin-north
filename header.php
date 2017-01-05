@@ -60,8 +60,8 @@
 						) );
 						?>
 
-						<?php if( class_exists('Woocommerce') ) : ?>
-							<?php if ( ( !( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( is_checkout() && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
+						<?php if ( class_exists( 'Woocommerce' ) ) : ?>
+							<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
 								<?php global $woocommerce; ?>
 								<ul class="shopping-cart">
 									<li>

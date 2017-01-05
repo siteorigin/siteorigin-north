@@ -388,7 +388,7 @@ function siteorigin_north_settings_init(){
 				'display_checkout_cart' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Cart in Checkout', 'siteorigin-north' ),
-					'description' => __( 'Display WooCommerce cart in the main menu on checkout page', 'siteorigin-north' ),
+					'description' => __( 'Display WooCommerce cart in the main menu on cart and checkout page', 'siteorigin-north' ),
 				),
 
 				'display_quick_view' => array(
