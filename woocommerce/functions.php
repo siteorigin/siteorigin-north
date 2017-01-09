@@ -32,6 +32,16 @@ function siteorigin_north_woocommerce_change_hooks(){
 endif;
 add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
 
+// Make sure cart widget is displayed on cart & checkout pages
+function siteorigin_north_woocommerce_widget_cart_is_hidden( $is_cart ) {
+	if ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) {
+		return;
+	} else {
+		return $is_cart;
+	}
+};
+add_filter( 'woocommerce_widget_cart_is_hidden', 'siteorigin_north_woocommerce_widget_cart_is_hidden', 10, 1 );
+
 if ( ! function_exists( 'siteorigin_north_woocommerce_quick_view_image' ) ) :
 /**
  * Displays image in the product quick view.

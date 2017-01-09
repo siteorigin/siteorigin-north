@@ -398,7 +398,13 @@ function siteorigin_north_settings_init(){
 				'display_cart' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Cart', 'siteorigin-north' ),
-					'description' => __( "Display WooCommerce cart in the main menu", 'siteorigin-north' ),
+					'description' => __( 'Display WooCommerce cart in the main menu', 'siteorigin-north' ),
+				),
+
+				'display_checkout_cart' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Display Cart in Checkout', 'siteorigin-north' ),
+					'description' => __( 'Display WooCommerce cart in the main menu on cart and checkout page', 'siteorigin-north' ),
 				),
 
 				'display_quick_view' => array(
@@ -1108,8 +1114,9 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_margin']       = '30px';
 
 	// WooCommerce defaults
-	$defaults['woocommerce_display_cart']       = true;
-	$defaults['woocommerce_display_quick_view'] = false;
+	$defaults['woocommerce_display_cart']          = true;
+	$defaults['woocommerce_display_checkout_cart'] = false;
+	$defaults['woocommerce_display_quick_view']    = false;
 
 	return $defaults;
 }
