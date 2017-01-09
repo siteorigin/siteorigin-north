@@ -16,6 +16,7 @@ function siteorigin_north_jetpack_setup() {
 		'container' => 'main',
 		'render'    => 'siteorigin_north_infinite_scroll_render',
 		'footer'    => 'page',
+		'posts_per_page' => 9,
 	) );
 } // end function siteorigin_north_jetpack_setup
 endif;
