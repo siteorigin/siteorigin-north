@@ -328,9 +328,23 @@
 	width: 100%;
 	padding: 15px 20px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 
 	background: rgba($mobilemenu__background_color, $mobilemenu__background_opacity);
 	z-index: 10;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	&::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		outline: 1px solid slategrey;
+	}
 
 	form {
 		display: block;
