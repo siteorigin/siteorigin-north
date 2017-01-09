@@ -36,7 +36,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme 
+Please don't edit below, changes will be lost during the theme
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/
 --------------------------------------------------------------*/
@@ -745,9 +745,18 @@ a {
   top: 100%;
   width: 100%;
   padding: 15px 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   font-family: "Droid Sans", sans-serif;
   background: rgba(0, 0, 0, 0.9);
   z-index: 10; }
+  #mobile-navigation::-webkit-scrollbar {
+    width: 4px; }
+  #mobile-navigation::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+  #mobile-navigation::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey; }
   #mobile-navigation form {
     display: block;
     width: auto;
@@ -1243,29 +1252,25 @@ a {
   z-index: 999;
   min-width: 1060px; }
   .sticky-menu:not(.no-topbar) #masthead {
-    position: absolute;
+    position: relative;
     top: auto; }
   .sticky-menu.no-topbar #masthead,
   .sticky-menu.topbar-out #masthead {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     content: "";
     display: table; }
-  .sticky-menu.no-topbar.admin-bar #masthead,
   .sticky-menu.topbar-out.admin-bar #masthead {
     top: 32px; }
     @media screen and (max-width: 782px) {
-      .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         top: 46px; } }
     @media screen and (max-width: 600px) {
-      .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         position: absolute;
         top: auto; }
-        .sticky-menu.no-topbar.admin-bar #masthead.mobile-sticky-menu,
         .sticky-menu.topbar-out.admin-bar #masthead.mobile-sticky-menu {
           position: fixed;
           top: 0; } }
