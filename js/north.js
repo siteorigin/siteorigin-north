@@ -301,6 +301,10 @@ jQuery( function ( $ ) {
 				$mh.css( 'position', 'absolute' );
 			}
 
+			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $(window).scrollTop() ) {
+				$( 'body' ).addClass( 'topbar-out' );
+			}
+
 			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
 				if ( ! $wpab.northIsVisible() ) {
 					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {

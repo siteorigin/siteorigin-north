@@ -1247,19 +1247,15 @@ a {
     width: 100%;
     content: "";
     display: table; }
-  .sticky-menu.no-topbar.admin-bar #masthead,
   .sticky-menu.topbar-out.admin-bar #masthead {
     top: 32px; }
     @media screen and (max-width: 782px) {
-      .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         top: 46px; } }
     @media screen and (max-width: 600px) {
-      .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         position: absolute;
         top: auto; }
-        .sticky-menu.no-topbar.admin-bar #masthead.mobile-sticky-menu,
         .sticky-menu.topbar-out.admin-bar #masthead.mobile-sticky-menu {
           position: fixed;
           top: 0; } }
