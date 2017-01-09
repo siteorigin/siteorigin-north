@@ -70,6 +70,12 @@ function siteorigin_north_settings_init(){
 					'description' => __( 'Font used for smaller details.', 'siteorigin-north' ),
 					'live'        => true,
 				),
+				'menu'     => array(
+					'type'        => 'font',
+					'label'       => __( 'Menu font', 'siteorigin-north' ),
+					'description' => __( 'Font used for menu items.', 'siteorigin-north' ),
+					'live'        => true,
+				),
 				// The colors
 
 				'text_dark'   => array(
@@ -90,6 +96,16 @@ function siteorigin_north_settings_init(){
 				'text_meta'   => array(
 					'type'  => 'color',
 					'label' => __( 'Meta Text Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'text_menu'   => array(
+					'type'  => 'color',
+					'label' => __( 'Menu Text Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'text_menu_hover'   => array(
+					'type'  => 'color',
+					'label' => __( 'Menu Text Hover Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
 
@@ -205,6 +221,11 @@ function siteorigin_north_settings_init(){
 					'type'        => 'checkbox',
 					'label'       => __( 'Scroll to top', 'siteorigin-north' ),
 					'description' => __( 'Display a scroll to top button', 'siteorigin-north' ),
+				),
+				'scroll_to_top_mobile' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Scroll to top on mobile', 'siteorigin-north' ),
+					'description' => __( 'Display the scroll to top button on smaller screens', 'siteorigin-north' ),
 				),
 				'smooth_scroll' => array(
 					'type'        => 'checkbox',
@@ -377,7 +398,13 @@ function siteorigin_north_settings_init(){
 				'display_cart' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Cart', 'siteorigin-north' ),
-					'description' => __( "Display WooCommerce cart in the main menu", 'siteorigin-north' ),
+					'description' => __( 'Display WooCommerce cart in the main menu', 'siteorigin-north' ),
+				),
+
+				'display_checkout_cart' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Display Cart in Checkout', 'siteorigin-north' ),
+					'description' => __( 'Display WooCommerce cart in the main menu on cart and checkout page', 'siteorigin-north' ),
 				),
 
 				'display_quick_view' => array(
@@ -419,6 +446,13 @@ function siteorigin_north_font_settings( $settings ) {
 		'name'    => 'Droid Serif',
 		'weights' => array(
 			400
+		),
+	);
+	$settings['fonts_menu']  = array(
+		'name'    => 'Droid Sans',
+		'weights' => array(
+			400,
+			700
 		),
 	);
 
@@ -489,24 +523,27 @@ function siteorigin_north_settings_custom_css($css){
 	a:hover,a:focus {
 	color: ${branding_accent_dark};
 	}
+	.main-navigation {
+	.font( ${fonts_menu} );
+	}
 	.main-navigation ul a {
-	color: ${fonts_text_light};
+	color: ${fonts_text_menu};
 	}
 	.main-navigation ul a:hover {
-	color: ${fonts_text_dark};
+	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation ul ul {
 	background-color: ${masthead_background_color};
 	border: 1px solid ${masthead_border_color};
 	}
 	.main-navigation ul ul :hover > a,.main-navigation ul ul .focus > a {
-	color: ${fonts_text_dark};
+	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation ul ul a:hover,.main-navigation ul ul a.focus {
-	color: ${fonts_text_dark};
+	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {
-	color: ${fonts_text_dark};
+	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation #mobile-menu-button {
 	color: ${responsive_mobile_text_color};
@@ -515,16 +552,16 @@ function siteorigin_north_settings_custom_css($css){
 	fill: ${responsive_mobile_icon_color};
 	}
 	.main-navigation #mobile-menu-button:hover {
-	color: ${fonts_text_dark};
+	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation #mobile-menu-button:hover .svg-icon-menu path {
-	fill: ${fonts_text_dark};
+	fill: ${fonts_text_menu_hover};
 	}
 	.main-navigation .north-search-icon .svg-icon-search path {
-	fill: ${fonts_text_light};
+	fill: ${fonts_text_menu};
 	}
 	.main-navigation .north-search-icon .svg-icon-search:hover path {
-	fill: ${fonts_text_dark};
+	fill: ${fonts_text_menu_hover};
 	}
 	#header-search {
 	background: ${masthead_background_color};
@@ -532,7 +569,14 @@ function siteorigin_north_settings_custom_css($css){
 	#header-search input[type="search"] {
 	.font( ${fonts_details} );
 	}
+	.main-navigation.stripped a {
+	color: ${fonts_text_menu};
+	}
+	.main-navigation.stripped a:hover {
+	color: ${fonts_text_menu_hover};
+	}
 	#mobile-navigation {
+	.font( ${fonts_menu} );
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
 	}
 	#mobile-navigation form input[type="search"] {
@@ -707,14 +751,6 @@ function siteorigin_north_settings_custom_css($css){
 	.comment-list li.comment .author {
 	color: ${fonts_text_dark};
 	}
-	#commentform .comment-form-author input,#commentform .comment-form-email input,#commentform .comment-form-url input {
-	color: ${fonts_text_medium};
-	.font( ${fonts_details} );
-	}
-	#commentform .comment-form-comment textarea {
-	color: ${fonts_text_medium};
-	.font( ${fonts_details} );
-	}
 	#commentform .form-allowed-tags,#commentform .comment-notes,#commentform .logged-in-as {
 	color: ${fonts_text_meta};
 	}
@@ -825,7 +861,7 @@ function siteorigin_north_settings_custom_css($css){
 	border: 2px solid .rgba( ${responsive_mobile_menu_text_color}, 0.8);
 	}
 	.main-navigation .shopping-cart .north-icon-cart {
-	color: ${fonts_text_light};
+	color: ${fonts_text_menu};
 	}
 	.main-navigation .shopping-cart:hover .north-icon-cart {
 	background: ${branding_accent_dark};
@@ -934,7 +970,7 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 	$breakpoint = isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? $settings[ 'theme_settings_responsive_menu_breakpoint' ] : 600;
-	
+
 	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
 		body.responsive .main-navigation #mobile-menu-button {
 			display: inline-block;
@@ -1008,15 +1044,17 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_accent_dark']      = '#a94346';
 
 	// Font defaults
-	$defaults['fonts_text_dark']   = '#292929';
-	$defaults['fonts_text_medium'] = '#595959';
-	$defaults['fonts_text_light']  = '#898989';
-	$defaults['fonts_text_meta']   = '#b0b0b0';
+	$defaults['fonts_text_dark']       = '#292929';
+	$defaults['fonts_text_medium']     = '#595959';
+	$defaults['fonts_text_light']      = '#898989';
+	$defaults['fonts_text_meta']       = '#b0b0b0';
+	$defaults['fonts_text_menu']       = '#898989';
+	$defaults['fonts_text_menu_hover'] = '#898989';
 
 	// Icon defaults
-	$defaults['icons_menu'] = false;
-	$defaults['icons_search'] = false;
-	$defaults['icons_close_search'] = false;
+	$defaults['icons_menu']          = false;
+	$defaults['icons_search']        = false;
+	$defaults['icons_close_search']  = false;
 	$defaults['icons_scroll_to_top'] = false;
 
 	// Double % because values are passed through get_theme_mod so must be escaped for sprintf
@@ -1033,12 +1071,13 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['masthead_bottom_margin']        = '30px';
 
 	// Navigation settings
-	$defaults['navigation_search']        = true;
-	$defaults['navigation_sticky']        = true;
-	$defaults['navigation_sticky_scale']  = true;
-	$defaults['navigation_post']          = true;
-	$defaults['navigation_scroll_to_top'] = true;
-	$defaults['navigation_smooth_scroll'] = true;
+	$defaults['navigation_search']               = true;
+	$defaults['navigation_sticky']               = true;
+	$defaults['navigation_sticky_scale']         = true;
+	$defaults['navigation_post']                 = true;
+	$defaults['navigation_scroll_to_top']        = true;
+	$defaults['navigation_scroll_to_top_mobile'] = false;
+	$defaults['navigation_smooth_scroll']        = true;
 
 	// Responsive settings
 	$defaults['responsive_disabled']                       = false;
@@ -1075,8 +1114,9 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_margin']       = '30px';
 
 	// WooCommerce defaults
-	$defaults['woocommerce_display_cart'] = true;
-	$defaults['woocommerce_display_quick_view'] = false;
+	$defaults['woocommerce_display_cart']          = true;
+	$defaults['woocommerce_display_checkout_cart'] = false;
+	$defaults['woocommerce_display_quick_view']    = false;
 
 	return $defaults;
 }

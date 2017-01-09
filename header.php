@@ -60,21 +60,23 @@
 						) );
 						?>
 
-						<?php if( class_exists('Woocommerce') && !( is_cart() || is_checkout() ) && siteorigin_setting('woocommerce_display_cart') ): ?>
-							<?php global $woocommerce; ?>
-							<ul class="shopping-cart">
-								<li>
-									<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
-										<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
-										<span class="north-icon-cart"></span>
-										<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
-										<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
-									</a>
-									<ul class="shopping-cart-dropdown" id="cart-drop">
-										<?php the_widget('WC_Widget_Cart');?>
-									</ul>
-								</li>
-							</ul>
+						<?php if ( class_exists( 'Woocommerce' ) ) : ?>
+							<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
+								<?php global $woocommerce; ?>
+								<ul class="shopping-cart">
+									<li>
+										<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
+											<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
+											<span class="north-icon-cart"></span>
+											<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
+											<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+										</a>
+										<ul class="shopping-cart-dropdown" id="cart-drop">
+											<?php the_widget('WC_Widget_Cart');?>
+										</ul>
+									</li>
+								</ul>
+							<?php endif; ?>
 						<?php endif; ?>
 
 						<?php if( siteorigin_setting('navigation_search') ) : ?>

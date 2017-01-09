@@ -396,12 +396,16 @@ jQuery( function ( $ ) {
 		}
 	} );
 
-	// Handle smooth scrolling
-	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"])' ).northSmoothScroll();
-	}
-
 	// Add class to calendar elements that have links
 	$( '#wp-calendar tbody td:has(a)' ).addClass( 'has-link' );
 
 } );
+
+( function($) {
+	$(window).load( function() {
+		// Handle smooth scrolling
+		if ( siteoriginNorth.smoothScroll ) {
+			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScroll();
+		}
+	} );
+} )(jQuery);

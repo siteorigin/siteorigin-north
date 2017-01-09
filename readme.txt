@@ -30,11 +30,12 @@ SiteOrigin North has support for WooCommerce. This is offered through both CSS s
 
 == Credits ==
 
+* FitVids, Copyright 2013 Chris Coyier, Released under the WTFPL license - http://sam.zoy.org/wtfpl/, Source: http://fitvidsjs.com/
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* FitVids, Copyright 2013 Chris Coyier, Released under the WTFPL license - http://sam.zoy.org/wtfpl/, Source: http://fitvidsjs.com/
-* jQuery Transit (c) 2011-2014 Rico Sta. Cruz. Licensed under MIT.
 * Screenshot photos sourced from Pixabay, licensed under public domain.
+* TinyColor https://github.com/bgrins/TinyColor, Copyright (c), Brian Grinstead, [MIT](http://opensource.org/licenses/MIT).
+* jQuery Transit (c) 2011-2014 Rico Sta. Cruz. Licensed under MIT.
 
 == Design ==
 

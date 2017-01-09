@@ -1,6 +1,6 @@
 .main-navigation {
 	z-index: 99999;
-
+	font-family: $font__menu;
 	font-size: 0.95em;
 	text-align: right;
 
@@ -321,6 +321,17 @@
 	}
 }
 
+.main-navigation.stripped {
+
+	a {
+		color: $navigation__link_color;
+
+		&:hover {
+			color: $navigation__link_hover_color;
+		}
+	}
+}
+
 #mobile-navigation {
 	position: absolute;
 	left: 0;
@@ -329,6 +340,7 @@
 	padding: 15px 20px;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	font-family: $font__menu;
 
 	background: rgba($mobilemenu__background_color, $mobilemenu__background_opacity);
 	z-index: 10;
