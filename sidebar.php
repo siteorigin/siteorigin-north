@@ -3,6 +3,7 @@
  * The sidebar containing the main widget area.
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 if ( ! is_active_sidebar( 'main-sidebar' ) ) return;

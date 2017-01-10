@@ -6,6 +6,7 @@
  * and the comment form.
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 /*

@@ -3,6 +3,7 @@
  * Template part for displaying single posts.
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 ?>

@@ -3,6 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 ?>

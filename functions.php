@@ -3,6 +3,7 @@
  * SiteOrigin North functions and definitions
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 define('SITEORIGIN_THEME_VERSION', 'dev');

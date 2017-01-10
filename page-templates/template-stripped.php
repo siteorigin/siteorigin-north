@@ -5,6 +5,7 @@
  * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/page-templates/
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 get_header( 'stripped' ); ?>

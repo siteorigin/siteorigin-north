@@ -5,6 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="content">
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 ?><!DOCTYPE html>

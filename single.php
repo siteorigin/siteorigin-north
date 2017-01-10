@@ -3,6 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 get_header(); ?>

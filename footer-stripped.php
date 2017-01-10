@@ -5,6 +5,7 @@
  * Contains the closing of the #content div and all content after
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 ?>
