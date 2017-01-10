@@ -4,20 +4,31 @@
  * See: https://jetpack.me/
  *
  * @package siteorigin-north
+ * @license GPL 2.0  
  */
 
 if ( ! function_exists( 'siteorigin_north_jetpack_setup' ) ) :
 /**
- * Add theme support for Infinite Scroll.
- * See: https://jetpack.me/support/infinite-scroll/
+ * Jetpack setup function.
+ *
  */
 function siteorigin_north_jetpack_setup() {
+	/*
+	 * Enable support for Jetpack Infinite Scroll.
+	 * See: https://jetpack.com/support/infinite-scroll/
+	 */	
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'render'    => 'siteorigin_north_infinite_scroll_render',
 		'footer'    => 'page',
 		'posts_per_page' => 9,
 	) );
+
+	/*
+	 * Enable support for Responsive Videos.
+	 * See: https://jetpack.com/support/responsive-videos/
+	 */
+	add_theme_support( 'jetpack-responsive-videos' );	
 } // end function siteorigin_north_jetpack_setup
 endif;
 add_action( 'after_setup_theme', 'siteorigin_north_jetpack_setup' );
