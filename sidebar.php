@@ -6,7 +6,7 @@
  */
 
 if ( ! is_active_sidebar( 'main-sidebar' ) ) return;
-if( ! in_array( siteorigin_page_setting( 'layout', 'default' ), array( 'default','full-width-sidebar' ), true )  ) return;
+if ( ! in_array( siteorigin_page_setting( 'layout', 'default' ), array( 'default', 'full-width-sidebar' ), true )  ) return;
 ?>
 
 <div id="secondary" class="widget-area" role="complementary" aria-label="<?php _e( 'Main Sidebar', 'siteorigin-north' ); ?>">
