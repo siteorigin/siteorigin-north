@@ -5,6 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="content">
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 ?><!DOCTYPE html>
@@ -29,12 +30,13 @@
 		</div>
 	<?php endif; ?>
 
-	<?php if( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
+	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
 		<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
 			<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 			<div class="container">
 
 				<div class="container-inner">
+
 					<div class="site-branding">
 						<?php siteorigin_north_display_logo() ?>
 						<?php if( siteorigin_setting('branding_site_description') ) : ?>
@@ -44,54 +46,65 @@
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 
-						<a href="#menu" id="mobile-menu-button">
-							<?php siteorigin_north_display_icon('menu') ?>
-							<?php if( siteorigin_setting('responsive_menu_text') ) : ?>
-								<?php echo esc_html( siteorigin_setting('responsive_menu_text') ) ?>
-							<?php else : ?>
-								<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
-							<?php endif; ?>
-						</a>
+						<?php if ( ! in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
 
-						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_id' => 'primary-menu'
-						) );
-						?>
+							<a href="#menu" id="mobile-menu-button">
+								<?php siteorigin_north_display_icon('menu') ?>
+								<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
+									<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ) ?>
+								<?php else : ?>
+									<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
+								<?php endif; ?>
+							</a>
 
-						<?php if ( class_exists( 'Woocommerce' ) ) : ?>
-							<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
-								<?php global $woocommerce; ?>
-								<ul class="shopping-cart">
-									<li>
-										<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
-											<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
-											<span class="north-icon-cart"></span>
-											<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
-											<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
-										</a>
-										<ul class="shopping-cart-dropdown" id="cart-drop">
-											<?php the_widget('WC_Widget_Cart');?>
-										</ul>
-									</li>
-								</ul>
+							<?php
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu_id' => 'primary-menu'
+							) );
+							?>
+
+							<?php if ( class_exists( 'Woocommerce' ) ) : ?>
+								<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
+									<?php global $woocommerce; ?>
+									<ul class="shopping-cart">
+										<li>
+											<a class="shopping-cart-link" href="<?php echo $woocommerce->cart->get_cart_url();?>">
+												<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
+												<span class="north-icon-cart"></span>
+												<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
+												<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+											</a>
+											<ul class="shopping-cart-dropdown" id="cart-drop">
+												<?php the_widget('WC_Widget_Cart');?>
+											</ul>
+										</li>
+									</ul>
+								<?php endif; ?>
 							<?php endif; ?>
+
+							<?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
+								<a class="north-search-icon">
+									<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
+									<?php siteorigin_north_display_icon('search'); ?>
+								</a>
+							<?php endif; ?>
+
 						<?php endif; ?>
 
-						<?php if( siteorigin_setting('navigation_search') ) : ?>
-							<a class="north-search-icon">
-								<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
-								<?php siteorigin_north_display_icon('search'); ?>
-							</a>
+						<?php if ( in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
+							<ul>
+								<li><a href="" class="stripped-backlink" onclick="window.history.go( -1 ); return false;"><?php esc_html_e( 'Go back', 'siteorigin-north' ); ?></a></li>
+							</ul>
 						<?php endif; ?>
 
 					</nav><!-- #site-navigation -->
-				</div>
 
-			</div>
+				</div><!-- .container-inner -->
 
-			<?php if( siteorigin_setting('navigation_search') ) : ?>
+			</div><!-- .container -->
+
+			<?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
 				<div id="header-search">
 					<div class="container">
 						<label for='s' class='screen-reader-text'><?php esc_html_e( 'Search for:', 'siteorigin-north' ); ?></label>

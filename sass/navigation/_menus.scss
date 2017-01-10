@@ -21,6 +21,12 @@
 			a {
 				padding-left: 30px;
 				padding-right: 30px;
+				
+				&.stripped-backlink {
+					font-weight: 700;
+					padding-left: 0;
+					padding-right: 0;
+				}				
 			}
 		}
 

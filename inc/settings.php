@@ -1133,10 +1133,11 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'type'    => 'select',
 		'label'   => __( 'Page Layout', 'siteorigin-north' ),
 		'options' => array(
-			'default'            => __( 'Default', 'siteorigin-north' ),
-			'no-sidebar'         => __( 'No Sidebar', 'siteorigin-north' ),
-			'full-width'         => __( 'Full Width', 'siteorigin-north' ),
-			'full-width-sidebar' => __( 'Full Width, With Sidebar', 'siteorigin-north' ),
+			'default'				=> __( 'Default', 'siteorigin-north' ),
+			'no-sidebar'         	=> __( 'No Sidebar', 'siteorigin-north' ),
+			'full-width'         	=> __( 'Full Width', 'siteorigin-north' ),
+			'full-width-sidebar' 	=> __( 'Full Width, With Sidebar', 'siteorigin-north' ),
+			'stripped' 			 	=> __( 'Stripped', 'siteorigin-north' ),
 		),
 	);
 

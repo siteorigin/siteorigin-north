@@ -5,14 +5,15 @@
  * Contains the closing of the #content div and all content after
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 ?>
 		</div>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting('footer_constrained') ) echo 'unconstrained-footer' ?>" role="contentinfo">
-		<?php if ( ! siteorigin_page_setting( 'hide_footer_widgets', false ) ) : ?>
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer' ?>" role="contentinfo">
+		<?php if ( ! siteorigin_page_setting( 'hide_footer_widgets', false ) && ! in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
 			<div class="container">
 
 				<?php
