@@ -200,7 +200,7 @@ function siteorigin_north_scripts() {
 	wp_enqueue_style( 'siteorigin-north-icons', get_template_directory_uri() . '/css/north-icons.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// jQuery Transit.
-	wp_enqueue_script( 'jquery-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
+	wp_enqueue_script( 'jquery-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '0.9.12', true );
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
