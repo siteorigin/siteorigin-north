@@ -513,6 +513,11 @@ a {
       .main-navigation ul > li a {
         padding-left: 30px;
         padding-right: 30px; }
+        .main-navigation ul > li a.stripped-backlink {
+          font-weight: bold;
+          font-weight: 600;
+          padding-left: 0;
+          padding-right: 0; }
     .main-navigation ul a {
       color: #898989; }
       .main-navigation ul a:hover {
@@ -1209,7 +1214,8 @@ a {
 
 /* The Page Setting related layout changes */
 .page-layout-no-sidebar .site-main,
-.page-layout-full-width .site-main {
+.page-layout-full-width .site-main,
+.page-layout-stripped .site-main {
   margin: 0; }
 
 .page-layout-full-width .site-content .container,
