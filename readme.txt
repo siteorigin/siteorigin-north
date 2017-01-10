@@ -1,8 +1,11 @@
 === SiteOrigin North ===
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments, white, gray, responsive-layout, right-sidebar, custom-colors, custom-menu, full-width-template
 
-Requires at least: 4.0
-Tested up to: 4.3.1
+Contributors: SiteOrigin
+
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+
+Requires at least: 4.1
+Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
