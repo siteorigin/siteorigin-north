@@ -216,23 +216,21 @@ jQuery( function ( $ ) {
 				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 					// Don't let the height of the dropdown extend below the bottom of the screen.
 					var adminBarHeight = $( '#wpadminbar' ).css( 'position' ) === 'fixed' ? $( '#wpadminbar' ).outerHeight() : 0;
-					var mobileMenuHeight = $( window ).height() - $( '#masthead' ).innerHeight() - adminBarHeight;
-
-					if ( $('#mobile-navigation').outerHeight() > mobileMenuHeight ) {
-						$( '#mobile-navigation' ).css( {
-							'max-height': mobileMenuHeight,
-							'overflow-y': 'scroll',
-							'-webkit-overflow-scrolling' : 'touch'
-						} );
-					} else {
-						$('#mobile-navigation').css('max-height', mobileMenuHeight );
+					var topBarHeight = $( '#topbar' ).outerHeight();
+					var mhHeight = $( '#masthead' ).innerHeight();
+					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+						var mobileMenuHeight = $( window ).height() - mhHeight - adminBarHeight;
+					} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
+						var mobileMenuHeight = $( window ).height() - mhHeight - adminBarHeight - topBarHeight;
 					}
+
+					$( '#mobile-navigation' ).css( 'max-height', mobileMenuHeight );
 				}
 			}
 			mmOverflow();
 
 			$( window ).resize( mmOverflow );
-
+			$( '#mobile-navigation' ).scroll( mmOverflow );
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
@@ -286,20 +284,32 @@ jQuery( function ( $ ) {
 			if ( $mhs === false ) {
 				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
 			}
-			if ( !$( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+			if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 				$mhs.css( 'height', $mh.outerHeight() );
 			}
 			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( !$( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
+			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
 				$( 'body' ).addClass( 'topbar-out' );
 			}
 			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 				$( 'body' ).removeClass( 'topbar-out' );
 			}
 
-			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) && $( 'body' ).hasClass( 'no-topbar' ) ) {
-				if ( !$wpab.northIsVisible() ) {
-					$mh.addClass( 'mobile-sticky-menu' );
+			if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+				$mh.css( 'position', 'fixed' );
+			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
+				$mh.css( 'position', 'absolute' );
+			}
+
+			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $(window).scrollTop() ) {
+				$( 'body' ).addClass( 'topbar-out' );
+			}
+
+			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+				if ( ! $wpab.northIsVisible() ) {
+					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+						$mh.addClass( 'mobile-sticky-menu' );
+					}
 				}
 				if ( $wpab.northIsVisible() ) {
 					$mh.removeClass( 'mobile-sticky-menu' );
@@ -386,12 +396,16 @@ jQuery( function ( $ ) {
 		}
 	} );
 
-	// Handle smooth scrolling
-	if ( siteoriginNorth.smoothScroll ) {
-		$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"])' ).northSmoothScroll();
-	}
-
 	// Add class to calendar elements that have links
 	$( '#wp-calendar tbody td:has(a)' ).addClass( 'has-link' );
 
 } );
+
+( function($) {
+	$(window).load( function() {
+		// Handle smooth scrolling
+		if ( siteoriginNorth.smoothScroll ) {
+			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScroll();
+		}
+	} );
+} )(jQuery);

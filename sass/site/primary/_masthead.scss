@@ -10,20 +10,19 @@
 
 	@at-root {
 		.sticky-menu:not(.no-topbar) & {
-			position: absolute;
+			position: relative;
 			top: auto;
 		}
 
 		.sticky-menu.no-topbar &,
 		.sticky-menu.topbar-out & {
-			position: fixed;
+			position: relative;
 			top: 0;
 			left: 0;
 			width: 100%;
 			@include clearfix;
 		}
 
-		.sticky-menu.no-topbar.admin-bar &,
 		.sticky-menu.topbar-out.admin-bar & {
 			top: 32px;
 
@@ -149,7 +148,4 @@
 	body.responsive & {
 		min-width: 0;
 	}
-}
-
-#site-navigation {
 }

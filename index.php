@@ -9,6 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 get_header(); ?>

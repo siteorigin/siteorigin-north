@@ -1,14 +1,14 @@
 /*!
 Theme Name: SiteOrigin North
 Author: SiteOrigin
-Author URI: http://siteorigin.com/
+Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/north/
-Description: SiteOrigin North is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though North's WooCommerce integration. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
+Description: Inspired by the elegant majesty and purity of the Swiss Alps and built with business owners in mind, North is the star in the SiteOrigin sky. With easy-to-use options, classic lines and a minimal feel, North feels visually limitless and technically effortless. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with all the major plugins you've come to rely on. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though North's WooCommerce integration. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: siteorigin-north
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments, white, gray, responsive-layout, right-sidebar, custom-colors, custom-menu, full-width-template
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -498,6 +498,7 @@ a {
 --------------------------------------------------------------*/
 .main-navigation {
   z-index: 99999;
+  font-family: "Droid Sans", sans-serif;
   font-size: 0.95em;
   text-align: right; }
   .main-navigation > div {
@@ -512,6 +513,11 @@ a {
       .main-navigation ul > li a {
         padding-left: 30px;
         padding-right: 30px; }
+        .main-navigation ul > li a.stripped-backlink {
+          font-weight: bold;
+          font-weight: 600;
+          padding-left: 0;
+          padding-right: 0; }
     .main-navigation ul a {
       color: #898989; }
       .main-navigation ul a:hover {
@@ -733,14 +739,29 @@ a {
     #header-search {
       display: none !important; } }
 
+.main-navigation.stripped a {
+  color: #898989; }
+  .main-navigation.stripped a:hover {
+    color: #292929; }
+
 #mobile-navigation {
   position: absolute;
   left: 0;
   top: 100%;
   width: 100%;
   padding: 15px 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "Droid Sans", sans-serif;
   background: rgba(0, 0, 0, 0.9);
   z-index: 10; }
+  #mobile-navigation::-webkit-scrollbar {
+    width: 4px; }
+  #mobile-navigation::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+  #mobile-navigation::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey; }
   #mobile-navigation form {
     display: block;
     width: auto;
@@ -1193,7 +1214,8 @@ a {
 
 /* The Page Setting related layout changes */
 .page-layout-no-sidebar .site-main,
-.page-layout-full-width .site-main {
+.page-layout-full-width .site-main,
+.page-layout-stripped .site-main {
   margin: 0; }
 
 .page-layout-full-width .site-content .container,
@@ -1236,29 +1258,25 @@ a {
   z-index: 999;
   min-width: 1060px; }
   .sticky-menu:not(.no-topbar) #masthead {
-    position: absolute;
+    position: relative;
     top: auto; }
   .sticky-menu.no-topbar #masthead,
   .sticky-menu.topbar-out #masthead {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     content: "";
     display: table; }
-  .sticky-menu.no-topbar.admin-bar #masthead,
   .sticky-menu.topbar-out.admin-bar #masthead {
     top: 32px; }
     @media screen and (max-width: 782px) {
-      .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         top: 46px; } }
     @media screen and (max-width: 600px) {
-      .sticky-menu.no-topbar.admin-bar #masthead,
       .sticky-menu.topbar-out.admin-bar #masthead {
         position: absolute;
         top: auto; }
-        .sticky-menu.no-topbar.admin-bar #masthead.mobile-sticky-menu,
         .sticky-menu.topbar-out.admin-bar #masthead.mobile-sticky-menu {
           position: fixed;
           top: 0; } }
@@ -1444,14 +1462,17 @@ a {
   transition: 0.35s; }
   #scroll-to-top .svg-icon-to-top path {
     fill: #fff; }
-  #scroll-to-top img, #scroll-to-top svg {
+  #scroll-to-top img,
+  #scroll-to-top svg {
     height: 24px;
     width: 24px; }
-  #scroll-to-top img, #scroll-to-top svg {
+  #scroll-to-top img,
+  #scroll-to-top svg {
     -webkit-transition: 0.35s;
     -moz-transition: 0.35s;
     transition: 0.35s; }
-  #scroll-to-top img, #scroll-to-top svg {
+  #scroll-to-top img,
+  #scroll-to-top svg {
     display: block;
     -webkit-transform-origin: center center;
     -moz-transform-origin: center center;
@@ -1470,15 +1491,22 @@ a {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1); }
-    #scroll-to-top.show img, #scroll-to-top.show svg {
+    #scroll-to-top.show img,
+    #scroll-to-top.show svg {
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
       -o-transform: rotate(0deg);
       transform: rotate(0deg); }
   @media (max-width: 600px) {
-    body.responsive #scroll-to-top {
-      display: none !important; } }
+    #scroll-to-top {
+      padding: 10px; }
+      #scroll-to-top img,
+      #scroll-to-top svg {
+        height: 16px;
+        width: 16px; }
+      body.responsive:not(.mobile-scroll-to-top) #scroll-to-top {
+        display: none !important; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -1836,7 +1864,8 @@ a {
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
+.infinite-scroll .post-pagination,
+.infinite-scroll .woocommerce-result-count,
 .infinite-scroll.neverending .site-footer {
   /* Theme Footer (when set to scrolling) */
   display: none; }

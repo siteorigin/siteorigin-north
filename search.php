@@ -3,6 +3,7 @@
  * The template for displaying search results pages.
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 get_header(); ?>

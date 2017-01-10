@@ -3,6 +3,7 @@
  * The template for displaying 404 pages (not found).
  *
  * @package siteorigin-north
+ * @license GPL 2.0 
  */
 
 get_header(); ?>
