@@ -9,11 +9,11 @@ Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SiteOrigin North is our latest, flexible multipurpose theme.
+Inspired by the elegant majesty and purity of the Swiss Alps and built with business owners in mind, North is the star in the SiteOrigin sky. With easy-to-use options, classic lines and a minimal feel, North feels visually limitless and technically effortless.
 
 == Description ==
 
-Description: SiteOrigin North is our latest, flexible multipurpose theme. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with various plugins. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though North's WooCommerce integration.
+Inspired by the elegant majesty and purity of the Swiss Alps and built with business owners in mind, North is the star in the SiteOrigin sky. With easy-to-use options, classic lines and a minimal feel, North feels visually limitless and technically effortless. It's fully responsive and retina ready. Some key features are its responsive menu, gorgeous animations and tight integration with all the major plugins you've come to rely on. You can use it to create a business website using SiteOrigin Page Builder and our Widgets Bundle. You can also build a full ecommerce store though North's WooCommerce integration.
 
 == Installation ==
 	
