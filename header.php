@@ -46,7 +46,7 @@
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 
-						<?php if ( ! in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
+					<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>						
 
 							<a href="#menu" id="mobile-menu-button">
 								<?php siteorigin_north_display_icon('menu') ?>
@@ -92,7 +92,7 @@
 
 						<?php endif; ?>
 
-						<?php if ( in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
+						<?php if ( siteorigin_page_setting( 'layout' ) == 'stripped' ) : ?>
 							<ul>
 								<li><a href="" class="stripped-backlink" onclick="window.history.go( -1 ); return false;"><?php esc_html_e( 'Go back', 'siteorigin-north' ); ?></a></li>
 							</ul>
