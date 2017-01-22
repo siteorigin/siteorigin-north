@@ -119,5 +119,10 @@
 		</header><!-- #masthead -->
 	<?php endif; ?>
 
+	<?php do_action( 'siteorigin_north_content_before' ); ?>
+
 	<div id="content" class="site-content">
+	
 		<div class="container">
+
+			<?php do_action( 'siteorigin_north_content_top' ); ?>
