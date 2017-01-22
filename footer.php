@@ -9,11 +9,12 @@
  */
 
 ?>
-			<?php do_action( 'siteorigin_north_footer_before' ); ?>
 
 		</div><!-- .container -->
 
 	</div><!-- #content -->
+
+	<?php do_action( 'siteorigin_north_footer_before' ); ?>
 
 	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer' ?>" role="contentinfo">
 		
