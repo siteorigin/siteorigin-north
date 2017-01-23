@@ -11,7 +11,6 @@
 ?>
 
 		</div><!-- .container -->
-
 	</div><!-- #content -->
 
 	<?php do_action( 'siteorigin_north_footer_before' ); ?>
