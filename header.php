@@ -22,24 +22,24 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-north' ); ?></a>
 
-	<?php if( siteorigin_setting('masthead_text_above') ) : ?>
+	<?php if ( siteorigin_setting('masthead_text_above') ) : ?>
 		<div id="topbar">
 			<div class="container">
-				<p><?php echo wp_kses_post( siteorigin_setting('masthead_text_above') ) ?></p>
+				<p><?php echo wp_kses_post( siteorigin_setting( 'masthead_text_above' ) ) ?></p>
 			</div>
 		</div>
 	<?php endif; ?>
 
 	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
-		<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting('navigation_sticky') ) echo 'sticky-menu'; ?>" role="banner"
+		<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>" role="banner"
 			<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 			<div class="container">
 
 				<div class="container-inner">
 
 					<div class="site-branding">
-						<?php siteorigin_north_display_logo() ?>
-						<?php if( siteorigin_setting('branding_site_description') ) : ?>
+						<?php siteorigin_north_display_logo(); ?>
+						<?php if ( siteorigin_setting( 'branding_site_description' ) ) : ?>
 							<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 						<?php endif ?>
 					</div><!-- .site-branding -->
@@ -49,10 +49,9 @@
 					<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>						
 
 							<a href="#menu" id="mobile-menu-button">
-								<?php siteorigin_north_display_icon('menu') ?>
+								<?php siteorigin_north_display_icon( 'menu' ) ?>
 								<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
-									<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ) ?>
-								<?php else : ?>
+									<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
 									<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
 								<?php endif; ?>
 							</a>
@@ -76,7 +75,7 @@
 												<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
 											</a>
 											<ul class="shopping-cart-dropdown" id="cart-drop">
-												<?php the_widget('WC_Widget_Cart');?>
+												<?php the_widget( 'WC_Widget_Cart' );?>
 											</ul>
 										</li>
 									</ul>
@@ -86,7 +85,7 @@
 							<?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
 								<a class="north-search-icon">
 									<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
-									<?php siteorigin_north_display_icon('search'); ?>
+									<?php siteorigin_north_display_icon( 'search' ); ?>
 								</a>
 							<?php endif; ?>
 
@@ -111,7 +110,7 @@
 						<?php get_search_form() ?>
 						<a id="close-search">
 							<span class="screen-reader-text"><?php esc_html_e( 'Close search bar', 'siteorigin-north' ); ?></span>
-							<?php siteorigin_north_display_icon('close'); ?>
+							<?php siteorigin_north_display_icon( 'close' ); ?>
 						</a>
 					</div>
 				</div>
