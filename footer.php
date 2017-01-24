@@ -9,10 +9,16 @@
  */
 
 ?>
-		</div>
+
+		</div><!-- .container -->
 	</div><!-- #content -->
 
+	<?php do_action( 'siteorigin_north_footer_before' ); ?>
+
 	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer' ?>" role="contentinfo">
+		
+		<?php do_action( 'siteorigin_north_footer_top' ); ?>
+		
 		<?php if ( ! siteorigin_page_setting( 'hide_footer_widgets', false ) && ! in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
 			<div class="container">
 
@@ -47,6 +53,8 @@
 				?>
 			</div>
 		</div><!-- .site-info -->
+
+		<?php do_action( 'siteorigin_north_footer_bottom' ); ?>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

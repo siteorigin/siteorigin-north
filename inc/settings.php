@@ -108,6 +108,11 @@ function siteorigin_north_settings_init(){
 					'label' => __( 'Menu Text Hover Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
+				'text_menu_current'   => array(
+					'type'  => 'color',
+					'label' => __( 'Menu Text Current Color', 'siteorigin-north' ),
+					'live'  => true,
+				),				
 
 			),
 		),
@@ -1044,12 +1049,15 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['branding_accent_dark']      = '#a94346';
 
 	// Font defaults
-	$defaults['fonts_text_dark']       = '#292929';
-	$defaults['fonts_text_medium']     = '#595959';
-	$defaults['fonts_text_light']      = '#898989';
-	$defaults['fonts_text_meta']       = '#b0b0b0';
-	$defaults['fonts_text_menu']       = '#898989';
-	$defaults['fonts_text_menu_hover'] = '#898989';
+	$defaults['fonts_text_dark']       	 = '#292929';
+	$defaults['fonts_text_medium']     	 = '#595959';
+	$defaults['fonts_text_light']      	 = '#898989';
+	$defaults['fonts_text_meta']       	 = '#b0b0b0';
+
+	// The new menu font colors
+	$defaults['fonts_text_menu']         = '#898989';
+	$defaults['fonts_text_menu_hover']   = '#595959';
+	$defaults['fonts_text_menu_current'] = '#292929';
 
 	// Icon defaults
 	$defaults['icons_menu']          = false;
@@ -1122,6 +1130,16 @@ function siteorigin_north_settings_defaults( $defaults ){
 }
 endif;
 add_filter('siteorigin_settings_defaults', 'siteorigin_north_settings_defaults');
+
+function siteorigin_north__migrated_settings( $migrated ) {
+	$migrated = array(
+		'fonts_text_menu' => 'fonts_text_light',
+		'fonts_text_menu_hover' => 'fonts_text_medium',
+		'fonts_text_menu_current' => 'fonts_text_dark',
+	);
+	return $migrated;
+}
+add_filter( 'siteorigin_settings_migrated_settings', 'siteorigin_north__migrated_settings' );
 
 if ( ! function_exists( 'siteorigin_north_page_settings' ) ) :
 /**
