@@ -58,7 +58,8 @@
 			}
 		}
 
-		.site-title {
+		.site-title,
+		.logo-site-title {
 			margin: 0;
 			color: $color__text_dark;
 			font-family: $font__headings;
@@ -72,14 +73,20 @@
 			}
 		}
 
+		.logo-site-title {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+
 		.site-description {
 			margin: 0.25em 0 0 0;
 			font-size: 0.9em;
 		}
 
 		img {
-			display: block;
+			display: inline-block;
 			max-width: 100%;
+			vertical-align: middle;
 		}
 	}
 

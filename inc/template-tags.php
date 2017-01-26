@@ -7,13 +7,13 @@
  * @package siteorigin-north
  */
 
-if( !function_exists('siteorigin_north_display_logo') ):
+if ( ! function_exists( 'siteorigin_north_display_logo' ) ):
 /**
  * Display the logo or site title
  */
-function siteorigin_north_display_logo(){
+function siteorigin_north_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
-	if( !empty($logo) ) {
+	if ( ! empty( $logo ) ) {
 		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array() );
 
 		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -23,18 +23,25 @@ function siteorigin_north_display_logo(){
 
 	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 		?><?php the_custom_logo(); ?><?php
-	}
-	else {
+	} else {
 		if ( is_front_page() ) : ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php else : ?>
 			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php endif;
 	}
+
+	if ( ( $logo || ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) ) && siteorigin_setting( 'branding_site_title' ) ) {
+		if ( is_front_page() ) : ?>
+			<h1 class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php else : ?>
+			<p class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		<?php endif;
+	}
 }
 endif;
 
-if( !function_exists('siteorigin_north_display_retina_logo') ):
+if ( ! function_exists( 'siteorigin_north_display_retina_logo' ) ):
 /**
  * Display a retina ready logo
  */
@@ -42,18 +49,18 @@ function siteorigin_north_display_retina_logo( $attr ){
 	$logo = siteorigin_setting( 'branding_logo' );
 	$retina = siteorigin_setting( 'branding_retina_logo' );
 
-	if( !empty($retina) ) {
+	if( ! empty( $retina ) ) {
 
 		$srcset = array();
 
 		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
 
-		if( !empty( $logo_src ) ) {
+		if( ! empty( $logo_src ) ) {
 			$srcset[] = $logo_src[0] . ' 1x';
 		}
 
-		if( !empty( $logo_src ) ) {
+		if( ! empty( $logo_src ) ) {
 			$srcset[] = $retina_src[0] . ' 2x';
 		}
 

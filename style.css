@@ -1297,22 +1297,28 @@ a {
         -ms-transform-origin: center center;
         -o-transform-origin: center center;
         transform-origin: center center; }
-    #masthead .site-branding .site-title {
+    #masthead .site-branding .site-title,
+    #masthead .site-branding .logo-site-title {
       margin: 0;
       color: #292929;
       font-family: "Montserrat", sans-serif;
       font-size: 1.5em;
       line-height: 1.2em;
       white-space: nowrap; }
-      #masthead .site-branding .site-title a {
+      #masthead .site-branding .site-title a,
+      #masthead .site-branding .logo-site-title a {
         text-decoration: none;
         color: inherit; }
+    #masthead .site-branding .logo-site-title {
+      display: inline-block;
+      vertical-align: bottom; }
     #masthead .site-branding .site-description {
       margin: 0.25em 0 0 0;
       font-size: 0.9em; }
     #masthead .site-branding img {
-      display: block;
-      max-width: 100%; }
+      display: inline-block;
+      max-width: 100%;
+      vertical-align: middle; }
   #masthead .site-branding, #masthead .main-navigation {
     display: table-cell;
     vertical-align: middle; }

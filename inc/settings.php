@@ -21,6 +21,11 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Retina Logo', 'siteorigin-north' ),
 					'description' => __( 'A double sized logo to use on retina devices.', 'siteorigin-north' )
 				),
+				'site_title' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Site Title', 'siteorigin-north' ),
+					'description' => __( 'Show your site title alongside your logo.', 'siteorigin-north' )
+				),
 				'site_description' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Site Description', 'siteorigin-north' ),
@@ -1047,6 +1052,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Branding defaults
 	$defaults['branding_logo']             = false;
 	$defaults['branding_logo_retina']      = false;
+	$defaults['branding_site_title']       = false;
 	$defaults['branding_site_description'] = true;
 	$defaults['branding_attribution']      = false;
 	$defaults['branding_accent']           = '#c75d5d';
