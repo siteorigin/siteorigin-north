@@ -552,7 +552,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {
-	color: ${fonts_text_menu_hover};
+	color: ${fonts_text_menu_current};
 	}
 	.main-navigation #mobile-menu-button {
 	color: ${responsive_mobile_text_color};
