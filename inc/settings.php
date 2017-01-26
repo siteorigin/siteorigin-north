@@ -21,6 +21,11 @@ function siteorigin_north_settings_init(){
 					'label'       => __( 'Retina Logo', 'siteorigin-north' ),
 					'description' => __( 'A double sized logo to use on retina devices.', 'siteorigin-north' )
 				),
+				'site_title' => array(
+					'type'        => 'checkbox',
+					'label'       => __( 'Site Title', 'siteorigin-north' ),
+					'description' => __( 'Show your site title alongside your logo.', 'siteorigin-north' )
+				),
 				'site_description' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Site Description', 'siteorigin-north' ),
@@ -79,24 +84,28 @@ function siteorigin_north_settings_init(){
 				// The colors
 
 				'text_dark'   => array(
-					'type'  => 'color',
-					'label' => __( 'Dark Text Color', 'siteorigin-north' ),
-					'live'  => true,
+					'type'        => 'color',
+					'label'       => __( 'Dark Text Color', 'siteorigin-north' ),
+					'description' => __( 'Applied to headings and titles.', 'siteorigin-north' ),
+					'live'        => true,
 				),
 				'text_medium' => array(
-					'type'  => 'color',
-					'label' => __( 'Medium Text Color', 'siteorigin-north' ),
-					'live'  => true,
+					'type'        => 'color',
+					'label'       => __( 'Medium Text Color', 'siteorigin-north' ),
+					'description' => __( 'Default color applied to all text.', 'siteorigin-north' ),
+					'live'        => true,
 				),
 				'text_light'  => array(
-					'type'  => 'color',
-					'label' => __( 'Light Text Color', 'siteorigin-north' ),
-					'live'  => true,
+					'type'        => 'color',
+					'label'       => __( 'Light Text Color', 'siteorigin-north' ),
+					'description' => __( 'Applied to comments and breadcrumbs.', 'siteorigin-north' ),
+					'live'        => true,
 				),
 				'text_meta'   => array(
-					'type'  => 'color',
-					'label' => __( 'Meta Text Color', 'siteorigin-north' ),
-					'live'  => true,
+					'type'        => 'color',
+					'label'       => __( 'Meta Text Color', 'siteorigin-north' ),
+					'description' => __( 'Applied to bylines.', 'siteorigin-north' ),
+					'live'        => true,
 				),
 				'text_menu'   => array(
 					'type'  => 'color',
@@ -112,7 +121,7 @@ function siteorigin_north_settings_init(){
 					'type'  => 'color',
 					'label' => __( 'Menu Text Current Color', 'siteorigin-north' ),
 					'live'  => true,
-				),				
+				),
 
 			),
 		),
@@ -548,7 +557,7 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {
-	color: ${fonts_text_menu_hover};
+	color: ${fonts_text_menu_current};
 	}
 	.main-navigation #mobile-menu-button {
 	color: ${responsive_mobile_text_color};
@@ -1043,6 +1052,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	// Branding defaults
 	$defaults['branding_logo']             = false;
 	$defaults['branding_logo_retina']      = false;
+	$defaults['branding_site_title']       = false;
 	$defaults['branding_site_description'] = true;
 	$defaults['branding_attribution']      = false;
 	$defaults['branding_accent']           = '#c75d5d';
