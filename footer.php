@@ -46,7 +46,7 @@
 					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
 				);
 
-				if ( !empty( $credit_text ) ) {
+				if ( ! empty( $credit_text ) ) {
 					?><span class="sep"> | </span><?php
 					echo wp_kses_post( $credit_text );
 				}
@@ -59,7 +59,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) ) : ?>
+<?php if ( siteorigin_setting( 'navigation_scroll_to_top' ) && siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>
 	<div id="scroll-to-top">
 		<span class="screen-reader-text"><?php esc_html_e( 'Scroll to top', 'siteorigin-north' ); ?></span>
 		<?php siteorigin_north_display_icon( 'up-arrow' ); ?>
