@@ -224,3 +224,13 @@ add_action( 'wp_ajax_nopriv_so_product_quick_view', 'so_product_quick_view_ajax'
 */
 add_action('woocommerce_single_product_summary','siteorigin_north_breadcrumbs', 6, 0);
 add_action('woocommerce_before_shop_loop','siteorigin_north_breadcrumbs', 6, 0);
+
+if ( ! function_exists( 'siteorigin_north_paypal_icon' ) ) :
+/*
+* Return a standardised PayPal PNG icon.
+*/
+function siteorigin_north_paypal_icon() {
+     return get_stylesheet_directory_uri() . '/woocommerce/images/paypal-icon.png';
+}
+add_filter( 'woocommerce_paypal_icon', 'siteorigin_north_paypal_icon' );
+endif;
