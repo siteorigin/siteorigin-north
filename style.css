@@ -521,7 +521,7 @@ a {
     .main-navigation ul a {
       color: #898989; }
       .main-navigation ul a:hover {
-        color: #292929; }
+        color: #595959; }
     .main-navigation ul ul {
       position: absolute;
       top: 100%;
@@ -573,10 +573,10 @@ a {
         padding-bottom: 1.25em; }
       .main-navigation ul ul :hover > a,
       .main-navigation ul ul .focus > a {
-        color: #292929; }
+        color: #595959; }
       .main-navigation ul ul a:hover,
       .main-navigation ul ul a.focus {
-        color: #292929; }
+        color: #595959; }
     body.no-touch .main-navigation ul li:hover > ul,
     body.no-touch .main-navigation ul li.focus > ul {
       opacity: 1;
@@ -631,9 +631,9 @@ a {
     .main-navigation #mobile-menu-button .svg-icon-menu path {
       fill: #777; }
     .main-navigation #mobile-menu-button:hover {
-      color: #292929; }
+      color: #595959; }
       .main-navigation #mobile-menu-button:hover .svg-icon-menu path {
-        fill: #292929; }
+        fill: #595959; }
     .main-navigation #mobile-menu-button.to-close .line-1 {
       -webkit-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
       -moz-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
@@ -665,7 +665,7 @@ a {
       .main-navigation .north-search-icon .svg-icon-search path {
         fill: #898989; }
       .main-navigation .north-search-icon .svg-icon-search:hover path {
-        fill: #292929; }
+        fill: #595959; }
 
 #header-search {
   display: none;
@@ -742,7 +742,7 @@ a {
 .main-navigation.stripped a {
   color: #898989; }
   .main-navigation.stripped a:hover {
-    color: #292929; }
+    color: #595959; }
 
 #mobile-navigation {
   position: absolute;
@@ -1297,22 +1297,28 @@ a {
         -ms-transform-origin: center center;
         -o-transform-origin: center center;
         transform-origin: center center; }
-    #masthead .site-branding .site-title {
+    #masthead .site-branding .site-title,
+    #masthead .site-branding .logo-site-title {
       margin: 0;
       color: #292929;
       font-family: "Montserrat", sans-serif;
       font-size: 1.5em;
       line-height: 1.2em;
       white-space: nowrap; }
-      #masthead .site-branding .site-title a {
+      #masthead .site-branding .site-title a,
+      #masthead .site-branding .logo-site-title a {
         text-decoration: none;
         color: inherit; }
+    #masthead .site-branding .logo-site-title {
+      display: inline-block;
+      vertical-align: bottom; }
     #masthead .site-branding .site-description {
       margin: 0.25em 0 0 0;
       font-size: 0.9em; }
     #masthead .site-branding img {
-      display: block;
-      max-width: 100%; }
+      display: inline-block;
+      max-width: 100%;
+      vertical-align: middle; }
   #masthead .site-branding, #masthead .main-navigation {
     display: table-cell;
     vertical-align: middle; }

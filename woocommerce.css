@@ -106,6 +106,8 @@
     body.responsive.woocommerce #main ul.products li.product {
       width: 48%;
       margin: 0 0 2.992em; } }
+  .woocommerce #main ul.products li.product a.added_to_cart {
+    font-size: 13px; }
   .woocommerce #main ul.products li.product.last {
     margin-right: 0; }
   .woocommerce #main ul.products li.product .onsale {

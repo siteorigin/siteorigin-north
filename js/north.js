@@ -291,7 +291,7 @@ jQuery( function ( $ ) {
 			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
 				$( 'body' ).addClass( 'topbar-out' );
 			}
-			if ( $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
+			if ( $tb.length && $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 				$( 'body' ).removeClass( 'topbar-out' );
 			}
 
