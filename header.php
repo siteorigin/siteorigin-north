@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="content">
  *
  * @package siteorigin-north
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 ?><!DOCTYPE html>
@@ -23,11 +23,24 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-north' ); ?></a>
 
 	<?php if ( siteorigin_setting('masthead_text_above') ) : ?>
-		<div id="topbar">
-			<div class="container">
-				<p><?php echo wp_kses_post( siteorigin_setting( 'masthead_text_above' ) ) ?></p>
-			</div>
-		</div>
+
+		<?php if ( ! is_active_sidebar( 'masthead-sidebar' ) ) : ?>
+			<div id="topbar">
+				<div class="container">
+					<p><?php echo wp_kses_post( siteorigin_setting( 'masthead_text_above' ) ) ?></p>
+				</div>
+			</div><!-- #topbar -->
+		<?php else : ?>
+			<div id="topbar">
+				<div id="masthead-widgets" class="container">
+					<?php $siteorigin_north_masthead_sidebar = wp_get_sidebars_widgets(); ?>
+					<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['masthead-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Masthead Sidebar', 'siteorigin-unwind' ); ?>">
+						<?php dynamic_sidebar( 'masthead-sidebar' ); ?>
+					</div>
+				</div><!-- #masthead-widgets -->
+			</div><!-- #topbar -->
+		<?php endif; ?>
+
 	<?php endif; ?>
 
 	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
@@ -46,7 +59,7 @@
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 
-					<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>						
+					<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>
 
 							<a href="#menu" id="mobile-menu-button">
 								<?php siteorigin_north_display_icon( 'menu' ) ?>
@@ -121,7 +134,7 @@
 	<?php do_action( 'siteorigin_north_content_before' ); ?>
 
 	<div id="content" class="site-content">
-	
+
 		<div class="container">
 
 			<?php do_action( 'siteorigin_north_content_top' ); ?>

@@ -3,7 +3,7 @@
  * SiteOrigin North functions and definitions.
  *
  * @package siteorigin-north
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 define('SITEORIGIN_THEME_VERSION', 'dev');
@@ -184,6 +184,16 @@ function siteorigin_north_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
+	register_sidebar( array(
+		'name'          => esc_html__( 'Masthead', 'siteorigin-north' ),
+		'id'            => 'masthead-sidebar',
+		'description'   => esc_html__( 'Replaces the top bar.', 'siteorigin-north' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 endif;
 add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
@@ -205,7 +215,7 @@ function siteorigin_north_scripts() {
 
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
-	
+
 	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
 
