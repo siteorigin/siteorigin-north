@@ -185,9 +185,9 @@ function siteorigin_north_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Masthead', 'siteorigin-north' ),
-		'id'            => 'masthead-sidebar',
-		'description'   => esc_html__( 'Replaces the top bar.', 'siteorigin-north' ),
+		'name'          => esc_html__( 'Top Bar', 'siteorigin-north' ),
+		'id'            => 'topbar-sidebar',
+		'description'   => esc_html__( 'Replaces the top bar text.', 'siteorigin-north' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',

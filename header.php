@@ -22,25 +22,21 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'siteorigin-north' ); ?></a>
 
-	<?php if ( siteorigin_setting('masthead_text_above') ) : ?>
-
-		<?php if ( ! is_active_sidebar( 'masthead-sidebar' ) ) : ?>
-			<div id="topbar">
-				<div class="container">
-					<p><?php echo wp_kses_post( siteorigin_setting( 'masthead_text_above' ) ) ?></p>
+	<?php if ( siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) : ?>
+		<div id="topbar">
+			<div class="container">
+				<p><?php echo wp_kses_post( siteorigin_setting( 'masthead_text_above' ) ) ?></p>
+			</div>
+		</div><!-- #topbar -->
+	<?php elseif ( is_active_sidebar( 'topbar-sidebar' ) ) : ?>
+		<div id="topbar">
+			<div id="topbar-widgets" class="container">
+				<?php $siteorigin_north_masthead_sidebar = wp_get_sidebars_widgets(); ?>
+				<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['topbar-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Top Bar Sidebar', 'siteorigin-north' ); ?>">
+					<?php dynamic_sidebar( 'topbar-sidebar' ); ?>
 				</div>
-			</div><!-- #topbar -->
-		<?php else : ?>
-			<div id="topbar">
-				<div id="masthead-widgets" class="container">
-					<?php $siteorigin_north_masthead_sidebar = wp_get_sidebars_widgets(); ?>
-					<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['masthead-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Masthead Sidebar', 'siteorigin-unwind' ); ?>">
-						<?php dynamic_sidebar( 'masthead-sidebar' ); ?>
-					</div>
-				</div><!-- #masthead-widgets -->
-			</div><!-- #topbar -->
-		<?php endif; ?>
-
+			</div><!-- #topbar-widgets -->
+		</div><!-- #topbar -->
 	<?php endif; ?>
 
 	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>

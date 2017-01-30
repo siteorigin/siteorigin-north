@@ -1359,6 +1359,41 @@ a {
     color: #898989; }
   body.responsive #topbar {
     min-width: 0; }
+  #topbar #topbar-widgets {
+    content: "";
+    display: table;
+    padding: 60px 0; }
+    #topbar #topbar-widgets .widgets.widgets-1 .widget {
+      width: 100%; }
+    #topbar #topbar-widgets .widgets.widgets-2 .widget {
+      width: 48.75%; }
+    #topbar #topbar-widgets .widgets.widgets-3 .widget {
+      width: 31.66667%; }
+    #topbar #topbar-widgets .widgets.widgets-4 .widget {
+      width: 23.125%; }
+    #topbar #topbar-widgets .widgets.widgets-5 .widget {
+      width: 18%; }
+    #topbar #topbar-widgets .widgets.widgets-6 .widget {
+      width: 14.58333%; }
+    #topbar #topbar-widgets .widgets.widgets-7 .widget {
+      width: 12.14286%; }
+    #topbar #topbar-widgets .widgets.widgets-8 .widget {
+      width: 10.3125%; }
+    #topbar #topbar-widgets .widgets.widgets-9 .widget {
+      width: 8.88889%; }
+    #topbar #topbar-widgets .widgets.widgets-10 .widget {
+      width: 7.75%; }
+    #topbar #topbar-widgets .widgets .widget {
+      box-sizing: content-box;
+      margin-right: 2.5%;
+      float: left; }
+      #topbar #topbar-widgets .widgets .widget:last-of-type {
+        margin-right: 0 !important; }
+      @media (max-width: 768px) {
+        #topbar #topbar-widgets .widgets .widget {
+          float: none;
+          margin: 0 0 4em;
+          width: 100% !important; } }
 
 /*--------------------------------------------------------------
 ## Site Sidebar
