@@ -122,7 +122,6 @@ function siteorigin_north_settings_init(){
 					'label' => __( 'Menu Text Current Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
-
 			),
 		),
 
@@ -199,6 +198,11 @@ function siteorigin_north_settings_init(){
 				'padding'              => array(
 					'type'              => 'measurement',
 					'label'             => __( 'Padding', 'siteorigin-north' ),
+					'live'              => false,
+				),
+				'top_padding'          => array(
+					'type'              => 'measurement',
+					'label'             => __( 'Top Bar Widgets Padding', 'siteorigin-north' ),
 					'live'              => false,
 				),
 				'bottom_margin'        => array(
@@ -645,7 +649,7 @@ function siteorigin_north_settings_custom_css($css){
 	padding: ${masthead_padding} 0;
 	margin-bottom: ${masthead_bottom_margin};
 	}
-	#masthead .site-branding .site-title {
+	#masthead .site-branding .site-title,#masthead .site-branding .logo-site-title {
 	color: ${fonts_text_dark};
 	.font( ${fonts_headings} );
 	}
@@ -661,6 +665,9 @@ function siteorigin_north_settings_custom_css($css){
 	}
 	#topbar p {
 	color: ${fonts_text_light};
+	}
+	#topbar #topbar-widgets {
+	padding: ${masthead_top_padding} 0;
 	}
 	#secondary {
 	color: ${fonts_text_medium};
@@ -1086,6 +1093,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['masthead_border_color']         = '#d4d4d4';
 	$defaults['masthead_border_width']         = '1px';
 	$defaults['masthead_padding']              = '30px';
+	$defaults['masthead_top_padding']          = '10px';
 	$defaults['masthead_bottom_margin']        = '30px';
 
 	// Navigation settings

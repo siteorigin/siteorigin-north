@@ -31,6 +31,7 @@ return array(
 		'masthead_border_color' => 'masthead__border_color',
 		'masthead_border_width' => 'masthead__border_width',
 		'masthead_padding' => 'masthead__padding',
+		'masthead_top_padding' => 'masthead__top_padding',
 		'masthead_bottom_margin' => 'masthead__bottom_margin',
 
 		// The mobile menu
