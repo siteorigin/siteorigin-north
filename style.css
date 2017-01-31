@@ -1362,7 +1362,7 @@ a {
   #topbar #topbar-widgets {
     content: "";
     display: table;
-    padding: 60px 0; }
+    padding: 10px 0; }
     #topbar #topbar-widgets .widgets.widgets-1 .widget {
       width: 100%; }
     #topbar #topbar-widgets .widgets.widgets-2 .widget {

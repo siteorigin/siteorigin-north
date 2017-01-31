@@ -158,7 +158,7 @@
 
 	#topbar-widgets {
 		@include clearfix;
-		padding: 60px 0;
+		padding: $masthead__top_padding 0;
 
 		.widgets {
 
