@@ -889,6 +889,9 @@
         margin: -1px 6px 0 0; }
         .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .cart .quantity input {
           padding: 5px 6px; }
+    .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .reset_variations {
+      font-size: 13px;
+      margin-left: 10px; }
     .woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .single_add_to_cart_button {
       float: left; }
 
@@ -902,3 +905,5 @@
     padding: 4px 0; }
     .woocommerce .woocommerce-MyAccount-navigation ul li a {
       text-decoration: none; }
+
+/*# sourceMappingURL=sass/maps/woocommerce.css.map */
