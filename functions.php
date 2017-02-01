@@ -167,7 +167,7 @@ function siteorigin_north_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Main Sidebar', 'siteorigin-north' ),
 		'id'            => 'main-sidebar',
-		'description'   => '',
+		'description'   => esc_html__( 'Visible on posts and pages that use the default layout.', 'siteorigin-north' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -177,7 +177,7 @@ function siteorigin_north_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widgets', 'siteorigin-north' ),
 		'id'            => 'footer-sidebar',
-		'description'   => '',
+		'description'   => esc_html__( 'A column will be automatically assigned to each widget inserted.', 'siteorigin-north' ),
 		'before_widget' => '<div class="widget-wrapper"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
 		'before_title'  => '<h2 class="widget-title">',
