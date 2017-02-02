@@ -77,6 +77,7 @@ function siteorigin_north_setup() {
 		'video',
 		'quote',
 		'link',
+		'gallery'
 	) );
 
 	// Set up the WordPress core custom background feature.
