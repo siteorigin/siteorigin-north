@@ -212,11 +212,11 @@ function siteorigin_north_entry_footer() {
 }
 endif;
 
-if( !function_exists('siteorigin_north_posts_pagination') ) :
+if ( ! function_exists( 'siteorigin_north_posts_pagination' ) ) :
 /**
- * Display pagination
+ * Display pagination.
  */
-function siteorigin_north_posts_pagination(){
+function siteorigin_north_posts_pagination() {
 	global $wp_query;
 	if ( $wp_query->max_num_pages <= 1 ) {
 		return;
@@ -239,25 +239,25 @@ function siteorigin_north_posts_pagination(){
 	}
 
 	if( is_search() ) {
-		// Add the arguments neccessary for search
+		// Add the arguments neccessary for search.
 		global $wp_query;
-		$big = 999999999; // need an unlikely integer
+		$big = 999999999; // Need an unlikely integer.
 		$args = wp_parse_args( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
+			'current' => max( 1, get_query_var( 'paged' ) ),
 			'total' => $wp_query->max_num_pages
 		), $args);
 	}
 
 	?><div class="post-pagination">
-	<h2 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'siteorigin-north'); ?></h2><?php
+	<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'siteorigin-north' ); ?></h2><?php
 	echo paginate_links( $args );
 	?></div><?php
 }
 endif;
 
-if( !function_exists('siteorigin_north_categorized_blog') ) :
+if ( ! function_exists( 'siteorigin_north_categorized_blog' ) ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -290,11 +290,11 @@ function siteorigin_north_categorized_blog() {
 }
 endif;
 
-if( !function_exists('siteorigin_north_comment') ) :
+if ( ! function_exists( 'siteorigin_north_comment' ) ) :
 /**
  * Returns the comment template.
  */
-function siteorigin_north_comment( $comment, $args, $depth ){
+function siteorigin_north_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
 		<?php $type = get_comment_type($comment->comment_ID); ?>
@@ -311,18 +311,18 @@ function siteorigin_north_comment( $comment, $args, $depth ){
 
 			<div class="info">
 				<?php if( is_rtl() ) : ?>
-					<span class="date"><?php comment_date() ?></span>
+					<span class="date"><?php comment_date(); ?></span>
 					-
-					<span class="author"><?php comment_author_link() ?></span>
+					<span class="author"><?php comment_author_link(); ?></span>
 				<?php else : ?>
-					<span class="author"><?php comment_author_link() ?></span>
+					<span class="author"><?php comment_author_link(); ?></span>
 					-
-					<span class="date"><?php comment_date() ?></span>
+					<span class="date"><?php comment_date(); ?></span>
 				<?php endif; ?>
 			</div>
 
 			<div class="comment-content content">
-				<?php comment_text() ?>
+				<?php comment_text(); ?>
 			</div>
 		</div>
 
@@ -331,22 +331,22 @@ function siteorigin_north_comment( $comment, $args, $depth ){
 }
 endif;
 
-if( !function_exists('siteorigin_north_footer_text') ) :
+if ( ! function_exists( 'siteorigin_north_footer_text' ) ) :
 /**
  * Displays the footer text.
  */
-function siteorigin_north_footer_text(){
-	$text = siteorigin_setting('footer_text');
+function siteorigin_north_footer_text() {
+	$text = siteorigin_setting( 'footer_text' );
 	$text = str_replace(
-		array( '{sitename}', '{year}'),
-		array( get_bloginfo('sitename'), date('Y') ),
+		array( '{sitename}', '{year}' ),
+		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
 		$text
 	);
 	echo wp_kses_post( $text );
 }
 endif;
 
-if( !function_exists('siteorigin_north_category_transient_flusher') ) :
+if ( ! function_exists( 'siteorigin_north_category_transient_flusher' ) ) :
 /**
  * Flush out the transients used in siteorigin_north_categorized_blog.
  */
@@ -361,7 +361,7 @@ endif;
 add_action( 'edit_category', 'siteorigin_north_category_transient_flusher' );
 add_action( 'save_post',     'siteorigin_north_category_transient_flusher' );
 
-if( !function_exists('siteorigin_north_custom_icon') ):
+if ( ! function_exists( 'siteorigin_north_custom_icon' ) ) :
 /**
  * Display a custom icons from the settings
  */
@@ -384,12 +384,12 @@ function siteorigin_north_custom_icon( $icon, $class ) {
 }
 endif;
 
-if( !function_exists('siteorigin_north_display_icon') ) :
+if ( ! function_exists( 'siteorigin_north_display_icon' ) ) :
 /**
- * Displays svg icons.
+ * Displays SVG icons.
  */
-function siteorigin_north_display_icon( $type ){
-	switch($type) {
+function siteorigin_north_display_icon( $type ) {
+	switch( $type ) {
 		case 'menu':
 			if ( siteorigin_setting( 'icons_menu' ) ): ?>
 				<?php siteorigin_north_custom_icon( 'icons_menu', 'svg-icon-menu' ); ?>
@@ -464,7 +464,7 @@ function siteorigin_north_breadcrumbs() {
 }
 endif;
 
-if( !function_exists( 'siteorigin_north_entry_thumbnail' ) ) :
+if ( ! function_exists( 'siteorigin_north_entry_thumbnail' ) ) :
 /**
  * Display the post/page thumbnail.
  */
