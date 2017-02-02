@@ -33,14 +33,14 @@
 	<?php endif; ?>
 
 	<?php if ( is_singular() ) : ?>
-		<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
+		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php endif; ?>
 
 		<?php siteorigin_north_breadcrumbs(); ?>
 
-		<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
+		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 				<div class="entry-meta">
 					<?php siteorigin_north_post_meta(); ?>
 				</div><!-- .entry-meta -->
@@ -68,7 +68,7 @@
 			) ); ?>
 		<?php else : ?>
 			<?php the_excerpt(); ?>
-			<?php if( siteorigin_setting( 'blog_excerpt_post_link' ) ) { ?>
+			<?php if ( siteorigin_setting( 'blog_excerpt_post_link' ) ) { ?>
 				<a href="<?php the_permalink() ?>" class="more-link"><?php echo siteorigin_setting( 'blog_read_more_text' ) ?><span class="screen-reader-text">More Tag</span></a>
 			<?php } ?>
 		<?php endif; ?>
