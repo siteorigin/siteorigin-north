@@ -102,7 +102,11 @@
 
 						<?php if ( siteorigin_page_setting( 'layout' ) == 'stripped' ) : ?>
 							<ul>
-								<li><a href="" class="stripped-backlink" onclick="window.history.go( -1 ); return false;"><?php esc_html_e( 'Go back', 'siteorigin-north' ); ?></a></li>
+								<li>
+									<a href="" class="stripped-backlink" onclick="window.history.go( -1 ); return false;">
+										<?php esc_html_e( 'Go back', 'siteorigin-north' ); ?>
+									</a>
+								</li>
 							</ul>
 						<?php endif; ?>
 
