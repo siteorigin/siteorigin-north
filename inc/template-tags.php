@@ -132,7 +132,7 @@ function siteorigin_north_post_meta() {
 	);
 
 
-	if( siteorigin_setting('blog_display_date') ) {
+	if ( siteorigin_setting( 'blog_display_date' ) ) {
 		?>
 		<li class="posted-on">
 			<span class="meta-icon north-icon-calendar" aria-hidden="true"></span>
@@ -142,7 +142,7 @@ function siteorigin_north_post_meta() {
 		</li>
 		<?php
 	}
-	if( siteorigin_setting('blog_display_author') ) {
+	if ( siteorigin_setting( 'blog_display_author' ) ) {
 		?>
 		<li class="posted-by">
 			<span class="meta-icon north-icon-user" aria-hidden="true"></span>
@@ -150,7 +150,7 @@ function siteorigin_north_post_meta() {
 		</li>
 		<?php
 	}
-	if( get_comments_number() > 0 && siteorigin_setting('blog_display_comment_count') ) {
+	if ( get_comments_number() > 0 && siteorigin_setting( 'blog_display_comment_count' ) ) {
 		?>
 		<li class="post-comments">
 			<span class="meta-icon north-icon-comments" aria-hidden="true"></span>
