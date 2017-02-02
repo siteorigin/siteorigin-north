@@ -116,7 +116,7 @@
 				<div id="header-search">
 					<div class="container">
 						<label for='s' class='screen-reader-text'><?php esc_html_e( 'Search for:', 'siteorigin-north' ); ?></label>
-						<?php get_search_form() ?>
+						<?php get_search_form(); ?>
 						<a id="close-search">
 							<span class="screen-reader-text"><?php esc_html_e( 'Close search bar', 'siteorigin-north' ); ?></span>
 							<?php siteorigin_north_display_icon( 'close' ); ?>
