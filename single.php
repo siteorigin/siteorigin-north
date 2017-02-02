@@ -13,7 +13,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php if ( has_post_format( array( 'gallery', 'video', 'image' ) ) ) {
+			<?php if ( has_post_format( array( 'gallery', 'video' ) ) ) {
 				get_template_part( 'template-parts/content', get_post_format() );
 			} else {
 				get_template_part( 'template-parts/content', 'single' );

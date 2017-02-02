@@ -1573,6 +1573,9 @@ a {
 .group-blog .byline {
   display: inline; }
 
+.entry-video {
+  margin-bottom: 20px; }
+
 .entry-thumbnail {
   margin-bottom: 20px;
   position: relative; }
