@@ -10,16 +10,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-	<?php if ( is_singular() ) : ?>
-		<?php if ( siteorigin_north_get_video() ) : ?>
-			<div class="entry-video">
-				<?php echo siteorigin_north_get_video(); ?>
-			</div>
-		<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
-			<div class="entry-thumbnail">
-				<?php siteorigin_north_entry_thumbnail() ?>
-			</div>
-		<?php endif; ?>
+	<?php if ( siteorigin_north_get_video() ) : ?>
+		<div class="entry-video">
+			<?php echo siteorigin_north_get_video(); ?>
+		</div>
+	<?php elseif ( is_singular() && has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
+		<div class="entry-thumbnail">
+			<?php siteorigin_north_entry_thumbnail() ?>
+		</div>
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">

@@ -13,22 +13,20 @@ $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-	<?php if ( is_singular() ) : ?>
-		<?php if ( $gallery != '' ) : ?>
-			<div class="flexslider gallery-format-slider">
-				<ul class="slides gallery-format-slides">
-					<?php foreach ( $gallery['src'] as $image ) : ?>
-						<li class="gallery-format-slide">
-							<img src="<?php echo $image; ?>">
-						</li>
-					<?php endforeach; ?>
-				<ul>
-			</div>
-		<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
-			<div class="entry-thumbnail">
-				<?php siteorigin_north_entry_thumbnail() ?>
-			</div>
-		<?php endif; ?>
+	<?php if ( $gallery != '' ) : ?>
+		<div class="flexslider gallery-format-slider">
+			<ul class="slides gallery-format-slides">
+				<?php foreach ( $gallery['src'] as $image ) : ?>
+					<li class="gallery-format-slide">
+						<img src="<?php echo $image; ?>">
+					</li>
+				<?php endforeach; ?>
+			<ul>
+		</div>
+	<?php elseif ( is_singular() && has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
+		<div class="entry-thumbnail">
+			<?php siteorigin_north_entry_thumbnail() ?>
+		</div>
 	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink() ?>">
