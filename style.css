@@ -1577,8 +1577,7 @@ a {
   margin-bottom: 20px; }
 
 .flexslider.gallery-format-slider {
-  border: none;
-  margin-bottom: 20px; }
+  border: none; }
   .flexslider.gallery-format-slider .flex-direction-nav a.flex-prev:before {
     background-color: rgba(0, 0, 0, 0.5);
     background-image: url("images/arrow-left.svg");

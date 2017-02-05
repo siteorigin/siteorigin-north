@@ -404,7 +404,6 @@ jQuery( function ( $ ) {
 		if ( $.isFunction( $.fn.flexslider ) ) {
 			$( '.gallery-format-slider' ).flexslider( {
 				animation: "slide",
-				controlNav: false,
 			} );
 		}
 	} );
