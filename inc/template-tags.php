@@ -550,3 +550,26 @@ function siteorigin_north_strip_gallery( $content ) {
 	return $content;
 }
 endif;
+
+if ( ! function_exists( 'siteorigin_north_get_image' ) ) :
+/**
+ * Get the first image from the post content
+ */
+function siteorigin_north_get_image() {
+	$first_image = '';
+
+	$output = preg_match_all( '/<img[^>]+\>/i', get_the_content(), $images );
+	$first_image = $images[0][0];
+
+	return ( '' !== $first_image ) ? $first_image : false;
+}
+endif;
+
+if ( ! function_exists( 'siteorigin_north_strip_image' ) ) :
+/**
+ * Removes the first image from the post content
+ */
+function siteorigin_north_strip_image( $content ) {
+	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
+}
+endif;
