@@ -1414,15 +1414,16 @@ a {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon {
-  margin-top: 30px;
+  background: #fafafa;
   color: #595959;
-  border-top: 1px solid #d4d4d4;
-  background: #fafafa; }
+  margin-top: 30px; }
+  #colophon.sidebar-active {
+    border-top: 1px solid #d4d4d4; }
   #colophon .widgets {
     content: "";
     display: table;
-    width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    width: 100%; }
     #colophon .widgets .widget-wrapper {
       box-sizing: border-box;
       float: left;
@@ -2022,3 +2023,5 @@ object {
     background: #000;
     opacity: 0.1;
     border-radius: 10px; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */

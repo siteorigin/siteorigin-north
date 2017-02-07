@@ -1,15 +1,17 @@
 #colophon {
-
-	margin-top: $footer__top_margin;
-	color: $color__text_medium;
-	border-top: $footer__border_width solid $footer__border_color;
 	background: $footer__background_color;
+	color: $color__text_medium;
+	margin-top: $footer__top_margin;
+	
+	&.sidebar-active {
+		border-top: $footer__border_width solid $footer__border_color;
+	}
 
 	.widgets {
 		@include clearfix();
-		width: 100%;
 		overflow: hidden;
-
+		width: 100%;
+		
 		.widget-wrapper {
 			box-sizing: border-box;
 			float: left;
