@@ -113,11 +113,15 @@
 		}
 	}
 
-	.form-allowed-tags, .comment-notes, .logged-in-as {
+	.form-allowed-tags, 
+	.comment-notes, 
+	.logged-in-as {
 		color: $color__text_meta;
 		margin: 10px 0;
-		&, code {
-			font-size: 0.75em;
+		
+		&, 
+		code {
+			font-size: 12px;
 		}
 	}
 

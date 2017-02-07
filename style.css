@@ -1865,11 +1865,18 @@ a {
       @media (max-width: 768px) {
         #commentform .comment-form-comment textarea {
           padding: 8px; } }
-  #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .logged-in-as {
+  #commentform .form-allowed-tags,
+  #commentform .comment-notes,
+  #commentform .logged-in-as {
     color: #b0b0b0;
     margin: 10px 0; }
-    #commentform .form-allowed-tags, #commentform .form-allowed-tags code, #commentform .comment-notes, #commentform .comment-notes code, #commentform .logged-in-as, #commentform .logged-in-as code {
-      font-size: 0.75em; }
+    #commentform .form-allowed-tags,
+    #commentform .form-allowed-tags code,
+    #commentform .comment-notes,
+    #commentform .comment-notes code,
+    #commentform .logged-in-as,
+    #commentform .logged-in-as code {
+      font-size: 12px; }
   #commentform .form-submit {
     margin-top: 10px;
     text-align: right; }
