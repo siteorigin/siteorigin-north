@@ -487,9 +487,10 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  *
  * @return string
  */
-function siteorigin_north_settings_custom_css($css){
-	// Custom CSS Code
-	$css .= '/* style */
+function siteorigin_north_settings_custom_css( $css ) {
+// Custom CSS Code
+$css .= '/* style */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/VJ6YKo/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -676,10 +677,12 @@ function siteorigin_north_settings_custom_css($css){
 	color: ${fonts_text_dark};
 	}
 	#colophon {
-	margin-top: ${footer_top_margin};
-	color: ${fonts_text_medium};
-	border-top: ${footer_border_width} solid ${footer_border_color};
 	background: ${footer_background_color};
+	color: ${fonts_text_medium};
+	margin-top: ${footer_top_margin};
+	}
+	#colophon.sidebar-active {
+	border-top: ${footer_border_width} solid ${footer_border_color};
 	}
 	#colophon .widgets .widget-wrapper {
 	border-right: ${footer_border_width} solid ${footer_border_color};
@@ -784,6 +787,7 @@ function siteorigin_north_settings_custom_css($css){
 	border-color: ${branding_accent_dark};
 	}
 	/* woocommerce */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/VJ6YKo/sass/woocommerce.css ***/
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_light};
 	}
@@ -990,7 +994,7 @@ if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
  * Add CSS for mobile menu breakpoint
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = isset( $settings[ 'theme_settings_responsive_menu_breakpoint' ] ) ? $settings[ 'theme_settings_responsive_menu_breakpoint' ] : 600;
+	$breakpoint = isset( $settings['theme_settings_responsive_menu_breakpoint'] ) ? $settings['theme_settings_responsive_menu_breakpoint'] : 600;
 
 	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
 		body.responsive .main-navigation #mobile-menu-button {
@@ -1024,14 +1028,14 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_menu_breakpoint_
 
 if ( ! function_exists( 'siteorigin_north_sidebar_zero_css' ) ) :
 /**
- * Add CSS when sidebar width is 0
+ * Add CSS when sidebar width is 0.
  */
 function siteorigin_north_sidebar_zero_css( $css, $settings ) {
-	if( !isset( $settings[ 'theme_settings_structure_sidebar_width' ] ) ) {
+	if ( !isset( $settings[ 'theme_settings_structure_sidebar_width' ] ) ) {
 		return $css;
 	}
 
-	$sidebar_width = $settings[ 'theme_settings_structure_sidebar_width' ];
+	$sidebar_width = $settings['theme_settings_structure_sidebar_width'];
 
 	if ( $sidebar_width == 0 ) {
 
