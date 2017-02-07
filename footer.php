@@ -2,7 +2,9 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the #content div and all content after
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package siteorigin-north
  * @license GPL 2.0 
@@ -26,7 +28,7 @@
 				if ( is_active_sidebar( 'footer-sidebar' ) ) {
 					$siteorigin_north_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php _e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
+					<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
 						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 					</div>
 					<?php
