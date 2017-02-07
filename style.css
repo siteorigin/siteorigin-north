@@ -1581,15 +1581,15 @@ a {
   border: none; }
   .flexslider.gallery-format-slider .flex-direction-nav a.flex-prev:before {
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: url("images/arrow-left.svg");
-    background-position: 13px 15px;
     background-repeat: no-repeat;
+    background-image: url("images/flex-left.svg");
+    background-position: 10px 11px;
     opacity: 1; }
   .flexslider.gallery-format-slider .flex-direction-nav a.flex-next:before {
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: url("images/arrow-right.svg");
-    background-position: 16px 15px;
     background-repeat: no-repeat;
+    background-image: url("images/flex-right.svg");
+    background-position: 11px 11px;
     opacity: 1; }
   .flexslider.gallery-format-slider .flex-direction-nav .flex-prev:hover,
   .flexslider.gallery-format-slider .flex-direction-nav .flex-next:hover {
