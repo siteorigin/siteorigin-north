@@ -3,6 +3,7 @@
 }
 
 .hentry {
+
 	> *:first-child {
 		margin-top: 0;
 	}
@@ -194,6 +195,10 @@
 	ul, ol, li {
 		padding: 0;
 	}
+}
+
+.cat-links {
+	font-size: 13px; 
 }
 
 .tags-list {
