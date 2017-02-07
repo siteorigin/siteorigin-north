@@ -41,7 +41,7 @@
 
 	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
 		<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>" role="banner"
-			<?php if( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
+			<?php if ( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 			<div class="container">
 
 				<div class="container-inner">
@@ -84,7 +84,7 @@
 												<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
 											</a>
 											<ul class="shopping-cart-dropdown" id="cart-drop">
-												<?php the_widget( 'WC_Widget_Cart' );?>
+												<?php the_widget( 'WC_Widget_Cart' ); ?>
 											</ul>
 										</li>
 									</ul>
