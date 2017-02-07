@@ -15,7 +15,7 @@
 
 	<?php do_action( 'siteorigin_north_footer_before' ); ?>
 
-	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'sidebar-footer' ) ) echo 'sidebar-active'; ?>" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' sidebar-active'; ?>" role="contentinfo">
 		
 		<?php do_action( 'siteorigin_north_footer_top' ); ?>
 		
