@@ -222,8 +222,8 @@ add_action( 'wp_ajax_nopriv_so_product_quick_view', 'so_product_quick_view_ajax'
 /*
 * Enabling breadcrumbs in product pages and archives.
 */
-add_action('woocommerce_single_product_summary','siteorigin_north_breadcrumbs', 6, 0);
-add_action('woocommerce_before_shop_loop','siteorigin_north_breadcrumbs', 6, 0);
+add_action( 'woocommerce_single_product_summary', 'siteorigin_north_breadcrumbs', 6, 0 );
+add_action( 'woocommerce_before_shop_loop', 'siteorigin_north_breadcrumbs', 6, 0 );
 
 if ( ! function_exists( 'siteorigin_north_paypal_icon' ) ) :
 /*
