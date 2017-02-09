@@ -60,6 +60,15 @@ module.exports = {
 			'!{tmp,tmp/**}'                     // Ignore tmp/ and contents
 		]
 	},
+    css: {
+        src: [
+            'style.css',
+            'css/north-icons.css',
+            'woocommerce.css',
+            'woocommerce-rtl.css',
+            'woocommerce-smallscreen-rtl.css',
+        ],
+    },	
 	copy: {
 		src: [
 			'**/!(*.js|*.scss|*.md|style.css|woocommerce.css|woocommerce-rtl.css|woocommerce-smallscreen-rtl.css)',   // Everything except .js and .scss files and the output of LESS/CSS tasks

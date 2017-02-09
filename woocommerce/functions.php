@@ -65,30 +65,30 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_styles' ) ) :
 /**
  * Enqueue WooCommerce styles.
  */
-function siteorigin_north_woocommerce_enqueue_styles( $styles ){
+function siteorigin_north_woocommerce_enqueue_styles( $styles ) {
 	$styles['northern-woocommerce'] = array(
-		'src' => get_template_directory_uri() . '/woocommerce.css',
+		'src' => get_template_directory_uri() . '/woocommerce' . SITEORIGIN_THEME_CSS_PREFIX . '.css',
 		'deps' => 'woocommerce-layout',
 		'version' => SITEORIGIN_THEME_VERSION,
 		'media' => 'all'
 	);
 
-	if( is_rtl() ) {
+	if ( is_rtl() ) {
 		$styles['northern-woocommerce-rtl'] = array(
-			'src' => get_template_directory_uri() . '/woocommerce-rtl.css',
+			'src' => get_template_directory_uri() . '/woocommerce-rtl' . SITEORIGIN_THEME_CSS_PREFIX . '.css',
 			'deps' => 'northern-woocommerce',
 			'version' => SITEORIGIN_THEME_VERSION,
 			'media' => 'all'
 		);
 		$styles['northern-woocommerce-smallscreen-rtl'] = array(
-			'src' => get_template_directory_uri() . '/woocommerce-smallscreen-rtl.css',
+			'src' => get_template_directory_uri() . '/woocommerce-smallscreen-rtl' . SITEORIGIN_THEME_CSS_PREFIX . '.css',
 			'deps' => 'northern-woocommerce',
 			'version' => SITEORIGIN_THEME_VERSION,
 			'media' => 'only screen and (max-width: ' . apply_filters( 'woocommerce_style_smallscreen_breakpoint', $breakpoint = '768px' ) . ')'
 		);
 	}
 
-	if( siteorigin_setting( 'responsive_disabled' ) ) {
+	if ( siteorigin_setting( 'responsive_disabled' ) ) {
 		unset( $styles['woocommerce-smallscreen'] );
 		unset( $styles['northern-woocommerce-smallscreen-rtl'] );
 	}
@@ -96,7 +96,7 @@ function siteorigin_north_woocommerce_enqueue_styles( $styles ){
 	return $styles;
 }
 endif;
-add_filter('woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_styles');
+add_filter( 'woocommerce_enqueue_styles', 'siteorigin_north_woocommerce_enqueue_styles' );
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_scripts' ) ) :
 /**

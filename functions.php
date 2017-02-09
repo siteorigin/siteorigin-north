@@ -6,9 +6,9 @@
  * @license GPL 2.0
  */
 
-define('SITEORIGIN_THEME_VERSION', 'dev');
-define('SITEORIGIN_THEME_JS_PREFIX', '');
-define('SITEORIGIN_THEME_PREMIUM_URL', 'https://siteorigin.com/downloads/premium/');
+define( 'SITEORIGIN_THEME_VERSION', 'dev' );
+define( 'SITEORIGIN_THEME_JS_PREFIX', '' );
+define( 'SITEORIGIN_THEME_CSS_PREFIX', '' );
 
 // The settings manager.
 include get_template_directory() . '/inc/settings/settings.php';
@@ -205,10 +205,10 @@ if ( ! function_exists( 'siteorigin_north_scripts' ) ) :
 function siteorigin_north_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'siteorigin-north-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-north-style', get_template_directory_uri() . '/style' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// Theme icons.
-	wp_enqueue_style( 'siteorigin-north-icons', get_template_directory_uri() . '/css/north-icons.css', array(), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-north-icons', get_template_directory_uri() . '/css/north-icons' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// jQuery Transit.
 	wp_enqueue_script( 'jquery-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '0.9.12', true );
@@ -238,16 +238,16 @@ endif;
 add_action( 'wp_enqueue_scripts', 'siteorigin_north_scripts' );
 
 if ( ! function_exists( 'siteorigin_north_siteorigin_premium' ) ) :
-function siteorigin_north_siteorigin_premium($themes){
+function siteorigin_north_siteorigin_premium( $themes ) {
 	$themes[] = 'siteorigin-north';
 	return $themes;
 }
 endif;
-add_filter('siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium');
+add_filter( 'siteorigin_premium_themes', 'siteorigin_north_siteorigin_premium' );
 
 if ( ! function_exists( 'siteorigin_north_filter_comment_form_default_fields' ) ) :
 /**
- * Modify comments form - change placeholders
+ * Modify comments form - change placeholders.
  */
 function siteorigin_north_filter_comment_form_default_fields( $fields ){
 	$placeholders = apply_filters( 'siteorigin_north_comment_form_placeholders', array(
