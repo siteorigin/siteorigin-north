@@ -3,7 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package siteorigin-north
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 get_header(); ?>
@@ -13,7 +13,11 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php if ( has_post_format( array( 'gallery', 'video', 'image' ) ) ) {
+				get_template_part( 'template-parts/content', get_post_format() );
+			} else {
+				get_template_part( 'template-parts/content', 'single' );
+			} ?>
 
 			<?php if ( siteorigin_setting('navigation_post') ) : ?>
 				<?php siteorigin_north_the_post_navigation(); ?>

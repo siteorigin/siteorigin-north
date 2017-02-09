@@ -399,6 +399,15 @@ jQuery( function ( $ ) {
 	// Add class to calendar elements that have links
 	$( '#wp-calendar tbody td:has(a)' ).addClass( 'has-link' );
 
+	// Gallery format image slider.
+	$( document ).ready( function() {
+		if ( $.isFunction( $.fn.flexslider ) ) {
+			$( '.gallery-format-slider' ).flexslider( {
+				animation: "slide",
+			} );
+		}
+	} );
+
 } );
 
 ( function($) {
