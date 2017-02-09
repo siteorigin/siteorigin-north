@@ -3,7 +3,7 @@
 	color: $color__text_medium;
 	margin-top: $footer__top_margin;
 	
-	&.sidebar-active {
+	&.footer-active-sidebar {
 		border-top: $footer__border_width solid $footer__border_color;
 	}
 
