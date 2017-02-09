@@ -18,7 +18,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php woocommerce_content() ?>
+				<?php woocommerce_content(); ?>
 
 			<?php endif; // End of the loop. ?>
 
