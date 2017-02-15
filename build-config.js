@@ -63,10 +63,11 @@ module.exports = {
     css: {
         src: [
             'style.css',
-            'css/north-icons.css',
             'woocommerce.css',
             'woocommerce-rtl.css',
             'woocommerce-smallscreen-rtl.css',
+            'css/flexslider.css',
+            'css/north-icons.css',
         ],
     },	
 	copy: {
