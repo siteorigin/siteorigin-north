@@ -61,7 +61,7 @@
 			<?php echo apply_filters( 'the_content', siteorigin_north_filter_video( get_the_content() ) ); // Display the content without first video ?>
 		<?php elseif ( siteorigin_setting( 'blog_post_content' ) == 'content' ) : ?>
 			<?php the_content( sprintf(
-				siteorigin_setting( 'blog_read_more_text' ) . __( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
+				siteorigin_setting( 'blog_read_more_text' ) . esc_html__( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
 				get_the_title()
 			) ); ?>
 		<?php else : ?>
