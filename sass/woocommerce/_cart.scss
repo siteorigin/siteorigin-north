@@ -27,7 +27,9 @@
 	}
 
 	table {
-		th, td {
+
+		th, 
+		td {
 			border: none;
 		}
 
@@ -45,9 +47,9 @@
 			}
 
 			img {
+				max-width: 100px;
 				vertical-align: middle;
 				width: auto;
-				max-width: 100px;
 			}
 
 			.product-quantity,
@@ -57,11 +59,27 @@
 			}
 
 			.cart-item-product-name {
-				position: relative;
-				left: 20px;
-				font-weight: bold;
-				text-decoration: none;
 				color: inherit;
+				font-weight: bold;
+				position: relative;
+				text-decoration: none;
+			}
+
+			td.product-name dl.variation {
+				font-size: 13px;
+				
+				dt {
+					padding: 0;
+				}
+
+				dd	{
+					margin: 0;
+					padding: 0;
+
+					p {
+						margin: 0;
+					}
+				}
 			}
 
 			td.product-price,
@@ -93,12 +111,14 @@
 			}
 
 			.coupon {
+
 				.input-text {
 					height: 33px;
 					min-width: 120px;
 				}
 
 				@media (max-width: 768px) {
+
 					.input-text, .button {
 						width: 100% !important;
 					}

@@ -32,10 +32,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<table class="shop_table shop_table_responsive cart" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="product-name"><?php _e( 'Product', 'siteorigin-north' ); ?></th>
-					<th class="product-quantity"><?php _e( 'Quantity', 'siteorigin-north' ); ?></th>
-					<th class="product-price"><?php _e( 'Price', 'siteorigin-north' ); ?></th>
-					<th class="product-subtotal"><?php _e( 'Total', 'siteorigin-north' ); ?></th>
+					<th class="product-name"><?php esc_html_e( 'Product', 'siteorigin-north' ); ?></th>
+					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'siteorigin-north' ); ?></th>
+					<th class="product-price"><?php esc_html_e( 'Price', 'siteorigin-north' ); ?></th>
+					<th class="product-subtotal"><?php esc_html_e( 'Total', 'siteorigin-north' ); ?></th>
 					<th class="product-remove">&nbsp;</th>
 				</tr>
 			</thead>
@@ -51,8 +51,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 						<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-							<td class="product-name" data-title="<?php _e( 'Product', 'siteorigin-north' ); ?>">
-								<?php
+							<td class="product-thumbnail">
+								<?php 
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 									if ( ! $_product->is_visible() ) {
@@ -60,7 +60,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 									} else {
 										printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $thumbnail );
 									}
+								?>
+							</td>
 
+							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'siteorigin-north' ); ?>">
+								<?php
 									if ( ! $_product->is_visible() ) {
 										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
 									} else {
@@ -77,7 +81,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</td>
 
-							<td class="product-quantity" data-title="<?php _e( 'Quantity', 'siteorigin-north' ); ?>">
+							<td class="product-quantity" data-title="<?php esc_html_e( 'Quantity', 'siteorigin-north' ); ?>">
 								<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -109,9 +113,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<td class="product-remove">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-										'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times; ' . __( 'delete', 'siteorigin-north' ) .  '</a>',
+										'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times; ' . esc_html__( 'delete', 'siteorigin-north' ) .  '</a>',
 										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-										__( 'Remove this item', 'siteorigin-north' ),
+										esc_html__( 'Remove this item', 'siteorigin-north' ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() )
 									), $cart_item_key );
