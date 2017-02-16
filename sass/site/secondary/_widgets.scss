@@ -4,7 +4,7 @@
 	.widget {
 		margin: 0 0 1.5em;
 
-		/* Make sure select elements fit in widgets. */
+		// Make sure select elements fit in widgets.
 		select {
 			max-width: 100%;
 		}
@@ -14,7 +14,8 @@
 			padding-left: 1.275em;
 		}
 
-		ul.menu, &.widget_pages > ul {
+		ul.menu, 
+		&.widget_pages > ul {
 			padding-left: 0;
 
 			a {
@@ -25,7 +26,8 @@
 				}
 			}
 
-			&, ul {
+			&, 
+			ul {
 				list-style: none;
 			}
 		}
@@ -38,12 +40,13 @@
 }
 
 .textwidget {
+
 	> *:first-child {
-		margin-top:0px;
+		margin-top: 0;
 	}
 
 	> *:last-child {
-		margin-bottom:0px;
+		margin-bottom: 0;
 	}
 }
 
@@ -51,19 +54,17 @@
 	position: relative;
 
 	.search-field {
+		border-color: $color__border-table;
+		border-radius: 0;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-
+		border-width: 0 0 1px 0;
 		display: block;
-		width: 100%;
-		border-radius: 0;
-		padding: 8px 15px;
 		font-family: $font__detail;
 		font-size: 0.9em;
-
-		border-width: 0 0 1px 0;
-		border-color: $color__border-table;
+		padding: 8px 15px;
+		width: 100%;
 
 		&:focus {
 			background: #fbfbfb;
@@ -77,19 +78,20 @@
 
 }
 
-// Tag cloud widget
+// Tag cloud widget.
 .tagcloud {
+
 	a {
 		background: $color__text_meta;
 		color: #fff;
 		display: inline-block;
+		font-size: 0.8em;
 		margin-right: 10px;
 		margin-bottom:10px;
-		text-decoration: none;
 		line-height: 1em;
-		font-size: 0.8em;
 		padding: 8px 12px;
-
+		text-decoration: none;
+		
 		&:hover {
 			background: $color__primary_accent_dark;
 			color: #fff;
@@ -97,8 +99,9 @@
 	}
 }
 
-// Archive widget
+// Archive widget.
 .widget-area .widget_archive {
+
 	ul {
 		padding-left: 0;
 
@@ -118,14 +121,15 @@
 	}
 
 	select {
-		font-size: 1.1em;
-		border-radius: 0;
 		background: #fff;
+		border-radius: 0;
+		font-size: 1.1em;
 	}
 }
 
-// Categories widget
+// Categories widget.
 .widget-area .widget_categories {
+
 	ul {
 		padding-left: 0;
 
@@ -149,22 +153,24 @@
 	}
 
 	select {
-		font-size: 1.1em;
-		border-radius: 0;
 		background: #fff;
+		border-radius: 0;
+		font-size: 1.1em;
 	}
 }
 
-// Menu widget
+// Menu widget.
 .widget_nav_menu {
+
 	a {
-		padding: 10px 0;
 		display: block;
+		padding: 10px 0;
 	}
 }
 
-// Meta widget
+// Meta widget.
 .widget-area .widget_meta {
+
 	ul {
 		padding-left: 0;
 
@@ -179,7 +185,7 @@
 	}
 }
 
-// Pages widget
+// Pages widget.
 .widget-area .widget_pages {
 	ul {
 		padding-left: 0;
@@ -199,8 +205,9 @@
 	}
 }
 
-// Recent comments widget
+// Recent comments widget.
 .widget-area .widget_recent_comments {
+
 	ul {
 		padding-left: 0;
 
@@ -215,8 +222,9 @@
 	}
 }
 
-// Recent posts widget
+// Recent posts widget.
 .widget-area .widget_recent_entries {
+
 	ul {
 		padding-left: 0;
 
@@ -229,28 +237,31 @@
 			}
 
 			.post-date {
+				color: $color__text_meta;
 				display: block;
 				font-size: 0.8em;
-				color: $color__text_meta;
 			}
 		}
 	}
 }
 
-// RSS widget
+// RSS widget.
 .widget-area .widget_rss {
+
 	.widget-title {
+	
 		a {
 			text-decoration: none;
 		}
 	}
+
 	ul {
 		padding-left: 0;
 
 		li {
+			border-bottom: #eee 1px solid;
 			list-style: none;
 			padding: 8px 0;
-			border-bottom: #eee 1px solid;
 
 			a {
 				text-decoration: none;
@@ -260,28 +271,32 @@
 				padding-top: 10px;
 			}
 
-			cite, .rss-date {
+			cite, 
+			.rss-date {
+				color: $color__text_meta;
 				display: block;
 				font-size: 0.8em;
-				color: $color__text_meta;
 				padding-top: 4px;
 			}
 		}
 	}
 }
 
-// Calendar widget
+// Calendar widget.
 .widget-area .widget_calendar {
+
 	a {
 		text-decoration: none;
 	}
 
 	table {
+
 		caption {
 			margin-bottom: 5px;
 		}
 
-		tbody{
+		tbody {
+
 			td {
 				text-align: center;
 
@@ -302,13 +317,11 @@
 	}
 }
 
-// Search widget
+// Search widget.
 .widget-area form[role="search"] {
 
 	input[type="search"] {
 		width: 85%;
-		border: none;
-		padding-left: 0;
 	}
 
 	button[type="submit"] {
