@@ -32,6 +32,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<table class="shop_table shop_table_responsive cart" cellspacing="0">
 			<thead>
 				<tr>
+					<th class="product-thumbnail">&nbsp;</th>
 					<th class="product-name"><?php esc_html_e( 'Product', 'siteorigin-north' ); ?></th>
 					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'siteorigin-north' ); ?></th>
 					<th class="product-price"><?php esc_html_e( 'Price', 'siteorigin-north' ); ?></th>
@@ -98,13 +99,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</td>
 
-							<td class="product-price" data-title="<?php _e( 'Price', 'siteorigin-north' ); ?>">
+							<td class="product-price" data-title="<?php esc_html_e( 'Price', 'siteorigin-north' ); ?>">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 								?>
 							</td>
 
-							<td class="product-subtotal" data-title="<?php _e( 'Total', 'siteorigin-north' ); ?>">
+							<td class="product-subtotal" data-title="<?php esc_html_e( 'Total', 'siteorigin-north' ); ?>">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 								?>
