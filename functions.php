@@ -256,9 +256,9 @@ if ( ! function_exists( 'siteorigin_north_filter_comment_form_default_fields' ) 
  */
 function siteorigin_north_filter_comment_form_default_fields( $fields ){
 	$placeholders = apply_filters( 'siteorigin_north_comment_form_placeholders', array(
-		'author' => __( 'Enter Your Name', 'siteorigin-north' ),
-		'email'  => __( 'Enter Your Email', 'siteorigin-north' ),
-		'url'    => __( 'Your Site URL', 'siteorigin-north' ),
+		'author' => esc_html__( 'Enter Your Name', 'siteorigin-north' ),
+		'email'  => esc_html__( 'Enter Your Email', 'siteorigin-north' ),
+		'url'    => esc_html__( 'Your Site URL', 'siteorigin-north' ),
 	) );
 
 	$default_author = array( '<label for="author"', '<input id="author" ' );
