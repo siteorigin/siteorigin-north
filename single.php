@@ -19,7 +19,7 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'single' );
 			} ?>
 
-			<?php if ( siteorigin_setting('navigation_post') ) : ?>
+			<?php if ( siteorigin_setting( 'navigation_post' ) ) : ?>
 				<?php siteorigin_north_the_post_navigation(); ?>
 			<?php endif; ?>
 
