@@ -212,7 +212,7 @@ function siteorigin_north_scripts() {
 	wp_enqueue_style( 'siteorigin-north-icons', get_template_directory_uri() . '/css/north-icons' . SITEORIGIN_THEME_CSS_PREFIX . '.css', array(), SITEORIGIN_THEME_VERSION );
 
 	// Flexslider
-	wp_enqueue_style( 'siteorigin-north-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
+	wp_enqueue_style( 'siteorigin-north-flexslider', get_template_directory_uri() . '/css/flexslider' . SITEORIGIN_THEME_CSS_PREFIX . '.css' );
 	wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '2.6.3', true );
 
 	// jQuery Transit.
