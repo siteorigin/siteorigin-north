@@ -1146,12 +1146,12 @@ a {
   width: 85%; }
 
 .widget-area form[role="search"] button[type="submit"] {
-  width: 13%;
-  padding: 10px 0; }
+  padding: 10px 0;
+  width: 13%; }
   .widget-area form[role="search"] button[type="submit"] i {
     display: inline-block;
-    width: 100%;
-    text-align: center; }
+    text-align: center;
+    width: 100%; }
 
 /*--------------------------------------------------------------
 # Content
