@@ -409,6 +409,15 @@ function siteorigin_north_settings_init(){
 				),
 			),
 		),
+	) ) );
+}
+endif;
+add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
+
+function siteorigin_north_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
 		'woocommerce' => array(
 			'title'  => __( 'WooCommerce', 'siteorigin-north' ),
 			'fields' => array(
@@ -432,10 +441,11 @@ function siteorigin_north_settings_init(){
 
 			)
 		)
-	) ) );
+	);
+
+	return array_merge( $settings, $wc_settings );
 }
-endif;
-add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
+add_filter( 'siteorigin_north_settings_array', 'siteorigin_north_woocommerce_settings' );
 
 if ( ! function_exists( 'siteorigin_north_font_settings' ) ) :
 /**
