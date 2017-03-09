@@ -488,9 +488,8 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  * @return string
  */
 function siteorigin_north_settings_custom_css( $css ) {
-// Custom CSS Code
-$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/VJ6YKo/sass/style.css ***/
+	// Custom CSS Code
+	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -681,7 +680,7 @@ $css .= '/* style */
 	color: ${fonts_text_medium};
 	margin-top: ${footer_top_margin};
 	}
-	#colophon.sidebar-active {
+	#colophon.footer-active-sidebar {
 	border-top: ${footer_border_width} solid ${footer_border_color};
 	}
 	#colophon .widgets .widget-wrapper {
@@ -785,9 +784,25 @@ $css .= '/* style */
 	#commentform .form-submit input:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
-	}
-	/* woocommerce */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/VJ6YKo/sass/woocommerce.css ***/
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
+
+if ( ! function_exists( 'siteorigin_north_wc_settings_custom_css' ) ) :
+/**
+ * Add custom CSS for the theme woocommerce elements
+ *
+ * @param $css
+ *
+ * @return string
+ */
+function siteorigin_north_wc_settings_custom_css( $css ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
+
+	// Custom WooCommerce CSS Code
+	$css .= '/* woocommerce */
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_light};
 	}
@@ -984,10 +999,11 @@ $css .= '/* style */
 	color: ${branding_accent};
 	.font( ${fonts_details} );
 	}';
+
 	return $css;
 }
 endif;
-add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_wc_settings_custom_css' );
 
 if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
 /**
