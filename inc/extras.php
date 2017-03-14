@@ -29,29 +29,29 @@ function siteorigin_north_body_classes( $classes ) {
 
 	$page_settings = siteorigin_page_setting();
 
-	if( !empty( $page_settings ) ) {
-		if( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
-		if( !empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
+	if ( ! empty( $page_settings ) ) {
+		if ( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if ( !empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
 
-		if( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
-		if( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
-		if( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
-		if( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
+		if ( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
+		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
+		if ( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if ( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
-	if( wp_is_mobile() ) {
+	if ( wp_is_mobile() ) {
 		$classes[] = 'is-mobile-device';
 	}
 
-	if( ! is_active_sidebar( 'main-sidebar' ) ) {
+	if ( ! is_active_sidebar( 'main-sidebar' ) ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
-	if( siteorigin_setting( 'navigation_sticky' ) ) {
+	if ( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
 	}
 
-	if( ! siteorigin_setting( 'masthead_text_above' ) ) {
+	if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
 		$classes[] = 'no-topbar';
 	}
 
