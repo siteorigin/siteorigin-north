@@ -146,6 +146,29 @@ function siteorigin_north_content_width() {
 endif;
 add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
 
+if ( ! function_exists( 'siteorigin_north_post_class_filter' ) ) :
+/**
+* Filter post classes as required.
+* @link https://codex.wordpress.org/Function_Reference/post_class.
+*/
+function siteorigin_north_post_class_filter( $classes ) {
+	$classes[] = 'post';
+
+	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482.
+	if ( is_page() ) {
+		$class_key = array_search( 'hentry', $classes );
+
+		if ( $class_key !== false) {
+			unset( $classes[ $class_key ] );
+		}
+	}
+
+	$classes = array_unique( $classes );
+	return $classes;
+}
+endif;
+add_filter( 'post_class', 'siteorigin_north_post_class_filter' );
+
 if ( ! function_exists( 'siteorigin_north_disable_responsive' ) ) :
 /**
  * Disable responsive layout.
