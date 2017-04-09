@@ -99,9 +99,19 @@
   padding-top: 8px; }
 
 .woocommerce #main ul.products li.product {
-  margin: 0 3.8% 2.992em 0;
-  width: 30.8%;
   text-align: center; }
+  .wc-columns-2.woocommerce #main ul.products li.product {
+    margin: 0 5% 2.992em 0;
+    width: 47.5%; }
+  .wc-columns-3.woocommerce #main ul.products li.product {
+    margin: 0 3.8% 2.992em 0;
+    width: 30.8%; }
+  .wc-columns-4.woocommerce #main ul.products li.product {
+    margin: 0 3.333% 2.992em 0;
+    width: 22.5%; }
+  .wc-columns-5.woocommerce #main ul.products li.product {
+    margin: 0 2.9% 2.992em 0;
+    width: 17.68%; }
   @media (max-width: 768px) {
     body.responsive.woocommerce #main ul.products li.product {
       width: 48%;
