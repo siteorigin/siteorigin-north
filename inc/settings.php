@@ -419,12 +419,13 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 
 	$wc_settings = array(
 		'woocommerce' => array(
-			'title'  => __( 'WooCommerce', 'siteorigin-north' ),
+			'title'  => esc_html__( 'WooCommerce', 'siteorigin-north' ),
 			'fields' => array(
 
 				'archive_columns' => array(
 					'type' => 'range',
-					'label' => esc_html__( 'Number of columns on archive pages.', 'siteorigin-north' ),
+					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-north' ),
+					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-north' ),
 					'min' => 2,
 					'max' => 5,
 					'step' => 1
@@ -432,19 +433,19 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 
 				'display_cart' => array(
 					'type'        => 'checkbox',
-					'label'       => __( 'Display Cart', 'siteorigin-north' ),
-					'description' => __( 'Display WooCommerce cart in the main menu', 'siteorigin-north' ),
+					'label'       => esc_html__( 'Display Cart', 'siteorigin-north' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu.', 'siteorigin-north' ),
 				),
 
 				'display_checkout_cart' => array(
 					'type'        => 'checkbox',
-					'label'       => __( 'Display Cart in Checkout', 'siteorigin-north' ),
-					'description' => __( 'Display WooCommerce cart in the main menu on cart and checkout page', 'siteorigin-north' ),
+					'label'       => esc_html__( 'Display Cart in Checkout', 'siteorigin-north' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu on cart and checkout page.', 'siteorigin-north' ),
 				),
 
 				'display_quick_view' => array(
 					'type'        => 'checkbox',
-					'label'       => __( 'Display Quick View button', 'siteorigin-north' ),
+					'label'       => esc_html__( 'Display Quick View button', 'siteorigin-north' ),
 				)
 
 			)
