@@ -422,6 +422,14 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 			'title'  => __( 'WooCommerce', 'siteorigin-north' ),
 			'fields' => array(
 
+				'archive_columns' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of columns on archive pages.', 'siteorigin-north' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1
+				),
+
 				'display_cart' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Cart', 'siteorigin-north' ),
@@ -1170,6 +1178,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_margin']       = '30px';
 
 	// WooCommerce defaults
+	$defaults['woocommerce_archive_columns']       = 3;
 	$defaults['woocommerce_display_cart']          = true;
 	$defaults['woocommerce_display_checkout_cart'] = false;
 	$defaults['woocommerce_display_quick_view']    = false;
