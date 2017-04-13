@@ -2,12 +2,13 @@
 
 View full release information on [Github](https://github.com/siteorigin/siteorigin-north/releases).
 
-= 1.3.5 - 13 April 2017 =
+= 1.3.5 - 14 April 2017 =
 * Fixed top bar widget area overlap bug. Improved styling.
 * Display WooCommerce settings and output WooCommerce CSS only when plugin is active.
 * Remove hentry from pages to solve structured content bug.
 * Updated bundled WooCommerce template files for WooCommerce 3.0 update.
 * Added new WooCommerce setting for number of product columns on shop and archive pages.
+* Add support for WooCommerce gallery lightbox.
 
 = 1.3.4 - 14 March 2017 =
 * Fixed top bar overlap when widget area in use.
