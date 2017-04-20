@@ -93,6 +93,8 @@ function siteorigin_north_setup() {
 	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
