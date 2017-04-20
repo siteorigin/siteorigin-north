@@ -90,8 +90,11 @@ function siteorigin_north_setup() {
 	add_filter( 'term_description', 'shortcode_unautop');
 	add_filter( 'term_description', 'do_shortcode' );
 
-	// This theme supports WooCommerce
+	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
@@ -145,6 +148,29 @@ function siteorigin_north_content_width() {
 }
 endif;
 add_action( 'after_setup_theme', 'siteorigin_north_content_width', 0 );
+
+if ( ! function_exists( 'siteorigin_north_post_class_filter' ) ) :
+/**
+* Filter post classes as required.
+* @link https://codex.wordpress.org/Function_Reference/post_class.
+*/
+function siteorigin_north_post_class_filter( $classes ) {
+	$classes[] = 'post';
+
+	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482.
+	if ( is_page() ) {
+		$class_key = array_search( 'hentry', $classes );
+
+		if ( $class_key !== false) {
+			unset( $classes[ $class_key ] );
+		}
+	}
+
+	$classes = array_unique( $classes );
+	return $classes;
+}
+endif;
+add_filter( 'post_class', 'siteorigin_north_post_class_filter' );
 
 if ( ! function_exists( 'siteorigin_north_disable_responsive' ) ) :
 /**

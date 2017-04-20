@@ -52,6 +52,23 @@
 		width: 42%;
 		float: left;
 
+		.woocommerce-product-gallery__trigger {
+			top: 1em;
+		}
+
+		.flex-control-thumbs {
+			margin-top: 15px;
+
+			li {
+				margin: 0 1.5% 1.5% 0;
+				width: 23.875%;
+
+				&:nth-child(4n) {
+					margin-right: 0;
+				}
+			}
+		}
+
 		@media (max-width: 768px) {
 			@at-root body.responsive#{&} {
 				width: 100%;

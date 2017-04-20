@@ -158,7 +158,8 @@
 
 	#topbar-widgets {
 		@include clearfix;
-		padding: $masthead__top_padding 0;
+		padding-top: $masthead__top_padding;
+		padding-bottom: $masthead__top_padding; 
 
 		.widgets {
 
@@ -180,8 +181,13 @@
 
 				@media (max-width: 768px) {
 					float: none;
-					margin: 0 0 4em;
+					margin: 0 0 10px;
 					width: 100% !important;
+				}
+
+				.widget-title {
+					font-size: 1.1em;
+					margin-top: 0; 
 				}
 			}
 		}

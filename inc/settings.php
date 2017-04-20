@@ -409,33 +409,52 @@ function siteorigin_north_settings_init(){
 				),
 			),
 		),
-		'woocommerce' => array(
-			'title'  => __( 'WooCommerce', 'siteorigin-north' ),
-			'fields' => array(
-
-				'display_cart' => array(
-					'type'        => 'checkbox',
-					'label'       => __( 'Display Cart', 'siteorigin-north' ),
-					'description' => __( 'Display WooCommerce cart in the main menu', 'siteorigin-north' ),
-				),
-
-				'display_checkout_cart' => array(
-					'type'        => 'checkbox',
-					'label'       => __( 'Display Cart in Checkout', 'siteorigin-north' ),
-					'description' => __( 'Display WooCommerce cart in the main menu on cart and checkout page', 'siteorigin-north' ),
-				),
-
-				'display_quick_view' => array(
-					'type'        => 'checkbox',
-					'label'       => __( 'Display Quick View button', 'siteorigin-north' ),
-				)
-
-			)
-		)
 	) ) );
 }
 endif;
 add_action('siteorigin_settings_init', 'siteorigin_north_settings_init');
+
+function siteorigin_north_woocommerce_settings( $settings ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+
+	$wc_settings = array(
+		'woocommerce' => array(
+			'title'  => esc_html__( 'WooCommerce', 'siteorigin-north' ),
+			'fields' => array(
+
+				'archive_columns' => array(
+					'type' => 'range',
+					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-north' ),
+					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-north' ),
+					'min' => 2,
+					'max' => 5,
+					'step' => 1
+				),
+
+				'display_cart' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Display Cart', 'siteorigin-north' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu.', 'siteorigin-north' ),
+				),
+
+				'display_checkout_cart' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Display Cart in Checkout', 'siteorigin-north' ),
+					'description' => esc_html__( 'Display WooCommerce cart in the main menu on cart and checkout page.', 'siteorigin-north' ),
+				),
+
+				'display_quick_view' => array(
+					'type'        => 'checkbox',
+					'label'       => esc_html__( 'Display Quick View button', 'siteorigin-north' ),
+				)
+
+			)
+		)
+	);
+
+	return array_merge( $settings, $wc_settings );
+}
+add_filter( 'siteorigin_north_settings_array', 'siteorigin_north_woocommerce_settings' );
 
 if ( ! function_exists( 'siteorigin_north_font_settings' ) ) :
 /**
@@ -488,9 +507,8 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  * @return string
  */
 function siteorigin_north_settings_custom_css( $css ) {
-// Custom CSS Code
-$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/VJ6YKo/sass/style.css ***/
+	// Custom CSS Code
+	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -681,7 +699,7 @@ $css .= '/* style */
 	color: ${fonts_text_medium};
 	margin-top: ${footer_top_margin};
 	}
-	#colophon.sidebar-active {
+	#colophon.footer-active-sidebar {
 	border-top: ${footer_border_width} solid ${footer_border_color};
 	}
 	#colophon .widgets .widget-wrapper {
@@ -785,9 +803,25 @@ $css .= '/* style */
 	#commentform .form-submit input:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
-	}
-	/* woocommerce */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/VJ6YKo/sass/woocommerce.css ***/
+	}';
+	return $css;
+}
+endif;
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
+
+if ( ! function_exists( 'siteorigin_north_wc_settings_custom_css' ) ) :
+/**
+ * Add custom CSS for the theme woocommerce elements
+ *
+ * @param $css
+ *
+ * @return string
+ */
+function siteorigin_north_wc_settings_custom_css( $css ) {
+	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
+
+	// Custom WooCommerce CSS Code
+	$css .= '/* woocommerce */
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_light};
 	}
@@ -984,10 +1018,11 @@ $css .= '/* style */
 	color: ${branding_accent};
 	.font( ${fonts_details} );
 	}';
+
 	return $css;
 }
 endif;
-add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
+add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_wc_settings_custom_css' );
 
 if ( ! function_exists( 'siteorigin_north_menu_breakpoint_css' ) ) :
 /**
@@ -1144,6 +1179,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_margin']       = '30px';
 
 	// WooCommerce defaults
+	$defaults['woocommerce_archive_columns']       = 3;
 	$defaults['woocommerce_display_cart']          = true;
 	$defaults['woocommerce_display_checkout_cart'] = false;
 	$defaults['woocommerce_display_quick_view']    = false;

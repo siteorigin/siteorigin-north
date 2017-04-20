@@ -241,6 +241,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
   color: #292929; }
+  .widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 {
+    color: inherit; }
 
 p {
   margin-bottom: 1.5em; }
@@ -1366,7 +1368,8 @@ a {
   #topbar #topbar-widgets {
     content: "";
     display: table;
-    padding: 10px 0; }
+    padding-top: 10px;
+    padding-bottom: 10px; }
     #topbar #topbar-widgets .widgets.widgets-1 .widget {
       width: 100%; }
     #topbar #topbar-widgets .widgets.widgets-2 .widget {
@@ -1396,8 +1399,11 @@ a {
       @media (max-width: 768px) {
         #topbar #topbar-widgets .widgets .widget {
           float: none;
-          margin: 0 0 4em;
+          margin: 0 0 10px;
           width: 100% !important; } }
+      #topbar #topbar-widgets .widgets .widget .widget-title {
+        font-size: 1.1em;
+        margin-top: 0; }
 
 /*--------------------------------------------------------------
 ## Site Sidebar
@@ -1970,14 +1976,11 @@ a {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .post-pagination,
 .infinite-scroll .woocommerce-result-count,
 .infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
   display: none; }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
   display: block; }
 

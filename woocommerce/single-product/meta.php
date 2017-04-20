@@ -5,7 +5,7 @@
  * @see 	    http://docs.woothemes.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,7 +22,9 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
 	<?php do_action( 'woocommerce_product_meta_start' ); ?>
 
-	<?php echo $product->get_tags( ' ', '<div class="tags-list">', '</div>' ); ?>
+	<?php if ( function_exists( 'wc_get_product_tag_list' ) ) : ?>
+	    <?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<div class="tags-list">', '</div>' ); ?>
+	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 
