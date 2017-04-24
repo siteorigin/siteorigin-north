@@ -11,12 +11,10 @@ article.page, article.post {
 	> *:last-child {
 		margin-bottom: 0;
 	}
-
-	margin-bottom: 80px;
 }
 
-article.page {
-	margin-bottom: 0;
+article.post {
+	margin-bottom: 80px;
 }
 
 .byline,
