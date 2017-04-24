@@ -2,7 +2,7 @@
 	display: block;
 }
 
-.hentry {
+article.page, article.post {
 
 	> *:first-child {
 		margin-top: 0;
@@ -15,7 +15,7 @@
 	margin-bottom: 80px;
 }
 
-.page .hentry {
+article.page {
 	margin-bottom: 0;
 }
 

@@ -1566,14 +1566,14 @@ a {
 .sticky {
   display: block; }
 
-.hentry {
+article.page, article.post {
   margin-bottom: 80px; }
-  .hentry > *:first-child {
+  article.page > *:first-child, article.post > *:first-child {
     margin-top: 0; }
-  .hentry > *:last-child {
+  article.page > *:last-child, article.post > *:last-child {
     margin-bottom: 0; }
 
-.page .hentry {
+article.page {
   margin-bottom: 0; }
 
 .byline,
