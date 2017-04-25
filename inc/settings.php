@@ -691,7 +691,8 @@ function siteorigin_north_settings_custom_css( $css ) {
 	color: ${fonts_text_light};
 	}
 	#topbar #topbar-widgets {
-	padding: ${masthead_top_padding} 0;
+	padding-top: ${masthead_top_padding};
+	padding-bottom: ${masthead_top_padding};
 	}
 	#secondary {
 	color: ${fonts_text_medium};
@@ -723,6 +724,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	#colophon .site-info {
 	border-top: ${footer_border_width} solid ${footer_border_color};
+	color: ${footer_text_color};
 	}
 	.entry-title {
 	color: ${fonts_text_dark};

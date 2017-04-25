@@ -48,6 +48,7 @@ return array(
 		'footer_top_padding' => 'footer__top_padding',
 		'footer_side_padding' => 'footer__side_padding',
 		'footer_top_margin' => 'footer__top_margin',
+		'footer_text_color' => 'footer__text_color',
 
 	),
 	'stylesheets' => array(
