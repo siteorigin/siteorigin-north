@@ -397,8 +397,8 @@ jQuery( function ( $ ) {
 	} );
 
 	// Close search with escape key.
-	$( document ).keyup( function(e) {
-		if ( e.keyCode == 27 ) { // escape key maps to keycode `27`
+	$( document ).keyup( function( e ) {
+		if ( e.keyCode == 27 ) { // Escape key maps to keycode `27`.
 			$( '#close-search.animate-in' ).trigger( 'click' );
 		}
 	} );
