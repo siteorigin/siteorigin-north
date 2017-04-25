@@ -1566,15 +1566,14 @@ a {
 .sticky {
   display: block; }
 
-.hentry {
-  margin-bottom: 80px; }
-  .hentry > *:first-child {
-    margin-top: 0; }
-  .hentry > *:last-child {
-    margin-bottom: 0; }
+article.page > *:first-child, article.post > *:first-child {
+  margin-top: 0; }
 
-.page .hentry {
+article.page > *:last-child, article.post > *:last-child {
   margin-bottom: 0; }
+
+article.post {
+  margin-bottom: 80px; }
 
 .byline,
 .updated:not(.published) {
