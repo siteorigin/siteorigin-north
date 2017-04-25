@@ -2,7 +2,7 @@
 	display: block;
 }
 
-.hentry {
+article.page, article.post {
 
 	> *:first-child {
 		margin-top: 0;
@@ -11,12 +11,10 @@
 	> *:last-child {
 		margin-bottom: 0;
 	}
-
-	margin-bottom: 80px;
 }
 
-.page .hentry {
-	margin-bottom: 0;
+article.post {
+	margin-bottom: 80px;
 }
 
 .byline,
