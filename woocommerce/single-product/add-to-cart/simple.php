@@ -12,13 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product;
+global $product, $woocommerce;
 
 if ( ! $product->is_purchasable() ) {
 	return;
 }
 
-echo wc_get_stock_html( $product );
+if ( version_compare( $woocommerce->version, 3.0, '>' ) ) echo wc_get_stock_html( $product );
 ?>
 
 <?php if ( $product->is_in_stock() ) : ?>
