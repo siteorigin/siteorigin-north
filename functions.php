@@ -90,8 +90,11 @@ function siteorigin_north_setup() {
 	add_filter( 'term_description', 'shortcode_unautop');
 	add_filter( 'term_description', 'do_shortcode' );
 
-	// This theme supports WooCommerce
+	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist

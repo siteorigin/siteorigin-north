@@ -241,6 +241,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
   color: #292929; }
+  .widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 {
+    color: inherit; }
 
 p {
   margin-bottom: 1.5em; }
@@ -1564,15 +1566,14 @@ a {
 .sticky {
   display: block; }
 
-.hentry {
-  margin-bottom: 80px; }
-  .hentry > *:first-child {
-    margin-top: 0; }
-  .hentry > *:last-child {
-    margin-bottom: 0; }
+article.page > *:first-child, article.post > *:first-child {
+  margin-top: 0; }
 
-.page .hentry {
+article.page > *:last-child, article.post > *:last-child {
   margin-bottom: 0; }
+
+article.post {
+  margin-bottom: 80px; }
 
 .byline,
 .updated:not(.published) {

@@ -234,3 +234,11 @@ function siteorigin_north_paypal_icon() {
 }
 add_filter( 'woocommerce_paypal_icon', 'siteorigin_north_paypal_icon' );
 endif;
+
+if ( ! function_exists( 'siteorigin_north_wc_columns' ) ) :
+// Change number of products per row
+function siteorigin_north_wc_columns() {
+	return siteorigin_setting( 'woocommerce_archive_columns' );
+}
+endif;
+add_filter( 'loop_shop_columns', 'siteorigin_north_wc_columns' );

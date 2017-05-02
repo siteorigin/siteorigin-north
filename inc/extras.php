@@ -59,6 +59,10 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'mobile-scroll-to-top';
 	}
 
+	if ( siteorigin_setting( 'woocommerce_archive_columns' ) ) {
+		$classes[] = 'wc-columns-' . siteorigin_setting( 'woocommerce_archive_columns' );
+	}
+
 	return $classes;
 }
 endif;
