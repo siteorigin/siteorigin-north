@@ -172,7 +172,7 @@ if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
 function siteorigin_north_woocommerce_quick_view_button() {
 	global $product;
 	if( siteorigin_setting( 'woocommerce_display_quick_view' ) ) :
-		echo '<a href="#" id="product-id-' . $product->id . '" class="button product-quick-view-button" data-product-id="' . $product->id . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
+		echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
 	endif;
 }
 endif;
