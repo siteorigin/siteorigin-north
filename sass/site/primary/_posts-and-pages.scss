@@ -3,6 +3,7 @@
 }
 
 article.page, article.post {
+	margin-bottom: 80px;
 
 	> *:first-child {
 		margin-top: 0;
@@ -13,8 +14,8 @@ article.page, article.post {
 	}
 }
 
-article.post {
-	margin-bottom: 80px;
+article.page {
+	margin-bottom: 0;
 }
 
 .byline,

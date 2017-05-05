@@ -1566,14 +1566,15 @@ a {
 .sticky {
   display: block; }
 
-article.page > *:first-child, article.post > *:first-child {
-  margin-top: 0; }
-
-article.page > *:last-child, article.post > *:last-child {
-  margin-bottom: 0; }
-
-article.post {
+article.page, article.post {
   margin-bottom: 80px; }
+  article.page > *:first-child, article.post > *:first-child {
+    margin-top: 0; }
+  article.page > *:last-child, article.post > *:last-child {
+    margin-bottom: 0; }
+
+article.page {
+  margin-bottom: 0; }
 
 .byline,
 .updated:not(.published) {
