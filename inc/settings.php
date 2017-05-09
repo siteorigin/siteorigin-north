@@ -420,6 +420,7 @@ function siteorigin_north_settings_init(){
 				'side_padding'     => array(
 					'type'              => 'measurement',
 					'label'             => __( 'Side Padding', 'siteorigin-north' ),
+					'description' 		=> __( "Only applied when footer width is unconstrained.", 'siteorigin-north' ),
 					'live'              => true,
 				),
 				'top_margin'       => array(
