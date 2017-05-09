@@ -1429,6 +1429,8 @@ a {
   margin-top: 30px; }
   #colophon.footer-active-sidebar {
     border-top: 1px solid #d4d4d4; }
+  #colophon a {
+    color: #c75d5d; }
   #colophon .widgets {
     content: "";
     display: table;
@@ -1484,9 +1486,10 @@ a {
           border-bottom: none; } }
   #colophon .site-info {
     border-top: 1px solid #d4d4d4;
-    text-align: center;
+    color: #595959;
+    font-size: 0.9em;
     padding: 15px;
-    font-size: 0.9em; }
+    text-align: center; }
   #colophon.unconstrained-footer .container {
     max-width: none; }
 
@@ -1566,14 +1569,15 @@ a {
 .sticky {
   display: block; }
 
-article.page > *:first-child, article.post > *:first-child {
-  margin-top: 0; }
-
-article.page > *:last-child, article.post > *:last-child {
-  margin-bottom: 0; }
-
-article.post {
+article.page, article.post {
   margin-bottom: 80px; }
+  article.page > *:first-child, article.post > *:first-child {
+    margin-top: 0; }
+  article.page > *:last-child, article.post > *:last-child {
+    margin-bottom: 0; }
+
+article.page {
+  margin-bottom: 0; }
 
 .byline,
 .updated:not(.published) {

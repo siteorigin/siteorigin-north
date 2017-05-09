@@ -372,6 +372,26 @@ function siteorigin_north_settings_init(){
 					'description'       => __( "{sitename} and {year} are your site's name and current year", 'siteorigin-north' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'widget_title_color' => array(
+					'type'  => 'color',
+					'label' => __( 'Widget Title Color', 'siteorigin-north' ),
+					'live'  => true,
+				),				
+				'text_color' => array(
+					'type'  => 'color',
+					'label' => __( 'Text Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'link_color' => array(
+					'type'  => 'color',
+					'label' => __( 'Link Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'link_hover_color' => array(
+					'type'  => 'color',
+					'label' => __( 'Link Hover Color', 'siteorigin-north' ),
+					'live'  => true,
+				),								
 				'constrained'      => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Constrain', 'siteorigin-north' ),
@@ -400,6 +420,7 @@ function siteorigin_north_settings_init(){
 				'side_padding'     => array(
 					'type'              => 'measurement',
 					'label'             => __( 'Side Padding', 'siteorigin-north' ),
+					'description' 		=> __( "Only applied when footer width is unconstrained.", 'siteorigin-north' ),
 					'live'              => true,
 				),
 				'top_margin'       => array(
@@ -507,8 +528,9 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  * @return string
  */
 function siteorigin_north_settings_custom_css( $css ) {
-	// Custom CSS Code
-	$css .= '/* style */
+// Custom CSS Code
+$css .= '/* style */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/wXDs5x/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -686,7 +708,8 @@ function siteorigin_north_settings_custom_css( $css ) {
 	color: ${fonts_text_light};
 	}
 	#topbar #topbar-widgets {
-	padding: ${masthead_top_padding} 0;
+	padding-top: ${masthead_top_padding};
+	padding-bottom: ${masthead_top_padding};
 	}
 	#secondary {
 	color: ${fonts_text_medium};
@@ -696,11 +719,17 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	#colophon {
 	background: ${footer_background_color};
-	color: ${fonts_text_medium};
+	color: ${footer_text_color};
 	margin-top: ${footer_top_margin};
 	}
 	#colophon.footer-active-sidebar {
 	border-top: ${footer_border_width} solid ${footer_border_color};
+	}
+	#colophon a {
+	color: ${footer_link_color};
+	}
+	#colophon a:hover {
+	color: ${footer_link_hover_color};
 	}
 	#colophon .widgets .widget-wrapper {
 	border-right: ${footer_border_width} solid ${footer_border_color};
@@ -709,7 +738,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	padding: ${footer_top_padding} ${footer_side_padding};
 	}
 	#colophon .widgets .widget-title {
-	color: ${fonts_text_dark};
+	color: ${footer_widget_title_color};
 	}
 	@media (max-width: 640px) {
 	body.responsive #colophon .widgets .widget-wrapper {
@@ -718,6 +747,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	#colophon .site-info {
 	border-top: ${footer_border_width} solid ${footer_border_color};
+	color: ${footer_text_color};
 	}
 	.entry-title {
 	color: ${fonts_text_dark};
@@ -1169,14 +1199,18 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['blog_ajax_comments']         = true;
 
 	// Footer defaults
-	$defaults['footer_text']             = __( 'Copyright © {year} {sitename}', 'siteorigin-north' );
-	$defaults['footer_constrained']      = false;
-	$defaults['footer_background_color'] = '#fafafa';
-	$defaults['footer_border_color']     = '#d4d4d4';
-	$defaults['footer_border_width']     = '1px';
-	$defaults['footer_top_padding']      = '40px';
-	$defaults['footer_side_padding']     = '40px';
-	$defaults['footer_top_margin']       = '30px';
+	$defaults['footer_text']             	= __( 'Copyright © {year} {sitename}', 'siteorigin-north' );
+	$defaults['footer_widget_title_color']	= '#292929';	
+	$defaults['footer_text_color']       	= '#595959';
+	$defaults['footer_link_color']       	= '#c75d5d';
+	$defaults['footer_link_hover_color']    = '#a94346';	
+	$defaults['footer_constrained']      	= false;
+	$defaults['footer_background_color'] 	= '#fafafa';
+	$defaults['footer_border_color']     	= '#d4d4d4';
+	$defaults['footer_border_width']     	= '1px';
+	$defaults['footer_top_padding']      	= '40px';
+	$defaults['footer_side_padding']     	= '40px';
+	$defaults['footer_top_margin']       	= '30px';
 
 	// WooCommerce defaults
 	$defaults['woocommerce_archive_columns']       = 3;
