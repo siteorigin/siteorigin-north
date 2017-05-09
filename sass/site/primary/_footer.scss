@@ -1,10 +1,18 @@
 #colophon {
 	background: $footer__background_color;
-	color: $color__text_medium;
+	color: $footer__text_color;
 	margin-top: $footer__top_margin;
 
 	&.footer-active-sidebar {
 		border-top: $footer__border_width solid $footer__border_color;
+	}
+
+	a {
+		color: $footer__link_color;
+		
+		&:hover {
+			color: $footer__link_hover_color; 
+		}
 	}
 
 	.widgets {
@@ -41,7 +49,7 @@
 		}
 
 		.widget-title {
-			color: $color__text_dark;
+			color: $footer__widget_title_color;
 			margin: 0 0 1em 0;
 			font-size: 15px;
 			text-transform: uppercase;

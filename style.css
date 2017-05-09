@@ -1429,6 +1429,8 @@ a {
   margin-top: 30px; }
   #colophon.footer-active-sidebar {
     border-top: 1px solid #d4d4d4; }
+  #colophon a {
+    color: #c75d5d; }
   #colophon .widgets {
     content: "";
     display: table;
