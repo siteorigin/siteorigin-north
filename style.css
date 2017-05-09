@@ -1431,6 +1431,8 @@ a {
     border-top: 1px solid #d4d4d4; }
   #colophon a {
     color: #c75d5d; }
+    #colophon a:hover {
+      color: #a94346; }
   #colophon .widgets {
     content: "";
     display: table;
