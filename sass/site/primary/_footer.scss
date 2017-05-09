@@ -2,7 +2,7 @@
 	background: $footer__background_color;
 	color: $color__text_medium;
 	margin-top: $footer__top_margin;
-	
+
 	&.footer-active-sidebar {
 		border-top: $footer__border_width solid $footer__border_color;
 	}
@@ -11,7 +11,7 @@
 		@include clearfix();
 		overflow: hidden;
 		width: 100%;
-		
+
 		.widget-wrapper {
 			box-sizing: border-box;
 			float: left;
@@ -69,9 +69,10 @@
 
 	.site-info {
 		border-top: $footer__border_width solid $footer__border_color;
-		text-align: center;
-		padding: 15px;
+		color: $footer__text_color;
 		font-size: 0.9em;
+		padding: 15px;
+		text-align: center;
 	}
 
 	&.unconstrained-footer {

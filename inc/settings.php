@@ -372,6 +372,11 @@ function siteorigin_north_settings_init(){
 					'description'       => __( "{sitename} and {year} are your site's name and current year", 'siteorigin-north' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'text_color' => array(
+					'type'  => 'color',
+					'label' => __( 'Footer Text Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
 				'constrained'      => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Constrain', 'siteorigin-north' ),
@@ -686,7 +691,8 @@ function siteorigin_north_settings_custom_css( $css ) {
 	color: ${fonts_text_light};
 	}
 	#topbar #topbar-widgets {
-	padding: ${masthead_top_padding} 0;
+	padding-top: ${masthead_top_padding};
+	padding-bottom: ${masthead_top_padding};
 	}
 	#secondary {
 	color: ${fonts_text_medium};
@@ -718,6 +724,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	#colophon .site-info {
 	border-top: ${footer_border_width} solid ${footer_border_color};
+	color: ${footer_text_color};
 	}
 	.entry-title {
 	color: ${fonts_text_dark};
@@ -1170,6 +1177,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// Footer defaults
 	$defaults['footer_text']             = __( 'Copyright © {year} {sitename}', 'siteorigin-north' );
+	$defaults['footer_text_color']       = '#595959';
 	$defaults['footer_constrained']      = false;
 	$defaults['footer_background_color'] = '#fafafa';
 	$defaults['footer_border_color']     = '#d4d4d4';
