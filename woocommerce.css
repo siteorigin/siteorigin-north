@@ -272,6 +272,9 @@
 .woocommerce.single #content div.product .woocommerce-tabs .panel > *:first-child {
   margin-top: 0; }
 
+.woocommerce.single #content div.product .product_title {
+  line-height: normal; }
+
 .woocommerce.single #content div.product .product-under-title-meta {
   margin-top: -0.5em;
   color: #595959;
