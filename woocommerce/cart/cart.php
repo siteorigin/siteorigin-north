@@ -22,7 +22,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-		<table class="shop_table shop_table_responsive cart" cellspacing="0">
+		<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 			<thead>
 				<tr>
 					<th class="product-thumbnail">&nbsp;</th>
@@ -42,27 +42,28 @@ do_action( 'woocommerce_before_cart' ); ?>
 					$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
 					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 						?>
-						<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 							<td class="product-thumbnail">
 								<?php
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
-									if ( ! $_product->is_visible() ) {
+									if ( ! $product_permalink ) {
 										echo $thumbnail;
 									} else {
-										printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $thumbnail );
+										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
 									}
 								?>
 							</td>
 
 							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'siteorigin-north' ); ?>">
 								<?php
-									if ( ! $_product->is_visible() ) {
-										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
+									if ( ! $product_permalink ) {
+										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
 									} else {
-										echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a class="cart-item-product-name" href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
+										echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a class="cart-item-product-name" href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
 									}
 
 									// Meta data
@@ -107,7 +108,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<td class="product-remove">
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-										'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times; ' . esc_html__( 'delete', 'siteorigin-north' ) .  '</a>',
+										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times; ' . esc_html__( 'delete', 'siteorigin-north' ) .  '</a>',
 										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 										esc_html__( 'Remove this item', 'siteorigin-north' ),
 										esc_attr( $product_id ),
