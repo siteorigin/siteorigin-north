@@ -155,7 +155,15 @@ function siteorigin_north_settings_init(){
 					'label'             => __( 'Sidebar Width', 'siteorigin-north' ),
 					'type'              => 'measurement',
 					'live'              => true,
-				)
+				),
+				'sidebar_position'               => array(
+					'type'    => 'select',
+					'label'   => __( 'Sidebar Position', 'siteorigin-north' ),
+					'options' => array(
+						'right'  => __( 'Right', 'siteorigin-north' ),
+						'left' => __( 'Left', 'siteorigin-north' ),
+					)
+				),
 			)
 		),
 		'masthead'    => array(
@@ -376,7 +384,7 @@ function siteorigin_north_settings_init(){
 					'type'  => 'color',
 					'label' => __( 'Widget Title Color', 'siteorigin-north' ),
 					'live'  => true,
-				),				
+				),
 				'text_color' => array(
 					'type'  => 'color',
 					'label' => __( 'Text Color', 'siteorigin-north' ),
@@ -391,7 +399,7 @@ function siteorigin_north_settings_init(){
 					'type'  => 'color',
 					'label' => __( 'Link Hover Color', 'siteorigin-north' ),
 					'live'  => true,
-				),								
+				),
 				'constrained'      => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Constrain', 'siteorigin-north' ),
@@ -1152,7 +1160,8 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['icons_scroll_to_top'] = false;
 
 	// Double % because values are passed through get_theme_mod so must be escaped for sprintf
-	$defaults['structure_sidebar_width'] = '35%%';
+	$defaults['structure_sidebar_width']    = '35%%';
+	$defaults['structure_sidebar_position'] = 'right';
 
 	// The masthead defaults
 	$defaults['masthead_layout']               = 'default';
@@ -1200,10 +1209,10 @@ function siteorigin_north_settings_defaults( $defaults ){
 
 	// Footer defaults
 	$defaults['footer_text']             	= __( 'Copyright © {year} {sitename}', 'siteorigin-north' );
-	$defaults['footer_widget_title_color']	= '#292929';	
+	$defaults['footer_widget_title_color']	= '#292929';
 	$defaults['footer_text_color']       	= '#595959';
 	$defaults['footer_link_color']       	= '#c75d5d';
-	$defaults['footer_link_hover_color']    = '#a94346';	
+	$defaults['footer_link_hover_color']    = '#a94346';
 	$defaults['footer_constrained']      	= false;
 	$defaults['footer_background_color'] 	= '#fafafa';
 	$defaults['footer_border_color']     	= '#d4d4d4';

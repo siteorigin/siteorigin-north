@@ -47,6 +47,10 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'no-active-sidebar';
 	}
 
+	if ( siteorigin_setting( 'structure_sidebar_position' ) == 'left' ) {
+		$classes[] = 'layout-sidebar-left';
+	}
+
 	if ( siteorigin_setting( 'navigation_sticky' ) ) {
 		$classes[] = 'sticky-menu';
 	}
