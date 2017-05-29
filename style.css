@@ -1203,6 +1203,28 @@ a {
     width: 100%; } }
 
 /*--------------------------------------------------------------
+## Left Sidebar Layout
+--------------------------------------------------------------*/
+.layout-sidebar-left .content-area {
+  float: right;
+  margin: 0 0 0 -35%;
+  width: 100%; }
+
+.layout-sidebar-left .site-main {
+  margin: 0 0 0 35%; }
+
+.layout-sidebar-left .site-content .widget-area {
+  float: left;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 40px;
+  width: 35%; }
+
+.layout-sidebar-left .site-footer {
+  clear: both;
+  width: 100%; }
+
+/*--------------------------------------------------------------
 ## General Layout
 --------------------------------------------------------------*/
 .container {
