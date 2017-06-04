@@ -537,8 +537,11 @@
     color: #fff;
     font-size: 9px; }
   .main-navigation .shopping-cart .shopping-cart-dropdown {
-    width: 350px;
-    right: 0; }
+    right: 0;
+    width: 350px; }
+    .main-navigation .shopping-cart .shopping-cart-dropdown .product_list_widget {
+      max-height: 60vh;
+      overflow-y: scroll; }
     .main-navigation .shopping-cart .shopping-cart-dropdown .mini_cart_item a {
       white-space: normal; }
 

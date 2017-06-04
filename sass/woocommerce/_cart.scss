@@ -28,7 +28,7 @@
 
 	table {
 
-		th, 
+		th,
 		td {
 			border: none;
 		}
@@ -67,7 +67,7 @@
 
 			td.product-name dl.variation {
 				font-size: 13px;
-				
+
 				dt {
 					padding: 0;
 				}
@@ -173,7 +173,7 @@
 					border: 1px solid $color__primary_accent;
 					color: #fff;
 					text-transform: uppercase;
-					
+
 					@media (max-width: 768px) {
 						text-align: center;
 					}
@@ -193,10 +193,10 @@
 
 					td.product-thumbnail {
 						display: block !important;
-						padding-top: 15px; 
-						
+						padding-top: 15px;
+
 						&:before {
-							content: ""; 
+							content: "";
 						}
 
 						img {
@@ -204,10 +204,10 @@
 							max-width: 60px;
 						}
 					}
-				
+
 					.product-remove {
-						padding-bottom: 15px; 
-						
+						padding-bottom: 15px;
+
 						.remove {
 							float: none;
 							margin-bottom: 0;
@@ -319,8 +319,13 @@
 		}
 
 		.shopping-cart-dropdown {
-			width: 350px;
 			right: 0;
+			width: 350px;
+
+			.product_list_widget {
+				max-height: 60vh;
+				overflow-y: scroll;
+			}
 
 			.mini_cart_item a {
 				white-space: normal;
