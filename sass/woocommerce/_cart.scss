@@ -350,6 +350,7 @@
 
 			a {
 				padding: 0 !important;
+				text-decoration: none;
 			}
 
 			.mini_cart_img {
@@ -361,10 +362,11 @@
 				margin-left: 80px;
 
 				.mini_cart_product {
+					color: $color__text_dark;
+					font-weight: bold;
 					line-height: 1.5em;
 					margin: 0 0 7px 0;
-					font-weight: bold;
-					color: $color__text_dark;
+					padding-right: 23px;
 				}
 
 				.mini_cart_cost {
@@ -375,6 +377,19 @@
 
 			&:last-child {
 				margin-bottom: 0;
+			}
+
+			.remove {
+				color: $color__woo-secondary !important;
+				min-width: 15px;
+				position: absolute;
+				right: 0;
+				top: 0;
+
+				&:hover {
+					background: transparent;
+					color: $color__primary_accent_dark !important;
+				}
 			}
 		}
 	}

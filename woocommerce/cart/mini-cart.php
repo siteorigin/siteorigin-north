@@ -21,6 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( ! WC()->cart->is_empty() ) : ?>
 
+		<?php do_action( 'woocommerce_before_mini_cart_contents' ); ?>
+
 		<?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -42,6 +44,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 							<p class="mini_cart_cost"><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?></p>
 						</div>
+						<?php
+						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+							__( 'Remove this item', 'woocommerce' ),
+							esc_attr( $product_id ),
+							esc_attr( $_product->get_sku() )
+						), $cart_item_key );
+						?>
 					<?php else : ?>
 						<a href="<?php echo esc_url( $_product->get_permalink( $cart_item ) ); ?>">
 							<div class="mini_cart_img">
@@ -53,11 +64,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<p class="mini_cart_cost"><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?></p>
 							</div>
 						</a>
+						<?php
+						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+							__( 'Remove this item', 'woocommerce' ),
+							esc_attr( $product_id ),
+							esc_attr( $_product->get_sku() )
+						), $cart_item_key );
+						?>
 					<?php endif; ?>
 				</div>
 				<?php
 			}
 		} ?>
+
+		<?php do_action( 'woocommerce_mini_cart_contents' ); ?>
 
 	<?php else : ?>
 
