@@ -324,7 +324,8 @@
 
 			.product_list_widget {
 				max-height: 60vh;
-				overflow-y: scroll;
+				overflow-y: auto;
+				padding: 2px 0;
 			}
 
 			.mini_cart_item a {
