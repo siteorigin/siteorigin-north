@@ -1224,6 +1224,14 @@ a {
   clear: both;
   width: 100%; }
 
+.layout-sidebar-left.no-active-sidebar .content-area {
+  float: none;
+  width: auto;
+  margin: 0; }
+
+.layout-sidebar-left.no-active-sidebar .site-main {
+  margin: 0; }
+
 /*--------------------------------------------------------------
 ## General Layout
 --------------------------------------------------------------*/
