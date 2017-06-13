@@ -21,4 +21,18 @@
 		clear: both;
 		width: $size__site-main;
 	}
+
+	&.no-active-sidebar {
+
+		.content-area {
+			float: none;
+			width: auto;
+			margin: 0;
+		}
+
+		.site-main {
+			margin: 0;
+		}
+
+	}
 }
