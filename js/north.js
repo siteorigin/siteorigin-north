@@ -263,14 +263,14 @@ jQuery( function ( $ ) {
 			}
 		}
 	};
+
 	sttWindowScroll();
 	$( window ).scroll( sttWindowScroll );
 	$( '#scroll-to-top' ).click( function () {
 		$( 'html,body' ).animate( {scrollTop: 0} );
 	} );
 
-	// Now lets do the sticky menu
-
+	// Now lets do the sticky menu.
 	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 		var $mhs = false,
 			mhTop = false,
@@ -322,8 +322,19 @@ jQuery( function ( $ ) {
 
 		}
 		smSetup();
-
 		$( window ).resize( smSetup ).scroll( smSetup );
+
+		// Sticky header shadow.
+		var smShadow = function() {
+            if ( $( window ).scrollTop() > 0 ) {
+                $( $mh ).addClass( 'floating' );
+            }
+            else {
+                $( $mh ).removeClass( 'floating' );
+            }			
+		};
+		smShadow();
+        $( window ).scroll( smShadow );		
 
 		var mhPadding = {
 			top: parseInt( $mh.css( 'padding-top' ) ),
@@ -360,7 +371,7 @@ jQuery( function ( $ ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * scale,
 						'padding-bottom': mhPadding.bottom * scale
-					} ).addClass( 'floating' );
+					} );
 				}
 				else {
 					if ( ! $img.length ) {
@@ -370,7 +381,7 @@ jQuery( function ( $ ) {
 					$mh.css( {
 						'padding-top': mhPadding.top,
 						'padding-bottom': mhPadding.bottom
-					} ).removeClass( 'floating' );
+					} );
 				}
 			};
 			smResizeLogo();
