@@ -952,4 +952,12 @@
     .woocommerce .woocommerce-MyAccount-navigation ul li a {
       text-decoration: none; }
 
+/*--------------------------------------------------------------
+# WooCommerce Notifications
+--------------------------------------------------------------*/
+.entry-content .woocommerce-message,
+.entry-content .woocommerce-error,
+.entry-content .woocommerce-info {
+  padding: 1em 2em 1em 3.5em; }
+
 /*# sourceMappingURL=sass/maps/woocommerce.css.map */
