@@ -672,6 +672,9 @@ a {
     display: inline-block; }
     .main-navigation #mega-menu-wrap-primary .mega-sub-menu li {
       min-width: auto; }
+    .main-navigation #mega-menu-wrap-primary ul ul a {
+      white-space: normal;
+      width: auto !important; }
 
 #header-search {
   display: none;

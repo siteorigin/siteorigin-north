@@ -249,6 +249,11 @@
 				min-width: auto;
 			}
 		}
+
+		ul ul a {
+			white-space: normal;
+			width: auto !important;
+		}
 	}
 }
 
