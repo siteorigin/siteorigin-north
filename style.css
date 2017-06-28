@@ -668,6 +668,8 @@ a {
         fill: #898989; }
       .main-navigation .north-search-icon .svg-icon-search:hover path {
         fill: #595959; }
+  .main-navigation #mega-menu-wrap-primary {
+    display: inline-block; }
 
 #header-search {
   display: none;
