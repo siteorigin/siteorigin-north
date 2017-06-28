@@ -96,11 +96,10 @@
 	}
 
 	&.floating {
-		box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+		box-shadow: 0 1px 1px rgba(0, 0, 0 , .075);
 	}
 
-	// All the different layouts
-
+	// Header layouts.
 	&.layout-centered {
 
 		.container-inner {
@@ -126,6 +125,7 @@
 			display: block;
 		}
 	}
+
 	body.responsive & {
 		min-width: 0;
 	}
