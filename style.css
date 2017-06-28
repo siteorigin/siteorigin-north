@@ -670,6 +670,8 @@ a {
         fill: #595959; }
   .main-navigation #mega-menu-wrap-primary {
     display: inline-block; }
+    .main-navigation #mega-menu-wrap-primary .mega-sub-menu li {
+      min-width: auto; }
 
 #header-search {
   display: none;

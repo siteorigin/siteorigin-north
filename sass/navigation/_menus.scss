@@ -243,6 +243,12 @@
 	// Max Mega menu
 	#mega-menu-wrap-primary {
 		display: inline-block;
+
+		.mega-sub-menu {
+			li {
+				min-width: auto;
+			}
+		}
 	}
 }
 
