@@ -825,21 +825,11 @@
     .widget_layered_nav_filters ul li.chosen a:hover {
       background: #a94346; }
 
-.widget_recently_viewed_products ul,
-.widget_products ul,
-.widget_recent_reviews ul,
-.widget_top_rated_products ul {
-  padding-left: 0; }
-  .widget_recently_viewed_products ul li a,
-  .widget_products ul li a,
-  .widget_recent_reviews ul li a,
-  .widget_top_rated_products ul li a {
-    text-decoration: none; }
-  .widget_recently_viewed_products ul li img,
-  .widget_products ul li img,
-  .widget_recent_reviews ul li img,
-  .widget_top_rated_products ul li img {
-    width: 50px; }
+.widget_recently_viewed_products ul li a,
+.widget_products ul li a,
+.widget_recent_reviews ul li a,
+.widget_top_rated_products ul li a {
+  text-decoration: none; }
 
 .widget_product_search form[role="search"] input[type="search"] {
   border: none;
