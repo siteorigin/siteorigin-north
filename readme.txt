@@ -38,6 +38,7 @@ SiteOrigin North includes support for:
 * Breadcrumb NavXT
 * Jetpack Infinite Scroll
 * Jetpack Responsive Videos
+* Max Mega Menu
 * SiteOrigin CSS
 * SiteOrigin Page Builder
 * SiteOrigin Widgets Bundle 
