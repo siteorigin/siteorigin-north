@@ -154,8 +154,12 @@
 .widget_recent_reviews,
 .widget_top_rated_products {
 
-	ul li a {
+	ul.product_list_widget li a {
 		text-decoration: none;
+		
+		img {
+			width: 50px; 
+		}
 	}
 }
 
