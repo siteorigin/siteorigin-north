@@ -55,22 +55,36 @@
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 
-					<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>
+						<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>
 
-							<a href="#menu" id="mobile-menu-button">
-								<?php siteorigin_north_display_icon( 'menu' ) ?>
-								<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
-									<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
-									<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
-								<?php endif; ?>
-							</a>
 
-							<?php
-							wp_nav_menu( array(
-								'theme_location' => 'primary',
-								'menu_id' => 'primary-menu'
-							) );
-							?>
+
+							<?php if ( function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ) ) : ?>
+
+								<?php
+								wp_nav_menu( array(
+									'theme_location' => 'primary'
+								) );
+								?>
+
+							<?php else: ?>
+
+								<a href="#menu" id="mobile-menu-button">
+									<?php siteorigin_north_display_icon( 'menu' ) ?>
+									<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
+										<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
+										<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
+									<?php endif; ?>
+								</a>
+
+								<?php
+								wp_nav_menu( array(
+									'theme_location' => 'primary',
+									'menu_id' => 'primary-menu'
+								) );
+								?>
+
+							<?php endif; ?>
 
 							<?php if ( class_exists( 'Woocommerce' ) ) : ?>
 								<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
