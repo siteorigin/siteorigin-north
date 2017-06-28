@@ -1,12 +1,10 @@
-// Shopping cart
+// Shopping cart.
 .widget_shopping_cart {
 	.widget_shopping_cart_content {
 		padding: 0;
 
-		.mini_cart_item {
-			a {
-				text-decoration: none;
-			}
+		.mini_cart_item a {
+			text-decoration: none;
 		}
 
 		.total,
@@ -16,7 +14,8 @@
 	}
 }
 
-// Pricing filter
+// Pricing filter.
+
 .widget_price_filter {
 	.ui-slider {
 		background-color: $color__primary_accent;
@@ -45,27 +44,23 @@
 	}
 }
 
-// Product categories
+// Product categories.
 .widget_product_categories {
-	ul {
-		padding-left: 0;
+	ul li {
+		list-style: none;
+		padding: 8px 0;
 
-		li {
-			list-style: none;
-			padding: 8px 0;
+		&:before {
+			content: "-";
+		}
 
-			&:before {
-				content: "-";
-			}
+		a {
+			text-decoration: none;
+			padding-left: 10px;
+		}
 
-			a {
-				text-decoration: none;
-				padding-left: 10px;
-			}
-
-			ul.children {
-				padding-left: 20px;
-			}
+		ul.children {
+			padding-left: 20px;
 		}
 	}
 
@@ -77,6 +72,7 @@
 	}
 }
 
+// Layered nav.
 .widget_layered_nav {
 	ul {
 		padding-left: 0;
@@ -122,6 +118,7 @@
 	}
 }
 
+// Layered nav filters.
 .widget_layered_nav_filters {
 	ul {
 		padding-left: 0;
@@ -151,6 +148,7 @@
 	}
 }
 
+// Recently viewed products, products, reviews and top rated products.
 .widget_recently_viewed_products,
 .widget_products,
 .widget_recent_reviews,
@@ -170,23 +168,24 @@
 	}
 }
 
+// Product search.
 .widget_product_search {
 	form[role="search"] {
 
 		input[type="search"] {
-			width: 85%;
 			border: none;
 			padding-left: 0;
+			width: 85%;
 		}
 
 		button[type="submit"] {
-			width: 13%;
 			padding: 10px 0;
+			width: 13%;
 
 			i {
 				display: inline-block;
-				width: 100%;
 				text-align: center;
+				width: 100%;
 			}
 		}
 	}
