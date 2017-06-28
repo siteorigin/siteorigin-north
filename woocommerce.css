@@ -786,43 +786,43 @@
   background: #fff;
   outline: none; }
 
-.widget_layered_nav ul {
+.woocommerce .widget-area .widget_layered_nav ul {
   padding-left: 0; }
-  .widget_layered_nav ul li a {
+  .woocommerce .widget-area .widget_layered_nav ul li a {
     padding: 8px 35px 8px 10px;
     display: inline-block;
     text-decoration: none; }
-  .widget_layered_nav ul li .count {
+  .woocommerce .widget-area .widget_layered_nav ul li .count {
     position: relative;
     left: -35px; }
-  .widget_layered_nav ul li.chosen a {
+  .woocommerce .widget-area .widget_layered_nav ul li.chosen a {
     color: #fff;
     background: #c75d5d; }
-    .widget_layered_nav ul li.chosen a:before {
+    .woocommerce .widget-area .widget_layered_nav ul li.chosen a:before {
       color: #fff; }
-    .widget_layered_nav ul li.chosen a:hover {
+    .woocommerce .widget-area .widget_layered_nav ul li.chosen a:hover {
       background: #a94346; }
-  .widget_layered_nav ul li.chosen .count {
+  .woocommerce .widget-area .widget_layered_nav ul li.chosen .count {
     color: #fff; }
 
-.widget_layered_nav select {
+.woocommerce .widget-area .widget_layered_nav select {
   font-size: 1.1em;
   border-radius: 0;
   background: #fff;
   outline: none; }
 
-.widget_layered_nav_filters ul {
+.woocommerce .widget-area .widget_layered_nav_filters ul {
   padding-left: 0; }
-  .widget_layered_nav_filters ul li a {
+  .woocommerce .widget-area .widget_layered_nav_filters ul li a {
     padding: 8px 10px;
     display: inline-block;
     text-decoration: none; }
-  .widget_layered_nav_filters ul li.chosen a {
+  .woocommerce .widget-area .widget_layered_nav_filters ul li.chosen a {
     color: #fff;
     background: #c75d5d; }
-    .widget_layered_nav_filters ul li.chosen a:before {
+    .woocommerce .widget-area .widget_layered_nav_filters ul li.chosen a:before {
       color: #fff; }
-    .widget_layered_nav_filters ul li.chosen a:hover {
+    .woocommerce .widget-area .widget_layered_nav_filters ul li.chosen a:hover {
       background: #a94346; }
 
 .widget_recently_viewed_products ul.product_list_widget li a,
