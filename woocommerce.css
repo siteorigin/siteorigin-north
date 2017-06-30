@@ -749,7 +749,7 @@
     text-decoration: none; }
   .widget_shopping_cart .widget_shopping_cart_content .total,
   .widget_shopping_cart .widget_shopping_cart_content .buttons {
-    text-align: left; }
+    text-align: center; }
 
 .widget_price_filter .ui-slider {
   background-color: #c75d5d; }
