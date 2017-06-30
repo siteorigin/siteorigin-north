@@ -546,53 +546,53 @@
     .main-navigation .shopping-cart .shopping-cart-dropdown .mini_cart_item a {
       white-space: normal; }
 
-.widget_shopping_cart_content {
-  padding: 15px; }
-  .widget_shopping_cart_content .cart_list .empty {
+.widget_shopping_cart .widget_shopping_cart_content {
+  padding: 15px !important; }
+  .widget_shopping_cart .widget_shopping_cart_content .cart_list .empty {
     margin: 15px 15px; }
-  .widget_shopping_cart_content .cart_list .mini_cart_item {
+  .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item {
     position: relative;
     margin: 0 0 15px 0;
     box-sizing: border-box; }
-    .widget_shopping_cart_content .cart_list .mini_cart_item a {
+    .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item a {
       padding: 0 !important;
       text-decoration: none; }
-    .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_img {
+    .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_img {
       width: 65px;
       float: left; }
-    .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details {
+    .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details {
       margin-left: 80px; }
-      .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
+      .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
         color: #292929;
         font-weight: bold;
         line-height: 1.5em;
         margin: 0 0 7px 0;
         padding-right: 23px; }
-      .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_cost {
+      .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_cost {
         margin: 0;
         color: #c75d5d; }
-    .widget_shopping_cart_content .cart_list .mini_cart_item:last-child {
+    .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item:last-child {
       margin-bottom: 0; }
-    .widget_shopping_cart_content .cart_list .mini_cart_item .remove {
+    .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .remove {
       color: #ebe9eb !important;
       min-width: 15px;
       position: absolute;
       right: 0;
       top: 0; }
-      .widget_shopping_cart_content .cart_list .mini_cart_item .remove:hover {
+      .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .remove:hover {
         background: transparent;
         color: #a94346 !important; }
-  .widget_shopping_cart_content .total {
+  .widget_shopping_cart .widget_shopping_cart_content .total {
     border-top: none !important;
     text-align: center;
     margin: 10px 0 0 0;
     padding-top: 0; }
-  .widget_shopping_cart_content .buttons {
+  .widget_shopping_cart .widget_shopping_cart_content .buttons {
     text-align: center;
     text-transform: uppercase;
     margin: 10px 0 0 0;
     padding-top: 0; }
-    .widget_shopping_cart_content .buttons a {
+    .widget_shopping_cart .widget_shopping_cart_content .buttons a {
       font-weight: normal;
       border-radius: 0px;
       font-size: 0.85em;
@@ -607,15 +607,15 @@
       -moz-transition: 0.085s;
       transition: 0.085s;
       min-width: inherit; }
-      .widget_shopping_cart_content .buttons a.mini_cart_view {
+      .widget_shopping_cart .widget_shopping_cart_content .buttons a.mini_cart_view {
         background: transparent;
         border: 1px solid #292929;
         color: #292929; }
-      .widget_shopping_cart_content .buttons a.mini_cart_checkout {
+      .widget_shopping_cart .widget_shopping_cart_content .buttons a.mini_cart_checkout {
         background: #c75d5d;
         border: 1px solid #c75d5d;
         color: #fff; }
-      .widget_shopping_cart_content .buttons a:hover {
+      .widget_shopping_cart .widget_shopping_cart_content .buttons a:hover {
         background: #a94346;
         color: #fff;
         border-color: #a94346;
