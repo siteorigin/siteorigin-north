@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.5.0
+ * @version     3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 
-<div class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
+<div class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 
 	<?php if ( ! WC()->cart->is_empty() ) : ?>
 
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$thumbnail     = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 				$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 				?>
-				<div class="<?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item clear', $cart_item, $cart_item_key ) ); ?>">
+				<div class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item clear', $cart_item, $cart_item_key ) ); ?>">
 
 					<?php if ( ! $_product->is_visible() ) : ?>
 						<div class="mini_cart_img">
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'woocommerce' ),
+							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'woocommerce' ),
+							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
@@ -91,11 +91,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<p class="total"><strong><?php _e( 'Subtotal', 'siteorigin-north' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+	<p class="woocommerce-mini-cart__total total"><strong><?php _e( 'Subtotal', 'siteorigin-north' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
-	<p class="buttons">
+	<p class="woocommerce-mini-cart__buttons buttons">
 		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="button wc-forward mini_cart_view"><?php _e( 'View Cart', 'siteorigin-north' ); ?></a>
 		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward mini_cart_checkout"><?php _e( 'Checkout', 'siteorigin-north' ); ?></a>
 	</p>
