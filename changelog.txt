@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.3.14 - 30 June 2017 =
+* Changed WooCommerce widget styling to apply to non-WooCommerce pages.
+* Fixed WooCommerce notification bar padding.
+* Updated WooCommerce Cart and Mini-Cart templates.
+* Update WooCommerce Mini-Cart styling to match updated template.
+
 = 1.3.13 - 28 June 2017 =
 * Resolved header shadow bug. 
 * Added support for Max Mega Menu.
