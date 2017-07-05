@@ -536,9 +536,8 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  * @return string
  */
 function siteorigin_north_settings_custom_css( $css ) {
-// Custom CSS Code
-$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/wXDs5x/sass/style.css ***/
+	// Custom CSS Code
+	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -690,6 +689,15 @@ $css .= '/* style */
 	margin: 0 ${structure_sidebar_width} 0 0;
 	}
 	.site-content .widget-area {
+	width: ${structure_sidebar_width};
+	}
+	.layout-sidebar-left .content-area {
+	margin: 0 0 0 -${structure_sidebar_width};
+	}
+	.layout-sidebar-left .site-main {
+	margin: 0 0 0 ${structure_sidebar_width};
+	}
+	.layout-sidebar-left .site-content .widget-area {
 	width: ${structure_sidebar_width};
 	}
 	#masthead {
@@ -969,24 +977,27 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.main-navigation .shopping-cart .shopping-cart-count {
 	background: ${branding_accent} padding-box;
 	}
-	.widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
+	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
 	color: ${fonts_text_dark};
 	}
-	.widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_cost {
+	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_cost {
 	color: ${branding_accent};
 	}
-	.widget_shopping_cart_content .buttons a {
+	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .remove:hover {
+	color: ${branding_accent_dark} !important;
+	}
+	.widget_shopping_cart .widget_shopping_cart_content .buttons a {
 	.font( ${fonts_headings} );
 	}
-	.widget_shopping_cart_content .buttons a.mini_cart_view {
+	.widget_shopping_cart .widget_shopping_cart_content .buttons a.mini_cart_view {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.widget_shopping_cart_content .buttons a.mini_cart_checkout {
+	.widget_shopping_cart .widget_shopping_cart_content .buttons a.mini_cart_checkout {
 	background: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
-	.widget_shopping_cart_content .buttons a:hover {
+	.widget_shopping_cart .widget_shopping_cart_content .buttons a:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
@@ -1026,17 +1037,17 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
-	.woocommerce .widget-area .widget_price_filter .ui-slider {
+	.widget_price_filter .ui-slider {
 	background-color: ${branding_accent};
 	}
-	.woocommerce .widget-area .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget-area .widget_price_filter .ui-slider .ui-slider-handle {
+	.widget_price_filter .ui-slider .ui-slider-range,.widget_price_filter .ui-slider .ui-slider-handle {
 	background-color: ${branding_accent_dark};
 	}
-	.woocommerce .widget-area .widget_price_filter .price_slider_amount .button {
+	.widget_price_filter .price_slider_amount .button {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.woocommerce .widget-area .widget_price_filter .price_slider_amount .button:hover {
+	.widget_price_filter .price_slider_amount .button:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
