@@ -1,8 +1,7 @@
-/* The Page Setting related layout changes */
+body.page-layout-no-sidebar,
+body.page-layout-full-width,
+body.page-layout-stripped {
 
-.page-layout-no-sidebar,
-.page-layout-full-width,
-.page-layout-stripped {
     .site-main {
         margin: 0;
     }
@@ -10,13 +9,16 @@
 
 .page-layout-full-width,
 .page-layout-full-width-sidebar {
+
     .site-content .container {
         max-width: 100%;
     }
 }
 
 .page-layout-no-masthead-margin {
-    #masthead, .masthead-sentinel {
+
+    #masthead, 
+    .masthead-sentinel {
         margin-bottom: 0;
     }
 }
