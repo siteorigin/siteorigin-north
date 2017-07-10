@@ -84,8 +84,8 @@ textarea {
 
 .site-content .widget-area {
   float: left;
-  padding-left: 0;
-  padding-right: 40px; }
+  padding-right: 40px;
+  padding-left: 0; }
   @media (max-width: 600px) {
     body.rtl.responsive .site-content .widget-area {
       padding-right: 0; } }
@@ -110,9 +110,9 @@ textarea {
 ## Site Footer
 --------------------------------------------------------------*/
 #colophon .widgets .widget-wrapper {
-  float: right;
+  border-right: none;
   border-left: 1px solid #d4d4d4;
-  border-right: none; }
+  float: right; }
   #colophon .widgets .widget-wrapper:last-child {
     border-left: none; }
 
@@ -124,10 +124,10 @@ textarea {
     border-left: none; } }
 
 #scroll-to-top {
-  right: auto;
   left: 20px;
   margin-left: auto;
-  margin-right: -22px; }
+  margin-right: -22px;
+  right: auto; }
   #scroll-to-top img {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);

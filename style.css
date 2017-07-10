@@ -1255,17 +1255,17 @@ a {
 .page-title {
   margin-top: 0; }
 
-/* The Page Setting related layout changes */
-.page-layout-no-sidebar .site-main,
-.page-layout-full-width .site-main,
-.page-layout-stripped .site-main {
+body.page-layout-no-sidebar .site-main,
+body.page-layout-full-width .site-main,
+body.page-layout-stripped .site-main {
   margin: 0; }
 
 .page-layout-full-width .site-content .container,
 .page-layout-full-width-sidebar .site-content .container {
   max-width: 100%; }
 
-.page-layout-no-masthead-margin #masthead, .page-layout-no-masthead-margin .masthead-sentinel {
+.page-layout-no-masthead-margin #masthead,
+.page-layout-no-masthead-margin .masthead-sentinel {
   margin-bottom: 0; }
 
 .page-layout-no-footer-margin #colophon {
