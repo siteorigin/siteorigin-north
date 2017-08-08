@@ -57,9 +57,16 @@
 
 						<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>
 
+							<?php if ( function_exists( 'ubermenu' ) ) : ?>
 
+								<?php
+								ubermenu(
+									'main',
+									array( 'theme_location' => 'primary' )
+								);
+								?>
 
-							<?php if ( function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ) ) : ?>
+							<?php elseif ( function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ) ) : ?>
 
 								<?php
 								wp_nav_menu( array(

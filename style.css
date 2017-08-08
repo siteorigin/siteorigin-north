@@ -675,6 +675,14 @@ a {
     .main-navigation #mega-menu-wrap-primary ul ul a {
       white-space: normal;
       width: auto !important; }
+  .main-navigation .ubermenu-responsive-toggle {
+    display: inline-block; }
+  @media screen and (min-width: 960px) {
+    .main-navigation .ubermenu-responsive-toggle {
+      display: none; }
+    .main-navigation .ubermenu-responsive-default.ubermenu {
+      float: none;
+      display: inline-block !important; } }
 
 #header-search {
   display: none;

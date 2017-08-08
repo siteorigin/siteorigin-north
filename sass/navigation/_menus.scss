@@ -255,6 +255,22 @@
 			width: auto !important;
 		}
 	}
+
+	// Ubermenu
+	.ubermenu-responsive-toggle {
+		display: inline-block;
+	}
+
+	@media screen and (min-width: 960px) {
+		.ubermenu-responsive-toggle {
+			display: none;
+		}
+
+		.ubermenu-responsive-default.ubermenu {
+			float: none;
+			display: inline-block !important;
+		}
+	}
 }
 
 #header-search {
