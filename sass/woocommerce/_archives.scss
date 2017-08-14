@@ -32,14 +32,6 @@
 				@include transition (all 0.15s ease-in);
 			}
 
-			&:hover {
-				color: $color__text_dark;
-				.north-icon-next {
-					@include transform( rotate(90deg) );
-					color: $color__text_dark;
-				}
-			}
-
 			.ordering-dropdown-container {
 				left: -1px;
 				right: -1px;
@@ -84,11 +76,17 @@
 
 			}
 
-			&:hover {
+			&.open-dropdown {
+
 				.ordering-dropdown {
-					visibility: visible;
 					opacity: 1;
+					visibility: visible;
 					@include transform( scale(1) );
+				}
+
+				.north-icon-next {
+					@include transform( rotate(90deg) );
+					color: $color__text_dark;
 				}
 			}
 		}

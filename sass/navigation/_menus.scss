@@ -13,7 +13,7 @@
 		margin: 0;
 		padding-left: 0;
 
-		// First level menu, always visible
+		// First level menu, always visible.
 		> li {
 			display: inline-block;
 			padding: 0.25em 0;
@@ -100,6 +100,7 @@
 		}
 
 		@at-root body.no-touch & {
+
 			li:hover,
 			li.focus {
 				> ul {
@@ -115,6 +116,7 @@
 		}
 
 		.touch-drop {
+
 			> ul {
 				opacity: 1;
 				visibility: visible;
@@ -128,7 +130,9 @@
 	}
 
 	.menu {
+
 		> li {
+
 			&.current-menu-item,
 			&.current-menu-ancestor {
 				> a {
@@ -147,7 +151,7 @@
 		}
 	}
 
-	a {
+	a:not(.ubermenu-responsive-toggle) {
 		display: block;
 		text-decoration: none;
 	}
@@ -158,8 +162,7 @@
 
 	}
 
-	// The responsive menu
-
+	// The responsive menu.
 	.svg-icon-menu {
 		margin: 0 8px;
 		float: left;
@@ -240,7 +243,7 @@
 		}
 	}
 
-	// Max Mega menu
+	// Max Mega Menu.
 	#mega-menu-wrap-primary {
 		display: inline-block;
 
@@ -258,17 +261,17 @@
 }
 
 #header-search {
+	background: $masthead__background_color;
 	display: none;
+	height: 100%;
+	left: 0;
 	position: absolute;
 	top: 0;
-	left: 0;
 	width: 100%;
-	height: 100%;
 	z-index: 99999;
-
-	background: $masthead__background_color;
-
-	.container, .search-form {
+	
+	.container, 
+	.search-form {
 		height: 100%;
 	}
 
