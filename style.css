@@ -655,18 +655,18 @@ a {
       -ms-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
       -o-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
       transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px); }
-  .main-navigation .north-search-icon {
-    display: inline-block;
+  .main-navigation a.north-search-icon {
+    color: inherit;
     cursor: pointer;
+    display: inline-block;
     position: relative;
-    top: 2px;
-    color: inherit; }
-    .main-navigation .north-search-icon .svg-icon-search {
+    top: 2px; }
+    .main-navigation a.north-search-icon .svg-icon-search {
       height: 16px;
       width: 16px; }
-      .main-navigation .north-search-icon .svg-icon-search path {
+      .main-navigation a.north-search-icon .svg-icon-search path {
         fill: #898989; }
-      .main-navigation .north-search-icon .svg-icon-search:hover path {
+      .main-navigation a.north-search-icon .svg-icon-search:hover path {
         fill: #595959; }
   .main-navigation #mega-menu-wrap-primary {
     display: inline-block; }

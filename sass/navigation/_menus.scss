@@ -219,13 +219,13 @@
 		}
 	}
 
-	// The search icon
-	.north-search-icon {
-		display: inline-block;
+	// Search icon.
+	a.north-search-icon {
+		color: inherit;
 		cursor: pointer;
+		display: inline-block;
 		position: relative;
 		top: 2px;
-		color: inherit;
 
 		.svg-icon-search {
 			height: 16px;
@@ -236,6 +236,7 @@
 			}
 
 			&:hover {
+				
 				path {
 					fill: $navigation__link_hover_color;
 				}
