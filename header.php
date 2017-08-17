@@ -93,7 +93,7 @@
 
 							<?php endif; ?>
 
-							<?php if ( class_exists( 'Woocommerce' ) ) : ?>
+							<?php if ( class_exists( 'Woocommerce' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) : ?>
 								<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
 									<?php global $woocommerce; ?>
 									<ul class="shopping-cart">
@@ -112,7 +112,7 @@
 								<?php endif; ?>
 							<?php endif; ?>
 
-							<?php if ( siteorigin_setting( 'navigation_search' ) ) : ?>
+							<?php if ( siteorigin_setting( 'navigation_search' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) : ?>
 								<a class="north-search-icon">
 									<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
 									<?php siteorigin_north_display_icon( 'search' ); ?>
