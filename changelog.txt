@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.3.17 - 17 August 2017 =
+* Fixed header search icon alignment issue.
+
 = 1.3.16 - 08 August 2017 =
 * Added UberMenu support.
 
