@@ -623,10 +623,10 @@ function siteorigin_north_settings_custom_css( $css ) {
 	.main-navigation #mobile-menu-button:hover .svg-icon-menu path {
 	fill: ${fonts_text_menu_hover};
 	}
-	.main-navigation .north-search-icon .svg-icon-search path {
+	.main-navigation a.north-search-icon .svg-icon-search path {
 	fill: ${fonts_text_menu};
 	}
-	.main-navigation .north-search-icon .svg-icon-search:hover path {
+	.main-navigation a.north-search-icon .svg-icon-search:hover path {
 	fill: ${fonts_text_menu_hover};
 	}
 	#header-search {
@@ -874,16 +874,13 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .north-icon-next {
 	color: ${fonts_text_light};
 	}
-	.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover {
-	color: ${fonts_text_dark};
-	}
-	.woocommerce .woocommerce-ordering .ordering-selector-wrapper:hover .north-icon-next {
-	color: ${fonts_text_dark};
-	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li {
 	color: ${fonts_text_light};
 	}
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper .ordering-dropdown li:hover {
+	color: ${fonts_text_dark};
+	}
+	.woocommerce .woocommerce-ordering .ordering-selector-wrapper.open-dropdown .north-icon-next {
 	color: ${fonts_text_dark};
 	}
 	.woocommerce .woocommerce-result-count {
