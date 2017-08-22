@@ -1216,7 +1216,7 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['blog_ajax_comments']         = true;
 
 	// Footer defaults
-	$defaults['footer_text']             	= __( 'Copyright © {year} {sitename}', 'siteorigin-north' );
+	$defaults['footer_text']             	= __( 'Copyright &copy; {year} {sitename}', 'siteorigin-north' );
 	$defaults['footer_widget_title_color']	= '#292929';
 	$defaults['footer_text_color']       	= '#595959';
 	$defaults['footer_link_color']       	= '#c75d5d';
