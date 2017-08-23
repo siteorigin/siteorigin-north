@@ -74,7 +74,7 @@
 								) );
 								?>
 
-							<?php else: ?>
+							<?php else : ?>
 
 								<a href="#menu" id="mobile-menu-button">
 									<?php siteorigin_north_display_icon( 'menu' ) ?>
