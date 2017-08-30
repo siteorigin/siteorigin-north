@@ -32,7 +32,7 @@
 		<div id="topbar">
 			<div id="topbar-widgets" class="container">
 				<?php $siteorigin_north_masthead_sidebar = wp_get_sidebars_widgets(); ?>
-				<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['topbar-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_html_e( 'Top Bar Sidebar', 'siteorigin-north' ); ?>">
+				<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['topbar-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_attr_e( 'Top Bar Sidebar', 'siteorigin-north' ); ?>">
 					<?php dynamic_sidebar( 'topbar-sidebar' ); ?>
 				</div>
 			</div><!-- #topbar-widgets -->
