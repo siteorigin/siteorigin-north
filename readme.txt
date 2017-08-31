@@ -35,15 +35,17 @@ Inspired by the elegant majesty and purity of the Swiss Alps and built with busi
 
 SiteOrigin North includes support for:
 
-* Breadcrumb NavXT
-* Jetpack Infinite Scroll
-* Jetpack Responsive Videos
-* Max Mega Menu
-* SiteOrigin CSS
-* SiteOrigin Page Builder
-* SiteOrigin Widgets Bundle 
-* WooCommerce
-* Yoast Breadcrumbs
+* [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
+* [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
+* [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
+* [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
+* [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
+* [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
+* [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
+* [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
+* [Yet Another Related Posts Plugin (YARPP)](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
+* [Yoast Breadcrumbs](https://wordpress.org/plugins/wordpress-seo/)
+* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
 == License ==
 
