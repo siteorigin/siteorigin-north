@@ -252,7 +252,6 @@ function woocommerce_demo_store() {
 	}
 
 	$notice = get_option( 'woocommerce_demo_store_notice' );
-	$notice = '';
 
 	if ( empty( $notice ) ) {
 		$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'woocommerce' );

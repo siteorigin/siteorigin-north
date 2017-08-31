@@ -958,4 +958,8 @@
 .entry-content .woocommerce-info {
   padding: 1em 2em 1em 3.5em; }
 
+#topbar .demo_store {
+  position: relative;
+  top: 0; }
+
 /*# sourceMappingURL=sass/maps/woocommerce.css.map */
