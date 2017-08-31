@@ -1063,6 +1063,11 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.woocommerce #quick-view-container .product-content-wrapper .product-info-wrapper .price {
 	color: ${branding_accent};
 	.font( ${fonts_details} );
+	}
+	#topbar .demo_store {
+	background: ${branding_accent};
+	color: ${fonts_text_meta};
+	.font( ${fonts_details} );
 	}';
 
 	return $css;
