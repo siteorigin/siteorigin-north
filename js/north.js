@@ -63,9 +63,16 @@
 				if ( $target.length ) {
 
 					var height = 0;
-					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
+						if ( $target.offset().top < 48 ) {
+							height += $( '#masthead' ).outerHeight();
+						} else {
+							height += $( '#masthead' ).outerHeight() * 0.775;
+						}
+					} else if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 						height += $( '#masthead' ).outerHeight();
 					}
+
 					if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
 						height += $( '#wpadminbar' ).outerHeight();
 					}
@@ -331,10 +338,10 @@ jQuery( function ( $ ) {
             }
             else {
                 $( $mh ).removeClass( 'floating' );
-            }			
+            }
 		};
 		smShadow();
-        $( window ).scroll( smShadow );		
+        $( window ).scroll( smShadow );
 
 		var mhPadding = {
 			top: parseInt( $mh.css( 'padding-top' ) ),
