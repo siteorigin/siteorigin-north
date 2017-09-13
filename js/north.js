@@ -1,6 +1,10 @@
-/* globals jQuery */
+/**
+ * File jquery.theme.js.
+ *
+ * Handles the primary JavaScript functions for the theme.
+ */
 
-// The burst animation plugin
+// Burst animation plugin.
 (
 	function ( $ ) {
 
@@ -44,14 +48,14 @@
 			} );
 		};
 
-		// Check if an element is visible in the viewport
+		// Check if an element is visible in the viewport.
 		$.fn.northIsVisible = function() {
 			var rect = this[0].getBoundingClientRect();
 			return (
 				rect.bottom >= 0 &&
 				rect.right >= 0 &&
-				rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-				rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+				rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) &&
+				rect.left <= ( window.innerWidth || document.documentElement.clientWidth )
 			);
 		};
 
@@ -85,7 +89,7 @@
 
 					return false;
 				}
-				// Scroll to the position of the item, minus the header size
+				// Scroll to the position of the item, minus the header size.
 			} );
 		}
 
@@ -141,10 +145,10 @@ jQuery( function ( $ ) {
 		} );
 	}
 
-	// Remove the no-js body class
+	// Remove the no-js body class.
 	$( 'body.no-js' ).removeClass( 'no-js' );
 	if ( $( 'body' ).hasClass( 'css3-animations' ) ) {
-		// Display the burst animation
+		// Display the burst animation.
 		$( '.search-field' ).burstAnimation( {
 			event: "focus",
 			container: ".search-form"
@@ -173,11 +177,11 @@ jQuery( function ( $ ) {
 		};
 		alignMenu();
 
-		// Add keyboard access to the menu
+		// Add keyboard access to the menu.
 		$( '.menu-item' ).children( 'a' ).focus( function () {
 			$( this ).parents( 'ul, li' ).addClass( 'focus' );
 		} );
-		// Click event fires after focus event
+		// Click event fires after focus event.
 		$( '.menu-item' ).children( 'a' ).click( function () {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
@@ -185,14 +189,14 @@ jQuery( function ( $ ) {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
 
-		// Burst animatin when the user clicks on a sub link
+		// Burst animatin when the user clicks on a sub link.
 		$( '.main-navigation ul ul li a' ).burstAnimation( {
 			event: "click",
 			container: "parent"
 		} );
 	}
 
-	// Handle displaying the mobile menu
+	// Handle displaying the mobile menu.
 	var $mobileMenu = false;
 	$( '#mobile-menu-button' ).click( function ( e ) {
 		e.preventDefault();
@@ -257,7 +261,7 @@ jQuery( function ( $ ) {
 
 	} );
 
-	// The scroll to top button
+	// The scroll to top button.
 	var sttWindowScroll = function () {
 		var top = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -296,8 +300,8 @@ jQuery( function ( $ ) {
 			if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 				$mhs.css( 'height', $mh.outerHeight() );
 			}
-			// Toggle .topbar-out with visibility of top-bar in the viewport
-			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && !$tb.northIsVisible() ) {
+			// Toggle .topbar-out with visibility of top-bar in the viewport.
+			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.northIsVisible() ) {
 				$( 'body' ).addClass( 'topbar-out' );
 			}
 			if ( $tb.length && $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
@@ -310,11 +314,11 @@ jQuery( function ( $ ) {
 				$mh.css( 'position', 'absolute' );
 			}
 
-			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $(window).scrollTop() ) {
+			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $( window ).scrollTop() ) {
 				$( 'body' ).addClass( 'topbar-out' );
 			}
 
-			if ( $(window).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+			if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
 				if ( ! $wpab.northIsVisible() ) {
 					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
 						$mh.addClass( 'mobile-sticky-menu' );
@@ -325,7 +329,7 @@ jQuery( function ( $ ) {
 				}
 			}
 
-			if ( $(window).width() > 600 && $mh.hasClass( 'mobile-sticky-menu' ) ) {
+			if ( $( window ).width() > 600 && $mh.hasClass( 'mobile-sticky-menu' ) ) {
 				$mh.removeClass( 'mobile-sticky-menu' );
 			}
 
@@ -398,7 +402,7 @@ jQuery( function ( $ ) {
 		}
 	}
 
-	// Handle the header search
+	// Handle the header search.
 	var $hs = $( '#header-search' );
 	$( '#masthead .north-search-icon' ).click( function () {
 		$hs.fadeIn( 'fast' );
@@ -423,7 +427,7 @@ jQuery( function ( $ ) {
 		}
 	} );
 
-	// Add class to calendar elements that have links
+	// Add class to calendar elements that have links.
 	$( '#wp-calendar tbody td:has(a)' ).addClass( 'has-link' );
 
 	// Gallery format image slider.
@@ -437,11 +441,11 @@ jQuery( function ( $ ) {
 
 } );
 
-( function($) {
-	$(window).load( function() {
-		// Handle smooth scrolling
+( function( $ ) {
+	$( window ).load( function() {
+		// Handle smooth scrolling.
 		if ( siteoriginNorth.smoothScroll ) {
 			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScroll();
 		}
 	} );
-} )(jQuery);
+} )( jQuery );

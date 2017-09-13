@@ -536,7 +536,7 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
  * @return string
  */
 function siteorigin_north_settings_custom_css( $css ) {
-	// Custom CSS Code
+	// Custom CSS.
 	$css .= '/* style */
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
@@ -623,10 +623,10 @@ function siteorigin_north_settings_custom_css( $css ) {
 	.main-navigation #mobile-menu-button:hover .svg-icon-menu path {
 	fill: ${fonts_text_menu_hover};
 	}
-	.main-navigation a.north-search-icon .svg-icon-search path {
+	.main-navigation .north-search-icon .svg-icon-search path {
 	fill: ${fonts_text_menu};
 	}
-	.main-navigation a.north-search-icon .svg-icon-search:hover path {
+	.main-navigation .north-search-icon .svg-icon-search:hover path {
 	fill: ${fonts_text_menu_hover};
 	}
 	#header-search {
@@ -866,7 +866,7 @@ if ( ! function_exists( 'siteorigin_north_wc_settings_custom_css' ) ) :
 function siteorigin_north_wc_settings_custom_css( $css ) {
 	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
 
-	// Custom WooCommerce CSS Code
+	// Custom WooCommerce CSS.
 	$css .= '/* woocommerce */
 	.woocommerce .woocommerce-ordering .ordering-selector-wrapper {
 	color: ${fonts_text_light};

@@ -55,8 +55,14 @@ function siteorigin_north_body_classes( $classes ) {
 		$classes[] = 'sticky-menu';
 	}
 
-	if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) && ( class_exists( 'Woocommerce' ) && ! is_store_notice_showing() ) ) {
-		$classes[] = 'no-topbar';
+	if ( class_exists( 'Woocommerce' ) ) {
+		if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) && ! is_store_notice_showing() ) {
+			$classes[] = 'no-topbar';
+		}
+	} else {
+		if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
+			$classes[] = 'no-topbar';
+		}		
 	}
 
 	if ( siteorigin_setting( 'navigation_scroll_to_top_mobile' ) ) {
