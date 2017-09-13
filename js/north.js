@@ -66,8 +66,10 @@
 					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
 						if ( $target.offset().top < 48 ) {
 							height += $( '#masthead' ).outerHeight();
-						} else {
+						} else if ( $( '.site-branding' ).outerHeight() > $( '#site-navigation' ).outerHeight() ) {
 							height += $( '#masthead' ).outerHeight() * 0.775;
+						} else {
+							height += $( '#masthead' ).height() + ( ( $( '#masthead' ).innerHeight() - $( '#masthead' ).height() ) * 0.775 );
 						}
 					} else if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 						height += $( '#masthead' ).outerHeight();
