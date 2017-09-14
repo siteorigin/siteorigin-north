@@ -1,8 +1,8 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Custom functions that act independently of the theme templates.
  *
- * Eventually, some of the functionality here could be replaced by core features
+ * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package siteorigin-north
  */
@@ -30,13 +30,13 @@ function siteorigin_north_body_classes( $classes ) {
 	$page_settings = siteorigin_page_setting();
 
 	if ( ! empty( $page_settings ) ) {
-		if ( !empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
-		if ( !empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
+		if ( ! empty( $page_settings['layout'] ) ) $classes[] = 'page-layout-' . $page_settings['layout'];
+		if ( ! empty( $page_settings['menu'] ) ) $classes[] = 'page-layout-menu-' . $page_settings['menu'];
 
 		if ( empty( $page_settings['masthead_margin'] ) ) $classes[] = 'page-layout-no-masthead-margin';
 		if ( empty( $page_settings['footer_margin'] ) ) $classes[] = 'page-layout-no-footer-margin';
-		if ( !empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
-		if ( !empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
+		if ( ! empty( $page_settings['hide_masthead'] ) ) $classes[] = 'page-layout-hide-masthead';
+		if ( ! empty( $page_settings['hide_footer_widgets'] ) ) $classes[] = 'page-layout-hide-footer-widgets';
 	}
 
 	if ( wp_is_mobile() ) {
@@ -59,11 +59,9 @@ function siteorigin_north_body_classes( $classes ) {
 		if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) && ! is_store_notice_showing() ) {
 			$classes[] = 'no-topbar';
 		}
-	} else {
-		if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
-			$classes[] = 'no-topbar';
-		}		
-	}
+	} elseif ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
+		$classes[] = 'no-topbar';
+	} 
 
 	if ( siteorigin_setting( 'navigation_scroll_to_top_mobile' ) ) {
 		$classes[] = 'mobile-scroll-to-top';
@@ -139,9 +137,9 @@ if ( ! function_exists( 'siteorigin_north_tag_cloud_widget' ) ) :
  * Have a uniform size for the tag cloud items
  */
 function siteorigin_north_tag_cloud_widget($args) {
-	$args['largest'] = 0.8;  //largest tag
-	$args['smallest'] = 0.8; //smallest tag
-	$args['unit'] = 'em';    //tag font unit
+	$args['largest'] = 0.8;  // Largest tag.
+	$args['smallest'] = 0.8; // Smallest tag.
+	$args['unit'] = 'em';    // Tag font unit.
 	return $args;
 }
 endif;
