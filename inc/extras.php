@@ -61,7 +61,7 @@ function siteorigin_north_body_classes( $classes ) {
 		}
 	} elseif ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
 		$classes[] = 'no-topbar';
-	} 
+	}
 
 	if ( siteorigin_setting( 'navigation_scroll_to_top_mobile' ) ) {
 		$classes[] = 'mobile-scroll-to-top';
