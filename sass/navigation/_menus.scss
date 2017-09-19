@@ -220,12 +220,20 @@
 	}
 
 	// Search icon.
-	a.north-search-icon {
+	.north-search-icon {
+		border: none; 
+		box-shadow: none;
 		color: inherit;
 		cursor: pointer;
 		display: inline-block;
+		line-height: normal; 
+		padding: 0;
 		position: relative;
 		top: 2px;
+		
+		&:hover {
+			background: none; 
+		}
 
 		.svg-icon-search {
 			height: 16px;

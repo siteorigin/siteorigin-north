@@ -5,34 +5,37 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_change_hooks' ) ) :
  * Adjust hooks to accomodate design.
  */
 function siteorigin_north_woocommerce_change_hooks(){
-	// Move the price higher
+	// Move the price higher.
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 4 );
 
-	// Move the
-	remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
-	add_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 35);
+	// Change the result count priority.
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+	add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 35 );
 
-	// Use a custom upsell function to change number of items
-	remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
-	add_action('woocommerce_after_single_product_summary', 'siteorigin_north_woocommerce_output_upsells', 15);
+	// Use a custom upsell function to change number of items.
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+	add_action( 'woocommerce_after_single_product_summary', 'siteorigin_north_woocommerce_output_upsells', 15 );
 
-	// Remove actions in the cart
+	// Remove actions in the cart.
 	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
 	remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
 
-	// Quick view action hooks
+	// Quick view action hooks.
 	add_action( 'siteorigin_north_woocommerce_quick_view_images', 'siteorigin_north_woocommerce_quick_view_image', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_title', 'woocommerce_template_single_price', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_title', 'woocommerce_template_single_title', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_loop_rating', 15 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
+
+	// Remove the demo store notice.
+	remove_action( 'wp_footer', 'woocommerce_demo_store' );
 }
 endif;
 add_action('after_setup_theme', 'siteorigin_north_woocommerce_change_hooks');
 
-// Make sure cart widget is displayed on cart & checkout pages
+// Make sure cart widget is displayed on cart & checkout pages.
 function siteorigin_north_woocommerce_widget_cart_is_hidden( $is_cart ) {
 	if ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) {
 		return;
@@ -242,3 +245,20 @@ function siteorigin_north_wc_columns() {
 }
 endif;
 add_filter( 'loop_shop_columns', 'siteorigin_north_wc_columns' );
+
+/**
+ * Move the demo store banner to the top bar if enabled.
+ */
+function siteorigin_north_wc_demo_store() {
+	if ( ! is_store_notice_showing() ) {
+		return;
+	}
+
+	$notice = get_option( 'woocommerce_demo_store_notice' );
+
+	if ( empty( $notice ) ) {
+		$notice = esc_html__( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'siteorigin-north' );
+	}
+
+	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'siteorigin-north' ) . '</a></p>';
+}

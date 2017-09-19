@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.3.20 - 19 September  =
+* Integrated the WooCommerce store notice with the North sticky menu.
+* Updated Customizer settings CSS.
+* Updated one page scrolling header positioning when header scaling is in use.
+* Changed header search icon to a button to ensure it is keyboard accessible.
+
 = 1.3.19 - 30 August 2017 =
 * Resolved build script issue and updated .pot file.
 * Minor code fixes.
@@ -241,4 +247,4 @@
 * Various fixes and improvements in preparation for initial review/release.
 
 = 1.0 - August 18 2015 =
-* Initial release
+* Initial release.

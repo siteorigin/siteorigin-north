@@ -383,6 +383,8 @@ require get_template_directory() . '/inc/settings.php';
 require get_template_directory() . '/inc/siteorigin-panels.php';
 
 /**
- * Load support for WooCommerce
+ * Load support for WooCommerce.
  */
-include get_template_directory() . '/woocommerce/functions.php';
+if ( function_exists( 'is_woocommerce' ) ) {
+	require get_template_directory() . '/woocommerce/functions.php';
+}

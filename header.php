@@ -24,18 +24,28 @@
 
 	<?php if ( siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) : ?>
 		<div id="topbar">
+			<?php if ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) {
+				siteorigin_north_wc_demo_store();
+			} ?>
 			<div class="container">
 				<p><?php echo wp_kses_post( siteorigin_setting( 'masthead_text_above' ) ) ?></p>
 			</div>
 		</div><!-- #topbar -->
 	<?php elseif ( is_active_sidebar( 'topbar-sidebar' ) ) : ?>
 		<div id="topbar">
+			<?php if ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) {
+				siteorigin_north_wc_demo_store();
+			} ?>
 			<div id="topbar-widgets" class="container">
 				<?php $siteorigin_north_masthead_sidebar = wp_get_sidebars_widgets(); ?>
 				<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['topbar-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_attr_e( 'Top Bar Sidebar', 'siteorigin-north' ); ?>">
 					<?php dynamic_sidebar( 'topbar-sidebar' ); ?>
 				</div>
 			</div><!-- #topbar-widgets -->
+		</div><!-- #topbar -->
+	<?php elseif ( class_exists( 'Woocommerce' ) && is_store_notice_showing() ) : ?>
+		<div id="topbar">
+			<?php siteorigin_north_wc_demo_store(); ?>
 		</div><!-- #topbar -->
 	<?php endif; ?>
 
@@ -113,10 +123,10 @@
 							<?php endif; ?>
 
 							<?php if ( siteorigin_setting( 'navigation_search' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) : ?>
-								<a class="north-search-icon">
+								<button class="north-search-icon">
 									<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
 									<?php siteorigin_north_display_icon( 'search' ); ?>
-								</a>
+								</button>
 							<?php endif; ?>
 
 						<?php endif; ?>

@@ -958,4 +958,16 @@
 .entry-content .woocommerce-info {
   padding: 1em 2em 1em 3.5em; }
 
+#topbar .demo_store {
+  background: #c75d5d;
+  color: #b0b0b0;
+  font-family: "Droid Serif", sans-serif;
+  font-size: 13px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  top: 0; }
+  #topbar .demo_store .woocommerce-store-notice__dismiss-link {
+    padding-left: 15px; }
+
 /*# sourceMappingURL=sass/maps/woocommerce.css.map */
