@@ -634,11 +634,23 @@ a {
       .main-navigation #mobile-menu-button:hover .svg-icon-menu path {
         fill: #595959; }
     .main-navigation #mobile-menu-button.to-close .line-1 {
+      -webkit-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
+      -moz-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
+      -ms-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
+      -o-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
       transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px); }
     .main-navigation #mobile-menu-button.to-close .line-2 {
       opacity: 0;
+      -webkit-transform: translateX(10.9375px);
+      -moz-transform: translateX(10.9375px);
+      -ms-transform: translateX(10.9375px);
+      -o-transform: translateX(10.9375px);
       transform: translateX(10.9375px); }
     .main-navigation #mobile-menu-button.to-close .line-3 {
+      -webkit-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
+      -moz-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
+      -ms-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
+      -o-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
       transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px); }
   .main-navigation .north-search-icon {
     border: none;
