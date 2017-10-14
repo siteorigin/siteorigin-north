@@ -609,25 +609,22 @@ a {
     display: block;
     text-decoration: none; }
   .main-navigation .svg-icon-menu {
-    margin: 0 8px;
     float: left;
-    width: 24px;
-    height: 24px; }
+    height: 24px;
+    margin: 0 8px;
+    width: 24px; }
     .main-navigation .svg-icon-menu a {
       color: inherit; }
     .main-navigation .svg-icon-menu path {
+      display: block;
       fill: #666;
-      -webkit-transform-origin: left top;
-      -moz-transform-origin: left top;
-      -ms-transform-origin: left top;
-      -o-transform-origin: left top;
+      opacity: 1;
       transform-origin: left top;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      transition: 0.4s; }
+      transition: .4s;
+      width: 100%; }
   .main-navigation #mobile-menu-button {
     display: none;
-    margin-top: 0.2em;
+    margin-top: .2em;
     font-size: 1.2em;
     color: #666; }
     .main-navigation #mobile-menu-button .svg-icon-menu path {
@@ -637,23 +634,11 @@ a {
       .main-navigation #mobile-menu-button:hover .svg-icon-menu path {
         fill: #595959; }
     .main-navigation #mobile-menu-button.to-close .line-1 {
-      -webkit-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
-      -moz-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
-      -ms-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
-      -o-transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px);
       transform: rotate(-45deg) translateY(8.75px) translateX(-8.75px); }
     .main-navigation #mobile-menu-button.to-close .line-2 {
       opacity: 0;
-      -webkit-transform: translateX(10.9375px);
-      -moz-transform: translateX(10.9375px);
-      -ms-transform: translateX(10.9375px);
-      -o-transform: translateX(10.9375px);
       transform: translateX(10.9375px); }
     .main-navigation #mobile-menu-button.to-close .line-3 {
-      -webkit-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
-      -moz-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
-      -ms-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
-      -o-transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px);
       transform: rotate(45deg) translateY(-10.75px) translateX(-8.75px); }
   .main-navigation .north-search-icon {
     border: none;

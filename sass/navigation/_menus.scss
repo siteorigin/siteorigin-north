@@ -159,30 +159,32 @@
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
-
 	}
 
 	// The responsive menu.
 	.svg-icon-menu {
-		margin: 0 8px;
 		float: left;
-		width: 24px;
 		height: 24px;
+		margin: 0 8px;
+		width: 24px;
 
 		a {
 			color: inherit;
 		}
 
 		path {
+			display: block;
 			fill: #666;
-			@include transform-origin(left top);
-			@include transition(0.4s);
+			opacity: 1;
+			transform-origin: left top;
+			transition: .4s;
+			width: 100%;
 		}
 	}
 
 	#mobile-menu-button {
 		display: none;
-		margin-top: 0.2em;
+		margin-top: .2em;
 		font-size: 1.2em;
 		color: $mobile__text_color;
 
@@ -193,29 +195,26 @@
 		&:hover {
 			color: $navigation__link_hover_color;
 
-			.svg-icon-menu path{
+			.svg-icon-menu path {
 				fill: $navigation__link_hover_color;
 			}
 		}
 
 		&.to-close {
 			$translate_dist: 8.75px;
-			$translate_height_correction: 0px;
 
 			.line-1 {
-				@include transform( rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist) );
-
+				transform: rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist);
 			}
 
 			.line-2 {
 				opacity: 0;
-				@include transform( translateX($translate_dist * 1.25) );
+				transform: translateX($translate_dist * 1.25);
 			}
 
-			.line-3{
-				@include transform( rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist) );
+			.line-3 {
+				transform: rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist);
 			}
-
 		}
 	}
 
@@ -243,11 +242,8 @@
 				fill: $navigation__link_color;
 			}
 
-			&:hover {
-				
-				path {
-					fill: $navigation__link_hover_color;
-				}
+			&:hover path {
+				fill: $navigation__link_hover_color;
 			}
 		}
 	}
@@ -257,6 +253,7 @@
 		display: inline-block;
 
 		.mega-sub-menu {
+			
 			li {
 				min-width: auto;
 			}
