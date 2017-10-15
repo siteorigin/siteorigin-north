@@ -204,34 +204,34 @@
 			$translate_dist: 8.75px;
 
 			.line-1 {
-				transform: rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist);
+				@include transform( rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist) );
 			}
 
 			.line-2 {
 				opacity: 0;
-				transform: translateX($translate_dist * 1.25);
+				@include transform( translateX($translate_dist * 1.25) );
 			}
 
 			.line-3 {
-				transform: rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist);
+				@include transform( rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist) );
 			}
 		}
 	}
 
 	// Search icon.
 	.north-search-icon {
-		border: none; 
+		border: none;
 		box-shadow: none;
 		color: inherit;
 		cursor: pointer;
 		display: inline-block;
-		line-height: normal; 
+		line-height: normal;
 		padding: 0;
 		position: relative;
 		top: 2px;
-		
+
 		&:hover {
-			background: none; 
+			background: none;
 		}
 
 		.svg-icon-search {
@@ -253,7 +253,7 @@
 		display: inline-block;
 
 		.mega-sub-menu {
-			
+
 			li {
 				min-width: auto;
 			}
@@ -275,8 +275,8 @@
 	top: 0;
 	width: 100%;
 	z-index: 99999;
-	
-	.container, 
+
+	.container,
 	.search-form {
 		height: 100%;
 	}
