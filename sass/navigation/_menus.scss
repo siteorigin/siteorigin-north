@@ -159,80 +159,89 @@
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
-
 	}
 
 	// The responsive menu.
-	.svg-icon-menu {
-		margin: 0 8px;
-		float: left;
-		width: 24px;
-		height: 24px;
+	.icon-menu {
+		display: inline-block;
+		height: 15px;
+		width: 20px;
+		position: relative;
+		@include transform( rotate(0deg) );
+		@include transition( .5s ease-in-out );
+		margin-right: 10px;
 
-		a {
-			color: inherit;
+		span {
+			display: block;
+			border-radius: 10px;
+			width: 100%;
+			height: 2px;
+			background: $mobile__icon_color;
+			position: absolute;
+			opacity: 1;
+			right: 0;
+			@include transform( rotate( 0deg ) );
+			@include transition( .25s ease-in-out );
+			@include transform-origin( right center );
+
+			&:nth-child(1) {
+				top: 0px;
+			}
+
+			&:nth-child(2) {
+				top: 7px;
+			}
+
+			&:nth-child(3) {
+				top: 14px;
+			}
 		}
+	}
 
-		path {
-			fill: #666;
-			@include transform-origin(left top);
-			@include transition(0.4s);
+	.to-close {
+		.icon-menu {
+			span {
+				&:nth-child(1) {
+					@include transform( rotate(-45deg) );
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+					@include transform( translateX(8px * 1.25) );
+				}
+
+				&:nth-child(3) {
+					@include transform( rotate(45deg) );
+				}
+			}
 		}
 	}
 
 	#mobile-menu-button {
 		display: none;
-		margin-top: 0.2em;
+		margin-top: .2em;
 		font-size: 1.2em;
 		color: $mobile__text_color;
 
-		.svg-icon-menu path {
-			fill: $mobile__icon_color;
-		}
-
 		&:hover {
 			color: $navigation__link_hover_color;
-
-			.svg-icon-menu path{
-				fill: $navigation__link_hover_color;
-			}
-		}
-
-		&.to-close {
-			$translate_dist: 8.75px;
-			$translate_height_correction: 0px;
-
-			.line-1 {
-				@include transform( rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist) );
-
-			}
-
-			.line-2 {
-				opacity: 0;
-				@include transform( translateX($translate_dist * 1.25) );
-			}
-
-			.line-3{
-				@include transform( rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist) );
-			}
-
 		}
 	}
 
 	// Search icon.
 	.north-search-icon {
-		border: none; 
+		border: none;
 		box-shadow: none;
 		color: inherit;
 		cursor: pointer;
 		display: inline-block;
-		line-height: normal; 
+		line-height: normal;
 		padding: 0;
 		position: relative;
 		top: 2px;
-		
+
 		&:hover {
-			background: none; 
+			background: none;
 		}
 
 		.svg-icon-search {
@@ -243,11 +252,8 @@
 				fill: $navigation__link_color;
 			}
 
-			&:hover {
-				
-				path {
-					fill: $navigation__link_hover_color;
-				}
+			&:hover path {
+				fill: $navigation__link_hover_color;
 			}
 		}
 	}
@@ -257,6 +263,7 @@
 		display: inline-block;
 
 		.mega-sub-menu {
+
 			li {
 				min-width: auto;
 			}
@@ -278,8 +285,8 @@
 	top: 0;
 	width: 100%;
 	z-index: 99999;
-	
-	.container, 
+
+	.container,
 	.search-form {
 		height: 100%;
 	}

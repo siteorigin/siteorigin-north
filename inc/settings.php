@@ -611,17 +611,14 @@ function siteorigin_north_settings_custom_css( $css ) {
 	.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {
 	color: ${fonts_text_menu_current};
 	}
+	.main-navigation .icon-menu span {
+	background: ${responsive_mobile_icon_color};
+	}
 	.main-navigation #mobile-menu-button {
 	color: ${responsive_mobile_text_color};
 	}
-	.main-navigation #mobile-menu-button .svg-icon-menu path {
-	fill: ${responsive_mobile_icon_color};
-	}
 	.main-navigation #mobile-menu-button:hover {
 	color: ${fonts_text_menu_hover};
-	}
-	.main-navigation #mobile-menu-button:hover .svg-icon-menu path {
-	fill: ${fonts_text_menu_hover};
 	}
 	.main-navigation .north-search-icon .svg-icon-search path {
 	fill: ${fonts_text_menu};
