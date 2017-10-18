@@ -87,7 +87,7 @@ function siteorigin_north_the_post_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-north' ); ?></h2>
 		<div class="nav-links">
 			<?php

@@ -17,7 +17,7 @@
 
 	<?php do_action( 'siteorigin_north_footer_before' ); ?>
 
-	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>">
 		
 		<?php do_action( 'siteorigin_north_footer_top' ); ?>
 		
@@ -28,7 +28,7 @@
 				if ( is_active_sidebar( 'footer-sidebar' ) ) {
 					$siteorigin_north_sidebars = wp_get_sidebars_widgets();
 					?>
-					<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
+					<div class="widgets widget-area widgets-<?php echo count( $siteorigin_north_sidebars['footer-sidebar'] ) ?>" aria-label="<?php esc_attr_e( 'Footer Sidebar', 'siteorigin-north' ); ?>">
 						<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 					</div>
 					<?php
