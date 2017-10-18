@@ -162,23 +162,58 @@
 	}
 
 	// The responsive menu.
-	.svg-icon-menu {
-		float: left;
-		height: 24px;
-		margin: 0 8px;
-		width: 24px;
+	.icon-menu {
+		display: inline-block;
+		height: 15px;
+		width: 20px;
+		position: relative;
+		@include transform( rotate(0deg) );
+		@include transition( .5s ease-in-out );
+		margin-right: 10px;
 
-		a {
-			color: inherit;
-		}
-
-		path {
+		span {
 			display: block;
-			fill: #666;
-			opacity: 1;
-			transform-origin: left top;
-			transition: .4s;
+			border-radius: 10px;
 			width: 100%;
+			height: 2px;
+			background: $mobile__icon_color;
+			position: absolute;
+			opacity: 1;
+			right: 0;
+			@include transform( rotate( 0deg ) );
+			@include transition( .25s ease-in-out );
+			@include transform-origin( right center );
+
+			&:nth-child(1) {
+				top: 0px;
+			}
+
+			&:nth-child(2) {
+				top: 7px;
+			}
+
+			&:nth-child(3) {
+				top: 14px;
+			}
+		}
+	}
+
+	.to-close {
+		.icon-menu {
+			span {
+				&:nth-child(1) {
+					@include transform( rotate(-45deg) );
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+					@include transform( translateX(8px * 1.25) );
+				}
+
+				&:nth-child(3) {
+					@include transform( rotate(45deg) );
+				}
+			}
 		}
 	}
 
@@ -188,33 +223,8 @@
 		font-size: 1.2em;
 		color: $mobile__text_color;
 
-		.svg-icon-menu path {
-			fill: $mobile__icon_color;
-		}
-
 		&:hover {
 			color: $navigation__link_hover_color;
-
-			.svg-icon-menu path {
-				fill: $navigation__link_hover_color;
-			}
-		}
-
-		&.to-close {
-			$translate_dist: 8.75px;
-
-			.line-1 {
-				@include transform( rotate(-45deg) translateY($translate_dist) translateX(-$translate_dist) );
-			}
-
-			.line-2 {
-				opacity: 0;
-				@include transform( translateX($translate_dist * 1.25) );
-			}
-
-			.line-3 {
-				@include transform( rotate(45deg) translateY(-$translate_dist - 2px) translateX(-$translate_dist) );
-			}
 		}
 	}
 
