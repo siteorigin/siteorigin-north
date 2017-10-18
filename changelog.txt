@@ -1,9 +1,10 @@
 == Changelog ==
 
-= 1.3.21 - 16 October 2017 =
+= 1.3.21 - 18 October 2017 =
 * Updated to the latest SiteOrigin Settings.
 * Updated to the latest SiteOrigin Panels Lite.
 * Updated WooCommerce templates to the latest version.
+* Resolved mobile menu icon bug. Updated to a new icon.
 
 = 1.3.20 - 19 September 2017 =
 * Integrated the WooCommerce store notice with the North sticky menu.
