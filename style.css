@@ -1948,6 +1948,8 @@ article.page {
     width: auto; }
     .comment-list li.comment .comment-container {
       margin-left: 120px; }
+      .comment-list li.comment .comment-container .comment-awaiting-moderation {
+        font-style: italic; }
     .comment-list li.comment.pingback .comment-container {
       margin-left: 0; }
     .comment-list li.comment .avatar-container {
