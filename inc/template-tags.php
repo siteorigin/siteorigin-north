@@ -87,7 +87,7 @@ function siteorigin_north_the_post_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'siteorigin-north' ); ?></h2>
 		<div class="nav-links">
 			<?php
@@ -305,8 +305,8 @@ function siteorigin_north_comment( $comment, $args, $depth ) {
 		<?php endif; ?>
 
 		<div class="comment-container">
-			<?php if($depth <= $args['max_depth']) : ?>
-				<?php comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])) ?>
+			<?php if( $depth <= $args['max_depth'] ) : ?>
+				<?php comment_reply_link( array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 			<?php endif; ?>
 
 			<div class="info">
@@ -322,6 +322,11 @@ function siteorigin_north_comment( $comment, $args, $depth ) {
 			</div>
 
 			<div class="comment-content content">
+				<?php if ( ! $comment->comment_approved ) : ?>
+					<p class="comment-awaiting-moderation">
+						<?php esc_html_e( 'Your comment is awaiting moderation.', 'siteorigin-north' ); ?>
+					</p>
+				<?php endif; ?>
 				<?php comment_text(); ?>
 			</div>
 		</div>

@@ -11,17 +11,22 @@
 	padding: 0;
 
 	li.comment {
+		color: $color__text_light;
+		display: block;
 		margin: 0 0 50px 0;
 		padding: 0;
 		width: auto;
-		display: block;
-		color: $color__text_light;
 
 		.comment-container {
 			margin-left: 120px;
+			
+			.comment-awaiting-moderation {
+				font-style: italic;
+			}
 		}
 
 		&.pingback {
+
 			.comment-container {
 				margin-left: 0;
 			}
@@ -36,10 +41,10 @@
 		}
 
 		.comment-reply-link {
-			float: right;
 			color: $comments__reply_link_color;
+			float: right;
+			font-size: .8em;
 			text-decoration: none;
-			font-size: 0.8em;
 			line-height: 1em;
 			padding: 8px 12px;
 			background: $comments__reply_background_color;
@@ -54,13 +59,13 @@
 		}
 
 		.author {
-			font-weight: bold;
 			color: $color__text_dark;
+			font-weight: bold;
 		}
 
 		.children {
-			margin-left: 70px;
 			margin-top: 50px;
+			margin-left: 70px;
 			padding: 0;
 		}
 
@@ -69,8 +74,8 @@
 }
 
 .comments-title, .comment-reply-title {
-	text-transform: uppercase;
 	font-size: 1.2em;
+	text-transform: uppercase;
 }
 
 
@@ -131,21 +136,20 @@
 		
 		input {
 			background: transparent;
-			border-radius: 0px;
-			font-size: 0.85em;
-			float: right;
 			border: 1px solid $color__border-button;
-			padding: 10px 30px;
-			line-height: 1em;
+			border-radius: 0;
 			box-shadow: inset 0 0 1px rgba(0,0,0,0.25);
-			text-decoration: none;
 			color: $color__text_dark;
+			float: right;
 			font-family: $font__headings;
-			text-transform: uppercase;
+			font-size: 0.85em;
+			line-height: 1em;
+			padding: 10px 30px;
+			text-decoration: none;
 			text-shadow: none;
-
+			text-transform: uppercase;
 			@include transition(0.085s);
-
+			
 			&:hover{
 				background: $color__primary_accent_dark;
 				border-color: $color__primary_accent_dark;
@@ -155,7 +159,8 @@
 		}
 	}
 
-	input, textarea {
+	input, 
+	textarea {
 		background-color: $comments__form_background_color;
 
 		&:focus {

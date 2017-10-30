@@ -499,24 +499,27 @@
 		overflow: hidden;
 	}
 
-	& .nav-previous {
-		float: left;
+	.nav-previous,
+	.nav-next {
 		width: 50%;
+	}
+
+	.nav-previous {
+		float: left;
 
 		.north-icon-previous {
 			float: left;
-			margin: 0.25em 5px;
+			margin: .25em 5px;
 		}
 	}
 
-	& .nav-next {
+	.nav-next {
 		float: right;
 		text-align: right;
-		width: 50%;
 
 		.north-icon-next {
 			float: right;
-			margin: 0.25em 0 0 5px;
+			margin: .25em 0 0 5px;
 		}
 	}
 

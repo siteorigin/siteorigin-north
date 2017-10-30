@@ -17,7 +17,7 @@
 					<span class="screen-reader-text"><?php esc_html_e( 'Open post', 'siteorigin-north' ); ?></span>
 					<span class="north-icon-add"></span>
 				</div>
-				<?php siteorigin_north_entry_thumbnail() ?>
+				<?php siteorigin_north_entry_thumbnail(); ?>
 			</a>
 		</div>
 	<?php endif; ?>

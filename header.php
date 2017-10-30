@@ -38,7 +38,7 @@
 			} ?>
 			<div id="topbar-widgets" class="container">
 				<?php $siteorigin_north_masthead_sidebar = wp_get_sidebars_widgets(); ?>
-				<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['topbar-sidebar'] ) ?>" role="complementary" aria-label="<?php esc_attr_e( 'Top Bar Sidebar', 'siteorigin-north' ); ?>">
+				<div class="widgets widgets-<?php echo count( $siteorigin_north_masthead_sidebar['topbar-sidebar'] ) ?>" aria-label="<?php esc_attr_e( 'Top Bar Sidebar', 'siteorigin-north' ); ?>">
 					<?php dynamic_sidebar( 'topbar-sidebar' ); ?>
 				</div>
 			</div><!-- #topbar-widgets -->
@@ -50,8 +50,7 @@
 	<?php endif; ?>
 
 	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
-		<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>" role="banner"
-			<?php if ( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
+		<header id="masthead" class="site-header layout-<?php echo sanitize_html_class( str_replace('_', '-', siteorigin_setting( 'masthead_layout' ) ) ) ?> <?php if( siteorigin_setting( 'navigation_sticky' ) ) echo 'sticky-menu'; ?>" <?php if ( siteorigin_setting( 'navigation_sticky_scale' ) ) echo 'data-scale-logo="true"' ?> >
 			<div class="container">
 
 				<div class="container-inner">
@@ -63,7 +62,7 @@
 						<?php endif ?>
 					</div><!-- .site-branding -->
 
-					<nav id="site-navigation" class="main-navigation" role="navigation">
+					<nav id="site-navigation" class="main-navigation">
 
 						<?php if ( siteorigin_page_setting( 'layout' ) !== 'stripped' ) : ?>
 
