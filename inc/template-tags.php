@@ -324,7 +324,7 @@ function siteorigin_north_comment( $comment, $args, $depth ) {
 			<div class="comment-content content">
 				<?php if ( ! $comment->comment_approved ) : ?>
 					<p class="comment-awaiting-moderation">
-						<?php esc_html__( 'Your comment is awaiting moderation.', 'siteorigin-north' ); ?>
+						<?php esc_html_e( 'Your comment is awaiting moderation.', 'siteorigin-north' ); ?>
 					</p>
 				<?php endif; ?>
 				<?php comment_text(); ?>
