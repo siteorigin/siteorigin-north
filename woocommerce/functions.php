@@ -166,7 +166,8 @@ function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
 	return $fragments;
 }
 endif;
-add_filter('add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count');
+} else {
+}
 
 if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
 /**
