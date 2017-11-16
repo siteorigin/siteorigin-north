@@ -166,7 +166,11 @@ function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
 	return $fragments;
 }
 endif;
-add_filter('add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count');
+if ( version_compare( $woocommerce->version, '3', '<' ) ) {
+	add_filter( 'add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count' );
+} else {
+	add_filter( 'woocommerce_add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count' );
+}
 
 if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
 /**
