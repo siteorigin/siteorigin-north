@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.3.25 - 14 December 2017 =
+* Resolved WooCommerce PayPal logo issue impacting child themes.
+
 = 1.3.24 - 16 November 2017 =
 * Replaced depreciated WooCommerce functions.
 * Removed comma separator between WooCommerce tags on single product pages.
