@@ -237,7 +237,7 @@ if ( ! function_exists( 'siteorigin_north_paypal_icon' ) ) :
 * Return a standardised PayPal PNG icon.
 */
 function siteorigin_north_paypal_icon() {
-     return get_stylesheet_directory_uri() . '/woocommerce/images/paypal-icon.png';
+     return get_template_directory_uri() . '/woocommerce/images/paypal-icon.png';
 }
 add_filter( 'woocommerce_paypal_icon', 'siteorigin_north_paypal_icon' );
 endif;
