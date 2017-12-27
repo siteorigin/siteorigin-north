@@ -1,4 +1,5 @@
-.layout-sidebar-left {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page),
+.layout-wc-sidebar-left {
 
 	.content-area {
 		float: right;
@@ -13,8 +14,8 @@
 	.site-content .widget-area {
 		float: left;
 		overflow: hidden;
-		padding-left: 0;
 		padding-right: 40px;
+		padding-left: 0;
 		width: $size__site-sidebar;
 	}
 
@@ -23,12 +24,12 @@
 		width: $size__site-main;
 	}
 
-	&.no-active-sidebar {
+	&.no-active-sidebar:not(.woocommerce):not(.woocommerce-page) {
 
 		.content-area {
 			float: none;
-			width: auto;
 			margin: 0;
+			width: auto;
 		}
 
 		.site-main {

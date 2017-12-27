@@ -11,20 +11,22 @@
 .site-content .widget-area {
 	float: right;
 	overflow: hidden;
-	width: $size__site-sidebar;
 	padding-left: 40px;
+	width: $size__site-sidebar;
 }
 
 .site-footer {
 	clear: both;
-	width: $size__site-main;
 	min-width: 1060px;
+	width: $size__site-main;
+	
 	body.responsive & {
 		min-width: 0;
 	}
 }
 
-.no-active-sidebar {
+.no-active-sidebar:not(.woocommerce):not(.woocommerce-page),
+.no-active-wc-sidebar {
 
 	.content-area {
 		float: none;
@@ -35,7 +37,6 @@
 	.site-main {
 		margin: 0;
 	}
-
 }
 
 @media (max-width: 600px) {

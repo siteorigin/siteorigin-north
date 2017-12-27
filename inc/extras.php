@@ -59,15 +59,15 @@ function siteorigin_north_body_classes( $classes ) {
 
 		if ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) && ! is_store_notice_showing() ) {
 			$classes[] = 'no-topbar';
-		}
+		}	
 
 		if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'left' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
-			$classes[] = 'layout-sidebar-left';
+			$classes[] = 'layout-wc-sidebar-left';
 		}
 		
 		if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'none' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
-			$classes[] = 'no-active-sidebar';
-		}		
+			$classes[] = 'no-active-wc-sidebar';
+		}
 
 		
 	} elseif ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
