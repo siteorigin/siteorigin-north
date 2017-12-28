@@ -461,21 +461,31 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 				),
 
 				'display_cart' => array(
-					'type'        => 'checkbox',
-					'label'       => esc_html__( 'Display Cart', 'siteorigin-north' ),
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Cart', 'siteorigin-north' ),
 					'description' => esc_html__( 'Display WooCommerce cart in the main menu.', 'siteorigin-north' ),
 				),
 
 				'display_checkout_cart' => array(
-					'type'        => 'checkbox',
-					'label'       => esc_html__( 'Display Cart in Checkout', 'siteorigin-north' ),
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Cart in Checkout', 'siteorigin-north' ),
 					'description' => esc_html__( 'Display WooCommerce cart in the main menu on cart and checkout page.', 'siteorigin-north' ),
 				),
 
 				'display_quick_view' => array(
-					'type'        => 'checkbox',
-					'label'       => esc_html__( 'Display Quick View button', 'siteorigin-north' ),
-				)
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Display Quick View button', 'siteorigin-north' ),
+				),
+
+				'sidebar_position' => array(
+					'type' => 'select',
+					'label' => esc_html__( 'Shop Sidebar Position', 'siteorigin-north' ),
+					'options' => array(
+						'left' => esc_html__( 'Left', 'siteorigin-north' ),
+						'right' => esc_html__( 'Right', 'siteorigin-north' ),
+						'none' => esc_html__( 'None', 'siteorigin-north' ),
+					),
+				),				
 
 			)
 		)
@@ -1232,10 +1242,11 @@ function siteorigin_north_settings_defaults( $defaults ){
 	$defaults['footer_top_margin']       	= '30px';
 
 	// WooCommerce defaults
-	$defaults['woocommerce_archive_columns']       = 3;
-	$defaults['woocommerce_display_cart']          = true;
-	$defaults['woocommerce_display_checkout_cart'] = false;
-	$defaults['woocommerce_display_quick_view']    = false;
+	$defaults['woocommerce_archive_columns']		= 3;
+	$defaults['woocommerce_display_cart']			= true;
+	$defaults['woocommerce_display_checkout_cart']	= false;
+	$defaults['woocommerce_display_quick_view']		= false;
+	$defaults['woocommerce_sidebar_position']		= 'right';
 
 	return $defaults;
 }

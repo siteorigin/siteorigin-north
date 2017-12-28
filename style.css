@@ -1213,22 +1213,24 @@ a {
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  width: 35%;
-  padding-left: 40px; }
+  padding-left: 40px;
+  width: 35%; }
 
 .site-footer {
   clear: both;
-  width: 100%;
-  min-width: 1060px; }
+  min-width: 1060px;
+  width: 100%; }
   body.responsive .site-footer {
     min-width: 0; }
 
-.no-active-sidebar .content-area {
+.no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .content-area,
+.no-active-wc-sidebar .content-area {
   float: none;
   width: auto;
   margin: 0; }
 
-.no-active-sidebar .site-main {
+.no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .site-main,
+.no-active-wc-sidebar .site-main {
   margin: 0; }
 
 @media (max-width: 600px) {
@@ -1246,31 +1248,37 @@ a {
 /*--------------------------------------------------------------
 ## Left Sidebar Layout
 --------------------------------------------------------------*/
-.layout-sidebar-left .content-area {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .content-area,
+.layout-wc-sidebar-left .content-area {
   float: right;
   margin: 0 0 0 -35%;
   width: 100%; }
 
-.layout-sidebar-left .site-main {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .site-main,
+.layout-wc-sidebar-left .site-main {
   margin: 0 0 0 35%; }
 
-.layout-sidebar-left .site-content .widget-area {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .site-content .widget-area,
+.layout-wc-sidebar-left .site-content .widget-area {
   float: left;
   overflow: hidden;
-  padding-left: 0;
   padding-right: 40px;
+  padding-left: 0;
   width: 35%; }
 
-.layout-sidebar-left .site-footer {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .site-footer,
+.layout-wc-sidebar-left .site-footer {
   clear: both;
   width: 100%; }
 
-.layout-sidebar-left.no-active-sidebar .content-area {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page).no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .content-area,
+.layout-wc-sidebar-left.no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .content-area {
   float: none;
-  width: auto;
-  margin: 0; }
+  margin: 0;
+  width: auto; }
 
-.layout-sidebar-left.no-active-sidebar .site-main {
+.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page).no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .site-main,
+.layout-wc-sidebar-left.no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .site-main {
   margin: 0; }
 
 /*--------------------------------------------------------------

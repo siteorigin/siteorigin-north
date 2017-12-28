@@ -220,6 +220,18 @@ function siteorigin_north_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
+	if ( function_exists( 'is_woocommerce' ) ) {
+		register_sidebar( array(
+			'name' 			=> esc_html__( 'Shop Sidebar', 'siteorigin-north' ),
+			'id' 			=> 'sidebar-shop',
+			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-north' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' 	=> '</aside>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h3>',
+		) );
+	}	
+
 }
 endif;
 add_action( 'widgets_init', 'siteorigin_north_widgets_init' );
