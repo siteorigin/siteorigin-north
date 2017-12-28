@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.4 - 28 December 2017 =
+* Added WooCommerce sidebar widget area and theme setting.
+
 = 1.3.25 - 14 December 2017 =
 * Resolved WooCommerce PayPal logo issue impacting child themes.
 
