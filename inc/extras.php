@@ -68,7 +68,6 @@ function siteorigin_north_body_classes( $classes ) {
 		if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'none' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
 			$classes[] = 'no-active-wc-sidebar';
 		}
-
 		
 	} elseif ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
 		$classes[] = 'no-topbar';
