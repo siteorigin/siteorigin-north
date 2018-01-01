@@ -548,7 +548,6 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
 function siteorigin_north_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
-	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/k6B4Tm/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
