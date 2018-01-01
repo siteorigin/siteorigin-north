@@ -1299,9 +1299,9 @@ a {
 .page-title {
   margin-top: 0; }
 
-body.page-layout-no-sidebar .site-main,
-body.page-layout-full-width .site-main,
-body.page-layout-stripped .site-main {
+body.page-layout-no-sidebar #main.site-main,
+body.page-layout-full-width #main.site-main,
+body.page-layout-stripped #main.site-main {
   margin: 0; }
 
 .page-layout-full-width .site-content .container,
