@@ -26,12 +26,13 @@
 }
 
 .no-active-sidebar:not(.woocommerce):not(.woocommerce-page),
-.no-active-wc-sidebar {
+.no-active-sidebar.no-active-wc-sidebar,
+.wc-sidebar-none.woocommerce.woocommerce-page {
 
 	.content-area {
 		float: none;
-		width: auto;
 		margin: 0;
+		width: auto;
 	}
 
 	.site-main {

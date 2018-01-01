@@ -1224,13 +1224,15 @@ a {
     min-width: 0; }
 
 .no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .content-area,
-.no-active-wc-sidebar .content-area {
+.no-active-sidebar.no-active-wc-sidebar .content-area,
+.wc-sidebar-none.woocommerce.woocommerce-page .content-area {
   float: none;
-  width: auto;
-  margin: 0; }
+  margin: 0;
+  width: auto; }
 
 .no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .site-main,
-.no-active-wc-sidebar .site-main {
+.no-active-sidebar.no-active-wc-sidebar .site-main,
+.wc-sidebar-none.woocommerce.woocommerce-page .site-main {
   margin: 0; }
 
 @media (max-width: 600px) {
@@ -2169,5 +2171,3 @@ object {
     background: #000;
     opacity: 0.1;
     border-radius: 10px; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */

@@ -64,10 +64,15 @@ function siteorigin_north_body_classes( $classes ) {
 		if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'left' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
 			$classes[] = 'layout-wc-sidebar-left';
 		}
+
+		if ( ! is_active_sidebar( 'sidebar-shop' ) && is_woocommerce() || is_cart() || is_checkout() ) {
+			$classes[] = 'no-active-wc-sidebar';
+		}		
 		
 		if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'none' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
-			$classes[] = 'no-active-wc-sidebar';
+			$classes[] = 'wc-sidebar-none';
 		}
+		
 		
 	} elseif ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
 		$classes[] = 'no-topbar';

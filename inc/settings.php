@@ -548,6 +548,7 @@ if ( ! function_exists( 'siteorigin_north_settings_custom_css' ) ) :
 function siteorigin_north_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
+	/**** /private/var/folders/_s/htpl50fd5d70c9hb2nnvjnjh0000gn/T/k6B4Tm/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
@@ -698,13 +699,13 @@ function siteorigin_north_settings_custom_css( $css ) {
 	.site-content .widget-area {
 	width: ${structure_sidebar_width};
 	}
-	.layout-sidebar-left .content-area {
+	.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .content-area,.layout-wc-sidebar-left .content-area {
 	margin: 0 0 0 -${structure_sidebar_width};
 	}
-	.layout-sidebar-left .site-main {
+	.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .site-main,.layout-wc-sidebar-left .site-main {
 	margin: 0 0 0 ${structure_sidebar_width};
 	}
-	.layout-sidebar-left .site-content .widget-area {
+	.layout-sidebar-left:not(.woocommerce):not(.woocommerce-page) .site-content .widget-area,.layout-wc-sidebar-left .site-content .widget-area {
 	width: ${structure_sidebar_width};
 	}
 	#masthead {
