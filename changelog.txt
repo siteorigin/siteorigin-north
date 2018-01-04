@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.4.1 - 03 January 2018 =
+* Various fixes to the newly added WooCommerce sidebar widget area.
+
 = 1.4 - 28 December 2017 =
 * Added WooCommerce sidebar widget area and theme setting.
 
