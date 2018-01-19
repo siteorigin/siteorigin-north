@@ -219,10 +219,20 @@ jQuery( function ( $ ) {
 
 			$mobileMenu.find( '#primary-menu' ).show().css( 'opacity', 1 );
 
-			$mobileMenu.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="north-icon-next"></i></button>' );
+			$mobileMenu.find( '.menu-item-has-children > a' ).addClass( 'has-dropdown' );
+
+			$mobileMenu.find( '.has-dropdown' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="north-icon-next"></i></button>' );
+
 			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
 				e.preventDefault();
-				$( this ).toggleClass('toggle-open').next( '.children, .sub-menu' ).slideToggle('fast');
+				$( this ).toggleClass( 'toggle-open' ).next( '.children, .sub-menu' ).slideToggle( 'fast' );
+			} );
+
+			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
+				if ( typeof $( this ).attr( 'href' ) === "undefined" ) {
+					e.preventDefault();
+					$( this ). siblings( '.dropdown-toggle' ).trigger( 'click' );
+				}
 			} );
 
 			var mmOverflow = function() {
@@ -248,11 +258,13 @@ jQuery( function ( $ ) {
 
 		$mobileMenu.slideToggle( 'fast' );
 
-		$('#mobile-navigation a').click(function(e){
-			if($mobileMenu.is(':visible') ) {
-				$mobileMenu.slideUp( 'fast' );
+		$( '#mobile-navigation a' ).click(function(e) {
+			if ( typeof $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) !== "undefined" ) {
+				if ( $mobileMenu.is( ':visible' ) ) {
+					$mobileMenu.slideUp( 'fast' );
+				}
+				$$.removeClass( 'to-close' );
 			}
-			$$.removeClass( 'to-close' );
 		});
 
 		if ( siteoriginNorth.smoothScroll ) {
