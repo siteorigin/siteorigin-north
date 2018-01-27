@@ -229,7 +229,7 @@ jQuery( function ( $ ) {
 			} );
 
 			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
-				if ( typeof $( this ).attr( 'href' ) === "undefined" ) {
+				if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
 					e.preventDefault();
 					$( this ). siblings( '.dropdown-toggle' ).trigger( 'click' );
 				}
@@ -259,7 +259,7 @@ jQuery( function ( $ ) {
 		$mobileMenu.slideToggle( 'fast' );
 
 		$( '#mobile-navigation a' ).click(function(e) {
-			if ( typeof $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) !== "undefined" ) {
+			if ( typeof $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) !== "undefined" || $( this ).hasClass( 'has-dropdown' ).attr( 'href' ) != "#" ) {
 				if ( $mobileMenu.is( ':visible' ) ) {
 					$mobileMenu.slideUp( 'fast' );
 				}
