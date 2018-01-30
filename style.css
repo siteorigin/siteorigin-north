@@ -36,7 +36,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme 
+Please don't edit below, changes will be lost during the theme
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/
 --------------------------------------------------------------*/
@@ -845,6 +845,8 @@ a {
         width: 100% !important; }
       #mobile-navigation ul li.menu-item-has-children > a {
         padding-right: 40px; }
+        #mobile-navigation ul li.menu-item-has-children > a:not([href]) {
+          cursor: pointer; }
       #mobile-navigation ul li .dropdown-toggle {
         background: transparent;
         border: 0;

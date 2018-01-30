@@ -450,6 +450,10 @@
 
 			&.menu-item-has-children > a {
 				padding-right: 40px;
+
+				&:not([href]) {
+					cursor: pointer;
+				}
 			}
 
 			.dropdown-toggle {
