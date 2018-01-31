@@ -2,14 +2,22 @@
 /**
  * Cart Page
  *
- * @see     http://docs.woothemes.com/document/template-structure/
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
 wc_print_notices();
@@ -67,7 +75,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									}
 
 									// Meta data
-									echo WC()->cart->get_item_data( $cart_item );
+									echo wc_get_formatted_cart_item_data( $cart_item );
 
 									// Backorder notification
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -109,7 +117,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times; ' . esc_html__( 'delete', 'siteorigin-north' ) .  '</a>',
-										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										esc_html__( 'Remove this item', 'siteorigin-north' ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() )
