@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.4.2 - 01 February 2018 =
+* Allow mobile menu links with a hash or no link added to open sub menus.
+
 = 1.4.1 - 03 January 2018 =
 * Various fixes to the newly added WooCommerce sidebar widget area.
 
