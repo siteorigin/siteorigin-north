@@ -4,9 +4,9 @@
  *
  * Contains the markup for the mini-cart, used by the cart widget
  *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     3.2.0
+ * @author  WooThemes
+ * @package WooCommerce/Templates
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

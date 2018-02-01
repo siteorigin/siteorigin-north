@@ -2,10 +2,9 @@
 /**
  * Pagination - Show numbered pagination for catalog pages
  *
- * @see 	    http://docs.woothemes.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.2.2
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 3.3.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

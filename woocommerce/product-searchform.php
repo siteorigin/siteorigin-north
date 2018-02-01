@@ -12,7 +12,7 @@
  * @see     http://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.0
+ * @version 3.3.0
  */
 
 // Exit if accessed directly
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-	<label class="screen-reader-text" for="woocommerce-product-search-field"><?php _e( 'Search for:', 'siteorigin-north' ); ?></label>
+	<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'siteorigin-north' ); ?></label>
 	<input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'siteorigin-north' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'siteorigin-north' ); ?>" />
 	<button type="submit">
 		<i class="north-icon-search"><label class="screen-reader-text"><?php esc_html_e( 'Search', 'siteorigin-north' ); ?></label></i>

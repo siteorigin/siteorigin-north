@@ -9,10 +9,10 @@
  * as little as possible, but it does happen. When this occurs the version of the template file will.
  * be bumped and the readme will list any important changes.
  *
- * @see 	    http://docs.woothemes.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @see     http://docs.woothemes.com/document/template-structure/
+ * @author  WooThemes
+ * @package WooCommerce/Templates
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,10 +24,10 @@ global $product;
 echo apply_filters( 'woocommerce_loop_add_to_cart_link',
 	sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s"><span class="north-icon-cart" aria-hidden="true"></span> %s</a>',
 		esc_url( $product->add_to_cart_url() ),
-		esc_attr( isset( $quantity ) ? $quantity : 1 ),
+		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
 		esc_attr( $product->get_id() ),
 		esc_attr( $product->get_sku() ),
-		esc_attr( isset( $class ) ? $class : 'button' ),
+		esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
 		esc_html( $product->add_to_cart_text() )
 	),
 $product );
