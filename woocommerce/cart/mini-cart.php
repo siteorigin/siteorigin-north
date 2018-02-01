@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 						<div class="mini_cart_details">
 							<p class="mini_cart_product"><?php echo $product_name; ?></p>
-							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
+							<?php echo wc_get_cart_item_data( $cart_item ); ?>
 							<p class="mini_cart_cost"><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?></p>
 						</div>
 						<?php
@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+							esc_url( wc_get_cart_item_data( $cart_item_key ) ),
 							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
