@@ -75,7 +75,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									}
 
 									// Meta data
-									echo wc_get_formatted_cart_item_data( $cart_item );
+									echo WC()->cart->get_item_data( $cart_item );
 
 									// Backorder notification
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -117,7 +117,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times; ' . esc_html__( 'delete', 'siteorigin-north' ) .  '</a>',
-										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+										esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
 										esc_html__( 'Remove this item', 'siteorigin-north' ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() )
