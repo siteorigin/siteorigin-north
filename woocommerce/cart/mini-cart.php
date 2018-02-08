@@ -2,20 +2,26 @@
 /**
  * Mini-cart
  *
- * Contains the markup for the mini-cart, used by the cart widget
+ * Contains the markup for the mini-cart, used by the cart widget.
  *
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/mini-cart.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 3.3.0
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
-?>
-
-<?php do_action( 'woocommerce_before_mini_cart' ); ?>
+do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <div class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 
@@ -41,13 +47,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 						<div class="mini_cart_details">
 							<p class="mini_cart_product"><?php echo $product_name; ?></p>
-							<?php echo wc_get_cart_item_data( $cart_item ); ?>
+							<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
 							<p class="mini_cart_cost"><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?></p>
 						</div>
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
-							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
@@ -67,7 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-							esc_url( wc_get_cart_item_data( $cart_item_key ) ),
+							esc_url( wc_get_formatted_cart_item_data( $cart_item_key ) ),
 							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
