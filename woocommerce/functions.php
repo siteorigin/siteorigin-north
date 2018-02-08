@@ -151,7 +151,7 @@ function siteorigin_north_woocommerce_template_single_undertitle_meta(){
 endif;
 add_action('woocommerce_single_product_summary', 'siteorigin_north_woocommerce_template_single_undertitle_meta', 7);
 
-if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) :
+if ( ! function_exists('siteorigin_north_woocommerce_update_cart_count') ) :
 /**
  * Update cart count with the masthead cart icon.
  */
@@ -172,7 +172,7 @@ if ( version_compare( $woocommerce->version, '3', '<' ) ) {
 	add_filter( 'woocommerce_add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count' );
 }
 
-if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
+if ( ! function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
 /**
  * Add the quick view button in the products in loop.
  */
@@ -185,7 +185,7 @@ function siteorigin_north_woocommerce_quick_view_button() {
 endif;
 add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
 
-if( !function_exists('siteorigin_north_woocommerce_quick_view') ) :
+if ( ! function_exists('siteorigin_north_woocommerce_quick_view ') ) :
 /**
  * Setup quick view modal in the footer.
  */
