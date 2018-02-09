@@ -72,10 +72,11 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 						</a>
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-							esc_url( wc_get_formatted_cart_item_data( $cart_item_key ) ),
+							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
+							esc_attr( $cart_item_key ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
 						?>
