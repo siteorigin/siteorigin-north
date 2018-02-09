@@ -136,22 +136,22 @@ function siteorigin_north_woocommerce_related_product_args( $args ) {
 	return $args;
 }
 endif;
-add_filter('woocommerce_output_related_products_args', 'siteorigin_north_woocommerce_related_product_args');
+add_filter( 'woocommerce_output_related_products_args', 'siteorigin_north_woocommerce_related_product_args' );
 
-if( !function_exists('siteorigin_north_woocommerce_output_upsells') ) :
-function siteorigin_north_woocommerce_output_upsells(){
+if ( ! function_exists( 'siteorigin_north_woocommerce_output_upsells' ) ) :
+function siteorigin_north_woocommerce_output_upsells() {
 	woocommerce_upsell_display( -1, 3 );
 }
 endif;
 
-if( !function_exists('siteorigin_north_woocommerce_template_single_undertitle_meta') ) :
-function siteorigin_north_woocommerce_template_single_undertitle_meta(){
+if ( ! function_exists( 'siteorigin_north_woocommerce_template_single_undertitle_meta' ) ) :
+function siteorigin_north_woocommerce_template_single_undertitle_meta() {
 	wc_get_template( 'single-product/meta-undertitle.php' );
 }
 endif;
-add_action('woocommerce_single_product_summary', 'siteorigin_north_woocommerce_template_single_undertitle_meta', 7);
+add_action( 'woocommerce_single_product_summary', 'siteorigin_north_woocommerce_template_single_undertitle_meta', 7 );
 
-if( !function_exists('siteorigin_north_woocommerce_update_cart_count') ) :
+if ( ! function_exists('siteorigin_north_woocommerce_update_cart_count') ) :
 /**
  * Update cart count with the masthead cart icon.
  */
@@ -172,7 +172,7 @@ if ( version_compare( $woocommerce->version, '3', '<' ) ) {
 	add_filter( 'woocommerce_add_to_cart_fragments', 'siteorigin_north_woocommerce_update_cart_count' );
 }
 
-if( !function_exists('siteorigin_north_woocommerce_quick_view_button') ) :
+if ( ! function_exists( 'siteorigin_north_woocommerce_quick_view_button' ) ) :
 /**
  * Add the quick view button in the products in loop.
  */
@@ -185,7 +185,7 @@ function siteorigin_north_woocommerce_quick_view_button() {
 endif;
 add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
 
-if( !function_exists('siteorigin_north_woocommerce_quick_view') ) :
+if ( ! function_exists('siteorigin_north_woocommerce_quick_view ') ) :
 /**
  * Setup quick view modal in the footer.
  */

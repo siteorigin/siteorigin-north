@@ -295,7 +295,8 @@
 			border-radius: 50%;
 		}
 
-		&:hover{
+		&:hover {
+
 			.north-icon-cart {
 				background: $color__primary_accent_dark;
 				color: #fff;
@@ -334,11 +335,14 @@
 		}
 	}
 }
+
 .widget_shopping_cart {
+
 	.widget_shopping_cart_content {
 		padding: 15px !important;
 
 		.cart_list{
+			
 			.empty {
 				margin: 15px 15px;
 			}

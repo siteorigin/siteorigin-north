@@ -36,7 +36,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
 /*--------------------------------------------------------------
 >>> IMPORTANT NOTICE:
 ----------------------------------------------------------------
-Please don't edit below, changes will be lost during the theme
+Please don't edit below, changes will be lost during the theme 
 update process. If you need to make CSS modifications try
 https://wordpress.org/plugins/so-css/
 --------------------------------------------------------------*/
@@ -2173,3 +2173,5 @@ object {
     background: #000;
     opacity: 0.1;
     border-radius: 10px; }
+
+/*# sourceMappingURL=sass/maps/style.css.map */

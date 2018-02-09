@@ -61,7 +61,7 @@ function siteorigin_north_body_classes( $classes ) {
 			$classes[] = 'no-topbar';
 		}	
 
-		if ( ! siteorigin_setting( 'woocommerce_sidebar_position' ) == 'right' && siteorigin_setting( 'woocommerce_sidebar_position' ) == 'left' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
+		if ( siteorigin_setting( 'woocommerce_sidebar_position' ) == 'left' && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
 			$classes[] = 'layout-wc-sidebar-left';
 		}
 
