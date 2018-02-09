@@ -1,7 +1,7 @@
 == Changelog ==
 
 = 1.4.3 - 08 February 2018 =
-* Updated WooCommerce template files.
+* Updated WooCommerce template files. WooCommerce must be updated to version 3.3.0+ before updating North.
 
 = 1.4.2 - 01 February 2018 =
 * Allow mobile menu links with a hash or no link added to open sub menus.
