@@ -347,12 +347,13 @@
 			cursor: pointer;
 
 			path {
-				fill: #666666;
+				fill: $navigation__link_color;
 			}
 
 			&:hover {
+
 				path {
-					fill: #333;
+					fill: $navigation__link_hover_color;
 				}
 			}
 		}
