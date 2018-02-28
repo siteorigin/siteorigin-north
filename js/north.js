@@ -259,7 +259,7 @@ jQuery( function ( $ ) {
 		$mobileMenu.slideToggle( 'fast' );
 
 		$( '#mobile-navigation a' ).click(function(e) {
-			if ( ! $( this ).hasClass( 'has-dropdown' ) || ( $( this ).attr( 'href' ) !== "undefined" && $( this ).attr( 'href' )  !== "#" ) ) {
+			if ( ! $( this ).hasClass( 'has-dropdown' ) || ( typeof $( this ).attr( 'href' ) !== "undefined" && $( this ).attr( 'href' )  !== "#" ) ) {
 				if ( $mobileMenu.is( ':visible' ) ) {
 					$mobileMenu.slideUp( 'fast' );
 				}
