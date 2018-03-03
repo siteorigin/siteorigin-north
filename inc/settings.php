@@ -642,6 +642,12 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#header-search input[type="search"] {
 	.font( ${fonts_details} );
 	}
+	#header-search #close-search .svg-icon-close path {
+	fill: ${fonts_text_menu};
+	}
+	#header-search #close-search .svg-icon-close:hover path {
+	fill: ${fonts_text_menu_hover};
+	}
 	.main-navigation.stripped a {
 	color: ${fonts_text_menu};
 	}
@@ -1076,7 +1082,6 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	color: ${fonts_text_meta};
 	.font( ${fonts_details} );
 	}';
-
 	return $css;
 }
 endif;

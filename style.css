@@ -769,9 +769,9 @@ a {
       height: 24px;
       cursor: pointer; }
       #header-search #close-search .svg-icon-close path {
-        fill: #666666; }
+        fill: #898989; }
       #header-search #close-search .svg-icon-close:hover path {
-        fill: #333; }
+        fill: #595959; }
   @media screen and (max-width: 600px) {
     #header-search {
       display: none !important; } }
