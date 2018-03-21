@@ -50,11 +50,9 @@ function siteorigin_north_settings_init() {
 				),
 			)
 		),
-		'fonts'       => array(
-			'title'  => __( 'Fonts', 'siteorigin-north' ),
+		'fonts' => array(
+			'title' => __( 'Fonts', 'siteorigin-north' ),
 			'fields' => array(
-
-				// The font families used
 
 				'main'        => array(
 					'type'        => 'font',
@@ -80,7 +78,6 @@ function siteorigin_north_settings_init() {
 					'description' => __( 'Font used for menu items.', 'siteorigin-north' ),
 					'live'        => true,
 				),
-				// The colors
 
 				'text_dark'   => array(
 					'type'        => 'color',
@@ -494,7 +491,7 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 add_filter( 'siteorigin_north_settings_array', 'siteorigin_north_woocommerce_settings' );
 
 /**
- * Tell the settings framework which settings we're using as fonts
+ * Tell the settings framework which settings we're using as fonts.
  *
  * @param $settings
  *

@@ -1,6 +1,6 @@
 <?php
 
-// An array mapping SCSS variable to a SiteOrigin Settings variable name
+// An array mapping SCSS variable to a SiteOrigin Settings variable name.
 return array(
 	'variables' => array(
 		// Fonts.
