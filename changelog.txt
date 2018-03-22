@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.4.5 - 22 March 2018 =
+* Updated settings framework to resolve font selection bug when body font not set.
+
 = 1.4.4 - 03 March 2018 =
 * Updated the mobile menu to close on click to enhance one page site behaviour. 
 * Resolved drop-down related mobile menu console error.
