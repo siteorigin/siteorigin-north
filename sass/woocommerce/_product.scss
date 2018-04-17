@@ -143,11 +143,11 @@
 	}
 
 	.product-under-title-meta {
-		margin-top: -0.5em;
 		color: $color__text_medium;
 		font-size: 0.8em;
-		margin-bottom: 1em;
 		line-height: 1.4em;
+		margin-top: -0.5em;
+		margin-bottom: 1em;
 	}
 
 	#comments h2 {
@@ -156,4 +156,7 @@
 		font-size: 1.3em;
 	}
 
+	#respond .comment-form-rating {
+		margin: 0 15px;
+	}
 }
