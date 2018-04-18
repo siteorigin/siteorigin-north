@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.4.6 - 18 April 2018 =
+* Updated search form URL.
+* Resolved WooCommerce single product PHP notice by removing meta variable no longer required.
+* Minor WooCommerce single product style fix.
+
 = 1.4.5 - 22 March 2018 =
 * Updated settings framework to resolve font selection bug when body font not set.
 
