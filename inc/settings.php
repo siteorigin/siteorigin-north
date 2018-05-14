@@ -1080,9 +1080,7 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_wc_settings_cust
  * Add CSS for mobile menu breakpoint
  */
 function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
-	$breakpoint = isset( $settings['theme_settings_responsive_menu_breakpoint'] ) ? $settings['theme_settings_responsive_menu_breakpoint'] : 600;
-
-	$css .= '@media screen and (max-width: ' . intval( $breakpoint ) . 'px) {
+	$css .= '@media screen and (max-width: ' . intval( siteorigin_setting( 'responsive_menu_breakpoint' ) ) . 'px) {
 		body.responsive .main-navigation #mobile-menu-button {
 			display: inline-block;
 		}
@@ -1102,7 +1100,7 @@ function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 			display: inline-block;
 		}
 	}
-	@media screen and (min-width: ' . ( 1 + $breakpoint ) . 'px) {
+	@media screen and (min-width: ' . ( 1 + siteorigin_setting( 'responsive_menu_breakpoint' ) ) . 'px) {
 		body.responsive #mobile-navigation {
 			display: none !important;
 		}
