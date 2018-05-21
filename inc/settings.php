@@ -1100,7 +1100,7 @@ function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 			display: inline-block;
 		}
 	}
-	@media screen and (min-width: ' . ( 1 + siteorigin_setting( 'responsive_menu_breakpoint' ) ) . 'px) {
+	@media screen and (min-width: ' . ( 1 + intval( siteorigin_setting( 'responsive_menu_breakpoint' ) ) ) . 'px) {
 		body.responsive #mobile-navigation {
 			display: none !important;
 		}
