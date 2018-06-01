@@ -5,7 +5,7 @@
  * @see 	    http://docs.woothemes.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @version     3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ if ( version_compare( $woocommerce->version, 3.0, '>' ) ) {
 	// Availability.
 	$availability      = $product->get_availability();
 	$availability_html = empty( $availability['availability'] ) ? '' : '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>';
-	echo apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product );	
+	echo apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product );
 }
 ?>
 
@@ -42,17 +42,17 @@ if ( version_compare( $woocommerce->version, 3.0, '>' ) ) {
 			woocommerce_quantity_input( array(
 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
 				'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
-				'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : $product->get_min_purchase_quantity(),
+				'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(),
 			) );
 		} else {
 	 		if ( ! $product->is_sold_individually() ) {
 	 			woocommerce_quantity_input( array(
 	 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
 	 				'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product ),
-	 				'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
+	 				'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : 1 )
 	 			) );
-	 		}	
-		}	
+	 		}
+		}
 	 	?>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_quantity' ); ?>
