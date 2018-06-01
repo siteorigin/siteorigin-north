@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,9 +59,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 									if ( ! $product_permalink ) {
-										echo $thumbnail;
+										echo wp_kses_post( $thumbnail );
 									} else {
-										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
+										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post( $thumbnail ) );
 									}
 								?>
 							</td>
@@ -69,17 +69,19 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'siteorigin-north' ); ?>">
 								<?php
 									if ( ! $product_permalink ) {
-										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
+										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 									} else {
-										echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a class="cart-item-product-name" href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
+										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a class="cart-item-product-name" href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 									}
+
+									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 									// Meta data
 									echo wc_get_formatted_cart_item_data( $cart_item );
 
 									// Backorder notification
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-										echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'siteorigin-north' ) . '</p>';
+										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'siteorigin-north' ) . '</p>' ) );
 									}
 								?>
 							</td>
@@ -141,7 +143,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 								<label for="coupon_code"><?php _e( 'Coupon', 'siteorigin-north' ); ?>:</label>
 								<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" />
-								<input type="submit" class="button" name="apply_coupon"  value="<?php esc_attr_e( 'Apply Coupon', 'siteorigin-north' ); ?>">
+								<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?></button>
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>
@@ -153,7 +155,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 
-						<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+						<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 					</td>
 				</tr>
 
