@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.4.9 - 22 June 2018 =
+* Updated Google Fonts array.
+* Updated .pot file.
+
 = 1.4.8 - 01 June 2018 =
 * Updated WooCommerce files to WooCommerce version `3.4.0`.
 * Styled comment form cookie consent setting.
