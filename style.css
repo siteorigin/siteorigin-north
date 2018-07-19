@@ -1908,6 +1908,31 @@ article.page {
   clear: both;
   margin: 0 0 1.5em; }
 
+.search-results article.post {
+  clear: both;
+  margin-bottom: 35px;
+  overflow: auto; }
+
+.search-results .entry-title {
+  font-size: 18px; }
+
+.search-results .entry-thumbnail {
+  float: left;
+  margin: 0 20px 15px 0;
+  text-align: left;
+  width: 40%; }
+  @media (max-width: 1024px) {
+    .search-results .entry-thumbnail {
+      float: none;
+      text-align: center;
+      width: auto; } }
+
+.page-layout-no-sidebar.search-results .entry-thumbnail {
+  width: 30%; }
+  @media (max-width: 1024px) {
+    .page-layout-no-sidebar.search-results .entry-thumbnail {
+      width: auto; } }
+
 /*--------------------------------------------------------------
 ## Post Pagination
 --------------------------------------------------------------*/
