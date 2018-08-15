@@ -370,6 +370,8 @@ jQuery( function ( $ ) {
 			var $img = $mh.find( '.site-branding img' ),
 			    imgWidth = $img.width(),
 			    imgHeight = $img.height();
+			    scaledWidth = imgWidth * siteoriginNorth.logoScale;
+			    scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
@@ -379,7 +381,7 @@ jQuery( function ( $ ) {
 				if ( top > 0 ) {
 					var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
 					// If Scale == siteoriginNorth.logoScale, logo is completely scaled
-					if ( scale != siteoriginNorth.logoScale ) {
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
 						if ( $img.length ) {
 							$img.css( {
 								width: imgWidth * scale,
