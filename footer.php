@@ -43,9 +43,17 @@
 				<?php
 				siteorigin_north_footer_text();
 
+				if ( function_exists( 'the_privacy_policy_link' ) ) {
+					$privacy_url = get_privacy_policy_url();
+					if ( ! empty( $privacy_url ) && siteorigin_setting( 'footer_text' ) ) {
+						?><span class="sep"> | </span><?php
+					}					
+					the_privacy_policy_link( '', '' );
+				}
+				
 				$credit_text = apply_filters(
 					'siteorigin_north_footer_credits',
-					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' )
+					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' )
 				);
 
 				if ( ! empty( $credit_text ) ) {
