@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.5 - 16 August 2018 =
+* Added featured images to search results.
+* Added a WooCommerce setting for equal height rows.
+* Added a filter to adjust logo scale and prevent constant rescaling.
+* Removed post format aside styling.
+* Added bottom bar privacy policy link.
+
 = 1.4.9 - 22 June 2018 =
 * Updated Google Fonts array.
 * Updated .pot file.
