@@ -159,5 +159,32 @@
 				}
 			}
 		}
+
+		@at-root .woocommerce.equalize-rows #main ul.products {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+			li {
+				display: flex;
+				flex-wrap: wrap;
+				
+				.button {
+					margin-top: auto;
+					margin-right: auto;
+					margin-left: auto;
+				}
+
+				@media (max-width: 768px) {
+
+					@at-root body.responsive#{&} {
+
+						&:nth-of-type(2n) {
+							margin-left: auto;
+						}
+					}
+				}				
+			}
+		}
 	}
 }

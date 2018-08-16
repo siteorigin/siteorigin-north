@@ -6,6 +6,7 @@
     margin: 0 0 0 (-$size__site-sidebar);
 
 	@media (max-width: 600px) {
+        
 		body.rtl.responsive & {
 			margin: 0 !important;
 		}
@@ -16,6 +17,7 @@
 	margin: 0 0 0 $size__site-sidebar;
 
 	@media (max-width: 600px) {
+
 		body.rtl.responsive & {
 			margin: 0 !important;
 		}

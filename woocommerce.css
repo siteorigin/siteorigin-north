@@ -129,6 +129,21 @@
     font-family: "Droid Serif", sans-serif;
     color: #c75d5d; }
 
+.woocommerce.equalize-rows #main ul.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .woocommerce.equalize-rows #main ul.products li {
+    display: flex;
+    flex-wrap: wrap; }
+    .woocommerce.equalize-rows #main ul.products li .button {
+      margin-top: auto;
+      margin-right: auto;
+      margin-left: auto; }
+    @media (max-width: 768px) {
+      body.responsive.woocommerce.equalize-rows #main ul.products li:nth-of-type(2n) {
+        margin-left: auto; } }
+
 /*--------------------------------------------------------------
 # WooCommerce Element Styles
 --------------------------------------------------------------*/

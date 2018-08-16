@@ -71,7 +71,7 @@
 						if ( $target.offset().top < 48 ) {
 							height += $( '#masthead' ).outerHeight();
 						} else if ( $( '.site-branding' ).outerHeight() > $( '#site-navigation' ).outerHeight() ) {
-							height += $( '#masthead' ).outerHeight() * 0.775;
+							height += $( '#masthead' ).outerHeight() * siteoriginNorth.logoScale;
 						} else {
 							height += $( '#masthead' ).height() + ( $( '#masthead' ).innerHeight() - $( '#masthead' ).height() );
 						}
@@ -367,36 +367,37 @@ jQuery( function ( $ ) {
 		};
 
 		if ( $mh.data( 'scale-logo' ) ) {
+			var $img = $mh.find( '.site-branding img' ),
+			    imgWidth = $img.width(),
+			    imgHeight = $img.height();
+			    scaledWidth = imgWidth * siteoriginNorth.logoScale;
+			    scaledHeight = imgHeight * siteoriginNorth.logoScale;
+
 			var smResizeLogo = function () {
-				var top = window.pageYOffset || document.documentElement.scrollTop;
+				var $branding = $mh.find( '.site-branding > *' ),
+				    top = window.pageYOffset || document.documentElement.scrollTop;
 				top -= pageTop;
 
-				var $img = $mh.find( '.site-branding img' ),
-					$branding = $mh.find( '.site-branding > *' );
-
-				$img.removeAttr( 'style' );
-				var imgWidth = $img.width(),
-					imgHeight = $img.height();
-
 				if ( top > 0 ) {
-					var scale = 0.775 + ( Math.max( 0, 48 - top ) / 48 * ( 1 - 0.775 ) );
+					var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
+					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+						if ( $img.length ) {
+							$img.css( {
+								width: imgWidth * scale,
+								height: imgHeight * scale,
+								'max-width' : 'none'
+							} );
+						}
+						else {
+							$branding.css( 'transform', 'scale(' + scale + ')' );
+						}
 
-					if ( $img.length ) {
-
-						$img.css( {
-							width: imgWidth * scale,
-							height: imgHeight * scale,
-							'max-width' : 'none'
+						$mh.css( {
+							'padding-top': mhPadding.top * scale,
+							'padding-bottom': mhPadding.bottom * scale
 						} );
 					}
-					else {
-						$branding.css( 'transform', 'scale(' + scale + ')' );
-					}
-
-					$mh.css( {
-						'padding-top': mhPadding.top * scale,
-						'padding-bottom': mhPadding.bottom * scale
-					} );
 				}
 				else {
 					if ( ! $img.length ) {
@@ -455,6 +456,7 @@ jQuery( function ( $ ) {
 
 ( function( $ ) {
 	$( window ).load( function() {
+		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
 		// Handle smooth scrolling.
 		if ( siteoriginNorth.smoothScroll ) {
 			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScroll();

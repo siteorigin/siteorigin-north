@@ -356,8 +356,41 @@ article.page {
 	}
 }
 
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.search-results {
+
+	article.post {
+		clear: both;
+		margin-bottom: 35px;
+		overflow: auto;
+	}
+
+	.entry-title {
+		font-size: 18px;
+	}	
+
+	.entry-thumbnail {
+		float: left;
+		margin: 0 20px 15px 0;
+		text-align: left;
+		width: 40%;
+		
+		@media (max-width: 1024px) {
+			float: none;
+			text-align: center;
+			width: auto;
+		}
+	}
+
+	@at-root .page-layout-no-sidebar.search-results .entry-thumbnail {
+		width: 30%;
+		
+		@media (max-width: 1024px) {
+			width: auto;
+		}		
+	}
 }

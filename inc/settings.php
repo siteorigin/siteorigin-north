@@ -455,6 +455,12 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 					'step' => 1
 				),
 
+				'equalize_rows' => array(
+					'type' => 'checkbox',
+					'label' => esc_html__( 'Equalize Product Rows', 'siteorigin-north' ),
+					'description' => esc_html__( 'Equalize product row height on shop archive pages.', 'siteorigin-north' ),
+				),				
+
 				'display_cart' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Display Cart', 'siteorigin-north' ),
@@ -1230,6 +1236,7 @@ function siteorigin_north_settings_defaults( $defaults ) {
 
 	// WooCommerce defaults.
 	$defaults['woocommerce_archive_columns']		= 3;
+	$defaults['woocommerce_equalize_rows']			= false;
 	$defaults['woocommerce_display_cart']			= true;
 	$defaults['woocommerce_display_checkout_cart']	= false;
 	$defaults['woocommerce_display_quick_view']		= false;
