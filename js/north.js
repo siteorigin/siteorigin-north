@@ -380,7 +380,7 @@ jQuery( function ( $ ) {
 
 				if ( top > 0 ) {
 					var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
-					// If Scale == siteoriginNorth.logoScale, logo is completely scaled
+					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
 					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
 						if ( $img.length ) {
 							$img.css( {
