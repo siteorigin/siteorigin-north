@@ -433,6 +433,15 @@ jQuery( function ( $ ) {
 		}
 	} );
 
+	// Close the header search when clicking outside of the search field or open search button.
+	$( document ).click( function() {
+	    $( '#close-search.animate-in' ).trigger( 'click' );
+	} );
+
+	$( '.north-search-icon, #header-search form' ).click( function() {
+		return false;
+	} );	
+
 	// Close search with escape key.
 	$( document ).keyup( function( e ) {
 		if ( e.keyCode == 27 ) { // Escape key maps to keycode `27`.
