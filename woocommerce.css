@@ -110,10 +110,10 @@
   .wc-columns-5.woocommerce #main ul.products li.product {
     margin: 0 2.9% 2.992em 0;
     width: 17.68%; }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     body.responsive.woocommerce #main ul.products li.product {
-      width: 48%;
-      margin: 0 0 2.992em; } }
+      margin-right: 0;
+      width: 100%; } }
   .woocommerce #main ul.products li.product a.added_to_cart {
     font-size: 13px; }
   .woocommerce #main ul.products li.product.last {
@@ -136,13 +136,13 @@
   .woocommerce.equalize-rows #main ul.products li {
     display: flex;
     flex-wrap: wrap; }
+    @media (max-width: 600px) {
+      .woocommerce.equalize-rows #main ul.products li {
+        display: block; } }
     .woocommerce.equalize-rows #main ul.products li .button {
       margin-top: auto;
       margin-right: auto;
       margin-left: auto; }
-    @media (max-width: 768px) {
-      body.responsive.woocommerce.equalize-rows #main ul.products li:nth-of-type(2n) {
-        margin-left: auto; } }
 
 /*--------------------------------------------------------------
 # WooCommerce Element Styles
