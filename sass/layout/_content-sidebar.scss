@@ -45,19 +45,19 @@
 	body.responsive {
 	
 		.content-area {
-			float: none;
-			margin: 0;
-			width: auto;
+			float: none !important;
+			margin: 0 !important;
+			width: 100% !important;
 		}
 
 		.site-main {
-			margin: 0;
+			margin: 0 !important;
 		}
 
 		.site-content .widget-area {
-			float: none;
+			float: none !important;
 			padding: 40px 0 0;
-			width: 100%;
+			width: 100% !important;
 		}
 	}
 }

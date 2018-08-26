@@ -1239,15 +1239,15 @@ a {
 
 @media (max-width: 600px) {
   body.responsive .content-area {
-    float: none;
-    margin: 0;
-    width: auto; }
+    float: none !important;
+    margin: 0 !important;
+    width: 100% !important; }
   body.responsive .site-main {
-    margin: 0; }
+    margin: 0 !important; }
   body.responsive .site-content .widget-area {
-    float: none;
+    float: none !important;
     padding: 40px 0 0;
-    width: 100%; } }
+    width: 100% !important; } }
 
 /*--------------------------------------------------------------
 ## Left Sidebar Layout
