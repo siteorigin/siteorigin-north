@@ -1238,16 +1238,16 @@ a {
   margin: 0; }
 
 @media (max-width: 600px) {
-  body.responsive .content-area {
-    float: none !important;
-    margin: 0 !important;
-    width: 100% !important; }
-  body.responsive .site-main {
-    margin: 0 !important; }
-  body.responsive .site-content .widget-area {
-    float: none !important;
+  body.responsive #primary.content-area {
+    float: none;
+    margin: 0;
+    width: 100%; }
+  body.responsive #main.site-main {
+    margin: 0; }
+  body.responsive #content.site-content .widget-area {
+    float: none;
     padding: 40px 0 0;
-    width: 100% !important; } }
+    width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Left Sidebar Layout

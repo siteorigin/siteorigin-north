@@ -44,20 +44,20 @@
 
 	body.responsive {
 	
-		.content-area {
-			float: none !important;
-			margin: 0 !important;
-			width: 100% !important;
+		#primary.content-area {
+			float: none;
+			margin: 0;
+			width: 100%;
 		}
 
-		.site-main {
-			margin: 0 !important;
+		#main.site-main {
+			margin: 0;
 		}
 
-		.site-content .widget-area {
-			float: none !important;
+		#content.site-content .widget-area {
+			float: none;
 			padding: 40px 0 0;
-			width: 100% !important;
+			width: 100%;
 		}
 	}
 }
