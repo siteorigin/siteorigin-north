@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.5.1 - 27 August 2018 =
+* Closed the header search when clicking away.
+* Resolve responsive sidebar behaviour problem.
+* Changed WooCommerce to a single column layout for 600px and below.
+
 = 1.5 - 16 August 2018 =
 * Added featured images to search results.
 * Added a WooCommerce setting for equal height rows.
