@@ -434,13 +434,9 @@ jQuery( function ( $ ) {
 	} );
 
 	// Close the header search when clicking outside of the search field or open search button.
-	$( document ).click( function() {
-	    $( '#close-search.animate-in' ).trigger( 'click' );
-	} );
-
-	$( '.north-search-icon, #header-search form' ).click( function() {
-		return false;
-	} );	
+	$( '#header-search input[type=search]' ).on('focusout', function(e) {
+		$( '#close-search.animate-in' ).trigger( 'click' );
+	});
 
 	// Close search with escape key.
 	$( document ).keyup( function( e ) {
