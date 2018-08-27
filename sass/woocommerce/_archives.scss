@@ -125,10 +125,11 @@
 					width: 17.68%;
 				}
 
-				@media (max-width: 768px) {
+				@media (max-width: 600px) {
+
 					@at-root body.responsive#{&} {
-						width: 48%;
-						margin: 0 0 2.992em;
+						margin-right: 0;
+						width: 100%;
 					}
 				}
 
@@ -169,21 +170,15 @@
 				display: flex;
 				flex-wrap: wrap;
 				
+				@media (max-width: 600px) {
+					display: block;	
+				}
+
 				.button {
 					margin-top: auto;
 					margin-right: auto;
 					margin-left: auto;
 				}
-
-				@media (max-width: 768px) {
-
-					@at-root body.responsive#{&} {
-
-						&:nth-of-type(2n) {
-							margin-left: auto;
-						}
-					}
-				}				
 			}
 		}
 	}

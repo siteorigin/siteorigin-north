@@ -1238,13 +1238,13 @@ a {
   margin: 0; }
 
 @media (max-width: 600px) {
-  body.responsive .content-area {
+  body.responsive #primary.content-area {
     float: none;
     margin: 0;
-    width: auto; }
-  body.responsive .site-main {
+    width: 100%; }
+  body.responsive #main.site-main {
     margin: 0; }
-  body.responsive .site-content .widget-area {
+  body.responsive #content.site-content .widget-area {
     float: none;
     padding: 40px 0 0;
     width: 100%; } }

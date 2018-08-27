@@ -44,17 +44,17 @@
 
 	body.responsive {
 	
-		.content-area {
+		#primary.content-area {
 			float: none;
 			margin: 0;
-			width: auto;
+			width: 100%;
 		}
 
-		.site-main {
+		#main.site-main {
 			margin: 0;
 		}
 
-		.site-content .widget-area {
+		#content.site-content .widget-area {
 			float: none;
 			padding: 40px 0 0;
 			width: 100%;
