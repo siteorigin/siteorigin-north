@@ -299,7 +299,6 @@ jQuery( function ( $ ) {
 	if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 		var $mhs = false,
 			mhTop = false,
-			pageTop = $( '#page' ).offset().top,
 			$mh = $( '#masthead' ),
 			$tb = $( '#topbar' ),
 			$wpab = $( '#wpadminbar' );
@@ -378,36 +377,38 @@ jQuery( function ( $ ) {
 				    top = window.pageYOffset || document.documentElement.scrollTop;
 				top -= pageTop;
 
-				if ( top > 0 ) {
-					var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
-					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
-					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
-						if ( $img.length ) {
-							$img.css( {
-								width: imgWidth * scale,
-								height: imgHeight * scale,
-								'max-width' : 'none'
-							} );
-						}
-						else {
-							$branding.css( 'transform', 'scale(' + scale + ')' );
-						}
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
+				if( top > 0 ) {
+					$mh.css( {
+						'padding-top': mhPadding.top * scale,
+						'padding-bottom': mhPadding.bottom * scale
+					} );
 
-						$mh.css( {
-							'padding-top': mhPadding.top * scale,
-							'padding-bottom': mhPadding.bottom * scale
-						} );
-					}
-				}
-				else {
-					if ( ! $img.length ) {
-						$branding.css( 'transform', 'scale(1)' );
-					}
-
+				} else {
 					$mh.css( {
 						'padding-top': mhPadding.top,
 						'padding-bottom': mhPadding.bottom
 					} );
+				}
+
+				if ( $img.length ) {
+					// If Scale == siteoriginNorth.logoScale, logo is completely scaled
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+						var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginCorp.logoScale ) );
+						$img.css( {
+							width: imgWidth * scale,
+							height: imgHeight * scale,
+							'max-width' : 'none'
+						} );
+					}
+				} else {
+					if ( top >= 0 ) {
+						$branding.css( 'transform', 'scale(' + scale + ')' );
+					} else {
+						if ( ! $img.length ) {
+							$branding.css( 'transform', 'scale(1)' );
+						}
+					}
 				}
 			};
 			smResizeLogo();
