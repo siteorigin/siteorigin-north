@@ -302,51 +302,6 @@ jQuery( function( $ ) {
 			$tb = $( '#topbar' ),
 			$wpab = $( '#wpadminbar' );
 
-		var smSetup = function() {
-
-			if ( $mhs === false ) {
-				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
-			}
-			if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
-				$mhs.css( 'height', $mh.outerHeight() );
-			}
-			// Toggle .topbar-out with visibility of top-bar in the viewport.
-			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.northIsVisible() ) {
-				$( 'body' ).addClass( 'topbar-out' );
-			}
-			if ( $tb.length && $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
-				$( 'body' ).removeClass( 'topbar-out' );
-			}
-
-			if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
-				$mh.css( 'position', 'fixed' );
-			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
-				$mh.css( 'position', 'absolute' );
-			}
-
-			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $( window ).scrollTop() ) {
-				$( 'body' ).addClass( 'topbar-out' );
-			}
-
-			if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
-				if ( ! $wpab.northIsVisible() ) {
-					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
-						$mh.addClass( 'mobile-sticky-menu' );
-					}
-				}
-				if ( $wpab.northIsVisible() ) {
-					$mh.removeClass( 'mobile-sticky-menu' );
-				}
-			}
-
-			if ( $( window ).width() > 600 && $mh.hasClass( 'mobile-sticky-menu' ) ) {
-				$mh.removeClass( 'mobile-sticky-menu' );
-			}
-
-		}
-		smSetup();
-		$( window ).resize( smSetup ).scroll( smSetup );
-
 		// Sticky header shadow.
 		var smShadow = function() {
 			if ( $( window ).scrollTop() > 0 ) {
@@ -409,6 +364,52 @@ jQuery( function( $ ) {
 			smResizeLogo();
 			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		}
+
+		var smSetup = function() {
+
+			if ( $mhs === false ) {
+				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
+			}
+			if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+				$mhs.css( 'height', $mh.outerHeight() );
+			}
+			// Toggle .topbar-out with visibility of top-bar in the viewport.
+			if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.northIsVisible() ) {
+				$( 'body' ).addClass( 'topbar-out' );
+			}
+			if ( $tb.length && $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
+				$( 'body' ).removeClass( 'topbar-out' );
+			}
+
+			if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+				$mh.css( 'position', 'fixed' );
+			} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
+				$mh.css( 'position', 'absolute' );
+			}
+
+			if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $( window ).scrollTop() ) {
+				$( 'body' ).addClass( 'topbar-out' );
+			}
+
+			if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+				if ( ! $wpab.northIsVisible() ) {
+					if ( $( 'body' ).hasClass( 'no-topbar' ) || ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  $( 'body' ).hasClass( 'topbar-out' ) ) ) {
+						$mh.addClass( 'mobile-sticky-menu' );
+					}
+				}
+				if ( $wpab.northIsVisible() ) {
+					$mh.removeClass( 'mobile-sticky-menu' );
+				}
+			}
+
+			if ( $( window ).width() > 600 && $mh.hasClass( 'mobile-sticky-menu' ) ) {
+				$mh.removeClass( 'mobile-sticky-menu' );
+			}
+
+		}
+		
+		smSetup();
+		$( window ).resize( smSetup ).scroll( smSetup );
 	}
 
 	// Handle the header search.
