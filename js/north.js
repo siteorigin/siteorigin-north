@@ -6,23 +6,23 @@
 
 // Burst animation plugin.
 (
-	function ( $ ) {
+	function( $ ) {
 
 		var mousePos = {x: 0, y: 0};
-		$( document ).mousemove( function ( e ) {
+		$( document ).mousemove( function( e ) {
 			mousePos = {
 				x: e.pageX,
 				y: e.pageY
 			};
 		} );
 
-		$.fn.burstAnimation = function ( options ) {
+		$.fn.burstAnimation = function( options ) {
 			var settings = $.extend( {
 				event: "click",
 				container: "parent"
 			}, options );
 
-			return $( this ).each( function () {
+			return $( this ).each( function() {
 				var $$ = $( this ),
 					$p = settings.container === 'parent' ? $$.parent() : $$.closest( settings.container ),
 					$o = $( '<div class="burst-animation-overlay"></div>' ),
@@ -60,7 +60,7 @@
 		};
 
 		$.fn.northSmoothScroll = function () {
-			$( this ).click( function ( e ) {
+			$( this ).click( function( e ) {
 				var $a = $( this );
 				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
 
@@ -96,10 +96,10 @@
 	}
 )( jQuery );
 
-jQuery( function ( $ ) {
+jQuery( function( $ ) {
 
 	$( '.entry-meta a' ).hover(
-		function () {
+		function() {
 			$( this ).closest( 'li' ).addClass( 'hovering' );
 		},
 		function () {
@@ -107,22 +107,22 @@ jQuery( function ( $ ) {
 		}
 	);
 
-    // Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
-    if ( typeof $.fn.fitVids !== 'undefined' ) {
-        $( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
-    }
+	// Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
+	if ( typeof $.fn.fitVids !== 'undefined' ) {
+		$( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+	}
 
 	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
-	if( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
+	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
 		$('body').removeClass('no-touch');
 	}
 	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
-		if ( /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream ) {
+		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
 		}
 		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
-			$( this ).click( function(e){
-				var link = $(this);
+			$( this ).click( function( e ){
+				var link = $( this );
 				e.stopPropagation();
 				link.parent().addClass( 'touch-drop' );
 
@@ -155,7 +155,7 @@ jQuery( function ( $ ) {
 		} );
 
 		var resetMenu = function () {
-			$( '.main-navigation ul ul' ).each( function () {
+			$( '.main-navigation ul ul' ).each( function() {
 				var $$ = $( this );
 				var width = Math.max.apply( Math, $$.find( '> li > a' ).map( function () {
 					return $( this ).width();
@@ -178,14 +178,14 @@ jQuery( function ( $ ) {
 		alignMenu();
 
 		// Add keyboard access to the menu.
-		$( '.menu-item' ).children( 'a' ).focus( function () {
+		$( '.menu-item' ).children( 'a' ).focus( function() {
 			$( this ).parents( 'ul, li' ).addClass( 'focus' );
 		} );
 		// Click event fires after focus event.
-		$( '.menu-item' ).children( 'a' ).click( function () {
+		$( '.menu-item' ).children( 'a' ).click( function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
-		$( '.menu-item' ).children( 'a' ).focusout( function () {
+		$( '.menu-item' ).children( 'a' ).focusout( function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
 
@@ -198,7 +198,7 @@ jQuery( function ( $ ) {
 
 	// Handle displaying the mobile menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function ( e ) {
+	$( '#mobile-menu-button' ).click( function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'to-close' );
@@ -258,14 +258,14 @@ jQuery( function ( $ ) {
 
 		$mobileMenu.slideToggle( 'fast' );
 
-		$( '#mobile-navigation a' ).click(function(e) {
+		$( '#mobile-navigation a' ).click( function( e ) {
 			if ( ! $( this ).hasClass( 'has-dropdown' ) || ( typeof $( this ).attr( 'href' ) !== "undefined" && $( this ).attr( 'href' )  !== "#" ) ) {
 				if ( $mobileMenu.is( ':visible' ) ) {
 					$mobileMenu.slideUp( 'fast' );
 				}
 				$$.removeClass( 'to-close' );
 			}
-		});
+		} );
 
 		if ( siteoriginNorth.smoothScroll ) {
 			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
@@ -281,8 +281,7 @@ jQuery( function ( $ ) {
 			if ( ! $( '#scroll-to-top' ).hasClass( 'show' ) ) {
 				$( '#scroll-to-top' ).css( 'pointer-events', 'auto' ).addClass( 'show' );
 			}
-		}
-		else {
+		} else {
 			if ( $( '#scroll-to-top' ).hasClass( 'show' ) ) {
 				$( '#scroll-to-top' ).css( 'pointer-events', 'none' ).removeClass( 'show' );
 			}
@@ -292,7 +291,7 @@ jQuery( function ( $ ) {
 	sttWindowScroll();
 	$( window ).scroll( sttWindowScroll );
 	$( '#scroll-to-top' ).click( function () {
-		$( 'html,body' ).animate( {scrollTop: 0} );
+		$( 'html,body' ).animate( { scrollTop: 0 } );
 	} );
 
 	// Now lets do the sticky menu.
@@ -350,15 +349,14 @@ jQuery( function ( $ ) {
 
 		// Sticky header shadow.
 		var smShadow = function() {
-            if ( $( window ).scrollTop() > 0 ) {
-                $( $mh ).addClass( 'floating' );
-            }
-            else {
-                $( $mh ).removeClass( 'floating' );
-            }
+			if ( $( window ).scrollTop() > 0 ) {
+				$( $mh ).addClass( 'floating' );
+			} else {
+				$( $mh ).removeClass( 'floating' );
+			}
 		};
 		smShadow();
-        $( window ).scroll( smShadow );
+		$( window ).scroll( smShadow );
 
 		var mhPadding = {
 			top: parseInt( $mh.css( 'padding-top' ) ),
@@ -374,10 +372,10 @@ jQuery( function ( $ ) {
 
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
-				    top = window.pageYOffset || document.documentElement.scrollTop;
+					top = window.pageYOffset || document.documentElement.scrollTop;
 
 				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
-				if( top > 0 ) {
+				if ( top > 0 ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginNorth.logoScale,
 						'padding-bottom': mhPadding.bottom * siteoriginNorth.logoScale
@@ -391,10 +389,10 @@ jQuery( function ( $ ) {
 				}
 
 				if ( $img.length ) {
-					// If Scale == siteoriginNorth.logoScale, logo is completely scaled
+					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
 					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
 						var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
-						$('.site-branding img').css( {
+						$( '.site-branding img' ).css( {
 							width: imgWidth * scale,
 							height: imgHeight * scale,
 							'max-width' : 'none'
