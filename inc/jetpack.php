@@ -44,10 +44,10 @@ if ( Jetpack::is_module_active( 'lazy-images' ) ) :
 		add_filter( 'jetpack_lazy_images_blacklisted_classes', 'siteorigin_north_jetpack_logo_not_lazy' );
 	}
 
-	if (  ! function_exists( 'siteorigin_north_jetpack_logo_not_lazy_class' ) ) {
+	if ( ! function_exists( 'siteorigin_north_jetpack_logo_not_lazy_class' ) ) {
 
 		function siteorigin_north_jetpack_logo_not_lazy_class( $attrs ) {
-			if( ! empty( $attrs['class'] ) ) {
+			if ( ! empty( $attrs['class'] ) ) {
 				$attrs['class'] .= ' skip-lazy';
 			} else {
 				$attrs['class'] = 'skip-lazy';
