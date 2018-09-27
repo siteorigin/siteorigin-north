@@ -14,7 +14,7 @@ if ( ! function_exists( 'siteorigin_north_display_logo' ) ):
 function siteorigin_north_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
 	if ( ! empty( $logo ) ) {
-		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array() );
+		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array()  );
 
 		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-north' ); ?></span><?php

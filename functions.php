@@ -383,7 +383,9 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+if ( class_exists( 'Jetpack' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
 
 /**
  * Load the theme settings file
