@@ -43,6 +43,20 @@ if ( Jetpack::is_module_active( 'lazy-images' ) ) :
 		}
 		add_filter( 'jetpack_lazy_images_blacklisted_classes', 'siteorigin_north_jetpack_logo_not_lazy' );
 	}
+
+	if (  ! function_exists( 'siteorigin_north_jetpack_logo_not_lazy_class' ) ) {
+
+		function siteorigin_north_jetpack_logo_not_lazy_class( $attrs ) {
+			if( ! empty( $attrs['class'] ) ) {
+				$attrs['class'] .= ' skip-lazy';
+			} else {
+				$attrs['class'] = 'skip-lazy';
+			}
+
+			return $attrs;
+		}
+		add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_jetpack_logo_not_lazy_class' );
+	}
 endif;
 
 if ( ! function_exists( 'siteorigin_north_infinite_scroll_render' ) ) :
