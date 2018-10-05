@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.5.2 - 05 October 2018 =
+* Resolved a problem with logo scaling when returning to the top of the page.
+* Resolved a problem with logo scaling and Jetpack Lazy Images.
+* Prevented FitVids.js from loading if user is viewing a Gutenberg page.
+
 = 1.5.1 - 27 August 2018 =
 * Closed the header search when clicking away.
 * Resolve responsive sidebar behaviour problem.
