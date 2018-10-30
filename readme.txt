@@ -97,6 +97,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6 - 30 October 2018 =
+* Updated WooCommerce templates to version `3.5.0`.
+* Added a setting for the footer privacy policy link located at `Customize > Theme Settings > Footer`.
+
 = 1.5.2 - 05 October 2018 =
 * Resolved a problem with logo scaling when returning to the top of the page.
 * Resolved a problem with logo scaling and Jetpack Lazy Images.
