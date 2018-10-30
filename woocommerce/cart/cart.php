@@ -13,14 +13,10 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-wc_print_notices();
+defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
@@ -61,7 +57,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									if ( ! $product_permalink ) {
 										echo wp_kses_post( $thumbnail );
 									} else {
-										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post( $thumbnail ) );
+										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
 									}
 								?>
 							</td>
@@ -76,12 +72,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
-									// Meta data
+									// Meta data.
 									echo wc_get_formatted_cart_item_data( $cart_item );
 
-									// Backorder notification
+									// Backorder notification.
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'siteorigin-north' ) . '</p>' ) );
+										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'siteorigin-north' ) . '</p>', $product_id ) );
 									}
 								?>
 							</td>

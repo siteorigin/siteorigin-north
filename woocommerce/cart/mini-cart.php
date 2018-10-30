@@ -15,7 +15,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.5.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -35,15 +35,16 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 
-				$product_name  = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
-				$thumbnail     = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-				$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+					$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
+					$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+					$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
-				<div class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item clear', $cart_item, $cart_item_key ) ); ?>">
+				<div class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-					<?php if ( ! $_product->is_visible() ) : ?>
+					<?php if ( empty( $product_permalink ) ) : ?>
 						<div class="mini_cart_img">
-							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
+							<?php echo $thumbnail; ?>
 						</div>
 						<div class="mini_cart_details">
 							<p class="mini_cart_product"><?php echo $product_name; ?></p>
@@ -56,13 +57,14 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							__( 'Remove this item', 'siteorigin-north' ),
 							esc_attr( $product_id ),
+							esc_attr( $cart_item_key ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
 						?>
 					<?php else : ?>
 						<a href="<?php echo esc_url( $_product->get_permalink( $cart_item ) ); ?>">
 							<div class="mini_cart_img">
-								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
+								<?php echo $thumbnail; ?>
 							</div>
 							<div class="mini_cart_details">
 								<p class="mini_cart_product"><?php echo $product_name; ?></p>

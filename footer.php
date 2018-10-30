@@ -43,7 +43,7 @@
 				<?php
 				siteorigin_north_footer_text();
 
-				if ( function_exists( 'the_privacy_policy_link' ) ) {
+				if ( function_exists( 'the_privacy_policy_link' ) && siteorigin_setting( 'footer_privacy_policy_link' ) ) {
 					$privacy_url = get_privacy_policy_url();
 					if ( ! empty( $privacy_url ) && siteorigin_setting( 'footer_text' ) ) {
 						?><span class="sep"> | </span><?php

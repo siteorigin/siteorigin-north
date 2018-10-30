@@ -376,6 +376,11 @@ function siteorigin_north_settings_init() {
 					'description'       => __( "{sitename} and {year} are your site's name and current year", 'siteorigin-north' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'privacy_policy_link'         => array(
+					'type'                 => 'checkbox',
+					'label'                => __('Privacy Policy Link', 'siteorigin-north'),
+					'description'          => __('Display the Privacy Policy page link.', 'siteorigin-north'),
+				),
 				'widget_title_color' => array(
 					'type'  => 'color',
 					'label' => __( 'Widget Title Color', 'siteorigin-north' ),
@@ -1222,6 +1227,7 @@ function siteorigin_north_settings_defaults( $defaults ) {
 
 	// Footer defaults.
 	$defaults['footer_text']             	= __( 'Copyright &copy; {year} {sitename}', 'siteorigin-north' );
+	$defaults['footer_privacy_policy_link'] = true;
 	$defaults['footer_widget_title_color']	= '#292929';
 	$defaults['footer_text_color']       	= '#595959';
 	$defaults['footer_link_color']       	= '#c75d5d';
