@@ -424,4 +424,3 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 = 1.0 - August 18 2015 =
 * Initial release.
-
