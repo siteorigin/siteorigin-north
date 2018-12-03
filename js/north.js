@@ -329,16 +329,13 @@ jQuery( function( $ ) {
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
 
-				if( top == 0 ) {
-						$( '.site-branding img' ).css( {
-							width: '',
-							height: '',
-						} );
-				} else if( top > 0 ) {
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
+				if ( top > 0 ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginNorth.logoScale,
 						'padding-bottom': mhPadding.bottom * siteoriginNorth.logoScale
 					} );
+
 				} else {
 					$mh.css( {
 						'padding-top': mhPadding.top,
@@ -348,12 +345,16 @@ jQuery( function( $ ) {
 
 				if ( $img.length ) {
 					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
-					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+					if( top == 0 ) {
+						$( '.site-branding img' ).css( {
+							width: '',
+							height: '',
+						} );
+					} else if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
 						var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
 						$( '.site-branding img' ).css( {
 							width: imgWidth * scale,
 							height: imgHeight * scale,
-							'max-width' : 'none'
 						} );
 					}
 				} else {
