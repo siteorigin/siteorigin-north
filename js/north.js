@@ -329,13 +329,16 @@ jQuery( function( $ ) {
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
 
-				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
-				if ( top > 0 ) {
+				if( top == 0 ) {
+						$( '.site-branding img' ).css( {
+							width: '',
+							height: '',
+						} );
+				} else if( top > 0 ) {
 					$mh.css( {
 						'padding-top': mhPadding.top * siteoriginNorth.logoScale,
 						'padding-bottom': mhPadding.bottom * siteoriginNorth.logoScale
 					} );
-
 				} else {
 					$mh.css( {
 						'padding-top': mhPadding.top,
