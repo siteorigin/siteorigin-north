@@ -313,58 +313,6 @@ jQuery( function( $ ) {
 		smShadow();
 		$( window ).scroll( smShadow );
 
-		var mhPadding = {
-			top: parseInt( $mh.css( 'padding-top' ) ),
-			bottom: parseInt( $mh.css( 'padding-bottom' ) )
-		};
-
-		if ( $mh.data( 'scale-logo' ) ) {
-			var $img = $mh.find( '.site-branding img' ),
-				imgWidth = $img.width(),
-				imgHeight = $img.height();
-				scaledWidth = imgWidth * siteoriginNorth.logoScale;
-				scaledHeight = imgHeight * siteoriginNorth.logoScale;
-
-			var smResizeLogo = function () {
-				var $branding = $mh.find( '.site-branding > *' ),
-					top = window.pageYOffset || document.documentElement.scrollTop;
-
-				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
-				if ( top > 0 ) {
-					$mh.css( {
-						'padding-top': mhPadding.top * siteoriginNorth.logoScale,
-						'padding-bottom': mhPadding.bottom * siteoriginNorth.logoScale
-					} );
-
-				} else {
-					$mh.css( {
-						'padding-top': mhPadding.top,
-						'padding-bottom': mhPadding.bottom
-					} );
-				}
-
-				if ( $img.length ) {
-					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
-					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
-						var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
-						$( '.site-branding img' ).css( {
-							width: imgWidth * scale,
-							height: imgHeight * scale,
-							'max-width' : 'none'
-						} );
-					}
-				} else {
-					if ( top > 0 ) {
-						$branding.css( 'transform', 'scale(' + siteoriginNorth.logoScale + ')' );
-					} else {
-						$branding.css( 'transform', 'scale(1)' );
-					}
-				}
-			};
-			smResizeLogo();
-			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
-		}
-
 		var smSetup = function() {
 
 			if ( $mhs === false ) {
@@ -459,9 +407,63 @@ jQuery( function( $ ) {
 ( function( $ ) {
 	$( window ).load( function() {
 		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
+
 		// Handle smooth scrolling.
 		if ( siteoriginNorth.smoothScroll ) {
 			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScroll();
+		}
+
+		var $mh = $( '#masthead' ),
+			mhPadding = {
+				top: parseInt( $mh.css( 'padding-top' ) ),
+				bottom: parseInt( $mh.css( 'padding-bottom' ) )
+			};
+
+		if ( $mh.data( 'scale-logo' ) ) {
+			var $img = $mh.find( '.site-branding img' ),
+			    imgWidth = $img.get(0).naturalWidth,
+			    imgHeight = $img.get(0).naturalHeight,
+			    scaledWidth = imgWidth * siteoriginNorth.logoScale,
+			    scaledHeight = imgHeight * siteoriginNorth.logoScale;
+
+			var smResizeLogo = function () {
+				var $branding = $mh.find( '.site-branding > *' ),
+					top = window.pageYOffset || document.documentElement.scrollTop;
+
+				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
+				if ( top > 0 ) {
+					$mh.css( {
+						'padding-top': mhPadding.top * siteoriginNorth.logoScale,
+						'padding-bottom': mhPadding.bottom * siteoriginNorth.logoScale
+					} );
+
+				} else {
+					$mh.css( {
+						'padding-top': mhPadding.top,
+						'padding-bottom': mhPadding.bottom
+					} );
+				}
+
+				if ( $img.length ) {
+					// If Scale == siteoriginNorth.logoScale, logo is completely scaled.
+					if ( $img.height() != scaledHeight || $img.width() != scaledWidth ) {
+						var scale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
+						$( '.site-branding img' ).css( {
+							width: imgWidth * scale,
+							height: imgHeight * scale,
+							'max-width' : 'none'
+						} );
+					}
+				} else {
+					if ( top > 0 ) {
+						$branding.css( 'transform', 'scale(' + siteoriginNorth.logoScale + ')' );
+					} else {
+						$branding.css( 'transform', 'scale(1)' );
+					}
+				}
+			};
+			smResizeLogo();
+			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
 		}
 	} );
 } )( jQuery );
