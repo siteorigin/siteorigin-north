@@ -290,7 +290,7 @@ jQuery( function( $ ) {
 
 	sttWindowScroll();
 	$( window ).scroll( sttWindowScroll );
-	$( '#scroll-to-top' ).click( function () {
+	$( '#scroll-to-top' ).click( function() {
 		$( 'html,body' ).animate( { scrollTop: 0 } );
 	} );
 
@@ -320,10 +320,10 @@ jQuery( function( $ ) {
 
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-			    imgWidth = $img.width(),
-			    imgHeight = $img.height();
-			    scaledWidth = imgWidth * siteoriginNorth.logoScale;
-			    scaledHeight = imgHeight * siteoriginNorth.logoScale;
+				imgWidth = $img.width(),
+				imgHeight = $img.height();
+				scaledWidth = imgWidth * siteoriginNorth.logoScale;
+				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),

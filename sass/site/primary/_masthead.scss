@@ -1,12 +1,12 @@
 #masthead {
 	background: $masthead__background_color;
 	border-bottom: $masthead__border_width solid $masthead__border_color;
+	margin-bottom: $masthead__bottom_margin;
+	min-width: 1060px;
 	padding: $masthead__padding 0;
 	position: relative;
-	margin-bottom: $masthead__bottom_margin;
 	width: 100%;
 	z-index: 999;
-	min-width: 1060px;
 
 	@at-root {
 		.sticky-menu:not(.no-topbar) & {
