@@ -97,6 +97,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.1 - 20 December 2018 =
+* Moved changelog to readme.txt file.
+* Updated scaling logo function to prevent logo removal during scroll.
+
 = 1.6 - 30 October 2018 =
 * Updated WooCommerce templates to version `3.5.0`.
 * Added a setting for the footer privacy policy link located at `Customize > Theme Settings > Footer`.
