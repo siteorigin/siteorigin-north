@@ -157,7 +157,7 @@ jQuery( function( $ ) {
 		var resetMenu = function () {
 			$( '.main-navigation ul ul' ).each( function() {
 				var $$ = $( this );
-				var width = Math.max.apply( Math, $$.find( '> li > a' ).map( function () {
+				var width = Math.max.apply( Math, $$.find( '> li > a' ).map( function() {
 					return $( this ).width();
 				} ).get() );
 				$$.find( '> li > a' ).width( width );
@@ -167,7 +167,7 @@ jQuery( function( $ ) {
 		$( window ).resize( resetMenu );
 
 		var alignMenu = function () {
-			$( '#primary-menu > li > ul.sub-menu' ).each( function () {
+			$( '#primary-menu > li > ul.sub-menu' ).each( function() {
 				var $$ = $( this );
 				var left = - (
 					$$.parents( 'li' ).width() - $$.width()
@@ -421,10 +421,10 @@ jQuery( function( $ ) {
 
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-			    imgWidth = $img.get(0).naturalWidth,
-			    imgHeight = $img.get(0).naturalHeight,
-			    scaledWidth = imgWidth * siteoriginNorth.logoScale,
-			    scaledHeight = imgHeight * siteoriginNorth.logoScale;
+				imgWidth = $img.get(0).naturalWidth,
+				imgHeight = $img.get(0).naturalHeight,
+				scaledWidth = imgWidth * siteoriginNorth.logoScale,
+				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
 			var smResizeLogo = function () {
 				var $branding = $mh.find( '.site-branding > *' ),
