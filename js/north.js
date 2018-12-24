@@ -421,8 +421,8 @@ jQuery( function( $ ) {
 
 		if ( $mh.data( 'scale-logo' ) ) {
 			var $img = $mh.find( '.site-branding img' ),
-				imgWidth = $img.get(0).naturalWidth,
-				imgHeight = $img.get(0).naturalHeight,
+				imgWidth = $img.attr( 'width' ),
+				imgHeight = $img.attr( 'height' ),
 				scaledWidth = imgWidth * siteoriginNorth.logoScale,
 				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 

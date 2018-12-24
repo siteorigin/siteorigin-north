@@ -341,7 +341,7 @@ figure {
   margin-left: 0;
   margin-right: 0; }
 
-img {
+#topbar-widgets img, .site-content img, .site-footer img {
   height: auto;
   /* Make sure images are scaled correctly. */
   max-width: 100%;
