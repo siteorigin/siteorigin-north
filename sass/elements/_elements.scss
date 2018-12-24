@@ -37,9 +37,11 @@ figure {
 	margin-right: 0;
 }
 
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+#topbar-widgets, .site-content, .site-footer {
+	img {
+		height: auto; /* Make sure images are scaled correctly. */
+		max-width: 100%; /* Adhere to container width. */
+	}
 }
 
 code {
