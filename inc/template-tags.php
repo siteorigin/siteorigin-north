@@ -52,9 +52,9 @@ function siteorigin_north_display_retina_logo( $attr ){
 		}
 	}
 	$retina = siteorigin_setting( 'branding_retina_logo' );
-	if( ! empty( $retina ) ) {
+	if ( ! empty( $retina ) ) {
 		$logo = siteorigin_setting( 'branding_logo' );
-		// Check if the user set a branding logo and if they didn't, default to the site identity logo
+		// Check if the user set a branding logo and if they didn't, default to the site identity logo.
 		if ( empty( $logo ) ) {
 			$logo = get_theme_mod( 'custom_logo' );
 		}
@@ -63,12 +63,12 @@ function siteorigin_north_display_retina_logo( $attr ){
 		$logo_src = wp_get_attachment_image_src( $logo, 'full' );
 		$retina_src = wp_get_attachment_image_src( $retina, 'full' );
 
-		if( ! empty( $logo_src ) ) {
+		if ( ! empty( $logo_src ) ) {
 			$srcset[] = $logo_src[0] . ' 1x';
 			$srcset[] = $retina_src[0] . ' 2x';
 		}
 
-		if( ! empty( $srcset ) ) {
+		if ( ! empty( $srcset ) ) {
 			$attr['srcset'] = implode( ',', $srcset );
 		}
 	}
@@ -303,19 +303,19 @@ function siteorigin_north_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
 		<?php $type = get_comment_type($comment->comment_ID); ?>
-		<?php if($type == 'comment') : ?>
+		<?php if ( $type == 'comment' ) : ?>
 			<div class="avatar-container">
 				<?php echo get_avatar(get_comment_author_email(), 80) ?>
 			</div>
 		<?php endif; ?>
 
 		<div class="comment-container">
-			<?php if( $depth <= $args['max_depth'] ) : ?>
+			<?php if ( $depth <= $args['max_depth'] ) : ?>
 				<?php comment_reply_link( array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 			<?php endif; ?>
 
 			<div class="info">
-				<?php if( is_rtl() ) : ?>
+				<?php if ( is_rtl() ) : ?>
 					<span class="date"><?php comment_date(); ?></span>
 					-
 					<span class="author"><?php comment_author_link(); ?></span>
@@ -399,9 +399,9 @@ if ( ! function_exists( 'siteorigin_north_display_icon' ) ) :
  * Displays SVG icons.
  */
 function siteorigin_north_display_icon( $type ) {
-	switch( $type ) {
+	switch ( $type ) {
 		case 'menu':
-			if ( siteorigin_setting( 'icons_menu' ) ): ?>
+			if ( siteorigin_setting( 'icons_menu' ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_menu', 'svg-icon-menu' ); ?>
 			<?php else : ?>
 				<div class="icon-menu">
@@ -446,7 +446,7 @@ function siteorigin_north_display_icon( $type ) {
 			break;
 
 		case 'search':
-			if ( siteorigin_setting( 'icons_search' ) ): ?>
+			if ( siteorigin_setting( 'icons_search' ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_search', 'svg-icon-search' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -464,7 +464,7 @@ if ( ! function_exists( 'siteorigin_north_breadcrumbs' ) ) :
  * Display's breadcrumbs supported by Yoast SEO & Breadcrumb NavXT.
  */
 function siteorigin_north_breadcrumbs() {
-	if( function_exists('bcn_display') ) {
+	if ( function_exists('bcn_display') ) {
 		?><div class="breadcrumbs">
 			<?php bcn_display(); ?>
 		</div><?php
