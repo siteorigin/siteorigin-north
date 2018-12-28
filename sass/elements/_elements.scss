@@ -4,12 +4,12 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after { // Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/.
 	box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
@@ -37,11 +37,9 @@ figure {
 	margin-right: 0;
 }
 
-#topbar-widgets, .site-content, .site-footer {
-	img {
-		height: auto; /* Make sure images are scaled correctly. */
-		max-width: 100%; /* Adhere to container width. */
-	}
+img:not(.size-full):not(.custom-logo) {
+	height: auto; // Make sure images are scaled correctly.
+	max-width: 100%; // Adhere to container width.
 }
 
 code {
