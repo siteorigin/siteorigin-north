@@ -136,7 +136,6 @@ function siteorigin_north_post_meta() {
 		number_format_i18n( get_comments_number() )
 	);
 
-
 	if ( siteorigin_setting( 'blog_display_date' ) ) {
 		?>
 		<li class="posted-on">
@@ -231,15 +230,15 @@ function siteorigin_north_posts_pagination() {
 		$args = array(
 			'next_text' => '<span class="north-icon-double-previous"></span>',
 			'prev_text' => '<span class="north-icon-double-next"></span>',
-			'end_size'     => 3,
-			'mid_size'     => 3
+			'end_size'  => 3,
+			'mid_size'  => 3
 		);
 	} else {
 		$args = array(
 			'next_text' => '<span class="north-icon-double-next"></span>',
 			'prev_text' => '<span class="north-icon-double-previous"></span>',
-			'end_size'     => 3,
-			'mid_size'     => 3
+			'end_size'  => 3,
+			'mid_size'  => 3
 		);
 	}
 
@@ -412,12 +411,12 @@ function siteorigin_north_display_icon( $type ) {
 			<?php endif;
 			break;
 
-		case 'close' :
+		case 'close':
 			if ( siteorigin_setting( 'icons_close_search' ) ): ?>
 				<?php siteorigin_north_custom_icon( 'icons_close_search', 'svg-icon-close' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
-				     viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+					viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 					<path class="circle" d="M22.1,7.7c-0.6-1.4-1.4-2.5-2.3-3.5c-1-1-2.2-1.8-3.5-2.3C14.9,1.3,13.5,1,12,1S9.1,1.3,7.7,1.9
 					C6.4,2.5,5.2,3.2,4.2,4.2c-1,1-1.8,2.2-2.3,3.5C1.3,9.1,1,10.5,1,12c0,1.5,0.3,2.9,0.9,4.3c0.6,1.4,1.4,2.5,2.3,3.5
 					c1,1,2.2,1.8,3.5,2.3C9.1,22.7,10.5,23,12,23s2.9-0.3,4.3-0.9c1.4-0.6,2.5-1.4,3.5-2.3c1-1,1.8-2.2,2.3-3.5
@@ -433,14 +432,14 @@ function siteorigin_north_display_icon( $type ) {
 			<?php endif;
 			break;
 
-		case 'up-arrow' :
+		case 'up-arrow':
 			if( siteorigin_setting('icons_scroll_to_top') ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_scroll_to_top', 'svg-icon-to-top' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-to-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 					<path class="st0" d="M12,2c0.3,0,0.5,0.1,0.7,0.3l7,7C19.9,9.5,20,9.7,20,10c0,0.3-0.1,0.5-0.3,0.7S19.3,11,19,11
-		                c-0.3,0-0.5-0.1-0.7-0.3L13,5.4V21c0,0.3-0.1,0.5-0.3,0.7S12.3,22,12,22s-0.5-0.1-0.7-0.3S11,21.3,11,21V5.4l-5.3,5.3
-		                C5.5,10.9,5.3,11,5,11c-0.3,0-0.5-0.1-0.7-0.3C4.1,10.5,4,10.3,4,10c0-0.3,0.1-0.5,0.3-0.7l7-7C11.5,2.1,11.7,2,12,2z"/>
+						c-0.3,0-0.5-0.1-0.7-0.3L13,5.4V21c0,0.3-0.1,0.5-0.3,0.7S12.3,22,12,22s-0.5-0.1-0.7-0.3S11,21.3,11,21V5.4l-5.3,5.3
+						C5.5,10.9,5.3,11,5,11c-0.3,0-0.5-0.1-0.7-0.3C4.1,10.5,4,10.3,4,10c0-0.3,0.1-0.5,0.3-0.7l7-7C11.5,2.1,11.7,2,12,2z"/>
 				</svg>
 			<?php endif;
 			break;
@@ -454,7 +453,6 @@ function siteorigin_north_display_icon( $type ) {
 				</svg>
 			<?php endif;
 			break;
-
 	}
 }
 endif;
