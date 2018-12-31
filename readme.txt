@@ -99,6 +99,7 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 = 1.6.4 - 31 December 2018 =
 * Resolved Site Identity Custom Logo not being being replaced by Retina Logo when added.
+* Excluded the logo from the global img selector.
 
 = 1.6.3 - 24 December 2018 =
 * Resolved error in theme folder naming causing a 404 error on WordPress.org.
