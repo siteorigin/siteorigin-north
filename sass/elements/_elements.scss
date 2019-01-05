@@ -37,7 +37,7 @@ figure {
 	margin-right: 0;
 }
 
-img:not(.size-full):not(.custom-logo) {
+img:not(.custom-logo) {
 	height: auto; // Make sure images are scaled correctly.
 	max-width: 100%; // Adhere to container width.
 }
@@ -48,13 +48,13 @@ code {
 }
 
 #page ::-moz-selection {
-  background-color: $color__primary_accent;
-  color: #fff;
+	background-color: $color__primary_accent;
+	color: #fff;
 }
 
 #page ::selection {
-  background-color: $color__primary_accent;
-  color: #fff;
+	background-color: $color__primary_accent;
+	color: #fff;
 }
 
 @import "tables";

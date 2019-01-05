@@ -339,7 +339,7 @@ figure {
   margin-left: 0;
   margin-right: 0; }
 
-img:not(.size-full):not(.custom-logo) {
+img:not(.custom-logo) {
   height: auto;
   max-width: 100%; }
 

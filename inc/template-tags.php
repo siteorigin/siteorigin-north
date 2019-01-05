@@ -7,14 +7,14 @@
  * @package siteorigin-north
  */
 
-if ( ! function_exists( 'siteorigin_north_display_logo' ) ):
+if ( ! function_exists( 'siteorigin_north_display_logo' ) ) :
 /**
  * Display the logo or site title
  */
 function siteorigin_north_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
 	if ( ! empty( $logo ) ) {
-		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array() );
+		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array( 'class' => 'custom-logo' ) );
 
 		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-north' ); ?></span><?php
@@ -41,11 +41,11 @@ function siteorigin_north_display_logo() {
 }
 endif;
 
-if ( ! function_exists( 'siteorigin_north_display_retina_logo' ) ):
+if ( ! function_exists( 'siteorigin_north_display_retina_logo' ) ) :
 /**
  * Display a retina ready logo
  */
-function siteorigin_north_display_retina_logo( $attr ){
+function siteorigin_north_display_retina_logo( $attr ) {
 	if ( current_filter() == 'wp_get_attachment_image_attributes' ) {
 		if ( ! isset( $attr['class'] ) || $attr['class'] != 'custom-logo' ) {
 			return $attr;
@@ -412,7 +412,7 @@ function siteorigin_north_display_icon( $type ) {
 			break;
 
 		case 'close':
-			if ( siteorigin_setting( 'icons_close_search' ) ): ?>
+			if ( siteorigin_setting( 'icons_close_search' ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_close_search', 'svg-icon-close' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
