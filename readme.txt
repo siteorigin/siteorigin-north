@@ -97,6 +97,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.5 - 07 January 2018 =
+* Added a class of `custom-logo` to the Branding logo. Only excluded `custom-logo` from the global `img` selector.
+* Corrected WooCommerce shop sidebar widget closing header tag.
+
 = 1.6.4 - 31 December 2018 =
 * Resolved Site Identity Custom Logo not being being replaced by Retina Logo when added.
 * Excluded the logo from the global img selector.
