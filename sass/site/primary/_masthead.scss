@@ -159,7 +159,7 @@
 	#topbar-widgets {
 		@include clearfix;
 		padding-top: $masthead__top_padding;
-		padding-bottom: $masthead__top_padding; 
+		padding-bottom: $masthead__top_padding;
 
 		.widgets {
 
@@ -187,7 +187,7 @@
 
 				.widget-title {
 					font-size: 1.1em;
-					margin-top: 0; 
+					margin-top: 0;
 				}
 			}
 		}
