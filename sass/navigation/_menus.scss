@@ -3,6 +3,8 @@
 	font-family: $font__menu;
 	font-size: 0.95em;
 	text-align: right;
+	
+	background: blue !important;
 
 	> div {
 		display: inline-block;
@@ -40,31 +42,30 @@
 		}
 
 		ul {
-			position: absolute;
-			top: 100%;
-			visibility: hidden;
-			z-index: 99999;
+			background-color: $navigation__dropdown_background_color;
+			border: 1px solid $navigation__dropdown_border_color;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 			opacity: 0;
+			position: absolute;
 			text-align: left;
+			top: 100%;
 			@include transition (all 0.15s ease-in);
 			@include transform-origin(center top);
 			@include transform( scale(0.95) );
-
-			background-color: $navigation__dropdown_background_color;
-			border: 1px solid $navigation__dropdown_border_color;
-			box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+			visibility: hidden;
+			z-index: 99999;
 
 			ul {
 				left: 100%;
-				top: -1px;
 				margin-left: 0 !important;
+				top: -1px;
 				@include transform-origin(left center);
 			}
 
 			li {
 				margin: 0;
-				padding-bottom: 0;
 				min-width: 100%;
+				padding-bottom: 0;
 
 				&:hover > ul,
 				&.focus > ul {
@@ -74,10 +75,10 @@
 
 			a {
 				box-sizing: border-box;
-				white-space: nowrap;
-				padding: 0.85em 25px;
 				line-height: 1em;
 				min-width: 100%;
+				padding: 0.85em 25px;
+				white-space: nowrap;
 			}
 
 			li:first-child a {
@@ -105,8 +106,8 @@
 			li.focus {
 				> ul {
 					opacity: 1;
-					visibility: visible;
 					@include transform( scale(1) );
+					visibility: visible;
 				}
 
 				&:after {
@@ -119,8 +120,8 @@
 
 			> ul {
 				opacity: 1;
-				visibility: visible;
 				@include transform( scale(1) );
+				visibility: visible;
 			}
 
 			&:after {
@@ -147,7 +148,6 @@
 
 		&:hover > a,
 		&.focus > a {
-
 		}
 	}
 
@@ -165,11 +165,11 @@
 	.icon-menu {
 		display: inline-block;
 		height: 15px;
-		width: 20px;
+		margin-right: 10px;
 		position: relative;
 		@include transform( rotate(0deg) );
 		@include transition( .5s ease-in-out );
-		margin-right: 10px;
+		width: 20px;
 
 		span {
 			display: block;
@@ -218,10 +218,10 @@
 	}
 
 	#mobile-menu-button {
-		display: none;
-		margin-top: .2em;
-		font-size: 1.2em;
 		color: $mobile__text_color;
+		display: none;
+		font-size: 1.2em;
+		margin-top: .2em;
 
 		&:hover {
 			color: $navigation__link_hover_color;
@@ -295,29 +295,25 @@
 		display: block;
 		box-sizing: border-box;
 		height: 48px;
-		max-height: 100%;
-
-		position: absolute;
-		top: 50%;
-		margin-top: -24px;
 		left: 20px;
+		margin-top: -24px;
+		max-height: 100%;
+		position: absolute;
 		right: 15px + 20px + 24px;
+		top: 50%;
 	}
 
 	input[type="search"] {
-
-		width: 100%;
+		background: rgba(0, 0, 0, 0.035);
+		border: none;
+		border-radius: 0;
 		box-sizing: border-box;
+		font-family: $font__detail;
 		height: 48px;
 		max-height: 100%;
-
-		border-radius: 0;
-		background: rgba(0,0,0,0.035);
-		border: none;
-
-		font-family: $font__detail;
-		right: 20px;
 		padding: 0 10px;
+		right: 20px;
+		width: 100%;
 
 		&:focus {
 			outline: none;
@@ -329,22 +325,22 @@
 	}
 
 	#close-search {
+		margin-top: -12px;
+		position: absolute;
+		right: 20px;
 		@include transition(0.35s);
 		@include transform-origin(center center);
 		@include transform( scale(0.575) translateX(3px) translateY(-3px) );
-		position: absolute;
 		top: 50%;
-		right: 20px;
-		margin-top: -12px;
-
+	
 		&.animate-in {
-			@include transform( scale(1) rotate(90deg)  );
+			@include transform( scale(1) rotate(90deg) );
 		}
 
 		.svg-icon-close {
-			width: 24px;
-			height: 24px;
 			cursor: pointer;
+			height: 24px;
+			width: 24px;
 
 			path {
 				fill: $navigation__link_color;
@@ -376,16 +372,15 @@
 }
 
 #mobile-navigation {
-	position: absolute;
+	background: rgba($mobilemenu__background_color, $mobilemenu__background_opacity);
 	left: 0;
-	top: 100%;
-	width: 100%;
-	padding: 15px 20px;
+	font-family: $font__menu;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	font-family: $font__menu;
-
-	background: rgba($mobilemenu__background_color, $mobilemenu__background_opacity);
+	padding: 15px 20px;
+	position: absolute;
+	top: 100%;
+	width: 100%;
 	z-index: 10;
 
 	&::-webkit-scrollbar {
@@ -403,21 +398,21 @@
 
 	form {
 		display: block;
-		width: auto;
 		margin-top: 10px;
+		width: auto;
 
 		input[type="search"] {
-			box-sizing: border-box;
-			border: none;
-			background: transparent;
-			border-radius: 0;
-			color: $mobilemenu__text_color;
-			border-bottom: 1px solid $mobilemenu__text_color;
-			width: 100%;
-			padding: 10px;
-			font-size: 16px;
-
 			@include appearance(none);
+			background: transparent;
+			border: none;
+			border-bottom: 1px solid $mobilemenu__text_color;
+			border-radius: 0;
+			box-sizing: border-box;
+			color: $mobilemenu__text_color;
+			font-size: 16px;
+			padding: 10px;
+			width: 100%;
+			
 			@include placeholder {
 				color: rgba( $mobilemenu__text_color, 0.7 );
 			}
@@ -433,19 +428,19 @@
 	}
 
 	ul {
-		margin: 0;
 		list-style: none;
+		margin: 0;
 		padding: 0;
 
 		li {
 			line-height: 3.5em;
-			width: 100%;
 			position: relative;
+			width: 100%;
 
 			a {
+				color: $mobilemenu__text_color;
 				display: block;
 				text-decoration: none;
-				color: $mobilemenu__text_color;
 				width: 100% !important;
 			}
 
@@ -460,18 +455,18 @@
 			.dropdown-toggle {
 				background: transparent;
 				border: 0;
+				box-shadow: none;
 				color: $mobilemenu__text_color;
 				font-size: 15px;
-				position: absolute;
-				top: 0;
-				right: 5px;
 				line-height: 3em;
 				outline: none;
-				box-shadow: none;
 				padding: 5px;
+				position: absolute;
+				right: 5px;
+				top: 0;
 				@include transition (all 0.2s linear);
 				@include transform( rotate(90deg) );
-				@include transform-origin( 50% 50%);
+				@include transform-origin( 50% 50%);				
 
 				&.toggle-open {
 					@include transform( rotate(-90deg) );
@@ -481,9 +476,9 @@
 		}
 
 		ul {
+			display: none;
 			margin: 0;
 			padding: 0;
-			display: none;
 
 			li {
 				padding-left: 2em;

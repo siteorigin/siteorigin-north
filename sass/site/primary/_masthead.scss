@@ -48,6 +48,7 @@
 	}
 
 	.site-branding {
+		background: red !important;
 		padding-right: 20px;
 
 		> * {
@@ -85,8 +86,12 @@
 
 		img {
 			display: inline-block;
-			max-width: 100%;
 			vertical-align: middle;
+			
+			@at-root .masthead-overlap & {
+				height: auto !important;
+				max-width: 100% !important;
+			}			
 		}
 	}
 
@@ -112,7 +117,6 @@
 			text-align: center;
 
 			img {
-				max-width: 100%;
 				display: inline-block;
 			}
 		}

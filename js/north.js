@@ -59,7 +59,7 @@
 			);
 		};
 
-		$.fn.northSmoothScroll = function () {
+		$.fn.northSmoothScroll = function() {
 			$( this ).click( function( e ) {
 				var $a = $( this );
 				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
@@ -428,6 +428,13 @@ jQuery( function( $ ) {
 				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
 			var smResizeLogo = function () {
+				if ( imgWidth > $mh.outerWidth() - imgWidth ) {
+					$( 'body' ).addClass( 'masthead-overlap' );
+					return;
+				} else if ( $( 'body' ).hasClass( 'masthead-overlap' ) ){
+					$( 'body' ).removeClass( 'masthead-overlap' );
+				}
+
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
 
