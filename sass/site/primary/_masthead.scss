@@ -87,15 +87,16 @@
 		img {
 			display: inline-block;
 			vertical-align: middle;
-			
+
 			@at-root .masthead-overlap & {
 				height: auto !important;
 				max-width: 100% !important;
-			}			
+			}
 		}
 	}
 
-	.site-branding, .main-navigation {
+	.site-branding, 
+	.main-navigation {
 		display: table-cell;
 		vertical-align: middle;
 	}

@@ -317,10 +317,8 @@ jQuery( function( $ ) {
 
 			if ( $mhs === false ) {
 				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh );
-			}
 
-			if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
-				$mhs.css( 'height', $mh.outerHeight() );
+					$mhs.css( 'height', $mh.outerHeight() );
 			}
 
 			// Toggle .topbar-out with visibility of top-bar in the viewport.
@@ -357,7 +355,7 @@ jQuery( function( $ ) {
 			}
 
 		}
-		
+
 		smSetup();
 		$( window ).resize( smSetup ).scroll( smSetup );
 	}
@@ -428,7 +426,9 @@ jQuery( function( $ ) {
 				scaledWidth = imgWidth * siteoriginNorth.logoScale,
 				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
-			var smResizeLogo = function () {
+				// console.log( imgWidth + ' + ' + imgHeight );
+
+			var smResizeLogo = function() {
 				if ( imgWidth > $mh.outerWidth() - imgWidth ) {
 					$( 'body' ).addClass( 'masthead-overlap' );
 					return;

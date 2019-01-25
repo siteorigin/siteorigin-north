@@ -515,8 +515,8 @@ a {
         .main-navigation ul > li a.stripped-backlink {
           font-weight: bold;
           font-weight: 600;
-          padding-left: 0;
-          padding-right: 0; }
+          padding-right: 0;
+          padding-left: 0; }
     .main-navigation ul a {
       color: #898989; }
       .main-navigation ul a:hover {
@@ -1408,7 +1408,8 @@ body.page-layout-stripped #main.site-main {
       .masthead-overlap #masthead .site-branding img {
         height: auto !important;
         max-width: 100% !important; }
-  #masthead .site-branding, #masthead .main-navigation {
+  #masthead .site-branding,
+  #masthead .main-navigation {
     display: table-cell;
     vertical-align: middle; }
   #masthead.floating {
