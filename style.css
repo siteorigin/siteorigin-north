@@ -339,7 +339,7 @@ figure {
   margin-left: 0;
   margin-right: 0; }
 
-img:not(.custom-logo), .site-header:not([data-scale-logo]) .custom-logo {
+img {
   height: auto;
   max-width: 100%; }
 
@@ -1405,9 +1405,6 @@ body.page-layout-stripped #main.site-main {
     #masthead .site-branding img {
       display: inline-block;
       vertical-align: middle; }
-      .masthead-overlap #masthead .site-branding img {
-        height: auto !important;
-        max-width: 100% !important; }
   #masthead .site-branding,
   #masthead .main-navigation {
     display: table-cell;

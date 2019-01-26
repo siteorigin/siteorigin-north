@@ -466,7 +466,7 @@
 				top: 0;
 				@include transition (all 0.2s linear);
 				@include transform( rotate(90deg) );
-				@include transform-origin( 50% 50%);				
+				@include transform-origin(50% 50%);
 
 				&.toggle-open {
 					@include transform( rotate(-90deg) );
