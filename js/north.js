@@ -28,7 +28,7 @@
 					$o = $( '<div class="burst-animation-overlay"></div>' ),
 					$c = $( '<div class="burst-circle"></div>' ).appendTo( $o );
 
-				$$.on( settings.event, function () {
+				$$.on( settings.event, function() {
 					$o.appendTo( $p );
 					$c
 						.css( {
@@ -40,7 +40,7 @@
 						.transition( {
 							opacity: 0,
 							scale: $p.width()
-						}, 500, 'ease', function () {
+						}, 500, 'ease', function() {
 							$o.detach();
 						} );
 				} );
@@ -102,7 +102,7 @@ jQuery( function( $ ) {
 		function() {
 			$( this ).closest( 'li' ).addClass( 'hovering' );
 		},
-		function () {
+		function() {
 			$( this ).closest( 'li' ).removeClass( 'hovering' );
 		}
 	);
@@ -121,12 +121,12 @@ jQuery( function( $ ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
 		}
 		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
-			$( this ).click( function( e ){
+			$( this ).click( function( e ) {
 				var link = $( this );
 				e.stopPropagation();
 				link.parent().addClass( 'touch-drop' );
 
-				if( link.hasClass( 'hover' ) ) {
+				if ( link.hasClass( 'hover' ) ) {
 					link.unbind( 'click' );
 				} else {
 					link.addClass( 'hover' );
@@ -154,7 +154,7 @@ jQuery( function( $ ) {
 			container: ".search-form"
 		} );
 
-		var resetMenu = function () {
+		var resetMenu = function() {
 			$( '.main-navigation ul ul' ).each( function() {
 				var $$ = $( this );
 				var width = Math.max.apply( Math, $$.find( '> li > a' ).map( function() {
@@ -166,7 +166,7 @@ jQuery( function( $ ) {
 		resetMenu();
 		$( window ).resize( resetMenu );
 
-		var alignMenu = function () {
+		var alignMenu = function() {
 			$( '#primary-menu > li > ul.sub-menu' ).each( function() {
 				var $$ = $( this );
 				var left = - (
@@ -274,7 +274,7 @@ jQuery( function( $ ) {
 	} );
 
 	// The scroll to top button.
-	var sttWindowScroll = function () {
+	var sttWindowScroll = function() {
 		var top = window.pageYOffset || document.documentElement.scrollTop;
 
 		if ( top > $( '#masthead' ).outerHeight() ) {
@@ -360,7 +360,7 @@ jQuery( function( $ ) {
 				scaledWidth = imgWidth * siteoriginNorth.logoScale,
 				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
-			var smResizeLogo = function () {
+			var smResizeLogo = function() {
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -380,8 +380,8 @@ jQuery( function( $ ) {
 
 				if ( $img.length ) {
 					// Are we at the top of the page?
-					if( top > 0 ) {
-						// calulate scale amount based on distance from the top of the page.
+					if ( top > 0 ) {
+						// Calulate scale amount based on distance from the top of the page.
 						var logoScale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
 						if ( $img.height() != scaledHeight || $img.width() != scaledWidth || logoScale != siteoriginNorth.logoScale ) {
 							$( '.site-branding img' ).css( {
@@ -398,8 +398,10 @@ jQuery( function( $ ) {
 							'max-width' : '',
 						} );
 					}
+
 				} else if ( top > 0 ) {
 					$branding.css( 'transform', 'scale(' + siteoriginNorth.logoScale + ')' );
+
 				} else {
 					$branding.css( 'transform', 'scale(1)' );
 				}
