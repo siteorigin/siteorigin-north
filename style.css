@@ -498,8 +498,7 @@ a {
   z-index: 99999;
   font-family: "Droid Sans", sans-serif;
   font-size: 0.95em;
-  text-align: right;
-  background: blue !important; }
+  text-align: right; }
   .main-navigation > div {
     display: inline-block; }
   .main-navigation ul {
@@ -1370,7 +1369,6 @@ body.page-layout-stripped #main.site-main {
     display: table;
     width: 100%; }
   #masthead .site-branding {
-    background: red !important;
     padding-right: 20px; }
     #masthead .site-branding > * {
       -webkit-transform-origin: left center;
