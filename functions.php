@@ -96,7 +96,7 @@ function siteorigin_north_setup() {
 	add_theme_support( 'wc-product-gallery-slider' );
 
 	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
-		// Only include panels lite if the panels plugin doesn't exist
+		// Only include panels lite if the panels plugin doesn't exist.
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 
@@ -115,7 +115,7 @@ if ( ! function_exists( 'siteorigin_north_premium_setup' ) ) :
 /**
  * Add support for premium theme components
  */
-function siteorigin_north_premium_setup(){
+function siteorigin_north_premium_setup() {
 
 	// This theme supports the no attribution addon
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
@@ -222,15 +222,15 @@ function siteorigin_north_widgets_init() {
 
 	if ( function_exists( 'is_woocommerce' ) ) {
 		register_sidebar( array(
-			'name' 			=> esc_html__( 'Shop Sidebar', 'siteorigin-north' ),
-			'id' 			=> 'sidebar-shop',
-			'description' 	=> esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-north' ),
+			'name'          => esc_html__( 'Shop Sidebar', 'siteorigin-north' ),
+			'id'            => 'sidebar-shop',
+			'description'   => esc_html__( 'Displays on WooCommerce pages.', 'siteorigin-north' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' 	=> '</aside>',
-			'before_title' 	=> '<h2 class="widget-title">',
-			'after_title' 	=> '</h2>',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		) );
-	}	
+	}
 
 }
 endif;
@@ -293,7 +293,7 @@ if ( ! function_exists( 'siteorigin_north_filter_comment_form_default_fields' ) 
 /**
  * Modify comments form - change placeholders.
  */
-function siteorigin_north_filter_comment_form_default_fields( $fields ){
+function siteorigin_north_filter_comment_form_default_fields( $fields ) {
 	$placeholders = apply_filters( 'siteorigin_north_comment_form_placeholders', array(
 		'author' => esc_html__( 'Enter Your Name', 'siteorigin-north' ),
 		'email'  => esc_html__( 'Enter Your Email', 'siteorigin-north' ),
@@ -342,13 +342,13 @@ function siteorigin_north_filter_comment_form_default_fields( $fields ){
 	return $fields;
 }
 endif;
-add_filter('comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields');
+add_filter( 'comment_form_default_fields', 'siteorigin_north_filter_comment_form_default_fields' );
 
 if ( ! function_exists( 'siteorigin_north_filter_comment_form_defaults' ) ) :
 /**
  * Modify comments form - make labels screen-reader-text
  */
-function siteorigin_north_filter_comment_form_defaults( $defaults ){
+function siteorigin_north_filter_comment_form_defaults( $defaults ) {
 	$comment_placeholder = __( 'Enter your message', 'siteorigin-north' );
 	$default_comment     = array( '<label for="comment"', '<textarea id="comment" ' );
 	$replace_comment     = array(
@@ -368,7 +368,7 @@ function siteorigin_north_filter_comment_form_defaults( $defaults ){
 	return $defaults;
 }
 endif;
-add_filter('comment_form_defaults', 'siteorigin_north_filter_comment_form_defaults');
+add_filter( 'comment_form_defaults', 'siteorigin_north_filter_comment_form_defaults' );
 
 /**
  * Custom template tags for this theme.
@@ -403,3 +403,6 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 if ( function_exists( 'is_woocommerce' ) ) {
 	require get_template_directory() . '/woocommerce/functions.php';
 }
+
+/* IMPORTANT NOTICE: Please don't edit this file; any changes made here will be lost during the theme update process. 
+If you need to add custom functions, use the Code Snippets plugin (https://wordpress.org/plugins/code-snippets/) or a child theme. */
