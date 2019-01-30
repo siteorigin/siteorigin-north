@@ -1382,6 +1382,8 @@ body.page-layout-stripped #main.site-main {
         -ms-transform-origin: center center;
         -o-transform-origin: center center;
         transform-origin: center center; }
+    #masthead .site-branding .site-branding-inner {
+      display: inline-block; }
     #masthead .site-branding .site-title,
     #masthead .site-branding .logo-site-title {
       margin: 0;
@@ -1419,7 +1421,8 @@ body.page-layout-stripped #main.site-main {
       display: inline-block; }
   #masthead.layout-centered .main-navigation {
     text-align: center; }
-  #masthead.layout-centered .site-branding, #masthead.layout-centered .main-navigation {
+  #masthead.layout-centered .site-branding,
+  #masthead.layout-centered .main-navigation {
     display: block; }
   body.responsive #masthead {
     min-width: 0; }

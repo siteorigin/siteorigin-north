@@ -360,6 +360,8 @@ jQuery( function( $ ) {
 				scaledWidth = imgWidth * siteoriginNorth.logoScale,
 				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
+			$( ".site-branding" ).wrapInner( "<div class='site-branding-inner'></div>");
+
 			var smResizeLogo = function() {
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
@@ -392,8 +394,6 @@ jQuery( function( $ ) {
 						// Ensure no scaling is present.
 						$( '.site-branding img' ).css( {
 							width: '',
-							height: '',
-							'max-width' : '',
 						} );
 					}
 

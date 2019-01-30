@@ -58,6 +58,10 @@
 			}
 		}
 
+		.site-branding-inner {
+			display: inline-block;
+		}
+
 		.site-title,
 		.logo-site-title {
 			margin: 0;
@@ -120,7 +124,8 @@
 			text-align: center;
 		}
 
-		.site-branding, .main-navigation {
+		.site-branding, 
+		.main-navigation {
 			display: block;
 		}
 	}
