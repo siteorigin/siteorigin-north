@@ -1382,7 +1382,7 @@ body.page-layout-stripped #main.site-main {
         -ms-transform-origin: center center;
         -o-transform-origin: center center;
         transform-origin: center center; }
-    #masthead .site-branding .site-branding-inner {
+    #masthead .site-branding .custom-logo-wrapper {
       display: inline-block; }
     #masthead .site-branding .site-title,
     #masthead .site-branding .logo-site-title {
