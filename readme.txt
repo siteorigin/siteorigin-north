@@ -97,7 +97,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
-= 1.6.5 - 07 January 2018 =
+= 1.6.6 - 1 February 2019 =
+* Changed the scaling logo behaviour to only scale after scroll.
+* Ensured the sticky header sentinel is responsive.
+
+= 1.6.5 - 07 January 2019 =
 * Added a class of `custom-logo` to the Branding logo. Only excluded `custom-logo` from the global `img` selector.
 * Corrected WooCommerce shop sidebar widget closing header tag.
 
