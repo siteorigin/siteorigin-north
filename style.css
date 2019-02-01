@@ -237,11 +237,21 @@ textarea {
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
   color: #292929; }
-  .widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6 {
+  .widget h1, .widget
+  h2, .widget
+  h3, .widget
+  h4, .widget
+  h5, .widget
+  h6 {
     color: inherit; }
 
 p {
