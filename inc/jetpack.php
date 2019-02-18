@@ -23,12 +23,6 @@ function siteorigin_north_jetpack_setup() {
 		'footer'    => 'page',
 		'posts_per_page' => 9,
 	) );
-
-	/*
-	 * Enable support for Responsive Videos.
-	 * See: https://jetpack.com/support/responsive-videos/
-	 */
-	add_theme_support( 'jetpack-responsive-videos' );	
 } // end function siteorigin_north_jetpack_setup
 endif;
 add_action( 'after_setup_theme', 'siteorigin_north_jetpack_setup' );

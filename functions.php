@@ -269,7 +269,7 @@ function siteorigin_north_scripts() {
 	) );
 
 	// jQuery FitVids.
-	if ( ! class_exists( 'Jetpack' ) && ! ( function_exists( 'has_blocks' ) && has_blocks() ) && siteorigin_setting( 'responsive_fitvids' ) ) {
+	if ( ! ( function_exists( 'has_blocks' ) && has_blocks() ) && siteorigin_setting( 'responsive_fitvids' ) ) {
 		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
 	}
 
