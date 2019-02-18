@@ -13,12 +13,12 @@ function siteorigin_north_settings_init() {
 				'logo'             => array(
 					'type'        => 'media',
 					'label'       => __( 'Logo', 'siteorigin-north' ),
-					'description' => __( 'Logo displayed in your masthead.', 'siteorigin-north' )
+					'description' => __( 'Logo displayed in your header.', 'siteorigin-north' )
 				),
 				'retina_logo'      => array(
 					'type'        => 'media',
 					'label'       => __( 'Retina Logo', 'siteorigin-north' ),
-					'description' => __( 'A double sized logo to use on retina devices.', 'siteorigin-north' )
+					'description' => __( 'A logo for use on high pixel density displays. Must be used in addition to standard logo and be exactly double the size.', 'siteorigin-north' )
 				),
 				'site_title' => array(
 					'type'        => 'checkbox',
