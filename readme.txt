@@ -38,7 +38,6 @@ SiteOrigin North includes support for:
 * [Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 * [Jetpack Infinite Scroll](https://jetpack.com/support/infinite-scroll/)
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
-* [Jetpack Responsive Videos](https://jetpack.com/support/responsive-videos/)
 * [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
