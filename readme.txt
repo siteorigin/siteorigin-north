@@ -96,6 +96,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.7 - 27 February 2019 =
+* Removed Jetpack Responsive Videos support in favour of FitVids.
+
 = 1.6.6 - 1 February 2019 =
 * Changed the scaling logo behaviour to only scale after scroll.
 * Ensured the sticky header sentinel is responsive.
