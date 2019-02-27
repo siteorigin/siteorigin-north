@@ -433,7 +433,7 @@ function siteorigin_north_display_icon( $type ) {
 			break;
 
 		case 'up-arrow':
-			if( siteorigin_setting('icons_scroll_to_top') ) : ?>
+			if ( siteorigin_setting('icons_scroll_to_top') ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_scroll_to_top', 'svg-icon-to-top' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-to-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
