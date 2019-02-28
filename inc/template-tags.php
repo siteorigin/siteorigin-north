@@ -400,7 +400,7 @@ if ( ! function_exists( 'siteorigin_north_display_icon' ) ) :
 function siteorigin_north_display_icon( $type ) {
 	switch ( $type ) {
 		case 'menu':
-			if ( siteorigin_setting( 'icons_menu' ) ) : ?>
+			if ( siteorigin_setting( 'icons_menu' ) && wp_attachment_is_image( siteorigin_setting( 'icons_menu' ) ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_menu', 'svg-icon-menu' ); ?>
 			<?php else : ?>
 				<div class="icon-menu">
@@ -412,7 +412,7 @@ function siteorigin_north_display_icon( $type ) {
 			break;
 
 		case 'close':
-			if ( siteorigin_setting( 'icons_close_search' ) ) : ?>
+			if ( siteorigin_setting( 'icons_close_search' ) && wp_attachment_is_image( siteorigin_setting( 'icons_close_search' ) ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_close_search', 'svg-icon-close' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="12px" y="12px"
@@ -433,7 +433,7 @@ function siteorigin_north_display_icon( $type ) {
 			break;
 
 		case 'up-arrow':
-			if ( siteorigin_setting('icons_scroll_to_top') ) : ?>
+			if ( siteorigin_setting( 'icons_scroll_to_top' ) && wp_attachment_is_image( siteorigin_setting( 'icons_scroll_to_top' ) ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_scroll_to_top', 'svg-icon-to-top' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-to-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -445,7 +445,7 @@ function siteorigin_north_display_icon( $type ) {
 			break;
 
 		case 'search':
-			if ( siteorigin_setting( 'icons_search' ) ) : ?>
+			if ( siteorigin_setting( 'icons_search' ) && wp_attachment_is_image( siteorigin_setting( 'icons_search' ) ) ) : ?>
 				<?php siteorigin_north_custom_icon( 'icons_search', 'svg-icon-search' ); ?>
 			<?php else : ?>
 				<svg version="1.1" class="svg-icon-search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
