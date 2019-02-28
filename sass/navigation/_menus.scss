@@ -97,25 +97,9 @@
 				color: $navigation__link_hover_color;
 			}
 		}
-
-		@at-root body.no-touch & {
-
-			li:hover,
-			li.focus {
-				> ul {
-					opacity: 1;
-					@include transform( scale(1) );
-					visibility: visible;
-				}
-
-				&:after {
-					content: '';
-				}
-			}
-		}
-
-		.touch-drop {
-
+		
+		li:hover,
+		li.focus {
 			> ul {
 				opacity: 1;
 				@include transform( scale(1) );
