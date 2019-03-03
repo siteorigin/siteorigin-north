@@ -119,7 +119,18 @@ jQuery( function( $ ) {
 		}
 		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
 			$( this ).click( function( e ) {
-				e.preventDefault();
+				var link = $( this );
+				e.stopPropagation();
+
+ 				if ( ! link.hasClass( 'hover' ) ) {
+					link.addClass( 'hover' );	
+					e.preventDefault();	
+				}
+
+				// Remove .hover class when user clicks outside of sub menu
+ 				$( document ).click( function() {	
+					link.removeClass( 'hover' );	
+				} );	
 			} );
 		} );
 	}
