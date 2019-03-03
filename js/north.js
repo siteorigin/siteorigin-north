@@ -123,14 +123,18 @@ jQuery( function( $ ) {
 				e.stopPropagation();
 
  				if ( ! link.hasClass( 'hover' ) ) {
-					link.addClass( 'hover' );	
-					e.preventDefault();	
-				}
+ 					e.preventDefault();	
+ 					// Remove .hover from all other sub menus
+ 					$( '.hover' ).removeClass( 'hover' );
 
-				// Remove .hover class when user clicks outside of sub menu
- 				$( document ).click( function() {	
-					link.removeClass( 'hover' );	
-				} );	
+					link.addClass( 'hover' );
+
+					// Remove .hover class when user clicks outside of sub menu
+	 				$( document ).click( function() {
+						link.removeClass( 'hover' );
+						link.unbind( 'click' );	
+					} );
+				}
 			} );
 		} );
 	}
