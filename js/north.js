@@ -118,16 +118,16 @@ jQuery( function( $ ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
 		}
 		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
-			$( this ).click( function( e ) {
+			$( document  ).on( 'touchstart click', this, function( e ) {
 				var link = $( this );
 				e.stopPropagation();
 
  				if ( ! link.hasClass( 'hover' ) ) {
- 					e.preventDefault();	
  					// Remove .hover from all other sub menus
  					$( '.hover' ).removeClass( 'hover' );
 
 					link.addClass( 'hover' );
+ 					e.preventDefault();	
 
 					// Remove .hover class when user clicks outside of sub menu
 	 				$( document ).click( function() {
