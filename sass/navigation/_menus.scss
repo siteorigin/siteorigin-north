@@ -97,9 +97,25 @@
 				color: $navigation__link_hover_color;
 			}
 		}
-		
-		li:hover,
-		li.focus {
+
+		@at-root body.no-touch & {
+
+			li:hover,
+			li.focus {
+				> ul {
+					opacity: 1;
+					@include transform( scale(1) );
+					visibility: visible;
+				}
+
+				&:after {
+					content: '';
+				}
+			}
+		}
+
+		li.hover {
+
 			> ul {
 				opacity: 1;
 				@include transform( scale(1) );

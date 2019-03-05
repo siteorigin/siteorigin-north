@@ -116,25 +116,26 @@ jQuery( function( $ ) {
 	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
 		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
+			$( 'body' ).addClass( 'ios' );
 		}
-		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
-			$( document  ).on( 'touchstart click', this, function( e ) {
+
+		$( '.main-navigation #primary-menu' ).find( '.menu-item-has-children > a' ).each( function() {
+			$( this ).click( function( e ) {
 				var link = $( this );
 				e.stopPropagation();
 
- 				if ( ! link.hasClass( 'hover' ) ) {
- 					// Remove .hover from all other sub menus
- 					$( '.hover' ).removeClass( 'hover' );
-
-					link.addClass( 'hover' );
- 					e.preventDefault();	
-
-					// Remove .hover class when user clicks outside of sub menu
-	 				$( document ).click( function() {
-						link.removeClass( 'hover' );
-						link.unbind( 'click' );	
-					} );
+				if ( ! link.parent().hasClass( 'hover' ) ) {
+					// Remove .hover from all other sub menus
+					$( '.menu-item.hover' ).removeClass( 'hover' );
+					link.parent().addClass( 'hover' );
+					e.preventDefault();
 				}
+
+				// Remove .hover class when user clicks outside of sub menu
+				$( document ).click( function() {
+					link.removeClass( 'hover' );
+				} );
+
 			} );
 		} );
 	}
@@ -421,11 +422,6 @@ jQuery( function( $ ) {
 			$( window ).scroll( smShadow );
 
 			var smSetup = function() {
-
-				if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteoriginNorth.collapse ) ) {
-					return;
-				}
-
 				if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 					$mhs.css( 'height', $mh.outerHeight() );
 				}
