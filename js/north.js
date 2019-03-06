@@ -154,18 +154,6 @@ jQuery( function( $ ) {
 			container: ".search-form"
 		} );
 
-		var resetMenu = function() {
-			$( '.main-navigation ul ul' ).each( function() {
-				var $$ = $( this );
-				var width = Math.max.apply( Math, $$.find( '> li > a' ).map( function() {
-					return $( this ).width();
-				} ).get() );
-				$$.find( '> li > a' ).width( width );
-			} );
-		};
-		resetMenu();
-		$( window ).resize( resetMenu );
-
 		var alignMenu = function() {
 			$( '#primary-menu > li > ul.sub-menu' ).each( function() {
 				var $$ = $( this );
