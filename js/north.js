@@ -127,7 +127,7 @@ jQuery( function( $ ) {
 				if ( ! link.parent().hasClass( 'hover' ) ) {
 					// Remove .hover from all other sub menus
 					$( '.menu-item.hover' ).removeClass( 'hover' );
-					link.parent().addClass( 'hover' );
+					link.parents('.menu-item').addClass( 'hover' );
 					e.preventDefault();
 				}
 
