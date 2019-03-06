@@ -98,7 +98,7 @@
 			}
 		}
 
-		@at-root body.no-touch & {
+		@at-root body:not(.ios) & {
 
 			li:hover,
 			li.focus {

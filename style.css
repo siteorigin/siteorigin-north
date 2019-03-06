@@ -585,8 +585,8 @@ a {
       .main-navigation ul ul a:hover,
       .main-navigation ul ul a.focus {
         color: #595959; }
-    body.no-touch .main-navigation ul li:hover > ul,
-    body.no-touch .main-navigation ul li.focus > ul {
+    body:not(.ios) .main-navigation ul li:hover > ul,
+    body:not(.ios) .main-navigation ul li.focus > ul {
       opacity: 1;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
@@ -594,8 +594,8 @@ a {
       -o-transform: scale(1);
       transform: scale(1);
       visibility: visible; }
-    body.no-touch .main-navigation ul li:hover:after,
-    body.no-touch .main-navigation ul li.focus:after {
+    body:not(.ios) .main-navigation ul li:hover:after,
+    body:not(.ios) .main-navigation ul li.focus:after {
       content: ''; }
     .main-navigation ul li.hover > ul {
       opacity: 1;

@@ -120,9 +120,13 @@ jQuery( function( $ ) {
 		}
 
 		$( '.main-navigation #primary-menu' ).find( '.menu-item-has-children > a' ).each( function() {
-			$( this ).click( function( e ) {
+			$( this ).on( 'click touchend', function( e ) {
 				var link = $( this );
 				e.stopPropagation();
+				
+				if ( e.type == 'click' ) {
+					return;
+				}
 
 				if ( ! link.parent().hasClass( 'hover' ) ) {
 					// Remove .hover from all other sub menus
