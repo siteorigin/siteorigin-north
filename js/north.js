@@ -132,8 +132,8 @@ jQuery( function( $ ) {
 				}
 
 				// Remove .hover class when user clicks outside of sub menu
-				$( document ).click( function() {
-					link.removeClass( 'hover' );
+				$( document ).one( 'click', function() {
+					link.parent().removeClass( 'hover' );
 				} );
 
 			} );
