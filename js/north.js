@@ -414,6 +414,11 @@ jQuery( function( $ ) {
 			$( window ).scroll( smShadow );
 
 			var smSetup = function() {
+
+				if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteoriginNorth.collapse ) ) {
+					return;
+				}
+
 				if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 					$mhs.css( 'height', $mh.outerHeight() );
 				}
