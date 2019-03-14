@@ -96,6 +96,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.6.8 - 14 March 2019 =
+* Added a fallback to the default theme icon if a custom icon is missing.
+* Allow main menu hovers when Touch UI Layout is enabled.
+* Added a body class option to disable smooth scroll on mobile.
+
 = 1.6.7 - 27 February 2019 =
 * Removed Jetpack Responsive Videos support in favour of FitVids.
 
