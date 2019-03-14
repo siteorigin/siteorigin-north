@@ -112,33 +112,32 @@ jQuery( function( $ ) {
 		$( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
 	}
 
-	// This this is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
+	// Detect if is a touch device. We detect this through ontouchstart, msMaxTouchPoints and MaxTouchPoints.
 	if ( 'ontouchstart' in document.documentElement || window.navigator.msMaxTouchPoints || window.navigator.MaxTouchPoints ) {
-		$('body').removeClass('no-touch');
-	}
-	if ( !$( 'body' ).hasClass( 'no-touch' ) ) {
 		if ( /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream ) {
 			$( 'body' ).css( 'cursor', 'pointer' );
+			$( 'body' ).addClass( 'ios' );
 		}
-		$( '.main-navigation #primary-menu').find('.menu-item-has-children > a' ).each( function() {
-			$( this ).click( function( e ) {
+
+		$( '.main-navigation #primary-menu' ).find( '.menu-item-has-children > a' ).each( function() {
+			$( this ).on( 'click touchend', function( e ) {
 				var link = $( this );
 				e.stopPropagation();
-				link.parent().addClass( 'touch-drop' );
+				
+				if ( e.type == 'click' ) {
+					return;
+				}
 
-				if ( link.hasClass( 'hover' ) ) {
-					link.unbind( 'click' );
-				} else {
-					link.addClass( 'hover' );
+				if ( ! link.parent().hasClass( 'hover' ) ) {
+					// Remove .hover from all other sub menus
+					$( '.menu-item.hover' ).removeClass( 'hover' );
+					link.parents('.menu-item').addClass( 'hover' );
 					e.preventDefault();
 				}
 
-				$( '.main-navigation #primary-menu > .menu-item-has-children:not(.touch-drop) > a' ).click( function() {
-					link.removeClass('hover').parent().removeClass('touch-drop');
-				} );
-
-				$( document ).click( function() {
-					link.removeClass( 'hover' ).parent().removeClass( 'touch-drop' );
+				// Remove .hover class when user clicks outside of sub menu
+				$( document ).one( 'click', function() {
+					link.parent().removeClass( 'hover' );
 				} );
 
 			} );
@@ -153,18 +152,6 @@ jQuery( function( $ ) {
 			event: "focus",
 			container: ".search-form"
 		} );
-
-		var resetMenu = function() {
-			$( '.main-navigation ul ul' ).each( function() {
-				var $$ = $( this );
-				var width = Math.max.apply( Math, $$.find( '> li > a' ).map( function() {
-					return $( this ).width();
-				} ).get() );
-				$$.find( '> li > a' ).width( width );
-			} );
-		};
-		resetMenu();
-		$( window ).resize( resetMenu );
 
 		var alignMenu = function() {
 			$( '#primary-menu > li > ul.sub-menu' ).each( function() {
@@ -427,6 +414,11 @@ jQuery( function( $ ) {
 			$( window ).scroll( smShadow );
 
 			var smSetup = function() {
+
+				if ( $( 'body' ).hasClass( 'mobile-header-ns' ) && ( $( window ).width() < siteoriginNorth.collapse ) ) {
+					return;
+				}
+
 				if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 					$mhs.css( 'height', $mh.outerHeight() );
 				}

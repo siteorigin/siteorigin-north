@@ -266,6 +266,7 @@ function siteorigin_north_scripts() {
 	wp_localize_script( 'siteorigin-north-script', 'siteoriginNorth', array(
 		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' ),
 		'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
+		'collapse' => siteorigin_setting( 'responsive_menu_breakpoint' ),
 	) );
 
 	// jQuery FitVids.
