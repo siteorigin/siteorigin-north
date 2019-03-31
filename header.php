@@ -85,15 +85,21 @@
 
 							<?php else : ?>
 
-								<a href="#menu" id="mobile-menu-button">
-									<?php siteorigin_north_display_icon( 'menu' ) ?>
-									<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
-										<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
-										<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
-									<?php endif; ?>
-								</a>
+								<?php
+								$menu_id = ( wp_get_nav_menu_name( 'primary' ) ? wp_get_nav_menu_name( 'primary' ) :  false );
+								if ( wp_get_nav_menu_object( $menu_id )->count || siteorigin_setting( 'navigation_search' ) ) : ?>
+
+									<a href="#menu" id="mobile-menu-button">
+										<?php siteorigin_north_display_icon( 'menu' ) ?>
+										<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
+											<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
+											<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
+										<?php endif; ?>
+									</a>
 
 								<?php
+								endif;
+
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
 									'menu_id' => 'primary-menu'
