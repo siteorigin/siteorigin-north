@@ -556,7 +556,6 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_north_font_settings
 function siteorigin_north_settings_custom_css( $css ) {
 	// Custom CSS.
 	$css .= '/* style */
-	/**** /private/var/folders/qh/gg52m_yj7zv3bk6hb2x2j9w40000gn/T/JrS6rB/sass/style.css ***/
 	body,button,input,select,textarea {
 	color: ${fonts_text_medium};
 	.font( ${fonts_main} );
