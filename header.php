@@ -86,8 +86,8 @@
 							<?php else : ?>
 
 								<?php
-								$menu_id = ( wp_get_nav_menu_name( 'primary' ) ? wp_get_nav_menu_name( 'primary' ) :  false );
-								if ( wp_get_nav_menu_object( $menu_id )->count || siteorigin_setting( 'navigation_search' ) ) : ?>
+								$menu_id = ( wp_get_nav_menu_name( 'primary' ) ? wp_get_nav_menu_name( 'primary' ) : false );
+								if ( ( $menu_id && wp_get_nav_menu_object( $menu_id )->count ) || siteorigin_setting( 'navigation_search' ) ) : ?>
 
 									<a href="#menu" id="mobile-menu-button">
 										<?php siteorigin_north_display_icon( 'menu' ) ?>
