@@ -90,11 +90,11 @@
 								if ( class_exists( 'Woocommerce' ) ) {
 									// Work out if the WooComemrce cart is enabled and showing
 									if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) {
-										$show_min_cart = true;
+										$show_mini_cart = true;
 									}
 								}
 
-								if ( ( $menu_id && wp_get_nav_menu_object( $menu_id )->count ) || siteorigin_setting( 'navigation_search' ) || isset( $show_min_cart ) ) : ?>
+								if ( ( $menu_id && wp_get_nav_menu_object( $menu_id )->count ) || siteorigin_setting( 'navigation_search' ) || isset( $show_mini_cart ) ) : ?>
 
 									<a href="#menu" id="mobile-menu-button">
 										<?php siteorigin_north_display_icon( 'menu' ) ?>
@@ -113,7 +113,7 @@
 								) );
 								?>
 								<?php
-									if ( isset( $show_min_cart ) ) :
+									if ( isset( $show_mini_cart ) ) :
 										global $woocommerce;
 										?>
 										<ul class="shopping-cart">
