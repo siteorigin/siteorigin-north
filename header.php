@@ -88,7 +88,7 @@
 								<?php
 								$menu_id = ( wp_get_nav_menu_name( 'primary' ) ? wp_get_nav_menu_name( 'primary' ) : false );
 								if ( class_exists( 'Woocommerce' ) ) {
-									// Work out if the WooComemrce cart is enabled and showing
+									// Work out if the WooCommerce cart is enabled and showing
 									if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) {
 										$show_mini_cart = true;
 									}
