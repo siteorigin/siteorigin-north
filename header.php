@@ -85,40 +85,51 @@
 
 							<?php else : ?>
 
-								<a href="#menu" id="mobile-menu-button">
-									<?php siteorigin_north_display_icon( 'menu' ) ?>
-									<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
-										<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
-										<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
-									<?php endif; ?>
-								</a>
+								<?php
+								$menu_id = ( wp_get_nav_menu_name( 'primary' ) ? wp_get_nav_menu_name( 'primary' ) : false );
+								if ( class_exists( 'Woocommerce' ) ) {
+									// Work out if the WooCommerce cart is enabled and showing
+									if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) {
+										$show_mini_cart = true;
+									}
+								}
+
+								if ( ( $menu_id && wp_get_nav_menu_object( $menu_id )->count ) || siteorigin_setting( 'navigation_search' ) || isset( $show_mini_cart ) ) : ?>
+
+									<a href="#menu" id="mobile-menu-button">
+										<?php siteorigin_north_display_icon( 'menu' ) ?>
+										<?php if ( siteorigin_setting( 'responsive_menu_text' ) ) : ?>
+											<?php echo esc_html( siteorigin_setting( 'responsive_menu_text' ) ); ?>
+											<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'siteorigin-north' ); ?></span>
+										<?php endif; ?>
+									</a>
 
 								<?php
+								endif;
+
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
 									'menu_id' => 'primary-menu'
 								) );
 								?>
-
-							<?php endif; ?>
-
-							<?php if ( class_exists( 'Woocommerce' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) : ?>
-								<?php if ( ( ! ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_cart' ) ) || ( ( is_cart() || is_checkout() ) && siteorigin_setting( 'woocommerce_display_checkout_cart' ) ) ) : ?>
-									<?php global $woocommerce; ?>
-									<ul class="shopping-cart">
-										<li>
-											<a class="shopping-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
-												<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
-												<span class="north-icon-cart"></span>
-												<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
-												<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
-											</a>
-											<ul class="shopping-cart-dropdown" id="cart-drop">
-												<?php the_widget( 'WC_Widget_Cart' ); ?>
-											</ul>
-										</li>
-									</ul>
-								<?php endif; ?>
+								<?php
+									if ( isset( $show_mini_cart ) ) :
+										global $woocommerce;
+										?>
+										<ul class="shopping-cart">
+											<li>
+												<a class="shopping-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+													<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
+													<span class="north-icon-cart"></span>
+													<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
+													<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count;?></span>
+												</a>
+												<ul class="shopping-cart-dropdown" id="cart-drop">
+													<?php the_widget( 'WC_Widget_Cart' ); ?>
+												</ul>
+											</li>
+										</ul>
+									<?php endif; ?>
 							<?php endif; ?>
 
 							<?php if ( siteorigin_setting( 'navigation_search' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) : ?>
