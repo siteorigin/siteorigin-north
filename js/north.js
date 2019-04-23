@@ -192,7 +192,7 @@ jQuery( function( $ ) {
 
 		if ( $mobileMenu === false ) {
 			$mobileMenu = $( '<div></div>' )
-				.append( $( '.main-navigation ul.menu' ).first().clone() )
+				.append( $( '.main-navigation .menu ul, .main-navigation ul.menu' ).first().clone() )
 				.attr( 'id', 'mobile-navigation' )
 				.appendTo( '#masthead' ).hide();
 
