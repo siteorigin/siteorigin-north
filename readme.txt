@@ -96,6 +96,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7 - 24 April 2019 =
+* Improved search form accessibility.
+* Added a setting for the input background color located at `Customize > Theme Settings > Customize > Fonts > Form Field Background Color`.
+* Prevented the mobile menu from displaying when the primary menu is empty.
+
 = 1.6.8 - 14 March 2019 =
 * Added a fallback to the default theme icon if a custom icon is missing.
 * Allow main menu hovers when Touch UI Layout is enabled.
