@@ -24,6 +24,7 @@ return array(
 		'fonts_text_menu' => 'color__text_menu',
 		'fonts_text_menu_hover' => 'color__text_menu_hover',
 		'fonts_text_menu_current' => 'color__text_menu_current',
+		'fonts_field_background' => 'color__input-background',
 
 		// Header.
 		'masthead_background_color' => 'masthead__background_color',

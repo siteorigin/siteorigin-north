@@ -5,6 +5,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 textarea {
+	background: $color__input-background;
 	border: 1px solid $color__border-input;
 	border-radius: 0;
 	box-sizing: border-box;

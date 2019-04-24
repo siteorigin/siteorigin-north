@@ -5,7 +5,7 @@ Contributors: SiteOrigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 5.0.2
+Tested up to: 5.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.7 - 24 April 2019 =
+* Improved search form accessibility.
+* Added a setting for the input background color located at `Customize > Theme Settings > Customize > Fonts > Form Field Background Color`.
+* Prevented the mobile menu from displaying when the primary menu is empty.
 
 = 1.6.8 - 14 March 2019 =
 * Added a fallback to the default theme icon if a custom icon is missing.

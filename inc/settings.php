@@ -118,6 +118,11 @@ function siteorigin_north_settings_init() {
 					'label' => __( 'Menu Text Current Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
+				'field_background'   => array(
+					'type'  => 'color',
+					'label' => __( 'Form Field Background Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
 			),
 		),
 
@@ -578,6 +583,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	border-color: ${branding_accent_dark};
 	}
 	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],textarea {
+	background: ${fonts_field_background};
 	color: ${fonts_text_medium};
 	.font( ${fonts_details} );
 	}
@@ -658,12 +664,12 @@ function siteorigin_north_settings_custom_css( $css ) {
 	color: ${fonts_text_menu_hover};
 	}
 	#mobile-navigation {
-	.font( ${fonts_menu} );
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
+	.font( ${fonts_menu} );
 	}
 	#mobile-navigation form input[type="search"] {
-	color: ${responsive_mobile_menu_text_color};
 	border-bottom: 1px solid ${responsive_mobile_menu_text_color};
+	color: ${responsive_mobile_menu_text_color};
 	}
 	#mobile-navigation form input[type="search"]::-webkit-input-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
@@ -719,8 +725,8 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#masthead {
 	background: ${masthead_background_color};
 	border-bottom: ${masthead_border_width} solid ${masthead_border_color};
-	padding: ${masthead_padding} 0;
 	margin-bottom: ${masthead_bottom_margin};
+	padding: ${masthead_padding} 0;
 	}
 	#masthead .site-branding .site-title,#masthead .site-branding .logo-site-title {
 	color: ${fonts_text_dark};
@@ -1170,6 +1176,7 @@ function siteorigin_north_settings_defaults( $defaults ) {
 	$defaults['fonts_text_menu']         = '#898989';
 	$defaults['fonts_text_menu_hover']   = '#595959';
 	$defaults['fonts_text_menu_current'] = '#292929';
+	$defaults['fonts_field_background']  = '#ffffff';
 
 	// Icon defaults.
 	$defaults['icons_menu']          = false;
