@@ -419,7 +419,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 textarea {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #ccc;
   border-radius: 0;
   box-sizing: border-box;
@@ -2062,7 +2062,8 @@ article.page {
   #commentform .comment-form-cookies-consent {
     align-items: center;
     clear: both;
-    display: flex; }
+    display: flex;
+    margin: 0 0 8px; }
     #commentform .comment-form-cookies-consent input {
       line-height: 1;
       margin-right: 5px; }
@@ -2070,16 +2071,24 @@ article.page {
       display: inline-block;
       font-weight: normal;
       margin-bottom: 0; }
+  #commentform .comment-subscription-form {
+    display: block;
+    clear: both;
+    margin: 0 0 8px;
+    overflow: auto; }
+    #commentform .comment-subscription-form input {
+      margin-right: 0; }
+    #commentform .comment-subscription-form label {
+      font-weight: normal; }
   #commentform .form-submit {
-    margin-top: 10px;
-    text-align: right; }
+    clear: both;
+    margin: 15px 0 0; }
     #commentform .form-submit input {
       background: transparent;
       border: 1px solid #303030;
       border-radius: 0;
       box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
       color: #292929;
-      float: right;
       font-family: "Montserrat", sans-serif;
       font-size: 0.85em;
       line-height: 1em;
