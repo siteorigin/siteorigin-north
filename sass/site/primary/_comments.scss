@@ -194,10 +194,9 @@
 
 	input, 
 	textarea {
-		background-color: $comments__form_background_color;
+		background-color: $color__input-background;
 
 		&:focus {
-			background-color: $comments__form_focus_background_color;
 			outline: none;
 		}
 	}

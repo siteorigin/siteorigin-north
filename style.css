@@ -2106,10 +2106,9 @@ article.page {
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
   #commentform input,
   #commentform textarea {
-    background-color: #fff; }
+    background-color: #ffffff; }
     #commentform input:focus,
     #commentform textarea:focus {
-      background-color: #fcfcfc;
       outline: none; }
 
 /*--------------------------------------------------------------
