@@ -96,6 +96,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.1 - 06 May 2019 =
+* Removed WooCommerce mini-cart "Cart" title.
+* Minor comment form style improvements.
+
 = 1.7 - 24 April 2019 =
 * Improved search form accessibility.
 * Added a setting for the input background color located at `Customize > Theme Settings > Customize > Fonts > Form Field Background Color`.
