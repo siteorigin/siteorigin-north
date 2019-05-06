@@ -871,6 +871,9 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#commentform .form-submit input:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
+	}
+	#commentform input,#commentform textarea {
+	background-color: ${fonts_field_background};
 	}';
 	return $css;
 }

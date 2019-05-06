@@ -134,12 +134,13 @@
 		align-items: center;
 		clear: both;
 		display: flex;
-		
+		margin: 0 0 8px;
+
 		input {
 			line-height: 1;
 			margin-right: 5px;
 		}
-		
+
 		label {
 			display: inline-block;
 			font-weight: normal;
@@ -147,9 +148,25 @@
 		}
 	}
 
+	// Jetpack Subscriptions.
+	.comment-subscription-form {
+		display: block;
+		clear: both;
+		margin: 0 0 8px;
+		overflow: auto;	
+
+		input {
+			margin-right: 0;
+		}
+
+		label {
+			font-weight: normal;
+		}
+	}
+
 	.form-submit {
-		margin-top: 10px;
-		text-align: right;
+		clear: both;
+		margin: 15px 0 0;
 		
 		input {
 			background: transparent;
@@ -157,7 +174,6 @@
 			border-radius: 0;
 			box-shadow: inset 0 0 1px rgba(0,0,0,0.25);
 			color: $color__text_dark;
-			float: right;
 			font-family: $font__headings;
 			font-size: 0.85em;
 			line-height: 1em;
@@ -178,10 +194,9 @@
 
 	input, 
 	textarea {
-		background-color: $comments__form_background_color;
+		background-color: $color__input-background;
 
 		&:focus {
-			background-color: $comments__form_focus_background_color;
 			outline: none;
 		}
 	}
