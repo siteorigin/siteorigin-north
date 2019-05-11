@@ -68,7 +68,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							</div>
 							<div class="mini_cart_details">
 								<p class="mini_cart_product"><?php echo $product_name; ?></p>
-								<?php echo WC()->cart->get_item_data( $cart_item ); ?>
+								<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
 								<p class="mini_cart_cost"><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?></p>
 							</div>
 						</a>
