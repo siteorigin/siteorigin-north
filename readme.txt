@@ -96,6 +96,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.2 - 22 May 2019 =
+* Updated SiteOrigin Settings framework.
+* Replaced `WC_Cart::get_item_data` with `wc_get_formatted_cart_item_data`.
+* Added `wp_body_open` hook.
+* Minor search widget style adjustment.
+
 = 1.7.1 - 06 May 2019 =
 * Removed WooCommerce mini-cart "Cart" title.
 * Minor comment form style improvements.
