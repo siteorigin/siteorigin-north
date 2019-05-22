@@ -5,7 +5,7 @@ Contributors: SiteOrigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 5.1.1
+Tested up to: 5.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,13 @@ SiteOrigin North WordPress Theme is derived from Underscores WordPress Theme, Co
 
 == Images ==
 
-Screenshot photos sourced from Pixabay, licensed under CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+Screenshot photos sourced from Pixabay and Unsplash, licensed under CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+
+[Whangarei Falls, Whangarei, New Zealand, by Tim Swaan](https://unsplash.com/photos/eOpewngf68w)
+[Matterhorn](https://pixabay.com/photos/matterhorn-mountains-sunset-dusk-2537432/)
+[Airplane](https://pixabay.com/photos/airplane-airline-parts-clouds-sky-2565685/)
+[Backpacking in a pickup, by Lukas Robertson](https://unsplash.com/photos/9qJb_wCFCrM)
+[A good hike deserves a stunning view, by Fabien Bazanegue](https://unsplash.com/photos/G1URCTG5peg)
 
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
@@ -95,6 +101,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.7.2 - 22 May 2019 =
+* Updated SiteOrigin Settings framework.
+* Replaced `WC_Cart::get_item_data` with `wc_get_formatted_cart_item_data`.
+* Added `wp_body_open` hook.
+* Minor search widget style adjustment.
 
 = 1.7.1 - 06 May 2019 =
 * Removed WooCommerce mini-cart "Cart" title.

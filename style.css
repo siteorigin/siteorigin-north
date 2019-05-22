@@ -1038,8 +1038,13 @@ a {
       list-style: none; }
 
 /* Search widget. */
-.widget_search .search-submit {
-  display: none; }
+.widget_search input[type="search"] {
+  display: inline-block;
+  vertical-align: top;
+  width: 75%; }
+
+.widget_search button {
+  padding: 10px 25px 10px; }
 
 .textwidget > *:first-child {
   margin-top: 0; }
