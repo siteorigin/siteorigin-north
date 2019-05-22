@@ -60,7 +60,13 @@ SiteOrigin North WordPress Theme is derived from Underscores WordPress Theme, Co
 
 == Images ==
 
-Screenshot photos sourced from Pixabay, licensed under CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+Screenshot photos sourced from Pixabay and Unsplash, licensed under CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+
+[Whangarei Falls, Whangarei, New Zealand, by Tim Swaan](https://unsplash.com/photos/eOpewngf68w)
+[Matterhorn](https://pixabay.com/photos/matterhorn-mountains-sunset-dusk-2537432/)
+[Airplane](https://pixabay.com/photos/airplane-airline-parts-clouds-sky-2565685/)
+[Backpacking in a pickup, by Lukas Robertson](https://unsplash.com/photos/9qJb_wCFCrM)
+[A good hike deserves a stunning view, by Fabien Bazanegue](https://unsplash.com/photos/G1URCTG5peg)
 
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
