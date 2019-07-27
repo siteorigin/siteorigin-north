@@ -102,6 +102,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.3 - 27 July 2019 =
+* Updated SiteOrigin Settings framework.
+
 = 1.7.2 - 22 May 2019 =
 * Updated SiteOrigin Settings framework.
 * Replaced `WC_Cart::get_item_data` with `wc_get_formatted_cart_item_data`.
