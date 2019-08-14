@@ -1,9 +1,7 @@
 === SiteOrigin North ===
 
-Contributors: SiteOrigin
-
+Contributors: siteOrigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
-
 Requires at least: 4.7
 Tested up to: 5.2.2
 License: GPLv2 or later
