@@ -341,8 +341,8 @@
 	.widget_shopping_cart_content {
 		padding: 15px !important;
 
-		.cart_list{
-			
+		.cart_list {
+
 			.empty {
 				margin: 15px 15px;
 			}
@@ -353,13 +353,24 @@
 				box-sizing: border-box;
 
 				a {
+					color: $color__text_dark;
+					font-weight: bold;
+					line-height: normal;
+					margin: 0 0 7px 0;
 					padding: 0 !important;
 					text-decoration: none;
 				}
 
-				.mini_cart_img {
-					width: 65px;
+				img {
 					float: left;
+					line-height: 0;
+					margin-right: 23px;
+					width: 65px;
+				}
+
+				.quantity {
+					color: $color__primary_accent;
+					margin: 0;
 				}
 
 				.mini_cart_details {
@@ -371,11 +382,6 @@
 						line-height: 1.5em;
 						margin: 0 0 7px 0;
 						padding-right: 23px;
-					}
-
-					.mini_cart_cost {
-						margin: 0;
-						color: $color__primary_accent;
 					}
 				}
 

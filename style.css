@@ -531,7 +531,8 @@ a {
       color: #898989; }
       .main-navigation ul a:hover {
         color: #595959; }
-    .main-navigation ul ul {
+    .main-navigation ul .sub-menu,
+    .main-navigation ul .children {
       background-color: #fafafa;
       border: 1px solid #d4d4d4;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -554,7 +555,8 @@ a {
       transform: scale(0.95);
       visibility: hidden;
       z-index: 99999; }
-      .main-navigation ul ul ul {
+      .main-navigation ul .sub-menu ul,
+      .main-navigation ul .children ul {
         left: 100%;
         margin-left: 0 !important;
         top: -1px;
@@ -563,28 +565,38 @@ a {
         -ms-transform-origin: left center;
         -o-transform-origin: left center;
         transform-origin: left center; }
-      .main-navigation ul ul li {
+      .main-navigation ul .sub-menu li,
+      .main-navigation ul .children li {
         margin: 0;
         min-width: 100%;
         padding-bottom: 0; }
-        .main-navigation ul ul li:hover > ul,
-        .main-navigation ul ul li.focus > ul {
+        .main-navigation ul .sub-menu li:hover > ul,
+        .main-navigation ul .sub-menu li.focus > ul,
+        .main-navigation ul .children li:hover > ul,
+        .main-navigation ul .children li.focus > ul {
           left: 100%; }
-      .main-navigation ul ul a {
+      .main-navigation ul .sub-menu a,
+      .main-navigation ul .children a {
         box-sizing: border-box;
         line-height: 1em;
         min-width: 100%;
         padding: 0.85em 25px;
         white-space: nowrap; }
-      .main-navigation ul ul li:first-child a {
+      .main-navigation ul .sub-menu li:first-child a,
+      .main-navigation ul .children li:first-child a {
         padding-top: 1.25em; }
-      .main-navigation ul ul li:last-child a {
+      .main-navigation ul .sub-menu li:last-child a,
+      .main-navigation ul .children li:last-child a {
         padding-bottom: 1.25em; }
-      .main-navigation ul ul :hover > a,
-      .main-navigation ul ul .focus > a {
+      .main-navigation ul .sub-menu :hover > a,
+      .main-navigation ul .sub-menu .focus > a,
+      .main-navigation ul .children :hover > a,
+      .main-navigation ul .children .focus > a {
         color: #595959; }
-      .main-navigation ul ul a:hover,
-      .main-navigation ul ul a.focus {
+      .main-navigation ul .sub-menu a:hover,
+      .main-navigation ul .sub-menu a.focus,
+      .main-navigation ul .children a:hover,
+      .main-navigation ul .children a.focus {
         color: #595959; }
     body:not(.ios) .main-navigation ul li:hover > ul,
     body:not(.ios) .main-navigation ul li.focus > ul {
