@@ -593,10 +593,11 @@
         margin: 0; }
       .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .remove {
         color: #ebe9eb !important;
+        left: initial;
+        line-height: 1;
         min-width: 15px;
         position: absolute;
-        right: 0;
-        top: 0; }
+        right: 0; }
         .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .remove:hover {
           background: transparent;
           color: #a94346 !important; }

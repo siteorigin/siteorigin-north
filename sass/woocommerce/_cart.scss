@@ -382,10 +382,11 @@
 
 				.remove {
 					color: $color__woo-secondary !important;
+					left: initial;
+					line-height: 1;
 					min-width: 15px;
 					position: absolute;
 					right: 0;
-					top: 0;
 
 					&:hover {
 						background: transparent;
