@@ -435,6 +435,9 @@
       text-align: left; }
     .woocommerce table.shop_table .cart_totals th {
       border-top: none; }
+    .woocommerce table.shop_table .cart_totals .shipping-calculator-form .input-text {
+      min-width: 140px;
+      padding: 7px 15px; }
     .woocommerce table.shop_table .cart_totals .amount {
       color: #c75d5d; }
     .woocommerce table.shop_table .cart_totals .wc-proceed-to-checkout {

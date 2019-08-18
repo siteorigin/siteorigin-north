@@ -137,9 +137,19 @@
 					margin: 0 0 1rem;
 					text-align: left;
 				}
+
 				th {
 					border-top: none;
 				}
+
+				.shipping-calculator-form {
+					
+					.input-text {
+						min-width: 140px;
+						padding: 7px 15px;
+					}
+				}
+
 				.amount {
 					color: $color__primary_accent;
 				}
