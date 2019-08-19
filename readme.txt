@@ -100,6 +100,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.4 - 19 August 2019 =
+* Updated Panels Lite submodule.
+* Updated WooCommerce included template file `cart.php` to WC 3.7.0.
+* Removed WooCommerce included template file `mini-cart.php` and made necessary CSS adjustments to compensate for changed markup.
+* Minor WooCommerce cart styling fixes.
+
 = 1.7.3 - 27 July 2019 =
 * Updated SiteOrigin Settings framework.
 
