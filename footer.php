@@ -18,9 +18,9 @@
 	<?php do_action( 'siteorigin_north_footer_before' ); ?>
 
 	<footer id="colophon" class="site-footer <?php if ( ! siteorigin_setting( 'footer_constrained' ) ) echo 'unconstrained-footer'; if ( is_active_sidebar( 'footer-sidebar' ) ) echo ' footer-active-sidebar'; ?>">
-		
+
 		<?php do_action( 'siteorigin_north_footer_top' ); ?>
-		
+
 		<?php if ( ! siteorigin_page_setting( 'hide_footer_widgets', false ) && ! in_array( siteorigin_page_setting( 'layout' ), array( 'stripped' ), true ) ) : ?>
 			<div class="container">
 
@@ -47,10 +47,10 @@
 					$privacy_url = get_privacy_policy_url();
 					if ( ! empty( $privacy_url ) && siteorigin_setting( 'footer_text' ) ) {
 						?><span class="sep"> | </span><?php
-					}					
+					}
 					the_privacy_policy_link( '', '' );
 				}
-				
+
 				$credit_text = apply_filters(
 					'siteorigin_north_footer_credits',
 					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' )
