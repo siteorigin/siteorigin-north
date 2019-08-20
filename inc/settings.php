@@ -617,14 +617,14 @@ function siteorigin_north_settings_custom_css( $css ) {
 	.main-navigation ul a:hover {
 	color: ${fonts_text_menu_hover};
 	}
-	.main-navigation ul ul {
+	.main-navigation ul .sub-menu,.main-navigation ul .children {
 	background-color: ${masthead_background_color};
 	border: 1px solid ${masthead_border_color};
 	}
-	.main-navigation ul ul :hover > a,.main-navigation ul ul .focus > a {
+	.main-navigation ul .sub-menu :hover > a,.main-navigation ul .sub-menu .focus > a,.main-navigation ul .children :hover > a,.main-navigation ul .children .focus > a {
 	color: ${fonts_text_menu_hover};
 	}
-	.main-navigation ul ul a:hover,.main-navigation ul ul a.focus {
+	.main-navigation ul .sub-menu a:hover,.main-navigation ul .sub-menu a.focus,.main-navigation ul .children a:hover,.main-navigation ul .children a.focus {
 	color: ${fonts_text_menu_hover};
 	}
 	.main-navigation .menu > li.current-menu-item > a,.main-navigation .menu > li.current-menu-ancestor > a {
@@ -997,10 +997,10 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.main-navigation .shopping-cart .shopping-cart-count {
 	background: ${branding_accent} padding-box;
 	}
-	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_product {
+	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item a {
 	color: ${fonts_text_dark};
 	}
-	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .mini_cart_details .mini_cart_cost {
+	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .quantity {
 	color: ${branding_accent};
 	}
 	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item .remove:hover {
@@ -1009,17 +1009,21 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.widget_shopping_cart .widget_shopping_cart_content .buttons a {
 	.font( ${fonts_headings} );
 	}
-	.widget_shopping_cart .widget_shopping_cart_content .buttons a.mini_cart_view {
+	.widget_shopping_cart .widget_shopping_cart_content .buttons a:first-of-type {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.widget_shopping_cart .widget_shopping_cart_content .buttons a.mini_cart_checkout {
+	.widget_shopping_cart .widget_shopping_cart_content .buttons a.checkout {
 	background: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
 	.widget_shopping_cart .widget_shopping_cart_content .buttons a:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
+	}
+	.shopping-cart-dropdown {
+	background-color: ${masthead_background_color};
+	border: 1px solid ${masthead_border_color};
 	}
 	.woocommerce form.login .button {
 	.font( ${fonts_headings} );
