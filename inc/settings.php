@@ -469,7 +469,7 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Equalize Product Rows', 'siteorigin-north' ),
 					'description' => esc_html__( 'Equalize product row height on shop archive pages.', 'siteorigin-north' ),
-				),				
+				),
 
 				'display_cart' => array(
 					'type' => 'checkbox',
@@ -496,7 +496,7 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 						'right' => esc_html__( 'Right', 'siteorigin-north' ),
 						'none' => esc_html__( 'None', 'siteorigin-north' ),
 					),
-				),				
+				),
 
 			)
 		)
@@ -1285,11 +1285,11 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'type'    => 'select',
 		'label'   => __( 'Page Layout', 'siteorigin-north' ),
 		'options' => array(
-			'default'				=> __( 'Default', 'siteorigin-north' ),
-			'no-sidebar'         	=> __( 'No Sidebar', 'siteorigin-north' ),
-			'full-width'         	=> __( 'Full Width', 'siteorigin-north' ),
-			'full-width-sidebar' 	=> __( 'Full Width, With Sidebar', 'siteorigin-north' ),
-			'stripped' 			 	=> __( 'Stripped', 'siteorigin-north' ),
+			'default'               => __( 'Default', 'siteorigin-north' ),
+			'no-sidebar'            => __( 'No Sidebar', 'siteorigin-north' ),
+			'full-width'            => __( 'Full Width', 'siteorigin-north' ),
+			'full-width-sidebar'    => __( 'Full Width, With Sidebar', 'siteorigin-north' ),
+			'stripped'              => __( 'Stripped', 'siteorigin-north' ),
 		),
 	);
 
