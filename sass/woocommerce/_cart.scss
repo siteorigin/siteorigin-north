@@ -279,6 +279,7 @@
 }
 
 .main-navigation {
+
 	.shopping-cart {
 		display: inline-block;
 		margin-left: 0.8em;
@@ -293,16 +294,16 @@
 		}
 
 		.north-icon-cart {
+			border: 2px solid transparent;
+			border-radius: 50%;
 			display: inline-block;
-			font-size: 16px;
+			color: $navigation__link_color;
 			cursor: pointer;
+			font-size: 16px;
 			line-height: 16px;
 			padding: 5px;
 			position: relative;
 			top: 2px;
-			color: $navigation__link_color;
-			border: 2px solid transparent;
-			border-radius: 50%;
 		}
 
 		&:hover {
@@ -318,15 +319,15 @@
 		}
 
 		.shopping-cart-count {
+			background: $color__primary_accent;
+			border: 2px solid #fff;
+			border-radius: 9px;
+			color: #fff;
+			font-size: 9px;
+			padding: 3px 5px;
 			position: relative;
 			left: -11px;
 			top: -16px;
-			padding: 3px 5px;
-			border: 2px solid #fff;
-			border-radius: 9px;
-			background: $color__primary_accent padding-box;
-			color: #fff;
-			font-size: 9px;
 		}
 
 		.shopping-cart-dropdown {
@@ -427,11 +428,11 @@
 				line-height: 1em;
 				box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.25);
 				font-family: $font__headings;
+				min-width: inherit;
 				text-decoration: none;
 				text-transform: uppercase;
 				text-shadow: none;
 				@include transition(0.085s);
-				min-width: inherit;
 
 				&:first-of-type {
 					background: transparent;
@@ -473,7 +474,9 @@
 }
 
 .woocommerce-cart {
+
 	.cart-collaterals {
+
 		.cross-sells {
 			width: 100%;
 		}

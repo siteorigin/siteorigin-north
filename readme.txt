@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.5 - 21 August 2019 =
+* Updated Customizer settings CSS output. Resolves main menu drop-down settings colors not being applied.
+
 = 1.7.4 - 19 August 2019 =
 * Updated Panels Lite submodule.
 * Updated WooCommerce included template file `cart.php` to WC 3.7.0.
