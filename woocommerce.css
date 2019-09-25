@@ -222,6 +222,11 @@
   font-size: 1.2em;
   line-height: 2.5; }
 
+.woocommerce.single #content div.product .panel-grid-cell p.price {
+  float: none;
+  line-height: normal;
+  margin-bottom: 1.5em; }
+
 .woocommerce.single #content div.product div.entry-summary {
   margin-top: 0;
   width: 54%;
