@@ -100,6 +100,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.6 - 29 September 2019 =
+* WooCommerce: Ensured related products and upsells are correctly displayed when the product has no short description.
+
 = 1.7.5 - 21 August 2019 =
 * Updated Customizer settings CSS output. Resolves main menu drop-down settings colors not being applied.
 
