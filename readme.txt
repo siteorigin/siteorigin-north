@@ -3,7 +3,7 @@
 Contributors: siteOrigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.7
-Tested up to: 5.2.2
+Tested up to: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.7.6 - 29 September 2019 =
+* WooCommerce: Ensured related products and upsells are correctly displayed when the product has no short description.
 
 = 1.7.5 - 21 August 2019 =
 * Updated Customizer settings CSS output. Resolves main menu drop-down settings colors not being applied.

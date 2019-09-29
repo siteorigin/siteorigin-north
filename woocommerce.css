@@ -303,6 +303,10 @@
 .woocommerce.single #content div.product #respond .comment-form-rating {
   margin: 0 15px; }
 
+.woocommerce.single #content div.product .up-sells.products,
+.woocommerce.single #content div.product .related.products {
+  clear: both; }
+
 /*--------------------------------------------------------------
 # WooCommerce Reviews
 --------------------------------------------------------------*/
