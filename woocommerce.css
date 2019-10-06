@@ -588,7 +588,7 @@
         font-weight: 700;
         line-height: normal;
         margin: 0 0 7px 0;
-        padding: 0 !important;
+        padding: 0 20px 0 0 !important;
         text-decoration: none; }
       .widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item img {
         float: left;
