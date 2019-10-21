@@ -468,7 +468,7 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 				'equalize_rows' => array(
 					'type' => 'checkbox',
 					'label' => esc_html__( 'Equalize Product Rows', 'siteorigin-north' ),
-					'description' => esc_html__( 'Equalize product row height on shop archive pages.', 'siteorigin-north' ),
+					'description' => esc_html__( 'Equalize product row heights on shop archive pages.', 'siteorigin-north' ),
 				),
 
 				'display_cart' => array(

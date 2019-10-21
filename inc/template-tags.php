@@ -346,10 +346,11 @@ if ( ! function_exists( 'siteorigin_north_footer_text' ) ) :
  */
 function siteorigin_north_footer_text() {
 	$text = siteorigin_setting( 'footer_text' );
+	if ( empty( $text ) ) return;
 	$text = str_replace(
 		array( '{sitename}', '{year}' ),
 		array( get_bloginfo( 'sitename' ), date( 'Y' ) ),
-		$text
+		'<span>' . $text . '</span>'
 	);
 	echo wp_kses_post( $text );
 }
@@ -583,4 +584,18 @@ if ( ! function_exists( 'siteorigin_north_strip_image' ) ) :
 function siteorigin_north_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
 }
+endif;
+
+if ( class_exists( 'LiteSpeed_Cache' ) ) :
+	if ( ! function_exists( 'siteorigin_north_litespeed_lazy_exclude' ) ) :
+		/**
+		 * Exclude Logo from LiteSpeed Cache Lazy Load
+		 */
+		function siteorigin_north_litespeed_lazy_exclude( $attr ) {
+			$attr['data-no-lazy'] = 1;
+
+			return $attr;
+		}
+	endif;
+	add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_litespeed_lazy_exclude' );
 endif;

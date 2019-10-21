@@ -40,27 +40,22 @@
 
 		<div class="site-info">
 			<div class="container">
-				<?php
-				siteorigin_north_footer_text();
+					<?php
+					siteorigin_north_footer_text();
 
-				if ( function_exists( 'the_privacy_policy_link' ) && siteorigin_setting( 'footer_privacy_policy_link' ) ) {
-					$privacy_url = get_privacy_policy_url();
-					if ( ! empty( $privacy_url ) && siteorigin_setting( 'footer_text' ) ) {
-						?><span class="sep"> | </span><?php
+					if ( function_exists( 'the_privacy_policy_link' ) && siteorigin_setting( 'footer_privacy_policy_link' ) ) {
+						the_privacy_policy_link( '<span>', '</span>' );
 					}
-					the_privacy_policy_link( '', '' );
-				}
 
-				$credit_text = apply_filters(
-					'siteorigin_north_footer_credits',
-					sprintf( esc_html__( 'Theme by %s.', 'siteorigin-north' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' )
-				);
+					$credit_text = apply_filters(
+						'siteorigin_north_footer_credits',
+						'<span>' . sprintf( esc_html__( 'Theme by %s', 'siteorigin-north' ), '<a href="https://siteorigin.com/">SiteOrigin</a>' ) . '</span>'
+					);
 
-				if ( ! empty( $credit_text ) ) {
-					?><span class="sep"> | </span><?php
-					echo wp_kses_post( $credit_text );
-				}
-				?>
+					if ( ! empty( $credit_text ) ) {
+						echo wp_kses_post( $credit_text );
+					}
+					?>
 			</div>
 		</div><!-- .site-info -->
 

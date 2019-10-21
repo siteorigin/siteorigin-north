@@ -100,6 +100,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.7 - 21 October 2019 =
+* WooCommerce mini-cart: prevented long titles from overlapping remove icon.
+* Changed bottom bar text separators to hyphens.
+* Excluded logo from LiteSpeed Cache lazy loading.
+
 = 1.7.6 - 29 September 2019 =
 * WooCommerce: Ensured related products and upsells are correctly displayed when the product has no short description.
 
