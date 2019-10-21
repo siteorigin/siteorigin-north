@@ -586,7 +586,7 @@ function siteorigin_north_strip_image( $content ) {
 }
 endif;
 
-if ( class_exists( 'LiteSpeed_Cache' ) :
+if ( class_exists( 'LiteSpeed_Cache' ) ) :
 	if ( ! function_exists( 'siteorigin_north_litespeed_lazy_exclude' ) ) :
 		/**
 		 * Exclude Logo from LiteSpeed Cache Lazy Load
