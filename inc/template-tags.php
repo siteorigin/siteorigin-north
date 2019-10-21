@@ -586,14 +586,16 @@ function siteorigin_north_strip_image( $content ) {
 }
 endif;
 
-if ( class_exists( 'LiteSpeed_Cache' ) && ! function_exists( 'siteorigin_north_litespeed_lazy_exclude' ) ) :
-/**
- * Exclude Logo from LiteSpeed Cache Lazy Load
- */
-function siteorigin_north_litespeed_lazy_exclude( $attr ) {
-	$attr['data-no-lazy'] = 1;
+if ( class_exists( 'LiteSpeed_Cache' ) :
+	if ( ! function_exists( 'siteorigin_north_litespeed_lazy_exclude' ) ) :
+		/**
+		 * Exclude Logo from LiteSpeed Cache Lazy Load
+		 */
+		function siteorigin_north_litespeed_lazy_exclude( $attr ) {
+			$attr['data-no-lazy'] = 1;
 
-	return $attr;
-}
-add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_litespeed_lazy_exclude' );
+			return $attr;
+		}
+	endif;
+	add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_litespeed_lazy_exclude' );
 endif;
