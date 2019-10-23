@@ -76,7 +76,6 @@ function siteorigin_north_display_retina_logo( $attr ) {
 	return $attr;
 }
 endif;
-add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_display_retina_logo' );
 add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_north_display_retina_logo' );
 
 if ( ! function_exists( 'siteorigin_north_the_post_navigation' ) ) :
