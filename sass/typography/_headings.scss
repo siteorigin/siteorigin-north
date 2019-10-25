@@ -7,6 +7,7 @@ h6 {
 	font-weight: normal;
 	font-family: $font__headings;
 	color: $color__text_dark;
+	margin: 25px 0;
 
 	.widget & {
 		color: inherit;
