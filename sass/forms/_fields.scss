@@ -11,8 +11,9 @@ textarea {
 	box-sizing: border-box;
 	color: $color__text_medium;
 	font-family: $font__detail;
-	font-size: 0.85em;
-	padding: 7px 30px;
+	font-size: .9333em;
+	line-height: normal;
+	padding: 9px 13px 10px;
 	width: 100%;
 
 	&:focus {
