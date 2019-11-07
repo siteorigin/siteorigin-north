@@ -889,19 +889,6 @@
     .widget_top_rated_products.widget ul.product_list_widget li a img {
       width: 50px; }
 
-.widget_product_search form[role="search"] input[type="search"] {
-  border: none;
-  padding-left: 0;
-  width: 85%; }
-
-.widget_product_search form[role="search"] button[type="submit"] {
-  padding: 10px 0;
-  width: 13%; }
-  .widget_product_search form[role="search"] button[type="submit"] i {
-    display: inline-block;
-    text-align: center;
-    width: 100%; }
-
 /*--------------------------------------------------------------
 # WooCommerce Quick View
 --------------------------------------------------------------*/

@@ -391,6 +391,44 @@ article.page {
 		
 		@media (max-width: 1024px) {
 			width: auto;
-		}		
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Search Form
+--------------------------------------------------------------*/
+.search-form,
+.woocommerce-product-search {
+	position: relative;
+
+	input[type="search"] {
+		min-width: 300px;
+		padding-right: 54px;
+	}
+
+	button[type="submit"] {
+		border: none;
+		box-shadow: none;
+		color: $color__text_medium;
+		line-height: normal;
+		padding: 12px 18px 8px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		
+		&:hover {
+			background: none;
+			color: $color__text_dark;
+		}
+
+		svg {
+			height: 14px;
+			width: 14px;
+
+			path {
+				fill: $color__text-medium;
+			}
+		}
 	}
 }

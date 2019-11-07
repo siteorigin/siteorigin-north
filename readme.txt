@@ -3,7 +3,7 @@
 Contributors: siteOrigin
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.7
-Tested up to: 5.2
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.7.8 - 07 November 2019 =
+* Set heading styles for `h1` to `h6`.
+* Improved search form styling.
+* Updated WooCommerce `cart.php` template to WooCommerce `3.8.0`.
 
 = 1.7.7 - 21 October 2019 =
 * WooCommerce mini-cart: prevented long titles from overlapping remove icon.

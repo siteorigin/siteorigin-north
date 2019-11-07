@@ -167,26 +167,3 @@
 		}
 	}
 }
-
-// Product search.
-.widget_product_search {
-	form[role="search"] {
-
-		input[type="search"] {
-			border: none;
-			padding-left: 0;
-			width: 85%;
-		}
-
-		button[type="submit"] {
-			padding: 10px 0;
-			width: 13%;
-
-			i {
-				display: inline-block;
-				text-align: center;
-				width: 100%;
-			}
-		}
-	}
-}

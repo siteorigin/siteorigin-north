@@ -147,11 +147,6 @@ jQuery( function( $ ) {
 	// Remove the no-js body class.
 	$( 'body.no-js' ).removeClass( 'no-js' );
 	if ( $( 'body' ).hasClass( 'css3-animations' ) ) {
-		// Display the burst animation.
-		$( '.search-field' ).burstAnimation( {
-			event: "focus",
-			container: ".search-form"
-		} );
 
 		var alignMenu = function() {
 			$( '#primary-menu > li > ul.sub-menu' ).each( function() {

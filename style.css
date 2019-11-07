@@ -245,7 +245,8 @@ h5,
 h6 {
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
-  color: #292929; }
+  color: #292929;
+  margin: 25px 0; }
   .widget h1, .widget
   h2, .widget
   h3, .widget
@@ -253,6 +254,24 @@ h6 {
   h5, .widget
   h6 {
     color: inherit; }
+
+h1 {
+  font-size: 29px; }
+
+h2 {
+  font-size: 25px; }
+
+h3 {
+  font-size: 22px; }
+
+h4 {
+  font-size: 20px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  font-size: 16px; }
 
 p {
   margin-bottom: 1.5em; }
@@ -425,8 +444,9 @@ textarea {
   box-sizing: border-box;
   color: #595959;
   font-family: "Droid Serif", sans-serif;
-  font-size: 0.85em;
-  padding: 7px 30px;
+  font-size: .9333em;
+  line-height: normal;
+  padding: 9px 13px 10px;
   width: 100%; }
   input[type="text"]:focus,
   input[type="email"]:focus,
@@ -731,8 +751,7 @@ a {
   top: 0;
   width: 100%;
   z-index: 99999; }
-  #header-search .container,
-  #header-search .search-form {
+  #header-search .container {
     height: 100%; }
   #header-search form {
     display: block;
@@ -1049,40 +1068,18 @@ a {
     .widget-area .widget.widget_pages > ul ul {
       list-style: none; }
 
-/* Search widget. */
-.widget_search input[type="search"] {
-  display: inline-block;
-  vertical-align: top;
-  width: 75%; }
-
-.widget_search button {
-  padding: 10px 25px 10px; }
-
 .textwidget > *:first-child {
   margin-top: 0; }
 
 .textwidget > *:last-child {
   margin-bottom: 0; }
 
-.search-form {
-  position: relative; }
-  .search-form .search-field {
-    border-color: #c9c9c9;
-    border-radius: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border-width: 0 0 1px 0;
-    display: block;
-    font-family: "Droid Serif", sans-serif;
-    font-size: 0.9em;
-    padding: 8px 15px;
+.widget .search-form {
+  width: 100%; }
+  .widget .search-form input[type="search"] {
     width: 100%; }
-    .search-form .search-field:focus {
-      background: #fbfbfb;
-      outline: none; }
-    .search-form .search-field input:-webkit-autofill {
-      color: #2a2a2a !important; }
+    #secondary .widget .search-form input[type="search"] {
+      min-width: 0; }
 
 .tagcloud a {
   background: #b0b0b0;
@@ -1210,17 +1207,6 @@ a {
 
 .widget-area .widget_calendar table #next {
   text-align: right; }
-
-.widget-area form[role="search"] input[type="search"] {
-  width: 85%; }
-
-.widget-area form[role="search"] button[type="submit"] {
-  padding: 10px 0;
-  width: 13%; }
-  .widget-area form[role="search"] button[type="submit"] i {
-    display: inline-block;
-    text-align: center;
-    width: 100%; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1966,6 +1952,38 @@ article.page {
       width: auto; } }
 
 /*--------------------------------------------------------------
+## Search Form
+--------------------------------------------------------------*/
+.search-form,
+.woocommerce-product-search {
+  position: relative; }
+  .search-form input[type="search"],
+  .woocommerce-product-search input[type="search"] {
+    min-width: 300px;
+    padding-right: 54px; }
+  .search-form button[type="submit"],
+  .woocommerce-product-search button[type="submit"] {
+    border: none;
+    box-shadow: none;
+    color: #595959;
+    line-height: normal;
+    padding: 12px 18px 8px;
+    position: absolute;
+    right: 0;
+    top: 0; }
+    .search-form button[type="submit"]:hover,
+    .woocommerce-product-search button[type="submit"]:hover {
+      background: none;
+      color: #292929; }
+    .search-form button[type="submit"] svg,
+    .woocommerce-product-search button[type="submit"] svg {
+      height: 14px;
+      width: 14px; }
+      .search-form button[type="submit"] svg path,
+      .woocommerce-product-search button[type="submit"] svg path {
+        fill: #595959; }
+
+/*--------------------------------------------------------------
 ## Post Pagination
 --------------------------------------------------------------*/
 .post-pagination {
@@ -2242,5 +2260,3 @@ object {
     background: #000;
     opacity: 0.1;
     border-radius: 10px; }
-
-/*# sourceMappingURL=sass/maps/style.css.map */
