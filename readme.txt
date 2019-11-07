@@ -100,6 +100,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.8 - 07 November 2019 =
+* Set heading styles for `h1` to `h6`.
+* Improved search form styling.
+* Updated WooCommerce `cart.php` template to WooCommerce `3.8.0`.
+
 = 1.7.7 - 21 October 2019 =
 * WooCommerce mini-cart: prevented long titles from overlapping remove icon.
 * Changed bottom bar text separators to hyphens.
