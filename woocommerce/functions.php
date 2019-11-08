@@ -191,10 +191,12 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_archive_buttons' ) ) :
  */
 function siteorigin_north_woocommerce_archive_buttons() { ?>
 	<div>
-		<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
-			siteorigin_north_woocommerce_quick_view_button();
-		}
-		woocommerce_template_loop_add_to_cart();
+		<?php
+			if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
+				siteorigin_north_woocommerce_quick_view_button();
+			}
+
+			woocommerce_template_loop_add_to_cart();
 		?>
 	</div>
 <?php }
