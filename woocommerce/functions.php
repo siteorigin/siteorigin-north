@@ -21,6 +21,9 @@ function siteorigin_north_woocommerce_change_hooks(){
 	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
 	remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
 
+	// Product archive buttons.
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+
 	// Quick view action hooks.
 	add_action( 'siteorigin_north_woocommerce_quick_view_images', 'siteorigin_north_woocommerce_quick_view_image', 5 );
 	add_action( 'siteorigin_north_woocommerce_quick_view_title', 'woocommerce_template_single_price', 5 );
@@ -178,12 +181,25 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_quick_view_button' ) ) :
  */
 function siteorigin_north_woocommerce_quick_view_button() {
 	global $product;
-	if( siteorigin_setting( 'woocommerce_display_quick_view' ) ) :
-		echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
-	endif;
+	echo '<a href="#" id="product-id-' . $product->get_id() . '" class="button product-quick-view-button" data-product-id="' . $product->get_id() . '">' . __( 'Quick View', 'siteorigin-north') . '</a>';
 }
 endif;
-add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_quick_view_button', 5 );
+
+if ( ! function_exists( 'siteorigin_north_woocommerce_archive_buttons' ) ) :
+/**
+ * Archive product buttons.
+ */
+function siteorigin_north_woocommerce_archive_buttons() { ?>
+	<div>
+		<?php if ( siteorigin_setting( 'woocommerce_display_quick_view' ) ) {
+			siteorigin_north_woocommerce_quick_view_button();
+		}
+		woocommerce_template_loop_add_to_cart();
+		?>
+	</div>
+<?php }
+endif;
+add_action( 'woocommerce_after_shop_loop_item', 'siteorigin_north_woocommerce_archive_buttons' );
 
 if ( ! function_exists('siteorigin_north_woocommerce_quick_view ') ) :
 /**
