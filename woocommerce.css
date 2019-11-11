@@ -128,21 +128,22 @@
   .woocommerce #main ul.products li.product .price {
     font-family: "Droid Serif", sans-serif;
     color: #c75d5d; }
+  .woocommerce #main ul.products li.product .button {
+    margin-right: 5px;
+    margin-left: 5px; }
 
 .woocommerce.equalize-rows #main ul.products {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+  flex-wrap: wrap; }
   .woocommerce.equalize-rows #main ul.products li {
+    align-content: space-between;
     display: flex;
     flex-wrap: wrap; }
     @media (max-width: 600px) {
       .woocommerce.equalize-rows #main ul.products li {
         display: block; } }
-    .woocommerce.equalize-rows #main ul.products li .button {
-      margin-top: auto;
-      margin-right: auto;
-      margin-left: auto; }
+    .woocommerce.equalize-rows #main ul.products li div {
+      margin: auto; }
 
 /*--------------------------------------------------------------
 # WooCommerce Element Styles
