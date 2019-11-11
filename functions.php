@@ -282,6 +282,14 @@ function siteorigin_north_scripts() {
 endif;
 add_action( 'wp_enqueue_scripts', 'siteorigin_north_scripts' );
 
+/**
+ * Enqueue Block Editor styles.
+ */
+function siteorigin_north_block_editor_styles() {
+	wp_enqueue_style( 'siteorigin-north-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
+}
+add_action( 'enqueue_block_editor_assets', 'siteorigin_north_block_editor_styles' );
+
 if ( ! function_exists( 'siteorigin_north_siteorigin_premium' ) ) :
 function siteorigin_north_siteorigin_premium( $themes ) {
 	$themes[] = 'siteorigin-north';
