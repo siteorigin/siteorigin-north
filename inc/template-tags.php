@@ -78,6 +78,40 @@ function siteorigin_north_display_retina_logo( $attr ) {
 endif;
 add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_north_display_retina_logo' );
 
+if (
+	class_exists( 'Smush\Core\Modules\Lazy' ) ||
+	class_exists( 'LiteSpeed_Cache' ) ||
+	class_exists( 'Jetpack_Lazy_Images' )
+) :
+	if ( ! function_exists( 'siteorigin_north_lazy_load_exclude' ) ) :
+		/**
+		 * Exclude Logo from Lazy Load plugins.
+		 */
+		function siteorigin_north_lazy_load_exclude( $attr, $attachment ) {
+			$custom_logo_id = siteorigin_setting( 'branding_logo' );
+			if ( empty( $custom_logo_id ) ) {
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+			}
+			if ( ! empty( $custom_logo_id ) && $attachment->ID == $custom_logo_id ) {
+				// Jetpack Lazy Load
+				if ( class_exists( 'Jetpack_Lazy_Images' ) ) {
+					$attr['class'] .= ' skip-lazy';
+				}
+				// Smush Lazy Load
+				if ( class_exists( 'Smush\Core\Modules\Lazy' ) ) {
+					$attr['class'] .= ' no-lazyload';
+				}
+				// LiteSpeed Cache Lazy Load
+				if ( class_exists( 'LiteSpeed_Cache' ) ) {
+					$attr['data-no-lazy'] = 1;
+				}
+			}
+			return $attr;
+		}
+	endif;
+	add_filter( 'wp_get_attachment_image_attributes', 'siteorigin_north_lazy_load_exclude', 10, 2 );
+endif;
+
 if ( ! function_exists( 'siteorigin_north_the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -583,18 +617,4 @@ if ( ! function_exists( 'siteorigin_north_strip_image' ) ) :
 function siteorigin_north_strip_image( $content ) {
 	return preg_replace( '/<img[^>]+\>/i', '', $content, 1 );
 }
-endif;
-
-if ( class_exists( 'LiteSpeed_Cache' ) ) :
-	if ( ! function_exists( 'siteorigin_north_litespeed_lazy_exclude' ) ) :
-		/**
-		 * Exclude Logo from LiteSpeed Cache Lazy Load
-		 */
-		function siteorigin_north_litespeed_lazy_exclude( $attr ) {
-			$attr['data-no-lazy'] = 1;
-
-			return $attr;
-		}
-	endif;
-	add_filter( 'siteorigin_north_logo_attributes', 'siteorigin_north_litespeed_lazy_exclude' );
 endif;
