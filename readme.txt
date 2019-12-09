@@ -100,6 +100,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.9 - 09 December 2019 =
+* WooCommerce Archive Buttons: Improved alignment when equal columns setting in use.
+* Added admin Block Editor styles.
+* Excluded the logo from Jetpack and Smush Lazy Load. 
+
 = 1.7.8 - 07 November 2019 =
 * Set heading styles for `h1` to `h6`.
 * Improved search form styling.
