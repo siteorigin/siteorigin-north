@@ -158,26 +158,29 @@
 					font-family: $font__detail;
 					color: $color__primary_accent;
 				}
+
+				.button {
+					margin-right: 5px;
+					margin-left: 5px;
+				}
 			}
 		}
 
 		@at-root .woocommerce.equalize-rows #main ul.products {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
-			
+
 			li {
+				align-content: space-between;
 				display: flex;
 				flex-wrap: wrap;
-				
+
 				@media (max-width: 600px) {
 					display: block;	
 				}
 
-				.button {
-					margin-top: auto;
-					margin-right: auto;
-					margin-left: auto;
+				div {
+					margin: auto;
 				}
 			}
 		}
