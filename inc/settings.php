@@ -433,8 +433,8 @@ function siteorigin_north_settings_init() {
 				),
 				'side_padding'     => array(
 					'type'              => 'measurement',
-					'label'             => __( 'Widget Left-Right Padding', 'siteorigin-north' ),
-					'description' 		=> __( "Set the left and right padding for each widget.", 'siteorigin-north' ),
+					'label'             => __( 'Widget Side Padding', 'siteorigin-north' ),
+					'description'       => __( "Set the left and right padding for each widget.", 'siteorigin-north' ),
 					'live'              => true,
 				),
 				'top_margin'       => array(
