@@ -689,9 +689,6 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#mobile-navigation ul li .dropdown-toggle {
 	color: ${responsive_mobile_menu_text_color};
 	}
-	.search-form .search-field {
-	.font( ${fonts_details} );
-	}
 	.tagcloud a {
 	background: ${fonts_text_meta};
 	}
@@ -826,6 +823,15 @@ function siteorigin_north_settings_custom_css( $css ) {
 	.more-link:hover {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
+	}
+	.search-form button[type="submit"],.woocommerce-product-search button[type="submit"] {
+	color: ${fonts_text_medium};
+	}
+	.search-form button[type="submit"]:hover,.woocommerce-product-search button[type="submit"]:hover {
+	color: ${fonts_text_dark};
+	}
+	.search-form button[type="submit"] svg path,.woocommerce-product-search button[type="submit"] svg path {
+	fill: ${fonts_text_medium};
 	}
 	.post-pagination {
 	.font( ${fonts_details} );
@@ -995,7 +1001,7 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	background: ${branding_accent_dark} padding-box;
 	}
 	.main-navigation .shopping-cart .shopping-cart-count {
-	background: ${branding_accent} padding-box;
+	background: ${branding_accent};
 	}
 	.widget_shopping_cart .widget_shopping_cart_content .cart_list .mini_cart_item a {
 	color: ${fonts_text_dark};
