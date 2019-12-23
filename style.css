@@ -1541,6 +1541,10 @@ body.page-layout-stripped #main.site-main {
       margin-bottom: -9999px; }
       #colophon .widgets .widget-wrapper:last-child {
         border-right: none; }
+      @media (max-width: 640px) {
+        #colophon .widgets .widget-wrapper aside {
+          padding-right: 0;
+          padding-left: 0; } }
     #colophon .widgets aside {
       padding: 40px 40px;
       margin: 0; }
