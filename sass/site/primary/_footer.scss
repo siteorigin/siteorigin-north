@@ -31,6 +31,14 @@
 			&:last-child {
 				border-right: none;
 			}
+
+			aside {
+
+				@media (max-width: 640px) {
+					padding-right: 0;
+					padding-left: 0;
+				}
+			}
 		}
 
 		aside {
