@@ -293,12 +293,16 @@
 .woocommerce.single #content div.product .product_title {
   line-height: normal; }
 
-.woocommerce.single #content div.product .product-under-title-meta {
+.woocommerce.single #content div.product .product-under-title-meta,
+.woocommerce.single #content div.product .product_meta {
   color: #595959;
   font-size: 0.8em;
   line-height: 1.4em;
   margin-top: -0.5em;
   margin-bottom: 1em; }
+
+.woocommerce.single #content div.product .posted_in {
+  display: block; }
 
 .woocommerce.single #content div.product #comments h2 {
   margin-top: 0;

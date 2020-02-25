@@ -149,12 +149,17 @@
 		line-height: normal;
 	}
 
-	.product-under-title-meta {
+	.product-under-title-meta,
+	.product_meta {
 		color: $color__text_medium;
 		font-size: 0.8em;
 		line-height: 1.4em;
 		margin-top: -0.5em;
 		margin-bottom: 1em;
+	}
+
+	.posted_in {
+		display: block;
 	}
 
 	#comments h2 {
