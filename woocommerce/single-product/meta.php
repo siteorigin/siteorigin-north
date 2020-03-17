@@ -30,7 +30,7 @@ if ( ( class_exists( 'SiteOrigin_Premium' ) ) && ( class_exists( 'SiteOrigin_Pre
 
 	<?php endif; ?>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'siteorigin-north' ) . ' ', '</span>' ); ?>
 
 	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'siteorigin-north' ) . ' ', '</span>' ); ?>
 
