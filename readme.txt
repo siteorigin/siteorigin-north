@@ -100,6 +100,13 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.10 - 17 March 2020 =
+* Minor adjustments to Theme Settings labels and descriptions.
+* Updated footer widget mobile padding.
+* Updated Customizer settings CSS.
+* WooCommerce: Added product meta styling.
+* SiteOrigin Premium: Added WooCommerce Template Builder single meta compatibility.
+
 = 1.7.9 - 09 December 2019 =
 * WooCommerce Archive Buttons: Improved alignment when equal columns setting in use.
 * Added admin Block Editor styles.
