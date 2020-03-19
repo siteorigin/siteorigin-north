@@ -100,6 +100,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.11 - 19 March 2020 =
+* WooCommerce: Corrected text domains in the WooCommerce `meta.php` file.
+* WooCommerce: Fixed archive buttons, columns and other elements from functioning normally when SiteOrigin Premium was enabled.
+
 = 1.7.10 - 17 March 2020 =
 * Minor adjustments to Theme Settings labels and descriptions.
 * Updated footer widget mobile padding.
