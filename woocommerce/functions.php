@@ -148,10 +148,10 @@ function siteorigin_north_woocommerce_output_upsells() {
 endif;
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_template_single_undertitle_meta' ) ) :
-if ( ( class_exists( 'SiteOrigin_Premium' ) ) && ( class_exists( 'SiteOrigin_Premium_Plugin_WooCommerce_Templates' ) ) ) {
-	return;
-}
 function siteorigin_north_woocommerce_template_single_undertitle_meta() {
+	if ( ( class_exists( 'SiteOrigin_Premium' ) ) && ( class_exists( 'SiteOrigin_Premium_Plugin_WooCommerce_Templates' ) ) ) {
+		return;
+	}
 	wc_get_template( 'single-product/meta-undertitle.php' );
 }
 endif;
