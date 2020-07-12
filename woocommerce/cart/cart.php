@@ -61,7 +61,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 							</td>
 
-							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'siteorigin-north' ); ?>">
+							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'siteorigin-north' ); ?>">
 							<?php
 							if ( ! $product_permalink ) {
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', esc_html( $_product->get_name() ), $cart_item, $cart_item_key ) . '&nbsp;' );
