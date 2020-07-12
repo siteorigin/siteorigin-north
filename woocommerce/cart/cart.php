@@ -61,7 +61,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 							</td>
 
-							<td class="product-name" data-title="<?php esc_html_e( 'Product', 'siteorigin-north' ); ?>">
+							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'siteorigin-north' ); ?>">
 							<?php
 							if ( ! $product_permalink ) {
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', esc_html( $_product->get_name() ), $cart_item, $cart_item_key ) . '&nbsp;' );
@@ -144,7 +144,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<?php if ( wc_coupons_enabled() ) { ?>
 							<div class="coupon">
-								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'siteorigin-north' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?></button>
+								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'siteorigin-north' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_html_e( 'Apply coupon', 'siteorigin-north' ); ?></button>
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>
