@@ -103,6 +103,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.12 - 12 July 2020 =
+* Updated SiteOrigin Settings framework.
+* WooCommerce: Right aligned shipping and tax checkout values.
+* WooCommerce: Updated `cart.php` to WC version `4.4.0`.
+* Minor code enhancements.
+
 = 1.7.11 - 19 March 2020 =
 * WooCommerce: Corrected text domains in the WooCommerce `meta.php` file.
 * WooCommerce: Fixed archive buttons, columns and other elements from functioning normally when SiteOrigin Premium was enabled.
