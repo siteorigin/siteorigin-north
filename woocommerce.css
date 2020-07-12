@@ -763,7 +763,9 @@
       .woocommerce form.woocommerce-checkout .order-details table.shop_table .cart-subtotal td .amount {
         color: #c75d5d; }
     .woocommerce form.woocommerce-checkout .order-details table.shop_table .shipping td {
-      padding: 0px; }
+      text-align: right; }
+    .woocommerce form.woocommerce-checkout .order-details table.shop_table .tax-rate td {
+      text-align: right; }
     .woocommerce form.woocommerce-checkout .order-details table.shop_table .order-total td {
       text-align: right; }
       .woocommerce form.woocommerce-checkout .order-details table.shop_table .order-total td .amount {

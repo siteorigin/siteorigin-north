@@ -109,7 +109,13 @@
 
 				.shipping {
 					td {
-						padding: 0px;
+						text-align: right;
+					}
+				}
+
+				.tax-rate {
+					td {
+						text-align: right;
 					}
 				}
 
