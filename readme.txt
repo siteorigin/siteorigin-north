@@ -1,9 +1,12 @@
 === SiteOrigin North ===
 
-Contributors: siteOrigin
+Contributors: siteorigin
+
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+
+Tested up to: 5.5
 Requires at least: 4.7
-Tested up to: 5.3
+Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,13 +61,13 @@ SiteOrigin North WordPress Theme is derived from Underscores WordPress Theme, Co
 
 == Images ==
 
-Screenshot photos sourced from Pixabay and Unsplash, licensed under CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+Screenshot photos sourced from [PxHere](https://pxhere.com/), and [Stocksnap.io](https://stocksnap.io/) licensed under CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
 
-[Whangarei Falls, Whangarei, New Zealand, by Tim Swaan](https://unsplash.com/photos/eOpewngf68w)
-[Matterhorn](https://pixabay.com/photos/matterhorn-mountains-sunset-dusk-2537432/)
-[Airplane](https://pixabay.com/photos/airplane-airline-parts-clouds-sky-2565685/)
-[Backpacking in a pickup, by Lukas Robertson](https://unsplash.com/photos/9qJb_wCFCrM)
-[A good hike deserves a stunning view, by Fabien Bazanegue](https://unsplash.com/photos/G1URCTG5peg)
+[Whangarei Falls, Whangarei, New Zealand, by Tim Swaan](https://pxhere.com/en/photo/23943)
+[Matterhorn](https://pxhere.com/en/photo/1176149)
+[Airplane, by Jeremy Bishop](https://stocksnap.io/photo/airplane-airline-9V0T2P2DPE)
+[Backpack Bag, by Kristin Hardwick](https://stocksnap.io/photo/backpack-bag-7VXPY1OCJK)
+[Grass, rock, wilderness](https://pxhere.com/en/photo/63410)
 
 SVG icons contained in the /images/ folder are are licensed under GPL 2.0 and copyright 2016 SiteOrigin.
 
@@ -99,6 +102,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.7.12 - 12 July 2020 =
+* Updated SiteOrigin Settings framework.
+* WooCommerce: Right aligned shipping and tax checkout values.
+* WooCommerce: Updated `cart.php` to WC version `4.4.0`.
+* Minor code enhancements.
 
 = 1.7.11 - 19 March 2020 =
 * WooCommerce: Corrected text domains in the WooCommerce `meta.php` file.
