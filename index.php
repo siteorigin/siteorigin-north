@@ -21,7 +21,7 @@ get_header(); ?>
 
 			<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
 				<header>
-					<?php if( single_post_title( '', false ) ) : ?>
+					<?php if ( single_post_title( '', false ) ) : ?>
 						<h1 class="page-title"><?php single_post_title(); ?></h1>
 					<?php else : ?>
 						<h1 class="page-title">
