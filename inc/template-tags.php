@@ -275,7 +275,7 @@ function siteorigin_north_posts_pagination() {
 		);
 	}
 
-	if( is_search() ) {
+	if ( is_search() ) {
 		// Add the arguments neccessary for search.
 		global $wp_query;
 		$big = 999999999; // Need an unlikely integer.
