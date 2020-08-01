@@ -103,6 +103,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.13 - 01 August 2020 =
+* Updated Panels Lite.
+* Minor PHP formatting enhancements.
+
 = 1.7.12 - 12 July 2020 =
 * Updated SiteOrigin Settings framework.
 * WooCommerce: Right aligned shipping and tax checkout values.
