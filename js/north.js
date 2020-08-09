@@ -60,39 +60,46 @@
 		};
 
 		$.fn.northSmoothScroll = function() {
+			$target = $( this );
+			if ( $target.length ) {
+
+				var height = 0;
+				if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
+					if ( $target.offset().top < 48 ) {
+						height += $( '#masthead' ).outerHeight();
+					} else if ( $( '.site-branding' ).outerHeight() > $( '#site-navigation' ).outerHeight() ) {
+						height += $( '#masthead' ).outerHeight() * siteoriginNorth.logoScale;
+					} else {
+						height += $( '#masthead' ).height() + ( $( '#masthead' ).innerHeight() - $( '#masthead' ).height() );
+					}
+				} else if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+					height += $( '#masthead' ).outerHeight();
+				}
+
+				if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+					height += $( '#wpadminbar' ).outerHeight();
+				}
+
+				$( 'html, body' ).animate( {
+					scrollTop: $target.offset().top - height
+				}, 1000 );
+
+				return false;
+			}
+			// Scroll to the position of the item, minus the header size.
+		}
+
+		$.fn.northSmoothScrollClick = function() {
 			$( this ).click( function( e ) {
 				var $a = $( this );
 				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
 
 				if ( $target.length ) {
-
-					var height = 0;
-					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
-						if ( $target.offset().top < 48 ) {
-							height += $( '#masthead' ).outerHeight();
-						} else if ( $( '.site-branding' ).outerHeight() > $( '#site-navigation' ).outerHeight() ) {
-							height += $( '#masthead' ).outerHeight() * siteoriginNorth.logoScale;
-						} else {
-							height += $( '#masthead' ).height() + ( $( '#masthead' ).innerHeight() - $( '#masthead' ).height() );
-						}
-					} else if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
-						height += $( '#masthead' ).outerHeight();
-					}
-
-					if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-						height += $( '#wpadminbar' ).outerHeight();
-					}
-
-					$( 'html, body' ).animate( {
-						scrollTop: $target.offset().top - height
-					}, 1000 );
-
-					return false;
+					$target.northSmoothScroll();
 				}
-				// Scroll to the position of the item, minus the header size.
+
 			} );
 		}
-
 	}
 )( jQuery );
 
@@ -250,7 +257,7 @@ jQuery( function( $ ) {
 		} );
 
 		if ( siteoriginNorth.smoothScroll ) {
-			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).northSmoothScroll();
+			$( '#mobile-navigation a[href*="#"]:not([href="#"])' ).northSmoothScrollClick();
 		}
 
 	} );
