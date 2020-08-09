@@ -328,13 +328,20 @@ jQuery( function( $ ) {
 } );
 
 ( function( $ ) {
-	$( window ).load( function() {
-		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
+	if ( siteoriginNorth.smoothScroll ) {
+		// Detect potential page jump on load and prevent it.
+		if ( location.hash ) {
+			if ( $( location.hash ).length ) {
+				setTimeout( function() {
+					window.scrollTo( 0, 0 );
+				}, 1 );
 
-		// Handle smooth scrolling.
-		if ( siteoriginNorth.smoothScroll ) {
-			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScroll();
+				var scrollOnLoad = true;
+			}
 		}
+	}
+	$( window ).load( function( e ) {
+		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
 
 		var $mh = $( '#masthead' ),
 			mhPadding = {
@@ -461,5 +468,17 @@ jQuery( function( $ ) {
 			smSetup();
 			$( window ).resize( smSetup ).scroll( smSetup );
 		}
+
+		// Handle smooth scrolling.
+		if ( siteoriginNorth.smoothScroll ) {
+			if ( typeof scrollOnLoad != 'undefined' ) {
+				setTimeout(
+					$( location.hash ).northSmoothScroll(),
+					100
+				);
+			}
+			$( '#site-navigation a[href*="#"]:not([href="#"])' ).add( 'a[href*="#"]:not([href="#"])' ).not( '.lsow-tab a[href*="#"]:not([href="#"]), .wc-tabs a[href*="#"]:not([href="#"]), .iw-so-tab-title a[href*="#"]:not([href="#"]), .comment-navigation a[href*="#"]' ).northSmoothScrollClick();
+		}
+
 	} );
 } )( jQuery );
