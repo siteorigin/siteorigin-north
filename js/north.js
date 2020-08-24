@@ -60,6 +60,7 @@
 
 	var headerHeight = function( $target ) {
 		var height = 0;
+
 		if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
 			if ( typeof $target != 'undefined' && $target.offset().top < 48 ) {
 				height += $( '#masthead' ).outerHeight();
@@ -80,7 +81,6 @@
 	};
 
 	$.fn.northSmoothScroll = function() {
-		console.log(headerHeight());
 		$( this ).click( function( e ) {
 			var $a = $( this );
 			var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
@@ -315,20 +315,6 @@
 		}
 	} );
 
-	// Adjust for sticky header when linking from external anchors.
-	$( window ).load( function() {
-
-		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
-			var target = $( window.location.hash );
-			if ( target.length ) {
-				$( 'html, body' ).animate( {
-					scrollTop: target.offset().top - headerHeight()
-				}, 0 );
-				return false;
-			}
-		}
-	} );
-
 	$( window ).load( function() {
 		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
 
@@ -461,6 +447,19 @@
 			
 			smSetup();
 			$( window ).resize( smSetup ).scroll( smSetup );
+		}
+	} );
+
+	// Adjust for sticky header when linking from external anchors.
+	$( window ).load( function() {
+		if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
+			var $target = $( window.location.hash );
+			if ( $target.length ) {
+				$( 'html, body' ).animate( {
+					scrollTop: $target.offset().top - headerHeight( $target )
+				}, 0 );
+				return false;
+			}
 		}
 	} );
 } )( jQuery );
