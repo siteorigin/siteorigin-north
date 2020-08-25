@@ -97,7 +97,7 @@ if ( ! function_exists( 'siteorigin_north_lazy_load_exclude' ) ) :
 				$attr['class'] .= ' no-lazyload';
 			}
 			// LiteSpeed Cache Lazy Load
-			if ( class_exists( 'LiteSpeed_Cache' ) ) {
+			if ( class_exists( 'LiteSpeed_Cache' ) || class_exists( 'LiteSpeed\Media' ) ) {
 				$attr['data-no-lazy'] = 1;
 			}
 			// WP 5.5
