@@ -464,7 +464,14 @@
 				setTimeout( function() {
 					$( 'html, body' ).animate( {
 						scrollTop: $target.offset().top - ( headerHeight( $target ) )
-					}, 0 );
+					},
+					0,
+					function() {
+						if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+							// Avoid a situation where the logo can be incorrectly sized due to the page jump.
+							smSetup();
+						}
+					} );
 				}, 100 );
 			}
 		}
