@@ -129,6 +129,14 @@ function siteorigin_north_woocommerce_loop_shop_columns() {
 endif;
 add_filter('loop_shop_columns', 'siteorigin_north_woocommerce_loop_shop_columns');
 
+/**
+ * Filter the archive page title.
+ */
+function siteorigin_north_woocommerce_archive_title() {
+	if ( siteorigin_page_setting( 'page_title' ) ) return true;
+}
+add_filter( 'woocommerce_show_page_title', 'siteorigin_north_woocommerce_archive_title' );
+
 if ( ! function_exists( 'siteorigin_north_woocommerce_related_product_args' ) ) :
 /**
  * Define the number of columns/posts_per_page for related products.
