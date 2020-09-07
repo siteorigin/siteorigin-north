@@ -113,7 +113,7 @@ function siteorigin_north_woocommerce_enqueue_scripts( ){
 
 	if( is_woocommerce() ) {
 		wp_enqueue_script( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
-		wp_localize_script( 'siteorigin-north-woocommerce', 'so_ajax', array ( 'ajaxurl' => admin_url( 'admin-ajax.php' )  ) );
+		wp_localize_script( 'siteorigin-north-woocommerce', 'so_ajax', array ( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	}
 }
 endif;
@@ -123,11 +123,19 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_loop_shop_columns' ) ) :
 /**
  * Define the number of columns in the loop.
  */
-function siteorigin_north_woocommerce_loop_shop_columns(){
+function siteorigin_north_woocommerce_loop_shop_columns() {
 	return 3;
 }
 endif;
 add_filter('loop_shop_columns', 'siteorigin_north_woocommerce_loop_shop_columns');
+
+/**
+ * Filter the archive page title.
+ */
+function siteorigin_north_woocommerce_archive_title() {
+	if ( siteorigin_page_setting( 'page_title' ) ) return true;
+}
+add_filter( 'woocommerce_show_page_title', 'siteorigin_north_woocommerce_archive_title' );
 
 if ( ! function_exists( 'siteorigin_north_woocommerce_related_product_args' ) ) :
 /**
@@ -258,7 +266,7 @@ if ( ! function_exists( 'siteorigin_north_paypal_icon' ) ) :
 * Return a standardised PayPal PNG icon.
 */
 function siteorigin_north_paypal_icon() {
-     return get_template_directory_uri() . '/woocommerce/images/paypal-icon.png';
+	return get_template_directory_uri() . '/woocommerce/images/paypal-icon.png';
 }
 add_filter( 'woocommerce_paypal_icon', 'siteorigin_north_paypal_icon' );
 endif;
