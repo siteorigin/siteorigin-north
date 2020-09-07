@@ -103,6 +103,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.14 - 07 September 2020 =
+* Updated lazy load exclusion functionality for the logo.
+* Fixed the Page Template Settings Page Title setting for WooCommerce archive pages.
+* Removed `$cat_count` from the WooCommerce meta underline template.
+* Updated SiteOrigin Settings.
+
 = 1.7.13 - 01 August 2020 =
 * Updated Panels Lite.
 * Minor PHP formatting enhancements.
