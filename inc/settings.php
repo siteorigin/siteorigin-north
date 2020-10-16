@@ -1311,7 +1311,7 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 	$settings['page_title'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Page Title', 'siteorigin-north' ),
-		'checkbox_label' => __( 'display', 'siteorigin-north' ),
+		'checkbox_label' => __( 'Display', 'siteorigin-north' ),
 		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
 	);
 
@@ -1320,7 +1320,7 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		$settings['featured_image'] = array(
 			'type'           => 'checkbox',
 			'label'          => __( 'Page Featured Image', 'siteorigin-north' ),
-			'checkbox_label' => __( 'display', 'siteorigin-north' ),
+			'checkbox_label' => __( 'Display', 'siteorigin-north' ),
 			'description'    => __( 'Display the page featured image on this page.', 'siteorigin-north' )
 		);
 	}
@@ -1328,28 +1328,28 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 	$settings['masthead_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
-		'checkbox_label' => __( 'enable', 'siteorigin-north' ),
+		'checkbox_label' => __( 'Enable', 'siteorigin-north' ),
 		'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-north' )
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Footer Top Margin', 'siteorigin-north' ),
-		'checkbox_label' => __( 'enable', 'siteorigin-north' ),
+		'checkbox_label' => __( 'Enable', 'siteorigin-north' ),
 		'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' )
 	);
 
 	$settings['hide_masthead'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Hide Masthead', 'siteorigin-north' ),
-		'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+		'checkbox_label' => __( 'Hide', 'siteorigin-north' ),
 		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
 	);
 
 	$settings['hide_footer_widgets'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Hide Footer Widgets', 'siteorigin-north' ),
-		'checkbox_label' => __( 'hide', 'siteorigin-north' ),
+		'checkbox_label' => __( 'Hide', 'siteorigin-north' ),
 		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
 	);
 
