@@ -4,99 +4,101 @@
  * Handles the primary JavaScript functions for the theme.
  */
 
-// Burst animation plugin.
-(
-	function( $ ) {
+( function( $ ) {
 
-		var mousePos = {x: 0, y: 0};
-		$( document ).mousemove( function( e ) {
-			mousePos = {
-				x: e.pageX,
-				y: e.pageY
-			};
+	// Burst animation plugin.
+	var mousePos = {x: 0, y: 0};
+	$( document ).mousemove( function( e ) {
+		mousePos = {
+			x: e.pageX,
+			y: e.pageY
+		};
+	} );
+
+	$.fn.burstAnimation = function( options ) {
+		var settings = $.extend( {
+			event: "click",
+			container: "parent"
+		}, options );
+
+		return $( this ).each( function() {
+			var $$ = $( this ),
+				$p = settings.container === 'parent' ? $$.parent() : $$.closest( settings.container ),
+				$o = $( '<div class="burst-animation-overlay"></div>' ),
+				$c = $( '<div class="burst-circle"></div>' ).appendTo( $o );
+
+			$$.on( settings.event, function() {
+				$o.appendTo( $p );
+				$c
+					.css( {
+						top: mousePos.y - $p.offset().top,
+						left: mousePos.x - $p.offset().left,
+						opacity: 0.1,
+						scale: 1
+					} )
+					.transition( {
+						opacity: 0,
+						scale: $p.width()
+					}, 500, 'ease', function() {
+						$o.detach();
+					} );
+			} );
+
 		} );
+	};
 
-		$.fn.burstAnimation = function( options ) {
-			var settings = $.extend( {
-				event: "click",
-				container: "parent"
-			}, options );
+	// Check if an element is visible in the viewport.
+	$.fn.northIsVisible = function() {
+		var rect = this[0].getBoundingClientRect();
+		return (
+			rect.bottom >= 0 &&
+			rect.right >= 0 &&
+			rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) &&
+			rect.left <= ( window.innerWidth || document.documentElement.clientWidth )
+		);
+	};
 
-			return $( this ).each( function() {
-				var $$ = $( this ),
-					$p = settings.container === 'parent' ? $$.parent() : $$.closest( settings.container ),
-					$o = $( '<div class="burst-animation-overlay"></div>' ),
-					$c = $( '<div class="burst-circle"></div>' ).appendTo( $o );
+	var headerHeight = function( $target, load = false ) {
+		var height = 0;
 
-				$$.on( settings.event, function() {
-					$o.appendTo( $p );
-					$c
-						.css( {
-							top: mousePos.y - $p.offset().top,
-							left: mousePos.x - $p.offset().left,
-							opacity: 0.1,
-							scale: 1
-						} )
-						.transition( {
-							opacity: 0,
-							scale: $p.width()
-						}, 500, 'ease', function() {
-							$o.detach();
-						} );
-				} );
-
-			} );
-		};
-
-		// Check if an element is visible in the viewport.
-		$.fn.northIsVisible = function() {
-			var rect = this[0].getBoundingClientRect();
-			return (
-				rect.bottom >= 0 &&
-				rect.right >= 0 &&
-				rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) &&
-				rect.left <= ( window.innerWidth || document.documentElement.clientWidth )
-			);
-		};
-
-		$.fn.northSmoothScroll = function() {
-			$( this ).click( function( e ) {
-				var $a = $( this );
-				var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
-
-				if ( $target.length ) {
-
-					var height = 0;
-					if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
-						if ( $target.offset().top < 48 ) {
-							height += $( '#masthead' ).outerHeight();
-						} else if ( $( '.site-branding' ).outerHeight() > $( '#site-navigation' ).outerHeight() ) {
-							height += $( '#masthead' ).outerHeight() * siteoriginNorth.logoScale;
-						} else {
-							height += $( '#masthead' ).height() + ( $( '#masthead' ).innerHeight() - $( '#masthead' ).height() );
-						}
-					} else if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
-						height += $( '#masthead' ).outerHeight();
-					}
-
-					if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-						height += $( '#wpadminbar' ).outerHeight();
-					}
-
-					$( 'html, body' ).animate( {
-						scrollTop: $target.offset().top - height
-					}, 1000 );
-
-					return false;
-				}
-				// Scroll to the position of the item, minus the header size.
-			} );
+		if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
+			if ( typeof $target != 'undefined' && $target.offset().top < 48 ) {
+				height += $( '#masthead' ).outerHeight();
+			} else if (
+				$( '.site-branding' ).outerHeight() > $( '#site-navigation' ).outerHeight() ||
+				(
+					typeof $target != 'undefined' && load && $target.offset().top > 48
+				)
+			) {
+				height += $( '#masthead' ).outerHeight() * siteoriginNorth.logoScale;
+			} else {
+				height += $( '#masthead' ).height() + ( $( '#masthead' ).innerHeight() - $( '#masthead' ).height() );
+			}
+		} else if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+			height += $( '#masthead' ).outerHeight();
 		}
 
-	}
-)( jQuery );
+		if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
+			height += $( '#wpadminbar' ).outerHeight();
+		}
 
-jQuery( function( $ ) {
+		return height;
+	};
+
+	$.fn.northSmoothScroll = function() {
+		$( this ).click( function( e ) {
+			var $a = $( this );
+			var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
+			if ( $target.length ) {
+				$( 'html, body' ).animate( {
+					scrollTop: $target.offset().top - headerHeight( $target )
+				}, 1000 );
+
+				return false;
+			}
+			// Scroll to the position of the item, minus the header size.
+		} );
+	}
 
 	$( '.entry-meta a' ).hover(
 		function() {
@@ -318,9 +320,14 @@ jQuery( function( $ ) {
 		}
 	} );
 
-} );
+	// Detect potential page jump on load and prevent it.
+	if ( location.pathname.replace( /^\//,'' ) == window.location.pathname.replace( /^\//,'' ) && location.hostname == window.location.hostname ) {
+		setTimeout( function() {
+			window.scrollTo( 0, 0 );
+		}, 1 );
+		var scrollOnLoad = true;
+	}
 
-( function( $ ) {
 	$( window ).load( function() {
 		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
 
@@ -454,5 +461,25 @@ jQuery( function( $ ) {
 			smSetup();
 			$( window ).resize( smSetup ).scroll( smSetup );
 		}
+
+		// Adjust for sticky header when linking from external anchors.
+		if ( typeof scrollOnLoad != "undefined" ) {
+			var $target = $( window.location.hash );
+			if ( $target.length ) {
+				setTimeout( function() {
+					$( 'html, body' ).animate( {
+						scrollTop: $target.offset().top - ( headerHeight( $target, true ) )
+					},
+					0,
+					function() {
+						if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
+							// Avoid a situation where the logo can be incorrectly sized due to the page jump.
+							smSetup();
+						}
+					} );
+				}, 100 );
+			}
+		}
 	} );
+
 } )( jQuery );
