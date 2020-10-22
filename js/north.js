@@ -58,7 +58,7 @@
 		);
 	};
 
-	var headerHeight = function( $target, load = false ) {
+	var headerHeight = function( $target, load ) {
 		var height = 0;
 
 		if ( $( '#masthead' ).hasClass( 'sticky-menu' ) && $( '#masthead' ).data( 'scale-logo' ) ) {
@@ -468,7 +468,7 @@
 			if ( $target.length ) {
 				setTimeout( function() {
 					$( 'html, body' ).animate( {
-						scrollTop: $target.offset().top - ( headerHeight( $target, true ) )
+						scrollTop: $target.offset().top - headerHeight( $target, true )
 					},
 					0,
 					function() {
