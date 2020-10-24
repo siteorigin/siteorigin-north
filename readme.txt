@@ -103,6 +103,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.15 - 24 October 2020 =
+* Updated Jetpack Lazy Loading logo exclusion function.
+* Improved one page smooth scrolling.
+* Updated SiteOrigin Settings.
+
 = 1.7.14 - 07 September 2020 =
 * Updated lazy load exclusion functionality for the logo.
 * Fixed the Page Template Settings Page Title setting for WooCommerce archive pages.
