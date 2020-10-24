@@ -103,7 +103,7 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
-= 1.7.15 - 22 October 2020 =
+= 1.7.15 - 24 October 2020 =
 * Updated Jetpack Lazy Loading logo exclusion function.
 * Improved one page smooth scrolling.
 * Updated SiteOrigin Settings.
