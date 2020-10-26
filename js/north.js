@@ -328,7 +328,7 @@
 		var scrollOnLoad = true;
 	}
 
-	$( window ).load( function() {
+	$( window ).on( 'load', function() {
 		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
 
 		// Handle smooth scrolling.
