@@ -103,6 +103,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.7.16 - 09 November 2020 =
+* Minor JavaScript update for WordPress 5.5.
+
 = 1.7.15 - 24 October 2020 =
 * Updated Jetpack Lazy Loading logo exclusion function.
 * Improved one page smooth scrolling.
