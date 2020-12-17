@@ -8,7 +8,7 @@
 
 	// Burst animation plugin.
 	var mousePos = {x: 0, y: 0};
-	$( document ).mousemove( function( e ) {
+	$( document ).on( 'mousemove', function( e ) {
 		mousePos = {
 			x: e.pageX,
 			y: e.pageY
@@ -86,7 +86,7 @@
 	};
 
 	$.fn.northSmoothScroll = function() {
-		$( this ).click( function( e ) {
+		$( this ).on( 'click', function( e ) {
 			var $a = $( this );
 			var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
 			if ( $target.length ) {
@@ -100,14 +100,13 @@
 		} );
 	}
 
-	$( '.entry-meta a' ).hover(
-		function() {
-			$( this ).closest( 'li' ).addClass( 'hovering' );
-		},
-		function() {
-			$( this ).closest( 'li' ).removeClass( 'hovering' );
-		}
-	);
+	$( '.entry-meta a' ).on( 'mouseenter', function() {
+		$( this ).closest( 'li' ).addClass( 'hovering' );
+	} );
+
+	$( '.entry-meta a' ).on( 'mouseout', function() {
+		$( this ).closest( 'li' ).removeClass( 'hovering' );
+	} );
 
 	// Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
 	if ( typeof $.fn.fitVids !== 'undefined' ) {
@@ -162,14 +161,14 @@
 		alignMenu();
 
 		// Add keyboard access to the menu.
-		$( '.menu-item' ).children( 'a' ).focus( function() {
+		$( '.menu-item' ).children( 'a' ).on( 'focusin', function() {
 			$( this ).parents( 'ul, li' ).addClass( 'focus' );
 		} );
 		// Click event fires after focus event.
-		$( '.menu-item' ).children( 'a' ).click( function() {
+		$( '.menu-item' ).children( 'a' ).on( 'click', function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
-		$( '.menu-item' ).children( 'a' ).focusout( function() {
+		$( '.menu-item' ).children( 'a' ).on( 'focusout', function() {
 			$( this ).parents( 'ul, li' ).removeClass( 'focus' );
 		} );
 
@@ -182,7 +181,7 @@
 
 	// Handle displaying the mobile menu.
 	var $mobileMenu = false;
-	$( '#mobile-menu-button' ).click( function( e ) {
+	$( '#mobile-menu-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var $$ = $( this );
 		$$.toggleClass( 'to-close' );
@@ -207,12 +206,12 @@
 
 			$mobileMenu.find( '.has-dropdown' ).after( '<button class="dropdown-toggle" aria-expanded="false"><i class="north-icon-next"></i></button>' );
 
-			$mobileMenu.find( '.dropdown-toggle' ).click( function( e ) {
+			$mobileMenu.find( '.dropdown-toggle' ).on( 'click', function( e ) {
 				e.preventDefault();
 				$( this ).toggleClass( 'toggle-open' ).next( '.children, .sub-menu' ).slideToggle( 'fast' );
 			} );
 
-			$mobileMenu.find( '.has-dropdown' ).click( function( e ) {
+			$mobileMenu.find( '.has-dropdown' ).on( 'click', function( e ) {
 				if ( typeof $( this ).attr( 'href' ) === "undefined" || $( this ).attr( 'href' ) == "#" ) {
 					e.preventDefault();
 					$( this ). siblings( '.dropdown-toggle' ).trigger( 'click' );
@@ -236,13 +235,13 @@
 			}
 			mmOverflow();
 
-			$( window ).resize( mmOverflow );
-			$( '#mobile-navigation' ).scroll( mmOverflow );
+			$( window ).on( 'resize', mmOverflow );
+			$( '#mobile-navigation' ).on( 'scroll', mmOverflow );
 		}
 
 		$mobileMenu.slideToggle( 'fast' );
 
-		$( '#mobile-navigation a' ).click( function( e ) {
+		$( '#mobile-navigation a' ).on( 'click', function( e ) {
 			if ( ! $( this ).hasClass( 'has-dropdown' ) || ( typeof $( this ).attr( 'href' ) !== "undefined" && $( this ).attr( 'href' )  !== "#" ) ) {
 				if ( $mobileMenu.is( ':visible' ) ) {
 					$mobileMenu.slideUp( 'fast' );
@@ -273,24 +272,24 @@
 	};
 
 	sttWindowScroll();
-	$( window ).scroll( sttWindowScroll );
-	$( '#scroll-to-top' ).click( function() {
+	$( window ).on( 'scroll', sttWindowScroll );
+	$( '#scroll-to-top' ).on( 'click', function() {
 		$( 'html,body' ).animate( { scrollTop: 0 } );
 	} );
 
 	// Handle the header search.
 	var $hs = $( '#header-search' );
-	$( '#masthead .north-search-icon' ).click( function() {
+	$( '#masthead .north-search-icon' ).on( 'click', function() {
 		$hs.fadeIn( 'fast' );
 		$hs.find( 'form' ).css( 'margin-top', - $hs.find( 'form' ).outerHeight() / 2 );
-		$hs.find( 'input[type="search"]' ).focus().select();
+		$hs.find( 'input[type="search"]' ).trigger( 'focus' ).trigger( 'select' );
 		$hs.find( '#close-search' ).addClass( 'animate-in' );
 	} );
-	$hs.find( '#close-search' ).click( function() {
+	$hs.find( '#close-search' ).on( 'click', function() {
 		$hs.fadeOut( 350 );
 		$( this ).removeClass( 'animate-in' );
 	} );
-	$( window ).scroll( function() {
+	$( window ).on( 'scroll', function() {
 		if ( $hs.is( ':visible' ) ) {
 			$hs.find( 'form' ).css( 'margin-top', - $hs.find( 'form' ).outerHeight() / 2 );
 		}
@@ -302,7 +301,7 @@
 	} );
 
 	// Close search with escape key.
-	$( document ).keyup( function( e ) {
+	$( document ).on( 'keyup', function( e ) {
 		if ( e.keyCode == 27 ) { // Escape key maps to keycode `27`.
 			$( '#close-search.animate-in' ).trigger( 'click' );
 		}
@@ -394,7 +393,7 @@
 				}
 			};
 			smResizeLogo();
-			$( window ).scroll( smResizeLogo ).resize( smResizeLogo );
+			$( window ).on( 'scroll resize', smResizeLogo );
 		}
 
 		// Now lets do the sticky menu.
@@ -413,7 +412,7 @@
 				}
 			};
 			smShadow();
-			$( window ).scroll( smShadow );
+			$( window ).on( 'scroll', smShadow );
 
 			var smSetup = function() {
 
@@ -459,7 +458,7 @@
 			}
 			
 			smSetup();
-			$( window ).resize( smSetup ).scroll( smSetup );
+			$( window ).on( 'resize scroll', smSetup );
 		}
 
 		// Adjust for sticky header when linking from external anchors.

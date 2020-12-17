@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 5.5
+Tested up to: 5.6
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -103,10 +103,13 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
-= 1.7.16 - 09 November 2020 =
+= 1.17.17 - 17 November 2020 =
+* Developer: Added support for jQuery 3.5.
+
+= 1.17.16 - 09 November 2020 =
 * Minor JavaScript update for WordPress 5.5.
 
-= 1.7.15 - 24 October 2020 =
+= 1.17.15 - 24 October 2020 =
 * Updated Jetpack Lazy Loading logo exclusion function.
 * Improved one page smooth scrolling.
 * Updated SiteOrigin Settings.
