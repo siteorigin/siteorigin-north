@@ -1448,5 +1448,5 @@ function siteorigin_north_about_page( $about ) {
 }
 add_filter( 'siteorigin_about_page', 'siteorigin_north_about_page' );
 
-// Enable Lazy Load Exclude Logo Settings Extra.
+// Exclude theme logo from Lazy Loading.
 add_filter( 'siteorigin_settings_lazy_load_exclude_logo', '__return_true' );
