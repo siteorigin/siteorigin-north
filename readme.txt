@@ -103,6 +103,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.17.18 - 30 December 2020 =
+* WooCommerce: Added single product thumbnail navigation support for jQuery 3.5.
+* Updated the SiteOrigin Settings framework.
+
 = 1.17.17 - 17 November 2020 =
 * Developer: Added support for jQuery 3.5.
 
