@@ -312,7 +312,7 @@
 
 	// Gallery format image slider.
 	$( document ).ready( function() {
-		if ( $.isFunction( $.fn.flexslider ) ) {
+		if ( typeof $.fn.flexslider == 'function' ) {
 			$( '.gallery-format-slider' ).flexslider( {
 				animation: "slide",
 			} );
