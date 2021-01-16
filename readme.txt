@@ -103,6 +103,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.17.19 - 15 January 2021 =
+* Developer: Updated the Chosen minified JavaScript file.
+
 = 1.17.18 - 30 December 2020 =
 * WooCommerce: Added single product thumbnail navigation support for jQuery 3.5.
 * Updated the SiteOrigin Settings framework.
