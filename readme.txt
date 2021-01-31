@@ -41,6 +41,7 @@ SiteOrigin North includes support for:
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
+* [Rank Math Breadcrumbs](https://wordpress.org/plugins/seo-by-rank-math/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [Yet Another Related Posts Plugin (YARPP)](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
