@@ -459,15 +459,23 @@ endif;
 
 if ( ! function_exists( 'siteorigin_north_breadcrumbs' ) ) :
 /**
- * Display's breadcrumbs supported by Yoast SEO & Breadcrumb NavXT.
+ * Display's breadcrumbs supported by Breadcrumb NavXT, Rank Math, and Yoast SEO.
  */
 function siteorigin_north_breadcrumbs() {
-	if ( function_exists('bcn_display') ) {
-		?><div class="breadcrumbs">
+	if ( function_exists( 'bcn_display' ) ) {
+		?>
+		<div class="breadcrumbs">
 			<?php bcn_display(); ?>
-		</div><?php
-	} elseif( function_exists('yoast_breadcrumb') ) {
-		yoast_breadcrumb('<div class="breadcrumbs">','</div>');
+		</div>
+		<?php
+	} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
+	} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+		?>
+		<div class="breadcrumbs">
+			<?php rank_math_the_breadcrumbs(); ?>
+		</div>
+		<?php
 	}
 }
 endif;
