@@ -76,8 +76,9 @@ function siteorigin_north_body_classes( $classes ) {
 			$classes[] = 'equalize-rows';
 		}
 		
-	} if ( wc_post_content_has_shortcode( 'products' ) ) {
-		$classes[] = 'woocommerce';
+		if ( wc_post_content_has_shortcode( 'products' ) ) {
+			$classes[] = 'woocommerce';
+		}
 	}
 
 	elseif ( ! siteorigin_setting( 'masthead_text_above' ) && ! is_active_sidebar( 'topbar-sidebar' ) ) {
