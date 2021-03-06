@@ -104,6 +104,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.18.0 - 06 March 2021 =
+* WooCommerce: Improved product shortcode styling.
+* WooCommerce: Fixed product shortcode quick view functionality.
+* Added RankMath breadcrumb support.
+* Updated SiteOrigin Settings framework.
+
 = 1.17.19 - 15 January 2021 =
 * Developer: Updated the Chosen minified JavaScript file.
 
