@@ -111,7 +111,7 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_enqueue_scripts' ) ) :
 function siteorigin_north_woocommerce_enqueue_scripts( ){
 	if( !function_exists('is_woocommerce') ) return;
 
-	if( is_woocommerce() ) {
+	if ( is_woocommerce() || wc_post_content_has_shortcode( 'products' ) ) {
 		wp_enqueue_script( 'siteorigin-north-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_localize_script( 'siteorigin-north-woocommerce', 'so_ajax', array ( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	}

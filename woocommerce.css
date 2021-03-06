@@ -96,39 +96,40 @@
   font-size: 0.85em;
   padding-top: 8px; }
 
-.woocommerce #main ul.products li.product {
+.woocommerce ul.products li.product {
   text-align: center; }
-  .wc-columns-2.woocommerce #main ul.products li.product {
+  .wc-columns-2.woocommerce ul.products li.product {
     margin: 0 5% 2.992em 0;
     width: 47.5%; }
-  .wc-columns-3.woocommerce #main ul.products li.product {
+  .wc-columns-3.woocommerce ul.products li.product {
     margin: 0 3.8% 2.992em 0;
     width: 30.8%; }
-  .wc-columns-4.woocommerce #main ul.products li.product {
+  .wc-columns-4.woocommerce ul.products li.product {
     margin: 0 3.333% 2.992em 0;
     width: 22.5%; }
-  .wc-columns-5.woocommerce #main ul.products li.product {
+  .wc-columns-5.woocommerce ul.products li.product {
     margin: 0 2.9% 2.992em 0;
     width: 17.68%; }
   @media (max-width: 600px) {
-    body.responsive.woocommerce #main ul.products li.product {
+    body.responsive.woocommerce ul.products li.product {
       margin-right: 0;
       width: 100%; } }
-  .woocommerce #main ul.products li.product a.added_to_cart {
+  .woocommerce ul.products li.product a.added_to_cart {
     font-size: 13px; }
-  .woocommerce #main ul.products li.product.last {
+  .woocommerce ul.products li.product.last {
     margin-right: 0; }
-  .woocommerce #main ul.products li.product .onsale {
+  .woocommerce ul.products li.product .onsale {
     padding: 0; }
-  .woocommerce #main ul.products li.product h3 {
+  .woocommerce ul.products li.product .woocommerce-loop-product__title a,
+  .woocommerce ul.products li.product h3 {
     color: #292929;
     margin-top: 0; }
-  .woocommerce #main ul.products li.product .star-rating {
+  .woocommerce ul.products li.product .star-rating {
     margin: 0 auto 0.5em auto; }
-  .woocommerce #main ul.products li.product .price {
+  .woocommerce ul.products li.product .price {
     font-family: "Droid Serif", sans-serif;
     color: #c75d5d; }
-  .woocommerce #main ul.products li.product .button {
+  .woocommerce ul.products li.product .button {
     margin-right: 5px;
     margin-left: 5px; }
 

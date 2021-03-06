@@ -574,15 +574,15 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#page ::selection {
 	background-color: ${branding_accent};
 	}
-	button,input[type="button"],input[type="reset"],input[type="submit"] {
+	button,input[type=button],input[type=reset],input[type=submit] {
 	color: ${fonts_text_dark};
 	.font( ${fonts_headings} );
 	}
-	button:hover,button:active,button:focus,input[type="button"]:hover,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:hover,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focus {
+	button:hover,button:active,button:focus,input[type=button]:hover,input[type=button]:active,input[type=button]:focus,input[type=reset]:hover,input[type=reset]:active,input[type=reset]:focus,input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
-	input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],textarea {
+	input[type=text],input[type=email],input[type=url],input[type=password],input[type=search],input[type=tel],textarea {
 	background: ${fonts_field_background};
 	color: ${fonts_text_medium};
 	.font( ${fonts_details} );
@@ -648,7 +648,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#header-search {
 	background: ${masthead_background_color};
 	}
-	#header-search input[type="search"] {
+	#header-search input[type=search] {
 	.font( ${fonts_details} );
 	}
 	#header-search #close-search .svg-icon-close path {
@@ -667,20 +667,20 @@ function siteorigin_north_settings_custom_css( $css ) {
 	background: .rgba( ${responsive_mobile_menu_background_color}, ${responsive_mobile_menu_background_opacity});
 	.font( ${fonts_menu} );
 	}
-	#mobile-navigation form input[type="search"] {
+	#mobile-navigation form input[type=search] {
 	border-bottom: 1px solid ${responsive_mobile_menu_text_color};
 	color: ${responsive_mobile_menu_text_color};
 	}
-	#mobile-navigation form input[type="search"]::-webkit-input-placeholder {
+	#mobile-navigation form input[type=search]::-webkit-input-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
-	#mobile-navigation form input[type="search"]::-moz-placeholder {
+	#mobile-navigation form input[type=search]::-moz-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
-	#mobile-navigation form input[type="search"]:-moz-placeholder {
+	#mobile-navigation form input[type=search]:-moz-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
-	#mobile-navigation form input[type="search"]:-ms-input-placeholder {
+	#mobile-navigation form input[type=search]:-ms-input-placeholder {
 	color: .rgba( ${responsive_mobile_menu_text_color}, 0.7);
 	}
 	#mobile-navigation ul li a {
@@ -824,13 +824,13 @@ function siteorigin_north_settings_custom_css( $css ) {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
 	}
-	.search-form button[type="submit"],.woocommerce-product-search button[type="submit"] {
+	.search-form button[type=submit],.woocommerce-product-search button[type=submit] {
 	color: ${fonts_text_medium};
 	}
-	.search-form button[type="submit"]:hover,.woocommerce-product-search button[type="submit"]:hover {
+	.search-form button[type=submit]:hover,.woocommerce-product-search button[type=submit]:hover {
 	color: ${fonts_text_dark};
 	}
-	.search-form button[type="submit"] svg path,.woocommerce-product-search button[type="submit"] svg path {
+	.search-form button[type=submit] svg path,.woocommerce-product-search button[type=submit] svg path {
 	fill: ${fonts_text_medium};
 	}
 	.post-pagination {
@@ -916,10 +916,10 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	color: ${fonts_text_meta};
 	.font( ${fonts_details} );
 	}
-	.woocommerce #main ul.products li.product h3 {
+	.woocommerce ul.products li.product .woocommerce-loop-product__title a,.woocommerce ul.products li.product h3 {
 	color: ${fonts_text_dark};
 	}
-	.woocommerce #main ul.products li.product .price {
+	.woocommerce ul.products li.product .price {
 	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
@@ -948,7 +948,7 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	background: ${branding_accent};
 	border-color: ${branding_accent};
 	}
-	.woocommerce.single #content div.product .product-under-title-meta {
+	.woocommerce.single #content div.product .product-under-title-meta,.woocommerce.single #content div.product .product_meta {
 	color: ${fonts_text_medium};
 	}
 	.woocommerce.single #content div.product #comments h2 {

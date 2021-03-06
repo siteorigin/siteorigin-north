@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 5.6
+Tested up to: 5.7
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -41,6 +41,7 @@ SiteOrigin North includes support for:
 * [Jetpack Related Posts](https://jetpack.com/support/related-posts/)
 * [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
+* [Rank Math Breadcrumbs](https://wordpress.org/plugins/seo-by-rank-math/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 * [Yet Another Related Posts Plugin (YARPP)](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
@@ -102,6 +103,12 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.18.0 - 06 March 2021 =
+* WooCommerce: Improved product shortcode styling.
+* WooCommerce: Fixed product shortcode quick view functionality.
+* Added RankMath breadcrumb support.
+* Updated SiteOrigin Settings framework.
 
 = 1.17.19 - 15 January 2021 =
 * Developer: Updated the Chosen minified JavaScript file.
