@@ -2,11 +2,11 @@
 ## General Layout
 --------------------------------------------------------------*/
 .content-area {
-    float: right;
-    margin: 0 0 0 (-$size__site-sidebar);
+	float: right;
+	margin: 0 0 0 (-$size__site-sidebar);
 
 	@media (max-width: 600px) {
-        
+
 		body.rtl.responsive & {
 			margin: 0 !important;
 		}
@@ -25,24 +25,24 @@
 }
 
 .site-content .widget-area {
-    float: left;
-    padding-right: 40px;
-    padding-left: 0;
+	float: left;
+	padding-right: 40px;
+	padding-left: 0;
 
-    @media (max-width: 600px) {
-        
-        body.rtl.responsive & {
-            padding-right: 0;
-        }
-    }
+	@media (max-width: 600px) {
+
+		body.rtl.responsive & {
+			padding-right: 0;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 ## Site Masthead
 --------------------------------------------------------------*/
 #masthead .site-branding {
-    padding-right: 0;
-    padding-left: 20px;
+	padding-right: 0;
+	padding-left: 20px;
 
 	> * {
 		@include transform-origin( right center );
@@ -50,7 +50,7 @@
 }
 
 #topbar p {
-    text-align: left;
+	text-align: left;
 }
 
 /*--------------------------------------------------------------
@@ -58,44 +58,44 @@
 --------------------------------------------------------------*/
 #colophon .widgets {
 
-    .widget-wrapper {
-        border-right: none;
-        border-left: $footer__border_width solid $footer__border_color;
-        float: right;
+	.widget-wrapper {
+		border-right: none;
+		border-left: $footer__border_width solid $footer__border_color;
+		float: right;
 
-        &:last-child {
-            border-left: none;
-        }
-    }
-
-    aside:last-child {
-        border-left: 0;
-    }
-
-    @media (max-width: 640px) {
-
-	   .widget-wrapper {
-    	   border-left: none;
+		&:last-child {
+			border-left: none;
 		}
-    }   
+	}
+
+	aside:last-child {
+		border-left: 0;
+	}
+
+	@media (max-width: 640px) {
+
+		.widget-wrapper {
+			border-left: none;
+		}
+	}
 }
 
 #scroll-to-top {
 	left: 20px;
 	margin-left: auto;
 	margin-right: -22px;
-    right: auto;
+	right: auto;
 
-    img {
-        @include transform( rotate(90deg) );
-    }
+	img {
+		@include transform( rotate(90deg) );
+	}
 }
 
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
 .widget ul {
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 1.275em;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 1.275em;
 }
