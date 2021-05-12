@@ -255,6 +255,11 @@ function siteorigin_north_scripts() {
 	// jQuery Transit.
 	wp_enqueue_script( 'jquery-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '0.9.12', true );
 
+	// jQuery FitVids.
+	if ( siteorigin_setting( 'responsive_fitvids' ) ) {
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+	}
+
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
 
@@ -268,11 +273,6 @@ function siteorigin_north_scripts() {
 		'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
 		'collapse' => siteorigin_setting( 'responsive_menu_breakpoint' ),
 	) );
-
-	// jQuery FitVids.
-	if ( siteorigin_setting( 'responsive_fitvids' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
-	}
 
 	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
