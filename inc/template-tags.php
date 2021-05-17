@@ -23,7 +23,7 @@ function siteorigin_north_display_logo() {
 
 	} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 		?><?php the_custom_logo(); ?><?php
-	} else {
+	} elseif ( siteorigin_setting( 'branding_site_title' ) ) {
 		if ( is_front_page() ) : ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php else : ?>
