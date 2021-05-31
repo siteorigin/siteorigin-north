@@ -1239,6 +1239,7 @@ a {
     min-width: 0; }
 
 .no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .content-area,
+.no-active-sidebar:not(.active-wc-sidebar) .content-area,
 .no-active-sidebar.no-active-wc-sidebar .content-area,
 .wc-sidebar-none.woocommerce.woocommerce-page .content-area {
   float: none;
@@ -1246,6 +1247,7 @@ a {
   width: auto; }
 
 .no-active-sidebar:not(.woocommerce):not(.woocommerce-page) .site-main,
+.no-active-sidebar:not(.active-wc-sidebar) .site-main,
 .no-active-sidebar.no-active-wc-sidebar .site-main,
 .wc-sidebar-none.woocommerce.woocommerce-page .site-main {
   margin: 0; }
