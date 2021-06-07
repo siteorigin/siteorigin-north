@@ -266,12 +266,13 @@ function siteorigin_north_scripts() {
 	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
 
-	// Localize smooth scroll and output sticky logo scale.
+	// Add settings variables used by main theme JS.
 	$logo_sticky_scale = apply_filters( 'siteorigin_north_logo_sticky_scale', 0.755 );
 	wp_localize_script( 'siteorigin-north-script', 'siteoriginNorth', array(
 		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' ),
 		'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
 		'collapse' => siteorigin_setting( 'responsive_menu_breakpoint' ),
+		'fitvids' => siteorigin_setting( 'responsive_fitvids' ),
 	) );
 
 	// Comment reply.

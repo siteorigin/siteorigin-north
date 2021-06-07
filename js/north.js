@@ -109,7 +109,7 @@
 	} );
 
 	// Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
-	if ( typeof $.fn.fitVids !== 'undefined' ) {
+	if ( typeof $.fn.fitVids !== 'undefined' && siteoriginNorth.fitvids ) {
 		$( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
 	}
 
