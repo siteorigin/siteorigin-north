@@ -272,6 +272,7 @@ function siteorigin_north_scripts() {
 		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' ),
 		'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
 		'collapse' => siteorigin_setting( 'responsive_menu_breakpoint' ),
+		'fitvids' => siteorigin_setting( 'responsive_fitvids' ),
 	) );
 
 	// Comment reply.
