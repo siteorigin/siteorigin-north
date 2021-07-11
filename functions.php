@@ -255,24 +255,25 @@ function siteorigin_north_scripts() {
 	// jQuery Transit.
 	wp_enqueue_script( 'jquery-transit', get_template_directory_uri() . '/js/jquery.transit' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '0.9.12', true );
 
+	// jQuery FitVids.
+	if ( siteorigin_setting( 'responsive_fitvids' ) ) {
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
+	}
+
 	// Theme JavaScript.
 	wp_enqueue_script( 'siteorigin-north-script', get_template_directory_uri() . '/js/north' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION, true );
 
 	// Skip link focus fix.
 	wp_enqueue_script( 'siteorigin-north-skip-link', get_template_directory_uri() . '/js/skip-link-focus-fix' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
 
-	// Localize smooth scroll and output sticky logo scale.
+	// Add settings variables used by main theme JS.
 	$logo_sticky_scale = apply_filters( 'siteorigin_north_logo_sticky_scale', 0.755 );
 	wp_localize_script( 'siteorigin-north-script', 'siteoriginNorth', array(
 		'smoothScroll' => siteorigin_setting( 'navigation_smooth_scroll' ),
 		'logoScale' => is_numeric( $logo_sticky_scale ) ? $logo_sticky_scale : 0.755,
 		'collapse' => siteorigin_setting( 'responsive_menu_breakpoint' ),
+		'fitvids' => siteorigin_setting( 'responsive_fitvids' ),
 	) );
-
-	// jQuery FitVids.
-	if ( ! ( function_exists( 'has_blocks' ) && has_blocks() ) && siteorigin_setting( 'responsive_fitvids' ) ) {
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array( 'jquery' ), '1.1', true );
-	}
 
 	// Comment reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -104,6 +104,12 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.18.1 - 11 July 2021 =
+* Only setup FitVids if enabled in Theme Settings. Ensures better compatibility with other plugins loading FitVids for fluid width video embeds.
+* Block Editor: Removed exclusion preventing FitVids from loading in the Block Editor.
+* Updated SiteOrigin Settings submodule.
+* Removed `siteorigin_north_wp_title` and `siteorigin_north_render_title`. Due to the way Theme Check is broadly checking for `wp_title` we don't see a way of deprecating these functions.
+
 = 1.18.0 - 06 March 2021 =
 * WooCommerce: Improved product shortcode styling.
 * WooCommerce: Fixed product shortcode quick view functionality.

@@ -22,8 +22,8 @@ function siteorigin_north_settings_init() {
 				),
 				'site_title' => array(
 					'type'        => 'checkbox',
-					'label'       => __( 'Site Title', 'siteorigin-north' ),
-					'description' => __( 'Show your site title alongside your logo.', 'siteorigin-north' )
+					'label'       => __( 'Display Site Title Alongside Logo', 'siteorigin-north' ),
+					'description' => __( 'Only applicable if a Logo image has been set.', 'siteorigin-north' )
 				),
 				'site_description' => array(
 					'type'        => 'checkbox',
