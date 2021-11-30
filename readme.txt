@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.4 - 30 November 2021 =
+* Updated SiteOrigin Settings: Ensured WPML translated theme strings aren't overridden.
+
 = 1.19.3 - 14 November 2021 =
 * Restored `Page Featured Image` setting.
 
