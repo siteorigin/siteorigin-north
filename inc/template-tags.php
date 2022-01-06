@@ -9,7 +9,7 @@
 
 if ( ! function_exists( 'siteorigin_north_display_logo' ) ) :
 /**
- * Display the logo or site title
+ * Display the logo or site title.
  */
 function siteorigin_north_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
@@ -43,7 +43,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_north_display_retina_logo' ) ) :
 /**
- * Display a retina ready logo
+ * Display a retina ready logo.
  */
 function siteorigin_north_display_retina_logo( $attr ) {
 	if ( current_filter() == 'wp_get_attachment_image_attributes' ) {
@@ -496,7 +496,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_north_get_video' ) ) :
 /**
- * Get the video from the current post
+ * Get the video from the current post.
  */
 function siteorigin_north_get_video() {
 	$first_url    = '';
@@ -528,7 +528,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_north_filter_video' ) ) :
 /**
- * Removes the video from the post content
+ * Removes the video from the post content.
  */
 function siteorigin_north_filter_video( $content ) {
 	if ( siteorigin_north_get_video() ) {
@@ -547,7 +547,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_north_strip_gallery' ) ) :
 /**
- * Remove gallery from post content
+ * Remove gallery from post content.
  */
 function siteorigin_north_strip_gallery( $content ) {
 	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER );
@@ -569,7 +569,7 @@ endif;
 
 if ( ! function_exists( 'siteorigin_north_get_image' ) ) :
 /**
- * Get the first image from the post content
+ * Get the first image from the post content.
  */
 function siteorigin_north_get_image() {
 	$first_image = '';
