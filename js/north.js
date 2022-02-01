@@ -90,7 +90,7 @@
 			var $a = $( this );
 			var $target = $( '[name=' + this.hash.slice( 1 ) + ']' ).length ? $( '[name=' + this.hash.slice( 1 ) + ']' ) : $( $a.get( 0 ).hash );
 			if ( $target.length ) {
-				$( 'html, body' ).animate( {
+				$( 'html, body' ).stop().animate( {
 					scrollTop: $target.offset().top - headerHeight( $target )
 				}, 1000 );
 
@@ -273,7 +273,7 @@
 	sttWindowScroll();
 	$( window ).on( 'scroll', sttWindowScroll );
 	$( '#scroll-to-top' ).on( 'click', function() {
-		$( 'html,body' ).animate( { scrollTop: 0 } );
+		$( 'html,body' ).stop().animate( { scrollTop: 0 } );
 	} );
 
 	// Handle the header search.
@@ -465,7 +465,7 @@
 			var $target = $( window.location.hash );
 			if ( $target.length ) {
 				setTimeout( function() {
-					$( 'html, body' ).animate( {
+					$( 'html, body' ).stop().animate( {
 						scrollTop: $target.offset().top - headerHeight( $target, true )
 					},
 					0,
