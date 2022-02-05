@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 5.8
+Tested up to: 5.9
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -103,6 +103,10 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.19.5 - 05 February 2022 =
+* Updated `Tested up to` tag to `5.9`.
+* Smooth Scrolling: Update to allow for animation interruption when another page jump is clicked.
 
 = 1.19.4 - 30 November 2021 =
 * Updated SiteOrigin Settings: Ensured WPML translated theme strings aren't overridden.
