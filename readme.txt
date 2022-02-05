@@ -104,6 +104,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.5 - 05 February 2022 =
+* Updated `Tested up to` tag to `5.9`.
+* Smooth Scrolling: Update to allow for animation interruption when another page jump is clicked.
+
 = 1.19.4 - 30 November 2021 =
 * Updated SiteOrigin Settings: Ensured WPML translated theme strings aren't overridden.
 
