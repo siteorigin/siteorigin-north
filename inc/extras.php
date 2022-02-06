@@ -67,8 +67,6 @@ function siteorigin_north_body_classes( $classes ) {
 		if ( ! is_active_sidebar( 'sidebar-shop' ) ) {
 			if ( is_woocommerce() || is_cart() || is_checkout() ) {
 				$classes[] = 'no-active-wc-sidebar';
-			} else {
-				$classes[] = 'active-wc-sidebar';
 			}
 		}
 		
