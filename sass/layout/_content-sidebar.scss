@@ -26,6 +26,7 @@
 }
 
 .no-active-sidebar:not(.woocommerce):not(.woocommerce-page),
+.no-active-sidebar:not(.active-wc-sidebar),
 .no-active-sidebar.no-active-wc-sidebar,
 .wc-sidebar-none.woocommerce.woocommerce-page {
 
