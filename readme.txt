@@ -104,6 +104,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.6 - 18 February 2022 =
+* WooCommerce: Prevented sidebar space when using `[products]` shortcode.
+* Updated SiteOrigin Settings: Excluded websafe fonts from Google Fonts enqueue.
+
 = 1.19.5 - 05 February 2022 =
 * Updated `Tested up to` tag to `5.9`.
 * Smooth Scrolling: Update to allow for animation interruption when another page jump is clicked.
