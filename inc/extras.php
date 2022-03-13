@@ -64,8 +64,10 @@ function siteorigin_north_body_classes( $classes ) {
 			$classes[] = 'layout-wc-sidebar-left';
 		}
 
-		if ( ! is_active_sidebar( 'sidebar-shop' ) ) {
-			if ( is_woocommerce() || is_cart() || is_checkout() ) {
+		if ( is_woocommerce() || is_cart() || is_checkout() ) {
+			if ( is_active_sidebar( 'sidebar-shop' ) ) {
+				$classes[] = 'active-wc-sidebar';
+			} else {
 				$classes[] = 'no-active-wc-sidebar';
 			}
 		}
