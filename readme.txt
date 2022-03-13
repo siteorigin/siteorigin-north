@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.7 - 13 March 2022 =
+* WooCommerce: Fixed Shop Sidebar alignment when Main Sidebar is empty.
+
 = 1.19.6 - 18 February 2022 =
 * WooCommerce: Prevented sidebar space when using `[products]` shortcode.
 * Updated SiteOrigin Settings: Excluded websafe fonts from Google Fonts enqueue.
