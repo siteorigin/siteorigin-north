@@ -286,13 +286,17 @@
 
 			}
 		}
+	}
+}
 
-		#prev {
-			text-align: left;
-		}
+.calendar_wrap .wp-calendar-nav {
 
-		#next {
-			text-align: right;
-		}
+	.wp-calendar-nav-prev {
+		float: left;
+	}
+
+	.wp-calendar-nav-next {
+		float: right;
+		text-align: right;
 	}
 }
