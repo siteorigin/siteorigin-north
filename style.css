@@ -1992,6 +1992,10 @@ article.page {
       .search-form button[type="submit"] svg path,
       .woocommerce-product-search button[type="submit"] svg path {
         fill: #595959; }
+    .search-form button[type="submit"] img,
+    .woocommerce-product-search button[type="submit"] img {
+      height: 14px;
+      width: 14px; }
 
 /*--------------------------------------------------------------
 ## Post Pagination

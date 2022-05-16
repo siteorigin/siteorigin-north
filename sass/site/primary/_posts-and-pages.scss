@@ -416,7 +416,7 @@ article.page {
 		position: absolute;
 		right: 0;
 		top: 0;
-		
+
 		&:hover {
 			background: none;
 			color: $color__text_dark;
@@ -429,6 +429,11 @@ article.page {
 			path {
 				fill: $color__text-medium;
 			}
+		}
+
+		img {
+			height: 14px;
+			width: 14px;
 		}
 	}
 }
