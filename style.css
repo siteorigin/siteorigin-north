@@ -1205,10 +1205,11 @@ a {
   .widget-area .widget_calendar table tbody td.has-link {
     background: #eee; }
 
-.widget-area .widget_calendar table #prev {
-  text-align: left; }
+.calendar_wrap .wp-calendar-nav .wp-calendar-nav-prev {
+  float: left; }
 
-.widget-area .widget_calendar table #next {
+.calendar_wrap .wp-calendar-nav .wp-calendar-nav-next {
+  float: right;
   text-align: right; }
 
 /*--------------------------------------------------------------
@@ -1991,6 +1992,10 @@ article.page {
       .search-form button[type="submit"] svg path,
       .woocommerce-product-search button[type="submit"] svg path {
         fill: #595959; }
+    .search-form button[type="submit"] img,
+    .woocommerce-product-search button[type="submit"] img {
+      height: 14px;
+      width: 14px; }
 
 /*--------------------------------------------------------------
 ## Post Pagination
