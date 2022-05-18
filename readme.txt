@@ -104,6 +104,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.9 - 18 May 2022 =
+* Updated Calendar Widget styling for new markup.
+* Resized potential search field image icon.
+
 = 1.19.8 - 24 March 2022 =
 * WooCommerce: Left aligned single product variation labels.
 
