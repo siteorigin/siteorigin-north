@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.10 - 12 June 2022 =
+* SiteOrigin Settings: Added `siteorigin_settings_websafe` filter to allow filtering of websafe fonts.
+
 = 1.19.9 - 18 May 2022 =
 * Updated Calendar Widget styling for new markup.
 * Resized potential search field image icon.
