@@ -246,6 +246,21 @@
 			}
 		}
 	}
+
+	.so-panel .wc-proceed-to-checkout .checkout-button {
+		background: #c75d5d;
+		border: 1px solid #c75d5d;
+		color: #fff;
+		text-transform: uppercase;
+
+		&:focus,
+		&:hover {
+			background: #a94346;
+			color: #fff;
+			border-color: #a94346;
+			box-shadow: none;
+		}
+	}
 }
 
 #mobile-navigation {

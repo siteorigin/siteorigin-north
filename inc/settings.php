@@ -977,7 +977,8 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.woocommerce table.shop_table .button.checkout-button {
+	.woocommerce table.shop_table .button.checkout-button,
+	.woocommerce .so-panel .wc-proceed-to-checkout .checkout-button.button {
 	background: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
