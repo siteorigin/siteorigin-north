@@ -104,6 +104,10 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.11 - 21 June 2022 =
+* WooCommerce: Added undefined variable `$woocommerce`.
+* WooCommerce Template Builder: Ensured `Proceed to Checkout` button is available in the Cart template.
+
 = 1.19.10 - 12 June 2022 =
 * SiteOrigin Settings: Added `siteorigin_settings_websafe` filter to allow filtering of websafe fonts.
 
