@@ -19,7 +19,19 @@ function siteorigin_north_woocommerce_change_hooks(){
 
 	// Remove actions in the cart.
 	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
-	remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
+	if ( class_exists( 'SiteOrigin_Premium_Plugin_WooCommerce_Templates' ) ) {
+		$so_wc_templates = get_option( 'so-wc-templates' );
+		if (
+			! empty( $so_wc_templates['cart'] ) &&
+			! empty( $so_wc_templates['cart']['active'] )
+		) {
+			$prevent_override = true;
+		}
+	}
+
+	if ( empty( $prevent_override ) ) {
+		remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
+	}
 
 	// Product archive buttons.
 	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );

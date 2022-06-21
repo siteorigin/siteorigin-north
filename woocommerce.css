@@ -518,6 +518,17 @@
           margin-top: 0.5em;
           width: 100% !important; } }
 
+.woocommerce .so-panel .wc-proceed-to-checkout .checkout-button {
+  background: #c75d5d;
+  border: 1px solid #c75d5d;
+  color: #fff;
+  text-transform: uppercase; }
+  .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button:focus, .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button:hover {
+    background: #a94346;
+    color: #fff;
+    border-color: #a94346;
+    box-shadow: none; }
+
 #mobile-navigation .shopping-cart-link {
   margin-top: 1em;
   text-decoration: none;
