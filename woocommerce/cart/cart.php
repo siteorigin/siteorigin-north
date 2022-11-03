@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 4.4.0
+ * @version 7.0.1
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -28,12 +28,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="product-thumbnail">&nbsp;</th>
+					<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'siteorigin-north' ); ?></span></th>
+					<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'siteorigin-north' ); ?></span></th>
 					<th class="product-name"><?php esc_html_e( 'Product', 'siteorigin-north' ); ?></th>
-					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'siteorigin-north' ); ?></th>
 					<th class="product-price"><?php esc_html_e( 'Price', 'siteorigin-north' ); ?></th>
+					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'siteorigin-north' ); ?></th>
 					<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'siteorigin-north' ); ?></th>
-					<th class="product-remove">&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,79 +41,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 				<?php
 				foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-					$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-					$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+					$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+					$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
 					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 						?>
 						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-							<td class="product-thumbnail">
-							<?php
-							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
-							if ( ! $product_permalink ) {
-								echo $thumbnail; // PHPCS: XSS ok.
-							} else {
-								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-							}
-							?>
-							</td>
-
-							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'siteorigin-north' ); ?>">
-							<?php
-							if ( ! $product_permalink ) {
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', esc_html( $_product->get_name() ), $cart_item, $cart_item_key ) . '&nbsp;' );
-							} else {
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), esc_html( $_product->get_name() ) ), $cart_item, $cart_item_key ) );
-							}
-
-							do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
-
-							// Meta data.
-							echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
-
-							// Backorder notification.
-							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'siteorigin-north' ) . '</p>', $product_id ) );
-							}
-							?>
-							</td>
-
-							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'siteorigin-north' ); ?>">
-							<?php
-							if ( $_product->is_sold_individually() ) {
-								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-							} else {
-								$product_quantity = woocommerce_quantity_input(
-									array(
-										'input_name'   => "cart[{$cart_item_key}][qty]",
-										'input_value'  => $cart_item['quantity'],
-										'max_value'    => $_product->get_max_purchase_quantity(),
-										'min_value'    => '0',
-										'product_name' => $_product->get_name(),
-									),
-									$_product,
-									false
-								);
-							}
-
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-							?>
-							</td>
-
-							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'siteorigin-north' ); ?>">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-								?>
-							</td>
-
-							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'siteorigin-north' ); ?>">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-								?>
-							</td>
 
 							<td class="product-remove">
 								<?php
@@ -130,13 +64,84 @@ do_action( 'woocommerce_before_cart' ); ?>
 									);
 								?>
 							</td>
+
+							<td class="product-thumbnail">
+							<?php
+							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+							if ( ! $product_permalink ) {
+								echo $thumbnail; // PHPCS: XSS ok.
+							} else {
+								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+							}
+							?>
+							</td>
+
+							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'siteorigin-north' ); ?>">
+							<?php
+							if ( ! $product_permalink ) {
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+							} else {
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+							}
+
+							do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
+
+							// Meta data.
+							echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+
+							// Backorder notification.
+							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'siteorigin-north' ) . '</p>', $product_id ) );
+							}
+							?>
+							</td>
+
+							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'siteorigin-north' ); ?>">
+								<?php
+									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+								?>
+							</td>
+
+							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'siteorigin-north' ); ?>">
+							<?php
+							if ( $_product->is_sold_individually() ) {
+								$min_quantity = 1;
+								$max_quantity = 1;
+							} else {
+								$min_quantity = 0;
+								$max_quantity = $_product->get_max_purchase_quantity();
+							}
+
+							$product_quantity = woocommerce_quantity_input(
+								array(
+									'input_name'   => "cart[{$cart_item_key}][qty]",
+									'input_value'  => $cart_item['quantity'],
+									'max_value'    => $max_quantity,
+									'min_value'    => $min_quantity,
+									'product_name' => $_product->get_name(),
+								),
+								$_product,
+								false
+							);
+
+							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+							?>
+							</td>
+
+							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'siteorigin-north' ); ?>">
+								<?php
+									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+								?>
+							</td>
 						</tr>
 						<?php
 					}
 				}
-
-				do_action( 'woocommerce_cart_contents' );
 				?>
+
+				<?php do_action( 'woocommerce_cart_contents' ); ?>
+
 				<tr>
 					<td colspan="6" class="actions">
 
@@ -144,20 +149,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<?php if ( wc_coupons_enabled() ) { ?>
 							<div class="coupon">
-								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'siteorigin-north' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_html_e( 'Apply coupon', 'siteorigin-north' ); ?></button>
+								<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'siteorigin-north' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?></button>
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>
+
 						<div class="cart-buttons">
 							<a class="button-continue-shopping button" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>">	<?php esc_html_e( 'Continue Shopping', 'siteorigin-north' ) ?>
 							</a>
-							<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'siteorigin-north' ); ?>">
+							<button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'siteorigin-north' ); ?>">
 								<?php esc_html_e( 'Update cart', 'siteorigin-north' ); ?>
 							</button>
 							<a class="checkout-button button" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
 								<span class="north-icon-cart" aria-hidden="true"></span> <?php esc_html_e( 'Checkout', 'siteorigin-north' ); ?>
 							</a>
 						</div>
+
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -168,11 +175,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 			</tbody>
 		</table>
-
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>
-
 	</div>
-
 </form>
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
