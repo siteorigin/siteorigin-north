@@ -66,7 +66,7 @@ if ( version_compare( $woocommerce->version, 3.0, '>' ) ) {
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
 			<span class="north-icon-cart" aria-hidden="true"></span>
 			<?php echo esc_html( $product->single_add_to_cart_text() ); ?>
-		</button>> <?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		</button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
