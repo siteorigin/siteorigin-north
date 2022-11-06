@@ -105,7 +105,7 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 == Changelog ==
 
 = 1.19.13 - 05 November 2022 =
-* WooCommerce: Updated bundled templates to `7.0.1`. 
+* WooCommerce: Updated bundled templates to `7.0.1`.
 
 = 1.19.12 - 27 October 2022 =
 * SiteOrigin Settings: Updated Google Fonts array.
