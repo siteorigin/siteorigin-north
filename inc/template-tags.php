@@ -13,6 +13,7 @@ if ( ! function_exists( 'siteorigin_north_display_logo' ) ) :
  */
 function siteorigin_north_display_logo() {
 	$logo = siteorigin_setting( 'branding_logo' );
+	do_action( 'siteorigin_north_logo_before' );
 	if ( ! empty( $logo ) ) {
 		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array( 'class' => 'custom-logo' ) );
 
@@ -38,6 +39,7 @@ function siteorigin_north_display_logo() {
 			<p class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php endif;
 	}
+	do_action( 'siteorigin_north_logo_after' );
 }
 endif;
 
