@@ -16,6 +16,7 @@ function siteorigin_north_display_logo() {
 	do_action( 'siteorigin_north_logo_before' );
 	if ( ! empty( $logo ) ) {
 		$attrs = apply_filters( 'siteorigin_north_logo_attributes', array( 'class' => 'custom-logo' ) );
+		$logo = apply_filters( 'siteorigin_north_logo_url', $logo );
 
 		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-north' ); ?></span><?php
