@@ -32,14 +32,17 @@ function siteorigin_north_display_logo() {
 		<?php endif;
 	}
 
+	do_action( 'siteorigin_north_logo_after' );
+
 	if ( ( $logo || ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) ) && siteorigin_setting( 'branding_site_title' ) ) {
+		do_action( 'siteorigin_north_logo_title_before' );
 		if ( is_front_page() ) : ?>
 			<h1 class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php else : ?>
 			<p class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php endif;
+		do_action( 'siteorigin_north_logo_title_after' );
 	}
-	do_action( 'siteorigin_north_logo_after' );
 }
 endif;
 
