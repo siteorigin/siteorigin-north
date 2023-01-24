@@ -4,36 +4,34 @@
  * Initialize the settings
  */
 function siteorigin_north_settings_init() {
-
 	SiteOrigin_Settings::single()->configure( apply_filters( 'siteorigin_north_settings_array', array(
-
 		'branding'    => array(
 			'title'  => __( 'Branding', 'siteorigin-north' ),
 			'fields' => array(
 				'logo'             => array(
 					'type'        => 'media',
 					'label'       => __( 'Logo', 'siteorigin-north' ),
-					'description' => __( 'Logo displayed in your header.', 'siteorigin-north' )
+					'description' => __( 'Logo displayed in your header.', 'siteorigin-north' ),
 				),
 				'retina_logo'      => array(
 					'type'        => 'media',
 					'label'       => __( 'Retina Logo', 'siteorigin-north' ),
-					'description' => __( 'A logo for use on high pixel density displays. Must be used in addition to standard logo and be exactly double the size.', 'siteorigin-north' )
+					'description' => __( 'A logo for use on high pixel density displays. Must be used in addition to standard logo and be exactly double the size.', 'siteorigin-north' ),
 				),
 				'site_title' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Display Site Title Alongside Logo', 'siteorigin-north' ),
-					'description' => __( 'Only applicable if a Logo image has been set.', 'siteorigin-north' )
+					'description' => __( 'Only applicable if a Logo image has been set.', 'siteorigin-north' ),
 				),
 				'site_description' => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Site Description', 'siteorigin-north' ),
-					'description' => __( 'Show your site description below your site title or logo.', 'siteorigin-north' )
+					'description' => __( 'Show your site description below your site title or logo.', 'siteorigin-north' ),
 				),
 				'attribution' => array(
 					'type' => 'checkbox',
-					'label' => __('Hide SiteOrigin Attribution', 'siteorigin-north'),
-					'description' => __('Hide the SiteOrigin link in your footer.', 'siteorigin-north'),
+					'label' => __( 'Hide SiteOrigin Attribution', 'siteorigin-north' ),
+					'description' => __( 'Hide the SiteOrigin link in your footer.', 'siteorigin-north' ),
 					'teaser' => true,
 				),
 				'accent'           => array(
@@ -48,12 +46,11 @@ function siteorigin_north_settings_init() {
 					'description' => __( 'A darker version of your accent color.', 'siteorigin-north' ),
 					'live'        => true,
 				),
-			)
+			),
 		),
 		'fonts' => array(
 			'title' => __( 'Fonts', 'siteorigin-north' ),
 			'fields' => array(
-
 				'main'        => array(
 					'type'        => 'font',
 					'label'       => __( 'Main Font', 'siteorigin-north' ),
@@ -127,30 +124,29 @@ function siteorigin_north_settings_init() {
 		),
 
 		'icons' => array(
-			'title' => __('Icons', 'siteorigin-north'),
+			'title' => __( 'Icons', 'siteorigin-north' ),
 			'fields' => array(
-
 				'menu' => array(
 					'type' => 'media',
-					'label' => __('Mobile menu icon', 'siteorigin-north'),
+					'label' => __( 'Mobile menu icon', 'siteorigin-north' ),
 				),
 				'search' => array(
 					'type' => 'media',
-					'label' => __('Masthead search icon', 'siteorigin-north'),
+					'label' => __( 'Masthead search icon', 'siteorigin-north' ),
 				),
 				'close_search' => array(
 					'type' => 'media',
-					'label' => __('Close search bar icon', 'siteorigin-north'),
+					'label' => __( 'Close search bar icon', 'siteorigin-north' ),
 				),
 				'scroll_to_top' => array(
 					'type' => 'media',
-					'label' => __('Scroll to top icon', 'siteorigin-north'),
+					'label' => __( 'Scroll to top icon', 'siteorigin-north' ),
 				),
 			),
 		),
 
 		'structure' => array(
-			'title' => __('Page Structure', 'siteorigin-north'),
+			'title' => __( 'Page Structure', 'siteorigin-north' ),
 			'fields' => array(
 				'sidebar_width' => array(
 					'label'             => __( 'Sidebar Width', 'siteorigin-north' ),
@@ -163,9 +159,9 @@ function siteorigin_north_settings_init() {
 					'options' => array(
 						'right'  => __( 'Right', 'siteorigin-north' ),
 						'left' => __( 'Left', 'siteorigin-north' ),
-					)
+					),
 				),
-			)
+			),
 		),
 		'masthead'    => array(
 			'title'  => __( 'Header', 'siteorigin-north' ),
@@ -176,7 +172,7 @@ function siteorigin_north_settings_init() {
 					'options' => array(
 						'default'  => __( 'Default', 'siteorigin-north' ),
 						'centered' => __( 'Centered', 'siteorigin-north' ),
-					)
+					),
 				),
 				'text_above'           => array(
 					'type'              => 'text',
@@ -219,7 +215,7 @@ function siteorigin_north_settings_init() {
 					'label'             => __( 'Bottom Margin', 'siteorigin-north' ),
 					'live'              => true,
 				),
-			)
+			),
 		),
 		'navigation'  => array(
 			'title'  => __( 'Navigation', 'siteorigin-north' ),
@@ -258,7 +254,7 @@ function siteorigin_north_settings_init() {
 					'type'        => 'checkbox',
 					'label'       => __( 'Smooth scroll', 'siteorigin-north' ),
 					'description' => __( 'Smooth scroll for internal anchor links', 'siteorigin-north' ),
-				)
+				),
 			),
 		),
 		'blog'                    => array(
@@ -275,7 +271,7 @@ function siteorigin_north_settings_init() {
 					'options'              => array(
 						'content'             => __( 'Full Post Content', 'siteorigin-north' ),
 						'excerpt'             => __( 'Post Excerpt', 'siteorigin-north' ),
-					)
+					),
 				),
 				'read_more_text'        => array(
 					'type'                 => 'text',
@@ -290,7 +286,7 @@ function siteorigin_north_settings_init() {
 				'excerpt_post_link'     => array(
 					'type'                 => 'checkbox',
 					'label'                => __( 'Post Excerpt Read More Link', 'siteorigin-north' ),
-					'description'          => __( 'Display the Read More Text below the post excerpt. Only applicable if Post Excerpt has been selected from the Archive Post Content setting.', 'siteorigin-north' )
+					'description'          => __( 'Display the Read More Text below the post excerpt. Only applicable if Post Excerpt has been selected from the Archive Post Content setting.', 'siteorigin-north' ),
 				),
 				'featured_single'       => array(
 					'type'                 => 'checkbox',
@@ -314,11 +310,11 @@ function siteorigin_north_settings_init() {
 				),
 				'ajax_comments'         => array(
 					'type'                 => 'checkbox',
-					'label'                => __('Ajax Comments', 'siteorigin-north'),
-					'description'          => __('Keep the conversation flowing with ajax loading comments.', 'siteorigin-north'),
+					'label'                => __( 'Ajax Comments', 'siteorigin-north' ),
+					'description'          => __( 'Keep the conversation flowing with ajax loading comments.', 'siteorigin-north' ),
 					'teaser'               => true,
-				)
-			)
+				),
+			),
 		),
 		'responsive'  => array(
 			'title'  => __( 'Responsive', 'siteorigin-north' ),
@@ -344,7 +340,7 @@ function siteorigin_north_settings_init() {
 				'menu_breakpoint' => array(
 					'label'       => __( 'Menu Breakpoint', 'siteorigin-north' ),
 					'type'        => 'text',
-					'description' => __( 'Screen width in px.', 'siteorigin-north' )
+					'description' => __( 'Screen width in px.', 'siteorigin-north' ),
 				),
 				'mobile_menu_background_color' => array(
 					'type'        => 'color',
@@ -368,13 +364,12 @@ function siteorigin_north_settings_init() {
 					'type'  => 'checkbox',
 					'label' => __( 'Use Fitvids', 'siteorigin-north' ),
 					'description' => __( 'Include FitVids.js for fluid width video embeds.', 'siteorigin-north' ),
-				)
-			)
+				),
+			),
 		),
 		'footer'      => array(
 			'title'  => __( 'Footer', 'siteorigin-north' ),
 			'fields' => array(
-
 				'text'             => array(
 					'type'              => 'text',
 					'label'             => __( 'Footer Text', 'siteorigin-north' ),
@@ -383,8 +378,8 @@ function siteorigin_north_settings_init() {
 				),
 				'privacy_policy_link'         => array(
 					'type'                 => 'checkbox',
-					'label'                => __('Privacy Policy Link', 'siteorigin-north'),
-					'description'          => __('Display the Privacy Policy page link.', 'siteorigin-north'),
+					'label'                => __( 'Privacy Policy Link', 'siteorigin-north' ),
+					'description'          => __( 'Display the Privacy Policy page link.', 'siteorigin-north' ),
 				),
 				'widget_title_color' => array(
 					'type'  => 'color',
@@ -409,7 +404,7 @@ function siteorigin_north_settings_init() {
 				'constrained'      => array(
 					'type'        => 'checkbox',
 					'label'       => __( 'Constrain', 'siteorigin-north' ),
-					'description' => __( "Constrain the footer width", 'siteorigin-north' ),
+					'description' => __( 'Constrain the footer width', 'siteorigin-north' ),
 				),
 				'background_color' => array(
 					'type'  => 'color',
@@ -434,7 +429,7 @@ function siteorigin_north_settings_init() {
 				'side_padding'     => array(
 					'type'              => 'measurement',
 					'label'             => __( 'Widget Side Padding', 'siteorigin-north' ),
-					'description'       => __( "Set the left and right padding for each widget.", 'siteorigin-north' ),
+					'description'       => __( 'Set the left and right padding for each widget.', 'siteorigin-north' ),
 					'live'              => true,
 				),
 				'top_margin'       => array(
@@ -449,20 +444,21 @@ function siteorigin_north_settings_init() {
 add_action( 'siteorigin_settings_init', 'siteorigin_north_settings_init' );
 
 function siteorigin_north_woocommerce_settings( $settings ) {
-	if ( ! function_exists( 'is_woocommerce' ) ) return $settings;
+	if ( ! function_exists( 'is_woocommerce' ) ) {
+		return $settings;
+	}
 
 	$wc_settings = array(
 		'woocommerce' => array(
 			'title'  => esc_html__( 'WooCommerce', 'siteorigin-north' ),
 			'fields' => array(
-
 				'archive_columns' => array(
 					'type' => 'range',
 					'label' => esc_html__( 'Number of Products per Row', 'siteorigin-north' ),
 					'description' => esc_html__( 'Set the number of products per row on shop archive pages.', 'siteorigin-north' ),
 					'min' => 2,
 					'max' => 5,
-					'step' => 1
+					'step' => 1,
 				),
 
 				'equalize_rows' => array(
@@ -497,9 +493,8 @@ function siteorigin_north_woocommerce_settings( $settings ) {
 						'none' => esc_html__( 'None', 'siteorigin-north' ),
 					),
 				),
-
-			)
-		)
+			),
+		),
 	);
 
 	return array_merge( $settings, $wc_settings );
@@ -509,36 +504,33 @@ add_filter( 'siteorigin_north_settings_array', 'siteorigin_north_woocommerce_set
 /**
  * Tell the settings framework which settings we're using as fonts.
  *
- * @param $settings
- *
  * @return array
  */
 function siteorigin_north_font_settings( $settings ) {
-
 	$settings['fonts_main'] = array(
 		'name' => 'Droid Sans',
 		'weights' => array(
 			400,
-			700
+			700,
 		),
 	);
 	$settings['fonts_headings'] = array(
 		'name' => 'Montserrat',
 		'weights' => array(
-			400
+			400,
 		),
 	);
 	$settings['fonts_details'] = array(
 		'name' => 'Droid Serif',
 		'weights' => array(
-			400
+			400,
 		),
 	);
 	$settings['fonts_menu'] = array(
 		'name' => 'Droid Sans',
 		'weights' => array(
 			400,
-			700
+			700,
 		),
 	);
 
@@ -548,8 +540,6 @@ add_filter( 'siteorigin_settings_font_settings', 'siteorigin_north_font_settings
 
 /**
  * Add custom CSS for the theme settings
- *
- * @param $css
  *
  * @return string
  */
@@ -881,6 +871,7 @@ function siteorigin_north_settings_custom_css( $css ) {
 	#commentform input,#commentform textarea {
 	background-color: ${fonts_field_background};
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_css' );
@@ -888,12 +879,12 @@ add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_settings_custom_
 /**
  * Add custom CSS for the theme woocommerce elements
  *
- * @param $css
- *
  * @return string
  */
 function siteorigin_north_wc_settings_custom_css( $css ) {
-	if ( ! function_exists( 'is_woocommerce' ) ) return $css;
+	if ( ! function_exists( 'is_woocommerce' ) ) {
+		return $css;
+	}
 
 	// Custom WooCommerce CSS.
 	$css .= '/* woocommerce */
@@ -1103,6 +1094,7 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	color: ${fonts_text_meta};
 	.font( ${fonts_details} );
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_wc_settings_custom_css' );
@@ -1136,6 +1128,7 @@ function siteorigin_north_menu_breakpoint_css( $css, $settings ) {
 			display: none !important;
 		}
 	}';
+
 	return $css;
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_menu_breakpoint_css', 10, 2 );
@@ -1151,22 +1144,17 @@ function siteorigin_north_sidebar_zero_css( $css, $settings ) {
 	$sidebar_width = $settings['theme_settings_structure_sidebar_width'];
 
 	if ( $sidebar_width == 0 ) {
-
 		$css .= '.site-content .widget-area {
 			display: none;
 		}';
-
 	}
 
 	return $css;
-
 }
 add_filter( 'siteorigin_settings_custom_css', 'siteorigin_north_sidebar_zero_css', 10, 2 );
 
 /**
  * Add default settings.
- *
- * @param $defaults
  *
  * @return mixed
  */
@@ -1279,6 +1267,7 @@ function siteorigin_north__migrated_settings( $migrated ) {
 		'fonts_text_menu_hover' => 'fonts_text_medium',
 		'fonts_text_menu_current' => 'fonts_text_dark',
 	);
+
 	return $migrated;
 }
 add_filter( 'siteorigin_settings_migrated_settings', 'siteorigin_north__migrated_settings' );
@@ -1286,8 +1275,7 @@ add_filter( 'siteorigin_settings_migrated_settings', 'siteorigin_north__migrated
 /**
  * Setup Page Settings for SiteOrigin North
  */
-function siteorigin_north_page_settings( $settings, $type, $id ){
-
+function siteorigin_north_page_settings( $settings, $type, $id ) {
 	$settings['layout'] = array(
 		'type'    => 'select',
 		'label'   => __( 'Page Layout', 'siteorigin-north' ),
@@ -1313,7 +1301,7 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'type'           => 'checkbox',
 		'label'          => __( 'Page Title', 'siteorigin-north' ),
 		'checkbox_label' => __( 'Display', 'siteorigin-north' ),
-		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' )
+		'description'    => __( 'Display the page title on this page.', 'siteorigin-north' ),
 	);
 
 	if ( $type == 'page' ) {
@@ -1321,7 +1309,7 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 			'type'           => 'checkbox',
 			'label'          => __( 'Page Featured Image', 'siteorigin-north' ),
 			'checkbox_label' => __( 'Display', 'siteorigin-north' ),
-			'description'    => __( 'Display the page featured image on this page.', 'siteorigin-north' )
+			'description'    => __( 'Display the page featured image on this page.', 'siteorigin-north' ),
 		);
 	}
 
@@ -1329,28 +1317,28 @@ function siteorigin_north_page_settings( $settings, $type, $id ){
 		'type'           => 'checkbox',
 		'label'          => __( 'Masthead Bottom Margin', 'siteorigin-north' ),
 		'checkbox_label' => __( 'Enable', 'siteorigin-north' ),
-		'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-north' )
+		'description'    => __( 'Include the margin below the masthead (top area) of your site.', 'siteorigin-north' ),
 	);
 
 	$settings['footer_margin'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Footer Top Margin', 'siteorigin-north' ),
 		'checkbox_label' => __( 'Enable', 'siteorigin-north' ),
-		'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' )
+		'description'    => __( 'Include the margin above your footer.', 'siteorigin-north' ),
 	);
 
 	$settings['hide_masthead'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Hide Masthead', 'siteorigin-north' ),
 		'checkbox_label' => __( 'Hide', 'siteorigin-north' ),
-		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' )
+		'description'    => __( 'Hide the masthead on this page.', 'siteorigin-north' ),
 	);
 
 	$settings['hide_footer_widgets'] = array(
 		'type'           => 'checkbox',
 		'label'          => __( 'Hide Footer Widgets', 'siteorigin-north' ),
 		'checkbox_label' => __( 'Hide', 'siteorigin-north' ),
-		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' )
+		'description'    => __( 'Hide the footer widgets on this page.', 'siteorigin-north' ),
 	);
 
 	return $settings;
@@ -1376,7 +1364,7 @@ function siteorigin_north_setup_page_setting_defaults( $defaults, $type, $id ) {
 	}
 
 	// Specific default settings for different types.
-	if( $type == 'template' && $id == 'home' ) {
+	if ( $type == 'template' && $id == 'home' ) {
 		$defaults['page_title'] = false;
 	}
 
@@ -1386,8 +1374,6 @@ add_filter( 'siteorigin_page_settings_defaults', 'siteorigin_north_setup_page_se
 
 /**
  * Change the default page settings for the home page.
- *
- * @param $settings
  *
  * @return mixed
  */
@@ -1402,13 +1388,11 @@ add_filter( 'siteorigin_page_settings_panels_home_defaults', 'siteorigin_north_p
 /**
  * Convert URL based images into IDs
  *
- * @param $mods
- *
  * @return mixed
  */
 function siteorigin_north_siteorigin_setting_update_image( $mods ) {
 	foreach ( array( 'branding_logo', 'branding_retina_logo' ) as $key ) {
-		if( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
+		if ( ! empty( $mods[ 'theme_settings_' . $key ] ) && ! is_numeric( $mods[ 'theme_settings_' . $key ] ) ) {
 			$mods[ 'theme_settings_' . $key ] = SiteOrigin_Settings::get_image_id( $mods[ 'theme_settings_' . $key ] );
 		}
 	}

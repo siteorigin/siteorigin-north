@@ -2,26 +2,25 @@
 /**
  * The template for displaying search results pages.
  *
- * @package siteorigin-north
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
-
 get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) { ?>
 
 			<header class="page-header">
-				<?php if( siteorigin_page_setting( 'page_title' ) ) : ?>
+				<?php if ( siteorigin_page_setting( 'page_title' ) ) { ?>
 					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'siteorigin-north' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				<?php endif; ?>
+				<?php } ?>
 				<?php siteorigin_north_breadcrumbs(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) {
+				the_post(); ?>
 
 				<?php
 				/**
@@ -32,15 +31,15 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 				?>
 
-			<?php endwhile; ?>
+			<?php } ?>
 
 			<?php siteorigin_north_posts_pagination(); ?>
 
-		<?php else : ?>
+		<?php } else { ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		<?php endif; ?>
+		<?php } ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
