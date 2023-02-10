@@ -525,9 +525,9 @@
   text-transform: uppercase; }
   .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button:focus, .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button:hover {
     background: #a94346;
-    color: #fff;
     border-color: #a94346;
-    box-shadow: none; }
+    box-shadow: none;
+    color: #fff; }
 
 #mobile-navigation .shopping-cart-link {
   margin-top: 1em;
@@ -1041,5 +1041,3 @@
   top: 0; }
   #topbar .demo_store .woocommerce-store-notice__dismiss-link {
     padding-left: 15px; }
-
-/*# sourceMappingURL=sass/maps/woocommerce.css.map */
