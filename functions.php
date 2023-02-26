@@ -109,6 +109,7 @@ if ( ! function_exists( 'siteorigin_north_setup' ) ) {
 } // siteorigin_north_setup
 add_action( 'after_setup_theme', 'siteorigin_north_setup' );
 
+
 if ( ! function_exists( 'siteorigin_north_premium_setup' ) ) {
 	/**
 	 * Add support for premium theme components
@@ -127,6 +128,9 @@ if ( ! function_exists( 'siteorigin_north_premium_setup' ) ) {
 			'siteorigin_setting' => 'blog_ajax_comments',
 		) );
 	}
+  
+  // Logo Booster.
+	add_theme_support( 'siteorigin-premium-logo-booster' );
 }
 add_action( 'after_setup_theme', 'siteorigin_north_premium_setup' );
 

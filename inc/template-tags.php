@@ -10,31 +10,38 @@ if ( ! function_exists( 'siteorigin_north_display_logo' ) ) {
 	 */
 	function siteorigin_north_display_logo() {
 		$logo = siteorigin_setting( 'branding_logo' );
+		do_action( 'siteorigin_north_logo_before' );
 
 		if ( ! empty( $logo ) ) {
 			$attrs = apply_filters( 'siteorigin_north_logo_attributes', array( 'class' => 'custom-logo' ) );
+			$logo = apply_filters( 'siteorigin_north_logo_url', $logo );
 
 			?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<span class="screen-reader-text"><?php esc_html_e( 'Home', 'siteorigin-north' ); ?></span><?php
 				echo wp_get_attachment_image( $logo, 'full', false, $attrs );
 			?></a><?php
 
+			do_action( 'siteorigin_north_logo_after' );
 		} elseif ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 			?><?php the_custom_logo(); ?><?php
 		} else {
 			if ( is_front_page() ) { ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php } else { ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php }
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php } else { ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			}
 		}
 
 		if ( ( $logo || ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) ) && siteorigin_setting( 'branding_site_title' ) ) {
+			do_action( 'siteorigin_north_logo_title_before' );
 			if ( is_front_page() ) { ?>
-			<h1 class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php } else { ?>
-			<p class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php }
+				<h1 class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php } else { ?>
+				<p class="logo-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			}
+			do_action( 'siteorigin_north_logo_title_after' );
 		}
 	}
 }
