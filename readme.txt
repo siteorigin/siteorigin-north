@@ -104,6 +104,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.14 - 01 March 2023 =
+* Added compatibility for the SiteOrigin Premium Logo Booster Addon.
+* WordPress PHP Coding Standards improvements.
+* WooCommerce: Updated templates to version `7.4.0`.
+
 = 1.19.13 - 05 November 2022 =
 * WooCommerce: Updated bundled templates to `7.0.1`.
 
