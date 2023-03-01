@@ -53,10 +53,9 @@ return array(
 		'footer_text_color' => 'footer__text_color',
 		'footer_link_color' => 'footer__link_color',
 		'footer_link_hover_color' => 'footer__link_hover_color',
-
 	),
 	'stylesheets' => array(
 		'style',
-		'woocommerce'
+		'woocommerce',
 	),
 );

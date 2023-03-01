@@ -5,8 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package siteorigin-north
- * @license GPL 2.0 
+ * @license GPL 2.0
  */
 
 /*
@@ -22,10 +21,11 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php
-	if ( have_comments() ) : ?>
+	if ( have_comments() ) { ?>
 		<h2 class="comments-title">
 			<?php
 			$comment_count = get_comments_number();
+
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
@@ -47,24 +47,23 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style' => 'ol',
-					'callback' => 'siteorigin_north_comment',
-					'short_ping' => true,
-				) );
+			wp_list_comments( array(
+				'style' => 'ol',
+				'callback' => 'siteorigin_north_comment',
+				'short_ping' => true,
+			) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php the_comments_navigation(); 
-	
-	endif; // Check for have_comments().
+		<?php the_comments_navigation();
+	} // Check for have_comments().
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'siteorigin-north' ); ?></p>
 	<?php
-	endif;
+	}
 
 	comment_form();
 	?>

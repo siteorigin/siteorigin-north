@@ -2,86 +2,84 @@
 /**
  * Template part for displaying single image format posts.
  *
- * @package siteorigin-north
  * @license GPL 2.0
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 
-	<?php if ( siteorigin_north_get_image() ) : ?>
+	<?php if ( siteorigin_north_get_image() ) { ?>
 		<div class="entry-image">
 			<?php echo siteorigin_north_get_image(); ?>
 		</div>
-	<?php elseif ( is_singular() && has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) : ?>
+	<?php } elseif ( is_singular() && has_post_thumbnail() && siteorigin_setting( 'blog_featured_single' ) ) { ?>
 		<div class="entry-thumbnail">
-			<?php siteorigin_north_entry_thumbnail() ?>
+			<?php siteorigin_north_entry_thumbnail(); ?>
 		</div>
-	<?php elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) : ?>
+	<?php } elseif ( has_post_thumbnail() && siteorigin_setting( 'blog_featured_archive' ) ) { ?>
 		<div class="entry-thumbnail">
-			<a href="<?php the_permalink() ?>">
+			<a href="<?php the_permalink(); ?>">
 				<div class="thumbnail-hover">
 					<span class="screen-reader-text"><?php esc_html_e( 'Open post', 'siteorigin-north' ); ?></span>
 					<span class="north-icon-add"></span>
 				</div>
-				<?php siteorigin_north_entry_thumbnail() ?>
+				<?php siteorigin_north_entry_thumbnail(); ?>
 			</a>
 		</div>
-	<?php endif; ?>
+	<?php } ?>
 
-	<?php if ( is_singular() ) : ?>
-		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
+	<?php if ( is_singular() ) { ?>
+		<?php if ( siteorigin_page_setting( 'page_title' ) ) { ?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php endif; ?>
+		<?php } ?>
 
 		<?php siteorigin_north_breadcrumbs(); ?>
 
-		<?php if ( siteorigin_page_setting( 'page_title' ) ) : ?>
+		<?php if ( siteorigin_page_setting( 'page_title' ) ) { ?>
 				<div class="entry-meta">
 					<?php siteorigin_north_post_meta(); ?>
 				</div><!-- .entry-meta -->
 			</header><!-- .entry-header -->
-		<?php endif; ?>
-	<?php else : ?>
+		<?php } ?>
+	<?php } else { ?>
 		<header class="entry-header">
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-			<?php if ( 'post' == get_post_type() ) : ?>
+			<?php if ( 'post' == get_post_type() ) { ?>
 				<ul class="entry-meta">
 					<?php siteorigin_north_post_meta(); ?>
 				</ul><!-- .entry-meta -->
-			<?php endif; ?>
+			<?php } ?>
 		</header><!-- .entry-header -->
-	<?php endif; ?>
+	<?php } ?>
 
 	<div class="entry-content">
-		<?php if ( is_singular() ) : ?>
-			<?php echo apply_filters( 'the_content', siteorigin_north_strip_image( get_the_content() ) ); // Display the content without first image ?>
-		<?php elseif ( siteorigin_setting( 'blog_post_content' ) == 'content' ) : ?>
+		<?php if ( is_singular() ) { ?>
+			<?php echo apply_filters( 'the_content', siteorigin_north_strip_image( get_the_content() ) ); // Display the content without first image?>
+		<?php } elseif ( siteorigin_setting( 'blog_post_content' ) == 'content' ) { ?>
 			<?php the_content( sprintf(
-				siteorigin_setting( 'blog_read_more_text' ) . esc_html__( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
-				get_the_title()
-			) ); ?>
-		<?php else : ?>
+	siteorigin_setting( 'blog_read_more_text' ) . esc_html__( '<span class="screen-reader-text"> "%s"</span>', 'siteorigin-north' ),
+	get_the_title()
+) ); ?>
+		<?php } else { ?>
 			<?php the_excerpt(); ?>
 			<?php if ( siteorigin_setting( 'blog_excerpt_post_link' ) ) { ?>
-				<a href="<?php the_permalink() ?>" class="more-link"><?php echo siteorigin_setting( 'blog_read_more_text' ) ?><span class="screen-reader-text">More Tag</span></a>
+				<a href="<?php the_permalink(); ?>" class="more-link"><?php echo siteorigin_setting( 'blog_read_more_text' ); ?><span class="screen-reader-text">More Tag</span></a>
 			<?php } ?>
-		<?php endif; ?>
+		<?php } ?>
 
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'siteorigin-north' ),
 				'after'  => '</div>',
 			) );
-		?>
+?>
 	</div><!-- .entry-content -->
 
-	<?php if ( is_singular() ) : ?>
+	<?php if ( is_singular() ) { ?>
 		<footer class="entry-footer">
 			<?php siteorigin_north_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+	<?php } ?>
 </article><!-- #post-## -->
