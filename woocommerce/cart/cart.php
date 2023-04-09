@@ -148,7 +148,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<?php if ( wc_coupons_enabled() ) { ?>
 							<div class="coupon">
-								<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'siteorigin-north' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?></button>
+								<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'siteorigin-north' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'siteorigin-north' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'siteorigin-north' ); ?>"><?php esc_html( 'Apply coupon', 'siteorigin-north' ); ?></button>
 								<?php do_action( 'woocommerce_cart_coupon' ); ?>
 							</div>
 						<?php } ?>
