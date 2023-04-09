@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 6.0
+Tested up to: 6.2
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -103,6 +103,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.19.15 - 09 April 2023 =
+* Moved breadcrumb functionality to SiteOrigin Settings framework.
 
 = 1.19.14 - 01 March 2023 =
 * Added compatibility for the SiteOrigin Premium Logo Booster Addon.
