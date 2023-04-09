@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.19.15 - 09 April 2023 =
+* Moved breadcrumb functionality to SiteOrigin Settings framework.
+
 = 1.19.14 - 01 March 2023 =
 * Added compatibility for the SiteOrigin Premium Logo Booster Addon.
 * WordPress PHP Coding Standards improvements.
