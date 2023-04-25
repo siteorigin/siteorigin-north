@@ -18,13 +18,10 @@ function siteorigin_north_settings_init() {
 					'label'       => __( 'Retina Logo', 'siteorigin-north' ),
 					'description' => __( 'A logo for use on high pixel density displays. Must be used in addition to standard logo and be exactly double the size.', 'siteorigin-north' ),
 					'teaser' => array(
-						'text' => __(
-							sprintf(
-								'Enhance your SiteOrigin theme logo functionality with the %sLogo Booster addon%s. Add an alternative logo on any page; upload a sticky logo to display on scroll.',
-								'<a href="https://siteorigin.com/downloads/premium/?featured_addon=theme/logo-booster" target="_blank" rel="noopener noreferrer">',
-								'</a>'
-							),
-							'siteorigin-north'
+						'text' => sprintf(
+							__( 'Enhance your SiteOrigin theme logo functionality with the %sLogo Booster addon%s. Add an alternative logo on any page; upload a sticky logo to display on scroll.', 'siteorigin-north' ),
+							'<a href="https://siteorigin.com/downloads/premium/?featured_addon=theme/logo-booster" target="_blank" rel="noopener noreferrer">',
+							'</a>'
 						),
 					),
 				),
