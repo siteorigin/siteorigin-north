@@ -347,7 +347,7 @@
 				scaledWidth = imgWidth * siteoriginNorth.logoScale,
 				scaledHeight = imgHeight * siteoriginNorth.logoScale;
 
-			$( ".site-branding img" ).wrap( "<div class='custom-logo-wrapper'></div>");
+			$( '.site-branding img' ).wrap( '<span class="custom-logo-wrapper"></span>' );
 
 			var smResizeLogo = function() {
 				var $branding = $mh.find( '.site-branding > *' ),
