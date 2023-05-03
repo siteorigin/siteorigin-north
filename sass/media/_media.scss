@@ -19,6 +19,35 @@ object {
 	box-shadow: none;
 }
 
+/* Fix a hover issue with Media Elements caused by our Button CSS */
+.mejs-play > button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) !important;
+}
+
+.mejs-pause > button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) -20px 0 !important;
+}
+
+.mejs-replay > button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) -160px 0 !important;
+}
+
+.mejs-fullscreen-button>button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) -80px 0 !important;
+}
+
+.mejs-unfullscreen>button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) -100px 0 !important
+}
+
+.mejs-mute>button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) -60px 0 !important;
+}
+
+.mejs-unmute>button {
+	background: transparent url( '/../../../wp-includes/js/mediaelement/mejs-controls.svg' ) -40px 0 !important;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
