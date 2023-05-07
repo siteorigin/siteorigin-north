@@ -240,12 +240,13 @@ article.page {
 }
 
 .breadcrumbs {
+	color: $color__text_light;
+	font-family: $font__detail;
+	font-size: 0.85em;
+	font-style: italic;
 	margin-bottom: 1.5em;
 	margin-top: -1.5em;
-	font-style: italic;
-	font-size: 0.85em;
-	font-family: $font__detail;
-	color: $color__text_light;
+	overflow: auto;
 
 	a {
 		color: inherit;
