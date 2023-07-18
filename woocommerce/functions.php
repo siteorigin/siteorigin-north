@@ -316,3 +316,47 @@ function siteorigin_north_wc_demo_store() {
 
 	echo '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'siteorigin-north' ) . '</a></p>';
 }
+
+if ( ! function_exists( 'siteorigin_north_wc_cart_contents' ) ) {
+	function siteorigin_north_wc_cart_contents() {
+		?>
+		<tr>
+			<td colspan="6" class="actions">
+				<?php woocommerce_cart_totals(); ?>
+			</td>
+		</tr>
+		<?php
+	}
+}
+add_action( 'woocommerce_cart_contents', 'siteorigin_north_wc_cart_contents' );
+
+if ( ! function_exists( 'siteorigin_north_wc_cart_actions' ) ) {
+	function siteorigin_north_wc_cart_actions() {
+		?>
+		<div class="cart-buttons">
+			<a class="button-continue-shopping button" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>">
+				<?php esc_html_e( 'Continue Shopping', 'siteorigin-north' ); ?>
+			</a>
+			
+			<a class="checkout-button button" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
+				<span class="north-icon-cart" aria-hidden="true"></span> <?php esc_html_e( 'Checkout', 'siteorigin-north' ); ?>
+			</a>
+		</div>
+		<?php
+	}
+}
+add_action( 'woocommerce_cart_actions', 'siteorigin_north_wc_cart_actions' );
+
+if ( ! function_exists( 'siteorigin_north_wc_cart_wrapper_open' ) ) {
+	function siteorigin_north_wc_cart_wrapper_open() {
+		echo '<div class="cart-wrapper">';
+	}
+}
+add_action( 'woocommerce_before_cart_table', 'siteorigin_north_wc_cart_wrapper_open' );
+
+if ( ! function_exists( 'siteorigin_north_wc_cart_wrapper_close' ) ) {
+	function siteorigin_north_wc_cart_wrapper_close() {
+		echo '</div>';
+	}
+}
+add_action( 'woocommerce_after_cart_table', 'siteorigin_north_wc_cart_wrapper_close' );
