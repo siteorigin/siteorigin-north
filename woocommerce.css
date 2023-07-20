@@ -532,7 +532,7 @@
   .woocommerce table.shop_table .wc-buttons .actions > .button {
     margin-top: 25px;
     order: 2; }
-  .woocommerce table.shop_table .wc-buttons .cart-buttons {
+  .woocommerce table.shop_table .wc-buttons .actions .cart-buttons {
     order: 3; }
 
 .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button {

@@ -325,10 +325,26 @@ if ( ! function_exists( 'siteorigin_north_wc_cart_contents' ) ) {
 				<?php woocommerce_cart_totals(); ?>
 			</td>
 		</tr>
+		<tr>
+			<td colspan="6" class="actions wc-buttons">
+				<table cellspacing="0">
+					<tbody>
 		<?php
 	}
 }
 add_action( 'woocommerce_cart_contents', 'siteorigin_north_wc_cart_contents' );
+
+if ( ! function_exists( 'siteorigin_north_wc_cart_contents_after' ) ) {
+	function siteorigin_north_wc_cart_contents_after() {
+		?>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<?php
+	}
+}
+add_action( 'woocommerce_after_cart_contents', 'siteorigin_north_wc_cart_contents_after' );
 
 if ( ! function_exists( 'siteorigin_north_wc_cart_actions' ) ) {
 	function siteorigin_north_wc_cart_actions() {
