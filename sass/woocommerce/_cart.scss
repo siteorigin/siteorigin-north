@@ -244,6 +244,36 @@
 					}
 				}
 			}
+
+			.wc-buttons {
+
+				tbody {
+					display: flex;
+				}
+
+				td {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 0.25em;
+					justify-content: right;
+				}
+
+				.coupon {
+					flex-basis: 100%;
+					flex-grow: 1;
+					order: 1;
+					text-align: left;
+				}
+
+				.actions > .button {
+					margin-top: 25px;
+					order: 2;
+				}
+
+				.cart-buttons {
+					order: 3;
+				}
+			}
 		}
 	}
 
