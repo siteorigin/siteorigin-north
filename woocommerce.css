@@ -524,11 +524,6 @@
     flex-wrap: wrap;
     gap: 0.25em;
     justify-content: right; }
-  .woocommerce table.shop_table .wc-buttons .coupon {
-    flex-basis: 100%;
-    flex-grow: 1;
-    order: 1;
-    text-align: left; }
   .woocommerce table.shop_table .wc-buttons .actions > .button {
     margin-top: 25px;
     order: 2; }
@@ -545,6 +540,18 @@
     border-color: #a94346;
     box-shadow: none;
     color: #fff; }
+
+body:not(.no-active-sidebar) .woocommerce table.shop_table .wc-buttons .coupon {
+  flex-basis: 100%;
+  flex-grow: 1;
+  order: 1;
+  text-align: right; }
+  body:not(.no-active-sidebar) .woocommerce table.shop_table .wc-buttons .coupon .input-text {
+    float: none; }
+
+body:not(.no-active-sidebar) .woocommerce table.shop_table .wc-buttons .actions > .button,
+body:not(.no-active-sidebar) .woocommerce table.shop_table .wc-buttons .cart-buttons {
+  margin-top: 10px; }
 
 #mobile-navigation .shopping-cart-link {
   margin-top: 1em;
