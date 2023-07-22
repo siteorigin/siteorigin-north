@@ -517,13 +517,18 @@
         .woocommerce table.shop_table .cart-buttons .button {
           margin-top: 0.5em;
           width: 100% !important; } }
-  .woocommerce table.shop_table .wc-buttons tbody {
-    display: flex; }
+  .woocommerce table.shop_table .wc-buttons tbody,
+  .woocommerce table.shop_table .wc-buttons tr,
   .woocommerce table.shop_table .wc-buttons td {
     display: flex;
+    width: 100%; }
+  .woocommerce table.shop_table .wc-buttons td {
     flex-wrap: wrap;
     gap: 0.25em;
     justify-content: right; }
+  .woocommerce table.shop_table .wc-buttons .coupon {
+    flex: 1;
+    text-align: left; }
   .woocommerce table.shop_table .wc-buttons .actions > .button {
     margin-top: 25px;
     order: 2; }

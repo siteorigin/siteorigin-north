@@ -247,18 +247,23 @@
 
 			.wc-buttons {
 
-				tbody {
+				tbody,
+				tr,
+				td {
 					display: flex;
+					width: 100%;
 				}
 
 				td {
-					display: flex;
 					flex-wrap: wrap;
 					gap: 0.25em;
 					justify-content: right;
 				}
 
-
+				.coupon {
+					flex: 1;
+					text-align: left;
+				}
 
 				.actions > .button {
 					margin-top: 25px;
