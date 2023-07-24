@@ -534,6 +534,14 @@
     order: 2; }
   .woocommerce table.shop_table .wc-buttons .actions .cart-buttons {
     order: 3; }
+  @media (max-width: 768px) {
+    .woocommerce table.shop_table .wc-buttons .cart-buttons {
+      width: 100%; }
+    .woocommerce table.shop_table .wc-buttons .button {
+      margin-top: 0; }
+    .woocommerce table.shop_table .wc-buttons .button.checkout-button,
+    .woocommerce table.shop_table .wc-buttons .coupon .button {
+      margin-top: 10px; } }
 
 .woocommerce .so-panel .wc-proceed-to-checkout .checkout-button {
   background: #c75d5d;

@@ -273,6 +273,22 @@
 				.actions .cart-buttons {
 					order: 3;
 				}
+
+				@media (max-width: 768px) {
+					.cart-buttons {
+						width: 100%;
+					}
+
+					.button {
+						margin-top: 0;
+					}
+
+					.button.checkout-button,
+					.coupon .button {
+						margin-top: 10px;
+					}
+
+				}
 			}
 
 		}
