@@ -104,7 +104,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
-= 1.20.8 - 4 December 2024 =
+= 1.20.9 - 23 March 2025 =
+* WooCommerce: Updated meta template from 3.0.0 to 9.7.0.
+* Updated SiteOrigin Settings.
+
+= 1.20.8 - 04 December 2024 =
 * Resolved Read More button linking when Archive Post Content set to Post Excerpt.
 
 = 1.20.7 - 22 November 2024 =
