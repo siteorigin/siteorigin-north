@@ -142,3 +142,18 @@ if ( ! function_exists( 'siteorigin_north_excerpt_length' ) ) {
 	}
 }
 add_filter( 'excerpt_length', 'siteorigin_north_excerpt_length', 999 );
+
+if ( ! function_exists( 'siteorigin_north_read_more_link' ) ) {
+	/*
+	 * Filter the excerpt "read more" link, and remove the '#more' anchor.
+	 */
+	function siteorigin_north_read_more_link( $link ) {
+		$pos = strpos( $link, '#more-' );
+		if ( $pos !== false ) {
+			$link = preg_replace('/#more-\d+/', '', $link);
+		}
+
+		return $link;
+	}
+}
+add_filter( 'the_content_more_link', 'siteorigin_north_read_more_link', 10, 1 );
