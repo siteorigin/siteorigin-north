@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.10 - 19 June 2025 =
+* Updated SiteOrigin Settings.
+
 = 1.20.9 - 23 March 2025 =
 * WooCommerce: Updated meta template from 3.0.0 to 9.7.0.
 * Updated SiteOrigin Settings.
