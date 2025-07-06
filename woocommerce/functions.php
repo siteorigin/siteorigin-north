@@ -45,12 +45,20 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_change_hooks' ) ) {
 		add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_loop_rating', 15 );
 		add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
 		add_action( 'siteorigin_north_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
-
-		// Remove the demo store notice.
-		remove_action( 'wp_footer', 'woocommerce_demo_store' );
 	}
 }
 add_action( 'after_setup_theme', 'siteorigin_north_woocommerce_change_hooks' );
+
+if ( ! function_exists( 'siteorigin_north_remove_duplicate_store_notice' ) ) {
+	/**
+	 * Remove duplicate store notice with high priority.
+	 */
+	function siteorigin_north_remove_duplicate_store_notice() {
+		remove_action( 'wp_body_open', 'woocommerce_demo_store' );
+		remove_action( 'wp_footer', 'woocommerce_demo_store' );
+	}
+}
+add_action( 'init', 'siteorigin_north_remove_duplicate_store_notice', 100 );
 
 // Make sure cart widget is displayed on cart & checkout pages.
 function siteorigin_north_woocommerce_widget_cart_is_hidden( $is_cart ) {
