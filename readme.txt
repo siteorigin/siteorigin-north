@@ -104,6 +104,9 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.20.11 - 26 July 2025 =
+* Resolved duplicate WooCommerce notice.
+
 = 1.20.10 - 19 June 2025 =
 * Updated SiteOrigin Settings.
 
