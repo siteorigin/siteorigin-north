@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 6.7
+Tested up to: 6.8
 Requires at least: 4.7
 Requires PHP: 7.0.0
 License: GPLv2 or later
@@ -103,6 +103,9 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.20.11 - 26 July 2025 =
+* Resolved duplicate WooCommerce notice.
 
 = 1.20.10 - 19 June 2025 =
 * Updated SiteOrigin Settings.
