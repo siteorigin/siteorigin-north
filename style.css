@@ -1334,21 +1334,25 @@ body.page-layout-stripped #main.site-main {
   margin-top: 0; }
 
 .page-layout-menu-overlap #masthead {
-  position: absolute;
-  top: 0;
   left: 0;
+  top: 0;
   width: 100%;
-  z-index: 101;
-  opacity: 0.975; }
+  z-index: 101; }
 
 .page-layout-menu-overlap .masthead-sentinel {
   display: none !important; }
 
-.page-layout-menu-overlap.admin-bar #masthead {
+.page-layout-menu-overlap:not(.sticky-menu) #masthead {
+  position: absolute; }
+
+.page-layout-menu-overlap:not(.sticky-menu).admin-bar #masthead {
   top: 32px; }
   @media screen and (max-width: 782px) {
-    .page-layout-menu-overlap.admin-bar #masthead {
+    .page-layout-menu-overlap:not(.sticky-menu).admin-bar #masthead {
       top: 46px; } }
+
+.page-layout-menu-overlap.sticky-menu #masthead {
+  position: absolute; }
 
 /*--------------------------------------------------------------
 ## Site Masthead
