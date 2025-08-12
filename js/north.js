@@ -398,7 +398,7 @@
 		// Now lets do the sticky menu.
 		if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 			var $mh = $( '#masthead' ),
-				$mhs = $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh ),
+				$mhs = ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ? $( '<div class="masthead-sentinel"></div>' ).insertAfter( $mh ) : $(),
 				$tb = $( '#topbar' ),
 				$wpab = $( '#wpadminbar' );
 
@@ -412,7 +412,10 @@
 
 			// Sticky header shadow.
 			var smShadow = function() {
-				if ( $( window ).scrollTop() > whenToStickyMh() ) {
+				var scrollTop = $( window ).scrollTop();
+				var stickyThreshold = $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ? 10 : whenToStickyMh();
+				
+				if ( scrollTop > stickyThreshold ) {
 					$( $mh ).addClass( 'floating' );
 				} else {
 					$( $mh ).removeClass( 'floating' );
@@ -438,16 +441,58 @@
 					$( 'body' ).removeClass( 'topbar-out' );
 				}
 
-				if (
-					$( 'body' ).hasClass( 'no-topbar' ) ||
-					(
-						! $( 'body' ).hasClass( 'no-topbar' ) &&
-						$( 'body' ).hasClass( 'topbar-out' )
-					)
-				) {
-					$mh.css( 'position', 'fixed' );
-				} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
-					$mh.css( 'position', 'absolute' );
+				// Handle hybrid positioning for menu overlap + sticky combination
+				if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+					var scrollTop = $( window ).scrollTop();
+					var wpabMobile = $( window ).width() <= 600;
+					var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
+					var tbHeight = $tb.length && siteoriginNorth.stickyTopbar ? $tb.outerHeight() : 0;
+					var adminBarOffset = $( 'body' ).hasClass( 'admin-bar' ) ? wpabHeight : 0;
+					
+					// On mobile with admin bar, use mobile-specific offset
+					if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+						adminBarOffset = $wpab.length ? 46 : 0; // Mobile admin bar height
+					}
+
+					// Start with absolute positioning (overlap effect with transparency)
+					if ( scrollTop <= 10 ) {
+						$mh.css( {
+							'position': 'absolute',
+							'top': adminBarOffset + 'px'
+						} );
+					} else {
+						// Transition to fixed positioning (sticky effect, remove transparency)
+						var topPosition = adminBarOffset;
+						
+						// On mobile, don't offset for admin bar when scrolled (like mobile-sticky-menu)
+						if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+							if ( ! $wpab.northIsVisible() ) {
+								topPosition = 0; // No admin bar offset when scrolled on mobile
+							}
+						}
+						
+						if ( $tb.length && siteoriginNorth.stickyTopbar && $( 'body' ).hasClass( 'topbar-out' ) ) {
+							topPosition += tbHeight;
+						}
+						
+						$mh.css( {
+							'position': 'fixed',
+							'top': topPosition + 'px'
+						} );
+					}
+				} else {
+					// Original non-overlap sticky positioning logic
+					if (
+						$( 'body' ).hasClass( 'no-topbar' ) ||
+						(
+							! $( 'body' ).hasClass( 'no-topbar' ) &&
+							$( 'body' ).hasClass( 'topbar-out' )
+						)
+					) {
+						$mh.css( 'position', 'fixed' );
+					} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) &&  ! $( 'body' ).hasClass( 'topbar-out' ) ) {
+						$mh.css( 'position', 'absolute' );
+					}
 				}
 
 				if ( $( 'body' ).hasClass( 'no-topbar' ) && ! $( window ).scrollTop() ) {
