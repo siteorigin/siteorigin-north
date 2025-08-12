@@ -28,6 +28,7 @@ return array(
 
 		// Header.
 		'masthead_background_color' => 'masthead__background_color',
+		'masthead_background_overlap_opacity' => 'masthead__background_overlap_opacity',
 		'masthead_top_background_color' => 'masthead__top_background_color',
 		'masthead_border_color' => 'masthead__border_color',
 		'masthead_border_width' => 'masthead__border_width',

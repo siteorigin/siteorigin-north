@@ -192,6 +192,15 @@ function siteorigin_north_settings_init() {
 					'label' => __( 'Background Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
+				'background_overlap_opacity' => array(
+					'type'        => 'range',
+					'label'       => __( 'Background Color Overlap Opacity', 'siteorigin-north' ),
+					'description' => __( 'Background opacity when header overlaps content.', 'siteorigin-north' ),
+					'min'         => 0,
+					'max'         => 1,
+					'step'        => 0.01,
+					'live'        => true,
+				),
 				'top_background_color' => array(
 					'type'  => 'color',
 					'label' => __( 'Background Top Color', 'siteorigin-north' ),
@@ -877,6 +886,9 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	#commentform input,#commentform textarea {
 	background-color: ${fonts_field_background};
+	}
+	.page-layout-menu-overlap #masthead:not(.floating) {
+	background: .rgba( ${masthead_background_color}, ${masthead_background_overlap_opacity});
 	}';
 
 	return $css;
@@ -1201,6 +1213,7 @@ function siteorigin_north_settings_defaults( $defaults ) {
 	$defaults['masthead_layout']                           = 'default';
 	$defaults['masthead_text_above']                       = '';
 	$defaults['masthead_background_color']                 = '#fafafa';
+	$defaults['masthead_background_overlap_opacity']       = '0.975';
 	$defaults['masthead_top_background_color']             = '#f4f4f4';
 	$defaults['masthead_border_color']                     = '#d4d4d4';
 	$defaults['masthead_border_width']                     = '1px';
