@@ -29,24 +29,35 @@ body.page-layout-stripped {
 
 .page-layout-menu-overlap {
 
-    #masthead {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 101;
-        opacity: 0.975;
-    }
+	#masthead {
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 101;
+	}
 
-    .masthead-sentinel {
-        display: none !important;
-    }
+	.masthead-sentinel {
+		display: none !important;
+	}
 
-    &.admin-bar #masthead{
-        top: 32px;
+	// Only force absolute positioning when sticky is NOT enabled
+	&:not(.sticky-menu) #masthead {
+		position: absolute;
+	}
 
-        @media screen and (max-width: 782px) {
-            top: 46px;
-        }
-    }
+	// Admin bar positioning for non-sticky cases
+	&:not(.sticky-menu).admin-bar #masthead {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+	}
+
+	// For sticky + overlap combination, let JavaScript handle positioning
+	// but ensure initial absolute positioning for overlap effect
+	&.sticky-menu #masthead {
+		position: absolute;
+	}
+
 }
