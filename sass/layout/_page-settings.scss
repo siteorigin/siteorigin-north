@@ -29,24 +29,38 @@ body.page-layout-stripped {
 
 .page-layout-menu-overlap {
 
+	#topbar {
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 102;
+	}
+
+	// Ensure topbar uses absolute positioning when overlap enabled.
+	&:not(.sticky-menu) #topbar {
+		position: absolute;
+	}
+
 	#masthead {
 		left: 0;
-		top: 0;
 		width: 100%;
 		z-index: 101;
 	}
+
+	// CSS handles initial positioning relationships.
 
 	.masthead-sentinel {
 		display: none !important;
 	}
 
-	// Only force absolute positioning when sticky is NOT enabled
+	// Only force absolute positioning when sticky is NOT enabled.
 	&:not(.sticky-menu) #masthead {
 		position: absolute;
 	}
 
-	// Admin bar positioning for non-sticky cases
-	&:not(.sticky-menu).admin-bar #masthead {
+	// Admin bar positioning for topbar.
+	&:not(.sticky-menu).admin-bar #topbar {
 		top: 32px;
 
 		@media screen and (max-width: 782px) {
@@ -54,8 +68,39 @@ body.page-layout-stripped {
 		}
 	}
 
-	// For sticky + overlap combination, let JavaScript handle positioning
-	// but ensure initial absolute positioning for overlap effect
+	// Admin bar positioning for header when topbar present.
+	&:not(.sticky-menu).admin-bar:not(.no-topbar) #masthead {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+	}
+
+	// Admin bar positioning for header when no topbar.
+	&:not(.sticky-menu).admin-bar.no-topbar #masthead {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+	}
+
+	// Apply transparency to overlapping elements when not in sticky state.
+	#topbar:not(.floating) {
+		background: rgba(244, 244, 244, 0.975);
+	}
+
+	#masthead:not(.floating) {
+		background: rgba(250, 250, 250, 0.975);
+	}
+
+	// Topbar maintains absolute positioning regardless of sticky menu setting.
+	&.sticky-menu #topbar {
+		position: absolute;
+	}
+
+	// Header initial positioning for overlap with sticky menu enabled.
 	&.sticky-menu #masthead {
 		position: absolute;
 	}

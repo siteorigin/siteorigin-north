@@ -1333,9 +1333,18 @@ body.page-layout-stripped #main.site-main {
 .page-layout-no-footer-margin #colophon {
   margin-top: 0; }
 
+.page-layout-menu-overlap #topbar {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 102; }
+
+.page-layout-menu-overlap:not(.sticky-menu) #topbar {
+  position: absolute; }
+
 .page-layout-menu-overlap #masthead {
   left: 0;
-  top: 0;
   width: 100%;
   z-index: 101; }
 
@@ -1345,11 +1354,32 @@ body.page-layout-stripped #main.site-main {
 .page-layout-menu-overlap:not(.sticky-menu) #masthead {
   position: absolute; }
 
-.page-layout-menu-overlap:not(.sticky-menu).admin-bar #masthead {
+.page-layout-menu-overlap:not(.sticky-menu).admin-bar #topbar {
   top: 32px; }
   @media screen and (max-width: 782px) {
-    .page-layout-menu-overlap:not(.sticky-menu).admin-bar #masthead {
+    .page-layout-menu-overlap:not(.sticky-menu).admin-bar #topbar {
       top: 46px; } }
+
+.page-layout-menu-overlap:not(.sticky-menu).admin-bar:not(.no-topbar) #masthead {
+  top: 32px; }
+  @media screen and (max-width: 782px) {
+    .page-layout-menu-overlap:not(.sticky-menu).admin-bar:not(.no-topbar) #masthead {
+      top: 46px; } }
+
+.page-layout-menu-overlap:not(.sticky-menu).admin-bar.no-topbar #masthead {
+  top: 32px; }
+  @media screen and (max-width: 782px) {
+    .page-layout-menu-overlap:not(.sticky-menu).admin-bar.no-topbar #masthead {
+      top: 46px; } }
+
+.page-layout-menu-overlap #topbar:not(.floating) {
+  background: rgba(244, 244, 244, 0.975); }
+
+.page-layout-menu-overlap #masthead:not(.floating) {
+  background: rgba(250, 250, 250, 0.975); }
+
+.page-layout-menu-overlap.sticky-menu #topbar {
+  position: absolute; }
 
 .page-layout-menu-overlap.sticky-menu #masthead {
   position: absolute; }
