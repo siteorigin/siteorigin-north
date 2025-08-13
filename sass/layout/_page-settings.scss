@@ -35,6 +35,7 @@ body.page-layout-stripped {
 		top: 0;
 		width: 100%;
 		z-index: 102;
+		visibility: hidden; // Hidden until JS positioning complete.
 	}
 
 	// Ensure topbar uses absolute positioning when overlap enabled.
@@ -46,6 +47,7 @@ body.page-layout-stripped {
 		left: 0;
 		width: 100%;
 		z-index: 101;
+		visibility: hidden; // Hidden until JS positioning complete.
 	}
 
 	// CSS handles initial positioning relationships.
