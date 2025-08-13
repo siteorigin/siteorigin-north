@@ -1338,7 +1338,8 @@ body.page-layout-stripped #main.site-main {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 102; }
+  z-index: 102;
+  visibility: hidden; }
 
 .page-layout-menu-overlap:not(.sticky-menu) #topbar {
   position: absolute; }
@@ -1346,7 +1347,8 @@ body.page-layout-stripped #main.site-main {
 .page-layout-menu-overlap #masthead {
   left: 0;
   width: 100%;
-  z-index: 101; }
+  z-index: 101;
+  visibility: hidden; }
 
 .page-layout-menu-overlap .masthead-sentinel {
   display: none !important; }
