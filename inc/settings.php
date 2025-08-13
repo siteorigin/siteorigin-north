@@ -206,6 +206,15 @@ function siteorigin_north_settings_init() {
 					'label' => __( 'Background Top Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
+				'top_background_overlap_opacity' => array(
+					'type'        => 'range',
+					'label'       => __( 'Background Top Color Overlap Opacity', 'siteorigin-north' ),
+					'description' => __( 'Top bar background opacity when header overlaps content.', 'siteorigin-north' ),
+					'min'         => 0,
+					'max'         => 1,
+					'step'        => 0.01,
+					'live'        => true,
+				),
 				'border_color'         => array(
 					'type'  => 'color',
 					'label' => __( 'Border Color', 'siteorigin-north' ),
@@ -889,6 +898,9 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	.page-layout-menu-overlap #masthead:not(.floating) {
 	background: .rgba( ${masthead_background_color}, ${masthead_background_overlap_opacity});
+	}
+	.page-layout-menu-overlap #topbar:not(.floating) {
+	background: .rgba( ${masthead_top_background_color}, ${masthead_top_background_overlap_opacity});
 	}';
 
 	return $css;
@@ -1215,6 +1227,7 @@ function siteorigin_north_settings_defaults( $defaults ) {
 	$defaults['masthead_background_color']                 = '#fafafa';
 	$defaults['masthead_background_overlap_opacity']       = '0.975';
 	$defaults['masthead_top_background_color']             = '#f4f4f4';
+	$defaults['masthead_top_background_overlap_opacity']   = '0.975';
 	$defaults['masthead_border_color']                     = '#d4d4d4';
 	$defaults['masthead_border_width']                     = '1px';
 	$defaults['masthead_padding']                          = '30px';
