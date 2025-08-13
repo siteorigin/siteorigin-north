@@ -326,6 +326,52 @@
 		var scrollOnLoad = true;
 	}
 
+	// Handle menu overlap positioning on DOMContentLoaded for CLS prevention.
+	$( document ).ready( function() {
+		if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
+			var $mh = $( '#masthead' ),
+				$tb = $( '#topbar' ),
+				$wpab = $( '#wpadminbar' );
+
+			var earlyOverlapPositioning = function() {
+				var wpabMobile = $( window ).width() <= 600;
+				var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
+				var adminBarOffset = $( 'body' ).hasClass( 'admin-bar' ) ? wpabHeight : 0;
+
+				// Mobile admin bar requires different offset height.
+				if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
+					adminBarOffset = $wpab.length ? 46 : 0;
+				}
+
+				// Set topbar position when present.
+				if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
+					var tbHeight = $tb.outerHeight();
+					$tb.css( {
+						'position': 'absolute',
+						'top': adminBarOffset + 'px',
+						'visibility': 'visible'
+					} );
+					// Header positioned below topbar to maintain visual hierarchy.
+					$mh.css( {
+						'position': 'absolute',
+						'top': ( adminBarOffset + tbHeight ) + 'px',
+						'visibility': 'visible'
+					} );
+				} else {
+					// Header positioned at admin bar offset when topbar absent.
+					$mh.css( {
+						'position': 'absolute',
+						'top': adminBarOffset + 'px',
+						'visibility': 'visible'
+					} );
+				}
+			};
+
+			// Run initial positioning on DOM ready.
+			earlyOverlapPositioning();
+		}
+	} );
+
 	$( window ).on( 'load', function() {
 		siteoriginNorth.logoScale = parseFloat( siteoriginNorth.logoScale );
 
@@ -395,49 +441,6 @@
 			$( window ).on( 'scroll resize', smResizeLogo );
 		}
 
-		// Handle menu overlap positioning independent of sticky menu setting.
-		if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) && ! $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
-			// Menu overlap WITHOUT sticky menu.
-			var $mh = $( '#masthead' ),
-				$tb = $( '#topbar' ),
-				$wpab = $( '#wpadminbar' );
-
-			var overlapPositioning = function() {
-				var wpabMobile = $( window ).width() <= 600;
-				var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
-				var adminBarOffset = $( 'body' ).hasClass( 'admin-bar' ) ? wpabHeight : 0;
-
-				// Mobile admin bar requires different offset height.
-				if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
-					adminBarOffset = $wpab.length ? 46 : 0;
-				}
-
-				// Set topbar position when present.
-				if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
-					var tbHeight = $tb.outerHeight();
-					$tb.css( {
-						'position': 'absolute',
-						'top': adminBarOffset + 'px'
-					} );
-					// Header positioned below topbar to maintain visual hierarchy.
-					$mh.css( {
-						'position': 'absolute',
-						'top': ( adminBarOffset + tbHeight ) + 'px'
-					} );
-				} else {
-					// Header positioned at admin bar offset when topbar absent.
-					$mh.css( {
-						'position': 'absolute',
-						'top': adminBarOffset + 'px'
-					} );
-				}
-			};
-
-			// Run on load and resize.
-			overlapPositioning();
-			$( window ).on( 'resize', overlapPositioning );
-		}
-
 		// Now lets do the sticky menu.
 		if ( $( '#masthead' ).hasClass( 'sticky-menu' ) ) {
 			var $mh = $( '#masthead' ),
@@ -504,18 +507,21 @@
 							var tbHeight = $tb.outerHeight();
 							$tb.css( {
 								'position': 'absolute',
-								'top': adminBarOffset + 'px'
+								'top': adminBarOffset + 'px',
+								'visibility': 'visible'
 							} );
 							// Header positioned below topbar to maintain visual hierarchy.
 							$mh.css( {
 								'position': 'absolute',
-								'top': ( adminBarOffset + tbHeight ) + 'px'
+								'top': ( adminBarOffset + tbHeight ) + 'px',
+								'visibility': 'visible'
 							} );
 						} else {
 							// Header positioned at admin bar offset when topbar absent.
 							$mh.css( {
 								'position': 'absolute',
-								'top': adminBarOffset + 'px'
+								'top': adminBarOffset + 'px',
+								'visibility': 'visible'
 							} );
 						}
 					} else {
