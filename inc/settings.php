@@ -945,11 +945,13 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
-	.woocommerce button.button.alt,.woocommerce #review_form #respond .form-submit input,.woocommerce .woocommerce-message .button,.woocommerce .products .button {
-	color: ${fonts_text_dark};
-	.font( ${fonts_headings} );
+	.woocommerce button.button.alt,.woocommerce #review_form #respond .form-submit input,.woocommerce .woocommerce-message .button,.woocommerce .products
+	.button {
+		color: ${fonts_text_dark};
+		.font( ${fonts_headings} );
 	}
-	.woocommerce button.button.alt:hover,.woocommerce #review_form #respond .form-submit input:hover,.woocommerce .woocommerce-message .button:hover,.woocommerce .products .button:hover {
+	.woocommerce button.button.alt:hover,.woocommerce #review_form #respond .form-submit input:hover,.woocommerce .woocommerce-message
+	.button:hover,.woocommerce .products .button:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
@@ -999,8 +1001,7 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.woocommerce table.shop_table .button.checkout-button,
-	.woocommerce .so-panel .wc-proceed-to-checkout .checkout-button.button {
+	.woocommerce table.shop_table .button.checkout-button {
 	background: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
