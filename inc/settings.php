@@ -173,33 +173,12 @@ function siteorigin_north_settings_init() {
 		'masthead'    => array(
 			'title'  => __( 'Header', 'siteorigin-north' ),
 			'fields' => array(
-				'layout'               => array(
-					'type'    => 'select',
-					'label'   => __( 'Header layout', 'siteorigin-north' ),
-					'options' => array(
-						'default'  => __( 'Default', 'siteorigin-north' ),
-						'centered' => __( 'Centered', 'siteorigin-north' ),
-					),
-				),
+				// Top Bar Settings
 				'text_above'           => array(
 					'type'              => 'text',
 					'label'             => __( 'Text Above', 'siteorigin-north' ),
 					'description'       => __( 'Text that goes above the main header.', 'siteorigin-north' ),
 					'sanitize_callback' => 'wp_kses_post',
-				),
-				'background_color'     => array(
-					'type'  => 'color',
-					'label' => __( 'Background Color', 'siteorigin-north' ),
-					'live'  => true,
-				),
-				'background_overlap_opacity' => array(
-					'type'        => 'range',
-					'label'       => __( 'Background Color Overlap Opacity', 'siteorigin-north' ),
-					'description' => __( 'Background opacity when header overlaps content.', 'siteorigin-north' ),
-					'min'         => 0,
-					'max'         => 1,
-					'step'        => 0.01,
-					'live'        => true,
 				),
 				'top_background_color' => array(
 					'type'  => 'color',
@@ -210,6 +189,34 @@ function siteorigin_north_settings_init() {
 					'type'        => 'range',
 					'label'       => __( 'Background Top Color Overlap Opacity', 'siteorigin-north' ),
 					'description' => __( 'Top bar background opacity when header overlaps content.', 'siteorigin-north' ),
+					'min'         => 0,
+					'max'         => 1,
+					'step'        => 0.01,
+					'live'        => true,
+				),
+				'top_padding'          => array(
+					'type'              => 'measurement',
+					'label'             => __( 'Top Bar Widgets Padding', 'siteorigin-north' ),
+					'live'              => false,
+				),
+				// Header Settings
+				'layout'               => array(
+					'type'    => 'select',
+					'label'   => __( 'Header layout', 'siteorigin-north' ),
+					'options' => array(
+						'default'  => __( 'Default', 'siteorigin-north' ),
+						'centered' => __( 'Centered', 'siteorigin-north' ),
+					),
+				),
+				'background_color'     => array(
+					'type'  => 'color',
+					'label' => __( 'Background Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'background_overlap_opacity' => array(
+					'type'        => 'range',
+					'label'       => __( 'Background Color Overlap Opacity', 'siteorigin-north' ),
+					'description' => __( 'Background opacity when header overlaps content.', 'siteorigin-north' ),
 					'min'         => 0,
 					'max'         => 1,
 					'step'        => 0.01,
@@ -228,11 +235,6 @@ function siteorigin_north_settings_init() {
 				'padding'              => array(
 					'type'              => 'measurement',
 					'label'             => __( 'Padding', 'siteorigin-north' ),
-					'live'              => false,
-				),
-				'top_padding'          => array(
-					'type'              => 'measurement',
-					'label'             => __( 'Top Bar Widgets Padding', 'siteorigin-north' ),
 					'live'              => false,
 				),
 				'bottom_margin'        => array(
