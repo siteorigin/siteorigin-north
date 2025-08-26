@@ -399,19 +399,18 @@
 				var $branding = $mh.find( '.site-branding > *' ),
 					top = window.pageYOffset || document.documentElement.scrollTop;
 
-				// Check if the menu is meant to be sticky or not, and if it is apply padding/class
+				// Calculate padding scale based on scroll position (gradual transition like the logo).
+				var paddingScale = 1;
 				if ( top > 0 ) {
-					$mh.css( {
-						'padding-top': mhPadding.top * siteoriginNorth.logoScale,
-						'padding-bottom': mhPadding.bottom * siteoriginNorth.logoScale
-					} );
-
-				} else {
-					$mh.css( {
-						'padding-top': mhPadding.top,
-						'padding-bottom': mhPadding.bottom
-					} );
+					// Gradual transition over first 48px of scroll, matching logo scaling.
+					paddingScale = siteoriginNorth.logoScale + ( Math.max( 0, 48 - top ) / 48 * ( 1 - siteoriginNorth.logoScale ) );
 				}
+
+				// Apply scaled padding.
+				$mh.css( {
+					'padding-top': mhPadding.top * paddingScale,
+					'padding-bottom': mhPadding.bottom * paddingScale
+				} );
 
 				if ( $img.length ) {
 					// Are we at the top of the page?
