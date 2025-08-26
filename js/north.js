@@ -477,8 +477,8 @@
 						// Threshold is when we've scrolled past where the top bar ends.
 						stickyThreshold = $tb.outerHeight() + adminBarOffset - 1;
 					} else {
-						// Without top bar, use small threshold for immediate sticky behavior.
-						stickyThreshold = 10;
+						// Without top bar, use zero threshold for seamless sticky behavior.
+						stickyThreshold = 0;
 					}
 				} else {
 					// Non-overlap pages use the standard calculation.
@@ -525,7 +525,7 @@
 					}
 
 					// Initial overlap state with absolute positioning.
-					if ( scrollTop <= 10 ) {
+					if ( scrollTop <= 0 ) {
 						// Set topbar position when present.
 						if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
 							var tbHeight = $tb.outerHeight();
