@@ -477,7 +477,7 @@
 						// Threshold is when we've scrolled past where the top bar ends.
 						stickyThreshold = $tb.outerHeight() + adminBarOffset - 1;
 					} else {
-						// Without top bar, use zero threshold for seamless sticky behavior.
+						// Without top bar, add shadow immediately when scrolling starts.
 						stickyThreshold = 0;
 					}
 				} else {
