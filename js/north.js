@@ -47,14 +47,28 @@
 		} );
 	};
 
-	// Check if an element is visible in the viewport.
-	$.fn.northIsVisible = function() {
-		var rect = this[0].getBoundingClientRect();
+
+	/**
+	 * Checks if an element is visible in the viewport.
+	 *
+	 * This function optionally factors in the admin bar.
+	 *
+	 * @param {number} adminBarOffset - The height of the admin bar, if present.
+	 *
+	 * @returns {boolean} - True if the element is visible in the viewport, false otherwise.
+	 */
+	$.fn.northIsVisible = function( adminBarOffset = 32 ) {
+		const rect = this[0].getBoundingClientRect();
+
 		return (
-			rect.bottom >= 0 &&
 			rect.right >= 0 &&
-			rect.top <= ( window.innerHeight || document.documentElement.clientHeight ) &&
-			rect.left <= ( window.innerWidth || document.documentElement.clientWidth )
+			rect.bottom - adminBarOffset >= 0 &&
+			rect.top + adminBarOffset <= (
+				window.innerHeight || document.documentElement.clientHeight
+			) &&
+			rect.left <= (
+				window.innerWidth || document.documentElement.clientWidth
+			)
 		);
 	};
 
