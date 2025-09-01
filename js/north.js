@@ -643,9 +643,18 @@
 							topBarHidden
 						)
 					) {
-						$mh.css( 'position', 'fixed' );
-					} else if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $( 'body' ).hasClass( 'topbar-out' ) ) {
-						$mh.css( 'position', 'absolute' );
+						$mh.css({
+							'position': 'fixed',
+							'top': adminBarOffset + 'px',
+						});
+					} else if (
+						! $( 'body' ).hasClass( 'no-topbar' ) &&
+						! topBarHidden
+					) {
+						$mh.css({
+							'position': 'absolute',
+							'top': 'auto',
+						});
 					}
 				}
 
