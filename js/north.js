@@ -591,15 +591,6 @@
 						}
 					} else {
 						// Header transitions to fixed positioning while topbar remains absolute.
-
-						// Remove admin bar offset on mobile when admin bar not visible.
-						if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
-							if ( ! $wpab.northIsVisible() ) {
-								stickyTop = 0;
-							}
-						}
-
-						// Apply fixed positioning to header.
 						$mh.css( {
 							'position': 'fixed',
 							'top': adjustMastheadTop(
