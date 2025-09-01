@@ -528,31 +528,7 @@
 			// Sticky header shadow.
 			var smShadow = function() {
 				var scrollTop = $( window ).scrollTop();
-				var stickyThreshold;
-
-				if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
-					// For overlap pages, calculate threshold based on top bar presence.
-					if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
-						// When top bar exists, header becomes sticky after scrolling past the top bar.
-						var wpabMobile = $( window ).width() <= 600;
-						var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
-						var adminBarOffset = $( 'body' ).hasClass( 'admin-bar' ) ? wpabHeight : 0;
-
-						// Mobile admin bar requires different offset height.
-						if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
-							adminBarOffset = $wpab.length ? 46 : 0;
-						}
-
-						// Threshold is when we've scrolled past where the top bar ends.
-						stickyThreshold = $tb.outerHeight() + adminBarOffset - 1;
-					} else {
-						// Without top bar, add shadow immediately when scrolling starts.
-						stickyThreshold = 0;
-					}
-				} else {
-					// Non-overlap pages use the standard calculation.
-					stickyThreshold = whenToStickyMh();
-				}
+				var stickyThreshold = whenToStickyMh();
 
 				if ( scrollTop > stickyThreshold ) {
 					$( $mh ).addClass( 'floating' );
