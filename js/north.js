@@ -392,7 +392,7 @@
 			return adminBarOffset;
 		}
 
-		// Calculate the Y end position of the top bar relative to the page
+		// Calculate the Y end position of the top bar relative to the page.
 		var tbEndY = $tb.length ?
 			$tb.offset().top + $tb.outerHeight() - pageY :
 			0;
