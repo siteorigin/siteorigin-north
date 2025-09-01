@@ -57,8 +57,8 @@
 	 *
 	 * @returns {boolean} - True if the element is visible in the viewport, false otherwise.
 	 */
-	$.fn.northIsVisible = function( adminBarOffset = 32 ) {
-		const rect = this[0].getBoundingClientRect();
+	$.fn.northIsVisible = function( adminBarOffset ) {
+		var rect = this[0].getBoundingClientRect();
 
 		return (
 			rect.right >= 0 &&
@@ -86,13 +86,13 @@
 	 * @returns {number} - The height of the admin bar in pixels, or 0 if the admin
 	 *                     bar is not present.
 	 */
-	const getAdminBarOffset = ( $wpab ) => {
+	var getAdminBarOffset = function( $wpab ) {
 		if ( ! $wpab.length ) {
 			return 0;
 		}
 
-		const wpabMobile = $( window ).width() <= 600;
-		let adminBarOffset = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 46;
+		var wpabMobile = $( window ).width() <= 600;
+		var adminBarOffset = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 46;
 
 
 		// On mobile, the admin bar has a fixed position so we need to scale the
@@ -382,11 +382,11 @@
 	 *
 	 * @returns {number} - The calculated top position for the masthead.
 	 */
-	const adjustMastheadTop = function(
+	var adjustMastheadTop = function(
 		pageY,
 		adminBarOffset,
 		$tb,
-		topBarHidden = false,
+		topBarHidden
 	) {
 		if ( topBarHidden ) {
 			return adminBarOffset;
@@ -411,7 +411,7 @@
 				$wpab = $( '#wpadminbar' );
 
 			var earlyOverlapPositioning = function() {
-				const adminBarOffset = getAdminBarOffset( $wpab );
+				var adminBarOffset = getAdminBarOffset( $wpab );
 
 				// Set topbar position when present.
 				if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
@@ -549,7 +549,7 @@
 					$mhs.css( 'height', $mh.outerHeight() );
 				}
 
-				const adminBarOffset = getAdminBarOffset( $wpab );
+				var adminBarOffset = getAdminBarOffset( $wpab );
 
 				var topBarHidden = false;
 				if ( $tb.length ) {
