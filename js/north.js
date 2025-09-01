@@ -372,6 +372,37 @@
 		var scrollOnLoad = true;
 	}
 
+	/**
+	 * Adjusts the top position of the masthead based on the top bar's position and visibility.
+	 *
+	 * @param {number} pageY - The current Y position of the page (scroll position).
+	 * @param {number} adminBarOffset - The height of the admin bar, if present.
+	 * @param {jQuery} $tb - The jQuery object representing the top bar element.
+	 * @param {boolean} [topBarHidden=false] - Whether the top bar is hidden or not.
+	 *
+	 * @returns {number} - The calculated top position for the masthead.
+	 */
+	const adjustMastheadTop = function(
+		pageY,
+		adminBarOffset,
+		$tb,
+		topBarHidden = false,
+	) {
+		if (topBarHidden) {
+			return adminBarOffset;
+		}
+
+		// Calculate the Y end position of the top bar relative to the page
+		var tbEndY = $tb.length ?
+			$tb.offset().top + $tb.outerHeight() - pageY :
+			0;
+
+		return Math.max(
+			adminBarOffset,
+			tbEndY
+		);
+	};
+
 	// Handle menu overlap positioning on DOMContentLoaded for CLS prevention.
 	$( document ).ready( function() {
 		if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
@@ -541,26 +572,28 @@
 				if ( ! $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 					$mhs.css( 'height', $mh.outerHeight() );
 				}
-				// Toggle .topbar-out with visibility of top-bar in the viewport.
-				if ( ! $( 'body' ).hasClass( 'no-topbar' ) && ! $tb.northIsVisible() ) {
-					$( 'body' ).addClass( 'topbar-out' );
-				}
-				if ( $tb.length && $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
-					$( 'body' ).removeClass( 'topbar-out' );
-				}
-				
+
 				const adminBarOffset = getAdminBarOffset( $wpab );
+
+				var topBarHidden = false;
+				if ( $tb.length ) {
+					topBarHidden = ! $tb.northIsVisible( adminBarOffset );
+
+					$( 'body' ).toggleClass( 'no-topbar',
+						topBarHidden
+					);
+				}
 
 				// Handle positioning based on overlap and sticky combination.
 				if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 					// BOTH sticky and overlap are enabled.
 					var scrollTop = $( window ).scrollTop();
+					var tbHeight = $tb.outerHeight();
 
 					// Initial overlap state with absolute positioning.
 					if ( scrollTop <= 0 ) {
 						// Set topbar position when present.
 						if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
-							var tbHeight = $tb.outerHeight();
 							$tb.css( {
 								'position': 'absolute',
 								'top': adminBarOffset + 'px',
@@ -582,19 +615,23 @@
 						}
 					} else {
 						// Header transitions to fixed positioning while topbar remains absolute.
-						var stickyTop = adminBarOffset;
-						
+
 						// Remove admin bar offset on mobile when admin bar not visible.
 						if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
 							if ( ! $wpab.northIsVisible() ) {
 								stickyTop = 0;
 							}
 						}
-						
+
 						// Apply fixed positioning to header.
 						$mh.css( {
 							'position': 'fixed',
-							'top': stickyTop + 'px'
+							'top': adjustMastheadTop(
+								scrollTop,
+								adminBarOffset,
+								$tb,
+								topBarHidden
+							) + 'px',
 						} );
 					}
 				} else {
@@ -603,7 +640,7 @@
 						$( 'body' ).hasClass( 'no-topbar' ) ||
 						(
 							! $( 'body' ).hasClass( 'no-topbar' ) &&
-							$( 'body' ).hasClass( 'topbar-out' )
+							topBarHidden
 						)
 					) {
 						$mh.css( 'position', 'fixed' );
