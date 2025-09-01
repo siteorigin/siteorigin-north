@@ -72,6 +72,38 @@
 		);
 	};
 
+	/**
+	 * Calculates the height of the WordPress admin bar, factoring in mobile
+	 * and desktop views.
+	 *
+	 * This function determines the height of the admin bar (`#wpadminbar`) if it
+	 * is present and visible. It accounts for different heights on mobile devices
+	 * and adjusts the height dynamically based on the scroll position for fixed
+	 * admin bars on mobile.
+	 *
+	 * @param {jQuery} $wpab - The jQuery object representing the admin bar element.
+	 *
+	 * @returns {number} - The height of the admin bar in pixels, or 0 if the admin
+	 *                     bar is not present.
+	 */
+	const getAdminBarOffset = ( $wpab ) => {
+		if ( ! $wpab.length ) {
+			return 0;
+		}
+
+		const wpabMobile = $( window ).width() <= 600;
+		let adminBarOffset = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 46;
+
+
+		// On mobile, the admin bar has a fixed position so we need to scale the
+		// offset based on that.
+		if ( wpabMobile && $( window ).scrollTop() > 0 ) {
+			adminBarOffset = Math.max( 0, adminBarOffset - $( window ).scrollTop() );
+		}
+
+		return adminBarOffset;
+	};
+
 	var headerHeight = function( $target, load ) {
 		var height = 0;
 
@@ -348,14 +380,7 @@
 				$wpab = $( '#wpadminbar' );
 
 			var earlyOverlapPositioning = function() {
-				var wpabMobile = $( window ).width() <= 600;
-				var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
-				var adminBarOffset = $( 'body' ).hasClass( 'admin-bar' ) ? wpabHeight : 0;
-
-				// Mobile admin bar requires different offset height.
-				if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
-					adminBarOffset = $wpab.length ? 46 : 0;
-				}
+				const adminBarOffset = getAdminBarOffset( $wpab );
 
 				// Set topbar position when present.
 				if ( $tb.length && ! $( 'body' ).hasClass( 'no-topbar' ) ) {
@@ -523,19 +548,13 @@
 				if ( $tb.length && $( 'body' ).hasClass( 'topbar-out' ) && $tb.northIsVisible() ) {
 					$( 'body' ).removeClass( 'topbar-out' );
 				}
+				
+				const adminBarOffset = getAdminBarOffset( $wpab );
 
 				// Handle positioning based on overlap and sticky combination.
 				if ( $( 'body' ).hasClass( 'page-layout-menu-overlap' ) ) {
 					// BOTH sticky and overlap are enabled.
 					var scrollTop = $( window ).scrollTop();
-					var wpabMobile = $( window ).width() <= 600;
-					var wpabHeight = $wpab.length && ! wpabMobile ? $wpab.outerHeight() : 0;
-					var adminBarOffset = $( 'body' ).hasClass( 'admin-bar' ) ? wpabHeight : 0;
-					
-					// Mobile admin bar requires different offset height.
-					if ( $( window ).width() < 601 && $( 'body' ).hasClass( 'admin-bar' ) ) {
-						adminBarOffset = $wpab.length ? 46 : 0;
-					}
 
 					// Initial overlap state with absolute positioning.
 					if ( scrollTop <= 0 ) {
