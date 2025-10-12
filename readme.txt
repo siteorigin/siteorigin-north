@@ -104,6 +104,11 @@ Original design files are available on [Google Drive](https://drive.google.com/f
 
 == Changelog ==
 
+= 1.21.0 - 12 October 2025 =
+* Header: Added overlap background opacity controls and refined sticky overlap behaviour to eliminate jumps, respect the admin bar, and prevent load-time layout shifts.
+* Navigation: Smoothed sticky logo scaling and top bar transitions for overlap layouts to avoid visible padding jumps.
+* SiteOrigin Settings: Updated to the latest version.
+
 = 1.20.11 - 26 July 2025 =
 * Resolved duplicate WooCommerce notice.
 
