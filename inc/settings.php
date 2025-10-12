@@ -173,6 +173,33 @@ function siteorigin_north_settings_init() {
 		'masthead'    => array(
 			'title'  => __( 'Header', 'siteorigin-north' ),
 			'fields' => array(
+				// Top Bar Settings
+				'text_above'           => array(
+					'type'              => 'text',
+					'label'             => __( 'Text Above', 'siteorigin-north' ),
+					'description'       => __( 'Text that goes above the main header.', 'siteorigin-north' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'top_background_color' => array(
+					'type'  => 'color',
+					'label' => __( 'Background Top Color', 'siteorigin-north' ),
+					'live'  => true,
+				),
+				'top_background_overlap_opacity' => array(
+					'type'        => 'range',
+					'label'       => __( 'Background Top Color Overlap Opacity', 'siteorigin-north' ),
+					'description' => __( 'Top bar background opacity when header overlaps content.', 'siteorigin-north' ),
+					'min'         => 0,
+					'max'         => 1,
+					'step'        => 0.01,
+					'live'        => true,
+				),
+				'top_padding'          => array(
+					'type'              => 'measurement',
+					'label'             => __( 'Top Bar Widgets Padding', 'siteorigin-north' ),
+					'live'              => false,
+				),
+				// Header Settings
 				'layout'               => array(
 					'type'    => 'select',
 					'label'   => __( 'Header layout', 'siteorigin-north' ),
@@ -181,21 +208,19 @@ function siteorigin_north_settings_init() {
 						'centered' => __( 'Centered', 'siteorigin-north' ),
 					),
 				),
-				'text_above'           => array(
-					'type'              => 'text',
-					'label'             => __( 'Text Above', 'siteorigin-north' ),
-					'description'       => __( 'Text that goes above the main header.', 'siteorigin-north' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
 				'background_color'     => array(
 					'type'  => 'color',
 					'label' => __( 'Background Color', 'siteorigin-north' ),
 					'live'  => true,
 				),
-				'top_background_color' => array(
-					'type'  => 'color',
-					'label' => __( 'Background Top Color', 'siteorigin-north' ),
-					'live'  => true,
+				'background_overlap_opacity' => array(
+					'type'        => 'range',
+					'label'       => __( 'Background Color Overlap Opacity', 'siteorigin-north' ),
+					'description' => __( 'Background opacity when header overlaps content.', 'siteorigin-north' ),
+					'min'         => 0,
+					'max'         => 1,
+					'step'        => 0.01,
+					'live'        => true,
 				),
 				'border_color'         => array(
 					'type'  => 'color',
@@ -210,11 +235,6 @@ function siteorigin_north_settings_init() {
 				'padding'              => array(
 					'type'              => 'measurement',
 					'label'             => __( 'Padding', 'siteorigin-north' ),
-					'live'              => false,
-				),
-				'top_padding'          => array(
-					'type'              => 'measurement',
-					'label'             => __( 'Top Bar Widgets Padding', 'siteorigin-north' ),
 					'live'              => false,
 				),
 				'bottom_margin'        => array(
@@ -877,6 +897,12 @@ function siteorigin_north_settings_custom_css( $css ) {
 	}
 	#commentform input,#commentform textarea {
 	background-color: ${fonts_field_background};
+	}
+	.page-layout-menu-overlap #masthead:not(.floating) {
+	background: .rgba( ${masthead_background_color}, ${masthead_background_overlap_opacity});
+	}
+	.page-layout-menu-overlap #topbar:not(.floating) {
+	background: .rgba( ${masthead_top_background_color}, ${masthead_top_background_overlap_opacity});
 	}';
 
 	return $css;
@@ -921,11 +947,13 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	.font( ${fonts_details} );
 	color: ${branding_accent};
 	}
-	.woocommerce button.button.alt,.woocommerce #review_form #respond .form-submit input,.woocommerce .woocommerce-message .button,.woocommerce .products .button {
-	color: ${fonts_text_dark};
-	.font( ${fonts_headings} );
+	.woocommerce button.button.alt,.woocommerce #review_form #respond .form-submit input,.woocommerce .woocommerce-message .button,.woocommerce .products
+	.button {
+		color: ${fonts_text_dark};
+		.font( ${fonts_headings} );
 	}
-	.woocommerce button.button.alt:hover,.woocommerce #review_form #respond .form-submit input:hover,.woocommerce .woocommerce-message .button:hover,.woocommerce .products .button:hover {
+	.woocommerce button.button.alt:hover,.woocommerce #review_form #respond .form-submit input:hover,.woocommerce .woocommerce-message
+	.button:hover,.woocommerce .products .button:hover {
 	background: ${branding_accent_dark};
 	border-color: ${branding_accent_dark};
 	}
@@ -975,8 +1003,7 @@ function siteorigin_north_wc_settings_custom_css( $css ) {
 	border: 1px solid ${fonts_text_dark};
 	color: ${fonts_text_dark};
 	}
-	.woocommerce table.shop_table .button.checkout-button,
-	.woocommerce .so-panel .wc-proceed-to-checkout .checkout-button.button {
+	.woocommerce table.shop_table .button.checkout-button {
 	background: ${branding_accent};
 	border: 1px solid ${branding_accent};
 	}
@@ -1201,7 +1228,9 @@ function siteorigin_north_settings_defaults( $defaults ) {
 	$defaults['masthead_layout']                           = 'default';
 	$defaults['masthead_text_above']                       = '';
 	$defaults['masthead_background_color']                 = '#fafafa';
+	$defaults['masthead_background_overlap_opacity']       = '0.975';
 	$defaults['masthead_top_background_color']             = '#f4f4f4';
+	$defaults['masthead_top_background_overlap_opacity']   = '0.975';
 	$defaults['masthead_border_color']                     = '#d4d4d4';
 	$defaults['masthead_border_width']                     = '1px';
 	$defaults['masthead_padding']                          = '30px';
