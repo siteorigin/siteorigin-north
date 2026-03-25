@@ -69,7 +69,7 @@ if ( ! function_exists( 'siteorigin_north_display_retina_logo' ) ) {
 			$logo_src = wp_get_attachment_image_src( $logo, 'full' );
 			$retina_src = wp_get_attachment_image_src( $retina, 'full' );
 
-			if ( ! empty( $logo_src ) ) {
+			if ( ! empty( $logo_src ) && ! empty( $retina_src ) ) {
 				$srcset[] = $logo_src[0] . ' 1x';
 				$srcset[] = $retina_src[0] . ' 2x';
 			}
