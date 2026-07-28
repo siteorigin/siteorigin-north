@@ -330,7 +330,8 @@
 		$hs.find( 'input[type="search"]' ).trigger( 'focus' ).trigger( 'select' );
 		$hs.find( '#close-search' ).addClass( 'animate-in' );
 	} );
-	$hs.find( '#close-search' ).on( 'click', function() {
+	$hs.find( '#close-search' ).on( 'click', function( e ) {
+		e.preventDefault();
 		$hs.fadeOut( 350 );
 		$( this ).removeClass( 'animate-in' );
 	} );
