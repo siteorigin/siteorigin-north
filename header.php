@@ -127,7 +127,7 @@
 												<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
 												<span class="north-icon-cart"></span>
 												<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
-												<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
+												<span class="shopping-cart-count"><?php echo esc_html( WC()->cart->cart_contents_count ); ?></span>
 											</a>
 											<ul class="shopping-cart-dropdown" id="cart-drop">
 												<?php
@@ -146,8 +146,8 @@
 							?>
 
 							<?php if ( siteorigin_setting( 'navigation_search' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) { ?>
-								<button class="north-search-icon">
-									<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
+								<button type="button" class="north-search-icon">
+									<span class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></span>
 									<?php siteorigin_north_display_icon( 'search' ); ?>
 								</button>
 							<?php } ?>
@@ -173,9 +173,8 @@
 			<?php if ( siteorigin_setting( 'navigation_search' ) ) { ?>
 				<div id="header-search">
 					<div class="container">
-						<label for='s' class='screen-reader-text'><?php esc_html_e( 'Search for:', 'siteorigin-north' ); ?></label>
 						<?php get_search_form(); ?>
-						<a id="close-search">
+						<a href="#" id="close-search">
 							<span class="screen-reader-text"><?php esc_html_e( 'Close search bar', 'siteorigin-north' ); ?></span>
 							<?php siteorigin_north_display_icon( 'close' ); ?>
 						</a>
