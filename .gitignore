@@ -5,3 +5,5 @@ config.codekit
 npm-debug.log
 /sass/maps
 /config.codekit3
+docs/plans/
+tasks/runs/
