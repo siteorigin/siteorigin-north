@@ -127,7 +127,7 @@
 												<span class="screen-reader-text"><?php esc_html_e( 'View shopping cart', 'siteorigin-north' ); ?></span>
 												<span class="north-icon-cart"></span>
 												<span class="shopping-cart-text"><?php esc_html_e( ' View Cart ', 'siteorigin-north' ); ?></span>
-												<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
+												<span class="shopping-cart-count"><?php echo esc_html( WC()->cart->cart_contents_count ); ?></span>
 											</a>
 											<ul class="shopping-cart-dropdown" id="cart-drop">
 												<?php

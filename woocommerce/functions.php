@@ -199,7 +199,7 @@ if ( ! function_exists( 'siteorigin_north_woocommerce_update_cart_count' ) ) {
 	function siteorigin_north_woocommerce_update_cart_count( $fragments ) {
 		ob_start();
 		?>
-	<span class="shopping-cart-count"><?php echo WC()->cart->cart_contents_count; ?></span>
+	<span class="shopping-cart-count"><?php echo esc_html( WC()->cart->cart_contents_count ); ?></span>
 	<?php
 
 		$fragments['span.shopping-cart-count'] = ob_get_clean();
