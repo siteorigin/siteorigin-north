@@ -146,8 +146,8 @@
 							?>
 
 							<?php if ( siteorigin_setting( 'navigation_search' ) && ! ( function_exists( 'ubermenu' ) || function_exists( 'max_mega_menu_is_enabled' ) ) ) { ?>
-								<button class="north-search-icon">
-									<label class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></label>
+								<button type="button" class="north-search-icon">
+									<span class="screen-reader-text"><?php esc_html_e( 'Open search bar', 'siteorigin-north' ); ?></span>
 									<?php siteorigin_north_display_icon( 'search' ); ?>
 								</button>
 							<?php } ?>
