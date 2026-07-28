@@ -4,7 +4,7 @@ Contributors: siteorigin
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 6.8
+Tested up to: 7.0
 Requires at least: 4.7
 Requires PHP: 7.0.0
 License: GPLv2 or later
@@ -103,6 +103,11 @@ This theme makes use of the [SiteOrigin Settings Framework](https://github.com/s
 Original design files are available on [Google Drive](https://drive.google.com/folderview?id=0B1NA5KhRaLDDcEI1WmFNdTh1ZWc&usp=sharing).
 
 == Changelog ==
+
+= 1.21.1 - 28 July 2026 =
+* Logo: Fixed a potential error when a Retina logo image isn't available.
+* Search: Replaced invalid markup in the header search toggle with screen reader text, made the search close button keyboard focusable, and removed an unused search label.
+* WooCommerce: Improved escaping of the header cart count.
 
 = 1.21.0 - 12 October 2025 =
 * Header: Added overlap background opacity controls and refined sticky overlap behaviour to eliminate jumps, respect the admin bar, and prevent load-time layout shifts.
